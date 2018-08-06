@@ -17,7 +17,6 @@ public class ProjectController {
 		return "project/projectForm";
 	}
 	
-	
 	@RequestMapping("projectDetail.do")
 	public ModelAndView projectDetail(/*int pProjectCode, */ModelAndView mv){
 		/*ProjectVo project = pService.selectProject(pProjectCode);
@@ -41,5 +40,8 @@ public class ProjectController {
 		mv.addObject("project", project);*/
 		mv.setViewName("project/policy");
 		return mv;
+	
+	
+	
 	}
 }

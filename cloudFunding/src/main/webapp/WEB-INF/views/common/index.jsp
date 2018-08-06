@@ -1228,7 +1228,7 @@ transform: translateX(4px);
 }
 </style>
 <script>
-$('.carousel').carousel({
+$('#carouselExampleIndicators').carousel({
 	  interval: 2000,
 	  parse:"hover"
 	})
@@ -1265,6 +1265,7 @@ $('.carousel').carousel({
     <span class="sr-only">다음</span>
   </a>
 </div>
+ <div class="Divider__Divider hEIXJa" data-reactid="184"></div>
 <div class="Container__Container jdgWcI" data-reactid="78">
   <div data-reactid="79">
     <div class="Carousel__CarouselHeader iSHaZi" data-reactid="80"><span class="Carousel__CarouselTitle jtYVGd" data-reactid="81"><a class="Carousel__Link ervGwJ" href="collections/editorspick.html" data-reactid="82">에디터 추천 프로젝트<i class="yv2X_NOjMYirwH0R23J17 WU1ox0-AeDX_zneKjnNMO _1QY7TzdLHKX3-BKPDNNYKF" data-reactid="85"></i></a></span>
@@ -1569,10 +1570,5 @@ $('.carousel').carousel({
 	</div>
 </a>
 </div>
-
-
-
-  
-
 </body>
 </html>

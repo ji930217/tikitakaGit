@@ -1,57 +1,28 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!DOCTYPE configuration PUBLIC
-"-//mybatis.org//DTD Config 3.0//EN"
-"http://mybatis.org/dtd/mybatis-3-config.dtd">
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE configuration
+  PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-config.dtd">
 <configuration>
-	<!-- 마이바티스 설정과 관련된 태그 -->
-	<settings>
-		<!-- 만약에 Null 값이 들어온다면 DB에서도
-		    Null 이라고 받아라! -->
-		<setting name="jdbcTypeForNull" value="NULL"/>
-		<setting name="mapUnderscoreToCamelCase" value="true"/>
-	</settings>
 
-	<!-- 마이바티스에서 사용하기 위한 
-	    VO 클래스의 별칭을 정의하는 태그 -->
-	<!-- <typeAliases>
-		<typeAlias type="com.tikitaka.cloudFunding.admin.model.vo.AdminVo"
-		         alias="admin"/>
-	</typeAliases> -->
-	
-	<!-- 접속할 DB들의 환경 설정을 등록하는 태그 -->
-	<!-- default 값으로 ID를 부여하면 연결 시 바로 해당
-	    DB로 접속이 이루어진다. -->
-	<!-- <environments default="development">
-		각각의 DB의 연결 설정 정보를 담기 위한 태그
-		<environment id="development">
-			<transactionManager type="JDBC" />
-			<dataSource type="POOLED">
-				<property name="driver" value="oracle.jdbc.driver.OracleDriver" />
-				<property name="url" value="jdbc:oracle:thin:@127.0.0.1:1521:xe" />
-				<property name="username" value="jsp" />
-				<property name="password" value="jsp" />
-			</dataSource>
-		</environment>
-	</environments> -->
-	
-	<!-- 각 서비스에 관련된 SQL을 저장하는 Mapper 파일을 등록
-	    하기 위한 태그 -->
-	<!-- 마이바티스 설정 시에 등록을 하기 때문에
-	    미처 완성되지 못한 Mapper를 등록할 경우
-	    에러가 발생한다. -->
-	<!-- <mappers>
-		<mapper resource="config/mybatis/mappers/member-mapper.xml"/>
-		<mapper resource="mybatis/sql/admin-mapper.xml"/>
-	</mappers> -->
+<!-- http://www.mybatis.org/mybatis-3/ko/configuration.html#settings  -->
 
+ <settings>
+ 	<setting name="jdbcTypeForNull" value="NULL"/>
+ 	<setting name="mapUnderscoreToCamelCase" value="true"/> 	
+ </settings>
+
+
+  <typeAliases>
+  	<typeAlias type="com.tikitaka.cloudFunding.member.model.vo.Member" alias="Member"/>
+  </typeAliases>
+  
+
+  <mappers>
+  	<!-- resources가 빌드 패쓰 루트이므로 mybatis부터 기술해야 한다.  -->
+    <mapper resource="mybatis/sql/memberMapper.xml"/>
+    
+  </mappers>
+  
+  
+  
 </configuration>
-
-
-
-
-
-
-
-
-
-
