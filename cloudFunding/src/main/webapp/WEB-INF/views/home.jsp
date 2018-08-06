@@ -38,7 +38,8 @@
 
 	<a href="projectStart.do">프로젝트 만들기</a><br>
 	<a href="projectDetail.do">프로젝트 상세 페이지</a><br>
-
+	<a href="projectList.do">프로젝트 리스트</a><br>
+	<a href="error.do">에러</a><br>
 	
 </body>
 </html>
