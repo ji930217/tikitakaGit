@@ -368,15 +368,15 @@
 							data-reactid="96">
 							<a class="ContentsNavigation__NavItem-s6dhfrc-0 gEWplf"
 								style="color: rgba(0, 0, 0, 1); border-bottom: 3px solid rgba(0, 0, 0, 1); padding-bottom: calc(0.5rem - 3px);"
-								href="/millicube" data-reactid="97">스토리</a><a
+								href="projectDetail.do" data-reactid="97">스토리</a><a
 								class="ContentsNavigation__NavItem-s6dhfrc-0 gEWplf"
-								href="/tktk/community.jsp" data-reactid="98">
+								href="projectCommunity.do" data-reactid="98">
 								커뮤니티
 								<span
 								class="ContentsNavigation__CommunityPostAmount-s6dhfrc-6 bReGoj"
 								data-reactid="100"></span>
 							</a><a class="ContentsNavigation__NavItem-s6dhfrc-0 gEWplf"
-								href="/tktk/policy.jsp" data-reactid="101">환불 및 교환</a>
+								href="projectpolicy.do" data-reactid="101">환불 및 교환</a>
 						</div>
 					</div>
 				</nav>

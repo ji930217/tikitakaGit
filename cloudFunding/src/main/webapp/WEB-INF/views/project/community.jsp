@@ -20,18 +20,18 @@
       <link rel="dns-prefetch" href="https://qysoaxc73e-dsn.algolia.net/">
       <link rel="dns-prefetch" href="https://stats.g.doubleclick.net/">
       <meta data-react-helmet="true" property="fb:app_id" content="200842993269405"/><meta data-react-helmet="true" property="og:site_name" content="tumblbug"/><meta data-react-helmet="true" property="og:type" content="website"/><meta data-react-helmet="true" property="og:image" content="../../tumblbug-pci.imgix.net/8b085638008ca0dae709b236a3d55e79acf01841/9e4763ece87639b114ec09ec708c690d1d3767eb/fc0b20273bd383739a2217ce3be8c131e7c5429e/4eae4f67-3e25-42f2-8b34-63571aaf64073a35.jpg?ixlib=rb-1.1.0&amp;w=620&amp;h=465&amp;auto=format%2Ccompress&amp;lossless=true&amp;fit=crop&amp;s=d0f66a0d81033433dae54d0941680785"/><meta data-react-helmet="true" property="og:image:width" content="620"/><meta data-react-helmet="true" property="og:image:height" content="465"/><meta data-react-helmet="true" property="og:url" content="/tktk/projectDetail.jsp"/><meta data-react-helmet="true" property="og:title" content="하루 한 포로 스트레스 없는 다이어트: 투유투디 더블다운"/><meta data-react-helmet="true" property="og:description" content="하루 한포로 “체지방” 과 다이어트로 인한“부작용”을 한 번에 다운 “투유투디 더블다운”"/><meta data-react-helmet="true" name="twitter:site" content="tumblbug"/><meta data-react-helmet="true" name="twitter:creator" content="tumblbug"/><meta data-react-helmet="true" name="twitter:card" content="summary_large_image"/><meta data-react-helmet="true" name="twitter:image" content="../../tumblbug-pci.imgix.net/8b085638008ca0dae709b236a3d55e79acf01841/9e4763ece87639b114ec09ec708c690d1d3767eb/fc0b20273bd383739a2217ce3be8c131e7c5429e/4eae4f67-3e25-42f2-8b34-63571aaf64073a35.jpg?ixlib=rb-1.1.0&amp;w=620&amp;h=465&amp;auto=format%2Ccompress&amp;lossless=true&amp;fit=crop&amp;s=d0f66a0d81033433dae54d0941680785"/><meta data-react-helmet="true" name="twitter:url" content="/tktk/projectDetail.jsp"/><meta data-react-helmet="true" name="twitter:title" content="하루 한 포로 스트레스 없는 다이어트: 투유투디 더블다운"/><meta data-react-helmet="true" name="twitter:description" content="하루 한포로 “체지방” 과 다이어트로 인한“부작용”을 한 번에 다운 “투유투디 더블다운”"/>
-      <link rel="stylesheet" type="text/css" href="../../d2om2e6rfn032x.cloudfront.net/wpa/app.f0ed3932e778a7f95ef1c52983d12741.css">
-      <link href=../../tumblbug-assets.imgix.net/appicon/favicon/favicon-32x32.png rel="icon" type="image/x-icon">
+      <link rel="stylesheet" type="text/css" href="https://d2om2e6rfn032x.cloudfront.net/wpa/app.f0ed3932e778a7f95ef1c52983d12741.css">
+      <link href=resources/images/tktkFavicon.png rel="icon" type="image/x-icon">
       
-  <link rel="apple-touch-icon" sizes="120x120" href="../../tumblbug-assets.imgix.net/appicon/home-icon/apple-icon-120x120.png">
-  <link rel="apple-touch-icon" sizes="152x152" href="../../tumblbug-assets.imgix.net/appicon/home-icon/apple-icon-152x152.png">
-  <link rel="apple-touch-icon" sizes="180x180" href="../../tumblbug-assets.imgix.net/appicon/home-icon/apple-icon-180x180.png">
+  <link rel="apple-touch-icon" sizes="120x120" href="https://tumblbug-assets.imgix.net/appicon/home-icon/apple-icon-120x120.png">
+  <link rel="apple-touch-icon" sizes="152x152" href="https://tumblbug-assets.imgix.net/appicon/home-icon/apple-icon-152x152.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="https://tumblbug-assets.imgix.net/appicon/home-icon/apple-icon-180x180.png">
 
-  <link rel="icon" type="image/png" sizes="48x48"  href="../../tumblbug-assets.imgix.net/appicon/home-icon/android-icon-48x48.png">
-  <link rel="icon" type="image/png" sizes="72x72"  href="../../tumblbug-assets.imgix.net/appicon/home-icon/android-icon-72x72.png">
-  <link rel="icon" type="image/png" sizes="96x96"  href="../../tumblbug-assets.imgix.net/appicon/home-icon/android-icon-96x96.png">
-  <link rel="icon" type="image/png" sizes="144x144"  href="../../tumblbug-assets.imgix.net/appicon/home-icon/android-icon-144x144.png">
-  <link rel="icon" type="image/png" sizes="192x192"  href="../../tumblbug-assets.imgix.net/appicon/home-icon/android-icon-192x192.png">
+  <link rel="icon" type="image/png" sizes="48x48"  href="https://tumblbug-assets.imgix.net/appicon/home-icon/android-icon-48x48.png">
+  <link rel="icon" type="image/png" sizes="72x72"  href="https://tumblbug-assets.imgix.net/appicon/home-icon/android-icon-72x72.png">
+  <link rel="icon" type="image/png" sizes="96x96"  href="https://tumblbug-assets.imgix.net/appicon/home-icon/android-icon-96x96.png">
+  <link rel="icon" type="image/png" sizes="144x144"  href="https://tumblbug-assets.imgix.net/appicon/home-icon/android-icon-144x144.png">
+  <link rel="icon" type="image/png" sizes="192x192"  href="https://tumblbug-assets.imgix.net/appicon/home-icon/android-icon-192x192.png">
 
   <meta name="apple-mobile-web-app-title" content="tumblbug">
   <meta name="application-name" content="tumblbug">
@@ -44,11 +44,11 @@
 @-webkit-keyframes cXdlcp {0% {-webkit-transform: translateY(0%);-ms-transform: translateY(0%);transform: translateY(0%);opacity: 1;}50% {-webkit-transform: translateY(100%);-ms-transform: translateY(100%);transform: translateY(100%);opacity: .3;}100% {-webkit-transform: translateY(0%);-ms-transform: translateY(0%);transform: translateY(0%);opacity: 1;}}@keyframes cXdlcp {0% {-webkit-transform: translateY(0%);-ms-transform: translateY(0%);transform: translateY(0%);opacity: 1;}50% {-webkit-transform: translateY(100%);-ms-transform: translateY(100%);transform: translateY(100%);opacity: .3;}100% {-webkit-transform: translateY(0%);-ms-transform: translateY(0%);transform: translateY(0%);opacity: 1;}}
 /* sc-component-id: Button__Button-s1ng5xda-0 */
 
-.dvkZSH {cursor: pointer;display: inline-block;min-height: 1em;outline: none;border: none;vertical-align: baseline;box-shadow: 0px 0px 0px 1px transparent inset, 0px 0em 0px 0px rgba(0, 0, 0, 0.1) inset;-webkit-user-select: none;-moz-user-select: none;-ms-user-select: none;user-select: none;-webkit-transition: opacity 0.1s ease, background-color 0.1s ease, color 0.1s ease, box-shadow 0.1s ease,background 0.1s ease;transition: opacity 0.1s ease, background-color 0.1s ease, color 0.1s ease, box-shadow 0.1s ease,background 0.1s ease;-webkit-tap-highlight-color: transparent;margin: 0 .25em 0 0;border-radius: 0.28571429rem;text-transform: none;text-shadow: none;font-weight: bold;line-height: 1em;font-style: normal;text-align: center;text-decoration: none;}.dvkZSH > i {margin: 0 .42857143em 0 -.21428571em;}.dvkZSH {color: rgba(0, 0, 0, .6);background-color: #e7e7e7;}.dvkZSH:hover,.dvkZSH:focus,.dvkZSH:active {background-color: #d9d9d9;color: rgba(0, 0, 0, 8);}.dvkZSH {background-color: #fa6462;color: #fff;}.dvkZSH:hover,.dvkZSH:focus,.dvkZSH:active {background-color: #ff4543;color: #fff;}.dvkZSH {padding: 1.2em 2em;font-size: 1.1em;width: 100%;opacity: 1;pointer-events: ;;}
+.dvkZSH {cursor: pointer;display: inline-block;min-height: 1em;outline: none;border: none;vertical-align: baseline;box-shadow: 0px 0px 0px 1px transparent inset,  0px 0em 0px 0px rgba(0, 0, 0, 0.1) inset;-webkit-user-select: none;-moz-user-select: none;-ms-user-select: none;user-select: none;-webkit-transition: opacity 0.1s ease,  background-color 0.1s ease,  color 0.1s ease,  box-shadow 0.1s ease, background 0.1s ease;transition: opacity 0.1s ease,  background-color 0.1s ease,  color 0.1s ease,  box-shadow 0.1s ease, background 0.1s ease;-webkit-tap-highlight-color: transparent;margin: 0 .25em 0 0;border-radius: 0.28571429rem;text-transform: none;text-shadow: none;font-weight: bold;line-height: 1em;font-style: normal;text-align: center;text-decoration: none;}.dvkZSH > i {margin: 0 .42857143em 0 -.21428571em;}.dvkZSH {color: rgba(0, 0, 0, .6);background-color: #e7e7e7;}.dvkZSH:hover,.dvkZSH:focus,.dvkZSH:active {background-color: #d9d9d9;color: rgba(0, 0, 0, 8);}.dvkZSH {background-color: #fa6462;color: #fff;}.dvkZSH:hover,.dvkZSH:focus,.dvkZSH:active {background-color: #ff4543;color: #fff;}.dvkZSH {padding: 1.2em 2em;font-size: 1.1em;width: 100%;opacity: 1;pointer-events: ;;}
 
-.hZQjKf {cursor: pointer;display: inline-block;min-height: 1em;outline: none;border: none;vertical-align: baseline;box-shadow: 0px 0px 0px 1px transparent inset, 0px 0em 0px 0px rgba(0, 0, 0, 0.1) inset;-webkit-user-select: none;-moz-user-select: none;-ms-user-select: none;user-select: none;-webkit-transition: opacity 0.1s ease, background-color 0.1s ease, color 0.1s ease, box-shadow 0.1s ease,background 0.1s ease;transition: opacity 0.1s ease, background-color 0.1s ease, color 0.1s ease, box-shadow 0.1s ease,background 0.1s ease;-webkit-tap-highlight-color: transparent;margin: 0 .25em 0 0;border-radius: 0.28571429rem;text-transform: none;text-shadow: none;font-weight: bold;line-height: 1em;font-style: normal;text-align: center;text-decoration: none;}.hZQjKf > i {margin: 0 .42857143em 0 -.21428571em;}.hZQjKf {color: rgba(0, 0, 0, .6);background-color: #e7e7e7;}.hZQjKf:hover,.hZQjKf:focus,.hZQjKf:active {background-color: #d9d9d9;color: rgba(0, 0, 0, 8);}.hZQjKf {padding: 1em 1.5em;font-size: 1.1em;width: 100%;opacity: 1;pointer-events: ;padding: 1.2em;}.hZQjKf > i {margin: 0;}.hZQjKf {;}
+.hZQjKf {cursor: pointer;display: inline-block;min-height: 1em;outline: none;border: none;vertical-align: baseline;box-shadow: 0px 0px 0px 1px transparent inset,  0px 0em 0px 0px rgba(0, 0, 0, 0.1) inset;-webkit-user-select: none;-moz-user-select: none;-ms-user-select: none;user-select: none;-webkit-transition: opacity 0.1s ease,  background-color 0.1s ease,  color 0.1s ease,  box-shadow 0.1s ease, background 0.1s ease;transition: opacity 0.1s ease,  background-color 0.1s ease,  color 0.1s ease,  box-shadow 0.1s ease, background 0.1s ease;-webkit-tap-highlight-color: transparent;margin: 0 .25em 0 0;border-radius: 0.28571429rem;text-transform: none;text-shadow: none;font-weight: bold;line-height: 1em;font-style: normal;text-align: center;text-decoration: none;}.hZQjKf > i {margin: 0 .42857143em 0 -.21428571em;}.hZQjKf {color: rgba(0, 0, 0, .6);background-color: #e7e7e7;}.hZQjKf:hover,.hZQjKf:focus,.hZQjKf:active {background-color: #d9d9d9;color: rgba(0, 0, 0, 8);}.hZQjKf {padding: 1em 1.5em;font-size: 1.1em;width: 100%;opacity: 1;pointer-events: ;padding: 1.2em;}.hZQjKf > i {margin: 0;}.hZQjKf {;}
 
-.dxWcyc {cursor: pointer;display: inline-block;min-height: 1em;outline: none;border: none;vertical-align: baseline;box-shadow: 0px 0px 0px 1px transparent inset, 0px 0em 0px 0px rgba(0, 0, 0, 0.1) inset;-webkit-user-select: none;-moz-user-select: none;-ms-user-select: none;user-select: none;-webkit-transition: opacity 0.1s ease, background-color 0.1s ease, color 0.1s ease, box-shadow 0.1s ease,background 0.1s ease;transition: opacity 0.1s ease, background-color 0.1s ease, color 0.1s ease, box-shadow 0.1s ease,background 0.1s ease;-webkit-tap-highlight-color: transparent;margin: 0 .25em 0 0;border-radius: 0.28571429rem;text-transform: none;text-shadow: none;font-weight: bold;line-height: 1em;font-style: normal;text-align: center;text-decoration: none;}.dxWcyc > i {margin: 0 .42857143em 0 -.21428571em;}.dxWcyc {color: rgba(0, 0, 0, .6);background-color: #e7e7e7;}.dxWcyc:hover,.dxWcyc:focus,.dxWcyc:active {background-color: #d9d9d9;color: rgba(0, 0, 0, 8);}.dxWcyc {padding: 1em 1.5em;font-size: 1em;width: 100%;opacity: 1;pointer-events: ;;}
+.dxWcyc {cursor: pointer;display: inline-block;min-height: 1em;outline: none;border: none;vertical-align: baseline;box-shadow: 0px 0px 0px 1px transparent inset,  0px 0em 0px 0px rgba(0, 0, 0, 0.1) inset;-webkit-user-select: none;-moz-user-select: none;-ms-user-select: none;user-select: none;-webkit-transition: opacity 0.1s ease,  background-color 0.1s ease,  color 0.1s ease,  box-shadow 0.1s ease, background 0.1s ease;transition: opacity 0.1s ease,  background-color 0.1s ease,  color 0.1s ease,  box-shadow 0.1s ease, background 0.1s ease;-webkit-tap-highlight-color: transparent;margin: 0 .25em 0 0;border-radius: 0.28571429rem;text-transform: none;text-shadow: none;font-weight: bold;line-height: 1em;font-style: normal;text-align: center;text-decoration: none;}.dxWcyc > i {margin: 0 .42857143em 0 -.21428571em;}.dxWcyc {color: rgba(0, 0, 0, .6);background-color: #e7e7e7;}.dxWcyc:hover,.dxWcyc:focus,.dxWcyc:active {background-color: #d9d9d9;color: rgba(0, 0, 0, 8);}.dxWcyc {padding: 1em 1.5em;font-size: 1em;width: 100%;opacity: 1;pointer-events: ;;}
 /* sc-component-id: Header__Header-s10wde3a-0 */
 
 .iVCTYT {width: 100vw;height: 58px;background-color: #ffffff;box-shadow: 0px 1px 2px 0px rgba(10, 10, 10, 0.1);display: -webkit-box;display: -webkit-flex;display: -ms-flexbox;display: flex;-webkit-align-items: center;-webkit-box-align: center;-ms-flex-align: center;align-items: center;z-index: 999;;;;}@media (min-width: 1080px) {.iVCTYT {height: 65px;}}
@@ -60,13 +60,12 @@
 .jdgWcI {width: 100vw;margin: 0 auto;position: relative;padding: 0;}@media (min-width: 1080px) {.jdgWcI {width: 1080px;margin: 0 auto;}}
 /* sc-component-id: ProfileImg__ProfileImg-s1o99mme-0 */
 
-.fqdqdO {display: inline-block;background-image: url(../../tumblbug-assets.imgix.net/assets/user-accountd986.png?s=08b1f9ecf24209994ac9b81900936c0e);width: 28px;height: 28px;background-size: cover;background-position: 50% 38%;border-radius: 50%;border: 1px solid #ddd;margin-right: 0;}@media (min-width: 1080px) {.fqdqdO {width: 38px;height: 38px;}}
+.fqdqdO {display: inline-block;background-image: url(resources/images/header/tumblbug-assets.imgix.net/assets/user-accountd986.png?s=08b1f9ecf24209994ac9b81900936c0e);width: 28px;height: 28px;background-size: cover;background-position: 50% 38%;border-radius: 50%;border: 1px solid #ddd;margin-right: 0;}@media (min-width: 1080px) {.fqdqdO {width: 38px;height: 38px;}}
+.jZXZDW {display: inline-block;background-image: url(resources/images/header/tumblbug-upi.imgix.net/fa7a2417-173e-4157-9a89-40e87af45dd5795a.png?ixlib=rb-1.1.0&amp;w=200&amp;h=200&amp;auto=format%2Ccompress&amp;fit=facearea&amp;facepad=2.0&amp;ch=Save-Data&amp;mask=ellipse&amp;s=d13414f84d18dbecb5bdb39f6a3d2a42);width: 25px;height: 25px;background-size: cover;background-position: 50% 38%;border-radius: 50%;border: 1px solid #ddd;margin-right: .5rem;}
 
-.jZXZDW {display: inline-block;background-image: url(../../tumblbug-upi.imgix.net/fa7a2417-173e-4157-9a89-40e87af45dd5795a.png?ixlib=rb-1.1.0&amp;w=200&amp;h=200&amp;auto=format%2Ccompress&amp;fit=facearea&amp;facepad=2.0&amp;ch=Save-Data&amp;mask=ellipse&amp;s=d13414f84d18dbecb5bdb39f6a3d2a42);width: 25px;height: 25px;background-size: cover;background-position: 50% 38%;border-radius: 50%;border: 1px solid #ddd;margin-right: .5rem;}
+.dLvdGo {display: inline-block;background-image: url(resources/images/header/tumblbug-assets.imgix.net/assets/user-accountd986.png?s=08b1f9ecf24209994ac9b81900936c0e);width: 40px;height: 40px;background-size: cover;background-position: 50% 38%;border-radius: 50%;border: 1px solid #ddd;margin-right: 1rem;}
 
-.dLvdGo {display: inline-block;background-image: url(../../tumblbug-assets.imgix.net/assets/user-accountd986.png?s=08b1f9ecf24209994ac9b81900936c0e);width: 40px;height: 40px;background-size: cover;background-position: 50% 38%;border-radius: 50%;border: 1px solid #ddd;margin-right: 1rem;}
-
-.daPkde {display: inline-block;background-image: url(../../tumblbug-upi.imgix.net/fa7a2417-173e-4157-9a89-40e87af45dd5795a.png?ixlib=rb-1.1.0&amp;w=200&amp;h=200&amp;auto=format%2Ccompress&amp;fit=facearea&amp;facepad=2.0&amp;ch=Save-Data&amp;mask=ellipse&amp;s=d13414f84d18dbecb5bdb39f6a3d2a42);width: 40px;height: 40px;background-size: cover;background-position: 50% 38%;border-radius: 50%;border: 1px solid #ddd;margin-right: 1rem;}
+.daPkde {display: inline-block;background-image: url(resources/images/header/tumblbug-upi.imgix.net/fa7a2417-173e-4157-9a89-40e87af45dd5795a.png?ixlib=rb-1.1.0&amp;w=200&amp;h=200&amp;auto=format%2Ccompress&amp;fit=facearea&amp;facepad=2.0&amp;ch=Save-Data&amp;mask=ellipse&amp;s=d13414f84d18dbecb5bdb39f6a3d2a42);width: 40px;height: 40px;background-size: cover;background-position: 50% 38%;border-radius: 50%;border: 1px solid #ddd;margin-right: 1rem;}
 /* sc-component-id: TumblbugLogo__TumblbugLogo-s9od1ls-0 */
 
 .JUlEd {fill: #000000;width:  70px;height: 18.41px;}@media (min-width: 1080px) {.JUlEd {width: 85px;height: 22.36px;}}
@@ -107,7 +106,7 @@
 
 .gqXDKx {display: -webkit-box;display: -webkit-flex;display: -ms-flexbox;display: flex;-webkit-align-items: center;-webkit-box-align: center;-ms-flex-align: center;align-items: center;position: relative;margin-left: 0.75rem;}
 /* sc-component-id: sc-keyframes-bYqief */
-@-webkit-keyframes bYqief {0%, 100% {opacity: 1;}50% {opacity: 0;}}@keyframes bYqief {0%, 100% {opacity: 1;}50% {opacity: 0;}}
+@-webkit-keyframes bYqief {0%,  100% {opacity: 1;}50% {opacity: 0;}}@keyframes bYqief {0%,  100% {opacity: 1;}50% {opacity: 0;}}
 /* sc-component-id: FundingInformation__FundingInformation-s1sct7xv-0 */
 
 .lfgWGK {-webkit-order: 5;-ms-flex-order: 5;order: 5;padding: 1rem;margin: 0 0 .5rem 0;background-color: #fafafa;border: 1px solid #efefef;}@media (min-width: 1080px) {.lfgWGK {margin: 0 .5rem 1rem;padding: 1rem 1.5rem;}}
@@ -238,7 +237,7 @@
 
 .deZznN {width: 100%;}@media (min-width: 1080px) {.deZznN {min-height: 500px;}}
 /* sc-component-id: sc-keyframes-fzoeFq */
-@-webkit-keyframes fzoeFq {0%, 100% {-webkit-transform: translateX(0);-ms-transform: translateX(0);transform: translateX(0);}50% {-webkit-transform: translateX(4px);-ms-transform: translateX(4px);transform: translateX(4px);}}@keyframes fzoeFq {0%, 100% {-webkit-transform: translateX(0);-ms-transform: translateX(0);transform: translateX(0);}50% {-webkit-transform: translateX(4px);-ms-transform: translateX(4px);transform: translateX(4px);}}
+@-webkit-keyframes fzoeFq {0%,  100% {-webkit-transform: translateX(0);-ms-transform: translateX(0);transform: translateX(0);}50% {-webkit-transform: translateX(4px);-ms-transform: translateX(4px);transform: translateX(4px);}}@keyframes fzoeFq {0%,  100% {-webkit-transform: translateX(0);-ms-transform: translateX(0);transform: translateX(0);}50% {-webkit-transform: translateX(4px);-ms-transform: translateX(4px);transform: translateX(4px);}}
 /* sc-component-id: CommunityNewPost__CommunityNewPostWidget-s1s3p320-0 */
 
 .hIkOXr {padding: 1.2rem 1.5rem;display: -webkit-box;display: -webkit-flex;display: -ms-flexbox;display: flex;-webkit-align-items: center;-webkit-box-align: center;-ms-flex-align: center;align-items: center;-webkit-box-pack: space-between;-webkit-justify-content: space-between;-ms-flex-pack: space-between;justify-content: space-between;color: #757575;font-size: 1.1rem;font-weight: bold;}.hIkOXr > i {-webkit-animation:fzoeFq 1s infinite;animation:fzoeFq 1s infinite;}
@@ -309,7 +308,7 @@
 										<div class="_28l6WJgn2lALsbqKkv3zIA " data-reactid="50">
 											<img class="_28l6WJgn2lALsbqKkv3zIA _3_tz3Sy3FDfeZv5NgSfOZK"
 												alt="기본 프로젝트 커버 이미지"
-												src="../../tumblbug-pci.imgix.net/8b085638008ca0dae709b236a3d55e79acf01841/9e4763ece87639b114ec09ec708c690d1d3767eb/fc0b20273bd383739a2217ce3be8c131e7c5429e/4eae4f67-3e25-42f2-8b34-63571aaf64073a35.jpg?ixlib=rb-1.1.0&amp;w=620&amp;h=465&amp;auto=format%2Ccompress&amp;lossless=true&amp;fit=crop&amp;s=d0f66a0d81033433dae54d0941680785"
+												src="resources/images/header/tumblbug-pci.imgix.net/8b085638008ca0dae709b236a3d55e79acf01841/9e4763ece87639b114ec09ec708c690d1d3767eb/fc0b20273bd383739a2217ce3be8c131e7c5429e/4eae4f67-3e25-42f2-8b34-63571aaf64073a35.jpg?ixlib=rb-1.1.0&amp;w=620&amp;h=465&amp;auto=format%2Ccompress&amp;lossless=true&amp;fit=crop&amp;s=d0f66a0d81033433dae54d0941680785"
 												data-reactid="51" />
 											<div class="_28l6WJgn2lALsbqKkv3zIA Go6I0FosWRXRZxpmYjWEE"
 												data-reactid="52">
@@ -434,16 +433,16 @@
 							<div class="ContentsNavigation__NavLeft-s6dhfrc-3 eSsILz"
 								data-reactid="96">
 								<a class="ContentsNavigation__NavItem-s6dhfrc-0 gEWplf"
-									href="/tktk/projectDetail.jsp" data-reactid="97">스토리</a><a
+									href="projectDetail.do" data-reactid="97">스토리</a><a
 									class="ContentsNavigation__NavItem-s6dhfrc-0 gEWplf"
 									style="color: rgba(0, 0, 0, 1); border-bottom: 3px solid rgba(0, 0, 0, 1); padding-bottom: calc(0.5rem - 3px);"
-									href="/tktk/community.jsp" data-reactid="98">
+									href="projectCommunity.do" data-reactid="98">
 									<!-- react-text: 99 -->커뮤니티<!-- /react-text -->
 									<span
 									class="ContentsNavigation__CommunityPostAmount-s6dhfrc-6 bReGoj"
 									data-reactid="100"></span>
 								</a><a class="ContentsNavigation__NavItem-s6dhfrc-0 gEWplf"
-									href="/tktk/policy.jsp" data-reactid="101">환불 및 교환</a>
+									href="projectPolicy.do" data-reactid="101">환불 및 교환</a>
 							</div>
 						</div>
 					</nav>
