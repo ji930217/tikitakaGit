@@ -39,34 +39,43 @@
       <script type="application/javascript">
         window.MOBX_STATE = {"app":{"ssrLocation":"/doubledown/community"},"currentUser":{"isLoading":false,"isLoaded":true,"id":null,"uuid":null,"fullname":null,"userPermalink":null,"avatarUrl":"https://tumblbug-upi.imgix.net/defaults/avatar_1.png?ixlib=rb-1.1.0&w=200&h=250&auto=format%2Ccompress&fit=facearea&facepad=2.0&ch=Save-Data&mask=ellipse&s=47160c157911f653f6dcd76e296f26b4","email":null,"isCreator":false,"isAdmin":false},"pledgeStore":{"apiEndpoint":"/api/v1/pledges.json?fields=id,createdAt,amount,isSurveyRequested,isSurveyResponded,paymentStatus&project=title,coverImageUrl,creatorName,fundingStatus&reward=description,items&&coverImageUrl[h]=240&coverImageUrl[w]=320&coverImageUrl[fit]=crop","isLoading":false,"isLoaded":false,"pledges":[],"pledgesCount":{},"currentPage":1,"filterType":"all","isPledgeDataLoading":false,"isMetaDataLoaded":false,"isPledgeDetailsDataLoading":true},"surveyStore":{"apiEndpoint":"/api/v1/pledges.json?fields=id,createdAt,amount,isSurveyRequested,isSurveyResponded,paymentStatus&project=title,coverImageUrl,creatorName,fundingStatus&reward=description,items&filter=surveyResponseNeeded&coverImageUrl[h]=240&coverImageUrl[w]=320&coverImageUrl[fit]=crop"},"taxpayerInformationStore":{"isLoaded":false},"collectionStore":{"collections":{},"featuredCollections":null},"projectStore":{"projects":{"ac2da20a-ae8d-48e0-b97e-3f7b1794b7a9":{"state":"ongoing_reached","id":"ac2da20a-ae8d-48e0-b97e-3f7b1794b7a9","title":"하루 한 포로 스트레스 없는 다이어트: 투유투디 더블다운","coverImageUrl":"https://tumblbug-pci.imgix.net/8b085638008ca0dae709b236a3d55e79acf01841/9e4763ece87639b114ec09ec708c690d1d3767eb/fc0b20273bd383739a2217ce3be8c131e7c5429e/4eae4f67-3e25-42f2-8b34-63571aaf6407.jpg?ixlib=rb-1.1.0&w=620&h=465&auto=format%2Ccompress&lossless=true&fit=crop&s=d0f66a0d81033433dae54d0941680785","creatorName":"2U2D","category":"food","fundedAmount":44783000,"fundingGoal":2000000,"fundingDeadline":"2018-08-10T23:59:59+09:00","permalink":"doubledown","summary":"하루 한포로 “체지방” 과 다이어트로 인한“부작용”을 한 번에 다운 “투유투디 더블다운”","fundingStatus":"ongoing_reached","introductionVideoPrefix":"https://d2f45jiwzkt4py.cloudfront.net/ac2da20a-ae8d-48e0-b97e-3f7b1794b7a9/9cf22a5f-b9b9-4adc-9a81-0eb2f4dda382","isRewardDelivered":false,"pledgesCount":772,"currentUserType":"User","refundExchangePolicy":"후원자의 배송지가 잘못 기재 된 경우, 후원자가 진행자에게 사전 고지 없이 배송지를 수정하여 배송에 문제가 발생 한 경우엔, 착불로 재배송이 진행됩니다.\n파손이나 불량품을 받으신 경우엔 30일 이내, 새 제품으로 교환 해 드립니다.\n만약 예상 전달일보다 30일 이상 배송이 지연되는 경우엔 전액 환불을 약속드립니다. (2018년 08월 16일 배송예정. 환불시 수수료 포함 후 환불 가능.)","postsCount":null,"payoutVersion":3,"paidOutDates":null,"paymentDeadline":"2018-08-17T23:59:59+09:00","expectedPayoutDates":["2018-08-28T23:59:59+09:00"],"shortTitle":"더블다운","location":null,"introductionVideoTranscodingState":"completed","coverImageFilename":"4eae4f67-3e25-42f2-8b34-63571aaf6407.jpg","creatorBiography":"너무나도 바쁜 일상의 연속입니다. 건강관리는 어떻게 하고 계신가요? 팀 투유투디(2U2D) \"바쁜 생활 속 간편한 건강관리\"를 모토로 다양한 솔루션을 제공하고자 합니다. 사회생활 하시면서 갑자기 체중이 늘어 건강이 악화 되신분, 매일 반복되는 음주와의 전쟁에 지치신 분, 야근 때문에 피로가 누적 되신분들... 우리 주변에서 흔히 볼 수 있는 모습입니다. 팀 투유투디는 하루 하루 최선을 다해 살아가지만, 너무 바빠서 건강관리에 소홀해지신 모든 분들이 조금 더 쉽고 간편하게 접근 하실 수 있는 건강관리 문화를 만들기위해 노력하겠습니다.","url":"http://www.tumblbug.com/doubledown","store":"[Circular ~.projectStore]"}},"creators":{"doubledown":{"profileImageUrl":"https://tumblbug-upi.imgix.net/fa7a2417-173e-4157-9a89-40e87af45dd5.png?ixlib=rb-1.1.0&w=200&h=200&auto=format%2Ccompress&fit=facearea&facepad=2.0&ch=Save-Data&mask=ellipse&s=d13414f84d18dbecb5bdb39f6a3d2a42","hasUploadedProfileImage":true,"name":"2U2D","location":"대구광역시 북구 구암동","biography":"너무나도 바쁜 일상의 연속입니다. 건강관리는 어떻게 하고 계신가요? 팀 투유투디(2U2D) \"바쁜 생활 속 간편한 건강관리\"를 모토로 다양한 솔루션을 제공하고자 합니다. 사회생활 하시면서 갑자기 체중이 늘어 건강이 악화 되신분, 매일 반복되는 음주와의 전쟁에 지치신 분, 야근 때문에 피로가 누적 되신분들... 우리 주변에서 흔히 볼 수 있는 모습입니다. 팀 투유투디는 하루 하루 최선을 다해 살아가지만, 너무 바빠서 건강관리에 소홀해지신 모든 분들이 조금 더 쉽고 간편하게 접근 하실 수 있는 건강관리 문화를 만들기위해 노력하겠습니다.","email":"psm86@2minintl.com","isPhoneVerified":true,"isEmailVerified":true,"phoneNumber1":"010","phoneNumber2":"9258","phoneNumber3":"4978","lastLoggedInAt":"2018-07-20T15:00:13+09:00","publishedProjectsCount":1,"pledgedProjectsCount":0,"permalink":"donajutzutzududuchi"}},"payoutInvoice":{}},"messageThreadStore":{"_unreadThreads":{"asCreator":[],"asUser":[]},"projectFilters":[],"_messageThreads":{},"isLoadingMessageThreads":false,"selectedThreadId":null,"selectedThread":null},"messageArchiveThreadStore":{"_messageArchiveThreads":{},"_paging":{"offset":0,"limit":10,"next":""}},"rewardStore":{},"itemStore":{},"heroStore":{"isLoaded":false},"postStore":{"_cachedProjectId":null,"_posts":{},"_postsPagination":null,"_comments":{},"_cachedPostId":null,"_commentPagination":null},"depositAccountStore":{}};
       </script>
-      <style type="text/css" data-styled-components="cXdlcp bYqief fzoeFq jPcWZN iVCTYT jdgWcI bteafZ kZLTLQ hcvfVq iGOIal kizyZz cfMrMC hHUgvf bpfGNO JUlEd buZCDD imIxKd gqXDKx fqdqdO hsuyOO isebXd gKkJpB yNdyg boFKej cyqGTD guVzeB jZXZDW gDTPbS iTDPPg dIHovk qtLrt gujNFh eIDmsW leXkjY htCDgL bvKOwU ihuRTA kIYDgq lfgWGK iJcLQj kwAiqA bBsoai fjkRCm dvkZSH cYmhAj hZQjKf lblHJx eeeApW eSsILz gEWplf bReGoj cNWmvR jPEdlL kJUlye giKgfw bJXRvz hIkOXr fQMvgC dLvdGo umGxa gjgpkL gDEKBn bvwsV gByEjI ceunQL deZznN cBbkfc fuCNpE eYscdN daPkde fVfxlF dHxdxH ilHpOi iBGoJt khYIRi dxWcyc" data-styled-components-is-local="true">
+      <style type="text/css" data-styled-components="cXdlcp bYqief fzoeFq jPcWZN iVCTYT jdgWcI bteafZ kZLTLQ hcvfVq iGOIal kizyZz cfMrMC hHUgvf bpfGNO JUlEd buZCDD imIxKd gqXDKx fqdqdO hEFTbE ikLgAw cyOybj iuosEt fNAOQh iToKBr jfnFWI bzlVdT gXZEJk kBDldE brhEhF iCczEI dUSIGe fhXjWk duKZDT iSHaZi jtYVGd ervGwJ hgvQtm buxDxm csIfer iEZvlH hEilqP hFAREh bGqbmB fOsIlY kCGzYC gEZuLR gUQbvW cWrfUF beYdFz ddAStM bpoHzD hEIXJa bxRvdW cEnTNJ nuOjL fmLEMz jftTar gEQpFE ykGDF hOKtVI bzwbvF bmtKYw qHzrD cSKjGh jYcZV cxPceO dvkZSH hZQjKf owWgL ilHpOi dxWcyc jKslKa bIabCF dLvdGo dCYRcO gWXOEy hvlbLm cUvTIp" data-styled-components-is-local="true">
+/* sc-component-id: SiteFooter__SROnlyLabel-s15w7vby-0 */
+
+.jYcZV {position: absolute;margin: -1px;padding: 0;height: 1px;width: 1px;border: 0;clip: rect(0 0 0 0);overflow: hidden;}
 /* sc-component-id: sc-keyframes-cXdlcp */
 @-webkit-keyframes cXdlcp {0% {-webkit-transform: translateY(0%);-ms-transform: translateY(0%);transform: translateY(0%);opacity: 1;}50% {-webkit-transform: translateY(100%);-ms-transform: translateY(100%);transform: translateY(100%);opacity: .3;}100% {-webkit-transform: translateY(0%);-ms-transform: translateY(0%);transform: translateY(0%);opacity: 1;}}@keyframes cXdlcp {0% {-webkit-transform: translateY(0%);-ms-transform: translateY(0%);transform: translateY(0%);opacity: 1;}50% {-webkit-transform: translateY(100%);-ms-transform: translateY(100%);transform: translateY(100%);opacity: .3;}100% {-webkit-transform: translateY(0%);-ms-transform: translateY(0%);transform: translateY(0%);opacity: 1;}}
 /* sc-component-id: Button__Button-s1ng5xda-0 */
 
+.buxDxm {cursor: pointer;display: inline-block;min-height: 1em;outline: none;border: none;vertical-align: baseline;box-shadow: 0px 0px 0px 1px transparent inset,  0px 0em 0px 0px rgba(0, 0, 0, 0.1) inset;-webkit-user-select: none;-moz-user-select: none;-ms-user-select: none;user-select: none;-webkit-transition: opacity 0.1s ease,  background-color 0.1s ease,  color 0.1s ease,  box-shadow 0.1s ease, background 0.1s ease;transition: opacity 0.1s ease,  background-color 0.1s ease,  color 0.1s ease,  box-shadow 0.1s ease, background 0.1s ease;-webkit-tap-highlight-color: transparent;margin: 0 .25em 0 0;border-radius: 0.28571429rem;text-transform: none;text-shadow: none;font-weight: bold;line-height: 1em;font-style: normal;text-align: center;text-decoration: none;}.buxDxm > i {margin: 0 .42857143em 0 -.21428571em;}.buxDxm {color: rgba(0, 0, 0, .6);background-color: #e7e7e7;}.buxDxm:hover,.buxDxm:focus,.buxDxm:active {background-color: #d9d9d9;color: rgba(0, 0, 0, 8);}.buxDxm {padding: 1em 1.5em;font-size: 1em;width: ;opacity: .3;pointer-events: none;padding: 1em;background-color: transparent;color: black;}.buxDxm > i {margin: 0;}.buxDxm:hover,.buxDxm:focus,.buxDxm:active {background-color: transparent;color: black;}.buxDxm {;}
+
+.csIfer {cursor: pointer;display: inline-block;min-height: 1em;outline: none;border: none;vertical-align: baseline;box-shadow: 0px 0px 0px 1px transparent inset,  0px 0em 0px 0px rgba(0, 0, 0, 0.1) inset;-webkit-user-select: none;-moz-user-select: none;-ms-user-select: none;user-select: none;-webkit-transition: opacity 0.1s ease,  background-color 0.1s ease,  color 0.1s ease,  box-shadow 0.1s ease, background 0.1s ease;transition: opacity 0.1s ease,  background-color 0.1s ease,  color 0.1s ease,  box-shadow 0.1s ease, background 0.1s ease;-webkit-tap-highlight-color: transparent;margin: 0 .25em 0 0;border-radius: 0.28571429rem;text-transform: none;text-shadow: none;font-weight: bold;line-height: 1em;font-style: normal;text-align: center;text-decoration: none;}.csIfer > i {margin: 0 .42857143em 0 -.21428571em;}.csIfer {color: rgba(0, 0, 0, .6);background-color: #e7e7e7;}.csIfer:hover,.csIfer:focus,.csIfer:active {background-color: #d9d9d9;color: rgba(0, 0, 0, 8);}.csIfer {padding: 1em 1.5em;font-size: 1em;width: ;opacity: 1;pointer-events: ;padding: 1em;background-color: transparent;color: black;}.csIfer > i {margin: 0;}.csIfer:hover,.csIfer:focus,.csIfer:active {background-color: transparent;color: black;}.csIfer {;}
+
 .dvkZSH {cursor: pointer;display: inline-block;min-height: 1em;outline: none;border: none;vertical-align: baseline;box-shadow: 0px 0px 0px 1px transparent inset,  0px 0em 0px 0px rgba(0, 0, 0, 0.1) inset;-webkit-user-select: none;-moz-user-select: none;-ms-user-select: none;user-select: none;-webkit-transition: opacity 0.1s ease,  background-color 0.1s ease,  color 0.1s ease,  box-shadow 0.1s ease, background 0.1s ease;transition: opacity 0.1s ease,  background-color 0.1s ease,  color 0.1s ease,  box-shadow 0.1s ease, background 0.1s ease;-webkit-tap-highlight-color: transparent;margin: 0 .25em 0 0;border-radius: 0.28571429rem;text-transform: none;text-shadow: none;font-weight: bold;line-height: 1em;font-style: normal;text-align: center;text-decoration: none;}.dvkZSH > i {margin: 0 .42857143em 0 -.21428571em;}.dvkZSH {color: rgba(0, 0, 0, .6);background-color: #e7e7e7;}.dvkZSH:hover,.dvkZSH:focus,.dvkZSH:active {background-color: #d9d9d9;color: rgba(0, 0, 0, 8);}.dvkZSH {background-color: #fa6462;color: #fff;}.dvkZSH:hover,.dvkZSH:focus,.dvkZSH:active {background-color: #ff4543;color: #fff;}.dvkZSH {padding: 1.2em 2em;font-size: 1.1em;width: 100%;opacity: 1;pointer-events: ;;}
-
 .hZQjKf {cursor: pointer;display: inline-block;min-height: 1em;outline: none;border: none;vertical-align: baseline;box-shadow: 0px 0px 0px 1px transparent inset,  0px 0em 0px 0px rgba(0, 0, 0, 0.1) inset;-webkit-user-select: none;-moz-user-select: none;-ms-user-select: none;user-select: none;-webkit-transition: opacity 0.1s ease,  background-color 0.1s ease,  color 0.1s ease,  box-shadow 0.1s ease, background 0.1s ease;transition: opacity 0.1s ease,  background-color 0.1s ease,  color 0.1s ease,  box-shadow 0.1s ease, background 0.1s ease;-webkit-tap-highlight-color: transparent;margin: 0 .25em 0 0;border-radius: 0.28571429rem;text-transform: none;text-shadow: none;font-weight: bold;line-height: 1em;font-style: normal;text-align: center;text-decoration: none;}.hZQjKf > i {margin: 0 .42857143em 0 -.21428571em;}.hZQjKf {color: rgba(0, 0, 0, .6);background-color: #e7e7e7;}.hZQjKf:hover,.hZQjKf:focus,.hZQjKf:active {background-color: #d9d9d9;color: rgba(0, 0, 0, 8);}.hZQjKf {padding: 1em 1.5em;font-size: 1.1em;width: 100%;opacity: 1;pointer-events: ;padding: 1.2em;}.hZQjKf > i {margin: 0;}.hZQjKf {;}
-
 .dxWcyc {cursor: pointer;display: inline-block;min-height: 1em;outline: none;border: none;vertical-align: baseline;box-shadow: 0px 0px 0px 1px transparent inset,  0px 0em 0px 0px rgba(0, 0, 0, 0.1) inset;-webkit-user-select: none;-moz-user-select: none;-ms-user-select: none;user-select: none;-webkit-transition: opacity 0.1s ease,  background-color 0.1s ease,  color 0.1s ease,  box-shadow 0.1s ease, background 0.1s ease;transition: opacity 0.1s ease,  background-color 0.1s ease,  color 0.1s ease,  box-shadow 0.1s ease, background 0.1s ease;-webkit-tap-highlight-color: transparent;margin: 0 .25em 0 0;border-radius: 0.28571429rem;text-transform: none;text-shadow: none;font-weight: bold;line-height: 1em;font-style: normal;text-align: center;text-decoration: none;}.dxWcyc > i {margin: 0 .42857143em 0 -.21428571em;}.dxWcyc {color: rgba(0, 0, 0, .6);background-color: #e7e7e7;}.dxWcyc:hover,.dxWcyc:focus,.dxWcyc:active {background-color: #d9d9d9;color: rgba(0, 0, 0, 8);}.dxWcyc {padding: 1em 1.5em;font-size: 1em;width: 100%;opacity: 1;pointer-events: ;;}
-/* sc-component-id: Header__Header-s10wde3a-0 */
+.jKslKa {cursor: pointer;display: inline-block;min-height: 1em;outline: none;border: none;vertical-align: baseline;box-shadow: 0px 0px 0px 1px transparent inset,  0px 0em 0px 0px rgba(0, 0, 0, 0.1) inset;-webkit-user-select: none;-moz-user-select: none;-ms-user-select: none;user-select: none;-webkit-transition: opacity 0.1s ease,  background-color 0.1s ease,  color 0.1s ease,  box-shadow 0.1s ease, background 0.1s ease;transition: opacity 0.1s ease,  background-color 0.1s ease,  color 0.1s ease,  box-shadow 0.1s ease, background 0.1s ease;-webkit-tap-highlight-color: transparent;margin: 0 .25em 0 0;border-radius: 0.28571429rem;text-transform: none;text-shadow: none;font-weight: bold;line-height: 1em;font-style: normal;text-align: center;text-decoration: none;}.jKslKa > i {margin: 0 .42857143em 0 -.21428571em;}.jKslKa {color: rgba(0, 0, 0, .6);background-color: #e7e7e7;}.jKslKa:hover,.jKslKa:focus,.jKslKa:active {background-color: #d9d9d9;color: rgba(0, 0, 0, 8);}.jKslKa {background-color: #fa6462;color: #fff;}.jKslKa:hover,.jKslKa:focus,.jKslKa:active {background-color: #ff4543;color: #fff;}.jKslKa {padding: 1.2em 2em;font-size: 1em;width: 100%;padding: .8em 1.2em;font-size: .95em;opacity: 1;pointer-events: ;;}
+.bIabCF {cursor: pointer;display: inline-block;min-height: 1em;outline: none;border: none;vertical-align: baseline;box-shadow: 0px 0px 0px 1px transparent inset,  0px 0em 0px 0px rgba(0, 0, 0, 0.1) inset;-webkit-user-select: none;-moz-user-select: none;-ms-user-select: none;user-select: none;-webkit-transition: opacity 0.1s ease,  background-color 0.1s ease,  color 0.1s ease,  box-shadow 0.1s ease, background 0.1s ease;transition: opacity 0.1s ease,  background-color 0.1s ease,  color 0.1s ease,  box-shadow 0.1s ease, background 0.1s ease;-webkit-tap-highlight-color: transparent;margin: 0 .25em 0 0;border-radius: 0;text-transform: none;text-shadow: none;font-weight: bold;line-height: 1em;font-style: normal;text-align: center;text-decoration: none;}.bIabCF > i {margin: 0 .42857143em 0 -.21428571em;}.bIabCF {color: rgba(0, 0, 0, .6);background-color: #e7e7e7;}.bIabCF:hover,.bIabCF:focus,.bIabCF:active {background-color: #d9d9d9;color: rgba(0, 0, 0, 8);}.bIabCF {background-color: #fa6462;color: #fff;}.bIabCF:hover,.bIabCF:focus,.bIabCF:active {background-color: #ff4543;color: #fff;}.bIabCF {padding: 1.2em 2em;font-size: 1.1em;width: 100%;opacity: 1;pointer-events: ;;}/* sc-component-id: Header__Header-s10wde3a-0 */
 
 .iVCTYT {width: 100vw;height: 58px;background-color: #ffffff;box-shadow: 0px 1px 2px 0px rgba(10, 10, 10, 0.1);display: -webkit-box;display: -webkit-flex;display: -ms-flexbox;display: flex;-webkit-align-items: center;-webkit-box-align: center;-ms-flex-align: center;align-items: center;z-index: 999;;;;}@media (min-width: 1080px) {.iVCTYT {height: 65px;}}
 /* sc-component-id: Divider__Divider-s16ihjfx-0 */
 
-.ilHpOi {border-top: 1px solid #efefef;margin: 1rem 0;height: 0;}
-/* sc-component-id: Container__Container-s1sxg7g4-0 */
+.hEIXJa {border-top: 1px solid transparent;margin: 1.5rem 0;height: 0;}
+
+.ilHpOi {border-top: 1px solid #efefef;margin: 1rem 0;height: 0;}/* sc-component-id: Container__Container-s1sxg7g4-0 */
 
 .jdgWcI {width: 100vw;margin: 0 auto;position: relative;padding: 0;}@media (min-width: 1080px) {.jdgWcI {width: 1080px;margin: 0 auto;}}
 /* sc-component-id: ProfileImg__ProfileImg-s1o99mme-0 */
 
-.fqdqdO {display: inline-block;background-image: url(resources/images/header/tumblbug-assets.imgix.net/assets/user-accountd986.png?s=08b1f9ecf24209994ac9b81900936c0e);width: 28px;height: 28px;background-size: cover;background-position: 50% 38%;border-radius: 50%;border: 1px solid #ddd;margin-right: 0;}@media (min-width: 1080px) {.fqdqdO {width: 38px;height: 38px;}}
-.jZXZDW {display: inline-block;background-image: url(resources/images/header/tumblbug-upi.imgix.net/fa7a2417-173e-4157-9a89-40e87af45dd5795a.png?ixlib=rb-1.1.0&amp;w=200&amp;h=200&amp;auto=format%2Ccompress&amp;fit=facearea&amp;facepad=2.0&amp;ch=Save-Data&amp;mask=ellipse&amp;s=d13414f84d18dbecb5bdb39f6a3d2a42);width: 25px;height: 25px;background-size: cover;background-position: 50% 38%;border-radius: 50%;border: 1px solid #ddd;margin-right: .5rem;}
+.fqdqdO {display: inline-block;background-image: url(https://tumblbug-assets.imgix.net/assets/user-account.png?s=08b1f9ecf24209994ac9b81900936c0e);width: 28px;height: 28px;background-size: cover;background-position: 50% 38%;border-radius: 50%;border: 1px solid #ddd;margin-right: 0;}@media (min-width: 1080px) {.fqdqdO {width: 38px;height: 38px;}}
 
-.dLvdGo {display: inline-block;background-image: url(resources/images/header/tumblbug-assets.imgix.net/assets/user-accountd986.png?s=08b1f9ecf24209994ac9b81900936c0e);width: 40px;height: 40px;background-size: cover;background-position: 50% 38%;border-radius: 50%;border: 1px solid #ddd;margin-right: 1rem;}
-
-.daPkde {display: inline-block;background-image: url(resources/images/header/tumblbug-upi.imgix.net/fa7a2417-173e-4157-9a89-40e87af45dd5795a.png?ixlib=rb-1.1.0&amp;w=200&amp;h=200&amp;auto=format%2Ccompress&amp;fit=facearea&amp;facepad=2.0&amp;ch=Save-Data&amp;mask=ellipse&amp;s=d13414f84d18dbecb5bdb39f6a3d2a42);width: 40px;height: 40px;background-size: cover;background-position: 50% 38%;border-radius: 50%;border: 1px solid #ddd;margin-right: 1rem;}
-/* sc-component-id: TumblbugLogo__TumblbugLogo-s9od1ls-0 */
+.cxPceO {display: inline-block;background-image: url(https://tumblbug-upi.imgix.net/535eaf7b935fbd93e6cd80f30c01d60ac19a6eca.jpg?ixlib=rb-1.1.0&w=200&h=200&auto=format%2Ccompress&fit=facearea&facepad=2.0&ch=Save-Data&mask=ellipse&s=e122afc3ddef523828c4139ebcde3d1f);width: 25px;height: 25px;background-size: cover;background-position: 50% 38%;border-radius: 50%;border: 1px solid #ddd;margin-right: .5rem;}
+.owWgL {display: inline-block;background-image: url(https://tumblbug-upi.imgix.net/535eaf7b935fbd93e6cd80f30c01d60ac19a6eca.jpg?ixlib=rb-1.1.0&w=200&h=200&auto=format%2Ccompress&fit=facearea&facepad=2.0&ch=Save-Data&mask=ellipse&s=e122afc3ddef523828c4139ebcde3d1f);width: 40px;height: 40px;background-size: cover;background-position: 50% 38%;border-radius: 50%;border: 1px solid #ddd;margin-right: 1rem;}
+.dLvdGo {display: inline-block;background-image: url(https://tumblbug-assets.imgix.net/assets/user-account.png?s=08b1f9ecf24209994ac9b81900936c0e);width: 40px;height: 40px;background-size: cover;background-position: 50% 38%;border-radius: 50%;border: 1px solid #ddd;margin-right: 1rem;}
+.dCYRcO {display: inline-block;background-image: url(https://tumblbug-upi.imgix.net/defaults/avatar_4.png?ixlib=rb-1.1.0&w=100&h=125&auto=format%2Ccompress&fit=facearea&facepad=2.0&ch=Save-Data&mask=ellipse&s=42d6a73cce8bef68b292dfff211dd7b0);width: 40px;height: 40px;background-size: cover;background-position: 50% 38%;border-radius: 50%;border: 1px solid #ddd;margin-right: 0;}
+.gWXOEy {display: inline-block;background-image: url(https://tumblbug-upi.imgix.net/defaults/avatar_8.png?ixlib=rb-1.1.0&w=100&h=125&auto=format%2Ccompress&fit=facearea&facepad=2.0&ch=Save-Data&mask=ellipse&s=e6f8d5758abf85aa0caf983fa50f73b9);width: 40px;height: 40px;background-size: cover;background-position: 50% 38%;border-radius: 50%;border: 1px solid #ddd;margin-right: 0;}
+.hvlbLm {display: inline-block;background-image: url(https://tumblbug-upi.imgix.net/8111a986a40ec9ad2b5ac0dba24ecd97b823e23f.png?ixlib=rb-1.1.0&w=100&h=125&auto=format%2Ccompress&fit=facearea&facepad=2.0&ch=Save-Data&mask=ellipse&s=703aeb8ee680252d25ca1f841a6d12a8);width: 40px;height: 40px;background-size: cover;background-position: 50% 38%;border-radius: 50%;border: 1px solid #ddd;margin-right: 0;}
+.cUvTIp {display: inline-block;background-image: url(https://tumblbug-upi.imgix.net/defaults/avatar_1.png?ixlib=rb-1.1.0&w=100&h=125&auto=format%2Ccompress&fit=facearea&facepad=2.0&ch=Save-Data&mask=ellipse&s=04ff38ed605d1b98dd97bed309eda58d);width: 40px;height: 40px;background-size: cover;background-position: 50% 38%;border-radius: 50%;border: 1px solid #ddd;margin-right: 0;}/* sc-component-id: TumblbugLogo__TumblbugLogo-s9od1ls-0 */
 
 .JUlEd {fill: #000000;width:  70px;height: 18.41px;}@media (min-width: 1080px) {.JUlEd {width: 85px;height: 22.36px;}}
 /* sc-component-id: SiteHeader__SiteHeaderWrapper-s1s56ls8-0 */
@@ -107,157 +116,170 @@
 .gqXDKx {display: -webkit-box;display: -webkit-flex;display: -ms-flexbox;display: flex;-webkit-align-items: center;-webkit-box-align: center;-ms-flex-align: center;align-items: center;position: relative;margin-left: 0.75rem;}
 /* sc-component-id: sc-keyframes-bYqief */
 @-webkit-keyframes bYqief {0%,  100% {opacity: 1;}50% {opacity: 0;}}@keyframes bYqief {0%,  100% {opacity: 1;}50% {opacity: 0;}}
-/* sc-component-id: FundingInformation__FundingInformation-s1sct7xv-0 */
+/* sc-component-id: HeroWidget__CurrentHeroContainer-s19x6dg8-0 */
 
-.lfgWGK {-webkit-order: 5;-ms-flex-order: 5;order: 5;padding: 1rem;margin: 0 0 .5rem 0;background-color: #fafafa;border: 1px solid #efefef;}@media (min-width: 1080px) {.lfgWGK {margin: 0 .5rem 1rem;padding: 1rem 1.5rem;}}
-/* sc-component-id: FundingInformation__FundingInformationInner-s1sct7xv-1 */
+.ikLgAw {position: relative;}
+/* sc-component-id: HeroWidget__PreviewButtonContainer-s19x6dg8-1 */
 
-.iJcLQj {font-size: 1rem;color: rgba(0,0,0,.8);}.iJcLQj > div {font-weight: 700;line-height: 1.5;margin-bottom: .5rem;}.iJcLQj > span {line-height: 1.5;font-size: 1rem;}
-/* sc-component-id: ProjectIntroduction__ProjectIntroductionBackground-c7b94s-0 */
+.iCczEI {position: absolute;left: 1rem;bottom: 1.5rem;}@media(min-width: 1080px) {.iCczEI {right: 1rem;bottom: 1.5rem;}}
+/* sc-component-id: HeroWidget__HeroItem-s19x6dg8-2 */
 
-.hsuyOO {background-color: #fff;width: 100%;padding-bottom: 1rem;overflow-x: hidden;}@media (min-width: 1080px) {.hsuyOO {padding-bottom: 3rem;}}
-/* sc-component-id: ProjectIntroduction__ProjectIntroductionWrapper-c7b94s-1 */
+.cyOybj {position: relative;width: 100%;height: auto;margin-bottom: 1rem;}.cyOybj a {color: #fff;cursor: pointer;}.cyOybj a:hover {color: #fff;}
+/* sc-component-id: HeroWidget__HeroImg-s19x6dg8-3 */
 
-.isebXd {display: -webkit-box;display: -webkit-flex;display: -ms-flexbox;display: flex;-webkit-flex-wrap: wrap;-ms-flex-wrap: wrap;flex-wrap: wrap;}
-/* sc-component-id: ProjectIntroduction__ProjectOutline-c7b94s-2 */
+.iuosEt {background-image: url(https://tumblbug-assets.imgix.net/heroes/achimdal.jpg?w=1800&h=600&fit=crop&q=60);background-size: cover;background-position: center center;width: 100%;height: 280px;-webkit-transition: all 0.5s ease;transition: all 0.5s ease;position: relative;}.iuosEt:before {content: '';position: absolute;top: 0;right: 0;bottom: 0;left: 0;background-color: rgba(0, 0, 0, 0.05);}@media(min-width: 1080px) {.iuosEt {width: 100%;height: 400px;}.iuosEt:before {background-color: rgba(0, 0, 0, 0.05);}}@media(min-width: 1400px) {.iuosEt {height: 450px;}}
 
-.gKkJpB {width: 100%;height: auto;-webkit-order: 2;-ms-flex-order: 2;order: 2;display: -webkit-box;display: -webkit-flex;display: -ms-flexbox;display: flex;-webkit-align-items: flex-start;-webkit-box-align: flex-start;-ms-flex-align: flex-start;align-items: flex-start;}@media (min-width: 1080px) {.gKkJpB {height: 280px;padding-bottom: 0;-webkit-align-items: center;-webkit-box-align: center;-ms-flex-align: center;align-items: center;-webkit-order: 1;-ms-flex-order: 1;order: 1;}}
-/* sc-component-id: ProjectIntroduction__ProjectOutlineInner-c7b94s-3 */
+.gXZEJk {background-image: url(https://tumblbug-assets.imgix.net/heroes/podulblanket.jpg?w=1800&h=600&fit=crop&q=60);background-size: cover;background-position: center center;width: 100%;height: 280px;-webkit-transition: all 0.5s ease;transition: all 0.5s ease;position: relative;}.gXZEJk:before {content: '';position: absolute;top: 0;right: 0;bottom: 0;left: 0;background-color: rgba(0, 0, 0, 0.05);}@media(min-width: 1080px) {.gXZEJk {width: 100%;height: 400px;}.gXZEJk:before {background-color: rgba(0, 0, 0, 0.05);}}@media(min-width: 1400px) {.gXZEJk {height: 450px;}}
 
-.yNdyg {display: block;text-align: left;margin: 0;padding: 1.75rem 1rem;}@media (min-width: 1080px) {.yNdyg {text-align: center;margin: 0 auto;padding: 1rem;}}
-/* sc-component-id: ProjectIntroduction__ProjectCategory-c7b94s-4 */
+.kBDldE {background-image: url(https://tumblbug-assets.imgix.net/heroes/space_pirate_5.jpg?w=1800&h=600&fit=crop&q=60);background-size: cover;background-position: center center;width: 100%;height: 280px;-webkit-transition: all 0.5s ease;transition: all 0.5s ease;position: relative;}.kBDldE:before {content: '';position: absolute;top: 0;right: 0;bottom: 0;left: 0;background-color: rgba(0, 0, 0, 0.05);}@media(min-width: 1080px) {.kBDldE {width: 100%;height: 400px;}.kBDldE:before {background-color: rgba(0, 0, 0, 0.05);}}@media(min-width: 1400px) {.kBDldE {height: 450px;}}
 
-.boFKej {font-size: 0.9rem;font-weight: 600;padding: 0.6rem;color: #757575;background-color: #fafafa;border: 1px solid #efefef;border-radius: 2px;}
-/* sc-component-id: ProjectIntroduction__ProjectTitle-c7b94s-5 */
+.brhEhF {background-image: url(https://tumblbug-assets.imgix.net/heroes/lsm_88.jpg?w=1800&h=600&fit=crop&q=60);background-size: cover;background-position: center center;width: 100%;height: 280px;-webkit-transition: all 0.5s ease;transition: all 0.5s ease;position: relative;}.brhEhF:before {content: '';position: absolute;top: 0;right: 0;bottom: 0;left: 0;background-color: rgba(0, 0, 0, 0.05);}@media(min-width: 1080px) {.brhEhF {width: 100%;height: 400px;}.brhEhF:before {background-color: rgba(0, 0, 0, 0.05);}}@media(min-width: 1400px) {.brhEhF {height: 450px;}}
+/* sc-component-id: HeroWidget__HeroContainer-s19x6dg8-4 */
 
-.cyqGTD {font-size: 1.6rem;line-height: 1.5;margin: 1.2rem 0;word-break: keep-all;}@media (min-width: 1080px) {.cyqGTD {font-size: 2.8rem;margin: 1.5rem 0 1rem;}}
-/* sc-component-id: ProjectIntroduction__Creators-c7b94s-6 */
+.fNAOQh {position: relative;max-width: 1080px;margin: 0 auto;height: 100%;}
+/* sc-component-id: HeroWidget__HeroTextWrapper-s19x6dg8-5 */
 
-.guVzeB {position: relative;display: -webkit-box;display: -webkit-flex;display: -ms-flexbox;display: flex;-webkit-align-items: center;-webkit-box-align: center;-ms-flex-align: center;align-items: center;}@media (min-width: 1080px) {.guVzeB {-webkit-box-pack: center;-webkit-justify-content: center;-ms-flex-pack: center;justify-content: center;}}
-/* sc-component-id: ProjectIntroduction__CreatorName-c7b94s-7 */
+.iToKBr {position: absolute;bottom: 0;left: 0;font-weight: bolder;margin-bottom: 4rem;padding: 2rem 1rem;text-shadow: 0 2px 50px 5px rgba(0, 0, 0, 0.2);}@media(min-width: 1080px) {.iToKBr {margin-bottom: 0.75rem;}}
+/* sc-component-id: HeroWidget__HeroTitle-s19x6dg8-6 */
 
-.gDTPbS {font-size: 1rem;font-weight: 600;color: inherit;cursor: pointer;}.gDTPbS:hover {color: #757575;cursor: pointer;}
-/* sc-component-id: ProjectIntroduction__ProjectIntroductionMainColumn-c7b94s-8 */
+.jfnFWI {display: block;font-size: 2.4rem;line-height: 1.3;word-spacing: -1px;word-break: keep-all;margin: 0 0 0.25em;width: 10em;padding-bottom: 0.5rem;}@media (max-width: 320px) {.jfnFWI {font-size: 2rem;}}@media(min-width: 1080px) {.jfnFWI {font-size: 3.3rem;margin: 0 0 0.3em;}}
+/* sc-component-id: HeroWidget__HeroDescription-s19x6dg8-7 */
 
-.iTDPPg {width: 100%;height: auto;margin: 0;-webkit-order: 1;-ms-flex-order: 1;order: 1;}@media (min-width: 1080px) {.iTDPPg {width: 650px;height: auto;margin: 0 1rem;-webkit-order: 2;-ms-flex-order: 2;order: 2;}}
-/* sc-component-id: ProjectIntroduction__ProjectCoverImageFigure-c7b94s-9 */
+.bzlVdT {font-size: 1.1rem;line-height: 1;}@media(min-width: 1080px) {.bzlVdT {font-size: 1.5rem;}}
+/* sc-component-id: HeroWidget__HeroPreviews-s19x6dg8-8 */
 
-.dIHovk {background-color: #000;display: block;height: 0;margin: 0;overflow: hidden;padding: 0 0 75%;position: relative;}
-/* sc-component-id: ProjectIntroduction__ProjectCoverVideo-c7b94s-10 */
+.dUSIGe {float: left;}@media(min-width: 1080px) {.dUSIGe {float: right;}}
+/* sc-component-id: HeroWidget__HeroPreviewButton-s19x6dg8-9 */
 
-.qtLrt {height: 100%;width: 100%;top: 0;left: 0;margin: 0;padding: 0;position: absolute;}
-/* sc-component-id: ProjectIntroduction__ProjectIntroductionSubColumn-c7b94s-12 */
+.fhXjWk {cursor: pointer;display: inline-block;position: relative;overflow: hidden;margin: 0 5px 0 0;width: 40px;height: 40px;border-radius: 100%;-webkit-transition: all 0.2s;transition: all 0.2s;-webkit-mask-image: -webkit-radial-gradient(white, black);}@media(min-width: 1080px) {.fhXjWk {margin: 0 0 0 10px;width: 50px;height: 50px;}.fhXjWk:hover {-webkit-transform: scale(1.1);-ms-transform: scale(1.1);transform: scale(1.1);}}
+/* sc-component-id: HeroWidget__HeroPreviewImage-s19x6dg8-10 */
 
-.gujNFh {width: 100%;-webkit-order: 3;-ms-flex-order: 3;order: 3;}@media (min-width: 1080px) {.gujNFh {width: 360px;-webkit-order: 3;-ms-flex-order: 3;order: 3;margin: 0 1rem;}}
-/* sc-component-id: ProjectIntroduction__FundingStatus-c7b94s-13 */
+.duKZDT {position: absolute;top: 0;left: -140%;right: -50%;bottom: 0;width: auto;height: 100%;margin: auto;}
+/* sc-component-id: Carousel__Link-fwcx6b-0 */
 
-.eIDmsW {width: 100%;-webkit-order: 4;-ms-flex-order: 4;order: 4;display: -webkit-box;display: -webkit-flex;display: -ms-flexbox;display: flex;-webkit-box-pack: space-between;-webkit-justify-content: space-between;-ms-flex-pack: space-between;justify-content: space-between;padding: 0.5rem 1rem 1.5rem;}@media (min-width: 1080px) {.eIDmsW {height: 280px;width: 100%;display: block;margin: 0 0 2rem 0.5rem;padding: 0;}}
-/* sc-component-id: ProjectIntroduction__Metric-c7b94s-14 */
+.ervGwJ {color: inherit;}.ervGwJ i {opacity: .1;padding-left: .2rem;}.ervGwJ:hover {color: inherit;}.ervGwJ:hover i {opacity: 1;padding-left: 1rem;-webkit-transition: all .2s;transition: all .2s;}
+/* sc-component-id: Carousel__CarouselHeader-fwcx6b-1 */
 
-.leXkjY {margin: 0;}@media (min-width: 1080px) {.leXkjY {margin: 0 0 1.75rem;}}
-/* sc-component-id: ProjectIntroduction__StatusTitle-c7b94s-15 */
+.iSHaZi {margin: 0 -1.5rem 0 0;padding: 0 1rem;display: -webkit-box;display: -webkit-flex;display: -ms-flexbox;display: flex;-webkit-align-items: center;-webkit-box-align: center;-ms-flex-align: center;align-items: center;-webkit-box-pack: space-between;-webkit-justify-content: space-between;-ms-flex-pack: space-between;justify-content: space-between;}
+/* sc-component-id: Carousel__CarouselTitle-fwcx6b-2 */
 
-.htCDgL {font-size: 0.9rem;margin-bottom: 0.4rem;}@media (min-width: 1080px) {.htCDgL {font-size: 1rem;margin-bottom: 1rem;}}
-/* sc-component-id: ProjectIntroduction__StatusValue-c7b94s-16 */
+.jtYVGd {color: black;font-weight: bold;font-size: 1rem;cursor: pointer;}.jtYVGd:hover {color: black;}
+/* sc-component-id: Carousel__CarouselButtons-fwcx6b-3 */
 
-.bvKOwU {font-size: 1.6rem;letter-spacing: 0.5px;}@media (max-width: 320px) {.bvKOwU {font-size: 1.25rem;}}@media (min-width: 1080px) {.bvKOwU {font-size: 2.75rem;}}
-/* sc-component-id: ProjectIntroduction__FundingRate-c7b94s-17 */
+.hgvQtm {float: right;text-align: right;}
+/* sc-component-id: Carousel__CarouselContents-fwcx6b-4 */
 
-.kIYDgq {display: inline;font-size: 0.9rem;margin-left: 7px;font-weight: bolder;}@media (max-width: 320px) {.kIYDgq {display: none;}}@media (min-width: 1080px) {.kIYDgq {font-size: 1.3rem;margin-left: 10px;}}
-/* sc-component-id: ProjectIntroduction__Small-c7b94s-18 */
+.iEZvlH {display: -webkit-box;display: -webkit-flex;display: -ms-flexbox;display: flex;margin: 0 -1rem;padding: 0 1rem;-webkit-box-pack: center;-webkit-justify-content: center;-ms-flex-pack: center;justify-content: center;-webkit-flex-direction: column;-ms-flex-direction: column;flex-direction: column;}@media (min-width: 1080px) {.iEZvlH {-webkit-flex-direction: row;-ms-flex-direction: row;flex-direction: row;}}
+/* sc-component-id: Carousel__Column-fwcx6b-5 */
 
-.ihuRTA {font-size: 0.85rem;margin-left: 0.25rem;}@media (min-width: 1080px) {.ihuRTA {font-size: 1rem;}}
-/* sc-component-id: ProjectIntroduction__ProjectButtons-c7b94s-19 */
+.hEilqP {width: 100%;margin: 1rem;}@media (min-width: 1080px) {.hEilqP {-webkit-flex: 1 0 20%;-ms-flex: 1 0 20%;flex: 1 0 20%;}}
+/* sc-component-id: ProjectItem__ProjectItemCard-a1ypmo-0 */
 
-.kwAiqA {-webkit-order: 5;-ms-flex-order: 5;order: 5;width: 100%;background-color: #fff;}
-/* sc-component-id: ProjectIntroduction__ProjectButtonsInner-c7b94s-20 */
+.hFAREh {cursor: pointer;display: -webkit-box;display: -webkit-flex;display: -ms-flexbox;display: flex;-webkit-flex-direction: row;-ms-flex-direction: row;flex-direction: row;position: relative;width: 100%;background-color: #ffffff;min-height: 105px;height: auto;padding-bottom: 0.75rem;border-bottom: 1px solid rgba(0, 0, 0, 0.05);}@media (max-width: 320px) {.hFAREh {min-height: 90px;height: auto;}}@media (min-width: 1080px) {.hFAREh {-webkit-flex-direction: column;-ms-flex-direction: column;flex-direction: column;height: 100%;padding-bottom: 0;border: 1px solid rgba(0, 0, 0, 0.05);border-radius: 2px !important;box-shadow: 0 1px 1px rgba(0, 0, 0, 0.1);-webkit-transition: box-shadow 0.2s ease;transition: box-shadow 0.2s ease;}.hFAREh:hover {box-shadow: 0 4px 50px -3px rgba(0, 0, 0, 0.1);}}
+/* sc-component-id: ProjectItem__ProjectTextWrapper-a1ypmo-1 */
 
-.bBsoai {display: -webkit-box;display: -webkit-flex;display: -ms-flexbox;display: flex;-webkit-align-items: center;-webkit-box-align: center;-ms-flex-align: center;align-items: center;-webkit-box-pack: space-between;-webkit-justify-content: space-between;-ms-flex-pack: space-between;justify-content: space-between;}
-/* sc-component-id: ProjectIntroduction__PrimaryButton-c7b94s-21 */
+.fOsIlY {-webkit-order: 2;-ms-flex-order: 2;order: 2;color: black;font-size: 0.9rem;line-height: 1.6;max-width: 60%;padding-bottom: 0;}@media (min-width: 1080px) {.fOsIlY {max-width: 100%;padding: 1rem 1.2rem 1rem 1.2rem;}}
+/* sc-component-id: ProjectItem__ProjectTitle-a1ypmo-2 */
 
-.fjkRCm {width: 80%;padding: 0.5rem 0.25rem 0.5rem 0.5rem;-webkit-order: 1;-ms-flex-order: 1;order: 1;}
-/* sc-component-id: ProjectIntroduction__SecondaryButton-c7b94s-22 */
+.gEZuLR {color: #3c3737;font-size: 1.1rem;font-weight: bold;margin-bottom: 0;line-height: 1.5;word-break: keep-all;word-wrap: break-word;}@media (max-width: 320px) {.gEZuLR {font-size: 1rem;line-height: 1.4;word-break: break-all;margin-bottom: 0.3rem;}}@media (min-width: 1080px) {.gEZuLR {font-size: 1rem;word-spacing: -1px;}}@media (max-width: 1079px) {.gEZuLR {overflow: hidden;text-overflow: ellipsis;white-space: nowrap;}}
+/* sc-component-id: ProjectItem__CreatorName-a1ypmo-3 */
 
-.cYmhAj {width: 20%;padding: 0.5rem 0.5rem 0.5rem 0.25rem;-webkit-order: 2;-ms-flex-order: 2;order: 2;}
-/* sc-component-id: ContentsNavigation__NavItem-s6dhfrc-0 */
+.gUQbvW {font-size: 0.8rem;margin-bottom: 0;color: #3c3737;}
+/* sc-component-id: ProjectItem__FundingRate-a1ypmo-4 */
 
-.gEWplf {display: -webkit-box;display: -webkit-flex;display: -ms-flexbox;display: flex;-webkit-align-items: center;-webkit-box-align: center;-ms-flex-align: center;align-items: center;-webkit-box-pack: center;-webkit-justify-content: center;-ms-flex-pack: center;justify-content: center;-webkit-flex-grow: 0;-ms-flex-grow: 0;flex-grow: 0;-webkit-flex-shrink: 0;-ms-flex-shrink: 0;flex-shrink: 0;padding: 0.5rem 1rem;line-height: 1.5;font-size: 1rem;font-weight: bold;color: rgba(0,0,0,.4);cursor: pointer;}.gEWplf:hover {color: rgba(0,0,0,.9);}
-/* sc-component-id: ContentsNavigation__ProjectContentsNavigation-s6dhfrc-1 */
+.bpoHzD {margin-left: 0.2rem;font-size: 0.6rem;font-weight: 700;color: #3c3737;}
+/* sc-component-id: ProjectItem__PercentageLine-a1ypmo-5 */
 
-.lblHJx {width: 100vw;height: 48px;padding: 0;background-color: #fff;box-shadow: 0 2px 3px rgba(0,0,0, 0.1);border-top: 1px solid #efefef;display: -webkit-box;display: -webkit-flex;display: -ms-flexbox;display: flex;-webkit-align-items: stretch;-webkit-box-align: stretch;-ms-flex-align: stretch;align-items: stretch;position: relative;z-index: 10;}@media (min-width: 1080px) {.lblHJx {height: 52px;padding: 0 1rem;}}
-/* sc-component-id: ContentsNavigation__ProjectContentsNavigationInner-s6dhfrc-2 */
+.cWrfUF {max-width: 100%;height: 2px;font-size: 0;}@media (max-width: 1080px) {.cWrfUF {padding: 0 1rem 0 0.6rem;}}
+/* sc-component-id: ProjectItem__ProjectCoverimage-a1ypmo-6 */
 
-.eeeApW {width: 100vw;height: 100%;margin: 0 auto;padding: 0;}@media (min-width: 1080px) {.eeeApW {width: 1080px;margin: 0 auto;}}
-/* sc-component-id: ContentsNavigation__NavLeft-s6dhfrc-3 */
+.bGqbmB {min-width: 120px;width: 120px;height: 90px;margin-right: 1rem;background-color: #efefef;-webkit-transition: background-color 0.2s ease;transition: background-color 0.2s ease;}@media (max-width: 320px) {.bGqbmB {margin-right: 0;min-width: 95px;width: 95px;height: 65px;}}@media (min-width: 1080px) {.bGqbmB {width: 240px;height: 180px;border-radius: 2px 2px 0 0;margin-right: 0;}}@media (max-width: 1080px) {.bGqbmB {margin-right: 0;position: relative;top: 0;bottom: 0;margin: auto 0;left: 0;}}
+/* sc-component-id: ProjectItem__FundingInfo-a1ypmo-7 */
 
-.eSsILz {max-width: 100%;height: 100%;display: -webkit-box;display: -webkit-flex;display: -ms-flexbox;display: flex;-webkit-box-pack: start;-webkit-justify-content: flex-start;-ms-flex-pack: start;justify-content: flex-start;white-space: nowrap;-webkit-align-items: stretch;-webkit-box-align: stretch;-ms-flex-align: stretch;align-items: stretch;float: left;margin: 0 1rem;overflow: auto;}
-/* sc-component-id: ContentsNavigation__CommunityPostAmount-s6dhfrc-6 */
+.beYdFz {margin-top: 0.4rem;display: -webkit-box;display: -webkit-flex;display: -ms-flexbox;display: flex;-webkit-box-pack: space-between;-webkit-justify-content: space-between;-ms-flex-pack: space-between;justify-content: space-between;-webkit-align-items: center;-webkit-box-align: center;-ms-flex-align: center;align-items: center;}@media (max-width: 1080px) {.beYdFz {padding: 0 1rem 0 0.6rem;}}
+/* sc-component-id: ProjectItem__FundingMoney-a1ypmo-8 */
 
-.bReGoj {font-size: .8rem;font-weight: bold;margin: -.2rem -.1rem 0 .2rem;}
-/* sc-component-id: Card__Card-s1i1esb8-0 */
+.ddAStM {font-size: 0.8rem;font-weight: 700;color: #3c3737;}
+/* sc-component-id: ProjectItem__FundingTitle-a1ypmo-9 */
 
-.bJXRvz {width: 100%;background-color: #fff;box-shadow: 0 1px 2px 0 rgba(0,0,0,.1);-webkit-transition: box-shadow .2s ease-in-out;transition: box-shadow .2s ease-in-out;-webkit-tap-highlight-color:transparent;}
-/* sc-component-id: CreatorCard__CreatorCardInner-yeytpy-0 */
+.kCGzYC {height: 60px;}@media (max-width: 1080px) {.kCGzYC {padding: 0 1rem 0 0.6rem;}}@media (max-width: 320px) {.kCGzYC {height: 40px;}}
+/* sc-component-id: ProjectStartBanner__ProjectStartBannerWrapper-nl10hp-0 */
 
-.cBbkfc {padding: 1.5rem;}
-/* sc-component-id: CreatorCard__CreatorCardLabel-yeytpy-1 */
+.hOKtVI {margin: 2rem 0 0 0;}@media (min-width: 1080px) {.hOKtVI {margin: 4rem 0 0 0;}}
+/* sc-component-id: ProjectStartBanner__ProjectStartBanner-nl10hp-1 */
 
-.fuCNpE {font-weight: bolder;margin-bottom: 1.25rem;}
-/* sc-component-id: CreatorCard__CreatorProfile-yeytpy-2 */
+.bzwbvF {position: relative;display: -webkit-box;display: -webkit-flex;display: -ms-flexbox;display: flex;-webkit-flex-direction: column;-ms-flex-direction: column;flex-direction: column;-webkit-box-pack: center;-webkit-justify-content: center;-ms-flex-pack: center;justify-content: center;-webkit-align-items: center;-webkit-box-align: center;-ms-flex-align: center;align-items: center;width: 100%;height: 100px;color: #fff;font-size: 0.9rem;cursor: pointer;background: #9945d1;background: -moz-linear-gradient(-45deg, #9945d1 0%, #694ed8 60%, #369ac9 100%);background: -webkit-linear-gradient(-45deg, #9945d1 0%, #694ed8 60%, #369ac9 100%);background: linear-gradient(135deg, #9945d1 0%, #694ed8 60%, #369ac9 100%);filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#9945d1',endColorstr='#369ac9',GradientType=1);}@media (min-width: 1080px) {.bzwbvF {height: 100px;font-size: 1rem;}}
+/* sc-component-id: ProjectStartBanner__BannerBackground-nl10hp-2 */
 
-.eYscdN {display: -webkit-box;display: -webkit-flex;display: -ms-flexbox;display: flex;-webkit-align-items: center;-webkit-box-align: center;-ms-flex-align: center;align-items: center;margin-bottom: 1rem;}
-/* sc-component-id: CreatorCard__CreatorName-yeytpy-3 */
+.bmtKYw {position: absolute;top: 0;left: 0;bottom: 0;width: 100%;height: 100%;background-image: url('https://tumblbug-assets.imgix.net/assets/ProjectStart/projectstart-banner-background.png');background-size: cover;background-position: center center;opacity: 0.5;}
+/* sc-component-id: ProjectStartBanner__Title-nl10hp-3 */
 
-.fVfxlF {color: black;font-weight: bolder;}.fVfxlF:hover {color: black;cursor: pointer;}@media (min-width: 1080px) {.fVfxlF:hover {color: #757575;cursor: pointer;}}
-/* sc-component-id: CreatorCard__CreatorBiography-yeytpy-4 */
+.qHzrD {display: -webkit-box;display: -webkit-flex;display: -ms-flexbox;display: flex;-webkit-flex-wrap: wrap;-ms-flex-wrap: wrap;flex-wrap: wrap;-webkit-box-pack: center;-webkit-justify-content: center;-ms-flex-pack: center;justify-content: center;font-size: 1.5rem;margin-top: 0;margin-bottom: 0.75rem;line-height: 1.2;}@media (min-width: 1080px) {.qHzrD {font-size: 1.75rem;}}
+/* sc-component-id: ProjectStartBanner__Description-nl10hp-4 */
 
-.dHxdxH {word-break: keep-all;line-height: 1.75;}
-/* sc-component-id: CreatorCard__CreatorStats-yeytpy-5 */
+.cSKjGh {display: -webkit-box;display: -webkit-flex;display: -ms-flexbox;display: flex;-webkit-flex-wrap: wrap;-ms-flex-wrap: wrap;flex-wrap: wrap;-webkit-box-pack: center;-webkit-justify-content: center;-ms-flex-pack: center;justify-content: center;font-weight: bold;line-height: 1.5;}
+/* sc-component-id: CollectionBanners__CollectionBannersWrapper-m0b5b9-0 */
 
-.iBGoJt {color: #757575;font-size: .9rem;line-height: 1.7;}.iBGoJt > div {margin-bottom: .25rem;}
-/* sc-component-id: CreatorCard__CreatorContactButton-yeytpy-6 */
+.cEnTNJ {max-width: 1080px;margin: 0 auto;margin-top: 0.5rem;display: -webkit-box;display: -webkit-flex;display: -ms-flexbox;display: flex;-webkit-flex-wrap: wrap;-ms-flex-wrap: wrap;flex-wrap: wrap;}@media (min-width: 1080px) {.cEnTNJ {padding: 0 0.5rem;}}
+/* sc-component-id: CollectionBanners__CollectionBannerColumn-m0b5b9-1 */
 
-.khYIRi {margin-top: 1rem;width: 100%}
-/* sc-component-id: ProjectPage__ProjectContentsBackground-b1letw-0 */
+.nuOjL {-webkit-flex-basis: 50%;-ms-flex-basis: 50%;flex-basis: 50%;-webkit-flex-grow: 1;-ms-flex-grow: 1;flex-grow: 1;-webkit-flex-shrink: 0;-ms-flex-shrink: 0;flex-shrink: 0;min-width: 320px;}@media (min-width: 900px) {.nuOjL {min-width: 420px;}}
+/* sc-component-id: CollectionBanners__CollectionBanner-m0b5b9-2 */
 
-.cNWmvR {background-color: transparent;width: 100%;padding-bottom: 60px;}
-/* sc-component-id: ProjectPage__ProjectContents-b1letw-1 */
+.jftTar {height: 90px;cursor: pointer;background-color: #19378a;background-image: url(https://tumblbug-assets.imgix.net/banners/banner-jfac2018-3.png?w=2000&h=250);background-size: cover;background-repeat: no-repeat;background-position: 50% 50%;}@media (max-width: 480px) {.jftTar {height: 95px;}}@media (min-width: 900px) {.jftTar {height: 100px;}}@media (min-width: 1080px) {.jftTar {margin: 0 0.5em 1rem 0.5em;border-radius: 3px;}}
 
-.jPEdlL {display: -webkit-box;display: -webkit-flex;display: -ms-flexbox;display: flex;-webkit-flex-wrap: wrap;-ms-flex-wrap: wrap;flex-wrap: wrap;margin-top: .5rem;}@media (min-width: 1080px) {.jPEdlL {margin-top: 1rem;}}
-/* sc-component-id: ProjectPage__ProjectContentsMainColumn-b1letw-2 */
+.ykGDF {height: 90px;cursor: pointer;background-color: #e59b42;background-image: url(https://tumblbug-assets.imgix.net/banners/banner-bookstores2018.png?w=2000&h=250);background-size: cover;background-repeat: no-repeat;background-position: 50% 50%;}@media (max-width: 480px) {.ykGDF {height: 95px;}}@media (min-width: 900px) {.ykGDF {height: 100px;}}@media (min-width: 1080px) {.ykGDF {margin: 0 0.5em 1rem 0.5em;border-radius: 3px;}}
+/* sc-component-id: CollectionBanners__CollectionBannerTitle-m0b5b9-3 */
 
-.kJUlye {-webkit-order: 1;-ms-flex-order: 1;order: 1;width: 100%;margin: .25rem 0 .75rem;}@media (min-width: 1080px) {.kJUlye {width: 670px;margin: 0 .5rem 0 1rem;}}
-/* sc-component-id: ProjectPage__ProjectContentsSubColumn-b1letw-3 */
+.bxRvdW {margin: 2rem -1.5rem 1rem 0;padding: 0 1rem;color: black;font-weight: bold;font-size: 1rem;}
+/* sc-component-id: CollectionBanners__CollectionLink-m0b5b9-4 */
 
-.ceunQL {-webkit-order: 2;-ms-flex-order: 2;order: 2;width: 100%;margin: .25rem 0;}@media (max-width: 1079px) {.ceunQL {display: none;;}}@media (min-width: 1080px) {.ceunQL {width: 360px;margin: 0 1rem 0 .5rem;}}
-/* sc-component-id: ProjectPage__MainColumnInner-b1letw-4 */
+.fmLEMz {diplay: relative;}
+/* sc-component-id: CollectionBanners__SROnlyLabel-m0b5b9-5 */
 
-.giKgfw {width: 100%;}@media (min-width: 1080px) {.giKgfw {min-height: 500px;}}
-/* sc-component-id: ProjectPage__SubColumnInner-b1letw-5 */
+.gEQpFE {border: 0;clip: rect(0 0 0 0);height: 1px;margin: -1px;overflow: hidden;padding: 0;position: absolute;width: 1px;}
+/* sc-component-id: FrontPage__HomeWrapper-s1kthteb-0 */
 
-.deZznN {width: 100%;}@media (min-width: 1080px) {.deZznN {min-height: 500px;}}
+.hEFTbE {overflow-x: hidden;background-color: #fff;border-bottom: 1px solid #efefef;}@media (min-width: 1080px;) {.hEFTbE {padding-bottom: 5rem;}}
 /* sc-component-id: sc-keyframes-fzoeFq */
 @-webkit-keyframes fzoeFq {0%,  100% {-webkit-transform: translateX(0);-ms-transform: translateX(0);transform: translateX(0);}50% {-webkit-transform: translateX(4px);-ms-transform: translateX(4px);transform: translateX(4px);}}@keyframes fzoeFq {0%,  100% {-webkit-transform: translateX(0);-ms-transform: translateX(0);transform: translateX(0);}50% {-webkit-transform: translateX(4px);-ms-transform: translateX(4px);transform: translateX(4px);}}
-/* sc-component-id: CommunityNewPost__CommunityNewPostWidget-s1s3p320-0 */
 
-.hIkOXr {padding: 1.2rem 1.5rem;display: -webkit-box;display: -webkit-flex;display: -ms-flexbox;display: flex;-webkit-align-items: center;-webkit-box-align: center;-ms-flex-align: center;align-items: center;-webkit-box-pack: space-between;-webkit-justify-content: space-between;-ms-flex-pack: space-between;justify-content: space-between;color: #757575;font-size: 1.1rem;font-weight: bold;}.hIkOXr > i {-webkit-animation:fzoeFq 1s infinite;animation:fzoeFq 1s infinite;}
-/* sc-component-id: CommunityNewPost__LeftColumn-s1s3p320-1 */
 
-.fQMvgC {display: -webkit-box;display: -webkit-flex;display: -ms-flexbox;display: flex;-webkit-align-items: center;-webkit-box-align: center;-ms-flex-align: center;align-items: center;}
-/* sc-component-id: PostFilter__FilterWrapper-vri3wd-0 */
-
-.gjgpkL {width: 100%;margin: 2rem .5rem 1rem;display: -webkit-box;display: -webkit-flex;display: -ms-flexbox;display: flex;}@media (min-width: 1080px) {.gjgpkL {margin: 2rem 0 1rem;}}
-/* sc-component-id: PostFilter__FilterButton-vri3wd-1 */
-
-.gDEKBn {color: #757575;-webkit-transition: all .2s;transition: all .2s;display: inline-block;cursor: pointer;font-weight: 700;padding: .3em 1em;font-size: .95em;border-radius: 0.28571429rem;}.gDEKBn:hover {color: rgba(0,0,0,.7);-webkit-transition: color .2s;transition: color .2s;}.gDEKBn {color: rgba(0,0,0,.7);-webkit-transition: all .2s;transition: all .2s;background-color: #d9d9d9;}
-
-.bvwsV {color: #757575;-webkit-transition: all .2s;transition: all .2s;display: inline-block;cursor: pointer;font-weight: 700;padding: .3em 1em;font-size: .95em;border-radius: 0.28571429rem;}.bvwsV:hover {color: rgba(0,0,0,.7);-webkit-transition: color .2s;transition: color .2s;}
-/* sc-component-id: Community__Posts-s14atsnj-0 */
-
-.umGxa {margin: 1rem 0;}
-/* sc-component-id: Community__CommunityEmptyState-s14atsnj-1 */
-
-.gByEjI {color: rgba(0, 0, 0, .1);font-weight: bold;line-height: 1.5;font-size: 2rem;text-align: center;padding: 2em 0;}
+/* 커뮤니티 게시글 스타일 */
+.jghVVw {
+    color: #000;
+    font-size: 1.1rem;
+    font-weight: bold;
+    max-width: 150px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+.bUjrcg {
+    margin-left: 1rem;
+    color: #757575;
+    font-size: .9rem;
+}
+.buEHkh {
+    display: inherit;
+    position: relative;
+    width: 100%;
+}
+.iLAsKd {
+    padding: 1.5rem;
+}
+.jgodLB {
+    padding: 1rem 1.5rem;
+    border-top: 1px solid #efefef;
+    color: #000;
+    font-weight: bold;
+}
+.inline{
+	display:inline-block;
+}
+.eUjMK {
+    margin: 0 0 1rem;
+}
 
 </style>
     </head>
@@ -265,7 +287,6 @@
     	<header>
 			<%@ include file="../common/header.jsp" %>
 		</header>
-		<section>
 			<div data-reactid="34">
 				<!-- react-empty: 35 -->
 				<div
@@ -447,120 +468,533 @@
 						</div>
 					</nav>
 				</div>
-				<div class="ProjectPage__ProjectContentsBackground-b1letw-0 cNWmvR"
-					data-reactid="102">
-					<div class="Container__Container-s1sxg7g4-0 jdgWcI"
-						data-reactid="103">
-						<div class="ProjectPage__ProjectContents-b1letw-1 jPEdlL"
-							data-reactid="104">
-							<div
-								class="ProjectPage__ProjectContentsMainColumn-b1letw-2 kJUlye"
-								data-reactid="105">
-								<div class="ProjectPage__MainColumnInner-b1letw-4 giKgfw"
-									data-reactid="106">
-									<div data-reactid="107">
-										<a href="../login87df.html?redirection=/doubledown/community"
-											data-reactid="108"><div
-												class="Card__Card-s1i1esb8-0 bJXRvz" data-reactid="109">
-												<div
-													class="CommunityNewPost__CommunityNewPostWidget-s1s3p320-0 hIkOXr"
-													data-reactid="110">
-													<div
-														class="CommunityNewPost__LeftColumn-s1s3p320-1 fQMvgC"
-														data-reactid="111">
-														<span class="ProfileImg__ProfileImg-s1o99mme-0 dLvdGo"
-															data-reactid="112"></span>
-														<!-- react-text: 113 -->
-														로그인 해주세요
-														<!-- /react-text -->
-													</div>
-													<i
-														class="yv2X_NOjMYirwH0R23J17 _1oJMWnMCW_Y6GmNc1mhqaW WU1ox0-AeDX_zneKjnNMO _1QY7TzdLHKX3-BKPDNNYKF"
-														data-reactid="114"></i>
-												</div>
-											</div></a>
-										<div class="Community__Posts-s14atsnj-0 umGxa"
-											data-reactid="115">
-											<div class="PostFilter__FilterWrapper-vri3wd-0 gjgpkL"
-												data-reactid="116">
-												<div class="PostFilter__FilterButton-vri3wd-1 gDEKBn"
-													data-reactid="117">모든 게시글</div>
-												<!-- react-text: 118 -->
-												 
-												<!-- /react-text -->
-												<div class="PostFilter__FilterButton-vri3wd-1 bvwsV"
-													data-reactid="119">창작자 업데이트</div>
-											</div>
+			<div class="ProjectPage__ProjectContentsBackground-b1letw-0 cNWmvR">
+				<div class="Container__Container-s1sxg7g4-0 jdgWcI">
+					<div class="ProjectPage__ProjectContents-b1letw-1 jPEdlL">
+						<div
+							class="ProjectPage__ProjectContentsMainColumn-b1letw-2 kJUlye">
+							<div class="ProjectPage__MainColumnInner-b1letw-4 giKgfw">
+								<div>
+									<a href="/login?redirection=/filmguidebook/community"><div
+											class="Card__Card-s1i1esb8-0 bJXRvz">
 											<div
-												class="Community__CommunityEmptyState-s14atsnj-1 gByEjI"
-												data-reactid="120">
+												class="CommunityNewPost__CommunityNewPostWidget-s1s3p320-0 hIkOXr">
+												<div class="CommunityNewPost__LeftColumn-s1s3p320-1 fQMvgC">
+													<span class="ProfileImg__ProfileImg-s1o99mme-0 dLvdGo"></span>
+													<!-- react-text: 938 -->
+													로그인 해주세요
+													<!-- /react-text -->
+												</div>
 												<i
-													class="_3Hs9Qa2HoKTK0Bt1LDlMh_ _2vMLfelE9LcYWXFJoCF6e7 _1QY7TzdLHKX3-BKPDNNYKF"
-													data-reactid="121"></i><br data-reactid="122" />
-												<!-- react-text: 123 -->
-												게시글이 없습니다
-												<!-- /react-text -->
+													class="yv2X_NOjMYirwH0R23J17 _1oJMWnMCW_Y6GmNc1mhqaW WU1ox0-AeDX_zneKjnNMO _1QY7TzdLHKX3-BKPDNNYKF"></i>
+											</div>
+										</div></a>
+									<div class="Community__Posts-s14atsnj-0 umGxa">
+										<div class="PostFilter__FilterWrapper-vri3wd-0 gjgpkL">
+											<div class="PostFilter__FilterButton-vri3wd-1 gDEKBn">모든
+												게시글</div>
+											<!-- react-text: 1076 -->
+											&nbsp;
+											<!-- /react-text -->
+											<div class="PostFilter__FilterButton-vri3wd-1 bvwsV">창작자
+												업데이트</div>
+										</div>
+										<div
+											class="CommunityPostSummaryCard__PostSummaryCardWrapper-s1yavd3r-0 eUjMK">
+											<div class="Card__Card-s1i1esb8-0 bJXRvz">
+												<div
+													class="CommunityPostSummaryCard__MetaWrapper-s1yavd3r-1 iLAsKd">
+													<div
+														class="CommunityPostSummaryCard__Meta-s1yavd3r-3 jmsIUt">
+														<div
+															class="CommunityPostSummaryCard__MetaInner-s1yavd3r-4 buEHkh">
+															<span class="ProfileImg__ProfileImg-s1o99mme-0 dCYRcO inline"></span>
+															<div
+																class="CommunityPostSummaryCard__UserProfile-s1yavd3r-5 bUjrcg inline">
+																<div
+																	class="CommunityPostSummaryCard__AuthorWrapper-s1yavd3r-6 fvqxSw">
+																	<div
+																		class="CommunityPostSummaryCard__AuthorFullname-s1yavd3r-7 jghVVw">감자</div>
+																</div>
+																<span>
+																	<!-- react-text: 1088 -->2일 전<!-- /react-text -->
+																	<!-- react-text: 1089 --> <!-- /react-text -->
+																	<!-- react-text: 1090 -->
+																	<!-- /react-text -->
+																</span>
+															</div>
+														</div>
+													</div>
+												</div>
+												<div
+													class="CommunityPostSummaryCard__ContentsWrapper-s1yavd3r-11 cywbQo"
+													style="cursor: pointer;">
+													<div>
+														<div
+															class="CommunityPostSummaryCard__Contents-s1yavd3r-13 fmSZUJ">
+															<div class="storyContent">책 한권과 코닥 뱃지 구매했습니다~한가지
+																의문점이 있어서 남겨요, 필름카메라 쪽으로 전문가이실것같아 여쭙니다. 후지필름은 우익 기업으로
+																알고있었는데, 혹시 확실히 알고계시나요? 코닥은 아닌걸로 알아서 코닥뱃지 선택했거든요. 앞으로의 필름
+																구매때문에 알아두고 싶네요.</div>
+														</div>
+													</div>
+												</div>
+												<div
+													class="CommunityPostSummaryCard__Actions-s1yavd3r-15 jgodLB"
+													style="cursor: pointer;">
+													<i class="_30LNYFhw6qsigZSbwlGCDz _1QY7TzdLHKX3-BKPDNNYKF"></i>
+													<!-- react-text: 1097 -->
+													<!-- /react-text -->
+													<!-- react-text: 1098 -->
+													1
+													<!-- /react-text -->
+												</div>
+											</div>
+										</div>
+										<div
+											class="CommunityPostSummaryCard__PostSummaryCardWrapper-s1yavd3r-0 eUjMK">
+											<div class="Card__Card-s1i1esb8-0 bJXRvz">
+												<div
+													class="CommunityPostSummaryCard__MetaWrapper-s1yavd3r-1 iLAsKd">
+													<div
+														class="CommunityPostSummaryCard__Meta-s1yavd3r-3 jmsIUt">
+														<div
+															class="CommunityPostSummaryCard__MetaInner-s1yavd3r-4 buEHkh">
+															<span class="ProfileImg__ProfileImg-s1o99mme-0 hvlbLm"></span>
+															<div
+																class="CommunityPostSummaryCard__UserProfile-s1yavd3r-5 bUjrcg">
+																<div
+																	class="CommunityPostSummaryCard__AuthorWrapper-s1yavd3r-6 fvqxSw">
+																	<div
+																		class="CommunityPostSummaryCard__AuthorFullname-s1yavd3r-7 jghVVw">장작</div>
+																</div>
+																<span>
+																	<!-- react-text: 1130 -->12일 전<!-- /react-text -->
+																	<!-- react-text: 1131 --> <!-- /react-text -->
+																	<!-- react-text: 1132 -->
+																	<!-- /react-text -->
+																</span>
+															</div>
+														</div>
+													</div>
+												</div>
+												<div
+													class="CommunityPostSummaryCard__ContentsWrapper-s1yavd3r-11 cywbQo"
+													style="cursor: pointer;">
+													<div>
+														<div
+															class="CommunityPostSummaryCard__Contents-s1yavd3r-13 fmSZUJ">
+															<div class="storyContent">기대됩니다!</div>
+														</div>
+													</div>
+												</div>
+												<div
+													class="CommunityPostSummaryCard__Actions-s1yavd3r-15 jgodLB"
+													style="cursor: pointer;">
+													<i class="_30LNYFhw6qsigZSbwlGCDz _1QY7TzdLHKX3-BKPDNNYKF"></i>
+													<!-- react-text: 1139 -->
+													<!-- /react-text -->
+													<!-- react-text: 1140 -->
+													0
+													<!-- /react-text -->
+												</div>
 											</div>
 										</div>
 									</div>
 								</div>
 							</div>
-							<div
-								class="ProjectPage__ProjectContentsSubColumn-b1letw-3 ceunQL"
-								data-reactid="124">
-								<div class="ProjectPage__SubColumnInner-b1letw-5 deZznN"
-									data-reactid="125">
-									<div class="Card__Card-s1i1esb8-0 bJXRvz" data-reactid="126">
-										<div class="CreatorCard__CreatorCardInner-yeytpy-0 cBbkfc"
-											data-reactid="127">
-											<div class="CreatorCard__CreatorCardLabel-yeytpy-1 fuCNpE"
-												data-reactid="128">창작자 소개</div>
-											<div class="CreatorCard__CreatorProfile-yeytpy-2 eYscdN"
-												data-reactid="129">
-												<span class="ProfileImg__ProfileImg-s1o99mme-0 daPkde"
-													data-reactid="130"></span><a
-													href="https://tumblbug.com/u/donajutzutzududuchi/projects"
-													data-reactid="131"><span
-													class="CreatorCard__CreatorName-yeytpy-3 fVfxlF"
-													data-reactid="132">2U2D</span></a>
+						</div>
+						<div class="ProjectPage__ProjectContentsSubColumn-b1letw-3 ceunQL">
+							<div class="ProjectPage__SubColumnInner-b1letw-5 deZznN">
+								<div class="Card__Card-s1i1esb8-0 bJXRvz">
+									<div class="CreatorCard__CreatorCardInner-yeytpy-0 cBbkfc">
+										<div class="CreatorCard__CreatorCardLabel-yeytpy-1 fuCNpE">창작자
+											소개</div>
+										<div class="CreatorCard__CreatorProfile-yeytpy-2 eYscdN">
+											<span class="ProfileImg__ProfileImg-s1o99mme-0 owWgL"></span><a
+												href="/u/film13536/projects"><span
+												class="CreatorCard__CreatorName-yeytpy-3 fVfxlF">일삼오-삼육</span></a>
+										</div>
+										<div class="CreatorCard__CreatorBiography-yeytpy-4 dHxdxH">‘135-36’필름은
+											우리가 가장 많이 사용하는 36컷짜리 35mm 필름을 일컫습니다. 가장 많이 쓰이며 누구나 쉽게 쓸수 있는
+											35mm 필름처럼, 필름생활을 즐기는 모두와 함께하고 싶은 ‘일삼오-삼육’입니다.</div>
+										<div class="Divider__Divider-s16ihjfx-0 ilHpOi"></div>
+										<div class="CreatorCard__CreatorStats-yeytpy-5 iBGoJt">
+											<div>
+												<!-- react-text: 699 -->
+												마지막 로그인&nbsp;&nbsp;
+												<!-- /react-text -->
+												<b>2시간 전</b>
 											</div>
-											<div class="CreatorCard__CreatorBiography-yeytpy-4 dHxdxH"
-												data-reactid="133">너무나도 바쁜 일상의 연속입니다. 건강관리는 어떻게 하고
-												계신가요? 팀 투유투디(2U2D) &quot;바쁜 생활 속 간편한 건강관리&quot;를 모토로 다양한
-												솔루션을 제공하고자 합니다. 사회생활 하시면서 갑자기 체중이 늘어 건강이 악화 되신분, 매일 반복되는
-												음주와의 전쟁에 지치신 분, 야근 때문에 피로가 누적 되신분들... 우리 주변에서 흔히 볼 수 있는
-												모습입니다. 팀 투유투디는 하루 하루 최선을 다해 살아가지만, 너무 바빠서 건강관리에 소홀해지신 모든
-												분들이 조금 더 쉽고 간편하게 접근 하실 수 있는 건강관리 문화를 만들기위해 노력하겠습니다.</div>
-											<div class="Divider__Divider-s16ihjfx-0 ilHpOi"
-												data-reactid="134"></div>
-											<div class="CreatorCard__CreatorStats-yeytpy-5 iBGoJt"
-												data-reactid="135">
-												<div data-reactid="136">
-													<!-- react-text: 137 -->
-													마지막 로그인  
-													<!-- /react-text -->
-													<b data-reactid="138">한 시간 전</b>
+											<!-- react-text: 701 -->
+											진행한 프로젝트&nbsp;&nbsp;
+											<!-- /react-text -->
+											<b>1</b>
+											<!-- react-text: 703 -->
+											&nbsp;&nbsp;&nbsp;&nbsp; 밀어준 프로젝트&nbsp;&nbsp;
+											<!-- /react-text -->
+											<b>0</b>
+										</div>
+										<div class="CreatorCard__CreatorContactButton-yeytpy-6 khYIRi">
+											<button class="Button__Button-s1ng5xda-0 dxWcyc">
+												<i class="_3YmAkQhwzI7o-uUWz_8Mp4 _1QY7TzdLHKX3-BKPDNNYKF"></i>
+												<!-- react-text: 708 -->
+												창작자에게 문의하기
+												<!-- /react-text -->
+											</button>
+										</div>
+									</div>
+								</div>
+								<div class="Rewards__Rewards-s13hisnh-0 bfEmee">
+									<div class="Rewards__RewardsLabel-s13hisnh-1 spnVx">
+										<!-- react-text: 712 -->
+										선택할 수 있는
+										<!-- /react-text -->
+										<b>8</b>
+										<!-- react-text: 714 -->
+										개의 선물이 있습니다
+										<!-- /react-text -->
+									</div>
+									<div class="RewardCard__RewardCardWrapper-ibjars-0 kcmHIB">
+										<div class="Card__Card-s1i1esb8-0 hBOBRE">
+											<div class="RewardCard__RewardCardInner-ibjars-1 cEqFlc">
+												<div class="RewardCard__RewardHeader-ibjars-2 iwEBnW">
+													<span class="RewardCard__PledgeAmount-ibjars-3 etxsCe"><i
+														class="-o8oGI_QAOKsVIJOUOUmV _1QY7TzdLHKX3-BKPDNNYKF"></i>
+													<!-- react-text: 721 -->570<!-- /react-text -->
+														<!-- react-text: 722 -->명이 선택<!-- /react-text --></span>
 												</div>
-												<!-- react-text: 139 -->
-												진행한 프로젝트  
-												<!-- /react-text -->
-												<b data-reactid="140">1</b>
-												<!-- react-text: 141 -->
-												     밀어준 프로젝트  
-												<!-- /react-text -->
-												<b data-reactid="142">0</b>
+												<div class="RewardCard__RewardContents-ibjars-7 dQJbED">
+													<div
+														class="RewardCard__RewardMinimumPledgeAmount-ibjars-8 dOjYPK">
+														<!-- react-text: 725 -->
+														10,000
+														<!-- /react-text -->
+														<!-- react-text: 726 -->
+														원 +
+														<!-- /react-text -->
+													</div>
+													<div class="RewardCard__RewardDescription-ibjars-9 kDYAge">배송비가
+														포함된 가격입니다.</div>
+												</div>
+												<div class="RewardCard__Items-ibjars-10 iYIWgz">
+													<li class="RewardCard__ItemList-ibjars-11 gSgsr">
+														<!-- react-text: 730 -->'필름생활안내서' 1권<!-- /react-text -->
+														<!-- react-text: 731 -->&nbsp;<!-- /react-text -->
+														<span>( x 1 )</span>
+													</li>
+												</div>
+												<div class="RewardCard__DeliveryDate-ibjars-12 chNsfw">
+													<span>
+														<!-- react-text: 735 -->예상 전달일 &nbsp;<!-- /react-text -->
+														<b>2018년 9월 13일</b>
+													</span>
+												</div>
+												<div class="Divider__Divider-s16ihjfx-0 ilHpOi"></div>
+												<button class="Button__Button-s1ng5xda-0 dxWcyc">선물
+													선택하고 밀어주기</button>
 											</div>
-											<div
-												class="CreatorCard__CreatorContactButton-yeytpy-6 khYIRi"
-												data-reactid="143">
-												<button class="Button__Button-s1ng5xda-0 dxWcyc"
-													data-reactid="144">
-													<i class="_3YmAkQhwzI7o-uUWz_8Mp4 _1QY7TzdLHKX3-BKPDNNYKF"
-														data-reactid="145"></i>
-													<!-- react-text: 146 -->
-													창작자에게 문의하기
-													<!-- /react-text -->
-												</button>
+										</div>
+									</div>
+									<div class="RewardCard__RewardCardWrapper-ibjars-0 kcmHIB">
+										<div class="Card__Card-s1i1esb8-0 hBOBRE">
+											<div class="RewardCard__RewardCardInner-ibjars-1 cEqFlc">
+												<div class="RewardCard__RewardHeader-ibjars-2 iwEBnW">
+													<span class="RewardCard__PledgeAmount-ibjars-3 etxsCe"><i
+														class="-o8oGI_QAOKsVIJOUOUmV _1QY7TzdLHKX3-BKPDNNYKF"></i>
+													<!-- react-text: 745 -->24<!-- /react-text -->
+														<!-- react-text: 746 -->명이 선택<!-- /react-text --></span>
+												</div>
+												<div class="RewardCard__RewardContents-ibjars-7 dQJbED">
+													<div
+														class="RewardCard__RewardMinimumPledgeAmount-ibjars-8 dOjYPK">
+														<!-- react-text: 749 -->
+														11,000
+														<!-- /react-text -->
+														<!-- react-text: 750 -->
+														원 +
+														<!-- /react-text -->
+													</div>
+													<div class="RewardCard__RewardDescription-ibjars-9 kDYAge">추후
+														메일로 서베이를 보내드립니다 꼭 작성해 주세요.(디자인 선택) 배송비 포함.</div>
+												</div>
+												<div class="RewardCard__Items-ibjars-10 iYIWgz">
+													<li class="RewardCard__ItemList-ibjars-11 gSgsr">
+														<!-- react-text: 754 -->필름 뱃지 1개 <!-- /react-text -->
+														<!-- react-text: 755 -->&nbsp;<!-- /react-text -->
+														<span>( x 1 )</span>
+													</li>
+												</div>
+												<div class="RewardCard__DeliveryDate-ibjars-12 chNsfw">
+													<span>
+														<!-- react-text: 759 -->예상 전달일 &nbsp;<!-- /react-text -->
+														<b>2018년 9월 13일</b>
+													</span>
+												</div>
+												<div class="Divider__Divider-s16ihjfx-0 ilHpOi"></div>
+												<button class="Button__Button-s1ng5xda-0 dxWcyc">선물
+													선택하고 밀어주기</button>
+											</div>
+										</div>
+									</div>
+									<div class="RewardCard__RewardCardWrapper-ibjars-0 kcmHIB">
+										<div class="Card__Card-s1i1esb8-0 hBOBRE">
+											<div class="RewardCard__RewardCardInner-ibjars-1 cEqFlc">
+												<div class="RewardCard__RewardHeader-ibjars-2 iwEBnW">
+													<span class="RewardCard__PledgeAmount-ibjars-3 etxsCe"><i
+														class="-o8oGI_QAOKsVIJOUOUmV _1QY7TzdLHKX3-BKPDNNYKF"></i>
+													<!-- react-text: 769 -->22<!-- /react-text -->
+														<!-- react-text: 770 -->명이 선택<!-- /react-text --></span>
+												</div>
+												<div class="RewardCard__RewardContents-ibjars-7 dQJbED">
+													<div
+														class="RewardCard__RewardMinimumPledgeAmount-ibjars-8 dOjYPK">
+														<!-- react-text: 773 -->
+														17,000
+														<!-- /react-text -->
+														<!-- react-text: 774 -->
+														원 +
+														<!-- /react-text -->
+													</div>
+													<div class="RewardCard__RewardDescription-ibjars-9 kDYAge">배송비가
+														포함된 가격입니다.</div>
+												</div>
+												<div class="RewardCard__Items-ibjars-10 iYIWgz">
+													<li class="RewardCard__ItemList-ibjars-11 gSgsr">
+														<!-- react-text: 778 -->'필름생활안내서' 2권<!-- /react-text -->
+														<!-- react-text: 779 -->&nbsp;<!-- /react-text -->
+														<span>( x 1 )</span>
+													</li>
+												</div>
+												<div class="RewardCard__DeliveryDate-ibjars-12 chNsfw">
+													<span>
+														<!-- react-text: 783 -->예상 전달일 &nbsp;<!-- /react-text -->
+														<b>2018년 9월 13일</b>
+													</span>
+												</div>
+												<div class="Divider__Divider-s16ihjfx-0 ilHpOi"></div>
+												<button class="Button__Button-s1ng5xda-0 dxWcyc">선물
+													선택하고 밀어주기</button>
+											</div>
+										</div>
+									</div>
+									<div class="RewardCard__RewardCardWrapper-ibjars-0 kcmHIB">
+										<div class="Card__Card-s1i1esb8-0 hBOBRE">
+											<div class="RewardCard__RewardCardInner-ibjars-1 cEqFlc">
+												<div class="RewardCard__RewardHeader-ibjars-2 iwEBnW">
+													<span class="RewardCard__PledgeAmount-ibjars-3 etxsCe"><i
+														class="-o8oGI_QAOKsVIJOUOUmV _1QY7TzdLHKX3-BKPDNNYKF"></i>
+													<!-- react-text: 793 -->88<!-- /react-text -->
+														<!-- react-text: 794 -->명이 선택<!-- /react-text --></span>
+												</div>
+												<div class="RewardCard__RewardContents-ibjars-7 dQJbED">
+													<div
+														class="RewardCard__RewardMinimumPledgeAmount-ibjars-8 dOjYPK">
+														<!-- react-text: 797 -->
+														18,000
+														<!-- /react-text -->
+														<!-- react-text: 798 -->
+														원 +
+														<!-- /react-text -->
+													</div>
+													<div class="RewardCard__RewardDescription-ibjars-9 kDYAge">추후
+														메일로 서베이를 보내드립니다 꼭 작성해 주세요.(디자인 선택) 배송비 포함.</div>
+												</div>
+												<div class="RewardCard__Items-ibjars-10 iYIWgz">
+													<li class="RewardCard__ItemList-ibjars-11 gSgsr">
+														<!-- react-text: 802 -->'필름생활안내서' 1권<!-- /react-text -->
+														<!-- react-text: 803 -->&nbsp;<!-- /react-text -->
+														<span>( x 1 )</span>
+													</li>
+													<li class="RewardCard__ItemList-ibjars-11 gSgsr">
+														<!-- react-text: 806 -->필름 뱃지 1개 <!-- /react-text -->
+														<!-- react-text: 807 -->&nbsp;<!-- /react-text -->
+														<span>( x 1 )</span>
+													</li>
+												</div>
+												<div class="RewardCard__DeliveryDate-ibjars-12 chNsfw">
+													<span>
+														<!-- react-text: 811 -->예상 전달일 &nbsp;<!-- /react-text -->
+														<b>2018년 9월 13일</b>
+													</span>
+												</div>
+												<div class="Divider__Divider-s16ihjfx-0 ilHpOi"></div>
+												<button class="Button__Button-s1ng5xda-0 dxWcyc">선물
+													선택하고 밀어주기</button>
+											</div>
+										</div>
+									</div>
+									<div class="RewardCard__RewardCardWrapper-ibjars-0 kcmHIB">
+										<div class="Card__Card-s1i1esb8-0 hBOBRE">
+											<div class="RewardCard__RewardCardInner-ibjars-1 cEqFlc">
+												<div class="RewardCard__RewardHeader-ibjars-2 iwEBnW">
+													<span class="RewardCard__PledgeAmount-ibjars-3 etxsCe"><i
+														class="-o8oGI_QAOKsVIJOUOUmV _1QY7TzdLHKX3-BKPDNNYKF"></i>
+													<!-- react-text: 821 -->4<!-- /react-text -->
+														<!-- react-text: 822 -->명이 선택<!-- /react-text --></span>
+												</div>
+												<div class="RewardCard__RewardContents-ibjars-7 dQJbED">
+													<div
+														class="RewardCard__RewardMinimumPledgeAmount-ibjars-8 dOjYPK">
+														<!-- react-text: 825 -->
+														19,000
+														<!-- /react-text -->
+														<!-- react-text: 826 -->
+														원 +
+														<!-- /react-text -->
+													</div>
+													<div class="RewardCard__RewardDescription-ibjars-9 kDYAge">추후
+														메일로 서베이를 보내드립니다. 작성해 주세요.(디자인 선택) 배송비 포함.</div>
+												</div>
+												<div class="RewardCard__Items-ibjars-10 iYIWgz">
+													<li class="RewardCard__ItemList-ibjars-11 gSgsr">
+														<!-- react-text: 830 -->필름 뱃지 2개 <!-- /react-text -->
+														<!-- react-text: 831 -->&nbsp;<!-- /react-text -->
+														<span>( x 1 )</span>
+													</li>
+												</div>
+												<div class="RewardCard__DeliveryDate-ibjars-12 chNsfw">
+													<span>
+														<!-- react-text: 835 -->예상 전달일 &nbsp;<!-- /react-text -->
+														<b>2018년 9월 13일</b>
+													</span>
+												</div>
+												<div class="Divider__Divider-s16ihjfx-0 ilHpOi"></div>
+												<button class="Button__Button-s1ng5xda-0 dxWcyc">선물
+													선택하고 밀어주기</button>
+											</div>
+										</div>
+									</div>
+									<div class="RewardCard__RewardCardWrapper-ibjars-0 kcmHIB">
+										<div class="Card__Card-s1i1esb8-0 hBOBRE">
+											<div class="RewardCard__RewardCardInner-ibjars-1 cEqFlc">
+												<div class="RewardCard__RewardHeader-ibjars-2 iwEBnW">
+													<span class="RewardCard__PledgeAmount-ibjars-3 etxsCe"><i
+														class="-o8oGI_QAOKsVIJOUOUmV _1QY7TzdLHKX3-BKPDNNYKF"></i>
+													<!-- react-text: 845 -->27<!-- /react-text -->
+														<!-- react-text: 846 -->명이 선택<!-- /react-text --></span>
+												</div>
+												<div class="RewardCard__RewardContents-ibjars-7 dQJbED">
+													<div
+														class="RewardCard__RewardMinimumPledgeAmount-ibjars-8 dOjYPK">
+														<!-- react-text: 849 -->
+														26,000
+														<!-- /react-text -->
+														<!-- react-text: 850 -->
+														원 +
+														<!-- /react-text -->
+													</div>
+													<div class="RewardCard__RewardDescription-ibjars-9 kDYAge">추후
+														메일로 서베이를 보내드립니다. 작성해 주세요.(디자인 선택) 배송비 포함.</div>
+												</div>
+												<div class="RewardCard__Items-ibjars-10 iYIWgz">
+													<li class="RewardCard__ItemList-ibjars-11 gSgsr">
+														<!-- react-text: 854 -->'필름생활안내서' 1권<!-- /react-text -->
+														<!-- react-text: 855 -->&nbsp;<!-- /react-text -->
+														<span>( x 1 )</span>
+													</li>
+													<li class="RewardCard__ItemList-ibjars-11 gSgsr">
+														<!-- react-text: 858 -->필름 뱃지 2개 <!-- /react-text -->
+														<!-- react-text: 859 -->&nbsp;<!-- /react-text -->
+														<span>( x 1 )</span>
+													</li>
+												</div>
+												<div class="RewardCard__DeliveryDate-ibjars-12 chNsfw">
+													<span>
+														<!-- react-text: 863 -->예상 전달일 &nbsp;<!-- /react-text -->
+														<b>2018년 9월 13일</b>
+													</span>
+												</div>
+												<div class="Divider__Divider-s16ihjfx-0 ilHpOi"></div>
+												<button class="Button__Button-s1ng5xda-0 dxWcyc">선물
+													선택하고 밀어주기</button>
+											</div>
+										</div>
+									</div>
+									<div class="RewardCard__RewardCardWrapper-ibjars-0 kcmHIB">
+										<div class="Card__Card-s1i1esb8-0 hBOBRE">
+											<div class="RewardCard__RewardCardInner-ibjars-1 cEqFlc">
+												<div class="RewardCard__RewardHeader-ibjars-2 iwEBnW">
+													<span class="RewardCard__PledgeAmount-ibjars-3 etxsCe"><i
+														class="-o8oGI_QAOKsVIJOUOUmV _1QY7TzdLHKX3-BKPDNNYKF"></i>
+													<!-- react-text: 873 -->16<!-- /react-text -->
+														<!-- react-text: 874 -->명이 선택<!-- /react-text --></span>
+												</div>
+												<div class="RewardCard__RewardContents-ibjars-7 dQJbED">
+													<div
+														class="RewardCard__RewardMinimumPledgeAmount-ibjars-8 dOjYPK">
+														<!-- react-text: 877 -->
+														26,000
+														<!-- /react-text -->
+														<!-- react-text: 878 -->
+														원 +
+														<!-- /react-text -->
+													</div>
+													<div class="RewardCard__RewardDescription-ibjars-9 kDYAge">추후
+														메일로 서베이를 보내드립니다. 작성해 주세요.(디자인 선택) 배송비 포함.</div>
+												</div>
+												<div class="RewardCard__Items-ibjars-10 iYIWgz">
+													<li class="RewardCard__ItemList-ibjars-11 gSgsr">
+														<!-- react-text: 882 -->필름 뱃지 3개 <!-- /react-text -->
+														<!-- react-text: 883 -->&nbsp;<!-- /react-text -->
+														<span>( x 1 )</span>
+													</li>
+												</div>
+												<div class="RewardCard__DeliveryDate-ibjars-12 chNsfw">
+													<span>
+														<!-- react-text: 887 -->예상 전달일 &nbsp;<!-- /react-text -->
+														<b>2018년 9월 13일</b>
+													</span>
+												</div>
+												<div class="Divider__Divider-s16ihjfx-0 ilHpOi"></div>
+												<button class="Button__Button-s1ng5xda-0 dxWcyc">선물
+													선택하고 밀어주기</button>
+											</div>
+										</div>
+									</div>
+									<div class="RewardCard__RewardCardWrapper-ibjars-0 kcmHIB">
+										<div class="Card__Card-s1i1esb8-0 hBOBRE">
+											<div class="RewardCard__RewardCardInner-ibjars-1 cEqFlc">
+												<div class="RewardCard__RewardHeader-ibjars-2 iwEBnW">
+													<span class="RewardCard__PledgeAmount-ibjars-3 etxsCe"><i
+														class="-o8oGI_QAOKsVIJOUOUmV _1QY7TzdLHKX3-BKPDNNYKF"></i>
+													<!-- react-text: 897 -->123<!-- /react-text -->
+														<!-- react-text: 898 -->명이 선택<!-- /react-text --></span>
+												</div>
+												<div class="RewardCard__RewardContents-ibjars-7 dQJbED">
+													<div
+														class="RewardCard__RewardMinimumPledgeAmount-ibjars-8 dOjYPK">
+														<!-- react-text: 901 -->
+														33,000
+														<!-- /react-text -->
+														<!-- react-text: 902 -->
+														원 +
+														<!-- /react-text -->
+													</div>
+													<div class="RewardCard__RewardDescription-ibjars-9 kDYAge">추후
+														메일로 서베이를 보내드립니다. 작성해 주세요.(디자인 선택) 배송비 포함.</div>
+												</div>
+												<div class="RewardCard__Items-ibjars-10 iYIWgz">
+													<li class="RewardCard__ItemList-ibjars-11 gSgsr">
+														<!-- react-text: 906 -->'필름생활안내서' 1권<!-- /react-text -->
+														<!-- react-text: 907 -->&nbsp;<!-- /react-text -->
+														<span>( x 1 )</span>
+													</li>
+													<li class="RewardCard__ItemList-ibjars-11 gSgsr">
+														<!-- react-text: 910 -->필름 뱃지 3개 <!-- /react-text -->
+														<!-- react-text: 911 -->&nbsp;<!-- /react-text -->
+														<span>( x 1 )</span>
+													</li>
+												</div>
+												<div class="RewardCard__DeliveryDate-ibjars-12 chNsfw">
+													<span>
+														<!-- react-text: 915 -->예상 전달일 &nbsp;<!-- /react-text -->
+														<b>2018년 9월 13일</b>
+													</span>
+												</div>
+												<div class="Divider__Divider-s16ihjfx-0 ilHpOi"></div>
+												<button class="Button__Button-s1ng5xda-0 dxWcyc">선물
+													선택하고 밀어주기</button>
 											</div>
 										</div>
 									</div>
@@ -570,7 +1004,7 @@
 					</div>
 				</div>
 			</div>
-		</section>
+		</div>
 </body>
   
 <!-- Mirrored from tumblbug.com/doubledown/community by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 20 Jul 2018 07:21:32 GMT -->
