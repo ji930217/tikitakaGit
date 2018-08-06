@@ -7,6 +7,8 @@
 	<title>Home</title>
 </head>
 <body>
-	<a href="projectStart.do">프로젝트 만들기</a>
+<c:import url="common/header.jsp"/>
+	<c:import url="common/index.jsp"/>
+	<c:import url="common/footer.jsp"/>
 </body>
 </html>

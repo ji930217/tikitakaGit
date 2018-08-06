@@ -125,7 +125,7 @@
    									</span>
    								</div>
    								<div class="SiteHeader__CenterMenu-s1s56ls8-3 hHUgvf" data-reactid="15">
-   									<a class="SiteHeader__ButtonLink-s1s56ls8-5 bpfGNO" href="/tktk/index.jsp" data-reactid="16">
+   									<a class="SiteHeader__ButtonLink-s1s56ls8-5 bpfGNO" href="index.do" data-reactid="16">
   										<div class="TumblbugLogo__TumblbugLogo-s9od1ls-0 JUlEd" data-reactid="17">
   											<img id="tumblbug_logo" data-reactid="18" src="resources/images/header/logo.png"/>
  										</div>
