@@ -2644,6 +2644,9 @@ translateX
 	color: inherit;
 	border-bottom: 1px solid rgba(255, 255, 255, 1);
 }
+.tikitakatitle{
+	font-family: sans-serif;
+}
 </style>
 <meta property="og:image"
 	content="https://tumblbug-assets.imgix.net/brand/tumblbug_introduction.png"
@@ -2681,7 +2684,7 @@ translateX
 											href="/u/doneyanibetaruza"><i
 											class="_36JoJH6uhmIKdE1bWDYUlM _3EDOT6mnWfo2CobuYD5UO7 _1QY7TzdLHKX3-BKPDNNYKF"></i><label>내
 												페이지</label></a><span
-											class="LYsd0KLqU3FaMTVCV2WC4 _3KSXDuQ8OEUIIiuxj9PJ1e">tumblbug</span><a
+											class="tikitakatitle">tikitaka</span><a
 											class="WU1ox0-AeDX_zneKjnNMO rLqvd1axk9i-3cU72yTkF"
 											href="https://help.tumblbug.com/hc/ko/categories/115001047328"
 											rel="noopener noreferrer" target="_blank"><i
