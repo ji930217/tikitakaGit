@@ -133,7 +133,7 @@
  								</div>
  								<div class="SiteHeader__RightMenu-s1s56ls8-4 buZCDD" data-reactid="29">
  									<a class="sc-gzVnrw imIxKd" href="login.html" data-reactid="30">
- 										<span class="SiteHeader__ItemLabel-s1s56ls8-8 iGOIal" data-reactid="31">로그인 / 회원가입</span>
+ 										<span class="SiteHeader__ItemLabel-s1s56ls8-8 iGOIal">로그인 / 회원가입</span>
  										<span class="SiteHeader__ProfileImageWrapper-s1s56ls8-10 gqXDKx" data-reactid="32">
  											<span class="ProfileImg__ProfileImg-s1o99mme-0 fqdqdO" data-reactid="33"></span>
  										</span>
