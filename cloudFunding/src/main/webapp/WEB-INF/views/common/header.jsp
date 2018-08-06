@@ -102,7 +102,6 @@
 	/* sc-component-id: SiteHeader__ProfileImageWrapper-s1s56ls8-10 */
 	
 	.gqXDKx {display: -webkit-box;display: -webkit-flex;display: -ms-flexbox;display: flex;-webkit-align-items: center;-webkit-box-align: center;-ms-flex-align: center;align-items: center;position: relative;margin-left: 0.75rem;}
-
 </style>
 </head>
 <body>
