@@ -26,11 +26,11 @@
 <body>
 
 
+
 <c:if test="${!empty user }">
 	<c:out value="${user.email }">no user </c:out>
 
 </c:if>
-
 
 <c:import url="common/header.jsp"/>
 	<c:import url="common/index.jsp"/>
