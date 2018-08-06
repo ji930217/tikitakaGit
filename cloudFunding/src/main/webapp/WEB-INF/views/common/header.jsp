@@ -114,7 +114,7 @@
 .cfMrMC {diplay: block;border: none;background: transparent;outline: none;color: black;font-weight: bold;font-size: 1rem;cursor: pointer;line-height: 58px;padding: 0 1rem;}.cfMrMC > i {font-size: 1.25em;}@media (min-width: 1080px) {.cfMrMC {line-height: 65px;}.cfMrMC > i {font-size: 1em;margin-right: 0.5em;}}.cfMrMC:hover {color: #757575;}
 /* sc-component-id: SiteHeader__LinkButton-s1s56ls8-7 */
 
-.hcvfVq {border: none;background: transparent;outline: none;color: black;font-weight: bold;font-size: 1rem;cursor: pointer;line-height: 58px;padding: 0 1rem;}.hcvfVq > i {font-size: 1.25em;}@media (min-width: 1080px) {.hcvfVq {line-height: 65px;}.hcvfVq > i {font-size: 1em;margin-right: 0.5em;}}.hcvfVq:hover {color: #757575;}
+.hcvfVq {border: none;background: transparent;outline: none;color: black;font-weight: bold;font-size: 1rem;cursor: pointer;line-height: 58px;padding: 0 1rem;}.hcvfVq > i {font-size: 1.25em; height:60px;}@media (min-width: 1080px) {.hcvfVq {line-height: 65px;}.hcvfVq > i {font-size: 1em;margin-right: 0.5em;}}.hcvfVq:hover {color: #757575;}
 /* sc-component-id: sc-htoDjs */
 
 .fQwQfp {diplay: block;border: none;background: transparent;outline: none;color: black;font-weight: bold;font-size: 1rem;cursor: pointer;line-height: 58px;padding: 0 1rem;}.fQwQfp > i {font-size: 1.25em;}@media (min-width: 1080px) {.fQwQfp {line-height: 65px;}.fQwQfp > i {font-size: 1em;margin-right: 0.5em;}}.fQwQfp:hover {color: #757575;}.fQwQfp {display: -webkit-inline-box;display: -webkit-inline-flex;display: -ms-flexbox;display: inline-flex;-webkit-align-items: center;-webkit-box-align: center;-ms-flex-align: center;align-items: center;}

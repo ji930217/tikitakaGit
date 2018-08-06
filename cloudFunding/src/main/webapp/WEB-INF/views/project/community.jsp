@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <!DOCTYPE html>
   <html lang="ko-KR">
     
@@ -283,7 +284,7 @@
     </head>
     <body>
     	<header>
-			<%@ include file="../common/header.jsp" %>
+			<c:import url="../common/header.jsp"/>
 		</header>
 			<div data-reactid="34">
 				<!-- react-empty: 35 -->
