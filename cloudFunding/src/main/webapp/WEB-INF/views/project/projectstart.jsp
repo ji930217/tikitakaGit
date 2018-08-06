@@ -98,7 +98,6 @@
 	transform: translateY(0%);
 	opacity: 1;
 }
-
 50%
 {
 -webkit-transform
@@ -146,7 +145,6 @@ keyframes cXdlcp { 0% {
 	transform: translateY(0%);
 	opacity: 1;
 }
-
 50%
 {
 -webkit-transform
@@ -203,7 +201,6 @@ translateY
 	align-items: center;
 	z-index: 999;;;;
 }
-
 @media ( min-width : 1080px) {
 	.iVCTYT {
 		height: 65px;
@@ -216,7 +213,6 @@ translateY
 	position: relative;
 	padding: 0;
 }
-
 @media ( min-width : 1080px) {
 	.jdgWcI {
 		width: 1080px;
@@ -236,7 +232,6 @@ translateY
 	border: 1px solid #ddd;
 	margin-right: 0;
 }
-
 @media ( min-width : 1080px) {
 	.fqdqdO {
 		width: 38px;
@@ -249,7 +244,6 @@ translateY
 	width: 70px;
 	height: 18.41px;
 }
-
 @media ( min-width : 1080px) {
 	.JUlEd {
 		width: 85px;
@@ -311,7 +305,6 @@ translateY
 	-ms-flex-align: center;
 	align-items: center;
 }
-
 .hHUgvf:hover>div {
 	fill: #757575;
 }
@@ -326,7 +319,6 @@ translateY
 .bpfGNO {
 	color: inherit;
 }
-
 .bpfGNO:hover {
 	color: inherit;
 }
@@ -334,11 +326,9 @@ translateY
 .imIxKd {
 	color: inherit;
 }
-
 .imIxKd:hover {
 	color: inherit;
 }
-
 .imIxKd {
 	display: -webkit-inline-box;
 	display: -webkit-inline-flex;
@@ -368,11 +358,9 @@ translateY
 	line-height: 58px;
 	padding: 0 1rem;
 }
-
 .cfMrMC>i {
 	font-size: 1.25em;
 }
-
 @media ( min-width : 1080px) {
 	.cfMrMC {
 		line-height: 65px;
@@ -382,7 +370,6 @@ translateY
 		margin-right: 0.5em;
 	}
 }
-
 .cfMrMC:hover {
 	color: #757575;
 }
@@ -398,11 +385,9 @@ translateY
 	line-height: 58px;
 	padding: 0 1rem;
 }
-
 .hcvfVq>i {
 	font-size: 1.25em;
 }
-
 @media ( min-width : 1080px) {
 	.hcvfVq {
 		line-height: 65px;
@@ -412,7 +397,6 @@ translateY
 		margin-right: 0.5em;
 	}
 }
-
 .hcvfVq:hover {
 	color: #757575;
 }
@@ -426,7 +410,6 @@ translateY
 .kizyZz {
 	display: none;
 }
-
 @media ( min-width : 1080px) {
 	.kizyZz {
 		display: inline;
@@ -450,7 +433,6 @@ translateY
 -webkit-keyframes bYqief { 0%, 100% {
 	opacity: 1;
 }
-
 50%
 {
 opacity
@@ -463,7 +445,6 @@ opacity
 keyframes bYqief { 0%, 100% {
 	opacity: 1;
 }
-
 50%
 {
 opacity
@@ -479,7 +460,6 @@ opacity
 	-ms-transform: translateX(0);
 	transform: translateX(0);
 }
-
 50%
 {
 -webkit-transform
@@ -503,7 +483,6 @@ keyframes fzoeFq { 0%, 100% {
 	-ms-transform: translateX(0);
 	transform: translateX(0);
 }
-
 50%
 {
 -webkit-transform
@@ -550,21 +529,17 @@ translateX
 	text-align: center;
 	text-decoration: none;
 }
-
 .bJiFzl>i {
 	margin: 0 .42857143em 0 -.21428571em;
 }
-
 .bJiFzl {
 	color: rgba(0, 0, 0, .6);
 	background-color: #e7e7e7;
 }
-
 .bJiFzl:hover, .bJiFzl:focus, .bJiFzl:active {
 	background-color: #d9d9d9;
 	color: rgba(0, 0, 0, 8);
 }
-
 .bJiFzl {
 	padding: 1em 1.5em;
 	font-size: 1em;
@@ -580,17 +555,14 @@ translateX
 	transition: 0.2s ease;
 	min-width: 15rem;
 }
-
 .bJiFzl:hover, .bJiFzl:focus, .bJiFzl:active {
 	color: #d62e0d;
 	background-color: #ffe955;
 	box-shadow: 0 0 35px 3px rgba(255, 255, 255, .4);
 }
-
 .bJiFzl {;
 	
 }
-
 .cjYnUu {
 	cursor: pointer;
 	display: inline-block;
@@ -619,31 +591,25 @@ translateX
 	text-align: center;
 	text-decoration: none;
 }
-
 .cjYnUu>i {
 	margin: 0 .42857143em 0 -.21428571em;
 }
-
 .cjYnUu {
 	color: rgba(0, 0, 0, .6);
 	background-color: #e7e7e7;
 }
-
 .cjYnUu:hover, .cjYnUu:focus, .cjYnUu:active {
 	background-color: #d9d9d9;
 	color: rgba(0, 0, 0, 8);
 }
-
 .cjYnUu {
 	background-color: #fa6462;
 	color: #fff;
 }
-
 .cjYnUu:hover, .cjYnUu:focus, .cjYnUu:active {
 	background-color: #ff4543;
 	color: #fff;
 }
-
 .cjYnUu {
 	padding: 1em 1.5em;
 	font-size: 1em;
@@ -704,13 +670,11 @@ translateX
 	max-width: 800px;
 	margin: 0 auto;
 }
-
 @media only screen and (max-width: 1080px) {
 	.gGEKCL {
 		max-width: 768px;
 	}
 }
-
 @media only screen and (max-width: 768px) {
 	.gGEKCL {
 		padding: 3rem 1rem;
@@ -725,13 +689,11 @@ translateX
 	word-break: keep-all;
 	margin: 0 0 1rem 0;
 }
-
 @media only screen and (max-width: 768px) {
 	.bZjbMV {
 		font-size: 2.6rem;
 	}
 }
-
 @media only screen and (max-width: 480px) {
 	.bZjbMV {
 		font-size: 2.1rem;
@@ -745,14 +707,12 @@ translateX
 	color: #fff;
 	word-break: keep-all;
 }
-
 @media only screen and (max-width: 768px) {
 	.hZGKSB {
 		text-align: center;
 		font-size: 1.2rem;
 	}
 }
-
 @media only screen and (max-width: 480px) {
 	.hZGKSB {
 		font-size: 1.1rem;
@@ -762,7 +722,6 @@ translateX
 .gQkaxZ {
 	margin: 0.5rem 0 2rem 0;
 }
-
 @media only screen and (max-width: 768px) {
 	.gQkaxZ {
 		margin: 1rem 0 2rem 0;
@@ -781,7 +740,6 @@ translateX
 	background-position: center 15%;
 	background-repeat: no-repeat;
 }
-
 @media only screen and (max-width: 768px) {
 	.lnyOsS {
 		float: none;
@@ -809,7 +767,6 @@ translateX
 	background-size: cover;
 	background-position: center center;
 }
-
 @media only screen and (max-width: 768px) {
 	.fAOZDk {
 		position: static;
@@ -826,13 +783,11 @@ translateX
 	max-width: 992px;
 	margin: 0 auto;
 }
-
 @media only screen and (max-width: 1080px) {
 	.bwttMn {
 		max-width: 768px;
 	}
 }
-
 @media only screen and (max-width: 768px) {
 	.bwttMn {
 		padding: 4rem 4rem;
@@ -853,7 +808,6 @@ translateX
 	font-size: 1.1rem;
 	word-break: keep-all;
 }
-
 @media only screen and (max-width: 768px) {
 	.bNlufC {
 		width: 100%;
@@ -877,7 +831,6 @@ translateX
 	flex-basis: 33.333%;
 	word-break: keep-all;
 }
-
 @media only screen and (max-width: 768px) {
 	.esxgfG {
 		-webkit-flex-wrap: nowrap;
@@ -901,7 +854,6 @@ translateX
 	-ms-flex-basis: 100%;
 	flex-basis: 100%;
 }
-
 @media only screen and (max-width: 768px) {
 	.fxuIyO {
 		-webkit-flex-basis: 8rem;
@@ -915,7 +867,6 @@ translateX
 	margin: 0 auto;
 	width: 60%;
 }
-
 @media only screen and (max-width: 768px) {
 	.hKesKk {
 		width: 6rem;
@@ -935,7 +886,6 @@ translateX
 	-ms-flex-shrink: 0;
 	flex-shrink: 0;
 }
-
 @media only screen and (max-width: 768px) {
 	.itOJgv {
 		-webkit-flex-grow: 1;
@@ -966,13 +916,11 @@ translateX
 	max-width: 992px;
 	margin: 0 auto;
 }
-
 @media only screen and (max-width: 1080px) {
 	.hDDvFE {
 		max-width: 768px;
 	}
 }
-
 @media only screen and (max-width: 768px) {
 	.hDDvFE {
 		padding: 4rem 4rem;
@@ -1009,7 +957,6 @@ translateX
 	flex-wrap: nowrap;
 	margin: 0 -2rem 2rem -2rem;
 }
-
 @media only screen and (max-width: 768px) {
 	.eFKMQA {
 		display: block;
@@ -1021,7 +968,6 @@ translateX
 	width: 33.33333%;
 	text-align: center;
 }
-
 @media only screen and (max-width: 768px) {
 	.gIOyim {
 		margin: 1rem 0 0 0;
@@ -1041,7 +987,6 @@ translateX
 	width: 33.333333%;
 	padding: 0 2rem;
 }
-
 @media only screen and (max-width: 768px) {
 	.iLhPAj {
 		display: block;
@@ -1063,14 +1008,12 @@ translateX
 	border-radius: 3px;
 	height: 5px;
 }
-
 .wbWBn {
 	display: block;
 	background-color: #E6EDFF;
 	border-radius: 3px;
 	height: 5px;
 }
-
 .cqbDMZ {
 	display: block;
 	background-color: #DFF8FC;
@@ -1099,7 +1042,6 @@ translateX
 	border-radius: 3px;
 	padding: 0.5rem 1rem;
 }
-
 .gzcpNu {
 	display: inline-block;
 	text-align: center;
@@ -1109,7 +1051,6 @@ translateX
 	border-radius: 3px;
 	padding: 0.5rem 1rem;
 }
-
 .ePxcpz {
 	display: inline-block;
 	text-align: center;
@@ -1130,13 +1071,11 @@ translateX
 	max-width: 992px;
 	margin: 0 auto;
 }
-
 @media only screen and (max-width: 1080px) {
 	.fvaroY {
 		max-width: 768px;
 	}
 }
-
 @media only screen and (max-width: 768px) {
 	.fvaroY {
 		padding: 4rem 4rem;
@@ -1164,7 +1103,6 @@ translateX
 	flex-wrap: nowrap;
 	margin: 2rem -2rem 2rem -2rem;
 }
-
 @media only screen and (max-width: 768px) {
 	.hKMyBu {
 		display: block;
@@ -1182,7 +1120,6 @@ translateX
 	width: 33.333333%;
 	padding: 0 2rem;
 }
-
 @media only screen and (max-width: 768px) {
 	.hnRMPW {
 		display: block;
@@ -1210,13 +1147,11 @@ translateX
 	max-width: 992px;
 	margin: 0 auto;
 }
-
 @media only screen and (max-width: 1080px) {
 	.exyDzC {
 		max-width: 768px;
 	}
 }
-
 @media only screen and (max-width: 768px) {
 	.exyDzC {
 		padding: 4rem 4rem;
@@ -1244,7 +1179,6 @@ translateX
 	flex-wrap: nowrap;
 	margin: 0 -2rem 2rem -2rem;
 }
-
 @media only screen and (max-width: 768px) {
 	.bNQPtQ {
 		display: block;
@@ -1267,13 +1201,11 @@ translateX
 	margin: 0 auto;
 	text-align: center;
 }
-
 @media only screen and (max-width: 1080px) {
 	.hLRFHd {
 		max-width: 768px;
 	}
 }
-
 @media only screen and (max-width: 768px) {
 	.hLRFHd {
 		padding: 4rem 4rem;
@@ -1288,7 +1220,6 @@ translateX
 	word-break: keep-all;
 	margin: 0;
 }
-
 @media only screen and (max-width: 768px) {
 	.hHZzHq {
 		font-size: 2rem;
@@ -1315,7 +1246,6 @@ translateX
 	padding-bottom: 0.1em;
 	border-bottom: 1px solid rgba(255, 255, 255, 0.6);
 }
-
 .iCNmGI:hover, .iCNmGI:focus, .iCNmGI:active {
 	color: inherit;
 	border-bottom: 1px solid rgba(255, 255, 255, 1);
