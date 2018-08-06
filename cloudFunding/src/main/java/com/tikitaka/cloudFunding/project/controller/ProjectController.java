@@ -15,4 +15,12 @@ public class ProjectController {
 	public String projectForm(){
 		return "project/projectForm";
 	}
+	@RequestMapping("projectList.do")
+	public String projectList(){
+		return "project/projectList";
+	}
+	@RequestMapping("error.do")
+	public String error(){
+		return "common/errorpage";
+	}
 }
