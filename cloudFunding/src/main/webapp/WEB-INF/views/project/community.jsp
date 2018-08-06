@@ -105,9 +105,7 @@
 /* sc-component-id: SiteHeader__LinkButton-s1s56ls8-7 */
 
 .hcvfVq {border: none;background: transparent;outline: none;color: black;font-weight: bold;font-size: 1rem;cursor: pointer;line-height: 58px;padding: 0 1rem;}.hcvfVq > i {font-size: 1.25em;}@media (min-width: 1080px) {.hcvfVq {line-height: 65px;}.hcvfVq > i {font-size: 1em;margin-right: 0.5em;}}.hcvfVq:hover {color: #757575;}
-/* sc-component-id: SiteHeader__ItemLabel-s1s56ls8-8 */
 
-@media (max-width: 1079px) {.iGOIal {display: none;}}
 /* sc-component-id: SiteHeader__ForMobile-s1s56ls8-9 */
 
 .kizyZz {display: none;}@media (min-width: 1080px) {.kizyZz {display: inline;}}
