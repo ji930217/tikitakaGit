@@ -558,15 +558,15 @@
 							<div class="ContentsNavigation__NavLeft-s6dhfrc-3 eSsILz"
 								data-reactid="96">
 								<a class="ContentsNavigation__NavItem-s6dhfrc-0 gEWplf"
-									href="projectDetail.do" data-reactid="97">스토리</a><a
-									class="ContentsNavigation__NavItem-s6dhfrc-0 gEWplf"
-									style="color: rgba(0, 0, 0, 1); border-bottom: 3px solid rgba(0, 0, 0, 1); padding-bottom: calc(0.5rem - 3px);"
-									href="projectCommunity.do" data-reactid="98">
-									<!-- react-text: 99 -->커뮤니티<!-- /react-text -->
+											href="projectDetail.do" data-reactid="97">스토리</a>
+								<a class="ContentsNavigation__NavItem-s6dhfrc-0 gEWplf"
+									href="/sejong/community"
+									style="color: rgb(0, 0, 0); border-bottom: 3px solid rgb(0, 0, 0); padding-bottom: calc(0.5rem - 3px);">
+									<!-- react-text: 763 -->커뮤니티<!-- /react-text -->
 									<span
-									class="ContentsNavigation__CommunityPostAmount-s6dhfrc-6 bReGoj"
-									data-reactid="100"></span>
-								</a><a class="ContentsNavigation__NavItem-s6dhfrc-0 gEWplf"
+									class="ContentsNavigation__CommunityPostAmount-s6dhfrc-6 bReGoj">11</span>
+								</a> 
+								<a class="ContentsNavigation__NavItem-s6dhfrc-0 gEWplf"
 									href="projectPolicy.do" data-reactid="101">환불 및 교환</a>
 							</div>
 						</div>
