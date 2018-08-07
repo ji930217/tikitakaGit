@@ -4,7 +4,7 @@
 
     
  <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
-<c:import url="../common/header.jsp"/>
+
 
 <!DOCTYPE html>
 <html lang="ko">
@@ -116,6 +116,8 @@
 </head>
 <body>
 
+	<c:import url="../common/header.jsp"/>
+
 	<form id="googleForm" action="googleLogin.do" method="post">
 	   	<input type="hidden" id="googleEmail" name="googleEmail">
 	   	<input type="hidden" id="googleName" name="googleName">
@@ -164,5 +166,6 @@
         </div>
     </div>
 
+	<c:import url="../common/footer.jsp"/>
 </body>
 </html>

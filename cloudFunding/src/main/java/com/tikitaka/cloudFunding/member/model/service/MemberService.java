@@ -17,6 +17,7 @@ public class MemberService {
 	}
 
 	public Member selectMemeber(Member member) {
+		
 		return dao.selectMember(member);
 	}
 }

@@ -114,7 +114,10 @@ public class MemberController {
 			e.printStackTrace();
 		}
 		
-		member = new Member(email, name, password, profile_img.getOriginalFilename());
+		
+		
+		member = new Member(email, name, password, 
+				"resources/images/profile/" + profile_img.getOriginalFilename());
 		String view = "redirect:index.do";
 		
 		int result = memberService.insertMember(member);
@@ -134,7 +137,7 @@ public class MemberController {
 
 		Member member = new Member(googleEmail, googleName, "google", googleProfileImage);
 		Member user = memberService.selectMemeber(member);
-		
+		System.out.println(user);
 		if(user != null) {
 			session.setAttribute("user", user);
 			
@@ -167,6 +170,8 @@ public class MemberController {
 		
 		
 	}
+	
+	
 	
 	
 }

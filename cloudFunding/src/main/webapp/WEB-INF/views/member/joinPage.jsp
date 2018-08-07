@@ -2,7 +2,7 @@
     pageEncoding="UTF-8"%>
     
  <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
-<%-- <c:import url="../common/header.jsp"/> --%>
+  
 <!DOCTYPE html>
 <html>
 <head>
@@ -261,14 +261,15 @@
 
 </head>
 <body>
+	<c:import url="../common/header.jsp"/> 
 	
 	<div class="container">
     <div class="row main">
         <div class="panel-heading">
             <div class="panel-title text-center">
 
-                <h1 class="title">티키타카</h1>
-                <hr />
+                <!-- <h1 class="title">티키타카</h1>
+                <hr /> -->
             </div>
         </div>
         <div class="main-login main-center">
@@ -354,6 +355,8 @@
 
             </form>
             
+           
+            
             
             
             
@@ -365,8 +368,13 @@
             
             
         </div>
+       
     </div>
 </div>
+
+ <br>
+
+<c:import url="../common/footer.jsp"/>
 
 <script type="text/javascript" src="assets/js/bootstrap.js"></script>
 
