@@ -652,9 +652,7 @@
 							class="SiteHeader__ItemLabel-s1s56ls8-8 iGOIal" data-reactid="11">프로젝트
 							둘러보기</span>
 					</button>
-					<span class="SiteHeader__ForMobile-s1s56ls8-9 kizyZz"
-						data-reactid="12"><a
-						class="SiteHeader__LinkItem-s1s56ls8-6 cfMrMC" href="/start"
+					<span class="SiteHeader__ForMobile-s1s56ls8-9 kizyZz" data-reactid="12"><a class="SiteHeader__LinkItem-s1s56ls8-6 cfMrMC" href="projectStart.do"
 						data-reactid="13"><span
 							class="SiteHeader__ItemLabel-s1s56ls8-8 iGOIal" data-reactid="14">프로젝트
 								올리기</span></a></span>
