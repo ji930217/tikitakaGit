@@ -2991,12 +2991,9 @@ px
 		$(".addD").hide();
 		
 		$("._2uxYQ-nuPwdol9sQhOjfH-").click(function() {
-			
 			if($(this).attr('id')=='create-reward'||$(this).attr('id')=='itemAdd'||$(this).attr('id')=='itemBox'){
 				return;
 			}
-			
-			
 			$(".addD").hide();
 			$(".defaultD").show();
 			$("#new-reward").show();
@@ -3050,6 +3047,56 @@ px
 			}
 
 		});
+		
+	$("#projectTitle").keyup(function(){
+		 if(0<$("#projectShortTitle").val().length){
+			 $(".titleBtn").attr('disabled',false);
+		} 
+		console.log();
+		$('.titleRemit').text(32-$(this).val().length+'자 남았습니다');
+	});
+	
+	$("#projectShortTitle").keyup(function(){
+		if(0<$("#projectTitle").val().length){
+			$(".titleBtn").attr('disabled',false);
+		} 
+		$('.remitShortTitle').text(7-$(this).val().length+'자 남았습니다');	
+	});
+	
+	$(".titleBtn").click(function(){
+		if($("#projectTitle").val().length<4){
+			$("#projectTitle").focus();
+			alert('프로젝트 제목은 4글자 이상 입력해야 합니다.');
+			return;
+		}
+		
+		if($("#projectShortTitle").val().length<3){
+			$("#projectShortTitle").focus();
+			alert('프로젝트 짧은 제목은 3글자 이상 입력해야 합니다.');
+			return;
+		}
+		
+		//프로젝트 제목 수정중
+	});
+	
+	
+	$("#projectSummary").keyup(function(){
+		if(0<$(this).val().length){$(".summaryBtn").attr('disabled',false);} 
+		$(".summaryRemit").text( 50 - $(this).val().length+'자 남았습니다/최소 10자');
+		 if($(this).val().length > 49){  
+		       alert("그자는 최소 50자만 입력 가능합니다.");  
+		       $(this).val($(this).val().substring(0,49));  
+		  } 
+	});
+	
+	$(".summaryBtn").click(function(){
+		if(10>$("#projectSummary").val().length){
+			alert("프로젝트 요약은 최소 10자 이상 입력하셔야 됩니다.");
+			$("#projectSummary").focus();
+			return;
+		}
+	});
+	
 	});
 </script>
 </head>
