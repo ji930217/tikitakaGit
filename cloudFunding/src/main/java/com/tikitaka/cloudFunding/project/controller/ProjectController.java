@@ -41,12 +41,4 @@ public class ProjectController {
 		mv.setViewName("project/policy");
 		return mv;
 	}
-	@RequestMapping("error.do")
-	public String projecterror(){
-		return "common/errorpage";
-	}
-	@RequestMapping("projectList.do")
-	public String projectList(){
-		return "project/projectList";
-	}
 }
