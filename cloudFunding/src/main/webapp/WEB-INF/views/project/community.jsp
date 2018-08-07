@@ -280,6 +280,111 @@
     margin: 0 0 1rem;
 }
 
+	.fSBRQX {
+	    color: #000;
+	    font-weight: bolder;
+	    margin-left: .5rem;
+	}
+
+	/* 선착순 마감 스타일 */
+	.fGxdGR {
+	    text-align: right;
+	    float: right;
+	}
+	.ktzKui {
+	    font-weight: normal;
+	    color: rgba(117, 117, 117, 1);
+	    background-color: rgba(117, 117, 117, .1);
+	    border-radius: 2px;
+	    border: 1px solid rgba(117, 117, 117, .2);
+	    padding: .4rem .45rem;
+	}
+	
+	/* 선착순 마감 시 밀어주기 버튼 스타일 */
+	.kcmHIB{
+		cursor:default;
+	}
+	.fNWWcT {
+	    padding: 1em 1.5em;
+	    font-size: 1em;
+	    width: 100%;
+	    opacity: .3;
+	    pointer-events: none;
+        color: rgba(0, 0, 0, .6);
+   	 	background-color: #e7e7e7;
+   	 	display: inline-block;
+	    min-height: 1em;
+	    outline: none;
+	    border: none;
+	    vertical-align: baseline;
+	    box-shadow: 0px 0px 0px 1px transparent inset, 0px 0em 0px 0px rgba(0, 0, 0, 0.1) inset;
+	    -webkit-user-select: none;
+	    -moz-user-select: none;
+	    -ms-user-select: none;
+	    user-select: none;
+	    -webkit-transition: opacity 0.1s ease, background-color 0.1s ease, color 0.1s ease, box-shadow 0.1s ease,background 0.1s ease;
+	    transition: opacity 0.1s ease, background-color 0.1s ease, color 0.1s ease, box-shadow 0.1s ease,background 0.1s ease;
+	    -webkit-tap-highlight-color: transparent;
+	    margin: 0 .25em 0 0;
+	    border-radius: 0.28571429rem;
+	    text-transform: none;
+	    text-shadow: none;
+	    font-weight: bold;
+	    line-height: 1em;
+	    font-style: normal;
+	    text-align: center;
+	    text-decoration: none;
+	}
+	
+
+	/* n개 남음 스타일 */
+	.fGxdGR {
+	    text-align: right;
+	    float: right;
+	}
+	.jJjTiD {
+	    font-weight: normal;
+	    color: rgba(250, 100, 98, 1);
+	    background-color: #feefee;
+	    border-radius: 2px;
+	    border: 1px solid rgba(250, 100, 98, .2);
+	    padding: .4rem .45rem;
+}
+
+
+	.bsXUSY {
+	    display: inline-block;
+	    background-color: #000;
+	    color: #fff;
+	    font-size: .9rem;
+	    font-weight: bolder;
+	    padding: .2rem .6rem;
+	    margin: .5rem 0 1.5rem;
+	}
+	
+	/* 게시글 닉네임, 창작자 글자 스타일 */
+	.bUjrcg {
+	    margin-left: 1rem;
+	    color: #757575;
+	    font-size: .9rem;
+	}
+	
+	.fvqxSw {
+	    display: -webkit-box;
+	    display: -webkit-flex;
+	    display: -ms-flexbox;
+	    display: flex;
+	    -webkit-align-items: center;
+	    -webkit-box-align: center;
+	    -ms-flex-align: center;
+	    align-items: center;
+	}
+		
+	.buEHkh {
+	    display: inherit;
+	    position: relative;
+	    width: 100%;
+	}
 </style>
     </head>
     <body>
@@ -601,8 +706,417 @@
 										</div>
 									</div>
 								</div>
+
+
+							<!-- 창작자 업데이트 클릭 시 보여지는 영역 -->
+							<div>
+								<div class="Card__Card-s1i1esb8-0 bJXRvz">
+									<div
+										class="CommunityNewPost__CommunityNewPostWidget-s1s3p320-0 hIkOXr">
+										<div class="CommunityNewPost__LeftColumn-s1s3p320-1 fQMvgC">
+											<span class="ProfileImg__ProfileImg-s1o99mme-0 fGeOXz"></span>
+											<!-- react-text: 1168 -->
+											후원자만 글을 쓸 수 있어요
+											<!-- /react-text -->
+										</div>
+									</div>
+								</div>
+								<div class="Community__Posts-s14atsnj-0 umGxa">
+									<div class="PostFilter__FilterWrapper-vri3wd-0 gjgpkL">
+										<div class="PostFilter__FilterButton-vri3wd-1 bvwsV">모든
+											게시글</div>
+										<!-- react-text: 2236 -->
+										&nbsp;
+										<!-- /react-text -->
+										<div class="PostFilter__FilterButton-vri3wd-1 gDEKBn">창작자
+											업데이트</div>
+									</div>
+									<div
+										class="CommunityPostSummaryCard__PostSummaryCardWrapper-s1yavd3r-0 eUjMK">
+										<div class="Card__Card-s1i1esb8-0 bJXRvz">
+											<div
+												class="CommunityPostSummaryCard__MetaWrapper-s1yavd3r-1 iLAsKd">
+												<div
+													class="CommunityPostSummaryCard__PostCategory-s1yavd3r-2 bsXUSY">창작자
+													업데이트</div>
+												<div
+													class="CommunityPostSummaryCard__Meta-s1yavd3r-3 jmsIUt">
+													<div class="CommunityPostSummaryCard__MetaInner-s1yavd3r-4 buEHkh">
+															<span class="ProfileImg__ProfileImg-s1o99mme-0 dCYRcO inline"></span>
+															<div class="CommunityPostSummaryCard__UserProfile-s1yavd3r-5 bUjrcg inline">
+																<div class="CommunityPostSummaryCard__AuthorWrapper-s1yavd3r-6 fvqxSw">
+																	<div class="CommunityPostSummaryCard__AuthorFullname-s1yavd3r-7 jghVVw">이동건</div>
+																	<span
+																	class="CommunityPostSummaryCard__CreatorLabel-s1yavd3r-8 fSBRQX">창작자</span>
+																</div>
+																<span>
+																	<!-- react-text: 1088 -->2일 전<!-- /react-text -->
+																	<!-- react-text: 1089 --> <!-- /react-text -->
+																	<!-- react-text: 1090 -->
+																	<!-- /react-text -->
+																</span>
+															</div>
+														</div>
+												</div>
+											</div>
+											<div
+												class="CommunityPostSummaryCard__ContentsWrapper-s1yavd3r-11 cywbQo"
+												style="cursor: pointer;">
+												<div>
+													<div
+														class="CommunityPostSummaryCard__Contents-s1yavd3r-13 fmSZUJ">
+														<div class="storyContent">
+															7월 18일 판교에서,<br>박현모 교수님과 권혜진 박사님께 [보드게임 세종]을 소개하는
+															자리를 가졌습니다.<br>
+															<img
+																src="https://tumblbug-images.imgix.net/posts/0b7f7853-3e39-4300-b629-115cd7de7643.jpg">
+															<p>(즐겁게 플레이 중인 박현모 교수님과 권혜진 박사님.&nbsp;그리고 이겼다고 좋아하고
+																있는 개발자....)</p>
+															<br>두 분께 제 게임을 소개드리고 함께 플레이해 볼 수 있어 행복했습니다.<br>
+															<br>그리고 무엇보다, <br>[보드게임 세종]을 시작으로&nbsp;두 분과 함께
+															할 수 있는 <br>수많은 기회와 가능성 때문에 가슴벅찬 저녁이었습니다.<br>
+															<br>앞으로 좋은 소식 확정될 때 마다 업데이트 하겠습니다.<br>기대해 주세요~<br>
+															<br>박현모 교수님은,<br>-&nbsp;여주대학교 세종리더쉽연구소장<br>-
+															(사)한국리더쉽개발원 원장<br>-&nbsp;세종 및 경영리더쉽 관련 80여 편의 논저<br>-
+															중앙/조선/문화일보 컬럼니스트 <br>- JTBC 차이나는 클래스 <br>&nbsp;
+															[61강: 박현모 교수 - 2018년에도 소환하고 싶은 군주, 세종]편 강연<br>http://tv.jtbc.joins.com/board/pr10010461/pm10042213/detail/61<br>
+															<br>권혜진 박사님은,<br>- 세종이노베이션 대표<br>-
+															(사)한국리더쉽개발원 전략수석<br>- 서울대학교 소비자학 학사/석사/박사&nbsp;
+														</div>
+													</div>
+												</div>
+												<div
+													class="CommunityPostSummaryCard__ContentsWrapperGradient-s1yavd3r-12 hwdRmE"></div>
+											</div>
+											<div
+												class="CommunityPostSummaryCard__ReadMoreButton-s1yavd3r-14 bPLTTN">
+												<button class="Button__Button-s1ng5xda-0 dxWcyc"
+													style="cursor: pointer;">더 보기</button>
+											</div>
+											<div
+												class="CommunityPostSummaryCard__Actions-s1yavd3r-15 jgodLB"
+												style="cursor: pointer;">
+												<i class="_30LNYFhw6qsigZSbwlGCDz _1QY7TzdLHKX3-BKPDNNYKF"></i>
+												<!-- react-text: 2259 -->
+												<!-- /react-text -->
+												<!-- react-text: 2260 -->
+												0
+												<!-- /react-text -->
+											</div>
+										</div>
+									</div>
+									<div
+										class="CommunityPostSummaryCard__PostSummaryCardWrapper-s1yavd3r-0 eUjMK">
+										<div class="Card__Card-s1i1esb8-0 bJXRvz">
+											<div
+												class="CommunityPostSummaryCard__MetaWrapper-s1yavd3r-1 iLAsKd">
+												<div
+													class="CommunityPostSummaryCard__PostCategory-s1yavd3r-2 bsXUSY">창작자
+													업데이트</div>
+												<div
+													class="CommunityPostSummaryCard__Meta-s1yavd3r-3 jmsIUt">
+													<div
+														class="CommunityPostSummaryCard__MetaInner-s1yavd3r-4 buEHkh">
+														<span class="ProfileImg__ProfileImg-s1o99mme-0 iLDaQW"></span>
+														<div
+															class="CommunityPostSummaryCard__UserProfile-s1yavd3r-5 bUjrcg">
+															<div
+																class="CommunityPostSummaryCard__AuthorWrapper-s1yavd3r-6 fvqxSw">
+																<div
+																	class="CommunityPostSummaryCard__AuthorFullname-s1yavd3r-7 jghVVw">이동건</div>
+																<span
+																	class="CommunityPostSummaryCard__CreatorLabel-s1yavd3r-8 fSBRQX">창작자</span>
+															</div>
+															<span>
+																<!-- react-text: 2273 -->21일 전<!-- /react-text -->
+																<!-- react-text: 2274 --> <!-- /react-text -->
+																<!-- react-text: 2275 -->
+																<!-- /react-text -->
+															</span>
+														</div>
+													</div>
+												</div>
+											</div>
+											<div
+												class="CommunityPostSummaryCard__ContentsWrapper-s1yavd3r-11 cywbQo"
+												style="cursor: pointer;">
+												<div>
+													<div
+														class="CommunityPostSummaryCard__Contents-s1yavd3r-13 fmSZUJ">
+														<div class="storyContent">
+															안녕하세요.&nbsp;<br>보드게임 세종 개발자 이동건입니다.<br>
+															<br>1.&nbsp;게임소개 페이지에 룰&nbsp;설명 동영상을 업데이트 했습니다.<br>&nbsp;&nbsp;
+															&nbsp;카드 사용법 등을 담은 두번 째 영상도, 제작이 완료되는 대로 업데이트 하겠습니다!<br>
+															<br>2. 룰에 작은 변화가 생겼습니다.<br>&nbsp;&nbsp;&nbsp; 턴
+															시작 시, 인재 주사위를 임금이 모두 굴리게 되는데,<br>&nbsp;&nbsp;
+															&nbsp;이 때&nbsp; 신하들의 주사위만 모두 굴립니다.<br>&nbsp;&nbsp;&nbsp;
+															이후 임금은 자신의&nbsp;인재 주사위를&nbsp;마음대로 배치하는 룰로 수정하여, <br>&nbsp;&nbsp;&nbsp;
+															임금이 자신의 턴에 더 유리하도록 수정하였습니다.<br>&nbsp;&nbsp;&nbsp; -
+															현재 룰설명 영상은 이 바뀐 룰을 적용하여 설명합니다.
+														</div>
+													</div>
+												</div>
+											</div>
+											<div
+												class="CommunityPostSummaryCard__Actions-s1yavd3r-15 jgodLB"
+												style="cursor: pointer;">
+												<i class="_30LNYFhw6qsigZSbwlGCDz _1QY7TzdLHKX3-BKPDNNYKF"></i>
+												<!-- react-text: 2282 -->
+												<!-- /react-text -->
+												<!-- react-text: 2283 -->
+												0
+												<!-- /react-text -->
+											</div>
+										</div>
+									</div>
+									<div
+										class="CommunityPostSummaryCard__PostSummaryCardWrapper-s1yavd3r-0 eUjMK">
+										<div class="Card__Card-s1i1esb8-0 bJXRvz">
+											<div
+												class="CommunityPostSummaryCard__MetaWrapper-s1yavd3r-1 iLAsKd">
+												<div
+													class="CommunityPostSummaryCard__PostCategory-s1yavd3r-2 bsXUSY">창작자
+													업데이트</div>
+												<div
+													class="CommunityPostSummaryCard__Meta-s1yavd3r-3 jmsIUt">
+													<div
+														class="CommunityPostSummaryCard__MetaInner-s1yavd3r-4 buEHkh">
+														<span class="ProfileImg__ProfileImg-s1o99mme-0 iLDaQW"></span>
+														<div
+															class="CommunityPostSummaryCard__UserProfile-s1yavd3r-5 bUjrcg">
+															<div
+																class="CommunityPostSummaryCard__AuthorWrapper-s1yavd3r-6 fvqxSw">
+																<div
+																	class="CommunityPostSummaryCard__AuthorFullname-s1yavd3r-7 jghVVw">이동건</div>
+																<span
+																	class="CommunityPostSummaryCard__CreatorLabel-s1yavd3r-8 fSBRQX">창작자</span>
+															</div>
+															<span>
+																<!-- react-text: 2296 -->한 달 전<!-- /react-text -->
+																<!-- react-text: 2297 --> <!-- /react-text -->
+																<!-- react-text: 2298 -->
+																<!-- /react-text -->
+															</span>
+														</div>
+													</div>
+												</div>
+											</div>
+											<div
+												class="CommunityPostSummaryCard__ContentsWrapper-s1yavd3r-11 cywbQo"
+												style="cursor: pointer;">
+												<div>
+													<div
+														class="CommunityPostSummaryCard__Contents-s1yavd3r-13 fmSZUJ">
+														<div class="storyContent">
+															복잡하게 느껴졌던, 업적도전 시 협상룰을 개선했습니다.<br>
+															<br>승점을 나눠가지기 위한 사전 협상단계를 완전히 삭제하고 업적에 참가한 두 명이, 각자
+															굴린 주사위 숫자대로 승점을 먹는 것으로 룰을 간단하게 개선했습니다.<br>
+															<br>이번 보드게임콘 행사에서 다양한 연령대의 분들을 대상으로&nbsp;테스트 플레이 결과,<br>훨씬
+															더 빠르고 경쾌한 게임진행이 되어 좋다는 의견을 많이 주셨습니다.<br>
+															<br>보드게임 세종 테스트 플레이에 참여해주신 모든 분들과 많은 도움 주신 멋진지니님,
+															최우진님께 감사 드립니다!
+														</div>
+													</div>
+												</div>
+											</div>
+											<div
+												class="CommunityPostSummaryCard__Actions-s1yavd3r-15 jgodLB"
+												style="cursor: pointer;">
+												<i class="_30LNYFhw6qsigZSbwlGCDz _1QY7TzdLHKX3-BKPDNNYKF"></i>
+												<!-- react-text: 2305 -->
+												<!-- /react-text -->
+												<!-- react-text: 2306 -->
+												0
+												<!-- /react-text -->
+											</div>
+										</div>
+									</div>
+									<div
+										class="CommunityPostSummaryCard__PostSummaryCardWrapper-s1yavd3r-0 eUjMK">
+										<div class="Card__Card-s1i1esb8-0 bJXRvz">
+											<div
+												class="CommunityPostSummaryCard__MetaWrapper-s1yavd3r-1 iLAsKd">
+												<div
+													class="CommunityPostSummaryCard__PostCategory-s1yavd3r-2 bsXUSY">창작자
+													업데이트</div>
+												<div
+													class="CommunityPostSummaryCard__Meta-s1yavd3r-3 jmsIUt">
+													<div
+														class="CommunityPostSummaryCard__MetaInner-s1yavd3r-4 buEHkh">
+														<span class="ProfileImg__ProfileImg-s1o99mme-0 iLDaQW"></span>
+														<div
+															class="CommunityPostSummaryCard__UserProfile-s1yavd3r-5 bUjrcg">
+															<div
+																class="CommunityPostSummaryCard__AuthorWrapper-s1yavd3r-6 fvqxSw">
+																<div
+																	class="CommunityPostSummaryCard__AuthorFullname-s1yavd3r-7 jghVVw">이동건</div>
+																<span
+																	class="CommunityPostSummaryCard__CreatorLabel-s1yavd3r-8 fSBRQX">창작자</span>
+															</div>
+															<span>
+																<!-- react-text: 2319 -->한 달 전<!-- /react-text -->
+																<!-- react-text: 2320 --> <!-- /react-text -->
+																<!-- react-text: 2321 -->
+																<!-- /react-text -->
+															</span>
+														</div>
+													</div>
+												</div>
+											</div>
+											<div
+												class="CommunityPostSummaryCard__ContentsWrapper-s1yavd3r-11 cywbQo"
+												style="cursor: pointer;">
+												<div>
+													<div
+														class="CommunityPostSummaryCard__Contents-s1yavd3r-13 fmSZUJ">
+														<div class="storyContent">
+															7월 8일(일) 보드게임콘 작가존에서 보드게임 세종을 소개할 수 있었는데요,<br>
+															<br>보드라이브 생방송에 출연하게 되었습니다.<br>1시간 6분 50초에서 저와
+															보드게임 세종이 등장합니다.<br>
+															<br>보드라이브 감사합니다!<br>
+															<br>https://www.youtube.com/watch?v=6gbQhjMFObs<br>
+															<br>&nbsp;
+														</div>
+													</div>
+												</div>
+											</div>
+											<div
+												class="CommunityPostSummaryCard__Actions-s1yavd3r-15 jgodLB"
+												style="cursor: pointer;">
+												<i class="_30LNYFhw6qsigZSbwlGCDz _1QY7TzdLHKX3-BKPDNNYKF"></i>
+												<!-- react-text: 2328 -->
+												<!-- /react-text -->
+												<!-- react-text: 2329 -->
+												0
+												<!-- /react-text -->
+											</div>
+										</div>
+									</div>
+									<div
+										class="CommunityPostSummaryCard__PostSummaryCardWrapper-s1yavd3r-0 eUjMK">
+										<div class="Card__Card-s1i1esb8-0 bJXRvz">
+											<div
+												class="CommunityPostSummaryCard__MetaWrapper-s1yavd3r-1 iLAsKd">
+												<div
+													class="CommunityPostSummaryCard__PostCategory-s1yavd3r-2 bsXUSY">창작자
+													업데이트</div>
+												<div
+													class="CommunityPostSummaryCard__Meta-s1yavd3r-3 jmsIUt">
+													<div
+														class="CommunityPostSummaryCard__MetaInner-s1yavd3r-4 buEHkh">
+														<span class="ProfileImg__ProfileImg-s1o99mme-0 iLDaQW"></span>
+														<div
+															class="CommunityPostSummaryCard__UserProfile-s1yavd3r-5 bUjrcg">
+															<div
+																class="CommunityPostSummaryCard__AuthorWrapper-s1yavd3r-6 fvqxSw">
+																<div
+																	class="CommunityPostSummaryCard__AuthorFullname-s1yavd3r-7 jghVVw">이동건</div>
+																<span
+																	class="CommunityPostSummaryCard__CreatorLabel-s1yavd3r-8 fSBRQX">창작자</span>
+															</div>
+															<span>
+																<!-- react-text: 2342 -->한 달 전<!-- /react-text -->
+																<!-- react-text: 2343 --> <!-- /react-text -->
+																<!-- react-text: 2344 -->
+																<!-- /react-text -->
+															</span>
+														</div>
+													</div>
+												</div>
+											</div>
+											<div
+												class="CommunityPostSummaryCard__ContentsWrapper-s1yavd3r-11 cywbQo"
+												style="cursor: pointer;">
+												<div>
+													<div
+														class="CommunityPostSummaryCard__Contents-s1yavd3r-13 fmSZUJ">
+														<div class="storyContent">
+															7월 8일 보드게임콘 작가존에서 게임과 함께 인사 드릴 수 있을 것 같습니다.<br>
+															<br>여러가지로 많은 도움주시는 멋진지니님께 다시 한 번 감사드립니다~!
+														</div>
+													</div>
+												</div>
+											</div>
+											<div
+												class="CommunityPostSummaryCard__Actions-s1yavd3r-15 jgodLB"
+												style="cursor: pointer;">
+												<i class="_30LNYFhw6qsigZSbwlGCDz _1QY7TzdLHKX3-BKPDNNYKF"></i>
+												<!-- react-text: 2351 -->
+												<!-- /react-text -->
+												<!-- react-text: 2352 -->
+												1
+												<!-- /react-text -->
+											</div>
+										</div>
+									</div>
+									<div
+										class="CommunityPostSummaryCard__PostSummaryCardWrapper-s1yavd3r-0 eUjMK">
+										<div class="Card__Card-s1i1esb8-0 bJXRvz">
+											<div
+												class="CommunityPostSummaryCard__MetaWrapper-s1yavd3r-1 iLAsKd">
+												<div
+													class="CommunityPostSummaryCard__PostCategory-s1yavd3r-2 bsXUSY">창작자
+													업데이트</div>
+												<div
+													class="CommunityPostSummaryCard__Meta-s1yavd3r-3 jmsIUt">
+													<div
+														class="CommunityPostSummaryCard__MetaInner-s1yavd3r-4 buEHkh">
+														<span class="ProfileImg__ProfileImg-s1o99mme-0 iLDaQW"></span>
+														<div
+															class="CommunityPostSummaryCard__UserProfile-s1yavd3r-5 bUjrcg">
+															<div
+																class="CommunityPostSummaryCard__AuthorWrapper-s1yavd3r-6 fvqxSw">
+																<div
+																	class="CommunityPostSummaryCard__AuthorFullname-s1yavd3r-7 jghVVw">이동건</div>
+																<span
+																	class="CommunityPostSummaryCard__CreatorLabel-s1yavd3r-8 fSBRQX">창작자</span>
+															</div>
+															<span>
+																<!-- react-text: 2365 -->한 달 전<!-- /react-text -->
+																<!-- react-text: 2366 --> <!-- /react-text -->
+																<!-- react-text: 2367 -->
+																<!-- /react-text -->
+															</span>
+														</div>
+													</div>
+												</div>
+											</div>
+											<div
+												class="CommunityPostSummaryCard__ContentsWrapper-s1yavd3r-11 cywbQo"
+												style="cursor: pointer;">
+												<div>
+													<div
+														class="CommunityPostSummaryCard__Contents-s1yavd3r-13 fmSZUJ">
+														<div class="storyContent">
+															보드게임 세종의 메인 이미지 및 게임구성품 소개부분을 가독성 좋게 바꾸었습니다.<br>
+															<br>나머지 게임소개 부분도 더 세련된 이미지로 교체 예정이구요,<br>
+															<br>테스트 플레이 영상을 준비 중입니다.<br>
+															<br>기대해 주세요~<br>
+														</div>
+													</div>
+												</div>
+											</div>
+											<div
+												class="CommunityPostSummaryCard__Actions-s1yavd3r-15 jgodLB"
+												style="cursor: pointer;">
+												<i class="_30LNYFhw6qsigZSbwlGCDz _1QY7TzdLHKX3-BKPDNNYKF"></i>
+												<!-- react-text: 2374 -->
+												<!-- /react-text -->
+												<!-- react-text: 2375 -->
+												0
+												<!-- /react-text -->
+											</div>
+										</div>
+									</div>
+								</div>
 							</div>
+
 						</div>
+						</div>
+						
+						
+						
+						<!-- 오른쪽 고정 영역(창작자소개, 선물 목록) -->
 						<div class="ProjectPage__ProjectContentsSubColumn-b1letw-3 ceunQL">
 							<div class="ProjectPage__SubColumnInner-b1letw-5 deZznN">
 								<div class="Card__Card-s1i1esb8-0 bJXRvz">
@@ -703,7 +1217,13 @@
 														class="-o8oGI_QAOKsVIJOUOUmV _1QY7TzdLHKX3-BKPDNNYKF"></i>
 													<!-- react-text: 745 -->24<!-- /react-text -->
 														<!-- react-text: 746 -->명이 선택<!-- /react-text --></span>
-												</div>
+													 <span class="RewardCard__RewardQuantityLimit-ibjars-4 fGxdGR">
+														 <span class="RewardCard__LimitedRewardLabel-ibjars-5 jJjTiD">
+														<!-- react-text: 1073 -->72<!-- /react-text -->
+														<!-- react-text: 1074 -->개 남음<!-- /react-text -->
+														</span>
+													</span>
+											</div>
 												<div class="RewardCard__RewardContents-ibjars-7 dQJbED">
 													<div
 														class="RewardCard__RewardMinimumPledgeAmount-ibjars-8 dOjYPK">
@@ -872,7 +1392,12 @@
 														class="-o8oGI_QAOKsVIJOUOUmV _1QY7TzdLHKX3-BKPDNNYKF"></i>
 													<!-- react-text: 845 -->27<!-- /react-text -->
 														<!-- react-text: 846 -->명이 선택<!-- /react-text --></span>
-												</div>
+													<span class="RewardCard__RewardQuantityLimit-ibjars-4 fGxdGR">
+														<span class="RewardCard__SoldoutLabel-ibjars-6 ktzKui">선착순
+														마감
+														</span>
+													</span>
+											</div>
 												<div class="RewardCard__RewardContents-ibjars-7 dQJbED">
 													<div
 														class="RewardCard__RewardMinimumPledgeAmount-ibjars-8 dOjYPK">
@@ -905,8 +1430,7 @@
 													</span>
 												</div>
 												<div class="Divider__Divider-s16ihjfx-0 ilHpOi"></div>
-												<button class="Button__Button-s1ng5xda-0 dxWcyc">선물
-													선택하고 밀어주기</button>
+													<button class="Button__Button-s1ng5xda-0 fNWWcT" disabled="">선물 선택하고 밀어주기</button>
 											</div>
 										</div>
 									</div>
