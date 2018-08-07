@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+    <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+    <script src="resources/js/jquery-3.3.1.min.js"></script>
+
+<html lang="ko">
+<head>
+<style>
+	#mainTitle{
+		text-align: center;
+		margin-top:50px;
+	}
+	
+	.container{
+	margin-top:70px;
+	}
+	
+	#searchBar{
+	margin-top:20px;
+	}
+	
+	/* input:focus {
+  outline: none;
+} */
+</style>
+
+  <title>관리자메인페이지</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<script>
+
+/* $(function(){
+	$("li a").click(function(){
+		 $(this).attr('class','active'); 
+		  $(this).toggleClass('active'); 
+		 
+	 	 $("ul li").removeClass('active'); 
+		  $(this).addClass('active'); 
+		  
+		  
+		
+
+	})
+}) */
+
+
+
+</script>
+</head>
+<body>
+	<c:import url="../common/header.jsp"></c:import>
+
+  <h1 id = "mainTitle">TIKITAKA 관리</h1>
+<div class="container" id = "tebMenu">
+  
+
+  <ul class="nav nav-tabs">
+    <li class="active"><a data-toggle="tab" href="#home">Home</a></li>
+    <li><a data-toggle="tab" href="#menu1">회원관리</a></li>
+    <li><a data-toggle="tab" href="#menu2">프로젝트 종료확인</a></li>
+    <li><a data-toggle="tab" href="#menu3">프로젝트 승인여부</a></li>
+    <li><a data-toggle="tab" href="#menu4">배너관리</a></li>
+  </ul>
+  
+  
+
+  <div class="tab-content">
+  
+    <div id="home" class="tab-pane fade in active">
+        <c:import url="chart.jsp"></c:import>
+       </div>
+       
+    <div id="menu1" class="tab-pane fade">
+      <c:import url="memberList.jsp"></c:import>
+    </div>
+    
+    <div id="menu2" class="tab-pane fade">
+       <h3>Menu 2</h3>
+      <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam.</p>      
+    </div>
+    
+    <div id="menu3" class="tab-pane fade">
+      <h3>Menu 3</h3>
+      <p>Eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.</p>
+    </div>
+    
+    <div id="menu4" class="tab-pane fade">
+     <p>Eaqu222222222e ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.</p>
+    </div>
+    
+  </div>
+</div>
+	<c:import url="../common/footer.jsp"></c:import>
+
+</body>
+</html>
