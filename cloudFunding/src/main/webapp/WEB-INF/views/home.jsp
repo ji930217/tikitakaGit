@@ -38,7 +38,7 @@
 	<c:import url="common/footer.jsp"/>
 
 	<a href="projectStart.do">프로젝트 만들기</a><br>
-	<a href="projectDetail.do">프로젝트 상세 페이지</a><br>
+	
 
 	
 </body>
