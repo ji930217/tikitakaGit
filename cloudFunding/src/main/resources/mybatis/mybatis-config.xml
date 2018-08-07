@@ -7,19 +7,21 @@
 <!-- http://www.mybatis.org/mybatis-3/ko/configuration.html#settings  -->
 
  <settings>
- 	<setting name="jdbcTypeForNull" value="NULL"/>
- 	<setting name="mapUnderscoreToCamelCase" value="true"/> 	
+ 	<setting name="jdbcTypeForNull" value="NULL"/> 	
+ 	<setting name="mapUnderscoreToCamelCase" value="true"/> 
  </settings>
 
 
   <typeAliases>
   	<typeAlias type="com.tikitaka.cloudFunding.member.model.vo.Member" alias="Member"/>
+  	<typeAlias type="com.tikitaka.cloudFunding.admin.model.vo.AdminVo" alias="Admin"/>
   </typeAliases>
   
 
   <mappers>
   	<!-- resources가 빌드 패쓰 루트이므로 mybatis부터 기술해야 한다.  -->
     <mapper resource="mybatis/sql/memberMapper.xml"/>
+    <mapper resource="mybatis/sql/admin-mapper.xml"/>
     
   </mappers>
   

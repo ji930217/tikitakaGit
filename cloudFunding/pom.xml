@@ -14,6 +14,7 @@
 		<org.slf4j-version>1.6.6</org.slf4j-version>
 	</properties>
 	<dependencies>
+		<!-- Spring -->
 		<dependency>
 			<groupId>org.springframework</groupId>
 			<artifactId>spring-context</artifactId>
@@ -23,7 +24,7 @@
 				<exclusion>
 					<groupId>commons-logging</groupId>
 					<artifactId>commons-logging</artifactId>
-				</exclusion>
+				 </exclusion>
 			</exclusions>
 		</dependency>
 		<dependency>
@@ -31,18 +32,22 @@
 			<artifactId>spring-webmvc</artifactId>
 			<version>${org.springframework-version}</version>
 		</dependency>
+				
 		<!-- AspectJ -->
 		<dependency>
 			<groupId>org.aspectj</groupId>
 			<artifactId>aspectjrt</artifactId>
 			<version>${org.aspectj-version}</version>
-		</dependency>
+		</dependency>	
+		
 		<!-- https://mvnrepository.com/artifact/org.aspectj/aspectjweaver -->
+		<!-- advice를 사용할 수 있도록 해주는 라이브러리. -->
 		<dependency>
-			<groupId>org.aspectj</groupId>
-			<artifactId>aspectjweaver</artifactId>
-			<version>1.8.13</version>
+		    <groupId>org.aspectj</groupId>
+		    <artifactId>aspectjweaver</artifactId>
+		    <version>1.8.13</version>
 		</dependency>
+		
 		<!-- Logging -->
 		<dependency>
 			<groupId>org.slf4j</groupId>
@@ -85,12 +90,14 @@
 			</exclusions>
 			<scope>runtime</scope>
 		</dependency>
+
 		<!-- @Inject -->
 		<dependency>
 			<groupId>javax.inject</groupId>
 			<artifactId>javax.inject</artifactId>
 			<version>1</version>
 		</dependency>
+				
 		<!-- Servlet -->
 		<dependency>
 			<groupId>javax.servlet</groupId>
@@ -104,18 +111,27 @@
 			<version>2.1</version>
 			<scope>provided</scope>
 		</dependency>
-		<dependency>
+		<!-- <dependency>
 			<groupId>javax.servlet</groupId>
 			<artifactId>jstl</artifactId>
 			<version>1.2</version>
-		</dependency>
+		</dependency> -->
+	
 		<!-- Test -->
 		<dependency>
 			<groupId>junit</groupId>
 			<artifactId>junit</artifactId>
 			<version>4.7</version>
 			<scope>test</scope>
-		</dependency>
+		</dependency>   
+		
+		<!-- Database 설정 -->
+<!-- 		<dependency>
+			<groupId>com.oracle</groupId>
+			<artifactId>ojdbc6</artifactId>
+			<version>11.2.0.3</version>
+		</dependency> -->
+		
 		<!-- MyBatis -->
 		<dependency>
 			<groupId>org.mybatis</groupId>
@@ -132,23 +148,29 @@
 			<artifactId>spring-jdbc</artifactId>
 			<version>${org.springframework-version}</version>
 		</dependency>
+		
 		<!-- DBCP -->
 		<dependency>
 			<groupId>commons-dbcp</groupId>
 			<artifactId>commons-dbcp</artifactId>
 			<version>1.4</version>
 		</dependency>
-		<!-- ajax -->
+		
+		
+		
+		<!-- ajax -->		
 		<dependency>
-			<groupId>com.fasterxml.jackson.core</groupId>
-			<artifactId>jackson-core</artifactId>
-			<version>2.9.5</version>
+		    <groupId>com.fasterxml.jackson.core</groupId>
+		    <artifactId>jackson-core</artifactId>
+		    <version>2.9.5</version>
 		</dependency>
+		
 		<dependency>
-			<groupId>com.fasterxml.jackson.core</groupId>
-			<artifactId>jackson-databind</artifactId>
-			<version>2.9.5</version>
+		    <groupId>com.fasterxml.jackson.core</groupId>
+		    <artifactId>jackson-databind</artifactId>
+		    <version>2.9.5</version>
 		</dependency>
+		
 		<!-- FileUpload -->
 		<dependency>
 			<groupId>commons-fileupload</groupId>
@@ -160,43 +182,89 @@
 			<artifactId>commons-io</artifactId>
 			<version>2.6</version>
 		</dependency>
+		
+		
+		<!-- https://developers.google.com/api-client-library/java/apis/gmail/v1 -->
+		<dependency>
+	      <groupId>com.google.apis</groupId>
+	      <artifactId>google-api-services-gmail</artifactId>
+	      <version>v1-rev92-1.24.1</version>
+	    </dependency>
+	    
+	    
+	    <!-- https://mvnrepository.com/artifact/org.projectlombok/lombok -->
+		<dependency>
+		    <groupId>org.projectlombok</groupId>
+		    <artifactId>lombok</artifactId>
+		    <version>1.16.10</version>
+		    <scope>provided</scope>
+		</dependency>
+		
+		<!-- https://mvnrepository.com/artifact/javax.mail/mail -->
+		<dependency>
+		    <groupId>javax.mail</groupId>
+		    <artifactId>mail</artifactId>
+		    <version>1.4</version>
+		</dependency>
+
+
+
+		<dependency>
+		    <groupId>org.springframework</groupId>
+		    <artifactId>spring-context-support</artifactId>
+		    <version>${org.springframework-version}</version>
+		</dependency>
+		
+		
+		<!-- Java Mail API -->
+	  <dependency>
+	     <groupId>javax.mail</groupId>
+	     <artifactId>mail</artifactId>
+	     <version>1.4.3</version>
+	  </dependency>
+	  
+	  
+		
+		
+			
+		     
 	</dependencies>
-	<build>
-		<plugins>
-			<plugin>
-				<artifactId>maven-eclipse-plugin</artifactId>
-				<version>2.9</version>
-				<configuration>
-					<additionalProjectnatures>
-						<projectnature>org.springframework.ide.eclipse.core.springnature</projectnature>
-					</additionalProjectnatures>
-					<additionalBuildcommands>
-						<buildcommand>org.springframework.ide.eclipse.core.springbuilder</buildcommand>
-					</additionalBuildcommands>
-					<downloadSources>true</downloadSources>
-					<downloadJavadocs>true</downloadJavadocs>
-				</configuration>
-			</plugin>
-			<plugin>
-				<groupId>org.apache.maven.plugins</groupId>
-				<artifactId>maven-compiler-plugin</artifactId>
-				<version>2.5.1</version>
-				<configuration>
-					<source>1.6</source>
-					<target>1.6</target>
-					<compilerArgument>-Xlint:all</compilerArgument>
-					<showWarnings>true</showWarnings>
-					<showDeprecation>true</showDeprecation>
-				</configuration>
-			</plugin>
-			<plugin>
-				<groupId>org.codehaus.mojo</groupId>
-				<artifactId>exec-maven-plugin</artifactId>
-				<version>1.2.1</version>
-				<configuration>
-					<mainClass>org.test.int1.Main</mainClass>
-				</configuration>
-			</plugin>
-		</plugins>
-	</build>
+    <build>
+        <plugins>
+            <plugin>
+                <artifactId>maven-eclipse-plugin</artifactId>
+                <version>2.9</version>
+                <configuration>
+                    <additionalProjectnatures>
+                        <projectnature>org.springframework.ide.eclipse.core.springnature</projectnature>
+                    </additionalProjectnatures>
+                    <additionalBuildcommands>
+                        <buildcommand>org.springframework.ide.eclipse.core.springbuilder</buildcommand>
+                    </additionalBuildcommands>
+                    <downloadSources>true</downloadSources>
+                    <downloadJavadocs>true</downloadJavadocs>
+                </configuration>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <version>2.5.1</version>
+                <configuration>
+                    <source>1.6</source>
+                    <target>1.6</target>
+                    <compilerArgument>-Xlint:all</compilerArgument>
+                    <showWarnings>true</showWarnings>
+                    <showDeprecation>true</showDeprecation>
+                </configuration>
+            </plugin>
+            <plugin>
+                <groupId>org.codehaus.mojo</groupId>
+                <artifactId>exec-maven-plugin</artifactId>
+                <version>1.2.1</version>
+                <configuration>
+                    <mainClass>org.test.int1.Main</mainClass>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
 </project>

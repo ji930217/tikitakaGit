@@ -21,11 +21,13 @@
   	</insert>
   	
   	<select id="selectMemberEmail" parameterType="Member" resultType="Member">
-  		SELECT EMAIL, NAME, PASSWORD, PROFILE_IMG, ENROLL_DATE FROM MEMBER
+  		SELECT EMAIL, NAME, PASSWORD, PROFILE_IMG, ENROLL_DATE 
+  		FROM MEMBER
 		WHERE EMAIL = #{email}
-  	
   	</select>
   
+  
+
   
   </mapper>
   
