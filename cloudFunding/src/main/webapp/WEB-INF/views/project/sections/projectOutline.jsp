@@ -68,8 +68,8 @@
 														<div style="width: 100%;">
 															<div>
 																<div class="_13KHfN73YmQgsYHxXvuh_J _3_IGkn3uaje0g2ZA6Tx9wd _3nB1fZxEqXMiqXF-c7b1XQ">
-																	<input type="text" value=""
-																		placeholder="프로젝트 제목을 입력해주세요">
+																	<input id="projectTitle" type="text" value=""
+																		placeholder="프로젝트 제목을 입력해주세요" maxlength="31">
 																	<!-- react-text: 1292 -->
 																	<!-- /react-text -->
 																</div>
@@ -78,8 +78,8 @@
 																style="display: flex; justify-content: space-between;">
 																<!-- react-text: 1294
 																/react-text -->
-																<div class="_13KHfN73YmQgsYHxXvuh_J WU1ox0-AeDX_zneKjnNMO _3G8CRXtomRhisiZsw7Spx- _2-N-uV2y5apkjtxqdVnsop _1xou6XDdjhr5t3_tfAMqmg jvBXmsw6c8TD5NU0Gn0P6">
-																	32자 남았습니다</div>
+																<div class="_13KHfN73YmQgsYHxXvuh_J WU1ox0-AeDX_zneKjnNMO _3G8CRXtomRhisiZsw7Spx- _2-N-uV2y5apkjtxqdVnsop _1xou6XDdjhr5t3_tfAMqmg jvBXmsw6c8TD5NU0Gn0P6 titleRemit">32자 남았습니다</div>
+																	
 															</div>
 														</div>
 													</div>
@@ -90,8 +90,8 @@
 																<div>
 																	<div
 																		class="_13KHfN73YmQgsYHxXvuh_J _3_IGkn3uaje0g2ZA6Tx9wd _3nB1fZxEqXMiqXF-c7b1XQ  ">
-																		<input type="text" value=""
-																			placeholder="프로젝트 짧은 제목을 입력해주세요">
+																		<input id="projectShortTitle" type="text" value=""
+																			placeholder="프로젝트 짧은 제목을 입력해주세요" maxlength="6">
 																		<!-- react-text: 1303
 																		/react-text -->
 																	</div>
@@ -99,7 +99,7 @@
 																<div style="display: flex; justify-content: space-between;">
 																	<!-- react-text: 1305
 																	/react-text -->
-																<div class="_13KHfN73YmQgsYHxXvuh_J WU1ox0-AeDX_zneKjnNMO _3G8CRXtomRhisiZsw7Spx- _2-N-uV2y5apkjtxqdVnsop _1xou6XDdjhr5t3_tfAMqmg jvBXmsw6c8TD5NU0Gn0P6"> 7자 남았습니다</div>
+																<div class="_13KHfN73YmQgsYHxXvuh_J WU1ox0-AeDX_zneKjnNMO _3G8CRXtomRhisiZsw7Spx- _2-N-uV2y5apkjtxqdVnsop _1xou6XDdjhr5t3_tfAMqmg jvBXmsw6c8TD5NU0Gn0P6 remitShortTitle"> 7자 남았습니다</div>
 																</div>
 															</div>
 														</div>
@@ -117,7 +117,7 @@
 														<!-- /react-text -->
 													</button>
 													<button
-														class="_13KHfN73YmQgsYHxXvuh_J _3SbGdzxKM6M_AeOQWLNqks _18T1PLssfUK23Oz9uVd0fv _1j452e49HyLjnC-u8oPCHq"
+														class="titleBtn _13KHfN73YmQgsYHxXvuh_J _3SbGdzxKM6M_AeOQWLNqks _18T1PLssfUK23Oz9uVd0fv _1j452e49HyLjnC-u8oPCHq"
 														disabled="">
 														<i class="-o8oGI_QAOKsVIJOUOUmV _1QY7TzdLHKX3-BKPDNNYKF"></i>
 														<!-- react-text: 1313 -->
@@ -323,12 +323,12 @@
 													<p>후원자 분들에게 본 프로젝트를 간략하게 소개해 봅시다.</p>
 													<div class="_3_IGkn3uaje0g2ZA6Tx9wd">
 														<div class="_3_IGkn3uaje0g2ZA6Tx9wd">
-															<textarea placeholder="프로젝트 요약을 입력해주세요" rows="2"
+															<textarea id="projectSummary" placeholder="프로젝트 요약을 입력해주세요" rows="2"
 																style="width: 100%;"></textarea>
 															<div
-																class="_13KHfN73YmQgsYHxXvuh_J WU1ox0-AeDX_zneKjnNMO _3G8CRXtomRhisiZsw7Spx- _2-N-uV2y5apkjtxqdVnsop _1xou6XDdjhr5t3_tfAMqmg jvBXmsw6c8TD5NU0Gn0P6
-          ">최소
-																10자 / 50자 남았습니다</div>
+																class="summaryRemit _13KHfN73YmQgsYHxXvuh_J WU1ox0-AeDX_zneKjnNMO _3G8CRXtomRhisiZsw7Spx- _2-N-uV2y5apkjtxqdVnsop _1xou6XDdjhr5t3_tfAMqmg jvBXmsw6c8TD5NU0Gn0P6
+          ">
+																 50자 남았습니다/최소 10자</div>
 														</div>
 													</div>
 													<br>
@@ -343,8 +343,8 @@
 															취소하기
 															<!-- /react-text -->
 														</button>
-														<button
-															class="_13KHfN73YmQgsYHxXvuh_J _3SbGdzxKM6M_AeOQWLNqks _2-N-uV2y5apkjtxqdVnsop _2rCeEoFeBzvCYn76udqnww"
+														<button 
+															class="summaryBtn _13KHfN73YmQgsYHxXvuh_J _3SbGdzxKM6M_AeOQWLNqks _2-N-uV2y5apkjtxqdVnsop _2rCeEoFeBzvCYn76udqnww"
 															disabled="">
 															<i class="-o8oGI_QAOKsVIJOUOUmV _1QY7TzdLHKX3-BKPDNNYKF"></i>
 															<!-- react-text: 1632 -->
