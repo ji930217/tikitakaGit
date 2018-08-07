@@ -114,7 +114,7 @@
 .cfMrMC {diplay: block;border: none;background: transparent;outline: none;color: black;font-weight: bold;font-size: 1rem;cursor: pointer;line-height: 58px;padding: 0 1rem;}.cfMrMC > i {font-size: 1.25em;}@media (min-width: 1080px) {.cfMrMC {line-height: 65px;}.cfMrMC > i {font-size: 1em;margin-right: 0.5em;}}.cfMrMC:hover {color: #757575;}
 /* sc-component-id: SiteHeader__LinkButton-s1s56ls8-7 */
 
-.hcvfVq {border: none;background: transparent;outline: none;color: black;font-weight: bold;font-size: 1rem;cursor: pointer;line-height: 58px;padding: 0 1rem;}.hcvfVq > i {font-size: 1.25em;}@media (min-width: 1080px) {.hcvfVq {line-height: 65px;}.hcvfVq > i {font-size: 1em;margin-right: 0.5em;}}.hcvfVq:hover {color: #757575;}
+.hcvfVq {border: none;background: transparent;outline: none;color: black;font-weight: bold;font-size: 1rem;cursor: pointer;line-height: 58px;padding: 0 1rem;}.hcvfVq > i {font-size: 1.25em; height:60px;}@media (min-width: 1080px) {.hcvfVq {line-height: 65px;}.hcvfVq > i {font-size: 1em;margin-right: 0.5em;}}.hcvfVq:hover {color: #757575;}
 /* sc-component-id: sc-htoDjs */
 
 .fQwQfp {diplay: block;border: none;background: transparent;outline: none;color: black;font-weight: bold;font-size: 1rem;cursor: pointer;line-height: 58px;padding: 0 1rem;}.fQwQfp > i {font-size: 1.25em;}@media (min-width: 1080px) {.fQwQfp {line-height: 65px;}.fQwQfp > i {font-size: 1em;margin-right: 0.5em;}}.fQwQfp:hover {color: #757575;}.fQwQfp {display: -webkit-inline-box;display: -webkit-inline-flex;display: -ms-flexbox;display: inline-flex;-webkit-align-items: center;-webkit-box-align: center;-ms-flex-align: center;align-items: center;}
@@ -144,7 +144,7 @@
 .dvkZSH {cursor: pointer;display: inline-block;min-height: 1em;outline: none;border: none;vertical-align: baseline;box-shadow: 0px 0px 0px 1px transparent inset,  0px 0em 0px 0px rgba(0, 0, 0, 0.1) inset;-webkit-user-select: none;-moz-user-select: none;-ms-user-select: none;user-select: none;-webkit-transition: opacity 0.1s ease,  background-color 0.1s ease,  color 0.1s ease,  box-shadow 0.1s ease, background 0.1s ease;transition: opacity 0.1s ease,  background-color 0.1s ease,  color 0.1s ease,  box-shadow 0.1s ease, background 0.1s ease;-webkit-tap-highlight-color: transparent;margin: 0 .25em 0 0;border-radius: 0.28571429rem;text-transform: none;text-shadow: none;font-weight: bold;line-height: 1em;font-style: normal;text-align: center;text-decoration: none;}.dvkZSH > i {margin: 0 .42857143em 0 -.21428571em;}.dvkZSH {color: rgba(0, 0, 0, .6);background-color: #e7e7e7;}.dvkZSH:hover,.dvkZSH:focus,.dvkZSH:active {background-color: #d9d9d9;color: rgba(0, 0, 0, 8);}.dvkZSH {background-color: #fa6462;color: #fff;}.dvkZSH:hover,.dvkZSH:focus,.dvkZSH:active {background-color: #ff4543;color: #fff;}.dvkZSH {padding: 1.2em 2em;font-size: 1.1em;width: 100%;opacity: 1;pointer-events: ;;}
 .hZQjKf {cursor: pointer;display: inline-block;min-height: 1em;outline: none;border: none;vertical-align: baseline;box-shadow: 0px 0px 0px 1px transparent inset,  0px 0em 0px 0px rgba(0, 0, 0, 0.1) inset;-webkit-user-select: none;-moz-user-select: none;-ms-user-select: none;user-select: none;-webkit-transition: opacity 0.1s ease,  background-color 0.1s ease,  color 0.1s ease,  box-shadow 0.1s ease, background 0.1s ease;transition: opacity 0.1s ease,  background-color 0.1s ease,  color 0.1s ease,  box-shadow 0.1s ease, background 0.1s ease;-webkit-tap-highlight-color: transparent;margin: 0 .25em 0 0;border-radius: 0.28571429rem;text-transform: none;text-shadow: none;font-weight: bold;line-height: 1em;font-style: normal;text-align: center;text-decoration: none;}.hZQjKf > i {margin: 0 .42857143em 0 -.21428571em;}.hZQjKf {color: rgba(0, 0, 0, .6);background-color: #e7e7e7;}.hZQjKf:hover,.hZQjKf:focus,.hZQjKf:active {background-color: #d9d9d9;color: rgba(0, 0, 0, 8);}.hZQjKf {padding: 1em 1.5em;font-size: 1.1em;width: 100%;opacity: 1;pointer-events: ;padding: 1.2em;}.hZQjKf > i {margin: 0;}.hZQjKf {;}
 .dxWcyc {cursor: pointer;display: inline-block;min-height: 1em;outline: none;border: none;vertical-align: baseline;box-shadow: 0px 0px 0px 1px transparent inset,  0px 0em 0px 0px rgba(0, 0, 0, 0.1) inset;-webkit-user-select: none;-moz-user-select: none;-ms-user-select: none;user-select: none;-webkit-transition: opacity 0.1s ease,  background-color 0.1s ease,  color 0.1s ease,  box-shadow 0.1s ease, background 0.1s ease;transition: opacity 0.1s ease,  background-color 0.1s ease,  color 0.1s ease,  box-shadow 0.1s ease, background 0.1s ease;-webkit-tap-highlight-color: transparent;margin: 0 .25em 0 0;border-radius: 0.28571429rem;text-transform: none;text-shadow: none;font-weight: bold;line-height: 1em;font-style: normal;text-align: center;text-decoration: none;}.dxWcyc > i {margin: 0 .42857143em 0 -.21428571em;}.dxWcyc {color: rgba(0, 0, 0, .6);background-color: #e7e7e7;}.dxWcyc:hover,.dxWcyc:focus,.dxWcyc:active {background-color: #d9d9d9;color: rgba(0, 0, 0, 8);}.dxWcyc {padding: 1em 1.5em;font-size: 1em;width: 100%;opacity: 1;pointer-events: ;;}
-.cdAaGX {cursor: pointer;display: inline-block;min-height: 1em;outline: none;border: none;vertical-align: baseline;box-shadow: 0px 0px 0px 1px transparent inset,  0px 0em 0px 0px rgba(0, 0, 0, 0.1) inset;-webkit-user-select: none;-moz-user-select: none;-ms-user-select: none;user-select: none;-webkit-transition: opacity 0.1s ease,  background-color 0.1s ease,  color 0.1s ease,  box-shadow 0.1s ease, background 0.1s ease;transition: opacity 0.1s ease,  background-color 0.1s ease,  color 0.1s ease,  box-shadow 0.1s ease, background 0.1s ease;-webkit-tap-highlight-color: transparent;margin: 0 .25em 0 0;border-radius: 0.28571429rem;text-transform: none;text-shadow: none;font-weight: bold;line-height: 1em;font-style: normal;text-align: center;text-decoration: none;}.cdAaGX > i {margin: 0 .42857143em 0 -.21428571em;}.cdAaGX {color: rgba(0, 0, 0, .6);background-color: #e7e7e7;}.cdAaGX:hover,.cdAaGX:focus,.cdAaGX:active {background-color: #d9d9d9;color: rgba(0, 0, 0, 8);}.cdAaGX {padding: 1em 1.5em;font-size: 1em;width: ;padding: .8em 1.2em;font-size: .95em;opacity: .3;pointer-events: none;;}
+.cdAaGX {cursor: pointer;display: inline-block;min-height: 1em;outline: none;border: none;vertical-align: baseline;box-shadow: 0px 0px 0px 1px transparent inset,  0px 0em 0px 0px rgba(0, 0, 0, 0.1) inset;-webkit-user-select: none;-moz-user-select: none;-ms-user-select: none;user-select: none;-webkit-transition: opacity 0.1s ease,  background-color 0.1s ease,  color 0.1s ease,  box-shadow 0.1s ease, background 0.1s ease;transition: opacity 0.1s ease,  background-color 0.1s ease,  color 0.1s ease,  box-shadow 0.1s ease, background 0.1s ease;-webkit-tap-highlight-color: transparent;margin: 0 .25em 0 0;border-radius: 0.28571429rem;text-transform: none;text-shadow: none;font-weight: bold;line-height: 1em;font-style: normal;text-align: center;text-decoration: none;}.cdAaGX > i {margin: 0 .42857143em 0 -.21428571em;}.cdAaGX {color: rgba(0, 0, 0, .6);background-color: #e7e7e7;}.cdAaGX:hover,.cdAaGX:focus,.cdAaGX:active {background-color: #d9d9d9;color: rgba(0, 0, 0, 8);}.cdAaGX {padding: 1em 1.5em;font-size: 1em;width: ;padding: .8em 1.2em;font-size: .95em;opacity: .3;pointer-events: none;}
 .jKslKa {cursor: pointer;display: inline-block;min-height: 1em;outline: none;border: none;vertical-align: baseline;box-shadow: 0px 0px 0px 1px transparent inset,  0px 0em 0px 0px rgba(0, 0, 0, 0.1) inset;-webkit-user-select: none;-moz-user-select: none;-ms-user-select: none;user-select: none;-webkit-transition: opacity 0.1s ease,  background-color 0.1s ease,  color 0.1s ease,  box-shadow 0.1s ease, background 0.1s ease;transition: opacity 0.1s ease,  background-color 0.1s ease,  color 0.1s ease,  box-shadow 0.1s ease, background 0.1s ease;-webkit-tap-highlight-color: transparent;margin: 0 .25em 0 0;border-radius: 0.28571429rem;text-transform: none;text-shadow: none;font-weight: bold;line-height: 1em;font-style: normal;text-align: center;text-decoration: none;}.jKslKa > i {margin: 0 .42857143em 0 -.21428571em;}.jKslKa {color: rgba(0, 0, 0, .6);background-color: #e7e7e7;}.jKslKa:hover,.jKslKa:focus,.jKslKa:active {background-color: #d9d9d9;color: rgba(0, 0, 0, 8);}.jKslKa {background-color: #fa6462;color: #fff;}.jKslKa:hover,.jKslKa:focus,.jKslKa:active {background-color: #ff4543;color: #fff;}.jKslKa {padding: 1.2em 2em;font-size: 1em;width: 100%;padding: .8em 1.2em;font-size: .95em;opacity: 1;pointer-events: ;;}
 .bIabCF {cursor: pointer;display: inline-block;min-height: 1em;outline: none;border: none;vertical-align: baseline;box-shadow: 0px 0px 0px 1px transparent inset,  0px 0em 0px 0px rgba(0, 0, 0, 0.1) inset;-webkit-user-select: none;-moz-user-select: none;-ms-user-select: none;user-select: none;-webkit-transition: opacity 0.1s ease,  background-color 0.1s ease,  color 0.1s ease,  box-shadow 0.1s ease, background 0.1s ease;transition: opacity 0.1s ease,  background-color 0.1s ease,  color 0.1s ease,  box-shadow 0.1s ease, background 0.1s ease;-webkit-tap-highlight-color: transparent;margin: 0 .25em 0 0;border-radius: 0;text-transform: none;text-shadow: none;font-weight: bold;line-height: 1em;font-style: normal;text-align: center;text-decoration: none;}.bIabCF > i {margin: 0 .42857143em 0 -.21428571em;}.bIabCF {color: rgba(0, 0, 0, .6);background-color: #e7e7e7;}.bIabCF:hover,.bIabCF:focus,.bIabCF:active {background-color: #d9d9d9;color: rgba(0, 0, 0, 8);}.bIabCF {background-color: #fa6462;color: #fff;}.bIabCF:hover,.bIabCF:focus,.bIabCF:active {background-color: #ff4543;color: #fff;}.bIabCF {padding: 1.2em 2em;font-size: 1.1em;width: 100%;opacity: 1;pointer-events: ;;}
 /* sc-component-id: SocialMediaButtons__ShareButton-dpsnza-0 */
@@ -601,22 +601,46 @@
 .Community__CommunityEmptyState-s14atsnj-1 {}
 .gByEjI {color: rgba(0, 0, 0, .1);font-weight: bold;line-height: 1.5;font-size: 2rem;text-align: center;padding: 2em 0;}</style><style type="text/css" data-styled-components="" data-styled-components-is-local="true"></style><style type="text/css" data-styled-components="" data-styled-components-is-local="true"></style><meta property="og:image" content="https://tumblbug-assets.imgix.net/brand/tumblbug_introduction.png" data-react-helmet="true"><meta property="og:url" content="https://www.tumblbug.com/" data-react-helmet="true"><meta property="og:title" content="텀블벅 tumblbug" data-react-helmet="true"><meta property="og:description" content="창작자를 위한 크라우드펀딩 플랫폼 텀블벅" data-react-helmet="true"><meta name="twitter:image" content="https://tumblbug-assets.imgix.net/brand/tumblbug_introduction.png" data-react-helmet="true"><meta name="twitter:url" content="https://www.tumblbug.com/" data-react-helmet="true"><meta name="twitter:title" content="텀블벅 tumblbug" data-react-helmet="true"><meta name="twitter:description" content="창작자를 위한 크라우드펀딩 플랫폼 텀블벅" data-react-helmet="true">
 
-
+<style>
+	.lhFUmi{
+		display:none;
+	}
+</style>
 <script>
-function closeTab(){
-	$("body").css("overflow", "auto");
-	$(".FullscreenModal__Modal-s1csgj37-0").css("display", "none");
-}
 
-function openTab(){
-	$("body").css("overflow", "hidden");
-	$(".FullscreenModal__Modal-s1csgj37-0").css("display", "block");
+	$(function(){
+		// 카테고리 펼치기/접기
+		$(".cwYjsy").click(function(){
+			$(this).parent().siblings(0).children().toggle();
+			if($(this).children("span").eq(1).children("div").attr("class") == "DiscoverMenuDropdown__TriangleUpIcon-s116h97f-0 bVfzeY"){
+				$(this).children("span").eq(1).children("div").removeClass();
+				$(this).children("span").eq(1).children("div").addClass("DiscoverMenuDropdown__TriangleDownIcon-s116h97f-1");
+				$(this).children("span").eq(1).children("div").addClass("OZgBR"); 
+			} else if($(this).children("span").eq(1).children("div").attr("class") == "DiscoverMenuDropdown__TriangleDownIcon-s116h97f-1 OZgBR"){
+				$(this).children("span").eq(1).children("div").removeClass();
+				$(this).children("span").eq(1).children("div").addClass("DiscoverMenuDropdown__TriangleUpIcon-s116h97f-0");
+				$(this).children("span").eq(1).children("div").addClass("bVfzeY");
+			}
+		});
+	});
 	
-}
+	function closeTab(){
+		$("body").css("overflow", "auto");
+		$(".FullscreenModal__Modal-s1csgj37-0").css("display", "none");
+	}
+	
+	function openTab(){
+		$("body").css("overflow", "hidden");
+		$(".FullscreenModal__Modal-s1csgj37-0").css("display", "block");
+		
+	}
+
+
 </script>
 </head>
 <body>
-      	<div class="Header__Header-s10wde3a-0 iVCTYT" data-reactid="5">
+      	<div 
+      	class="Header__Header-s10wde3a-0 iVCTYT" data-reactid="5">
 		<div class="Container__Container-s1sxg7g4-0 jdgWcI" data-reactid="6">
 			<div class="SiteHeader__SiteHeaderMenu-s1s56ls8-1 bteafZ"
 				data-reactid="7">
@@ -628,9 +652,7 @@ function openTab(){
 							class="SiteHeader__ItemLabel-s1s56ls8-8 iGOIal" data-reactid="11">프로젝트
 							둘러보기</span>
 					</button>
-					<span class="SiteHeader__ForMobile-s1s56ls8-9 kizyZz"
-						data-reactid="12"><a
-						class="SiteHeader__LinkItem-s1s56ls8-6 cfMrMC" href="/start"
+					<span class="SiteHeader__ForMobile-s1s56ls8-9 kizyZz" data-reactid="12"><a class="SiteHeader__LinkItem-s1s56ls8-6 cfMrMC" href="projectStart.do"
 						data-reactid="13"><span
 							class="SiteHeader__ItemLabel-s1s56ls8-8 iGOIal" data-reactid="14">프로젝트
 								올리기</span></a></span>
@@ -762,8 +784,31 @@ function openTab(){
 								<div>
 									<div>
 										<div class="MenuItem__MenuItem-no2u3j-0 cwYjsy">
-											<span class="MenuItem__MenuItemTitle-no2u3j-1 enzRKc">게임</span><span><div
-													class="DiscoverMenuDropdown__TriangleDownIcon-s116h97f-1 OZgBR"></div></span>
+											<span class="MenuItem__MenuItemTitle-no2u3j-1 enzRKc">게임</span>
+											<span>
+												<div class="DiscoverMenuDropdown__TriangleDownIcon-s116h97f-1 OZgBR"></div>
+											</span>
+										</div>
+									</div>
+									<div>
+										<div class="DropdownItem__DropdownItem-s12jl0ab-0 lhFUmi">
+											<a href="/category/game">
+												<!-- react-text: 849 -->모든 <!-- /react-text -->
+												<!-- react-text: 850 -->게임<!-- /react-text -->
+												<!-- react-text: 851 --> 프로젝트<!-- /react-text -->
+											</a>
+										</div>
+										<div class="DropdownItem__DropdownItem-s12jl0ab-0 lhFUmi">
+											<a href="/category/tabletop-rpg">TRPG</a>
+										</div>
+										<div class="DropdownItem__DropdownItem-s12jl0ab-0 lhFUmi">
+											<a href="/category/mobile-game">모바일 게임</a>
+										</div>
+										<div class="DropdownItem__DropdownItem-s12jl0ab-0 lhFUmi">
+											<a href="/category/board-game">보드게임</a>
+										</div>
+										<div class="DropdownItem__DropdownItem-s12jl0ab-0 lhFUmi">
+											<a href="/category/video-game">비디오게임</a>
 										</div>
 									</div>
 								</div>
@@ -774,12 +819,56 @@ function openTab(){
 													class="DiscoverMenuDropdown__TriangleDownIcon-s116h97f-1 OZgBR"></div></span>
 										</div>
 									</div>
+									<div>
+										<div class="DropdownItem__DropdownItem-s12jl0ab-0 lhFUmi">
+											<a href="/category/performance">
+												<!-- react-text: 865 -->모든 <!-- /react-text -->
+												<!-- react-text: 866 -->공연<!-- /react-text -->
+												<!-- react-text: 867 --> 프로젝트<!-- /react-text -->
+											</a>
+										</div>
+										<div class="DropdownItem__DropdownItem-s12jl0ab-0 lhFUmi">
+											<a href="/category/dance">무용</a>
+										</div>
+										<div class="DropdownItem__DropdownItem-s12jl0ab-0 lhFUmi">
+											<a href="/category/musical">뮤지컬</a>
+										</div>
+										<div class="DropdownItem__DropdownItem-s12jl0ab-0 lhFUmi">
+											<a href="/category/theater">연극</a>
+										</div>
+										<div class="DropdownItem__DropdownItem-s12jl0ab-0 lhFUmi">
+											<a href="/category/festival">페스티벌</a>
+										</div>
+									</div>
 								</div>
 								<div>
 									<div>
 										<div class="MenuItem__MenuItem-no2u3j-0 cwYjsy">
-											<span class="MenuItem__MenuItemTitle-no2u3j-1 enzRKc">디자인</span><span><div
-													class="DiscoverMenuDropdown__TriangleDownIcon-s116h97f-1 OZgBR"></div></span>
+											<span class="MenuItem__MenuItemTitle-no2u3j-1 enzRKc">디자인</span>
+											<span>
+												<div class="DiscoverMenuDropdown__TriangleDownIcon-s116h97f-1 OZgBR"></div>
+											</span>
+										</div>
+									</div>
+									<div>
+										<div class="DropdownItem__DropdownItem-s12jl0ab-0 lhFUmi">
+											<a href="/category/design">
+												<!-- react-text: 929 -->모든 <!-- /react-text -->
+												<!-- react-text: 930 -->디자인<!-- /react-text -->
+												<!-- react-text: 931 --> 프로젝트<!-- /react-text -->
+											</a>
+										</div>
+										<div class="DropdownItem__DropdownItem-s12jl0ab-0 lhFUmi">
+											<a href="/category/space-design">공간디자인</a>
+										</div>
+										<div class="DropdownItem__DropdownItem-s12jl0ab-0 lhFUmi">
+											<a href="/category/graphic-design">시각디자인</a>
+										</div>
+										<div class="DropdownItem__DropdownItem-s12jl0ab-0 lhFUmi">
+											<a href="/category/product-design">제품디자인</a>
+										</div>
+										<div class="DropdownItem__DropdownItem-s12jl0ab-0 lhFUmi">
+											<a href="/category/character-design">캐릭터 디자인</a>
 										</div>
 									</div>
 								</div>
@@ -790,12 +879,62 @@ function openTab(){
 													class="DiscoverMenuDropdown__TriangleDownIcon-s116h97f-1 OZgBR"></div></span>
 										</div>
 									</div>
+									<div>
+										<div class="DropdownItem__DropdownItem-s12jl0ab-0 lhFUmi">
+											<a href="/category/comics">
+												<!-- react-text: 987 -->모든 <!-- /react-text -->
+												<!-- react-text: 988 -->만화<!-- /react-text -->
+												<!-- react-text: 989 --> 프로젝트<!-- /react-text -->
+											</a>
+										</div>
+										<div class="DropdownItem__DropdownItem-s12jl0ab-0 lhFUmi">
+											<a href="/category/graphic-novel">그래픽 노블</a>
+										</div>
+										<div class="DropdownItem__DropdownItem-s12jl0ab-0 lhFUmi">
+											<a href="/category/webtoon">웹툰</a>
+										</div>
+										<div class="DropdownItem__DropdownItem-s12jl0ab-0 lhFUmi">
+											<a href="/category/comic-book">출판 만화</a>
+										</div>
+									</div>
 								</div>
 								<div>
 									<div>
 										<div class="MenuItem__MenuItem-no2u3j-0 cwYjsy">
-											<span class="MenuItem__MenuItemTitle-no2u3j-1 enzRKc">미술</span><span><div
-													class="DiscoverMenuDropdown__TriangleDownIcon-s116h97f-1 OZgBR"></div></span>
+											<span class="MenuItem__MenuItemTitle-no2u3j-1 enzRKc">미술</span>
+											<span>
+												<div class="DiscoverMenuDropdown__TriangleDownIcon-s116h97f-1 OZgBR"></div>
+											</span>
+										</div>
+									</div>
+									<div>
+										<div class="DropdownItem__DropdownItem-s12jl0ab-0 lhFUmi">
+											<a href="/category/art">
+												<!-- react-text: 1001 -->모든 <!-- /react-text -->
+												<!-- react-text: 1002 -->미술<!-- /react-text -->
+												<!-- react-text: 1003 --> 프로젝트<!-- /react-text -->
+											</a>
+										</div>
+										<div class="DropdownItem__DropdownItem-s12jl0ab-0 lhFUmi">
+											<a href="/category/public-art">공공예술</a>
+										</div>
+										<div class="DropdownItem__DropdownItem-s12jl0ab-0 lhFUmi">
+											<a href="/category/digital-art">디지털 아트</a>
+										</div>
+										<div class="DropdownItem__DropdownItem-s12jl0ab-0 lhFUmi">
+											<a href="/category/art-exhibition">미술 전시</a>
+										</div>
+										<div class="DropdownItem__DropdownItem-s12jl0ab-0 lhFUmi">
+											<a href="/category/illustration">일러스트레이션</a>
+										</div>
+										<div class="DropdownItem__DropdownItem-s12jl0ab-0 lhFUmi">
+											<a href="/category/performance-art">행위예술</a>
+										</div>
+										<div class="DropdownItem__DropdownItem-s12jl0ab-0 lhFUmi">
+											<a href="/category/mixed-media">혼합매체</a>
+										</div>
+										<div class="DropdownItem__DropdownItem-s12jl0ab-0 lhFUmi">
+											<a href="/category/painting">회화</a>
 										</div>
 									</div>
 								</div>
@@ -815,12 +954,51 @@ function openTab(){
 													class="DiscoverMenuDropdown__TriangleDownIcon-s116h97f-1 OZgBR"></div></span>
 										</div>
 									</div>
+									<div>
+										<div class="DropdownItem__DropdownItem-s12jl0ab-0 lhFUmi">
+											<a href="/category/film-and-video">
+												<!-- react-text: 2531 -->모든 <!-- /react-text -->
+												<!-- react-text: 2532 -->영화 ∙ 비디오<!-- /react-text -->
+												<!-- react-text: 2533 --> 프로젝트<!-- /react-text -->
+											</a>
+										</div>
+										<div class="DropdownItem__DropdownItem-s12jl0ab-0 lhFUmi">
+											<a href="/category/narrative-film">극영화</a>
+										</div>
+										<div class="DropdownItem__DropdownItem-s12jl0ab-0 lhFUmi">
+											<a href="/category/documentary">다큐멘터리</a>
+										</div>
+										<div class="DropdownItem__DropdownItem-s12jl0ab-0 lhFUmi">
+											<a href="/category/short-film">단편영화</a>
+										</div>
+										<div class="DropdownItem__DropdownItem-s12jl0ab-0 lhFUmi">
+											<a href="/category/animation">애니메이션</a>
+										</div>
+										<div class="DropdownItem__DropdownItem-s12jl0ab-0 lhFUmi">
+											<a href="/category/webseries">웹시리즈</a>
+										</div>
+									</div>
 								</div>
 								<div>
 									<div>
 										<div class="MenuItem__MenuItem-no2u3j-0 cwYjsy">
 											<span class="MenuItem__MenuItemTitle-no2u3j-1 enzRKc">푸드</span><span><div
 													class="DiscoverMenuDropdown__TriangleDownIcon-s116h97f-1 OZgBR"></div></span>
+										</div>
+									</div>
+									<div>
+										<div class="DropdownItem__DropdownItem-s12jl0ab-0 lhFUmi">
+											<a href="/category/food">
+												<!-- react-text: 2549 -->모든 <!-- /react-text -->
+												<!-- react-text: 2550 -->푸드<!-- /react-text -->
+												<!-- react-text: 2551 --> 프로젝트<!-- /react-text -->
+											</a>
+										</div>
+										<div class="DropdownItem__DropdownItem-s12jl0ab-0 lhFUmi">
+											<a href="/category/baking">베이킹</a>
+										</div>
+										<div class="DropdownItem__DropdownItem-s12jl0ab-0 lhFUmi">
+											<a href="/category/cookbook">요리책</a>
 										</div>
 									</div>
 								</div>
@@ -835,12 +1013,66 @@ function openTab(){
 													class="DiscoverMenuDropdown__TriangleDownIcon-s116h97f-1 OZgBR"></div></span>
 										</div>
 									</div>
+									<div>
+										<div class="DropdownItem__DropdownItem-s12jl0ab-0 lhFUmi">
+											<a href="/category/publication">
+												<!-- react-text: 2560 -->모든 <!-- /react-text -->
+												<!-- react-text: 2561 -->출판<!-- /react-text -->
+												<!-- react-text: 2562 --> 프로젝트<!-- /react-text -->
+											</a>
+										</div>
+										<div class="DropdownItem__DropdownItem-s12jl0ab-0 lhFUmi">
+											<a href="/category/nonfiction">논픽션</a>
+										</div>
+										<div class="DropdownItem__DropdownItem-s12jl0ab-0 lhFUmi">
+											<a href="/category/magazine">매거진</a>
+										</div>
+										<div class="DropdownItem__DropdownItem-s12jl0ab-0 lhFUmi">
+											<a href="/category/fiction">소설</a>
+										</div>
+										<div class="DropdownItem__DropdownItem-s12jl0ab-0 lhFUmi">
+											<a href="/category/poetry">시집</a>
+										</div>
+										<div class="DropdownItem__DropdownItem-s12jl0ab-0 lhFUmi">
+											<a href="/category/art-book">아트북</a>
+										</div>
+										<div class="DropdownItem__DropdownItem-s12jl0ab-0 lhFUmi">
+											<a href="/category/childrens-book">어린이책</a>
+										</div>
+										<div class="DropdownItem__DropdownItem-s12jl0ab-0 lhFUmi">
+											<a href="/category/journalism">저널리즘</a>
+										</div>
+										<div class="DropdownItem__DropdownItem-s12jl0ab-0 lhFUmi">
+											<a href="/category/ebook">전자출판</a>
+										</div>
+										<div class="DropdownItem__DropdownItem-s12jl0ab-0 lhFUmi">
+											<a href="/category/academic">학술</a>
+										</div>
+									</div>
 								</div>
 								<div>
 									<div>
 										<div class="MenuItem__MenuItem-no2u3j-0 cwYjsy">
 											<span class="MenuItem__MenuItemTitle-no2u3j-1 enzRKc">테크놀로지</span><span><div
 													class="DiscoverMenuDropdown__TriangleDownIcon-s116h97f-1 OZgBR"></div></span>
+										</div>
+									</div>
+									<div>
+										<div class="DropdownItem__DropdownItem-s12jl0ab-0 lhFUmi">
+											<a href="/category/technology">
+												<!-- react-text: 2586 -->모든 <!-- /react-text -->
+												<!-- react-text: 2587 -->테크놀로지<!-- /react-text -->
+												<!-- react-text: 2588 --> 프로젝트<!-- /react-text -->
+											</a>
+										</div>
+										<div class="DropdownItem__DropdownItem-s12jl0ab-0 lhFUmi">
+											<a href="/category/opensource-software">공개 소프트웨어</a>
+										</div>
+										<div class="DropdownItem__DropdownItem-s12jl0ab-0 lhFUmi">
+											<a href="/category/app">어플리케이션</a>
+										</div>
+										<div class="DropdownItem__DropdownItem-s12jl0ab-0 lhFUmi">
+											<a href="/category/hardware">하드웨어</a>
 										</div>
 									</div>
 								</div>
@@ -851,12 +1083,48 @@ function openTab(){
 													class="DiscoverMenuDropdown__TriangleDownIcon-s116h97f-1 OZgBR"></div></span>
 										</div>
 									</div>
+									<div>
+										<div class="DropdownItem__DropdownItem-s12jl0ab-0 lhFUmi">
+											<a href="/category/fashion">
+												<!-- react-text: 2600 -->모든 <!-- /react-text -->
+												<!-- react-text: 2601 -->패션<!-- /react-text -->
+												<!-- react-text: 2602 --> 프로젝트<!-- /react-text -->
+											</a>
+										</div>
+										<div class="DropdownItem__DropdownItem-s12jl0ab-0 lhFUmi">
+											<a href="/category/clothes">의류</a>
+										</div>
+										<div class="DropdownItem__DropdownItem-s12jl0ab-0 lhFUmi">
+											<a href="/category/accessories">액세서리</a>
+										</div>
+										<div class="DropdownItem__DropdownItem-s12jl0ab-0 lhFUmi">
+											<a href="/category/fashion_goods">패션잡화</a>
+										</div>
+									</div>
 								</div>
 								<div>
 									<div>
 										<div class="MenuItem__MenuItem-no2u3j-0 cwYjsy">
 											<span class="MenuItem__MenuItemTitle-no2u3j-1 enzRKc">캠페인</span><span><div
 													class="DiscoverMenuDropdown__TriangleDownIcon-s116h97f-1 OZgBR"></div></span>
+										</div>
+									</div>
+									<div>
+										<div class="DropdownItem__DropdownItem-s12jl0ab-0 lhFUmi">
+											<a href="/category/campaign">
+												<!-- react-text: 2614 -->모든 <!-- /react-text -->
+												<!-- react-text: 2615 -->캠페인<!-- /react-text -->
+												<!-- react-text: 2616 --> 프로젝트<!-- /react-text -->
+											</a>
+										</div>
+										<div class="DropdownItem__DropdownItem-s12jl0ab-0 lhFUmi">
+											<a href="/category/human_rights">인권</a>
+										</div>
+										<div class="DropdownItem__DropdownItem-s12jl0ab-0 lhFUmi">
+											<a href="/category/environment">환경</a>
+										</div>
+										<div class="DropdownItem__DropdownItem-s12jl0ab-0 lhFUmi">
+											<a href="/category/society">사회</a>
 										</div>
 									</div>
 								</div>

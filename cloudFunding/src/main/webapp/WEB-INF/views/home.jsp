@@ -31,13 +31,15 @@
 	<c:out value="${user.email }">no user </c:out>
 
 </c:if>
-
-<c:import url="common/header.jsp"/>
+	<header>
+		<c:import url="common/header.jsp"/>
+	</header>
 	<c:import url="common/index.jsp"/>
 	<c:import url="common/footer.jsp"/>
 
 	<a href="projectStart.do">프로젝트 만들기</a><br>
-	<a href="projectDetail.do">프로젝트 상세 페이지</a><br>
+	<a href="adminMenuList.do">임시관리자 페이지</a>
+	
 
 	
 </body>

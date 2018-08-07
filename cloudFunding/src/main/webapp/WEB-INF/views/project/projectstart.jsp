@@ -387,6 +387,7 @@ translateY
 }
 .hcvfVq>i {
 	font-size: 1.25em;
+	height:60px;
 }
 @media ( min-width : 1080px) {
 	.hcvfVq {

@@ -40,8 +40,5 @@ public class ProjectController {
 		mv.addObject("project", project);*/
 		mv.setViewName("project/policy");
 		return mv;
-	
-	
-	
 	}
 }
