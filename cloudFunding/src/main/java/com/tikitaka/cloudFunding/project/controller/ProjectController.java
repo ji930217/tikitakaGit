@@ -6,7 +6,10 @@ import org.springframework.web.servlet.ModelAndView;
 
 @Controller
 public class ProjectController {
-	
+	@RequestMapping("projectList.do")
+	public String projectList(){
+		return "project/projectList";
+	}
 	@RequestMapping("projectStart.do")
 	public String projectStart(){
 		return "project/projectstart";
