@@ -27,6 +27,17 @@ public class Member {
 		this.profile_img = profile_img;
 	}
 	
+	
+	
+	public Member(String email, String name, String password, String profile_img, Date enroll_date) {
+		super();
+		this.email = email;
+		this.name = name;
+		this.password = password;
+		this.profile_img = profile_img;
+		this.enroll_date = enroll_date;
+	}
+
 	public Member(String email, String password) {
 		this.email = email;
 		this.password = password;
@@ -77,8 +88,10 @@ public class Member {
 	@Override
 	public String toString() {
 		return "Member [email=" + email + ", name=" + name + ", password=" + password + ", profile_img=" + profile_img
-				+ "]";
+				+ ", enroll_date=" + enroll_date + "]";
 	}
+
+	
 
 	
 	
