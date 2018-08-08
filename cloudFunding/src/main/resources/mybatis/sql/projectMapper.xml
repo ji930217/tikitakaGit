@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC
+"-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="projectMapper">
+<!-- <resultMap type="Member" id="memberMap">
+<id property="email" column="EMAIL" />
+<result property="name" column="NAME"/>
+<result property="password" column="PASSWORD"/>
+<result property="profil_img" column="PROFILE_IMG"/>
+<result property="enroll_date" column="ENROLL_DATE"/>
+</resultMap> -->
+
+
+<insert id="insertProject" parameterType="string">
+	INSERT INTO PROJECT 
+	(EMAIL,P_PROJECT_CODE,P_CATEGORY,P_NAME,P_PRICE,P_END_DATE,P_OK,P_SEND_CONFIRM,P_CURRENTAMOUNT) 
+	VALUES
+	(#{userId},(select count(*) from project where EMAIL = #{userId})+1,0,#{userId},0,SYSDATE,'F','F',0)
+</insert>
+
+<select id="selectProjectNum" parameterType="string" resultType="int">
+	SELECT COUNT(*)  FROM PROJECT 
+	WHERE EMAIL = #{userId}
+</select>			
+
+
+
+
+
+
+</mapper>
