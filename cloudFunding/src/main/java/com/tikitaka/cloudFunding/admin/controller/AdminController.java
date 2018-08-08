@@ -157,7 +157,7 @@ public class AdminController {
 				
 				List<Member> list = adminservice.selectMemberList2(no);
 				
-				
+				System.out.println(list);
 				mv.addObject("memberList", list);
 				mv.addObject("paging", paging);
 				mv.addObject("noticeTotalCount", noticeCount);

@@ -1,12 +1,9 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
     <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
-    <script src="resources/js/jquery-3.3.1.min.js"></script>
     
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    
+
   <script src="//www.google.com/jsapi"></script>
   <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
   
@@ -108,7 +105,7 @@
 
       var table = new google.visualization.Table(document.getElementById('table_div'));
 
-      table.draw(data, {showRowNumber: true, width: '550px', height: '150px'});
+      table.draw(data, {showRowNumber: true, width: '500px', height: '150px'});
     }
       </script>
     
@@ -123,15 +120,20 @@
     	#chart_div, #table_div{
     	float:left;
     	}
+    	
+    	#outerDiv{
+    		margin-top:20px;
+    	}
     </style>
     
-    
+     <div id="chart_div" style="width: 450px; height: 400px;"></div>
   
-  
-    <div id="chart_div" style="width: 500px; height: 400px;"></div>
-    <div id = "chart1">
-    <div id="piechart" style="width: 300px; height: 200px;"></div>
-    <div id="donutchart" style="width: 300px; height: 200px;"></div>
+ <!--  <div id = "outerDiv">
+    <div id="chart_div" style="width: 450px; height: 400px;"></div>
+     <div id = "chart1">
+    <div id="piechart" style="width: 250px; height: 200px;"></div>
+    <div id="donutchart" style="width: 250px; height: 200px;"></div>
     </div>
   
-  	<div id="table_div"></div>
+  	<div id="table_div"></div> 
+  </div> -->
