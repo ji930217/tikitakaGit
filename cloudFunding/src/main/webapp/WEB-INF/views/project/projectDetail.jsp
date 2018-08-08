@@ -4,6 +4,7 @@
   <html>
     <head>
       <title data-react-helmet="true">고양이 다이어트에 딱, 스파이더 캣토이 :: 텀블벅</title>
+      <script src="//developers.kakao.com/sdk/js/kakao.min.js"></script>
       <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=no">
       <link rel="dns-prefetch" href="https://tumblbug-assets.imgix.net">
       <link rel="dns-prefetch" href="https://tumblbug-pci2.imgix.net">
@@ -35,7 +36,7 @@
       <script type="application/javascript">
         window.MOBX_STATE = {"app":{"ssrLocation":"/millicube"},"currentUser":{"isLoading":false,"isLoaded":true,"id":750880,"uuid":"3595a029-240c-4ed3-ba5e-ca84dab39b41","fullname":"새로","userPermalink":"domoyozudupinedo","avatarUrl":"https://tumblbug-upi.imgix.net/defaults/avatar_0.png?ixlib=rb-1.1.0&w=200&h=250&auto=format%2Ccompress&fit=facearea&facepad=2.0&ch=Save-Data&mask=ellipse&s=87ba671c98b3debfae8ac85d36d0e7b4","email":"jungin2ya@naver.com","isCreator":true,"isAdmin":false},"pledgeStore":{"apiEndpoint":"/api/v1/pledges.json?fields=id,createdAt,amount,isSurveyRequested,isSurveyResponded,paymentStatus&project=title,coverImageUrl,creatorName,fundingStatus&reward=description,items&&coverImageUrl[h]=240&coverImageUrl[w]=320&coverImageUrl[fit]=crop","isLoading":false,"isLoaded":false,"pledges":[],"pledgesCount":{},"currentPage":1,"filterType":"all","isPledgeDataLoading":false,"isMetaDataLoaded":false,"isPledgeDetailsDataLoading":true},"surveyStore":{"apiEndpoint":"/api/v1/pledges.json?fields=id,createdAt,amount,isSurveyRequested,isSurveyResponded,paymentStatus&project=title,coverImageUrl,creatorName,fundingStatus&reward=description,items&filter=surveyResponseNeeded&coverImageUrl[h]=240&coverImageUrl[w]=320&coverImageUrl[fit]=crop"},"taxpayerInformationStore":{"isLoaded":false},"collectionStore":{"collections":{},"featuredCollections":null},"projectStore":{"projects":{"6b286085-e541-4cf4-a296-6b75ca8d1645":{"state":"ongoing_reached","id":"6b286085-e541-4cf4-a296-6b75ca8d1645","title":"고양이 다이어트에 딱, 스파이더 캣토이","coverImageUrl":"https://tumblbug-pci.imgix.net/4b161a793b1b7d9646d00b52f112de112a6e75e0/7ad81f8e5d8c79ed9534d70ee460540cab01def4/81e49cf2918a523dd68764560a0b4490d66c5e54/0edaa339-09ea-4b9d-a01f-7d32ea5f1092.jpg?ixlib=rb-1.1.0&w=620&h=465&auto=format%2Ccompress&lossless=true&fit=crop&s=2396f5a89d18993a2c59ad99362d4a9b","creatorName":"millicube 밀리큐브","category":"product-design","fundedAmount":2331900,"fundingGoal":500000,"fundingDeadline":"2018-08-17T23:59:59+09:00","permalink":"millicube","summary":"여기저기 붙일 수 있고, 교환이 가능해 더 재미있고 질리지 않는 고양이 장난감입니다.","fundingStatus":"ongoing_reached","introductionVideoPrefix":"https://d2f45jiwzkt4py.cloudfront.net/6b286085-e541-4cf4-a296-6b75ca8d1645/6a7fed3a-8609-47a3-9d14-e4b4f7dd37fe","isRewardDelivered":false,"pledgesCount":105,"currentUserType":"User","refundExchangePolicy":"캣토이의 특성 상 제품을 사용하시면 교환 및 환불이 어렵습니다. \n철사의 경우 고양이가 격하게 반응하면 부러질 수 있으며 이는 환불 및 교환 사항이 아닙니다. 이점 유의하시고 구매 부탁드립니다. \n배송 중 파손 제품은 수령일로부터 2일 이내에 밀리큐브(031-753-2536)으로 연락주시면 확인 후 신속하게 처리해드리겠습니다. \n고양이 장난감은 소모품인 특성상 고양이가 갖고 논 흔적이 있으면 배송중 파손으로 간주되지 않습니다.\n나무의 옹이나 원목간의 연결부위는 원목제품의 자연스러운 무늬이므로 교환 및 환불이 어려우며, 본 제품은 주문 후 제작제품으로 펀딩 확정 후 7일~15일 정도의 제작기간이소요됨을 알려드립니다.\n1) 단순 변심에 의한 환불은 불가능 합니다. \n​2) 예상 전달일로부터 7일 이상 전달 지연 시 수수료 제외 후 환불 가능합니다.​\n3) 파손, 불량품 수령시 2일 이내로 교환이 가능합니다. 교환 시 발생하는 배송비는 진행자 부담입니다. (고양이가 갖고논 흔적이 없는 파손사진을 보내주셔야 합니다 )\n4) 후원자가 배송지를 잘못 기재하거나 진행자에게 사전 고지 없이 배송지를 수정하여 배송사고가 발생할 경우 진행자는 최대 1번까지 재발송 해 드립니다. 배송비 부담은 후원자에게 있습니다. 밀리큐브는 책임을 지지 않습니다.)","postsCount":null,"payoutVersion":3,"paidOutDates":null,"paymentDeadline":"2018-08-24T23:59:59+09:00","expectedPayoutDates":["2018-09-04T23:59:59+09:00"],"shortTitle":"스파이더캣토이","location":null,"introductionVideoTranscodingState":"completed","coverImageFilename":"0edaa339-09ea-4b9d-a01f-7d32ea5f1092.jpg","creatorBiography":"2012년부터 6년동안 반려동물만을 생각하며 디자인해온 반려동물 브랜드 밀리큐브입니다. 밀리큐브는 어느 공간에도 어우러지는 심플하고 따뜻한 감성의 디자인을 지향하고있으며, 언제나 반려동물들의 따뜻하고 편안한 잠자리를 생각합니다.","url":"http://www.tumblbug.com/millicube","store":"[Circular ~.projectStore]"}},"creators":{"millicube":{"profileImageUrl":"https://tumblbug-upi.imgix.net/e5bdd2c9-1842-4d03-b24a-848e2f7b52cd.jpg?ixlib=rb-1.1.0&w=200&h=200&auto=format%2Ccompress&fit=facearea&facepad=2.0&ch=Save-Data&mask=ellipse&s=9e33a405d2e36bf4eef1a283253f5c9c","hasUploadedProfileImage":true,"name":"millicube 밀리큐브","location":"경기도 성남시 수정구 창곡동","biography":"2012년부터 6년동안 반려동물만을 생각하며 디자인해온 반려동물 브랜드 밀리큐브입니다. 밀리큐브는 어느 공간에도 어우러지는 심플하고 따뜻한 감성의 디자인을 지향하고있으며, 언제나 반려동물들의 따뜻하고 편안한 잠자리를 생각합니다.","email":"yoyojin86@naver.com","isPhoneVerified":true,"isEmailVerified":true,"phoneNumber1":"010","phoneNumber2":"3263","phoneNumber3":"2536","lastLoggedInAt":"2018-08-01T16:41:41+09:00","publishedProjectsCount":2,"pledgedProjectsCount":2,"permalink":"donobawaromodaza"}},"payoutInvoice":{}},"messageThreadStore":{"_unreadThreads":{"asCreator":[],"asUser":[]},"projectFilters":[],"_messageThreads":{},"isLoadingMessageThreads":false,"selectedThreadId":null,"selectedThread":null},"messageArchiveThreadStore":{"_messageArchiveThreads":{},"_paging":{"offset":0,"limit":10,"next":""}},"rewardStore":{},"itemStore":{},"heroStore":{"isLoaded":false},"postStore":{"_cachedProjectId":null,"_posts":{},"_postsPagination":null,"_comments":{},"_cachedPostId":null,"_commentPagination":null},"depositAccountStore":{}};
       </script>
-      <style type="text/css" data-styled-components="cXdlcp bYqief fzoeFq jPcWZN iVCTYT jdgWcI bteafZ kZLTLQ hcvfVq iGOIal kizyZz cfMrMC hHUgvf bpfGNO JUlEd buZCDD imIxKd gqXDKx fqdqdO hsuyOO isebXd gKkJpB yNdyg boFKej cyqGTD guVzeB jZXZDW gDTPbS iTDPPg dIHovk qtLrt gujNFh eIDmsW leXkjY htCDgL bvKOwU ihuRTA kIYDgq lfgWGK iJcLQj kwAiqA bBsoai fjkRCm dvkZSH cYmhAj hZQjKf lblHJx eeeApW eSsILz gEWplf bReGoj cNWmvR jPEdlL kJUlye giKgfw bJXRvz hIkOXr fQMvgC dLvdGo umGxa gjgpkL gDEKBn bvwsV gByEjI ceunQL deZznN cBbkfc fuCNpE eYscdN daPkde fVfxlF dHxdxH ilHpOi iBGoJt khYIRi dxWcyc hBOBRE dCYRcO cUvTIp cabNvZ iChtTV" data-styled-components-is-local="true">
+      <style type="text/css" data-styled-components="bPaPOl cXdlcp bYqief fzoeFq jPcWZN iVCTYT jdgWcI bteafZ kZLTLQ hcvfVq iGOIal kizyZz cfMrMC hHUgvf bpfGNO JUlEd buZCDD imIxKd gqXDKx fqdqdO hsuyOO isebXd gKkJpB yNdyg boFKej cyqGTD guVzeB jZXZDW gDTPbS iTDPPg dIHovk qtLrt gujNFh eIDmsW leXkjY htCDgL bvKOwU ihuRTA kIYDgq lfgWGK iJcLQj kwAiqA bBsoai fjkRCm dvkZSH cYmhAj hZQjKf lblHJx eeeApW eSsILz gEWplf bReGoj cNWmvR jPEdlL kJUlye giKgfw bJXRvz hIkOXr fQMvgC dLvdGo umGxa gjgpkL gDEKBn bvwsV gByEjI ceunQL deZznN cBbkfc fuCNpE eYscdN daPkde fVfxlF dHxdxH ilHpOi iBGoJt khYIRi dxWcyc hBOBRE dCYRcO cUvTIp cabNvZ iChtTV" data-styled-components-is-local="true">
 /* sc-component-id: sc-keyframes-cXdlcp */
 @-webkit-keyframes cXdlcp {0% {-webkit-transform: translateY(0%);-ms-transform: translateY(0%);transform: translateY(0%);opacity: 1;}50% {-webkit-transform: translateY(100%);-ms-transform: translateY(100%);transform: translateY(100%);opacity: .3;}100% {-webkit-transform: translateY(0%);-ms-transform: translateY(0%);transform: translateY(0%);opacity: 1;}}@keyframes cXdlcp {0% {-webkit-transform: translateY(0%);-ms-transform: translateY(0%);transform: translateY(0%);opacity: 1;}50% {-webkit-transform: translateY(100%);-ms-transform: translateY(100%);transform: translateY(100%);opacity: .3;}100% {-webkit-transform: translateY(0%);-ms-transform: translateY(0%);transform: translateY(0%);opacity: 1;}}
 /* sc-component-id: Button__Button-s1ng5xda-0 */
@@ -261,7 +262,232 @@
 
 .gByEjI {color: rgba(0, 0, 0, .1);font-weight: bold;line-height: 1.5;font-size: 2rem;text-align: center;padding: 2em 0;}
 
+	/* 공유하기 	버튼 팝업 스타일 */
+	.dzLrnz {
+	    width: 100%;
+	    height: 100%;
+	    position: relative;
+	    background-color: rgba(0,0,0,.5);
+	    overflow: hidden;
+	}
+	.bPaPOl {
+	    width: 100vw;
+	    height: 100vh;
+	    position: fixed;
+	    top: 0;
+	    left: 0;
+	    right: 0;
+	    bottom: 0;
+	    z-index: 999;
+	    display:none;
+	}
+	.bVCtHC {
+	    width: 100%;
+	    position: absolute;
+	    margin: 0 auto;
+	    font-weight: bolder;
+	    color: rgba(0,0,0,.8);
+	    font-size: 1rem;
+	    text-align: center;
+	}
+	.SQCII {
+	    position: absolute;
+	    right: 0;
+	    float: right;
+	}
+	.gfEwGT {
+	    width: 100vw;
+	    height: 100vh;
+	    overflow-x: hidden;
+	    overflow-y: auto;
+	    -webkit-overflow-scrolling: touch;
+	    z-index: 1000;
+	    background-color: #fff;
+	    position: fixed;
+	    margin: auto;
+	    left: 0;
+	    right: 0;
+	    top: 0;
+	}
+	@media (min-width: 1080px){
+		.gfEwGT {
+		    top: 0;
+		    bottom: 0;
+		    width: 500px;
+		    height: 700px;
+		    border-radius: 2px;
+		}
+	}
+	.fkKFAu:hover, .fkKFAu:focus, .fkKFAu:active {
+	    background-color: transparent;
+	    color: black;
+	}
+	.fJUlRA {
+	    margin-top: 1em;
+	    padding: 1em;
+	}
+	
+	.cXqVXt:hover, .cXqVXt:focus, .cXqVXt:active {
+	    background-color: rgba(59, 89, 152, .9);
+	    color: #fff;
+	}
+	.cXqVXt {
+	    background-color: rgb(59, 89, 152);
+	    color: #fff;
+	}
+	.cXqVXt {
+	    padding: 1.2em 2em;
+	    font-size: 1em;
+	    width: 100%;
+	}
+	.cXqVXt {
+	    cursor: pointer;
+	    display: inline-block;
+	    min-height: 1em;
+	    outline: none;
+	    border: none;
+	    border-radius: 2px;
+	    vertical-align: baseline;
+	    box-shadow: 0px 0px 0px 1px transparent inset, 0px 0em 0px 0px rgba(0, 0, 0, 0.1) inset;
+	    -webkit-user-select: none;
+	    -moz-user-select: none;
+	    -ms-user-select: none;
+	    user-select: none;
+	    -webkit-transition: opacity 0.1s ease,  background-color 0.1s ease,  color 0.1s ease,  box-shadow 0.1s ease, background 0.1s ease;
+	    transition: opacity 0.1s ease,  background-color 0.1s ease,  color 0.1s ease,  box-shadow 0.1s ease, background 0.1s ease;
+	    -webkit-tap-highlight-color: transparent;
+	    margin: 0 0.25em 0.5em 0;
+	    text-transform: none;
+	    text-shadow: none;
+	    font-weight: bold;
+	    line-height: 1em;
+	    font-style: normal;
+	    text-align: center;
+	    text-decoration: none;
+	}
+	.kQbXwXkakao {
+	    background: #ffeb33;
+	    color: #000;
+	}
+	.kQbXwX, .kQbXwXkakao {
+	    padding: 1.2em 2em;
+	    font-size: 1em;
+	    width: 100%;
+	}
+	.kQbXwX {
+	    background: rgb(0, 172, 237);
+	    color: #fff;
+	}
+	.kQbXwX, .kQbXwXkakao {
+	    cursor: pointer;
+	    display: inline-block;
+	    min-height: 1em;
+	    outline: none;
+	    border: none;
+	    border-radius: 2px;
+	    vertical-align: baseline;
+	    box-shadow: 0px 0px 0px 1px transparent inset, 0px 0em 0px 0px rgba(0, 0, 0, 0.1) inset;
+	    -webkit-user-select: none;
+	    -moz-user-select: none;
+	    -ms-user-select: none;
+	    user-select: none;
+	    -webkit-transition: opacity 0.1s ease,  background-color 0.1s ease,  color 0.1s ease,  box-shadow 0.1s ease, background 0.1s ease;
+	    transition: opacity 0.1s ease,  background-color 0.1s ease,  color 0.1s ease,  box-shadow 0.1s ease, background 0.1s ease;
+	    -webkit-tap-highlight-color: transparent;
+	    margin: 0 0.25em 0.5em 0;
+	    text-transform: none;
+	    text-shadow: none;
+	    font-weight: bold;
+	    line-height: 1em;
+	    font-style: normal;
+	    text-align: center;
+	    text-decoration: none;
+	}
+	.bqnVPg {
+	    width: 100%;
+	    height: 100%;
+	    position: relative;
+	    line-height: 58px;
+	}
+	@media (min-width: 1080px) {
+		.bqnVPg {
+		    line-height: 65px;
+		}
+	}
+	
+	.clEKyB {
+	    width: 100%;
+	    height: 58px;
+	    background-color: #ffffff;
+	    box-shadow: 0px 1px 2px 0px rgba(10, 10, 10, 0.1);
+	    display: -webkit-box;
+	    display: -webkit-flex;
+	    display: -ms-flexbox;
+	    display: flex;
+	    -webkit-align-items: stretch;
+	    -webkit-box-align: stretch;
+	    -ms-flex-align: stretch;
+	    align-items: stretch;
+	    z-index: 1001;
+	}
+	@media (min-width: 1080px){
+		.clEKyB {
+		    height: 65px;
+		}
+	}
+	
+	
 </style>
+
+<script>
+	function openSharePopup(){
+		$(".bPaPOl").css("display", "block");
+	}
+	function closeSharePopup(){
+		$(".bPaPOl").css("display", "none");
+	}
+	
+    Kakao.init('539e3b78ee3a96a21d1fda301fae080a');
+	function shareKakao(){
+		//<![CDATA[
+	    // // 사용할 앱의 JavaScript 키를 설정해 주세요.
+	    // // 카카오링크 버튼을 생성합니다. 처음 한번만 호출하면 됩니다.
+	      Kakao.Link.sendDefault({
+	        objectType: 'feed',
+	        content: {
+	          title: '딸기 치즈 케익',
+	          description: '#케익 #딸기 #삼평동 #카페 #분위기 #소개팅',
+	          imageUrl: 'http://mud-kage.kakao.co.kr/dn/Q2iNx/btqgeRgV54P/VLdBs9cvyn8BJXB3o7N8UK/kakaolink40_original.png',
+	          link: {
+	            mobileWebUrl: 'https://developers.kakao.com',
+	            webUrl: 'https://developers.kakao.com'
+	          }
+	        },
+	        social: {
+	          likeCount: 286,
+	          commentCount: 45,
+	          sharedCount: 845
+	        },
+	        buttons: [
+	          {
+	            title: '웹으로 보기',
+	            link: {
+	              mobileWebUrl: 'https://developers.kakao.com',
+	              webUrl: 'https://developers.kakao.com'
+	            }
+	          },
+	          {
+	            title: '앱으로 보기',
+	            link: {
+	              mobileWebUrl: 'https://developers.kakao.com',
+	              webUrl: 'https://developers.kakao.com'
+	            }
+	          }
+	        ]
+	      });
+	  //]]>
+	}
+</script>
 </head>
 <body>
 	<header>
@@ -273,6 +499,57 @@
 			<div
 				class="ProjectIntroduction__ProjectIntroductionBackground-c7b94s-0 hsuyOO"
 				data-reactid="36">
+				<!-- 공유하기 버튼 -->
+				<div class="Modal__ModalWrapper-s1q54ra0-0 bPaPOl">
+					<div class="Modal__ModalBackground-s1q54ra0-1 dzLrnz">
+						<div class="Modal__Modal-s1q54ra0-2 gfEwGT">
+							<div class="Modal__ModalHeader-s1q54ra0-3 clEKyB">
+								<div class="Modal__ModalHeaderInner-s1q54ra0-4 bqnVPg">
+									<div class="Modal__ModalTitle-s1q54ra0-5 bVCtHC">프로젝트
+										공유하기</div>
+									<div class="Modal__CloseButton-s1q54ra0-6 SQCII">
+										<button class="Button__Button-s1ng5xda-0 fkKFAu" onclick="closeSharePopup();">
+											<i class="RyvusKQjJRQNgaH8kOM4J _1QY7TzdLHKX3-BKPDNNYKF"></i>
+										</button>
+									</div>
+								</div>
+							</div>
+							<div class="Modal__ModalBody-s1q54ra0-7 fJUlRA">
+								<div>
+									<div
+										class="SocialMediaShareButton SocialMediaShareButton--facebook">
+										<button class="ShareModal__ShareButton-xl7vb0-0 cXqVXt">
+											<i class="_1uz2PaH_Pc163IQLnwFtm8 _1QY7TzdLHKX3-BKPDNNYKF"></i>
+											<!-- react-text: 1494 -->
+											페이스북 공유하기
+											<!-- /react-text -->
+										</button>
+									</div>
+									<div
+										class="SocialMediaShareButton SocialMediaShareButton--twitter">
+										<button id="kakao-link-btn" class="ShareModal__ShareButton-xl7vb0-0 kQbXwX">
+											<i class="_2FxT97uoLyJpLIfoko0aQD _1QY7TzdLHKX3-BKPDNNYKF"></i>
+											<!-- react-text: 1498 -->
+											트위터 공유하기
+											<!-- /react-text -->
+										</button>
+									</div>
+									<div
+										class="SocialMediaShareButton SocialMediaShareButton--kakaotalk">
+										<button class="ShareModal__ShareButton-xl7vb0-0 kQbXwXkakao" id="kakao-link-btn" onclick="javascript:shareKakao();">
+											<!-- <i class="_2FxT97uoLyJpLIfoko0aQD _1QY7TzdLHKX3-BKPDNNYKF"></i> -->
+											<img src="resources/images/project/share/kakaoBtn.png" style="width:16px; height:16px;" />
+											<!-- react-text: 1498 -->
+											카카오톡 공유하기
+											<!-- /react-text -->
+										</button>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				
 				<div class="Container__Container-s1sxg7g4-0 jdgWcI"
 					data-reactid="37">
 					<div
@@ -406,7 +683,7 @@
 										class="ProjectIntroduction__SecondaryButton-c7b94s-22 cYmhAj"
 										data-reactid="89">
 										<button class="Button__Button-s1ng5xda-0 hZQjKf"
-											data-reactid="90" onclick="javascript:location.href='/tktk/kakao.jsp';">
+											data-reactid="90" onclick="openSharePopup();">
 											<i class="rx2sgfroJA4ZdOppiL_2e _1QY7TzdLHKX3-BKPDNNYKF"
 												data-reactid="91"></i>
 										</button>
