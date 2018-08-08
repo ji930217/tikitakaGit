@@ -31,9 +31,7 @@
 	<c:out value="${user.email }">no user </c:out>
 
 </c:if>
-	<header>
-		<c:import url="common/header.jsp"/>
-	</header>
+	<c:import url="common/header.jsp"/>
 	<c:import url="common/index.jsp"/>
 	<c:import url="common/footer.jsp"/>
 

@@ -5,13 +5,6 @@
 <html>
 
 <head>
-
-<script>
-	function loginPage() {
-		location.href = "loginPage.do";
-	}
-</script>
-
 <meta charset="utf-8">
 <title>텀블벅 :: tumblbug</title>
 <script type="text/javascript" src="resources/js/jquery-3.3.1.min.js"></script>
@@ -71,8 +64,12 @@
 	src="https://cdn.astronomer.io/analytics.js/v1/jMrtLL6v6xXmMGP7h/analytics.min.js"></script>
 <script type="application/javascript">
 	
+	
+	
         window.MOBX_STATE = {"app":{"ssrLocation":"/pledges"},"currentUser":{"isLoading":false,"isLoaded":true,"id":750880,"uuid":"3595a029-240c-4ed3-ba5e-ca84dab39b41","fullname":"새로","userPermalink":"domoyozudupinedo","avatarUrl":"https://tumblbug-upi.imgix.net/defaults/avatar_0.png?ixlib=rb-1.1.0&w=200&h=250&auto=format%2Ccompress&fit=facearea&facepad=2.0&ch=Save-Data&mask=ellipse&s=87ba671c98b3debfae8ac85d36d0e7b4","email":"jungin2ya@naver.com","isCreator":true,"isAdmin":false},"pledgeStore":{"apiEndpoint":"/api/v1/pledges.json?fields=id,createdAt,amount,isSurveyRequested,isSurveyResponded,paymentStatus&project=title,coverImageUrl,creatorName,fundingStatus&reward=description,items&&coverImageUrl[h]=240&coverImageUrl[w]=320&coverImageUrl[fit]=crop","isLoading":false,"isLoaded":false,"pledges":[],"pledgesCount":{},"currentPage":1,"filterType":"all","isPledgeDataLoading":false,"isMetaDataLoaded":false,"isPledgeDetailsDataLoading":true},"surveyStore":{"apiEndpoint":"/api/v1/pledges.json?fields=id,createdAt,amount,isSurveyRequested,isSurveyResponded,paymentStatus&project=title,coverImageUrl,creatorName,fundingStatus&reward=description,items&filter=surveyResponseNeeded&coverImageUrl[h]=240&coverImageUrl[w]=320&coverImageUrl[fit]=crop","isLoading":false,"isLoaded":false,"surveyResponseNeededPledges":[],"isSurveyResponseNeededPledgesLoading":false,"isSurveysLoading":true},"taxpayerInformationStore":{"isLoaded":false},"collectionStore":{"collections":{},"featuredCollections":null},"projectStore":{},"messageThreadStore":{"_unreadThreads":{"asCreator":[],"asUser":[]},"projectFilters":[],"_messageThreads":{},"isLoadingMessageThreads":false,"selectedThreadId":null,"selectedThread":null},"messageArchiveThreadStore":{"_messageArchiveThreads":{},"_paging":{"offset":0,"limit":10,"next":""}},"rewardStore":{},"itemStore":{},"heroStore":{"isLoaded":false},"postStore":{"_cachedProjectId":null,"_posts":{},"_postsPagination":null,"_comments":{},"_cachedPostId":null,"_commentPagination":null},"depositAccountStore":{}};
       
+
+
 </script>
 <style type="text/css"
 	data-styled-components="cXdlcp bYqief fzoeFq jPcWZN iVCTYT jdgWcI bteafZ kZLTLQ hcvfVq iGOIal kizyZz cfMrMC hHUgvf bpfGNO JUlEd buZCDD fQwQfp gqXDKx labhhf eQgQLo dLYLGx hGGMaO btBxPj cgjPcA jYcZV ewshKB iTXcwb fkKFAu yFLvh buxDxm csIfer eTTrro dvkZSH hZQjKf eMTBgh dxWcyc cdAaGX hIzDiB hhJJZS hSyZGE bKYVaX jKslKa bIabCF fGeOXz"
@@ -81,7 +78,6 @@
 	width: 85px;
 	height: 22.36px;
 }
-
 /* sc-component-id: SiteFooter__SROnlyLabel-s15w7vby-0 */
 .jYcZV {
 	position: absolute;
@@ -127,40 +123,138 @@
 50%
 {
 -webkit-transform
+
+
+
+
 :
+
+
  
+
+
 translateY
-(100%);-ms-transform
+
+
+
+
+(100%);
+-ms-transform
+
+
+
+
 :
+
+
  
+
+
 translateY
-(100%);transform
+
+
+
+
+(100%);
+transform
+
+
+
+
 :
+
+
  
+
+
 translateY
-(100%);opacity
+
+
+
+
+(100%);
+opacity
+
+
+
+
 :
+
+
  
+
+
 .3
+
+
+
+
 ;
 }
 100%
 {
 -webkit-transform
+
+
+
+
 :
+
+
  
+
+
 translateY
-(0%);-ms-transform
+
+
+
+
+(0%);
+-ms-transform
+
+
+
+
 :
+
+
  
+
+
 translateY
-(0%);transform
+
+
+
+
+(0%);
+transform
+
+
+
+
 :
+
+
  
+
+
 translateY
-(0%);opacity
+
+
+
+
+(0%);
+opacity
+
+
+
+
 :
+
+
  
+
+
 1;
 }
 }
@@ -175,40 +269,138 @@ keyframes cXdlcp { 0% {
 50%
 {
 -webkit-transform
+
+
+
+
 :
+
+
  
+
+
 translateY
-(100%);-ms-transform
+
+
+
+
+(100%);
+-ms-transform
+
+
+
+
 :
+
+
  
+
+
 translateY
-(100%);transform
+
+
+
+
+(100%);
+transform
+
+
+
+
 :
+
+
  
+
+
 translateY
-(100%);opacity
+
+
+
+
+(100%);
+opacity
+
+
+
+
 :
+
+
  
+
+
 .3
+
+
+
+
 ;
 }
 100%
 {
 -webkit-transform
+
+
+
+
 :
+
+
  
+
+
 translateY
-(0%);-ms-transform
+
+
+
+
+(0%);
+-ms-transform
+
+
+
+
 :
+
+
  
+
+
 translateY
-(0%);transform
+
+
+
+
+(0%);
+transform
+
+
+
+
 :
+
+
  
+
+
 translateY
-(0%);opacity
+
+
+
+
+(0%);
+opacity
+
+
+
+
 :
+
+
  
+
+
 1;
 }
 }
@@ -343,6 +535,31 @@ translateY
 	}
 }
 
+.imIxKd {
+	color: inherit;
+}
+
+.imIxKd:hover {
+	color: inherit;
+}
+
+.imIxKd {
+	display: -webkit-inline-box;
+	display: -webkit-inline-flex;
+	display: -ms-flexbox;
+	display: inline-flex;
+	-webkit-align-items: center;
+	-webkit-box-align: center;
+	-ms-flex-align: center;
+	align-items: center;
+	color: black;
+	font-weight: bold;
+	font-size: 1rem;
+	cursor: pointer;
+	line-height: 58px;
+	padding: 0 1rem;
+}
+
 .yFLvh {
 	display: inline-block;
 	background-image:
@@ -432,6 +649,26 @@ translateY
 		height: 22.36px;
 	}
 }
+
+.fqdqdO {
+	display: inline-block;
+	background-image:
+		url(https://tumblbug-assets.imgix.net/assets/user-account.png?s=08b1f9ecf24209994ac9b81900936c0e);
+	width: 28px;
+	height: 28px;
+	background-size: cover;
+	background-position: 50% 38%;
+	border-radius: 50%;
+	border: 1px solid #ddd;
+	margin-right: 0;
+}
+
+@media ( min-width : 1080px) {
+	.fqdqdO {
+		width: 38px;
+		height: 38px;
+	}
+}
 /* sc-component-id: SiteHeader__SiteHeaderWrapper-s1s56ls8-0 */
 .jPcWZN {
 	position: relative;
@@ -501,6 +738,7 @@ translateY
 /* sc-component-id: SiteHeader__ButtonLink-s1s56ls8-5 */
 .bpfGNO {
 	color: inherit;
+	font-weight: bold;
 }
 
 .bpfGNO:hover {
@@ -638,6 +876,7 @@ translateY
 	align-items: center;
 	position: relative;
 	margin-left: 0.75rem;
+	-webkit-align-items: center;
 }
 /* sc-component-id: sc-keyframes-bYqief */
 @
@@ -648,8 +887,16 @@ translateY
 50%
 {
 opacity
+
+
+
+
 :
+
+
  
+
+
 0;
 }
 }
@@ -661,8 +908,16 @@ keyframes bYqief { 0%, 100% {
 50%
 {
 opacity
+
+
+
+
 :
+
+
  
+
+
 0;
 }
 }
@@ -677,18 +932,68 @@ opacity
 50%
 {
 -webkit-transform
+
+
+
+
 :
+
+
  
+
+
 translateX
-(4px);-ms-transform
+
+
+
+
+(4
+px
+
+
+);
+-ms-transform
+
+
+
+
 :
+
+
  
+
+
 translateX
-(4px);transform
+
+
+
+
+(4
+px
+
+
+);
+transform
+
+
+
+
 :
+
+
  
+
+
 translateX
-(4px);
+
+
+
+
+(4
+px
+
+
+);
 }
 }
 @
@@ -701,21 +1006,70 @@ keyframes fzoeFq { 0%, 100% {
 50%
 {
 -webkit-transform
-:
- 
-translateX
-(4px);-ms-transform
-:
- 
-translateX
-(4px);transform
-:
- 
-translateX
-(4px);
-}
-}
 
+
+
+
+:
+
+
+ 
+
+
+translateX
+
+
+
+
+(4
+px
+
+
+);
+-ms-transform
+
+
+
+
+:
+
+
+ 
+
+
+translateX
+
+
+
+
+(4
+px
+
+
+);
+transform
+
+
+
+
+:
+
+
+ 
+
+
+translateX
+
+
+
+
+(4
+px
+
+
+);
+}
+}
 /* sc-component-id: sc-bwzfXH */
 .sc-bwzfXH {
 	
@@ -1165,7 +1519,7 @@ translateX
 	padding: .8em 1.2em;
 	font-size: .95em;
 	opacity: .3;
-	pointer-events: none;;
+	pointer-events: none;
 }
 
 .jKslKa {
@@ -4298,28 +4652,6 @@ translateX
 	padding: 2em 0;
 }
 </style>
-<style type="text/css" data-styled-components=""
-	data-styled-components-is-local="true"></style>
-<style type="text/css" data-styled-components=""
-	data-styled-components-is-local="true"></style>
-<meta property="og:image"
-	content="https://tumblbug-assets.imgix.net/brand/tumblbug_introduction.png"
-	data-react-helmet="true">
-<meta property="og:url" content="https://www.tumblbug.com/"
-	data-react-helmet="true">
-<meta property="og:title" content="텀블벅 tumblbug"
-	data-react-helmet="true">
-<meta property="og:description" content="창작자를 위한 크라우드펀딩 플랫폼 텀블벅"
-	data-react-helmet="true">
-<meta name="twitter:image"
-	content="https://tumblbug-assets.imgix.net/brand/tumblbug_introduction.png"
-	data-react-helmet="true">
-<meta name="twitter:url" content="https://www.tumblbug.com/"
-	data-react-helmet="true">
-<meta name="twitter:title" content="텀블벅 tumblbug"
-	data-react-helmet="true">
-<meta name="twitter:description" content="창작자를 위한 크라우드펀딩 플랫폼 텀블벅"
-	data-react-helmet="true">
 
 <style>
 .lhFUmi {
@@ -4396,23 +4728,18 @@ translateX
 				<div class="SiteHeader__CenterMenu-s1s56ls8-3 hHUgvf"
 					data-reactid="15">
 					<a class="SiteHeader__ButtonLink-s1s56ls8-5 bpfGNO" href="index.do"
-						data-reactid="16"><br><font size="5px"><b>tikitaka</b></font>
-						<div class="TumblbugLogo__TumblbugLogo-s9od1ls-0 JUlEd"
-							data-reactid="17">
-							<!-- <img id="tumblbug_logo" data-reactid="18"
-								src="resources/images/header/logo.png" />-->
+						data-reactid="16">
+						<div ><font size="4px">TIKITAKA</font>
+							
 						</div>
 					</a>
 				</div>
-				<div id="login" class="SiteHeader__RightMenu-s1s56ls8-4 buZCDD"
-					data-reactid="29" onclick="loginPage()">
-					<a class="sc-gzVnrw imIxKd" href="#" data-reactid="30"><span
-						class="SiteHeader__ItemLabel-s1s56ls8-8 iGOIal" data-reactid="31">로그인
-							/ 회원가입</span><span
-						class="SiteHeader__ProfileImageWrapper-s1s56ls8-10 gqXDKx"
-						data-reactid="32"><span
-							class="ProfileImg__ProfileImg-s1o99mme-0 fqdqdO"
-							data-reactid="33"></span></span></a>
+				<div class="SiteHeader__RightMenu-s1s56ls8-4 buZCDD">
+					<a class="sc-gzVnrw imIxKd" href="loginPage.do"> <span
+						class="SiteHeader__ItemLabel-s1s56ls8-8 iGOIal">로그인 / 회원가입</span>
+						<span class="SiteHeader__ProfileImageWrapper-s1s56ls8-10 gqXDKx">
+							<span class="ProfileImg__ProfileImg-s1o99mme-0 fqdqdO"></span>
+					</span></a>
 				</div>
 				<div>
 					<div class="FullscreenModal__Modal-s1csgj37-0 gXCSaI">

@@ -8,7 +8,7 @@ import org.springframework.web.servlet.ModelAndView;
 public class ProjectController {
 	@RequestMapping("projectList.do")
 	public String projectList(){
-		return "project/projectList";
+		return "common/footer";
 	}
 	@RequestMapping("projectStart.do")
 	public String projectStart(){
@@ -19,6 +19,7 @@ public class ProjectController {
 	public String projectForm(){
 		return "project/projectForm";
 	}
+	
 	
 	@RequestMapping("projectDetail.do")
 	public ModelAndView projectDetail(/*int pProjectCode, */ModelAndView mv){
