@@ -47,6 +47,11 @@ public class AdminDao {
 		return sqlSession.selectList("AdminMapper.selectProjectList");
 	}
 
+	public int projectTotalCount() {
+		
+		return sqlSession.selectOne("AdminMapper.projectTotalCount");
+	}
+
 	
 
 	

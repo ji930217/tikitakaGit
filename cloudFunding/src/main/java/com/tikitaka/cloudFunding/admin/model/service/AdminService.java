@@ -36,10 +36,16 @@ public class AdminService {
 		return admindao.TotalCount();
 	}
 
+	public int projectTotalCount() {
+		
+		return admindao.projectTotalCount();
+	}
+	
 	public List<ProjectVo> selectProjectList() {
 		
 		return admindao.selectProjectList();
 	}
+
 
 
 

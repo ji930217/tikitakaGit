@@ -13,6 +13,7 @@ import org.springframework.web.servlet.ModelAndView;
 
 import com.tikitaka.cloudFunding.admin.model.service.AdminService;
 import com.tikitaka.cloudFunding.admin.model.vo.PagingVo;
+import com.tikitaka.cloudFunding.admin.model.vo.projectPagingVo;
 import com.tikitaka.cloudFunding.member.model.vo.Member;
 import com.tikitaka.cloudFunding.project.model.vo.ProjectVo;
 
@@ -23,7 +24,7 @@ public class AdminController {
 	AdminService adminservice;
 
 	@RequestMapping("adminMenuList.do") // 관리자 페이지 이동
-	public ModelAndView adminMenuList(ModelAndView mv, PagingVo paging, @RequestParam(defaultValue = "1") int no) {
+	public ModelAndView adminMenuList(ModelAndView mv, PagingVo paging,projectPagingVo pPaging, @RequestParam(defaultValue = "1") int no) {
 
 		int noticeCount = adminservice.TotalCount();
 		int rangeSize = paging.getRangeSize();
@@ -77,13 +78,73 @@ public class AdminController {
 		}
 
 		List<Member> list = adminservice.selectMemberList2(no);
-		
-		List<ProjectVo> list2 = adminservice.selectProjectList();
-
-		mv.addObject("projectList", list2);
+		System.out.println(paging);
 		mv.addObject("memberList", list);
 		mv.addObject("paging", paging);
 		mv.addObject("noticeTotalCount", noticeCount);
+		
+		
+		
+		//프로젝트부분 페이징처리
+		
+		int projectCount = adminservice.projectTotalCount();
+		int pRangeSize = pPaging.getRangeSize();
+		int pPageSize = pPaging.getPageSize();
+		pPaging.setCurPage(no); // 현재 페이지 번호
+		pPaging.setListCnt(projectCount);// 전체 게시물 수
+
+		// 전체 페이지 수
+		int pPageCnt = projectCount / pPageSize;
+		if (projectCount % pPageSize > 0) {
+			pPageCnt = projectCount / pPageSize + 1;
+		}
+
+		pPaging.setPageCnt(pPageCnt);
+
+		// 전체 블럭 개수 rangeCnt = (전체 페이지 수 / 한 블럭 페이지 수 5)
+		int pRangeCnt = pPageCnt / pRangeSize;
+		if (pPageCnt % pPaging.getRangeSize() > 0) {
+			pRangeCnt = (pPageCnt / pRangeSize) + 1;
+		}
+		pPaging.setRangeCnt(pRangeCnt);
+
+		// 현재 블럭 번호
+		int pCurRange = (int) ((no - 1) / pRangeSize) + 1;
+		pPaging.setCurRange(pCurRange);
+
+		// 블록 내 시작 페이지
+		int pStartPage = (pCurRange - 1) * pRangeSize + 1;
+		pPaging.setStartPage(pStartPage);
+
+		// 블록 내 끝 페이지
+		pPaging.setEndPage(pPaging.getStartPage() + pRangeSize - 1);
+
+		// 이전 페이지
+		int pPrev = pPaging.getCurPage() - 1;
+		if (pPrev < 1) {
+			pPrev = 1;
+		}
+		pPaging.setPrevPage(pPrev);
+
+		// 다음 페이지
+		int pNext = pPaging.getCurPage() + 1;
+		if (pNext > pPageCnt) {
+			pNext = pPageCnt;
+		}
+		pPaging.setNextPage(pNext);
+
+		// 블록 내 끝 페이지가 전체 페이지 수 보다 많을 경우 처리
+		if (pPaging.getEndPage() > pPaging.getPageCnt()) {
+			pPaging.setEndPage(pPaging.getPageCnt());
+		}
+		
+
+		
+		List<ProjectVo> list2 = adminservice.selectProjectList();
+		System.out.println(pPaging);
+		mv.addObject("pPaging", pPaging);
+		mv.addObject("projectList", list2);
+		mv.addObject("projectTotalCount", projectCount);
 		mv.setViewName("admin/adminMenuList");
 
 		return mv;
@@ -226,8 +287,8 @@ public class AdminController {
 		}
 
 		mv.addObject("memberList", list);
-		mv.addObject("paging", paging);
-		mv.addObject("noticeTotalCount", noticeCount);
+		mv.addObject("paging", paging);//멤버 페이징
+		mv.addObject("noticeTotalCount", noticeCount);//멤버
 		mv.setViewName("admin/adminMenuList");
 
 		return mv;
