@@ -241,7 +241,7 @@
 													class="O-evLfgVQbD3QZA_PvfT_ _152MAijd_UogerBKCVqZR_ _1lLHKI5v9AoCyeggtffvGZ">
 													<div class="">
 														<div
-															class="_3rzNLoSt7yWgc2zzlY9duD _37QxkzyLLTu59r6NSOaCE _2aquK6B3D0GYX7zQT4_IR7 _1f86jtPAIf76j1fECudW7t">
+															class="projectImage _3rzNLoSt7yWgc2zzlY9duD _37QxkzyLLTu59r6NSOaCE _2aquK6B3D0GYX7zQT4_IR7 _1f86jtPAIf76j1fECudW7t">
 															<i
 																class="_3Hs9Qa2HoKTK0Bt1LDlMh_ fzyVh1bUoUslkFs-rPjbw _2aquK6B3D0GYX7zQT4_IR7 _1R0ZK0Z1zZIqLZ8NkjnsD6 _1QY7TzdLHKX3-BKPDNNYKF"></i>
 															<h4>이미지 업로드</h4>
@@ -408,8 +408,8 @@
 														class="_13KHfN73YmQgsYHxXvuh_J _3nB1fZxEqXMiqXF-c7b1XQ _25P2Jb3SrgiAhvibHBFOrS _152MAijd_UogerBKCVqZR_ _3_IGkn3uaje0g2ZA6Tx9wd">
 														<div>
 															<select
-																class="_13KHfN73YmQgsYHxXvuh_J _3_IGkn3uaje0g2ZA6Tx9wd _3vQWHh2J_erdzly2Ip3e87"><option
-																	disabled="" value="프로젝트 카테고리를 정해주세요">프로젝트
+																class="category _13KHfN73YmQgsYHxXvuh_J _3_IGkn3uaje0g2ZA6Tx9wd _3vQWHh2J_erdzly2Ip3e87"><option
+																	selected disabled value="프로젝트 카테고리를 정해주세요">프로젝트
 																	카테고리를 정해주세요</option>
 																<option value="game">게임</option>
 																<option value="tabletop-rpg">- TRPG</option>
@@ -487,7 +487,7 @@
 															<!-- /react-text -->
 														</button>
 														<button
-															class="_13KHfN73YmQgsYHxXvuh_J _3SbGdzxKM6M_AeOQWLNqks _2-N-uV2y5apkjtxqdVnsop _2rCeEoFeBzvCYn76udqnww"
+															class="categoryBtn _13KHfN73YmQgsYHxXvuh_J _3SbGdzxKM6M_AeOQWLNqks _2-N-uV2y5apkjtxqdVnsop _2rCeEoFeBzvCYn76udqnww"
 															disabled="">
 															<i class="-o8oGI_QAOKsVIJOUOUmV _1QY7TzdLHKX3-BKPDNNYKF"></i>
 															<!-- react-text: 720 -->
@@ -556,7 +556,7 @@
 															올려주세요.</p>
 														<div class="">
 															<button
-																class="_13KHfN73YmQgsYHxXvuh_J _3SbGdzxKM6M_AeOQWLNqks _18T1PLssfUK23Oz9uVd0fv _3sFSjAZS4gQdCAyN3OfyFG">
+																class="profileImage _13KHfN73YmQgsYHxXvuh_J _3SbGdzxKM6M_AeOQWLNqks _18T1PLssfUK23Oz9uVd0fv _3sFSjAZS4gQdCAyN3OfyFG">
 																<i
 																	class="_2Bj5CPWMCPsh-eeXFlOdE8 _1QY7TzdLHKX3-BKPDNNYKF"></i>
 																<!-- react-text: 245 -->
@@ -625,7 +625,7 @@
 															<div>
 																<div
 																	class="_13KHfN73YmQgsYHxXvuh_J _3_IGkn3uaje0g2ZA6Tx9wd _3nB1fZxEqXMiqXF-c7b1XQ  ">
-																	<input type="text" value="나신의" placeholder="이름을 입력해주세요">
+																	<input id="MCName" type="text" value="나신의" placeholder="이름을 입력해주세요">
 																	<!-- react-text: 267 -->
 																	<!-- /react-text -->
 																</div>
@@ -654,7 +654,7 @@
 															<!-- /react-text -->
 														</button>
 														<button
-															class="_13KHfN73YmQgsYHxXvuh_J _3SbGdzxKM6M_AeOQWLNqks _2-N-uV2y5apkjtxqdVnsop _2rCeEoFeBzvCYn76udqnww"
+															class=" MCBtn _13KHfN73YmQgsYHxXvuh_J _3SbGdzxKM6M_AeOQWLNqks _2-N-uV2y5apkjtxqdVnsop _2rCeEoFeBzvCYn76udqnww"
 															disabled="">
 															<i class="-o8oGI_QAOKsVIJOUOUmV _1QY7TzdLHKX3-BKPDNNYKF"></i>
 															<!-- react-text: 278 -->
@@ -720,12 +720,12 @@
 													</div>
 													<div class="_3_IGkn3uaje0g2ZA6Tx9wd">
 														<div class="_3_IGkn3uaje0g2ZA6Tx9wd">
-															<textarea placeholder="진행자 소개를 입력해주세요" rows="3"
+															<textarea id="MCIntroduce" placeholder="진행자 소개를 입력해주세요" rows="3"
 																style="width: 100%;"></textarea>
 															<div
-																class="_13KHfN73YmQgsYHxXvuh_J WU1ox0-AeDX_zneKjnNMO _3G8CRXtomRhisiZsw7Spx- _2-N-uV2y5apkjtxqdVnsop _1xou6XDdjhr5t3_tfAMqmg jvBXmsw6c8TD5NU0Gn0P6
-          ">최소
-																10자 / 300자 남았습니다</div>
+																class="MCRemit _13KHfN73YmQgsYHxXvuh_J WU1ox0-AeDX_zneKjnNMO _3G8CRXtomRhisiZsw7Spx- _2-N-uV2y5apkjtxqdVnsop _1xou6XDdjhr5t3_tfAMqmg jvBXmsw6c8TD5NU0Gn0P6
+          ">
+																 300자 남았습니다/최소 10자</div>
 														</div>
 													</div>
 													<br>
@@ -741,7 +741,7 @@
 															<!-- /react-text -->
 														</button>
 														<button
-															class="_13KHfN73YmQgsYHxXvuh_J _3SbGdzxKM6M_AeOQWLNqks _2-N-uV2y5apkjtxqdVnsop _2rCeEoFeBzvCYn76udqnww"
+															class=" MCIntroduceBtn _13KHfN73YmQgsYHxXvuh_J _3SbGdzxKM6M_AeOQWLNqks _2-N-uV2y5apkjtxqdVnsop _2rCeEoFeBzvCYn76udqnww"
 															disabled="">
 															<i class="-o8oGI_QAOKsVIJOUOUmV _1QY7TzdLHKX3-BKPDNNYKF"></i>
 															<!-- react-text: 300 -->

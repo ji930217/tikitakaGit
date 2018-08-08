@@ -115,7 +115,7 @@
 
 </head>
 <body>
-<c:import url="../common/header.jsp"/>
+
 
 	<c:import url="../common/header.jsp"/>
 
@@ -155,6 +155,7 @@
                             </fieldset>
                         </form>
                         
+                        <a href="mailForm.do">비밀번호를 분실하셨나요?</a>
                         
                         <hr/>
                         <center><h4>OR</h4></center>

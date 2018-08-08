@@ -8,7 +8,7 @@
 	</head>
 <body>
 
-<a href="mailForm.do">mail</a>
+
 
 <c:if test="${!empty user }">
 	<c:out value="${user.email }"/>
