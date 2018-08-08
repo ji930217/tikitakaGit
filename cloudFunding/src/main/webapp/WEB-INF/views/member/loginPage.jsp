@@ -115,7 +115,7 @@
 
 </head>
 <body>
-<c:import url="../common/header.jsp"/>
+
 
 	<c:import url="../common/header.jsp"/>
 
