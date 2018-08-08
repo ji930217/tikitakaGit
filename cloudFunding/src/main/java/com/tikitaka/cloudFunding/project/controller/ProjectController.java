@@ -13,9 +13,16 @@ import com.tikitaka.cloudFunding.project.model.vo.ProjectVo;
 
 @Controller
 public class ProjectController {
+
 	@Autowired
 	ProjectService projectService;
 	
+
+	@RequestMapping("projectList.do")
+	public String projectList(){
+		return "project/payment";
+	}
+
 	@RequestMapping("projectStart.do")
 	public String projectStart(){
 		return "project/projectstart";
@@ -42,6 +49,7 @@ public class ProjectController {
 		
 		return "project/projectForm";
 	}
+	
 	
 	@RequestMapping("projectDetail.do")
 	public ModelAndView projectDetail(/*int pProjectCode, */ModelAndView mv){
