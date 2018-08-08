@@ -436,6 +436,10 @@
 		}
 	}
 	
+	#messageDiv, #messageDiv select{
+		visibility:hidden;
+	}
+	
 	
 </style>
 
@@ -487,12 +491,24 @@
 	      });
 	  //]]>
 	}
+	
+	function openMessagePopup(){
+		$("#messageDiv, #messageDiv select").css("visibility", "visible");
+	}
+	function closeMessagePopup(){
+		$("#messageDiv, #messageDiv select").css("visibility", "hidden");
+	}
+	
+	
 </script>
 </head>
 <body>
 	<header>
 		<c:import url="../common/header.jsp"/>
 	</header>
+	<div id="messageDiv">
+		<c:import url="messagePopup.jsp"/>
+	</div>
 	<section>
 		<div data-reactid="34">
 			<!-- react-empty: 35 -->
@@ -718,6 +734,12 @@
 						</div>
 					</div>
 				</nav>
+				
+				<!-- 스크롤할 경우 나타나는 버튼 -->
+				<div class="ContentsNavigation__FixedBar-s6dhfrc-5 cHpUtP">
+					<button class="Button__Button-s1ng5xda-0 bIabCF">프로젝트 밀어주기</button>
+				</div>
+				
 			</div>
 			<div class="ProjectPage__ProjectContentsBackground-b1letw-0 cNWmvR"
 				data-reactid="102">
@@ -781,7 +803,7 @@
 										<div
 											class="CreatorCard__CreatorContactButton-yeytpy-6 khYIRi"
 											data-reactid="133">
-											<button class="Button__Button-s1ng5xda-0 dxWcyc"
+											<button class="Button__Button-s1ng5xda-0 dxWcyc" onclick="openMessagePopup();"
 												data-reactid="134">
 												<i class="_3YmAkQhwzI7o-uUWz_8Mp4 _1QY7TzdLHKX3-BKPDNNYKF"
 													data-reactid="135"></i>
