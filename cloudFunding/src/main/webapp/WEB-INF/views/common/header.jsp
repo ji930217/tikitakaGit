@@ -664,16 +664,32 @@
 						</div>
 					</a>
 				</div>
-				<div id="login" class="SiteHeader__RightMenu-s1s56ls8-4 buZCDD"
-               data-reactid="29" onclick="loginPage()">
-               <a class="sc-gzVnrw imIxKd" href="#" data-reactid="30"><span
-                  class="SiteHeader__ItemLabel-s1s56ls8-8 iGOIal" data-reactid="31">로그인
-                     / 회원가입</span><span
-                  class="SiteHeader__ProfileImageWrapper-s1s56ls8-10 gqXDKx"
-                  data-reactid="32"><span
-                     class="ProfileImg__ProfileImg-s1o99mme-0 fqdqdO"
-                     data-reactid="33"></span></span></a>
-            </div>
+				
+				
+				<c:if test="${!empty user }">
+					<c:out value="${user.email }"/>
+					<img  src="${user.profile_img }" width="42" height="42" /> 
+				
+				</c:if>
+				
+				
+				
+				<c:if test="${empty user }">
+						<div id="login" class="SiteHeader__RightMenu-s1s56ls8-4 buZCDD"
+	               data-reactid="29" onclick="loginPage()">
+	               <a class="sc-gzVnrw imIxKd" href="#" data-reactid="30"><span
+	                  class="SiteHeader__ItemLabel-s1s56ls8-8 iGOIal" data-reactid="31">로그인
+	                     / 회원가입</span><span
+	                  class="SiteHeader__ProfileImageWrapper-s1s56ls8-10 gqXDKx"
+	                  data-reactid="32"><span
+	                     class="ProfileImg__ProfileImg-s1o99mme-0 fqdqdO"
+	                     data-reactid="33"></span></span></a>
+	           		 </div>
+				</c:if>
+				
+				
+            
+            
 				<div>
 					<div class="FullscreenModal__Modal-s1csgj37-0 gXCSaI">
 						<div class="Header__Header-s10wde3a-0 ewshKB">

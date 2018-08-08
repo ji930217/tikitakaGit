@@ -10,11 +10,8 @@
 
 
 
-<c:if test="${!empty user }">
-	<c:out value="${user.email }"/>
-	<img  src="${user.profile_img }" width="42" height="42" /> 
 
-</c:if>
+
 	<header>
 		<c:import url="common/header.jsp"/>
 	</header>
