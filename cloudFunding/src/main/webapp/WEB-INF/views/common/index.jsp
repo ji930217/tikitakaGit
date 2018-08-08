@@ -1245,10 +1245,11 @@ $('#carouselExampleIndicators').carousel({
     <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
     <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
     <li data-target="#carouselExampleIndicators" data-slide-to="3"></li>
+    <li data-target="#carouselExampleIndicators" data-slide-to="4"></li>
   </ol>
   <div class="carousel-inner">
     <div class="carousel-item active">
-      <img class="d-block w-100" src="resources/images/carousel/slide1.jpg" alt="첫번째 슬라이드">
+      <img class="d-block w-100" src="resources/images/carousel/slide5.jpg" alt="첫번째 슬라이드">
     </div>
     <div class="carousel-item">
       <img class="d-block w-100" src="resources/images/carousel/slide2.jpg" alt="두번째 슬라이드">
@@ -1258,6 +1259,9 @@ $('#carouselExampleIndicators').carousel({
     </div>
     <div class="carousel-item">
       <img class="d-block w-100" src="resources/images/carousel/slide4.jpg" alt="네번째 슬라이드">
+    </div>
+    <div class="carousel-item">
+      <img class="d-block w-100" src="resources/images/carousel/slide1.jpg" alt="다섯번째 슬라이드">
     </div>
   </div>
   <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
