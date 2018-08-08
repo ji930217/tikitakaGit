@@ -33,11 +33,9 @@
          class="_13KHfN73YmQgsYHxXvuh_J _1Qdv504-1XMeYXZyb0xQZT _3SbGdzxKM6M_AeOQWLNqks" data-reactid="244">
          <i class="IOopdu3Yum3GyEGW_GKW6 _254YPhBOB9qv7-J8bIg7co _1QY7TzdLHKX3-BKPDNNYKF" data-reactid="245"></i>문의하기</a></div>
       </div>
-      <div class="_2AKJF7ih68n2TcW3TIF8-t _2EKbr4mCy_TvmSkhnSfA_a _152MAijd_UogerBKCVqZR_ _1lLHKI5v9AoCyeggtffvGZ" data-reactid="247"><span data-reactid="248">텀블벅(주) | 대표 염재승 105-87-52823 | 서울시 중구 삼일대로 343, 13층 | 통신판매업 2017-서울중구-1156 | 대표전화 02-6080-0760</span><span class="_1NwnhTlynaDwYqlZ_SKgmG" data-reactid="249"><span role="img" aria-labelledby="copyright emoji" data-reactid="250"></span></span></div>
+      <div class="_2AKJF7ih68n2TcW3TIF8-t _2EKbr4mCy_TvmSkhnSfA_a _152MAijd_UogerBKCVqZR_ _1lLHKI5v9AoCyeggtffvGZ" data-reactid="247"><span data-reactid="248">티키타카(주) | 대표 유지상 105-87-52823 | 서울특별시 강남구 강남구 테헤란로14길 6| 통신판매업 2017-서울중구-1156 | 대표전화 02-6080-0760</span><span class="_1NwnhTlynaDwYqlZ_SKgmG" data-reactid="249"><span role="img" aria-labelledby="copyright emoji" data-reactid="250"></span></span></div>
     </div>
   </div>
 </div>
-<script type="application/javascript" src="../d2om2e6rfn032x.cloudfront.net/wpa/bundle.app.fa996bbb6fa75e55c573.js">
-      </script>
 </body>
 </html>
