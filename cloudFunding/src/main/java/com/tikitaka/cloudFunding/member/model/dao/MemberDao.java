@@ -18,6 +18,7 @@ public class MemberDao {
 	}
 
 	public Member selectMember(Member member) {
+		System.out.println(sqlSession.selectOne("MemberMapper.selectMemberEmail", member));
 		return sqlSession.selectOne("MemberMapper.selectMemberEmail", member);
 	}
 	
