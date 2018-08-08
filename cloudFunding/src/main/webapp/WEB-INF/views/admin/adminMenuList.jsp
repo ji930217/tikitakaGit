@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
     <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
-    <script src="resources/js/jquery-3.3.1.min.js"></script>
+   
 
 <html lang="ko">
 <head>
@@ -97,13 +97,11 @@
     </div>
     
     <div id="menu2" class="tab-pane fade">
-       <h3>Menu 2</h3>
-      <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam.</p>      
+          <c:import url="endDateCheck.jsp"></c:import>
     </div>
     
     <div id="menu3" class="tab-pane fade">
-      <h3>Menu 3</h3>
-      <p>Eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.</p>
+      <c:import url="projectCheck.jsp"></c:import>
     </div>
     
     <div id="menu4" class="tab-pane fade">

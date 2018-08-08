@@ -8,6 +8,7 @@ import org.springframework.stereotype.Service;
 
 import com.tikitaka.cloudFunding.admin.model.dao.AdminDao;
 import com.tikitaka.cloudFunding.member.model.vo.Member;
+import com.tikitaka.cloudFunding.project.model.vo.ProjectVo;
 
 @Service
 public class AdminService {
@@ -33,6 +34,11 @@ public class AdminService {
 	public int TotalCount() {
 		
 		return admindao.TotalCount();
+	}
+
+	public List<ProjectVo> selectProjectList() {
+		
+		return admindao.selectProjectList();
 	}
 
 	
