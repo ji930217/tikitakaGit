@@ -9,6 +9,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
 import com.tikitaka.cloudFunding.member.model.vo.Member;
+import com.tikitaka.cloudFunding.project.model.vo.ProjectVo;
 
 @Repository
 public class AdminDao {
@@ -39,6 +40,11 @@ public class AdminDao {
 	public int TotalCount() {
 		
 		return sqlSession.selectOne("AdminMapper.TotalCount");
+	}
+
+	public List<ProjectVo> selectProjectList() {
+		
+		return sqlSession.selectList("AdminMapper.selectProjectList");
 	}
 
 	
