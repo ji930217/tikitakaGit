@@ -735,7 +735,7 @@
 					</div>
 				</nav>
 				
-				<!-- 스크롤할 경우 나타나는 버튼 -->
+				<!-- 스크롤할 경우 나타나는 fixed버튼 -->
 				<div class="ContentsNavigation__FixedBar-s6dhfrc-5 cHpUtP">
 					<button class="Button__Button-s1ng5xda-0 bIabCF">프로젝트 밀어주기</button>
 				</div>
