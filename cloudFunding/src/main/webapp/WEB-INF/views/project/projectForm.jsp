@@ -2991,7 +2991,7 @@ px
 		$(".addD").hide();
 		
 		$("._2uxYQ-nuPwdol9sQhOjfH-").click(function() {
-			if($(this).attr('id')=='create-reward'||$(this).attr('id')=='itemAdd'||$(this).attr('id')=='itemBox'){
+			if($(this).attr('id')=='create-reward'||$(this).attr('id')=='itemAdd'||$(this).attr('id')=='itemBox'||$(this).attr('id')=='addItem'){
 				return;
 			}
 			$(".addD").hide();
@@ -3001,11 +3001,22 @@ px
 			$(this).children('.addD').show();
 		});
 		
+		$("#defaultItem").click(function(){
+			$(this).hide();
+			$("#addItem").show();
+		});
+		
 		$("#new-reward").click(function(){
 			$(".addD").hide();
 			$(".defaultD").show();
 			$(this).hide();
 			$("#create-reward").show();
+			if($("#deadlineDate").val()==''){
+				//db에 있는 값 비교로 바까줘야함
+				$(".giftDate").val("마감일을 설정해 주세요");
+			}else{
+				$(".giftDate").val($("#deadlineDate").val());
+			}
 		});
 		
 		$("#fundingReward").hide();
@@ -3082,11 +3093,11 @@ px
 	
 	$("#projectSummary").keyup(function(){
 		if(0<$(this).val().length){$(".summaryBtn").attr('disabled',false);} 
-		$(".summaryRemit").text( 50 - $(this).val().length+'자 남았습니다/최소 10자');
-		 if($(this).val().length > 49){  
-		       alert("그자는 최소 50자만 입력 가능합니다.");  
-		       $(this).val($(this).val().substring(0,49));  
+		 if($(this).val().length > 50){  
+		       alert("최대 50자만 입력 가능합니다.");  
+		       $(this).val($(this).val().substring(0,50));  
 		  } 
+		 $(".summaryRemit").text( 50 - $(this).val().length+'자 남았습니다/최소 10자');
 	});
 	
 	$(".summaryBtn").click(function(){
@@ -3095,6 +3106,203 @@ px
 			$("#projectSummary").focus();
 			return;
 		}
+	});
+	
+	$(".projectImage").click(function(){
+		var $image = $(this).next('input').click();
+		console.log($image);
+	});
+			 
+
+
+	$(".category").click(function(){
+		if($(this).val()!='프로젝트 카테고리를 정해주세요'){
+			$(".categoryBtn").attr("disabled",false);
+		}
+	});
+	
+	$(".categoryBtn").click(function(){
+		alert("제출");	
+	});
+	
+	$(".profileImage").click(function(){
+		var $image = $(this).next('input').click();
+		console.log($image);
+	});
+	
+	$("#MCName").keyup(function(){
+		$(".MCBtn").attr("disabled",false);
+	});
+	
+	$(".MCBtn").click(function(){
+		alert("진행자 이름 저장");	
+	});
+	
+	$("#MCIntroduce").keyup(function(){
+		if(0<$(this).val().length){$(".MCIntroduceBtn").attr('disabled',false);} 
+		if($(this).val().length > 300){  
+		       alert("최대 300자만 입력 가능합니다.");  
+		       $(this).val($(this).val().substring(0,300));  
+		}
+		$(".MCRemit").text( 300 - $(this).val().length+'자 남았습니다/최소 10자');
+	});
+	
+	$(".MCIntroduceBtn").click(function(){
+		if(10 > $("#MCIntroduce").val().length){
+			alert("진행자소개는 최소 10자 이상 입력하셔야 됩니다.");
+			$("#MCIntroduce").focus();
+			return;
+		}
+		alert("진행자 소개 제출");
+	});
+	
+	$("#fundingGoalAmountInput").keyup(function(){
+		if($(this).val()==''){$(this).val(0);}else{$(this).val($(this).val().ltrimzero());}
+		$(".goalBtn").attr("disabled",false);
+		var payment = $(this).val()*0.04;
+		var platform = $(this).val()*0.055;
+		var acount = payment+platform;
+		if(parseInt(acount)>0){
+			$(".fees").each(function(index){
+				switch(index){
+				case 0:
+					$(this).text(numberWithCommas($("#fundingGoalAmountInput").val()-acount));
+					break;
+				case 1: 
+					$(this).text(numberWithCommas(payment));
+					break;
+				case 2:
+					$(this).text(numberWithCommas(platform));
+					break;
+				case 3:
+					$(this).text(numberWithCommas(acount));
+					break;
+				}
+			});	
+		}
+	});
+	
+	String.prototype.ltrimzero = function() { return this.replace(/(^0+)/, ""); };
+
+	function numberWithCommas(x) {
+	    return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+	}
+
+	$(".goalBtn").click(function(){
+		var regexp =/^[0-	9]*$/;
+		var goal = $("#fundingGoalAmountInput").val();
+		 if( !regexp.test(goal)){
+			alert("목표 금액은 숫자만 입력 가능합니다.");
+			$("#fundingGoalAmountInput").val('');
+			$("#fundingGoalAmountInput").focus();
+			return;
+		}
+		 if(5000>goal){
+			 alert("목표 금액은 5000원 이상 가능합니다.");
+			 $("#fundingGoalAmountInput").focus();
+			 return;
+		 }
+		alert("목표 금액 제출"); 
+	});
+	
+	$("#deadlineDay").on('click keyup',function(){
+		var date = new Date();
+		var deadlineday = $("#deadlineDay").val();
+		$(".deadlineBtn").attr("disabled",false);
+		
+		date.setDate(parseInt(date.getDate())+parseInt(deadlineday)); 
+		
+		var year = date.getFullYear();
+		var month = date.getMonth()+1;
+		var day = date.getDate();
+		
+		$("#deadlineDate").val(year+'.'+month+'.'+day);
+	});
+	
+	$(".deadlineBtn").click(function(){
+		 if(3>$("#deadlineDay").val()){
+			alert("마감일은 최소 삼일 이상 설정해 주세요");
+			$("#deadlineDay").val(3);
+			$("#deadlineDay").focus();
+			return;
+		}
+		alert("마감일 제출"); 
+	});
+	$(".projectItemModal").hide();
+	
+	$(".itemCreateBtn").click(function(){
+		$(".projectItemModal").show();
+	});
+	
+	$(".modalCloseBtn").click(function(){
+		$("#defaultItem").show();
+		$("#addItem").val('');
+		$("#addItem").hide();
+		$(".projectItemModal").hide();
+		
+	});
+	$("#modalItemInput").keyup(function(){
+		$(".modalItemBtn").attr('disabled',false);
+		if($(this).val().length > 50){  
+		       alert("최대 50자만 입력 가능합니다.");  
+		       $(this).val($(this).val().substring(0,50));  
+		}
+		$(".modalRemit").text( 50 - $(this).val().length+'자 남았습니다');
+	});
+	
+	$(".modalItemBtn").click(function(){
+		if(1>$("#modalItemInput").val().length){
+			alert("아이템 이름은 최소 한글자 이상 입력해야 됩니다.");
+		}
+		alert("mdoalItem 제출");
+	});
+	
+	$("#giftDescription").keyup(function(){
+		if($(this).val().length > 50){  
+		       alert("최대 50자만 입력 가능합니다.");  
+		       $(this).val($(this).val().substring(0,50));  
+		}
+		$(".giftRemit").text( 50 - $(this).val().length+'자 남았습니다');
+	});
+	
+	$(".giftDay").on('click keyup',function(){
+		var date = new Date($("#deadlineDate").val());
+		var giftDay = $(".giftDay").val();
+		
+		date.setDate(parseInt(date.getDate())+parseInt(giftDay)); 
+		
+		var year = date.getFullYear();
+		var month = date.getMonth()+1;
+		var day = date.getDate();
+		
+		$(".giftDate").val(year+'.'+month+'.'+day);
+	});
+	
+	$("#isRewardQuantityLimited").click(function(){
+		if($(this).is(":checked")){
+			$("#rewardLimit").attr("disabled",false);
+		}else{
+			$("#rewardLimit").attr("disabled",true);
+		}	
+	});
+	
+	$("#RefundTextArea").keyup(function(){
+		$(".refunTextAreaBtn").attr("disabled",false);
+		
+		if($(this).val().length > 1000){  
+		       alert("최대 1000자만 입력 가능합니다.");  
+		       $(this).val($(this).val().substring(0,1000));  
+		}
+		$(".RefundRemit").text( 1000 - $(this).val().length+'자 남았습니다/최소 10자');
+	});
+	
+	$(".refunTextAreaBtn").click(function(){
+		if(10>$("#RefundTextArea").val().length){
+			alert("환불 및 교환 정책 사유는 최소 10자 이상 입력하셔야 됩니다.");
+			$("#RefundTextArea").focus();
+			return;
+		}
+		alert("환불및교환제출");
 	});
 	
 	});
@@ -3233,6 +3441,7 @@ px
 	<c:import url="sections/fundingReward.jsp"></c:import>
 	<c:import url="sections/storytelling.jsp"></c:import>
 	<c:import url="sections/accountSetup.jsp"></c:import>
+	<c:import url="sections/projectItemModal.jsp"></c:import>
 </body>
 </html>
 
