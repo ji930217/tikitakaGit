@@ -132,7 +132,7 @@
 													class="_13KHfN73YmQgsYHxXvuh_J _3SbGdzxKM6M_AeOQWLNqks _18T1PLssfUK23Oz9uVd0fv _1j452e49HyLjnC-u8oPCHq">
 													<i class="_30LNYFhw6qsigZSbwlGCDz _1QY7TzdLHKX3-BKPDNNYKF"></i>
 													<!-- react-text: 9539 -->
-													인증 문자 받기
+													저장하기
 													<!-- /react-text -->
 												</button>
 											</div>

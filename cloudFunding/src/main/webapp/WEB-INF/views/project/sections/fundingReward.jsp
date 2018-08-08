@@ -89,7 +89,7 @@
 													<!-- react-text: 8510 -->
 													위 금액을 모으는 데 성공하실 경우,
 													<!-- /react-text -->
-													<b> <!-- react-text: 8512 -->대략 <!-- /react-text --> <!-- react-text: 8513 -->0<!-- /react-text -->
+													<b class="fees"> <!-- react-text: 8512 -->대략 <!-- /react-text --> <!-- react-text: 8513 -->0<!-- /react-text -->
 														<!-- react-text: 8514 --> 원 정도<!-- /react-text -->
 													</b>
 													<!-- react-text: 8515 -->
@@ -112,12 +112,12 @@
 															<tbody>
 																<tr>
 																	<td>결제처리 수수료(3-4% + VAT)</td>
-																	<td><span class="_13KHfN73YmQgsYHxXvuh_J ">0</span>
+																	<td><span class="fees _13KHfN73YmQgsYHxXvuh_J ">0</span>
 																		<!-- react-text: 8529 -->원<!-- /react-text --></td>
 																</tr>
 																<tr>
 																	<td>플랫폼 수수료(5% + VAT)</td>
-																	<td><span class="_13KHfN73YmQgsYHxXvuh_J ">0</span>
+																	<td><span class="fees _13KHfN73YmQgsYHxXvuh_J ">0</span>
 																		<!-- react-text: 8534 -->원<!-- /react-text --></td>
 																</tr>
 															</tbody>
@@ -125,7 +125,7 @@
 																<tr>
 																	<th><b>공제액 합계</b> <!-- react-text: 8539 --> <!-- /react-text -->
 																		<sup>1</sup></th>
-																	<th><b><span class="_13KHfN73YmQgsYHxXvuh_J ">0</span>
+																	<th><b><span class="fees _13KHfN73YmQgsYHxXvuh_J ">0</span>
 																			<!-- react-text: 8544 -->원<!-- /react-text --></b> <!-- react-text: 8545 -->
 																		<!-- /react-text --> <sup>2</sup></th>
 																</tr>
@@ -156,7 +156,7 @@
 												<!-- /react-text -->
 											</button>
 											<button
-												class="_13KHfN73YmQgsYHxXvuh_J _3SbGdzxKM6M_AeOQWLNqks _2-N-uV2y5apkjtxqdVnsop _2rCeEoFeBzvCYn76udqnww"
+												class="goalBtn _13KHfN73YmQgsYHxXvuh_J _3SbGdzxKM6M_AeOQWLNqks _2-N-uV2y5apkjtxqdVnsop _2rCeEoFeBzvCYn76udqnww"
 												disabled="">
 												<i class="-o8oGI_QAOKsVIJOUOUmV _1QY7TzdLHKX3-BKPDNNYKF"></i>
 												<!-- react-text: 8558 -->
@@ -220,14 +220,14 @@
 												<label for="">
 													<!-- react-text: 8575 -->오늘<!-- /react-text -->
 													<!-- react-text: 8576 -->로부터<!-- /react-text -->
-												</label><input type="number"
+												</label><input id="deadlineDay" type="number"
 													class="_3OMXzNQeMKl4iooK-BKZYd _152MAijd_UogerBKCVqZR_ _3_IGkn3uaje0g2ZA6Tx9wd "
 													value="3"><label for=""> 일 뒤인 </label>
 												<div class="_2SKerhxZJUQwe_7t7kn8ej">
 													<div class="react-datepicker__input-container">
-														<input type="text"
+														<input id="deadlineDate" type="text"
 															class="_2HJjAyHwCOYLop8JvycDDF _152MAijd_UogerBKCVqZR_ _3_IGkn3uaje0g2ZA6Tx9wd "
-															value="2018.08.10">
+															value="">
 													</div>
 												</div>
 												<label for="">
@@ -252,7 +252,7 @@
 												<!-- /react-text -->
 											</button>
 											<button
-												class="_13KHfN73YmQgsYHxXvuh_J _3SbGdzxKM6M_AeOQWLNqks _2-N-uV2y5apkjtxqdVnsop _2rCeEoFeBzvCYn76udqnww"
+												class="deadlineBtn _13KHfN73YmQgsYHxXvuh_J _3SbGdzxKM6M_AeOQWLNqks _2-N-uV2y5apkjtxqdVnsop _2rCeEoFeBzvCYn76udqnww"
 												disabled="">
 												<i class="-o8oGI_QAOKsVIJOUOUmV _1QY7TzdLHKX3-BKPDNNYKF"></i>
 												<!-- react-text: 8594 -->
@@ -335,8 +335,8 @@
 									<div>
 										<div
 											class="_13KHfN73YmQgsYHxXvuh_J _1za37OzUQqJfl3TEKlkYHi _3jflGAwHlQ83oL7U52brix _3_IGkn3uaje0g2ZA6Tx9wd">
-											<input type="text" value="5,000" id="fundingGoalAmountInput"><label
-												for="fundingGoalAmountInput">
+											<input type="text" value="5,000" id="supportGoal"><label
+												for="supportGoal">
 												<!-- react-text: 10772 -->원 <!-- /react-text -->
 												<!-- react-text: 10773 -->이상 밀어주시는 분께 드리는 선물입니다.<!-- /react-text -->
 											</label>
@@ -408,7 +408,7 @@
 								<div class="_2uiHxjf6pbNOjrUj1iIApL"
 									style="margin-top: 1rem; margin-bottom: 0.5rem;">
 									<button
-										class="_13KHfN73YmQgsYHxXvuh_J _3SbGdzxKM6M_AeOQWLNqks _18T1PLssfUK23Oz9uVd0fv _3sFSjAZS4gQdCAyN3OfyFG WU1ox0-AeDX_zneKjnNMO oAeG34mYkuDyUTybhBMrQ">
+										class="itemCreateBtn _13KHfN73YmQgsYHxXvuh_J _3SbGdzxKM6M_AeOQWLNqks _18T1PLssfUK23Oz9uVd0fv _3sFSjAZS4gQdCAyN3OfyFG WU1ox0-AeDX_zneKjnNMO oAeG34mYkuDyUTybhBMrQ">
 										<i class="_1bLZP2LWutT51B05R2iDR8 _1QY7TzdLHKX3-BKPDNNYKF"></i>
 										<!-- react-text: 10806 -->
 										아이템 만들기
@@ -427,10 +427,10 @@
 								<p>구성된 선물에 대해 추가적으로 알리고 싶은 내용을 적어주세요.</p>
 								<div class="_3_IGkn3uaje0g2ZA6Tx9wd">
 									<div class="_3_IGkn3uaje0g2ZA6Tx9wd">
-										<textarea placeholder="예 ) 배송비 포함, 얼리버드, <선물 세트 A> 등" rows="1"
+										<textarea id="giftDescription" placeholder="예 ) 배송비 포함, 얼리버드, <선물 세트 A> 등" rows="1"
 											style="width: 100%;"></textarea>
 										<div
-											class="_13KHfN73YmQgsYHxXvuh_J WU1ox0-AeDX_zneKjnNMO _3G8CRXtomRhisiZsw7Spx- _2-N-uV2y5apkjtxqdVnsop _1xou6XDdjhr5t3_tfAMqmg jvBXmsw6c8TD5NU0Gn0P6
+											class="giftRemit _13KHfN73YmQgsYHxXvuh_J WU1ox0-AeDX_zneKjnNMO _3G8CRXtomRhisiZsw7Spx- _2-N-uV2y5apkjtxqdVnsop _1xou6XDdjhr5t3_tfAMqmg jvBXmsw6c8TD5NU0Gn0P6
           ">50자
 											남았습니다</div>
 									</div>
@@ -454,12 +454,12 @@
 											<!-- react-text: 10827 -->마감일<!-- /react-text -->
 											<!-- react-text: 10828 -->로부터<!-- /react-text -->
 										</label><input type="number"
-											class="_3OMXzNQeMKl4iooK-BKZYd _152MAijd_UogerBKCVqZR_ _3_IGkn3uaje0g2ZA6Tx9wd "
-											value="1"><label for=""> 일 뒤인 </label>
+											class="giftDay _3OMXzNQeMKl4iooK-BKZYd _152MAijd_UogerBKCVqZR_ _3_IGkn3uaje0g2ZA6Tx9wd "
+											value="0"><label for=""> 일 뒤인 </label>
 										<div class="_2SKerhxZJUQwe_7t7kn8ej">
 											<div class="react-datepicker__input-container">
 												<input type="text"
-													class="_2HJjAyHwCOYLop8JvycDDF _152MAijd_UogerBKCVqZR_ _3_IGkn3uaje0g2ZA6Tx9wd "
+													class="giftDate _2HJjAyHwCOYLop8JvycDDF _152MAijd_UogerBKCVqZR_ _3_IGkn3uaje0g2ZA6Tx9wd "
 													value="2018.08.11">
 											</div>
 										</div>
@@ -486,7 +486,7 @@
 											<input type="checkbox" name="isRewardQuantityLimited"
 												id="isRewardQuantityLimited" value="on"><label
 												class="_1za37OzUQqJfl3TEKlkYHi _3_IGkn3uaje0g2ZA6Tx9wd"><span>선물을
-											</span><input type="number" min="1" max="999"
+											</span><input id="rewardLimit" type="number" min="1" max="999"
 												name="rewardQuantityLimit" value="0" disabled=""
 												style="width: 70px;"><span> 개로 제한합니다.</span></label>
 											<!-- react-text: 10851 -->
@@ -496,7 +496,7 @@
 									<h4
 										class="_2HJjAyHwCOYLop8JvycDDF _152MAijd_UogerBKCVqZR_ _3_IGkn3uaje0g2ZA6Tx9wd">
 										<div class="_13KHfN73YmQgsYHxXvuh_J _3bQlo02zZkYjUBehiAWUDX">
-											<input type="checkbox" id="3a01e" value="on"><label
+											<input id="transferCheck" type="checkbox" id="3a01e" value="on"><label
 												for="false" style="cursor: pointer;">배송이 필요한 선물입니다.</label>
 										</div>
 									</h4>
@@ -606,12 +606,12 @@
 										</div>
 										<div class="_3_IGkn3uaje0g2ZA6Tx9wd">
 											<div class="_3_IGkn3uaje0g2ZA6Tx9wd">
-												<textarea placeholder="환불 및 교환 정책을 입력해주세요" rows="4"
+												<textarea id="RefundTextArea" placeholder="환불 및 교환 정책을 입력해주세요" rows="4"
 													style="width: 100%;"></textarea>
 												<div
-													class="_13KHfN73YmQgsYHxXvuh_J WU1ox0-AeDX_zneKjnNMO _3G8CRXtomRhisiZsw7Spx- _2-N-uV2y5apkjtxqdVnsop _1xou6XDdjhr5t3_tfAMqmg jvBXmsw6c8TD5NU0Gn0P6
-          ">최소
-													10자 / 1000자 남았습니다</div>
+													class="RefundRemit _13KHfN73YmQgsYHxXvuh_J WU1ox0-AeDX_zneKjnNMO _3G8CRXtomRhisiZsw7Spx- _2-N-uV2y5apkjtxqdVnsop _1xou6XDdjhr5t3_tfAMqmg jvBXmsw6c8TD5NU0Gn0P6
+          ">
+													 1000자 남았습니다/최소 10자</div>
 											</div>
 										</div>
 										<br>
@@ -627,7 +627,7 @@
 												<!-- /react-text -->
 											</button>
 											<button
-												class="_13KHfN73YmQgsYHxXvuh_J _3SbGdzxKM6M_AeOQWLNqks _2-N-uV2y5apkjtxqdVnsop _2rCeEoFeBzvCYn76udqnww"
+												class="refunTextAreaBtn _13KHfN73YmQgsYHxXvuh_J _3SbGdzxKM6M_AeOQWLNqks _2-N-uV2y5apkjtxqdVnsop _2rCeEoFeBzvCYn76udqnww"
 												disabled="">
 												<i class="-o8oGI_QAOKsVIJOUOUmV _1QY7TzdLHKX3-BKPDNNYKF"></i>
 												<!-- react-text: 8733 -->
