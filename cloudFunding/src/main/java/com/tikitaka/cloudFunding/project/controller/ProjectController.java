@@ -8,7 +8,7 @@ import org.springframework.web.servlet.ModelAndView;
 public class ProjectController {
 	@RequestMapping("projectList.do")
 	public String projectList(){
-		return "common/footer";
+		return "project/payment";
 	}
 	@RequestMapping("projectStart.do")
 	public String projectStart(){
