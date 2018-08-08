@@ -602,6 +602,42 @@
 .gByEjI {color: rgba(0, 0, 0, .1);font-weight: bold;line-height: 1.5;font-size: 2rem;text-align: center;padding: 2em 0;}</style><style type="text/css" data-styled-components="" data-styled-components-is-local="true"></style><style type="text/css" data-styled-components="" data-styled-components-is-local="true"></style><meta property="og:image" content="https://tumblbug-assets.imgix.net/brand/tumblbug_introduction.png" data-react-helmet="true"><meta property="og:url" content="https://www.tumblbug.com/" data-react-helmet="true"><meta property="og:title" content="텀블벅 tumblbug" data-react-helmet="true"><meta property="og:description" content="창작자를 위한 크라우드펀딩 플랫폼 텀블벅" data-react-helmet="true"><meta name="twitter:image" content="https://tumblbug-assets.imgix.net/brand/tumblbug_introduction.png" data-react-helmet="true"><meta name="twitter:url" content="https://www.tumblbug.com/" data-react-helmet="true"><meta name="twitter:title" content="텀블벅 tumblbug" data-react-helmet="true"><meta name="twitter:description" content="창작자를 위한 크라우드펀딩 플랫폼 텀블벅" data-react-helmet="true">
 
 <style>
+	.imIxKd {
+	    display: -webkit-inline-box;
+	    display: -webkit-inline-flex;
+	    display: -ms-flexbox;
+	    display: inline-flex;
+	    -webkit-align-itesms: center;
+	    -webkit-box-align: center;
+	    -ms-flex-align: center;
+	    align-items: center;
+	    color: black;
+	    font-weight: bold;
+	    font-size: 1rem;
+	    cursor: pointer;
+	    line-height: 58px;
+	    padding: 0 1rem;
+	}
+	.imIxKd:hover {
+		color: black;
+	}
+	.fqdqdO {
+	    display: inline-block;
+	    background-image: url(https://tumblbug-assets.imgix.net/assets/user-account.png?s=08b1f9e…);
+	    width: 28px;
+	    height: 28px;
+	    background-size: cover;
+	    background-position: 50% 38%;
+	    border-radius: 50%;
+	    border: 1px solid #ddd;
+	    margin-right: 0;
+	}
+	@media (min-width: 1080px){
+		.fqdqdO {
+		    width: 38px;
+		    height: 38px;
+		}
+	}
 	.lhFUmi{
 		display:none;
 	}
@@ -639,42 +675,52 @@
 </script>
 </head>
 <body>
-      	<div 
-      	class="Header__Header-s10wde3a-0 iVCTYT" data-reactid="5">
-		<div class="Container__Container-s1sxg7g4-0 jdgWcI" data-reactid="6">
-			<div class="SiteHeader__SiteHeaderMenu-s1s56ls8-1 bteafZ"
-				data-reactid="7">
-				<div class="SiteHeader__LeftMenu-s1s56ls8-2 kZLTLQ" data-reactid="8">
-					<button class="SiteHeader__LinkButton-s1s56ls8-7 hcvfVq"
-						data-reactid="9" onclick="openTab();">
-						<i class="_3ZgG-OSv0XE3y-h3oPaDsl _1QY7TzdLHKX3-BKPDNNYKF"
-							data-reactid="10"></i><span
-							class="SiteHeader__ItemLabel-s1s56ls8-8 iGOIal" data-reactid="11">프로젝트
-							둘러보기</span>
-					</button>
-					<span class="SiteHeader__ForMobile-s1s56ls8-9 kizyZz" data-reactid="12"><a class="SiteHeader__LinkItem-s1s56ls8-6 cfMrMC" href="projectStart.do"
-						data-reactid="13"><span
-							class="SiteHeader__ItemLabel-s1s56ls8-8 iGOIal" data-reactid="14">프로젝트
-								올리기</span></a></span>
+	<div class="SiteHeader__SiteHeaderWrapper-s1s56ls8-0 jPcWZN"
+		data-reactid="4">
+		<div class="Header__Header-s10wde3a-0 iVCTYT" data-reactid="5">
+			<div class="Container__Container-s1sxg7g4-0 jdgWcI" data-reactid="6">
+				<div class="SiteHeader__SiteHeaderMenu-s1s56ls8-1 bteafZ"
+					data-reactid="7">
+					<div class="SiteHeader__LeftMenu-s1s56ls8-2 kZLTLQ"
+						data-reactid="8">
+						<button class="SiteHeader__LinkButton-s1s56ls8-7 hcvfVq" onclick="openTab();"
+							data-reactid="9">
+							<i class="_3ZgG-OSv0XE3y-h3oPaDsl _1QY7TzdLHKX3-BKPDNNYKF"
+								data-reactid="10"></i><span
+								class="SiteHeader__ItemLabel-s1s56ls8-8 iGOIal"
+								data-reactid="11">프로젝트 둘러보기</span>
+						</button>
+						<span class="SiteHeader__ForMobile-s1s56ls8-9 kizyZz"
+							data-reactid="12"><a
+							class="SiteHeader__LinkItem-s1s56ls8-6 cfMrMC" href="/start"
+							data-reactid="13"><span
+								class="SiteHeader__ItemLabel-s1s56ls8-8 iGOIal"
+								data-reactid="14">프로젝트 올리기</span></a></span>
+					</div>
+					<div class="SiteHeader__CenterMenu-s1s56ls8-3 hHUgvf"
+						data-reactid="15">
+						<a class="SiteHeader__ButtonLink-s1s56ls8-5 bpfGNO" href="index.do"
+							data-reactid="16"><div
+								class="TumblbugLogo__TumblbugLogo-s9od1ls-0 JUlEd"
+								data-reactid="17">
+									TIKITAKA
+							</div></a>
+					</div>
+					<div class="SiteHeader__RightMenu-s1s56ls8-4 buZCDD"
+						data-reactid="29">
+						<a class="sc-gzVnrw imIxKd" href="loginPage.do" data-reactid="30"><span
+							class="SiteHeader__ItemLabel-s1s56ls8-8 iGOIal" data-reactid="31">로그인
+								/ 회원가입</span><span
+							class="SiteHeader__ProfileImageWrapper-s1s56ls8-10 gqXDKx"
+							data-reactid="32"><span
+								class="ProfileImg__ProfileImg-s1o99mme-0 fqdqdO"
+								data-reactid="33"></span></span></a>
+					</div>
 				</div>
-				<div class="SiteHeader__CenterMenu-s1s56ls8-3 hHUgvf" data-reactid="15">
-						<a class="SiteHeader__ButtonLink-s1s56ls8-5 bpfGNO" href="index.do" data-reactid="16">
-							<div class="TumblbugLogo__TumblbugLogo-s9od1ls-0 JUlEd" data-reactid="17">
-								<img id="tumblbug_logo" data-reactid="18" src="resources/images/header/logo.png"/>
-						</div>
-					</a>
-				</div>
-				<div id="login" class="SiteHeader__RightMenu-s1s56ls8-4 buZCDD"
-               data-reactid="29" onclick="loginPage()">
-               <a class="sc-gzVnrw imIxKd" href="#" data-reactid="30"><span
-                  class="SiteHeader__ItemLabel-s1s56ls8-8 iGOIal" data-reactid="31">로그인
-                     / 회원가입</span><span
-                  class="SiteHeader__ProfileImageWrapper-s1s56ls8-10 gqXDKx"
-                  data-reactid="32"><span
-                     class="ProfileImg__ProfileImg-s1o99mme-0 fqdqdO"
-                     data-reactid="33"></span></span></a>
-            </div>
-				<div>
+			</div>
+		</div>
+	</div>
+	<div>
 					<div class="FullscreenModal__Modal-s1csgj37-0 gXCSaI">
 						<div class="Header__Header-s10wde3a-0 ewshKB">
 							<div class="Container__Container-s1sxg7g4-0 iTXcwb">
