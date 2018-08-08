@@ -18,7 +18,7 @@
 	ORDER BY ENROLL_DATE DESC
 </select>
 
-<select id="searchMemberList" resultType="Member">
+<select id="searchMemberList" resultMap="memberMap">
 
 	SELECT * 
 	FROM(SELECT CEIL(ROWNUM/10) AS NUM1, EMAIL, NAME, PASSWORD, PROFILE_IMG, ENROLL_DATE
@@ -31,7 +31,7 @@
 	SELECT COUNT(*) FROM MEMBER
 </select>
 
-<select id="selectMemberList2" resultType="Member">
+<select id="selectMemberList2" resultMap="memberMap">
  	SELECT * 
 	FROM(SELECT CEIL(ROWNUM/10) AS NUM1, EMAIL, NAME, PASSWORD, PROFILE_IMG, ENROLL_DATE
 	FROM(SELECT * FROM MEMBER ORDER BY ENROLL_DATE DESC))

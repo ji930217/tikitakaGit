@@ -94,17 +94,9 @@ function validate(){
 </form>
 <button type="button" class="btn" id = "allSelectBtn" onclick = "selectAll();">전체조회</button>
 </div>
-<br>
+
 
 <table class="table table-striped" id = "memberTable">
-  <c:if test="${empty memberList }">
-  <div>
-  <thead></thead>
-  <tbody>
- 	<p id = "nodatatitle">검색조건에 일치하는 회원은 존재하지 않습니다</p>
-  </tbody>
-  </div>
-  </c:if>
 <c:if test="${!empty memberList }">
   <thead>
     <tr>    
@@ -126,27 +118,29 @@ function validate(){
    </c:forEach>
   </c:if>
 </table>
+  <c:if test="${empty memberList }">
+ 	<p id = "nodatatitle">검색조건에 일치하는 회원은 존재하지 않습니다</p>
+  </c:if>
   </tbody>
   
   
-  <div class="paging_navigation">
-  <c:if test="${empty memberList }">
-  	
+ <div class="paging_navigation">
+  
+  <c:if test="${empty memberList }"> 	
   </c:if>
+  
   <c:if test="${!empty memberList }">
-	<a href="adminMenuList.do?no=${paging.prevPage}" class="next">
-			<span class="next">◀</span></a>&nbsp;
+	<a href="adminMenuList.do?no=${paging.prevPage}" class="next"><span class="next">◀</span></a>&nbsp;
 
-<c:forEach var="i" begin="${paging.startPage }" end="${paging.endPage }" step="1">
-<c:if test = "${paging.curPage == i }">
-	<a href="adminMenuList.do?no=${i}" class = "selectI" onclick = "return false;">${i}</a>&nbsp;
-	</c:if>
-	<c:if test = "${paging.curPage != i }">
-	<a href="adminMenuList.do?no=${i}">${i}</a>&nbsp;
-	</c:if>
-</c:forEach>
+	<c:forEach var="i" begin="${paging.startPage }" end="${paging.endPage }" step="1">
+		<c:if test = "${paging.curPage == i }">
+			<a href="adminMenuList.do?no=${i}" class = "selectI" onclick = "return false;">${i}</a>&nbsp;
+		</c:if>
+		<c:if test = "${paging.curPage != i }">
+			<a href="adminMenuList.do?no=${i}">${i}</a>&nbsp;
+		</c:if>
+	</c:forEach>
 
-		<a href="adminMenuList.do?no=${paging.nextPage}" class="next">
-			<span class="next">▶</span></a>
-					</div><!-- 페이징 --> 
-					  </c:if>
+	<a href="adminMenuList.do?no=${paging.nextPage}" class="next"><span class="next">▶</span></a>
+	</c:if>
+</div><!-- 페이징 --> 

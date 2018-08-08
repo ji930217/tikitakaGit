@@ -39,13 +39,32 @@
 		 
 	 	 $("ul li").removeClass('active'); 
 		  $(this).addClass('active'); 
-		  
-		  
-		
 
 	})
 }) */
 
+
+	$(function(){
+		var tabIndex = sessionStorage.getItem("tab");
+		/* console.log("test", tabIndex); */
+		if(tabIndex == null){
+			tabIndex = 0;
+		}
+		
+		$("#tabHeader li").each(function(index){
+			if(index == tabIndex){
+				$(this).addClass("active");
+				var id = $(this).find("a").attr("href");
+				$(id).addClass("in").addClass("active");
+				
+				
+			}
+		});
+	})
+	
+	function setTabIndex(tab){
+		sessionStorage.setItem("tab", tab);
+	}
 
 
 </script>
@@ -57,19 +76,19 @@
 <div class="container" id = "tebMenu">
   
 
-  <ul class="nav nav-tabs">
-    <li class="active"><a data-toggle="tab" href="#home">Home</a></li>
-    <li><a data-toggle="tab" href="#menu1">회원관리</a></li>
-    <li><a data-toggle="tab" href="#menu2">프로젝트 종료확인</a></li>
-    <li><a data-toggle="tab" href="#menu3">프로젝트 승인여부</a></li>
-    <li><a data-toggle="tab" href="#menu4">배너관리</a></li>
+  <ul class="nav nav-tabs" id="tabHeader">
+    <li><a data-toggle="tab" href="#home" onclick="setTabIndex(0);">Home</a></li>
+    <li><a data-toggle="tab" href="#menu1" onclick="setTabIndex(1);">회원관리</a></li>
+    <li><a data-toggle="tab" href="#menu2" onclick="setTabIndex(2);">프로젝트 종료확인</a></li>
+    <li><a data-toggle="tab" href="#menu3" onclick="setTabIndex(3);">프로젝트 승인여부</a></li>
+    <li><a data-toggle="tab" href="#menu4" onclick="setTabIndex(4);">배너관리</a></li>
   </ul>
   
   
 
   <div class="tab-content">
   
-    <div id="home" class="tab-pane fade in active">
+    <div id="home" class="tab-pane fade">
         <c:import url="chart.jsp"></c:import>
        </div>
        
