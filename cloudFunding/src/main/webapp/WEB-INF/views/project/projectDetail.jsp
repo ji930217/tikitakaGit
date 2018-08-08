@@ -554,7 +554,7 @@
 										class="SocialMediaShareButton SocialMediaShareButton--kakaotalk">
 										<button class="ShareModal__ShareButton-xl7vb0-0 kQbXwXkakao" id="kakao-link-btn" onclick="javascript:shareKakao();">
 											<!-- <i class="_2FxT97uoLyJpLIfoko0aQD _1QY7TzdLHKX3-BKPDNNYKF"></i> -->
-											<img src="resources/images/project/share/kakaoBtn.png" style="width:16px; height:16px;" />
+											<img src="resources/images/project/share/kakaoBtn.png" style="width:16px; height:16px; margin-right:2px;" />
 											<!-- react-text: 1498 -->
 											카카오톡 공유하기
 											<!-- /react-text -->
