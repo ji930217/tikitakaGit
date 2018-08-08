@@ -4,6 +4,7 @@
   <html>
     <head>
       <title data-react-helmet="true">고양이 다이어트에 딱, 스파이더 캣토이 :: 텀블벅</title>
+      <script src="//developers.kakao.com/sdk/js/kakao.min.js"></script>
       <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=no">
       <link rel="dns-prefetch" href="https://tumblbug-assets.imgix.net">
       <link rel="dns-prefetch" href="https://tumblbug-pci2.imgix.net">
