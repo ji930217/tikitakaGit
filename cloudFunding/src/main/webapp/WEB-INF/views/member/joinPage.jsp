@@ -15,7 +15,7 @@
 
 	<!-- 구글로 회원가입   -->
 	
-	 <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet" type="text/css">
+  <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet" type="text/css">
   <script src="https://apis.google.com/js/api:client.js"></script>
   
   
@@ -196,7 +196,7 @@
 	          
 	          
 	        }, function(error) {
-	          alert(JSON.stringify(error, undefined, 2));
+	         /*  alert(JSON.stringify(error, undefined, 2)); */
 	        });
 	  }
 	  
