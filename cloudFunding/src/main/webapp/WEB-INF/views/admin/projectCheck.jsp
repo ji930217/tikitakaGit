@@ -10,7 +10,7 @@
 	background:lightgray;
 	}
 	
-	#memberTable{
+	#projectTable{
 	margin-top:50px;
 	}
 	
@@ -18,7 +18,7 @@
 	float: right;
 	}
 	
-	#inputBar{
+	#projectInputBar{
 	border-radius: 5px;
 	}
 	
@@ -26,7 +26,7 @@
 		text-align: center;
 	}
 	
-	#allSelectBtn{
+	#allProjectSelectBtn{
 	margin-top:8px;
 	margin-right:10px;
 	}
@@ -49,17 +49,19 @@
 </style>
 <script>
 function validate(){
-	var inputBar = $("#inputBar").val();
 	
-	if(inputBar == ""){
+	var projectInputBar = $("#projectInputBar").val();
+	
+	if(projectInputBar == ""){
 		alert("프로젝트코드나 제목을 입력하세요");
 		return false;
 	}
+	
 	return true;
 }
 
-  function selectAll(){
-	 location.href = "selectAll.do"; 
+  function projectSelectAll(){
+	 location.href = "projectSelectAll.do"; 
 	
 }  
 
@@ -83,16 +85,16 @@ function validate(){
 
 </script>
 
-<div id = "searchBar">
-<form class="navbar-form pull-left" action = "searchMember.do" onsubmit = "return validate();">
-  <input type="text" class="span2" id = "inputBar" name = "keyword">
+ <div id = "searchBar">
+<form class="navbar-form pull-left" action = "searchProject.do" onsubmit = "return validate();">
+  <input type="text" class="span2" id = "projectInputBar" name = "keyword">
   <button type="submit" class="btn">검색</button>
 </form>
-<button type="button" class="btn" id = "allSelectBtn" onclick = "selectAll();">전체조회</button>
-</div>
+<button type="button" class="btn" id = "allProjectSelectBtn" onclick = "projectSelectAll();">전체조회</button>
+</div> 
 
 
-<table class="table table-striped" id = "memberTable">
+<table class="table table-striped" id = "projectTable">
 <c:if test="${!empty projectList }">
   <thead>
     <tr>    

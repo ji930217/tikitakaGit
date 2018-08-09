@@ -13,7 +13,7 @@ xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.sprin
 	
 	<bean id="dataSource" class="org.apache.commons.dbcp.BasicDataSource" destroy-method="close">
 		<property name="driverClassName" value="oracle.jdbc.driver.OracleDriver"/>
-		<property name="url" value="jdbc:oracle:thin:@127.0.0.1:1521:xe"/>
+		<property name="url" value="jdbc:oracle:thin:@127.0.0.1:59161:xe"/>
 		<property name="username" value="TIKITAKA"/>
 		<property name="password" value="TIKITAKA"/>
 	</bean>

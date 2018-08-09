@@ -90,7 +90,7 @@
 .bKYVaX {display: inline-block;background-image: url(https://tumblbug-upi.imgix.net/f857545de46a388bad0e0366233333b30c4b7d50.jpg?ixlib=rb-1.1.0&w=200&h=200&auto=format%2Ccompress&fit=facearea&facepad=2.0&ch=Save-Data&mask=ellipse&s=ea9a4f216e89e28e9b47788c56c4df06);width: 40px;height: 40px;background-size: cover;background-position: 50% 38%;border-radius: 50%;border: 1px solid #ddd;margin-right: 1rem;}
 .fGeOXz {display: inline-block;background-image: url(https://tumblbug-upi.imgix.net/defaults/avatar_0.png?ixlib=rb-1.1.0&w=200&h=250&auto=format%2Ccompress&fit=facearea&facepad=2.0&ch=Save-Data&mask=ellipse&s=87ba671c98b3debfae8ac85d36d0e7b4);width: 40px;height: 40px;background-size: cover;background-position: 50% 38%;border-radius: 50%;border: 1px solid #ddd;margin-right: 1rem;}/* sc-component-id: TumblbugLogo__TumblbugLogo-s9od1ls-0 */
 
-.JUlEd {fill: #000000;width:  70px;height: 18.41px;}@media (min-width: 1080px) {.JUlEd {width: 85px;height: 22.36px;}}
+.JUlEd {fill: #000000;width:  75px;height: 18.41px;}@media (min-width: 1080px) {.JUlEd {width: 85px;height: 22.36px;font-weight:bold;}}
 /* sc-component-id: SiteHeader__SiteHeaderWrapper-s1s56ls8-0 */
 
 .jPcWZN {position: relative;}
@@ -692,7 +692,7 @@
 						</button>
 						<span class="SiteHeader__ForMobile-s1s56ls8-9 kizyZz"
 							data-reactid="12"><a
-							class="SiteHeader__LinkItem-s1s56ls8-6 cfMrMC" href="/start"
+							class="SiteHeader__LinkItem-s1s56ls8-6 cfMrMC" href="projectStart.do"
 							data-reactid="13"><span
 								class="SiteHeader__ItemLabel-s1s56ls8-8 iGOIal"
 								data-reactid="14">프로젝트 올리기</span></a></span>
@@ -706,16 +706,34 @@
 									TIKITAKA
 							</div></a>
 					</div>
-					<div class="SiteHeader__RightMenu-s1s56ls8-4 buZCDD"
-						data-reactid="29">
-						<a class="sc-gzVnrw imIxKd" href="loginPage.do" data-reactid="30"><span
-							class="SiteHeader__ItemLabel-s1s56ls8-8 iGOIal" data-reactid="31">로그인
-								/ 회원가입</span><span
-							class="SiteHeader__ProfileImageWrapper-s1s56ls8-10 gqXDKx"
-							data-reactid="32"><span
-								class="ProfileImg__ProfileImg-s1o99mme-0 fqdqdO"
-								data-reactid="33"></span></span></a>
-					</div>
+					
+					
+					
+					<c:if test="${!empty user }">
+						<c:out value="${user.name }"/>
+						<img  src="${user.profile_img }" width="42" height="42" /> 
+					
+					</c:if>
+					
+					
+					<c:if test="${empty user }">
+							<div id="login" class="SiteHeader__RightMenu-s1s56ls8-4 buZCDD"
+		               data-reactid="29" onclick="loginPage()">
+		               <a class="sc-gzVnrw imIxKd" href="#" data-reactid="30"><span
+		                  class="SiteHeader__ItemLabel-s1s56ls8-8 iGOIal" data-reactid="31">로그인
+		                     / 회원가입</span><span
+		                  class="SiteHeader__ProfileImageWrapper-s1s56ls8-10 gqXDKx"
+		                  data-reactid="32"><span
+		                     class="ProfileImg__ProfileImg-s1o99mme-0 fqdqdO"
+		                     data-reactid="33"></span></span></a>
+		           		 </div>
+					
+					</c:if>
+					
+					
+					
+					
+					
 				</div>
 			</div>
 		</div>
