@@ -18,11 +18,14 @@ public class ProjectController {
 	ProjectService projectService;
 	
 
-	@RequestMapping("projectList.do")
+	@RequestMapping("projectPayment.do")
 	public String projectList(){
-		return "project/payment";
+		return "project/payment/payment";
 	}
-
+	@RequestMapping("payment_a.do")
+	public String project_a(){
+		return "project/payment/payment_after";
+	}
 	@RequestMapping("projectStart.do")
 	public String projectStart(){
 		return "project/projectstart";

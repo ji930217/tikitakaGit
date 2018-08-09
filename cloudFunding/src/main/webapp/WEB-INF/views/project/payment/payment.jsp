@@ -22,7 +22,7 @@
 <meta http-equiv="x-ua-compatible" content="ie=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link
-	href="https://d1pqmsyqo4bi9.cloudfront.net/assets/app-f9bc96afb1b4362edcbbac34fa577164.css"
+	href="resources/images/header/d1pqmsyqo4bi9.cloudfront.net/assets/app-f9bc96afb1b4362edcbbac34fa577164.css"
 	media="screen" rel="stylesheet" type="text/css" />
 <title>발달장애인 준이의 성장 만화「준이 오빠」 밀어주기 :: 텀블벅</title>
 
@@ -31,25 +31,24 @@
 	name="csrf-token" />
 
 <link
-	href="https://d1pqmsyqo4bi9.cloudfront.net/assets/favicon-b594df9b14d52e12c4e12c4714d0539c.png"
+	href="resources/images/header/d1pqmsyqo4bi9.cloudfront.net/assets/favicon-b594df9b14d52e12c4e12c4714d0539c.png"
 	rel="shortcut icon" type="image/png" />
 <link
-	href="https://d1pqmsyqo4bi9.cloudfront.net/assets/ios_57-ae293c21544c4068bfc297ed55261d45.png"
+	href="resources/images/header/d1pqmsyqo4bi9.cloudfront.net/assets/ios_57-ae293c21544c4068bfc297ed55261d45.png"
 	rel="apple-touch-icon" type="image/png" />
 <link
-	href="https://d1pqmsyqo4bi9.cloudfront.net/assets/ios_72-c357a2c60562ceb45f3b1728a0d08fc0.png"
+	href="resources/images/header/d1pqmsyqo4bi9.cloudfront.net/assets/ios_72-c357a2c60562ceb45f3b1728a0d08fc0.png"
 	rel="apple-touch-icon" type="image/png" />
 <link
-	href="https://d1pqmsyqo4bi9.cloudfront.net/assets/ios_114-a8b60854060da6f9ffa2c404aeaf02b1.png"
+	href="resources/images/header/d1pqmsyqo4bi9.cloudfront.net/assets/ios_114-a8b60854060da6f9ffa2c404aeaf02b1.png"
 	rel="apple-touch-icon" type="image/png" />
 
 <script
 	src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
 <script
 	src="//cdnjs.cloudflare.com/ajax/libs/underscore.js/1.8.3/underscore-min.js"></script>
-<script
-	src="https://d1pqmsyqo4bi9.cloudfront.net/assets/pledges-4682a55cb0b51a4fcf6db16943880b28.js"
-	type="text/javascript"></script>
+
+
 
 <script type="text/javascript">
 	
@@ -62,7 +61,7 @@
 	content="발달 장애인에서 독보적인 뮤지션으로 성장한 최준의 세상 소통기를 응원해주세요.">
 <meta property="og:type" content="tumblbug:project">
 <meta property="og:image"
-	content="https://tumblbug-pci.imgix.net/46d0a96a11fbfdf56f8d5d6ad4bada3b20a759fe/e6229b54d0119c1280eb70d0c16dca0f7e118d5e/e70ef952e6a9667355f986281cbab72654d1d775/a7cb09aa-f4be-4504-b930-21bbc8ec4d5a.jpg?ixlib=rb-1.1.0&amp;w=620&amp;h=465&amp;auto=format%2Ccompress&amp;lossless=true&amp;fit=crop&amp;s=59bdb581855fb0974c3ae5959b58345c">
+	content="resources/images/header/tumblbug-pci.imgix.net/46d0a96a11fbfdf56f8d5d6ad4bada3b20a759fe/e6229b54d0119c1280eb70d0c16dca0f7e118d5e/e70ef952e6a9667355f986281cbab72654d1d775/a7cb09aa-f4be-4504-b930-21bbc8ec4d5a.jpg?ixlib=rb-1.1.0&amp;w=620&amp;h=465&amp;auto=format%2Ccompress&amp;lossless=true&amp;fit=crop&amp;s=59bdb581855fb0974c3ae5959b58345c">
 <meta property="og:image:width" content="620">
 <meta property="og:image:height" content="465">
 
@@ -71,7 +70,7 @@
 <meta name="twitter:description"
 	content="발달 장애인에서 독보적인 뮤지션으로 성장한 최준의 세상 소통기를 응원해주세요.">
 <meta name="twitter:image:src"
-	content="https://tumblbug-pci.imgix.net/46d0a96a11fbfdf56f8d5d6ad4bada3b20a759fe/e6229b54d0119c1280eb70d0c16dca0f7e118d5e/e70ef952e6a9667355f986281cbab72654d1d775/a7cb09aa-f4be-4504-b930-21bbc8ec4d5a.jpg?ixlib=rb-1.1.0&amp;w=620&amp;h=465&amp;auto=format%2Ccompress&amp;lossless=true&amp;fit=crop&amp;s=59bdb581855fb0974c3ae5959b58345c">
+	content="resources/images/header/tumblbug-pci.imgix.net/46d0a96a11fbfdf56f8d5d6ad4bada3b20a759fe/e6229b54d0119c1280eb70d0c16dca0f7e118d5e/e70ef952e6a9667355f986281cbab72654d1d775/a7cb09aa-f4be-4504-b930-21bbc8ec4d5a.jpg?ixlib=rb-1.1.0&amp;w=620&amp;h=465&amp;auto=format%2Ccompress&amp;lossless=true&amp;fit=crop&amp;s=59bdb581855fb0974c3ae5959b58345c">
 <meta name="twitter:url" content="http://www.tumblbug.com/jun2oppa">
 <meta name="twitter:card" content="summary_large_image">
 </head>
@@ -105,7 +104,8 @@
 					후원자 특전</h2>
 				<div class="i-panel" data-reactid=".16yr6xmb3eo.1.2:$0">
 					<input type="radio" name="pledge[reward_id]" id="0" value="0"
-						class="hidden-selector" data-reactid=".16yr6xmb3eo.1.2:$0.0" /><label
+						class="hidden-selector" data-reactid=".16yr6xmb3eo.1.2:$0.0" />
+						<label
 						for="0" class="b-panel b-panel_reward"
 						data-reactid=".16yr6xmb3eo.1.2:$0.1"><div
 							class="b-panel__head" data-reactid=".16yr6xmb3eo.1.2:$0.1.0">
@@ -121,9 +121,8 @@
 								type="tel" name="pledge[money]" min="1000" max="10000000"
 								value="1,000" class="b-form__input"
 								data-reactid=".16yr6xmb3eo.1.2:$0.1.0.1.0" /><span
-								data-reactid=".16yr6xmb3eo.1.2:$0.1.0.1.1">원</span><a
-								class="b-panel__next-button"
-								data-reactid=".16yr6xmb3eo.1.2:$0.1.0.1.2"></a><span
+								data-reactid=".16yr6xmb3eo.1.2:$0.1.0.1.1">원</span>
+								<a class="b-panel__next-button" href="payment_a.do"></a><span
 								class="b-panel__subtitle"
 								data-reactid=".16yr6xmb3eo.1.2:$0.1.0.1.3">더 많이 입력하실 수
 									있습니다</span></span>

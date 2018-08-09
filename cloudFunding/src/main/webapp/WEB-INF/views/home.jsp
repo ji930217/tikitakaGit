@@ -18,7 +18,7 @@
 
 	<a href="projectStart.do">프로젝트 만들기</a><br>
 	<a href="adminMenuList.do">임시관리자 페이지</a><br>
-	<a href="projectList.do">프로젝트 만들기</a><br>
+	<a href="projectPayment.do">프로젝트 후원</a><br>
 
 
 	
