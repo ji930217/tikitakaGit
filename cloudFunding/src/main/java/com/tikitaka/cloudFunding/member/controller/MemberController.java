@@ -135,6 +135,7 @@ public class MemberController {
 			HttpSession session
 			) {
 
+		System.out.println("googleLogin.do");
 		Member member = new Member(googleEmail, googleName, "google", googleProfileImage);
 		Member user = memberService.selectMemeber(member);
 		System.out.println(user);
