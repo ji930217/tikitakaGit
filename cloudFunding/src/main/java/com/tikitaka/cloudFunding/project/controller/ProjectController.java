@@ -2,12 +2,15 @@ package com.tikitaka.cloudFunding.project.controller;
 
 import java.util.HashMap;
 
+import javax.servlet.http.HttpSession;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
 
+import com.tikitaka.cloudFunding.member.model.vo.Member;
 import com.tikitaka.cloudFunding.project.model.service.ProjectService;
 import com.tikitaka.cloudFunding.project.model.vo.ProjectVo;
 
@@ -28,23 +31,23 @@ public class ProjectController {
 		return "project/projectstart";
 	}
 	
-	@SuppressWarnings({ "unchecked", "rawtypes" })
 	@RequestMapping("projectForm.do")
-	public String projectForm(String userId,Model model){
+	public String projectForm(HttpSession session,Model model){
+		Member member = (Member)session.getAttribute("user");
 		int result =-1;
-		int projectCode=0;
+		int projectNum=0;
 		HashMap params = new HashMap();
 		ProjectVo project=null;
-		result = projectService.insertProject(userId);
+		result = projectService.insertProject(member);
 		
 		if(0<result){
-			projectCode = projectService.selectProjectNum(userId);
-			System.out.println(projectCode);
-			params.put("userId", userId);
-			params.put("projectCode",projectCode);
-			project = projectService.selectProject(params);
+			projectNum = projectService.selectProjectNum(member.getEmail());
+			params.put("userId", member.getEmail());
+			params.put("projectNum",projectNum);
 		}
 		
+		project = projectService.selectProject(params);
+		System.out.println(project);
 		model.addAttribute("project", project);
 		
 		return "project/projectForm";
