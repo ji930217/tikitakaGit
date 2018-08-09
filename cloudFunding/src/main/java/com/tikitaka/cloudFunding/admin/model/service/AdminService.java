@@ -46,6 +46,11 @@ public class AdminService {
 		return admindao.selectProjectList();
 	}
 
+	public List<ProjectVo> searchProject(String keyword, int no) {
+		
+		return admindao.searchProject(keyword,no);
+	}
+
 
 
 
