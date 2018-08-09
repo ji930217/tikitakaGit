@@ -102,7 +102,7 @@
 									<div
 										class="_2EKbr4mCy_TvmSkhnSfA_a _152MAijd_UogerBKCVqZR_ WU1ox0-AeDX_zneKjnNMO _3G8CRXtomRhisiZsw7Spx- _1lLHKI5v9AoCyeggtffvGZ">
 										<button
-											class="_13KHfN73YmQgsYHxXvuh_J _3SbGdzxKM6M_AeOQWLNqks _2-N-uV2y5apkjtxqdVnsop _1j452e49HyLjnC-u8oPCHq">
+											class="closeBtn _13KHfN73YmQgsYHxXvuh_J _3SbGdzxKM6M_AeOQWLNqks _2-N-uV2y5apkjtxqdVnsop _1j452e49HyLjnC-u8oPCHq">
 											<i class="-o8oGI_QAOKsVIJOUOUmV _1QY7TzdLHKX3-BKPDNNYKF"></i>
 											<!-- react-text: 8968 -->
 											닫기
@@ -371,7 +371,7 @@
 									<div
 										class="_2EKbr4mCy_TvmSkhnSfA_a _152MAijd_UogerBKCVqZR_ WU1ox0-AeDX_zneKjnNMO _3G8CRXtomRhisiZsw7Spx- _1lLHKI5v9AoCyeggtffvGZ">
 										<button
-											class="_13KHfN73YmQgsYHxXvuh_J _3SbGdzxKM6M_AeOQWLNqks _18T1PLssfUK23Oz9uVd0fv">
+											class="closeBtn _13KHfN73YmQgsYHxXvuh_J _3SbGdzxKM6M_AeOQWLNqks _18T1PLssfUK23Oz9uVd0fv">
 											<i class="XNpDqzHUiqPI__G5PUZRk _1QY7TzdLHKX3-BKPDNNYKF"></i>
 											<!-- react-text: 9607 -->
 											취소하기
@@ -397,7 +397,7 @@
 			<div class="_1G9_ptFHThtCjXox_uifcH">
 				<div>
 					<button
-						class="_13KHfN73YmQgsYHxXvuh_J _1QY7TzdLHKX3-BKPDNNYKF _3SbGdzxKM6M_AeOQWLNqks RcHjzQ_WjIsTCfrwHunls">
+						class="beforeBtn _13KHfN73YmQgsYHxXvuh_J _1QY7TzdLHKX3-BKPDNNYKF _3SbGdzxKM6M_AeOQWLNqks RcHjzQ_WjIsTCfrwHunls">
 						<i
 							class="_36JoJH6uhmIKdE1bWDYUlM _1XlDYEGI6NQt_YZkSA5u6N _1QY7TzdLHKX3-BKPDNNYKF"></i>
 						<!-- react-text: 8301 -->
@@ -407,7 +407,7 @@
 				</div>
 				<div class="_352AVOtIZ7ivn3BRhw8ufq">
 					<button
-						class="_13KHfN73YmQgsYHxXvuh_J _1QY7TzdLHKX3-BKPDNNYKF _3sFSjAZS4gQdCAyN3OfyFG _3SbGdzxKM6M_AeOQWLNqks RcHjzQ_WjIsTCfrwHunls">
+						class="nextBtn _13KHfN73YmQgsYHxXvuh_J _1QY7TzdLHKX3-BKPDNNYKF _3sFSjAZS4gQdCAyN3OfyFG _3SbGdzxKM6M_AeOQWLNqks RcHjzQ_WjIsTCfrwHunls">
 						<!-- react-text: 8304 -->
 						다음
 						<!-- /react-text -->
