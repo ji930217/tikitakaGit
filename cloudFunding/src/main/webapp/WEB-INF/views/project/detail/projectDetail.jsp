@@ -205,12 +205,14 @@
 
 .gByEjI {color: rgba(0, 0, 0, .1);font-weight: bold;line-height: 1.5;font-size: 2rem;text-align: center;padding: 2em 0;}
 
-	
-	
+	#storyFixedBtn{
+		color: rgb(0, 0, 0); border-bottom: 3px solid rgb(0, 0, 0); padding-bottom: calc(0.5rem - 3px);
+	}
+		
 </style>
-
-<script>
 	
+<script>
+
 </script>
 </head>
 <body>

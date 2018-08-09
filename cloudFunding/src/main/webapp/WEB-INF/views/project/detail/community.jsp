@@ -149,7 +149,9 @@
 	    margin-left: .5rem;
 	}
 
-	
+	#communityFixedBtn{
+		color: rgb(0, 0, 0); border-bottom: 3px solid rgb(0, 0, 0); padding-bottom: calc(0.5rem - 3px);
+	}
 </style>
     </head>
     <body>

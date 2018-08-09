@@ -278,26 +278,23 @@
 
 </head>
 <body>
+	<!-- fixed 버튼 -->
 	<div class="ContentsNavigation__FixedBar-s6dhfrc-5 jtCReq show-on-scroll">
 		<nav
 			class="ContentsNavigation__ProjectContentsNavigation-s6dhfrc-1 lblHJx">
 			<div
 				class="ContentsNavigation__ProjectContentsNavigationInner-s6dhfrc-2 eeeApW">
 				<div class="ContentsNavigation__NavLeft-s6dhfrc-3 eSsILz">
-					<a class="ContentsNavigation__NavItem-s6dhfrc-0 gEWplf"
-						href="projectDetail.do"
-						style="color: rgb(0, 0, 0); border-bottom: 3px solid rgb(0, 0, 0); padding-bottom: calc(0.5rem - 3px);">스토리</a><a
-						class="ContentsNavigation__NavItem-s6dhfrc-0 gEWplf"
-						href="projectCommunity.do">
-						<!-- react-text: 3276 -->커뮤니티<!-- /react-text -->
-						<span
-						class="ContentsNavigation__CommunityPostAmount-s6dhfrc-6 bReGoj">8</span>
-					</a><a class="ContentsNavigation__NavItem-s6dhfrc-0 gEWplf"
-						href="projectPolicy.do">환불 및 교환</a>
+					<a id="storyFixedBtn" class="ContentsNavigation__NavItem-s6dhfrc-0 gEWplf" href="projectDetail.do">스토리
+					</a>
+					<a id="communityFixedBtn" class="ContentsNavigation__NavItem-s6dhfrc-0 gEWplf" href="projectCommunity.do">
+						커뮤니티
+						<span lass="ContentsNavigation__CommunityPostAmount-s6dhfrc-6 bReGoj">8</span>
+					</a>
+					<a id="policyFixedBtn" class="ContentsNavigation__NavItem-s6dhfrc-0 gEWplf" href="projectPolicy.do">환불 및 교환</a>
 				</div>
 				<div class="ContentsNavigation__NavRight-s6dhfrc-4 eAgLGx">
-					<button class="Button__Button-s1ng5xda-0 jKslKa">프로젝트
-						밀어주기</button>
+					<button class="Button__Button-s1ng5xda-0 jKslKa">프로젝트 밀어주기</button>
 				</div>
 			</div>
 		</nav>
