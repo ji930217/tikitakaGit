@@ -331,14 +331,12 @@
 											</div>
 										</div>
 									</div>
-
-									<c:import url="creatorRewardsCard.jsp"/>
-									
 								</div>
 							</div>
 						</div>
 						
-
+						<c:import url="creatorRewardsCard.jsp"/>
+						
 					</div>
 				</div>
 			</div>
