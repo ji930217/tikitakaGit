@@ -175,7 +175,8 @@
 
 .ceunQL {-webkit-order: 2;-ms-flex-order: 2;order: 2;width: 100%;margin: .25rem 0;}@media (max-width: 1079px) {.ceunQL {display: none;;}}@media (min-width: 1080px) {.ceunQL {width: 360px;margin: 0 1rem 0 .5rem;}}
 
-.iChtTV {-webkit-order: 2;-ms-flex-order: 2;order: 2;width: 100%;margin: .25rem 0;}@media (max-width: 1079px) {.iChtTV {;}}@media (min-width: 1080px) {.iChtTV {width: 360px;margin: 0 1rem 0 .5rem;}}/* sc-component-id: ProjectPage__MainColumnInner-b1letw-4 */
+.iChtTV {-webkit-order: 2;-ms-flex-order: 2;order: 2;width: 100%;margin: .25rem 0;}@media (max-width: 1079px) {.iChtTV {;}}@media (min-width: 1080px) {.iChtTV {width: 360px;margin: 0 1rem 0 .5rem;}}
+/* sc-component-id: ProjectPage__MainColumnInner-b1letw-4 */
 
 .giKgfw {width: 100%;}@media (min-width: 1080px) {.giKgfw {min-height: 500px;}}
 /* sc-component-id: ProjectPage__SubColumnInner-b1letw-5 */
@@ -204,39 +205,14 @@
 
 .gByEjI {color: rgba(0, 0, 0, .1);font-weight: bold;line-height: 1.5;font-size: 2rem;text-align: center;padding: 2em 0;}
 
-	
-	/* 프로젝트 밀어주기 fixed 버튼 */
-	.jtCReq {
-	    background-color: #fff;
-	    z-index: 900;
-	    position: fixed;
-	    left: 0;
-	    right: 0;
-	    top: 0;
+	#storyFixedBtn{
+		color: rgb(0, 0, 0); border-bottom: 3px solid rgb(0, 0, 0); padding-bottom: calc(0.5rem - 3px);
 	}
-	@media (min-width: 1080px) {
-		.jtCReq {
-		    display: block;
-		}
-	}
-	.show-on-scroll { visibility: hidden; }
-	.show-on-scroll.shown { visibility: visible; }
-	
-	
+		
 </style>
-
+	
 <script>
-	
-	/* 스크롤 이벤트 */
-	$(window).scroll(function() {
-		 var $el = $('.show-on-scroll');
-		 /* console.log($(".hsuyOO").css("height").replace("px", ""));
-		 console.log($(this).scrollTop()); */
-		 if($(this).scrollTop() >= $(".hsuyOO").css("height").replace("px", "")) $el.addClass('shown');
-		 else $el.removeClass('shown');
-	});
-	
-	
+
 </script>
 </head>
 <body>
@@ -274,36 +250,6 @@
 						</div>
 					</div>
 				</nav>
-				
-				
-				<!-- 스크롤할 경우 나타나는 fixed버튼 -->
-				<div class="ContentsNavigation__FixedBar-s6dhfrc-5 jtCReq show-on-scroll">
-					<nav
-						class="ContentsNavigation__ProjectContentsNavigation-s6dhfrc-1 lblHJx">
-						<div
-							class="ContentsNavigation__ProjectContentsNavigationInner-s6dhfrc-2 eeeApW">
-							<div class="ContentsNavigation__NavLeft-s6dhfrc-3 eSsILz">
-								<a class="ContentsNavigation__NavItem-s6dhfrc-0 gEWplf"
-									href="/catchball2"
-									style="color: rgb(0, 0, 0); border-bottom: 3px solid rgb(0, 0, 0); padding-bottom: calc(0.5rem - 3px);">스토리</a><a
-									class="ContentsNavigation__NavItem-s6dhfrc-0 gEWplf"
-									href="/catchball2/community">
-									<!-- react-text: 3276 -->커뮤니티<!-- /react-text -->
-									<span
-									class="ContentsNavigation__CommunityPostAmount-s6dhfrc-6 bReGoj">8</span>
-								</a><a class="ContentsNavigation__NavItem-s6dhfrc-0 gEWplf"
-									href="/catchball2/policy">환불 및 교환</a>
-							</div>
-							<div class="ContentsNavigation__NavRight-s6dhfrc-4 eAgLGx">
-								<button class="Button__Button-s1ng5xda-0 jKslKa">프로젝트
-									밀어주기</button>
-							</div>
-						</div>
-					</nav>
-				</div>
-				<div class="ContentsNavigation__FixedBar-s6dhfrc-5 cHpUtP show-on-scroll">
-					<button class="Button__Button-s1ng5xda-0 bIabCF">프로젝트 밀어주기</button>
-				</div>
 				
 				
 			</div>

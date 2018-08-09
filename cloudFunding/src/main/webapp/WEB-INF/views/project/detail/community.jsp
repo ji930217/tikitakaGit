@@ -258,7 +258,7 @@
 													</div>
 												</div>
 												<div
-													class="CommunityPostSummaryCard__Actions-s1yavd3r-15 jgodLB"
+													class="CommunityPostSummarCard__Actions-s1yavd3r-15 jgodLB"
 													style="cursor: pointer;">
 													<i class="_30LNYFhw6qsigZSbwlGCDz _1QY7TzdLHKX3-BKPDNNYKF"></i>
 													<!-- react-text: 1097 -->

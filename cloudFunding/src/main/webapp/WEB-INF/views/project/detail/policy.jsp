@@ -266,13 +266,16 @@
 /* sc-component-id: sc-keyframes-fzoeFq */
 @-webkit-keyframes fzoeFq {0%,  100% {-webkit-transform: translateX(0);-ms-transform: translateX(0);transform: translateX(0);}50% {-webkit-transform: translateX(4px);-ms-transform: translateX(4px);transform: translateX(4px);}}@keyframes fzoeFq {0%,  100% {-webkit-transform: translateX(0);-ms-transform: translateX(0);transform: translateX(0);}50% {-webkit-transform: translateX(4px);-ms-transform: translateX(4px);transform: translateX(4px);}}
 
+	#policyFixedBtn{
+		color: rgb(0, 0, 0); border-bottom: 3px solid rgb(0, 0, 0); padding-bottom: calc(0.5rem - 3px);
+	}
+	
 </style>
 </head>
 <body>
    	<header>
 		<c:import url="../../common/header.jsp"/>
 	</header>
-	<section>
 		<div data-reactid="34">
 			
 			<!-- react-empty: 35 -->
@@ -332,46 +335,16 @@
 											</div>
 										</div>
 									</div>
-									<div class="PolicyCard__CardWrapper-s15bkvr9-3 dtFXbm"
-										data-reactid="113">
-										<div class="Card__Card-s1i1esb8-0 bJXRvz" data-reactid="114">
-											<div
-												class="CreatorContactCard__CreatorContactCardInner-s1n9u3yh-0 frQalE"
-												data-reactid="115">
-												<div
-													class="CreatorContactCard__CreatorContactContents-s1n9u3yh-1 cDaykX"
-													data-reactid="116">
-													<div
-														class="CreatorContactCard__CreatorContactCardLabel-s1n9u3yh-2 ldtjlR"
-														data-reactid="117">프로젝트에 대해 문의사항이 있으신가요?</div>
-													<div
-														class="CreatorContactCard__CreatorContactButton-s1n9u3yh-3 bHyDWq"
-														data-reactid="118">
-														<button class="Button__Button-s1ng5xda-0 dxWcyc"
-															data-reactid="119">
-															<i
-																class="_3YmAkQhwzI7o-uUWz_8Mp4 _1QY7TzdLHKX3-BKPDNNYKF"
-																data-reactid="120"></i>
-															<!-- react-text: 121 -->
-															창작자에게 문의하기
-															<!-- /react-text -->
-														</button>
-													</div>
-												</div>
-											</div>
-										</div>
-									</div>
 								</div>
 							</div>
 						</div>
 						
 						<c:import url="creatorRewardsCard.jsp"/>
-
+						
 					</div>
 				</div>
 			</div>
 		</div>
-	</section>	
 </body>
   
 <!-- Mirrored from tumblbug.com/doubledown/policy by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 20 Jul 2018 07:21:32 GMT -->
