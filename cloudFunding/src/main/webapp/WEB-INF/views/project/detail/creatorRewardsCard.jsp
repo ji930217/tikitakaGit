@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -107,8 +108,17 @@
 	    width: 100%;
 	}
 </style>
+
+<script>
+	function openMessagePopup(){
+		$("#messageDiv, #messageDiv select").css("visibility", "visible");
+	};
+</script>
 </head>
 <body>
+	<div id="messageDiv">
+		<c:import url="messagePopup.jsp"/>
+	</div>
 	<div class="ProjectPage__ProjectContentsSubColumn-b1letw-3 ceunQL">
 		<div class="ProjectPage__SubColumnInner-b1letw-5 deZznN">
 			<div class="Card__Card-s1i1esb8-0 bJXRvz">
@@ -141,7 +151,7 @@
 						<b>0</b>
 					</div>
 					<div class="CreatorCard__CreatorContactButton-yeytpy-6 khYIRi">
-						<button class="Button__Button-s1ng5xda-0 dxWcyc">
+						<button class="Button__Button-s1ng5xda-0 dxWcyc" onclick="openMessagePopup();">
 							<i class="_3YmAkQhwzI7o-uUWz_8Mp4 _1QY7TzdLHKX3-BKPDNNYKF"></i>
 							<!-- react-text: 708 -->
 							창작자에게 문의하기
