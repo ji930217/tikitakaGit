@@ -13,6 +13,7 @@ import org.springframework.web.servlet.ModelAndView;
 
 import com.tikitaka.cloudFunding.admin.model.service.AdminService;
 import com.tikitaka.cloudFunding.admin.model.vo.PagingVo;
+import com.tikitaka.cloudFunding.admin.model.vo.fProjectPagingVo;
 import com.tikitaka.cloudFunding.admin.model.vo.projectPagingVo;
 import com.tikitaka.cloudFunding.member.model.vo.Member;
 import com.tikitaka.cloudFunding.project.model.vo.ProjectVo;
@@ -24,7 +25,7 @@ public class AdminController {
 	AdminService adminservice;
 
 	@RequestMapping("adminMenuList.do") // 관리자 페이지 이동
-	public ModelAndView adminMenuList(ModelAndView mv, PagingVo paging,projectPagingVo pPaging, @RequestParam(defaultValue = "1") int no) {
+	public ModelAndView adminMenuList(ModelAndView mv, PagingVo paging,projectPagingVo pPaging,fProjectPagingVo fpPaging, @RequestParam(defaultValue = "1") int no) {
 
 		int noticeCount = adminservice.TotalCount();
 		int rangeSize = paging.getRangeSize();
@@ -145,6 +146,66 @@ public class AdminController {
 		mv.addObject("pPaging", pPaging);
 		mv.addObject("projectList", list2);
 		mv.addObject("projectTotalCount", projectCount);
+		
+		
+		
+		int fprojectCount = adminservice.fprojectTotalCount();
+		int fpRangeSize = fpPaging.getRangeSize();
+		int fpPageSize = fpPaging.getPageSize();
+		fpPaging.setCurPage(no); // 현재 페이지 번호
+		fpPaging.setListCnt(fprojectCount);// 전체 게시물 수
+
+		// 전체 페이지 수
+		int fpPageCnt = fprojectCount / fpPageSize;
+		if (fprojectCount % fpPageSize > 0) {
+			fpPageCnt = fprojectCount / fpPageSize + 1;
+		}
+
+		fpPaging.setPageCnt(fpPageCnt);
+
+		// 전체 블럭 개수 rangeCnt = (전체 페이지 수 / 한 블럭 페이지 수 5)
+		int fpRangeCnt = fpPageCnt / fpRangeSize;
+		if (fpPageCnt % fpPaging.getRangeSize() > 0) {
+			fpRangeCnt = (fpPageCnt / fpRangeSize) + 1;
+		}
+		fpPaging.setRangeCnt(fpRangeCnt);
+
+		// 현재 블럭 번호
+		int fpCurRange = (int) ((no - 1) / fpRangeSize) + 1;
+		fpPaging.setCurRange(fpCurRange);
+
+		// 블록 내 시작 페이지
+		int fpStartPage = (fpCurRange - 1) * fpRangeSize + 1;
+		fpPaging.setStartPage(fpStartPage);
+
+		// 블록 내 끝 페이지
+		fpPaging.setEndPage(fpPaging.getStartPage() + fpRangeSize - 1);
+
+		// 이전 페이지
+		int fpPrev = fpPaging.getCurPage() - 1;
+		if (fpPrev < 1) {
+			fpPrev = 1;
+		}
+		fpPaging.setPrevPage(fpPrev);
+
+		// 다음 페이지
+		int fpNext = fpPaging.getCurPage() + 1;
+		if (fpNext > pPageCnt) {
+			fpNext = pPageCnt;
+		}
+		fpPaging.setNextPage(fpNext);
+
+		// 블록 내 끝 페이지가 전체 페이지 수 보다 많을 경우 처리
+		if (fpPaging.getEndPage() > fpPaging.getPageCnt()) {
+			fpPaging.setEndPage(fpPaging.getPageCnt());
+		}
+		
+		List<ProjectVo> list3 = adminservice.selectfProjectList();
+		
+		mv.addObject("fpPaging", fpPaging);
+		mv.addObject("fprojectList", list3);
+		mv.addObject("fprojectTotalCount", fprojectCount);
+		
 		
 		mv.setViewName("admin/adminMenuList");
 
