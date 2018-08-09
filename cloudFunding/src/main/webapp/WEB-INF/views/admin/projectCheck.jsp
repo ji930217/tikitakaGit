@@ -112,7 +112,8 @@ function validate(){
       <td><c:out value = "${p.title }"/></td>
       <td><c:out value = "${p.name }"/></td>
       <td><c:out value = "${p.category }"/></td>
-      <td><button type="button" class="btn btn-secondary btn-xs">조회</button></td>
+      <td><button type="button" class="btn btn-secondary btn-xs">상세보기</button>
+      		<button type="button" class="btn btn-secondary btn-xs">승인</button></td>
     </tr>
    </c:forEach>
   </c:if>
