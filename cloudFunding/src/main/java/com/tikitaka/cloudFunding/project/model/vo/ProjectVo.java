@@ -9,10 +9,11 @@ public class ProjectVo {
 
 	private String email; //로그인시 이메일
 	private int projectCode;
+	private int projectNum;
 	private String title;
 	private String repImg;
 	private String summary;
-	private int category;
+	private String category;
 	private String profileImg;
 	private String name;
 	private String introduce;
@@ -34,13 +35,16 @@ public class ProjectVo {
 	
 	public ProjectVo() {}
 
-	public ProjectVo(String email, int projectCode, String title, String repImg, String summary, int category,
-			String profileImg, String name, String introduce, int price, Date endDate, String giftItem, String refund,
-			String descriptionVideo, String story, String pEmail, String pPhone, String bankTrading, String bankName,
-			String bankNumber, String bankKinds, String pConfirm, String sendConfirm, int currentAmount) {
-		super();
+	
+
+	public ProjectVo(String email, int projectCode, int projectNum, String title, String repImg, String summary,
+			String category, String profileImg, String name, String introduce, int price, Date endDate, String giftItem,
+			String refund, String descriptionVideo, String story, String pEmail, String pPhone, String bankTrading,
+			String bankName, String bankNumber, String bankKinds, String pConfirm, String sendConfirm,
+			int currentAmount) {
 		this.email = email;
 		this.projectCode = projectCode;
+		this.projectNum = projectNum;
 		this.title = title;
 		this.repImg = repImg;
 		this.summary = summary;
@@ -64,6 +68,20 @@ public class ProjectVo {
 		this.sendConfirm = sendConfirm;
 		this.currentAmount = currentAmount;
 	}
+
+
+
+	public int getProjectNum() {
+		return projectNum;
+	}
+
+
+
+	public void setProjectNum(int projectNum) {
+		this.projectNum = projectNum;
+	}
+
+
 
 	public String getEmail() {
 		return email;
@@ -105,11 +123,11 @@ public class ProjectVo {
 		this.summary = summary;
 	}
 
-	public int getCategory() {
+	public String getCategory() {
 		return category;
 	}
 
-	public void setCategory(int category) {
+	public void setCategory(String category) {
 		this.category = category;
 	}
 
@@ -257,16 +275,20 @@ public class ProjectVo {
 		this.currentAmount = currentAmount;
 	}
 
+
+
 	@Override
 	public String toString() {
-		return "ProjectVo [email=" + email + ", projectCode=" + projectCode + ", title=" + title + ", repImg=" + repImg
-				+ ", summary=" + summary + ", category=" + category + ", profileImg=" + profileImg + ", name=" + name
-				+ ", introduce=" + introduce + ", price=" + price + ", endDate=" + endDate + ", giftItem=" + giftItem
-				+ ", refund=" + refund + ", descriptionVideo=" + descriptionVideo + ", story=" + story + ", pEmail="
-				+ pEmail + ", pPhone=" + pPhone + ", bankTrading=" + bankTrading + ", bankName=" + bankName
-				+ ", bankNumber=" + bankNumber + ", bankKinds=" + bankKinds + ", pConfirm=" + pConfirm
-				+ ", sendConfirm=" + sendConfirm + ", currentAmount=" + currentAmount + "]";
+		return "ProjectVo [email=" + email + ", projectCode=" + projectCode + ", projectNum=" + projectNum + ", title="
+				+ title + ", repImg=" + repImg + ", summary=" + summary + ", category=" + category + ", profileImg="
+				+ profileImg + ", name=" + name + ", introduce=" + introduce + ", price=" + price + ", endDate="
+				+ endDate + ", giftItem=" + giftItem + ", refund=" + refund + ", descriptionVideo=" + descriptionVideo
+				+ ", story=" + story + ", pEmail=" + pEmail + ", pPhone=" + pPhone + ", bankTrading=" + bankTrading
+				+ ", bankName=" + bankName + ", bankNumber=" + bankNumber + ", bankKinds=" + bankKinds + ", pConfirm="
+				+ pConfirm + ", sendConfirm=" + sendConfirm + ", currentAmount=" + currentAmount + "]";
 	}
+
+	
 	
 	
 	
