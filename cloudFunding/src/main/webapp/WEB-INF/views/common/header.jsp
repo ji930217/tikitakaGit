@@ -641,6 +641,47 @@
 	.lhFUmi{
 		display:none;
 	}
+	
+	/* 검색 버튼 활성화 스타일 */
+	.dUWaDF {
+	    padding: 1em 1.5em;
+	    font-size: 1em;
+	    width: ;
+	    padding: .8em 1.2em;
+	    font-size: .95em;
+	    opacity: 1;
+	    pointer-events: ;
+	}
+	.dUWaDF {
+	    color: rgba(0, 0, 0, .6);
+	    background-color: #e7e7e7;
+	}
+	.dUWaDF {
+	    cursor: pointer;
+	    display: inline-block;
+	    min-height: 1em;
+	    outline: none;
+	    border: none;
+	    vertical-align: baseline;
+	    box-shadow: 0px 0px 0px 1px transparent inset, 0px 0em 0px 0px rgba(0, 0, 0, 0.1) inset;
+	    -webkit-user-select: none;
+	    -moz-user-select: none;
+	    -ms-user-select: none;
+	    user-select: none;
+	    -webkit-transition: opacity 0.1s ease,  background-color 0.1s ease,  color 0.1s ease,  box-shadow 0.1s ease, background 0.1s ease;
+	    transition: opacity 0.1s ease,  background-color 0.1s ease,  color 0.1s ease,  box-shadow 0.1s ease, background 0.1s ease;
+	    -webkit-tap-highlight-color: transparent;
+	    margin: 0 .25em 0 0;
+	    border-radius: 0.28571429rem;
+	    text-transform: none;
+	    text-shadow: none;
+	    font-weight: bold;
+	    line-height: 1em;
+	    font-style: normal;
+	    text-align: center;
+	    text-decoration: none;
+	}
+	
 </style>
 <script>
 
@@ -658,6 +699,19 @@
 				$(this).children("span").eq(1).children("div").addClass("bVfzeY");
 			}
 		});
+		
+		$("#searchText").on('input selectionchange propertychange', function() {
+			if($("#searchText").val().length > 0) {
+				$("#searchBtn").attr("disabled", false);
+				$("#searchBtn").removeClass("cdAaGX");
+				$("#searchBtn").addClass("dUWaDF");
+			} else {
+				$("#searchBtn").attr("disabled", true);
+				$("#searchBtn").removeClass();
+				$("#searchBtn").removeClass("dUWaDF");
+				$("#searchBtn").addClass("cdAaGX");
+			}
+		});
 	});
 	
 	function closeTab(){
@@ -670,8 +724,7 @@
 		$(".FullscreenModal__Modal-s1csgj37-0").css("display", "block");
 		
 	}
-
-
+	
 </script>
 </head>
 <body>
@@ -764,11 +817,11 @@
 									<div class="Discover__DiscoverMenuTitle-s1vowecn-0 cWTOml">검색</div>
 									<div class="SearchWidget__SerchInputWidget-s9c21z8-0 hJaXtH">
 										<form action="">
-											<input type="search"
+											<input type="search" id="searchText"
 												class="SearchWidget__Input-s9c21z8-1 cEJRUu"
-												placeholder="프로젝트를 검색해주세요" value=""><input
+												placeholder="프로젝트를 검색해주세요"><input
 												type="submit" style="display: none;">
-											<button class="Button__Button-s1ng5xda-0 cdAaGX" disabled="">검색하기</button>
+											<button id="searchBtn" class="Button__Button-s1ng5xda-0 cdAaGX" disabled>검색하기</button>
 										</form>
 									</div>
 								</div>
