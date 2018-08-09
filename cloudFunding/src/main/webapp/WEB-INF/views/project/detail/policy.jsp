@@ -270,7 +270,7 @@
 </head>
 <body>
    	<header>
-		<c:import url="../common/header.jsp"/>
+		<c:import url="../../common/header.jsp"/>
 	</header>
 	<section>
 		<div data-reactid="34">
@@ -515,67 +515,9 @@
 								</div>
 							</div>
 						</div>
-						<div
-							class="ProjectPage__ProjectContentsSubColumn-b1letw-3 ceunQL"
-							data-reactid="122">
-							<div class="ProjectPage__SubColumnInner-b1letw-5 deZznN"
-								data-reactid="123">
-								<div class="Card__Card-s1i1esb8-0 bJXRvz" data-reactid="124">
-									<div class="CreatorCard__CreatorCardInner-yeytpy-0 cBbkfc"
-										data-reactid="125">
-										<div class="CreatorCard__CreatorCardLabel-yeytpy-1 fuCNpE"
-											data-reactid="126">창작자 소개</div>
-										<div class="CreatorCard__CreatorProfile-yeytpy-2 eYscdN"
-											data-reactid="127">
-											<span class="ProfileImg__ProfileImg-s1o99mme-0 daPkde"
-												data-reactid="128"></span><a
-												href="https://tumblbug.com/u/donajutzutzududuchi/projects"
-												data-reactid="129"><span
-												class="CreatorCard__CreatorName-yeytpy-3 fVfxlF"
-												data-reactid="130">2U2D</span></a>
-										</div>
-										<div class="CreatorCard__CreatorBiography-yeytpy-4 dHxdxH"
-											data-reactid="131">너무나도 바쁜 일상의 연속입니다. 건강관리는 어떻게 하고
-											계신가요? 팀 투유투디(2U2D) &quot;바쁜 생활 속 간편한 건강관리&quot;를 모토로 다양한
-											솔루션을 제공하고자 합니다. 사회생활 하시면서 갑자기 체중이 늘어 건강이 악화 되신분, 매일 반복되는
-											음주와의 전쟁에 지치신 분, 야근 때문에 피로가 누적 되신분들... 우리 주변에서 흔히 볼 수 있는
-											모습입니다. 팀 투유투디는 하루 하루 최선을 다해 살아가지만, 너무 바빠서 건강관리에 소홀해지신 모든
-											분들이 조금 더 쉽고 간편하게 접근 하실 수 있는 건강관리 문화를 만들기위해 노력하겠습니다.</div>
-										<div class="Divider__Divider-s16ihjfx-0 ilHpOi"
-											data-reactid="132"></div>
-										<div class="CreatorCard__CreatorStats-yeytpy-5 iBGoJt"
-											data-reactid="133">
-											<div data-reactid="134">
-												<!-- react-text: 135 -->
-												마지막 로그인  
-												<!-- /react-text -->
-												<b data-reactid="136">한 시간 전</b>
-											</div>
-											<!-- react-text: 137 -->
-											진행한 프로젝트  
-											<!-- /react-text -->
-											<b data-reactid="138">1</b>
-											<!-- react-text: 139 -->
-											     밀어준 프로젝트  
-											<!-- /react-text -->
-											<b data-reactid="140">0</b>
-										</div>
-										<div
-											class="CreatorCard__CreatorContactButton-yeytpy-6 khYIRi"
-											data-reactid="141">
-											<button class="Button__Button-s1ng5xda-0 dxWcyc"
-												data-reactid="142">
-												<i class="_3YmAkQhwzI7o-uUWz_8Mp4 _1QY7TzdLHKX3-BKPDNNYKF"
-													data-reactid="143"></i>
-												<!-- react-text: 144 -->
-												창작자에게 문의하기
-												<!-- /react-text -->
-											</button>
-										</div>
-									</div>
-								</div>
-							</div>
-						</div>
+						
+						<c:import url="creatorRewardsCard.jsp"/>
+
 					</div>
 				</div>
 			</div>

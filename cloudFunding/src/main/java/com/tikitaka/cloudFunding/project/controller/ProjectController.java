@@ -55,7 +55,7 @@ public class ProjectController {
 	public ModelAndView projectDetail(/*int pProjectCode, */ModelAndView mv){
 		/*ProjectVo project = pService.selectProject(pProjectCode);
 		mv.addObject("project", project);*/
-		mv.setViewName("project/projectDetail");
+		mv.setViewName("project/detail/projectDetail");
 		return mv;
 		
 	}
@@ -64,7 +64,7 @@ public class ProjectController {
 		// 해당 프로젝트의 게시글/댓글 조회해서 넘겨주기
 		/*ProjectVo project = pService.selectProject(pProjectCode);
 		mv.addObject("project", project);*/
-		mv.setViewName("project/community");
+		mv.setViewName("project/detail/community");
 		return mv;
 	}
 	@RequestMapping("projectPolicy.do")
@@ -72,7 +72,7 @@ public class ProjectController {
 		// 해당 프로젝트의 교환 및 환불 정책 조회해서 넘겨주기
 		/*ProjectVo project = pService.selectProject(pProjectCode);
 		mv.addObject("project", project);*/
-		mv.setViewName("project/policy");
+		mv.setViewName("project/detail/policy");
 		return mv;
 	}
 }
