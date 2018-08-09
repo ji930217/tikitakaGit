@@ -62,7 +62,9 @@ P_NAME, P_INTRODUCE, P_PRICE, P_END_DATE, P_GIFT_ITEM, P_REFUND, P_DESCRIPTION_V
 FROM PROJECT WHERE  EMAIL = #{userId} AND P_PROJECT_NUMBER = #{projectNum}
 </select>
 
-
+<update id="updateProject" parameterType="hashmap">
+	UPDATE PROJECT SET P_TITLE =#{projectTitle}where EMAIL = #{userId} AND P_PROJECT_NUMBER=#{projectNum}
+</update>
 
 
 

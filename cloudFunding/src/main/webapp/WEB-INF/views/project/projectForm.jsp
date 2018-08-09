@@ -3178,7 +3178,23 @@ px
 			return;
 		}
 		
-		//프로젝트 제목 수정중
+		$.ajax({
+			url : 'projectUpdate.do',
+			type: 'post',
+			data:{
+				"userId":'<c:out value="${user.email }"/>',
+				"projectNum":<c:out value="${project.projectNum}"/>,
+				"projectTitle":$("#projectTitle").val(),
+				"projectShortTitle":$("#projectShortTitle").val(),
+				},
+			success : function(data)
+			{
+				
+			},error:function(e){
+				console.log('ajax에러');
+			}
+		});
+		
 	});
 	
 	

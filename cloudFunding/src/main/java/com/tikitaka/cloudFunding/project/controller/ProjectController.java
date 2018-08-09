@@ -37,7 +37,7 @@ public class ProjectController {
 		int result =-1;
 		int projectNum=0;
 		HashMap params = new HashMap();
-		ProjectVo project=null;
+		
 		result = projectService.insertProject(member);
 		
 		if(0<result){
@@ -46,13 +46,28 @@ public class ProjectController {
 			params.put("projectNum",projectNum);
 		}
 		
+		ProjectVo project=null;
+		
 		project = projectService.selectProject(params);
 		System.out.println(project);
 		model.addAttribute("project", project);
-		
 		return "project/projectForm";
 	}
 	
+	
+	@RequestMapping("projectUpdate.do")
+	public String projectUpdate(String userId ,int projectNum,String projectTitle,String projectShortTitle){
+		String ptitle = projectTitle+','+projectShortTitle;
+		HashMap params = new HashMap();
+		params.put("userId", userId);
+		params.put("projectNum",projectNum);
+		params.put("projectTitle", ptitle);
+		int result = projectService.updateProject(params);
+		if(0<result){
+			System.out.println("업데이트 성공");
+		}
+		return "project/projectForm";
+	}
 	
 	@RequestMapping("projectDetail.do")
 	public ModelAndView projectDetail(/*int pProjectCode, */ModelAndView mv){
