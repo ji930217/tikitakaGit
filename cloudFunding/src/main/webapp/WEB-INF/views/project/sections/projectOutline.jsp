@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -599,7 +600,7 @@
 											<div
 												class="_2dKJQZGqcB1T0xe0DzKY0H _152MAijd_UogerBKCVqZR_ _1lLHKI5v9AoCyeggtffvGZ">
 												<div>
-													<h3>나신의</h3>
+													<h3><c:out value="${project.name }"/></h3>
 												</div>
 											</div>
 											<div
@@ -625,7 +626,7 @@
 															<div>
 																<div
 																	class="_13KHfN73YmQgsYHxXvuh_J _3_IGkn3uaje0g2ZA6Tx9wd _3nB1fZxEqXMiqXF-c7b1XQ  ">
-																	<input id="MCName" type="text" value="나신의" placeholder="이름을 입력해주세요">
+																	<input id="MCName" type="text" value="<c:out value='${project.name }'/>" placeholder="이름을 입력해주세요">
 																	<!-- react-text: 267 -->
 																	<!-- /react-text -->
 																</div>

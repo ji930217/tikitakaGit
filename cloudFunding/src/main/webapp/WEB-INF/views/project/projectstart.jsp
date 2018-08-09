@@ -1680,13 +1680,10 @@ translateX
 						</div>
 					</div>
 				</div>
-				<form id="projectForm" action="projectForm.do" method="post" >
-					<input type="hidden" value="<c:out value="${user.email }"/>" name="userId"/>
-				</form>
 <script>
 	$(".bJiFzl ,.cjYnUu").click(function(){
 		if('<c:out value="${user.email }"/>'!=''){
-			$("#projectForm").submit();
+			location.href="projectForm.do";
 		}else{
 			alert("로그인후 이용해 주세요");
 			location.href="loginPage.do";
