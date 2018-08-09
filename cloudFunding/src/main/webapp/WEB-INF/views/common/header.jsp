@@ -12,7 +12,7 @@
 	</script>
 
       <meta charset="utf-8">
-      <title>텀블벅 :: tumblbug</title>
+      <title>티키타카 :: TIKITAKA</title>
       <script type="text/javascript" src="resources/js/jquery-3.3.1.min.js"></script>
       <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=no">
       <link rel="dns-prefetch" href="https://tumblbug-assets.imgix.net">
