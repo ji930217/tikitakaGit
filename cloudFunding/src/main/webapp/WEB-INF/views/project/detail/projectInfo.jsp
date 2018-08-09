@@ -9,6 +9,7 @@
 <script src="//developers.kakao.com/sdk/js/kakao.min.js"></script>
 
 <style>
+	
 	/* 공유하기 	버튼 팝업 스타일 */
 	.dzLrnz {
 	    width: 100%;
@@ -187,8 +188,31 @@
 		visibility:hidden;
 	}
 	
+	
+	/* 프로젝트 밀어주기 fixed 버튼 */
+	.jtCReq {
+	    background-color: #fff;
+	    z-index: 900;
+	    position: fixed;
+	    left: 0;
+	    right: 0;
+	    top: 0;
+	}
+	@media (min-width: 1080px) {
+		.jtCReq {
+		    display: block;
+		}
+	}
+	.show-on-scroll { visibility: hidden; }
+	.show-on-scroll.shown { visibility: visible; }
+	
+	
 </style>
 <script>
+	$(function(){
+		$(".ceunQL").css("display", "block");
+	});
+	
 	function closeMessagePopup(){
 		$("#messageDiv, #messageDiv select").css("visibility", "hidden");
 	}
@@ -241,10 +265,47 @@
 	  //]]>
 	}
 	
+	/* 스크롤 이벤트 */
+	$(window).scroll(function() {
+		 var $el = $('.show-on-scroll');
+		 /* console.log($(".hsuyOO").css("height").replace("px", ""));
+		 console.log($(this).scrollTop()); */
+		 if($(this).scrollTop() >= $(".hsuyOO").css("height").replace("px", "")) $el.addClass('shown');
+		 else $el.removeClass('shown');
+	});
+	
 </script>
 
 </head>
 <body>
+	<div class="ContentsNavigation__FixedBar-s6dhfrc-5 jtCReq show-on-scroll">
+		<nav
+			class="ContentsNavigation__ProjectContentsNavigation-s6dhfrc-1 lblHJx">
+			<div
+				class="ContentsNavigation__ProjectContentsNavigationInner-s6dhfrc-2 eeeApW">
+				<div class="ContentsNavigation__NavLeft-s6dhfrc-3 eSsILz">
+					<a class="ContentsNavigation__NavItem-s6dhfrc-0 gEWplf"
+						href="projectDetail.do"
+						style="color: rgb(0, 0, 0); border-bottom: 3px solid rgb(0, 0, 0); padding-bottom: calc(0.5rem - 3px);">스토리</a><a
+						class="ContentsNavigation__NavItem-s6dhfrc-0 gEWplf"
+						href="projectCommunity.do">
+						<!-- react-text: 3276 -->커뮤니티<!-- /react-text -->
+						<span
+						class="ContentsNavigation__CommunityPostAmount-s6dhfrc-6 bReGoj">8</span>
+					</a><a class="ContentsNavigation__NavItem-s6dhfrc-0 gEWplf"
+						href="projectPolicy.do">환불 및 교환</a>
+				</div>
+				<div class="ContentsNavigation__NavRight-s6dhfrc-4 eAgLGx">
+					<button class="Button__Button-s1ng5xda-0 jKslKa">프로젝트
+						밀어주기</button>
+				</div>
+			</div>
+		</nav>
+	</div>
+	<div class="ContentsNavigation__FixedBar-s6dhfrc-5 cHpUtP show-on-scroll">
+		<button class="Button__Button-s1ng5xda-0 bIabCF">프로젝트 밀어주기</button>
+	</div>
+	
 	<div class="ProjectIntroduction__ProjectIntroductionBackground-c7b94s-0 hsuyOO"
 		data-reactid="36">
 		<!-- 공유하기 버튼 -->
