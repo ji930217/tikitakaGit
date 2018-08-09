@@ -28,4 +28,8 @@ public class ProjectDao {
 		return sqlSession.selectOne("projectMapper.selectProject",params);
 	}
 
+	public int updateProject(HashMap params) {
+		return sqlSession.update("projectMapper.updateProject",params);
+	}
+
 }
