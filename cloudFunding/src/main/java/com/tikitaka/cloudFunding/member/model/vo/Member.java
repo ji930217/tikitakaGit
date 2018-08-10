@@ -12,6 +12,14 @@ public class Member {
 	private String password;
 	private String profile_img;
 	private Date enroll_date;
+	
+	//profile
+	private String location;
+	private String shortDescription;
+	private String homepage;
+	private String phone1;
+	private String phone2;
+	private String phone3;
 
 	
 	public Member() {
@@ -42,9 +50,25 @@ public class Member {
 		this.email = email;
 		this.password = password;
 	}
-	
-	
-	
+
+	public Member(String email, String name, String password, String profile_img, Date enroll_date, 
+			String location, String shortDescription, String homepage, 
+			String phone1, String phone2, String phone3) {
+		
+		super();
+		this.email = email;
+		this.name = name;
+		this.password = password;
+		this.profile_img = profile_img;
+		this.enroll_date = enroll_date;
+		this.location = location;
+		this.shortDescription = shortDescription;
+		this.homepage = homepage;
+		this.phone1 = phone1;
+		this.phone2 = phone2;
+		this.phone3 = phone3;
+	}
+
 	public String getEmail() {
 		return email;
 	}
@@ -85,14 +109,64 @@ public class Member {
 		this.enroll_date = enroll_date;
 	}
 
+	public String getLocation() {
+		return location;
+	}
+
+	public void setLocation(String location) {
+		this.location = location;
+	}
+
+	public String getShortDescription() {
+		return shortDescription;
+	}
+
+	public void setShortDescription(String shortDescription) {
+		this.shortDescription = shortDescription;
+	}
+
+	public String getHomepage() {
+		return homepage;
+	}
+
+	public void setHomepage(String homepage) {
+		this.homepage = homepage;
+	}
+
+	public String getPhone1() {
+		return phone1;
+	}
+
+	public void setPhone1(String phone1) {
+		this.phone1 = phone1;
+	}
+
+	public String getPhone2() {
+		return phone2;
+	}
+
+	public void setPhone2(String phone2) {
+		this.phone2 = phone2;
+	}
+
+	public String getPhone3() {
+		return phone3;
+	}
+
+	public void setPhone3(String phone3) {
+		this.phone3 = phone3;
+	}
+
 	@Override
 	public String toString() {
 		return "Member [email=" + email + ", name=" + name + ", password=" + password + ", profile_img=" + profile_img
-				+ ", enroll_date=" + enroll_date + "]";
+				+ ", enroll_date=" + enroll_date + ", location=" + location + ", shortDescription=" + shortDescription
+				+ ", homepage=" + homepage + ", phone1=" + phone1 + ", phone2=" + phone2 + ", phone3=" + phone3 + "]";
 	}
-
 	
-
+	
+	
+	
 	
 	
 	

@@ -6,6 +6,7 @@ import org.springframework.stereotype.Service;
 import com.tikitaka.cloudFunding.member.model.dao.MemberDao;
 import com.tikitaka.cloudFunding.member.model.vo.Member;
 
+
 @Service
 public class MemberService {
 
@@ -20,4 +21,12 @@ public class MemberService {
 		
 		return dao.selectMember(member);
 	}
+
+	public int updateMemberProfile(Member member) {
+		return dao.updateMemberProfile(member);
+	}
+
+	
+
+	
 }
