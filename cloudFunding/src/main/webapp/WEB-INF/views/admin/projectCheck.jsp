@@ -1,6 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
     <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+    <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
     
     
   
@@ -22,7 +23,11 @@
 	border-radius: 5px;
 	}
 	
-	#th3{
+	#th1,#th2,#th3,#th4,#th5,#th6,#th7{
+		text-align: center;
+	}
+	
+	#td1,#td2,#td3,#td4,#td5,#td6,#td7{
 		text-align: center;
 	}
 	
@@ -61,7 +66,7 @@ function validate(){
 }
 
   function projectSelectAll(){
-	 location.href = "projectSelectAll.do"; 
+	 location.href = "selectAll.do"; 
 	
 }  
 
@@ -98,22 +103,27 @@ function validate(){
 <c:if test="${!empty projectList }">
   <thead>
     <tr>    
-      <th scope="col">코드번호</th>
-      <th scope="col">제목</th>
+      <th scope="col" id = "th1">프로젝트코드</th>
+      <th scope="col" id = "th2">제목</th>
       <th scope="col" id = "th3">진행자</th>
-      <th scope="col">분류</th>
-      <th scope="col">상세정보</th>
+      <th scope="col" id = "th4">마감일</th>
+      <th scope="col" id = "th5">목표금액</th>
+      <th scope="col" id = "th6">분류</th>
+      <th scope="col" id = "th7">상세정보</th>
     </tr>
   </thead>
   <tbody>
   <c:forEach var="p" items="${projectList}">
     <tr>
-      <td><c:out value = "${p.projectCode }"/></td>
-      <td><c:out value = "${p.title }"/></td>
-      <td><c:out value = "${p.name }"/></td>
-      <td><c:out value = "${p.category }"/></td>
-      <td><button type="button" class="btn btn-secondary btn-xs">상세보기</button>
-      		<button type="button" class="btn btn-secondary btn-xs">승인</button></td>
+      <td id = "td1"><c:out value = "${p.projectCode }"/></td>
+      <td id = "td2"><c:out value = "${p.title }"/></td>
+      <td id = "td3"><c:out value = "${p.name }"/></td>
+      <td id = "td4"><c:out value = "${p.endDate }"/></td>
+      <td id = "td5"><fmt:formatNumber value = "${p.price }" type = "number"/><c:out value="원"/></td>
+      <td id = "td6"><c:out value = "${p.category }"/></td>
+      <td id = "td7"><button type="button" class="btn btn-secondary btn-xs">상세보기</button>
+      		<button type="button" class="btn btn-secondary btn-xs">승인</button>
+      		<button type="button" class="btn btn-secondary btn-xs">거절</button></td>
     </tr>
    </c:forEach>
   </c:if>

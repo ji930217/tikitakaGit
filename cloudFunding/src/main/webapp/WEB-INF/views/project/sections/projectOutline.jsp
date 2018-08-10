@@ -70,7 +70,7 @@
 															<div>
 																<div class="_13KHfN73YmQgsYHxXvuh_J _3_IGkn3uaje0g2ZA6Tx9wd _3nB1fZxEqXMiqXF-c7b1XQ">
 																	<input id="projectTitle" type="text" value=""
-																		placeholder="프로젝트 제목을 입력해주세요" maxlength="31">
+																		placeholder="프로젝트 제목을 입력해주세요" maxlength="32">
 																	<!-- react-text: 1292 -->
 																	<!-- /react-text -->
 																</div>
@@ -92,7 +92,7 @@
 																	<div
 																		class="_13KHfN73YmQgsYHxXvuh_J _3_IGkn3uaje0g2ZA6Tx9wd _3nB1fZxEqXMiqXF-c7b1XQ  ">
 																		<input id="projectShortTitle" type="text" value=""
-																			placeholder="프로젝트 짧은 제목을 입력해주세요" maxlength="6">
+																			placeholder="프로젝트 짧은 제목을 입력해주세요" maxlength="7">
 																		<!-- react-text: 1303
 																		/react-text -->
 																	</div>
