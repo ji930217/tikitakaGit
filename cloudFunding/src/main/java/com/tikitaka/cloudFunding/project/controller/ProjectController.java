@@ -78,4 +78,12 @@ public class ProjectController {
 		mv.setViewName("project/detail/policy");
 		return mv;
 	}
+	@RequestMapping("searchResult.do")
+	public ModelAndView projectList(/*int pProjectCode, */ModelAndView mv){
+		// 해당 프로젝트의 교환 및 환불 정책 조회해서 넘겨주기
+		/*ProjectVo project = pService.selectProject(pProjectCode);
+		mv.addObject("project", project);*/
+		mv.setViewName("project/projectList");
+		return mv;
+	}
 }

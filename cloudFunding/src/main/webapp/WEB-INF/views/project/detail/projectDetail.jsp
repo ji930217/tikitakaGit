@@ -3,7 +3,7 @@
 <!DOCTYPE html>
   <html>
     <head>
-      <script type="text/javascript" src="resources/js/jquery-3.3.1.min.js"></script>
+      <script src="//developers.kakao.com/sdk/js/kakao.min.js"></script>
       <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=no">
       <link rel="dns-prefetch" href="https://tumblbug-assets.imgix.net">
       <link rel="dns-prefetch" href="https://tumblbug-pci2.imgix.net">
@@ -246,7 +246,7 @@
 								class="ContentsNavigation__CommunityPostAmount-s6dhfrc-6 bReGoj"
 								data-reactid="100"></span>
 							</a><a class="ContentsNavigation__NavItem-s6dhfrc-0 gEWplf"
-								href="projectpolicy.do" data-reactid="101">환불 및 교환</a>
+								href="projectPolicy.do" data-reactid="101">환불 및 교환</a>
 						</div>
 					</div>
 				</nav>

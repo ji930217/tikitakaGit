@@ -8,7 +8,6 @@
 <!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=utf-8" /><!-- /Added by HTTrack -->
 <head>
       <meta charset="utf-8">
-      <title data-react-helmet="true">하루 한 포로 스트레스 없는 다이어트: 투유투디 더블다운 :: 텀블벅</title>
       <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=no">
       <link rel="dns-prefetch" href="https://tumblbug-assets.imgix.net/">
       <link rel="dns-prefetch" href="https://tumblbug-pci2.imgix.net/">
