@@ -58,8 +58,8 @@
 <script type="text/javascript" src="resources/js/jquery-3.3.1.min.js"></script>
 <script type="text/javascript" async=""
 	src="https://www.google-analytics.com/analytics.js"></script>
-<script type="text/javascript" async=""
-	src="https://cdn.astronomer.io/analytics.js/v1/jMrtLL6v6xXmMGP7h/analytics.min.js"></script>
+<!-- <script type="text/javascript" async=""
+	src="https://cdn.astronomer.io/analytics.js/v1/jMrtLL6v6xXmMGP7h/analytics.min.js"></script> -->
 <script type="application/javascript">
 	
 	
@@ -2990,8 +2990,19 @@ px
 		
 		$(".addD").hide();
 		
+		var closeOn = false;
+		$(".closeBtn").click(function(){
+			$(".addD").hide();
+			$(".defaultD").show();
+			$("#new-reward").show();
+			$("#create-reward").hide();
+					
+			closeOn =true;
+		});
+		
 		$("._2uxYQ-nuPwdol9sQhOjfH-").click(function() {
-			if($(this).attr('id')=='create-reward'||$(this).attr('id')=='itemAdd'||$(this).attr('id')=='itemBox'||$(this).attr('id')=='addItem'){
+			if($(this).attr('id')=='create-reward'||$(this).attr('id')=='itemAdd'||$(this).attr('id')=='itemBox'||$(this).attr('id')=='addItem'||closeOn){
+				closeOn=false;
 				return;
 			}
 			$(".addD").hide();
@@ -2999,6 +3010,10 @@ px
 			$("#new-reward").show();
 			$(this).children('.defaultD').hide();
 			$(this).children('.addD').show();
+			
+			
+			
+			
 		});
 		
 		$("#defaultItem").click(function(){
@@ -3022,15 +3037,16 @@ px
 		$("#fundingReward").hide();
 		$('#storytelling').hide();
 		$("#accountSetup").hide();
-		
+		var currentPage = '#projectOutline';
+		var pageNum=2;
 		$(".rLqvd1axk9i-3cU72yTkF").click(function() {
 			$(this).prevAll('a').removeClass('_3Syz9fGXYtzMNqK_55A2BW');
 			$(this).nextAll('a').removeClass('_3Syz9fGXYtzMNqK_55A2BW');
 
 			$(this).addClass('_3Syz9fGXYtzMNqK_55A2BW');
 
-			var name = $(this).attr('href')
-
+			var name = $(this).attr('href');
+			currentPage = name;
 			switch (name) {
 			case '#projectOutline':
 				$("#projectOutline").show();
@@ -3058,7 +3074,82 @@ px
 			}
 
 		});
+	
+	$(".nextBtn").click(function(){
+		$(".rLqvd1axk9i-3cU72yTkF").prevAll('a').removeClass('_3Syz9fGXYtzMNqK_55A2BW');
+		$(".rLqvd1axk9i-3cU72yTkF").nextAll('a').removeClass('_3Syz9fGXYtzMNqK_55A2BW');
 		
+		switch (currentPage) {
+		case '#projectOutline':
+			currentPage='#fundingReward';
+			pageNum=3;
+			$("#projectOutline").hide();
+			$("#fundingReward").show();
+			$("#storytelling").hide();
+			$("#accountSetup").hide();
+			break;
+		case '#fundingReward':
+			currentPage='#storytelling';
+			pageNum=4;
+			$("#fundingReward").hide();
+			$("#projectOutline").hide();
+			$("#storytelling").show();
+			$("#accountSetup").hide();
+			break;
+		case '#storytelling':
+			currentPage='#accountSetup';
+			pageNum=5;
+			$("#storytelling").hide();
+			$("#projectOutline").hide();
+			$("#fundingReward").hide();
+			$("#accountSetup").show();
+			break;
+		}
+		
+		$(".rLqvd1axk9i-3cU72yTkF").each(function(index,item){
+			if(index==pageNum){
+				$(this).addClass('_3Syz9fGXYtzMNqK_55A2BW');
+			}
+		});
+	});
+	
+	$(".beforeBtn").click(function(){
+		$(".rLqvd1axk9i-3cU72yTkF").prevAll('a').removeClass('_3Syz9fGXYtzMNqK_55A2BW');
+		$(".rLqvd1axk9i-3cU72yTkF").nextAll('a').removeClass('_3Syz9fGXYtzMNqK_55A2BW');
+		
+		switch (currentPage) {
+		case '#fundingReward':
+			currentPage='#projectOutline';
+			pageNum=2;
+			$("#fundingReward").hide();
+			$("#projectOutline").show();
+			$("#storytelling").hide();
+			$("#accountSetup").hide();
+			break;
+		case '#storytelling':
+			currentPage='#fundingReward';
+			pageNum=3;
+			$("#storytelling").hide();
+			$("#projectOutline").hide();
+			$("#fundingReward").show();
+			$("#accountSetup").hide();
+			break;
+		case '#accountSetup':
+			currentPage='#storytelling';
+			pageNum=4;
+			$("#accountSetup").hide();
+			$("#projectOutline").hide();
+			$("#fundingReward").hide();
+			$("#storytelling").show();
+		}
+		
+		$(".rLqvd1axk9i-3cU72yTkF").each(function(index,item){
+			if(index==pageNum){
+				$(this).addClass('_3Syz9fGXYtzMNqK_55A2BW');
+			}
+		});
+	});
+	
 	$("#projectTitle").keyup(function(){
 		 if(0<$("#projectShortTitle").val().length){
 			 $(".titleBtn").attr('disabled',false);
@@ -3087,7 +3178,23 @@ px
 			return;
 		}
 		
-		//프로젝트 제목 수정중
+		$.ajax({
+			url : 'projectUpdate.do',
+			type: 'post',
+			data:{
+				"userId":'<c:out value="${user.email }"/>',
+				"projectNum":<c:out value="${project.projectNum}"/>,
+				"projectTitle":$("#projectTitle").val(),
+				"projectShortTitle":$("#projectShortTitle").val(),
+				},
+			success : function(data)
+			{
+				
+			},error:function(e){
+				console.log('ajax에러');
+			}
+		});
+		
 	});
 	
 	
@@ -3304,6 +3411,8 @@ px
 		}
 		alert("환불및교환제출");
 	});
+	
+	
 	
 	});
 </script>

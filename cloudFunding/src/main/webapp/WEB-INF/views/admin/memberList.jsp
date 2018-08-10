@@ -52,13 +52,17 @@
 	
 </style>
 <script>
-function validate(){
+function validate1(){
+	
+		
 	var inputBar = $("#inputBar").val();
 	
 	if(inputBar == ""){
 		alert("이메일이나 이름을 입력하세요");
+		
 		return false;
 	}
+	
 	return true;
 }
 
@@ -88,7 +92,7 @@ function validate(){
 </script>
 
 <div id = "searchBar">
-<form class="navbar-form pull-left" action = "searchMember.do" onsubmit = "return validate();">
+<form class="navbar-form pull-left" action = "searchMember.do" onsubmit = "return validate1();">
   <input type="text" class="span2" id = "inputBar" name = "keyword">
   <button type="submit" class="btn">검색</button>
 </form>

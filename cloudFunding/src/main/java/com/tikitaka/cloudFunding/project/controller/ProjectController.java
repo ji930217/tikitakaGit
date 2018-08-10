@@ -2,12 +2,15 @@ package com.tikitaka.cloudFunding.project.controller;
 
 import java.util.HashMap;
 
+import javax.servlet.http.HttpSession;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
 
+import com.tikitaka.cloudFunding.member.model.vo.Member;
 import com.tikitaka.cloudFunding.project.model.service.ProjectService;
 import com.tikitaka.cloudFunding.project.model.vo.ProjectVo;
 
@@ -28,28 +31,43 @@ public class ProjectController {
 		return "project/projectstart";
 	}
 	
-	@SuppressWarnings({ "unchecked", "rawtypes" })
 	@RequestMapping("projectForm.do")
-	public String projectForm(String userId,Model model){
+	public String projectForm(HttpSession session,Model model){
+		Member member = (Member)session.getAttribute("user");
 		int result =-1;
-		int projectCode=0;
+		int projectNum=0;
 		HashMap params = new HashMap();
-		ProjectVo project=null;
-		result = projectService.insertProject(userId);
+		
+		result = projectService.insertProject(member);
 		
 		if(0<result){
-			projectCode = projectService.selectProjectNum(userId);
-			System.out.println(projectCode);
-			params.put("userId", userId);
-			params.put("projectCode",projectCode);
-			project = projectService.selectProject(params);
+			projectNum = projectService.selectProjectNum(member.getEmail());
+			params.put("userId", member.getEmail());
+			params.put("projectNum",projectNum);
 		}
 		
-		model.addAttribute("project", project);
+		ProjectVo project=null;
 		
+		project = projectService.selectProject(params);
+		System.out.println(project);
+		model.addAttribute("project", project);
 		return "project/projectForm";
 	}
 	
+	
+	@RequestMapping("projectUpdate.do")
+	public String projectUpdate(String userId ,int projectNum,String projectTitle,String projectShortTitle){
+		String ptitle = projectTitle+','+projectShortTitle;
+		HashMap params = new HashMap();
+		params.put("userId", userId);
+		params.put("projectNum",projectNum);
+		params.put("projectTitle", ptitle);
+		int result = projectService.updateProject(params);
+		if(0<result){
+			System.out.println("업데이트 성공");
+		}
+		return "project/projectForm";
+	}
 	
 	@RequestMapping("projectDetail.do")
 	public ModelAndView projectDetail(/*int pProjectCode, */ModelAndView mv){

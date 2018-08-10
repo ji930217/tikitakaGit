@@ -52,6 +52,28 @@ public class AdminDao {
 		return sqlSession.selectOne("AdminMapper.projectTotalCount");
 	}
 
+	public List<ProjectVo> searchProject(String keyword, int no) {
+		
+		HashMap params = new HashMap();
+		
+		params.put("keyword", keyword);
+		params.put("no",no);
+		
+		return sqlSession.selectList("AdminMapper.searchProject",params);
+	}
+
+	public int fprojectTotalCount() {
+		
+	
+		
+		return sqlSession.selectOne("AdminMapper.fprojectTotalCount");
+	}
+
+	public List<ProjectVo> selectfProjectList() {
+		
+		return sqlSession.selectList("AdminMapper.selectfProjectList");
+	}
+
 	
 
 	

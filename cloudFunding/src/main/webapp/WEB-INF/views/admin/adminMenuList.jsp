@@ -46,7 +46,7 @@
 
 	$(function(){
 		var tabIndex = sessionStorage.getItem("tab");
-		/* console.log("test", tabIndex); */
+		 /* console.log("test", tabIndex);  */
 		if(tabIndex == null){
 			tabIndex = 0;
 		}
