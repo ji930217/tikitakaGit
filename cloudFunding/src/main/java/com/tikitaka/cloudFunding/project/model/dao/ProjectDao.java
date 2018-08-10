@@ -24,6 +24,10 @@ public class ProjectDao {
 		return sqlSession.selectOne("projectMapper.selectProjectNum",userId);
 	}
 
+	public ProjectVo selectProjectDetail(int projectCode) {
+		return sqlSession.selectOne("projectMapper.selectProjectDetail", projectCode);
+	}
+
 	public ProjectVo selectProject(HashMap params) {
 		return sqlSession.selectOne("projectMapper.selectProject",params);
 	}
@@ -31,5 +35,6 @@ public class ProjectDao {
 	public int updateProject(HashMap params) {
 		return sqlSession.update("projectMapper.updateProject",params);
 	}
+
 
 }

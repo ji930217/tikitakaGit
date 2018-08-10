@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC
+"-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+
+<mapper namespace="communityMapper">
+<!-- <resultMap type="Member" id="memberMap">
+<id property="email" column="EMAIL" />
+<result property="name" column="NAME"/>
+<result property="password" column="PASSWORD"/>
+<result property="profil_img" column="PROFILE_IMG"/>
+<result property="enroll_date" column="ENROLL_DATE"/>
+</resultMap> -->
+
+<resultMap type="Post" id="postMap">
+<id property="email" column="EMAIL" />
+<result property="name" column="NAME"/>
+<result property="password" column="PASSWORD"/>
+<result property="profil_img" column="PROFILE_IMG"/>
+<result property="enroll_date" column="ENROLL_DATE"/>
+</resultMap>
+
+<select id="selectPostList" parameterType="int" resultMap="postMap">
+    
+    
+</select>
+
+
+</mapper>

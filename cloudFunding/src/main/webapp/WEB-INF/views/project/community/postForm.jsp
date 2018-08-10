@@ -165,7 +165,8 @@
 				
 				<div class="PostEditForm__Body-frv1rh-7 hPXsxV">
 					<form method="post" action="insertPost.do" enctype="multipart/form-data">
-						<input type="hidden" name="writer" value="<c:out value='${user.email}'/>"/>
+						<%-- <input type="hidden" name="projectCode" value="<c:out value='${project.projectCode}'/>"/> --%>
+						<input type="hidden" name="email" value="<c:out value='${user.email}'/>"/>
 						<!-- <textarea id="summernote" name="content"></textarea> -->
 						<textarea id="summernote" name="content"></textarea>
 					</form>

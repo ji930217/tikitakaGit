@@ -1,6 +1,7 @@
 package com.tikitaka.cloudFunding.community.model.vo;
 
 import java.sql.Date;
+import java.util.ArrayList;
 
 import org.springframework.stereotype.Component;
 
@@ -12,6 +13,7 @@ public class PostVo {
 	private String content;
 	private Date writtenDate;
 	private char delflag;
+	private ArrayList<ReplyVo> replyList;
 	
 	// 화면에 보여질 변수
 	private String name;
@@ -76,11 +78,19 @@ public class PostVo {
 		this.name = name;
 	}
 
+	public ArrayList<ReplyVo> getReplyList() {
+		return replyList;
+	}
+
+	public void setReplyList(ArrayList<ReplyVo> replyList) {
+		this.replyList = replyList;
+	}
+
 	@Override
 	public String toString() {
 		return "PostVo [postCode=" + postCode + ", projectCode=" + projectCode + ", email=" + email + ", content="
-				+ content + ", writtenDate=" + writtenDate + ", delflag=" + delflag + ", name=" + name + ", toString()="
-				+ super.toString() + "]";
+				+ content + ", writtenDate=" + writtenDate + ", delflag=" + delflag + ", replyList=" + replyList
+				+ ", name=" + name + ", toString()=" + super.toString() + "]";
 	}
 
 	

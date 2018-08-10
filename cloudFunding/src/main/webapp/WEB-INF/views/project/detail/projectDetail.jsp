@@ -238,9 +238,9 @@
 							data-reactid="96">
 							<a class="ContentsNavigation__NavItem-s6dhfrc-0 gEWplf"
 								style="color: rgba(0, 0, 0, 1); border-bottom: 3px solid rgba(0, 0, 0, 1); padding-bottom: calc(0.5rem - 3px);"
-								href="projectDetail.do" data-reactid="97">스토리</a><a
-								class="ContentsNavigation__NavItem-s6dhfrc-0 gEWplf"
-								href="projectCommunity.do" data-reactid="98">
+								href="projectDetail.do" data-reactid="97">스토리</a>
+								<a class="ContentsNavigation__NavItem-s6dhfrc-0 gEWplf"
+								href="projectCommunity.do?projectCode=<c:out value='${project }'/>" data-reactid="98">
 								커뮤니티
 								<span
 								class="ContentsNavigation__CommunityPostAmount-s6dhfrc-6 bReGoj"

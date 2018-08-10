@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -368,17 +369,16 @@
 						data-reactid="40">
 						<a href="/category/product-design" data-reactid="41"><span
 							class="ProjectIntroduction__ProjectCategory-c7b94s-4 boFKej"
-							data-reactid="42">제품디자인</span></a>
+							data-reactid="42"><c:out value="${project.category }"/></span></a>
 						<h1 class="ProjectIntroduction__ProjectTitle-c7b94s-5 cyqGTD"
-							data-reactid="43">고양이 다이어트에 딱, 스파이더 캣토이</h1>
+							data-reactid="43"><c:out value="${project.title }"/></h1>
 						<div class="ProjectIntroduction__Creators-c7b94s-6 guVzeB"
 							data-reactid="44">
 							<span class="ProfileImg__ProfileImg-s1o99mme-0 itDimW"
 								data-reactid="45"></span><a
 								class="ProjectIntroduction__CreatorName-c7b94s-7 gDTPbS"
 								href="https://tumblbug.com/u/donobawaromodaza/projects"
-								target="_blank" rel="noopener noreferrer" data-reactid="46">millicube
-								밀리큐브</a>
+								target="_blank" rel="noopener noreferrer" data-reactid="46"><c:out value="${project.name }"/></a>
 						</div>
 					</div>
 				</div>
@@ -417,10 +417,8 @@
 							<div
 								class="ProjectIntroduction__StatusTitle-c7b94s-15 htCDgL"
 								data-reactid="57">모인금액</div>
-							<div
-								class="ProjectIntroduction__StatusValue-c7b94s-16 bvKOwU"
-								data-reactid="58">
-								2,331,900
+							<div class="ProjectIntroduction__StatusValue-c7b94s-16 bvKOwU" data-reactid="58">
+								<c:out value="${project.currentAmount }"/>
 								<span class="ProjectIntroduction__Small-c7b94s-18 ihuRTA"
 									data-reactid="60">원</span><span
 									class="ProjectIntroduction__FundingRate-c7b94s-17 kIYDgq"
@@ -468,7 +466,7 @@
 								원이 모여야만 결제됩니다.
 								<br data-reactid="81" />
 							결제는 
-								2018년 8월 18일
+								<c:out value="${project.endDate }"/>
 								에 다함께 진행됩니다.
 							</span>
 						</div>

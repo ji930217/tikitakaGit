@@ -70,9 +70,9 @@ public class ProjectController {
 	}
 	
 	@RequestMapping("projectDetail.do")
-	public ModelAndView projectDetail(/*int pProjectCode, */ModelAndView mv){
-		/*ProjectVo project = pService.selectProject(pProjectCode);
-		mv.addObject("project", project);*/
+	public ModelAndView selectProjectDetail(int projectCode, ModelAndView mv){
+		ProjectVo project = projectService.selectProjectDetail(projectCode);
+		mv.addObject("project", project);
 		mv.setViewName("project/detail/projectDetail");
 		return mv;
 		
