@@ -7,13 +7,6 @@
 	<fmt:formatDate value="${toDay}" pattern="yyyy-MM-dd"  var = "toDay"/>
 
 
-	
-
-
-   
-    
-   
-    
     
     <style>
 	
@@ -25,7 +18,7 @@
 	margin-top:50px;
 	}
 	
-	#searchBar2{
+	#searchBar{
 	float: right;
 	}
 	
@@ -47,6 +40,7 @@
 	
 	#nodatatitle{
 	margin-top:80px;	
+	margin-bottom:150px;
 	text-align: center;
 	font-size:30px;
 	}
@@ -99,7 +93,7 @@ function validate2(){
 
 </script>
 
- <div id = "searchBar2">
+ <div id = "searchBar">
 <form class="navbar-form pull-left" action = "searchfProject.do" onsubmit = "return validate2();">
   <input type="text" class="span2" id = "finishprojectInputBar" name = "keyword">
   <button type="submit" class="btn">검색</button>
@@ -131,7 +125,7 @@ function validate2(){
       <td id = "td4">
       
       <c:if test ="${fp.endDate < toDay }">
-      <c:out value = "종료임박 ${fp.endDate }까지"/>
+      <c:out value = "종료임박 (${fp.endDate }까지)"/>
       </c:if>
       <c:if test ="${fp.endDate > toDay }">
       <c:out value = "종료 "/>
@@ -139,11 +133,13 @@ function validate2(){
       </td>
      
       <td id = "td5">
-      <c:if test = "${fp.price < fp.currentAmount }">
-      <c:out value = "성공		(${fp.currentAmount }원)"/>
+      <c:if test = "${fp.price < fp.currentAmount }">   
+      <c:out value = "성공		("/><fmt:formatNumber value = "${fp.currentAmount }" type = "number"/><c:out value="원, "/>
+      <fmt:formatNumber value = "${(fp.currentAmount/fp.price)*100 }" pattern = ".00"/><c:out value = "%)"/>
       </c:if>
       <c:if test = "${fp.price > fp.currentAmount }">
-      <c:out value = "실패		(${fp.currentAmount }원)"/>
+      <c:out value = "실패		("/><fmt:formatNumber value = "${fp.currentAmount }" type = "number"/><c:out value="원, "/>
+      <fmt:formatNumber value = "${(fp.currentAmount/fp.price)*100 }" pattern = ".00"/><c:out value = "%)"/>
       </c:if>
       <%-- <c:out value = "${fp.category }"/> --%>
       

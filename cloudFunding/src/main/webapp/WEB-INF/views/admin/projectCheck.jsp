@@ -1,6 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
     <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+    <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
     
     
   
@@ -118,7 +119,7 @@ function validate(){
       <td id = "td2"><c:out value = "${p.title }"/></td>
       <td id = "td3"><c:out value = "${p.name }"/></td>
       <td id = "td4"><c:out value = "${p.endDate }"/></td>
-      <td id = "td5"><c:out value = "${p.price }"/></td>
+      <td id = "td5"><fmt:formatNumber value = "${p.price }" type = "number"/><c:out value="원"/></td>
       <td id = "td6"><c:out value = "${p.category }"/></td>
       <td id = "td7"><button type="button" class="btn btn-secondary btn-xs">상세보기</button>
       		<button type="button" class="btn btn-secondary btn-xs">승인</button>

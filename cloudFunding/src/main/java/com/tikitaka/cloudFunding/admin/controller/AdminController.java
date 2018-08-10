@@ -979,5 +979,16 @@ public class AdminController {
 			
 			return mv;
 		}
+		
+		@RequestMapping("dd.do") //test
+		public ModelAndView dd(ModelAndView mv, PagingVo paging,projectPagingVo pPaging,fProjectPagingVo fpPaging, @RequestParam(defaultValue = "1") int no
+				,HttpServletRequest request) {
 
+			String root = request.getSession().getServletContext().getRealPath("resources");
+			System.out.println(root); //C:\Users\User\git\tikitakaGit\cloudFunding\src\main\webapp\resources
+			
+			mv.setViewName("admin/adminMenuList");
+			
+			return mv;
+		}
 }
