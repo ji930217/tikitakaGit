@@ -3,6 +3,7 @@ package com.tikitaka.cloudFunding.member.controller;
 
 import java.io.File;
 import java.io.IOException;
+import java.sql.Date;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
@@ -17,6 +18,7 @@ import org.springframework.web.servlet.ModelAndView;
 
 import com.tikitaka.cloudFunding.member.model.service.MemberService;
 import com.tikitaka.cloudFunding.member.model.vo.Member;
+
 
 @Controller
 public class MemberController {
@@ -171,6 +173,90 @@ public class MemberController {
 		
 		
 	}
+	
+	
+	@RequestMapping("setProfile.do")
+	public String setProfile() {
+		return "member/setProfile";
+	}
+	
+	
+	/*
+	 profile image : name="profile_img"  id="user_profile_image"
+	name : id="user_fullname" name="name"
+	location : id="user_locname" name="location" 
+	self description : id="user_short_description" name="shortDescription"
+
+	Website : id="user_homepage" name="homepage" 
+
+	phone : 
+	id="user_phone1" name="phone1"
+	id="user_phone2" name="phone2" 
+	id="user_phone3" name="phone3" 
+
+	 */
+	
+	@RequestMapping("setProfileImpl.do")
+	public String setProfileImpl(
+			@RequestParam("profile_img") MultipartFile profileImg,
+			@RequestParam("name") String name,
+			@RequestParam("location") String location,
+			@RequestParam("shortDescription") String shortDescription,
+			@RequestParam("homepage") String homepage,
+			@RequestParam("phone1") String phone1,
+			@RequestParam("phone2") String phone2,
+			@RequestParam("phone3") String phone3,
+			HttpServletRequest request) {
+		
+	
+	Member member = (Member)request.getSession().getAttribute("user");
+	System.out.println(member);
+	
+	member.setProfile_img("resources/images/profile/" + profileImg.getOriginalFilename());
+	member.setName(name);
+	member.setLocation(location);
+	member.setShortDescription(shortDescription);
+	member.setHomepage(homepage);
+	member.setPhone1(phone1);
+	member.setPhone2(phone2);
+	member.setPhone3(phone3);
+	
+	
+	
+	String root = request.getSession().getServletContext().getRealPath("resources");
+	String path = root + "/images/profile";
+	String filePath = "";
+	
+	File folder = new File(path);
+	
+	if(!folder.exists()) {
+		folder.mkdir();
+	}
+	
+	filePath = path + "/" + profileImg.getOriginalFilename();
+	
+	try {
+		profileImg.transferTo(new File(filePath));
+	} catch (IllegalStateException e) {
+		// TODO Auto-generated catch block
+		e.printStackTrace();
+	} catch (IOException e) {
+		// TODO Auto-generated catch block
+		e.printStackTrace();
+	}
+	
+	int result = memberService.updateMemberProfile(member);
+		
+		
+	return "redirect:index.do";
+	}
+	
+	
+	
+	
+	
+	
+	
 	
 	
 	

@@ -763,7 +763,7 @@
 					
 					
 					<c:if test="${!empty user }">
-						<c:out value="${user.name }"/>
+						<c:out value="${user.name } "/>   
 						<img  src="${user.profile_img }" width="42" height="42" /> 
 					
 					</c:if>
