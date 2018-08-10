@@ -6,7 +6,13 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
+<style>
+	a{
+		cursor:pointer;
+	}
+</style>
 </head>
+
 <body>
 	<!-- 게시글 리스트 -->
 	<div id="postListDiv">
@@ -15,7 +21,7 @@
 			<a href="loginPage.do">
 		</c:if>									
 		<c:if test="${!empty user }">
-			<a href="postForm.do">
+			<a onclick="openPostForm();">
 		</c:if>									
 		<div class="Card__Card-s1i1esb8-0 bJXRvz">
 				<div
@@ -245,7 +251,7 @@
 	</div>
 	
 	<!-- 창작자 업데이트 클릭 시 보여지는 영역 -->
-	<div>
+	<div id="creatorPostDiv">
 		<div class="Card__Card-s1i1esb8-0 bJXRvz">
 			<div
 				class="CommunityNewPost__CommunityNewPostWidget-s1s3p320-0 hIkOXr">

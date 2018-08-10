@@ -137,8 +137,8 @@
 					$("#insertPostBtn").attr("disabled", true);
 				}
 			});
+		  
 	});
-	
 	
 	
 	

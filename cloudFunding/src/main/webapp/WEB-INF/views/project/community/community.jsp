@@ -471,6 +471,8 @@
 	function openPostForm(){
 		$(".iFHoED").css("visibility", "visible");
 		$("#postListDiv").css("display", "none");
+		$(".tojyI").css("display", "none");
+		$("#creatorPostDiv").css("display", "none");
 	}
 	function closePostForm(){
 		$(".iFHoED").css("visibility", "hidden");
