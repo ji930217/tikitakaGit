@@ -20,10 +20,17 @@ public class ProjectController {
 	@Autowired
 	ProjectService projectService;
 	
-
 	@RequestMapping("projectList.do")
 	public String projectList(){
-		return "project/payment";
+		return "project/projectList";
+	}
+	@RequestMapping("payment.do")
+	public String payment(){
+		return "project/payment/payment";
+	}
+	@RequestMapping("payment_after.do")
+	public String payment_a(){
+		return "project/payment/payment_after";
 	}
 
 	@RequestMapping("projectStart.do")
