@@ -74,6 +74,18 @@ public class AdminDao {
 		return sqlSession.selectList("AdminMapper.selectfProjectList");
 	}
 
+	public List<ProjectVo> serachfProject(String keyword, int no) {
+		
+HashMap params = new HashMap();
+		
+		params.put("keyword", keyword);
+		params.put("no",no);
+		
+		return sqlSession.selectList("AdminMapper.searchfProject",params);
+	}
+
+	
+
 	
 
 	
