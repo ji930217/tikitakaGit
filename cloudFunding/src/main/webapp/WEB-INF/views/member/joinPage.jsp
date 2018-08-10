@@ -110,7 +110,7 @@
 	      display: inline-block;
 	      background: white;
 	      color: #444;
-	      width: 190px;
+	       width: 250px;
 	      border-radius: 5px;
 	      border: thin solid #888;
 	      box-shadow: 1px 1px 1px grey;
@@ -127,8 +127,8 @@
 	      background: url('/cloudFunding/resources/images/sign-in/g-normal.png') transparent 5px 50% no-repeat;
 	      display: inline-block;
 	      vertical-align: middle;
-	      width: 42px;
-	      height: 42px;
+	      width: 90px;
+      	  height: 70px;
 	    }
 	    span.buttonText {
 	      display: inline-block;
@@ -343,7 +343,7 @@
 				  successful sign in -->
 				  
 				  <div id="gSignInWrapper" >
-				    <span class="label" style="color: black">Sign up with Google : </span>
+				    <span class="label" style="color: black"><!-- Sign up with Google : --> </span>
 				    <div id="customBtn" class="customGPlusSignIn">
 				      <span class="icon"></span>
 				      <span class="buttonText"> Google</span>
