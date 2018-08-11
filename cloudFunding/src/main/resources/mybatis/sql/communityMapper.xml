@@ -69,10 +69,10 @@
 	</resultMap>
 
 	<sql id="selectPostHeader">
-	    SELECT P.POST_CODE, P_PROJECT_CODE, P.EMAIL, P.CONTENT, P.WRITTEN_DATE, P.DELFLAG, NAME, PROFILE_IMG,
+	   SELECT P.POST_CODE, P_PROJECT_CODE, P.EMAIL, P.CONTENT, P.WRITTEN_DATE, P.DELFLAG, NAME, PROFILE_IMG,
         				R.REPLY_CODE, R.EMAIL AS R_EMAIL, R.CONTENT AS R_CONTENT, R.WRITTEN_DATE AS R_WRITTEN_DATE, R.DELFLAG AS R_DELFLAG, 
-        					(SELECT NAME  AS R_NAME FROM MEMBER WHERE MEMBER.EMAIL = R.EMAIL),
-                  (SELECT PROFILE_IMG  AS R_PROFILE_IMG FROM MEMBER WHERE MEMBER.EMAIL = R.EMAIL)
+        					(SELECT NAME FROM MEMBER WHERE MEMBER.EMAIL = R.EMAIL) AS R_NAME,
+                  (SELECT PROFILE_IMG FROM MEMBER WHERE MEMBER.EMAIL = R.EMAIL) AS R_PROFILE_IMG
 		FROM POST P
 		LEFT JOIN REPLY R ON(P.POST_CODE = R.POST_CODE)
     	LEFT JOIN MEMBER M ON(P.EMAIL = M.EMAIL)
@@ -80,11 +80,14 @@
 	<select id="selectPostList" parameterType="int" resultMap="postMap">
 	    <include refid="selectPostHeader"/>
 	    WHERE P_PROJECT_CODE = #{projectCode}
+	    AND P.DELFLAG != 'T'
+	    ORDER BY P.WRITTEN_DATE DESC
 	</select>
 	<select id="selectPostCount" parameterType="int" resultType="int">
 		SELECT COUNT(*) AS COUNT
 		FROM POST
-		WHERE P_PROJECT_CODE = #{projectCode}	    
+		WHERE P_PROJECT_CODE = #{projectCode}	   
+		AND DELFLAG != 'T' 
 	</select>
 
 </mapper>

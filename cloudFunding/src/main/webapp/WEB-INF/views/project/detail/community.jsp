@@ -459,7 +459,7 @@
 	    margin-right: 0;
 	}
 	
-	#postListDiv{ display:block;	}
+	#postListDiv, #writeBtnDiv{ display:block; }
 	.iFHoED, .tojyI, #creatorPostDiv{	display:none; }
 	
 	#communityFixedBtn, #communityBtn{ color: rgb(0, 0, 0); border-bottom: 3px solid rgb(0, 0, 0); padding-bottom: calc(0.5rem - 3px); }
@@ -473,22 +473,32 @@
 			$(".iFHoED").css("display", "none");
 			$("#postListDiv").css("display", "none");
 			$("#creatorPostDiv").css("display", "none");
+			$("#writeBtnDiv").css("display", "none");
 		});
 	});
 	
 	function openPostForm(){
 		$(".iFHoED").css("display", "block");
 		$("#postListDiv").css("display", "none");
-		$(".tojyI").css("display", "none");
-		$("#creatorPostDiv").css("display", "none");
+		$("#writeBtnDiv").css("display", "none");
 	}
 	function closePostForm(){
 		$(".iFHoED").css("display", "none");
 		$("#postListDiv").css("display", "block");
+		$("#writeBtnDiv").css("display", "block");
 	}
 	function closePostDetail(){
 		$(".tojyI").css("display", "none");
 		$("#postListDiv").css("display", "block");
+		$("#writeBtnDiv").css("display", "block");
+	}
+	function openCreatorPost(){
+		$("#creatorPostDiv").css("display", "block");
+		$("#postListDiv").css("display", "none");
+	}
+	function closeCreatorPost(){
+		$("#postListDiv").css("display", "block");
+		$("#creatorPostDiv").css("display", "none");
 	}
 	
 </script>

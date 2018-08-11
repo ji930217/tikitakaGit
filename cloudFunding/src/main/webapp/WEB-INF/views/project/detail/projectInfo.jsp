@@ -294,9 +294,11 @@
 					</a>
 					<a id="communityFixedBtn" class="ContentsNavigation__NavItem-s6dhfrc-0 gEWplf" href="projectCommunity.do?projectCode=<c:out value='${project.projectCode }'/>">
 						커뮤니티 
-						<span class="ContentsNavigation__CommunityPostAmount-s6dhfrc-6 bReGoj">
-								<c:out value="${count }"/>
-						</span>
+						<c:if test="${count gt 0 }">
+							<span class="ContentsNavigation__CommunityPostAmount-s6dhfrc-6 bReGoj">
+									<c:out value="${count }"/>
+							</span>
+						</c:if>
 					</a>
 					<a id="policyFixedBtn" class="ContentsNavigation__NavItem-s6dhfrc-0 gEWplf" href="projectPolicy.do?projectCode=<c:out value='${project.projectCode }'/>">환불 및 교환</a>
 				</div>
@@ -521,9 +523,11 @@
 						<a id="communityBtn" class="ContentsNavigation__NavItem-s6dhfrc-0 gEWplf"
 						href="projectCommunity.do?projectCode=<c:out value='${project.projectCode }'/>" data-reactid="98">
 						커뮤니티 
-						<span class="ContentsNavigation__CommunityPostAmount-s6dhfrc-6 bReGoj" data-reactid="100">
-							<c:out value="${count }"/>
-						</span>
+						<c:if test="${count gt 0 }">
+							<span class="ContentsNavigation__CommunityPostAmount-s6dhfrc-6 bReGoj">
+									<c:out value="${count }"/>
+							</span>
+						</c:if>
 					</a><a id="policyBtn" class="ContentsNavigation__NavItem-s6dhfrc-0 gEWplf"
 						href="projectPolicy.do?projectCode=<c:out value='${project.projectCode }'/>" data-reactid="101">환불 및 교환</a>
 				</div>
