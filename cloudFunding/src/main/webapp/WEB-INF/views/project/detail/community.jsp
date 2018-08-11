@@ -9,6 +9,7 @@
 <!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=utf-8" /><!-- /Added by HTTrack -->
 <head>
       <meta charset="utf-8">
+      <script type="text/javascript" src="resources/js/jquery-3.3.1.min.js"></script>
       <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=no">
       <link rel="dns-prefetch" href="https://tumblbug-assets.imgix.net/">
       <link rel="dns-prefetch" href="https://tumblbug-pci2.imgix.net/">
@@ -458,29 +459,38 @@
 	    margin-right: 0;
 	}
 	
-	#postListDiv{
-		display:block;
-	}
-	.iFHoED{
-		visibility:hidden;
-	}
+	#postListDiv{ display:block;	}
+	.iFHoED, .tojyI, #creatorPostDiv{	display:none; }
 	
-	#communityFixedBtn, #communityBtn{
-		color: rgb(0, 0, 0); border-bottom: 3px solid rgb(0, 0, 0); padding-bottom: calc(0.5rem - 3px);
-	}
+	#communityFixedBtn, #communityBtn{ color: rgb(0, 0, 0); border-bottom: 3px solid rgb(0, 0, 0); padding-bottom: calc(0.5rem - 3px); }
 
 </style>
 <script>
+
+	$(function(){
+		$(".eUjMK").click(function(){
+			$(".tojyI").css("display", "block");
+			$(".iFHoED").css("display", "none");
+			$("#postListDiv").css("display", "none");
+			$("#creatorPostDiv").css("display", "none");
+		});
+	});
+	
 	function openPostForm(){
-		$(".iFHoED").css("visibility", "visible");
+		$(".iFHoED").css("display", "block");
 		$("#postListDiv").css("display", "none");
 		$(".tojyI").css("display", "none");
 		$("#creatorPostDiv").css("display", "none");
 	}
 	function closePostForm(){
-		$(".iFHoED").css("visibility", "hidden");
+		$(".iFHoED").css("display", "none");
 		$("#postListDiv").css("display", "block");
 	}
+	function closePostDetail(){
+		$(".tojyI").css("display", "none");
+		$("#postListDiv").css("display", "block");
+	}
+	
 </script>
     </head>
     <body>
@@ -488,7 +498,6 @@
 			<c:import url="../../common/header.jsp"/>
 		</header>
 			<div data-reactid="34">
-				<!-- react-empty: 35 -->
 				
 				<c:import url="projectInfo.jsp"/>
 				
@@ -498,7 +507,6 @@
 						<div
 							class="ProjectPage__ProjectContentsMainColumn-b1letw-2 kJUlye">
 							
-							<!-- 게시글 상세보기 -->
 							<div class="ProjectPage__MainColumnInner-b1letw-4 giKgfw">
 								<c:import url="../community/postList.jsp"/>
 								<c:import url="../community/postForm.jsp"/>
@@ -515,7 +523,6 @@
 		</div>
 </body>
   
-<!-- Mirrored from tumblbug.com/doubledown/community by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 20 Jul 2018 07:21:32 GMT -->
 </html>
 
 

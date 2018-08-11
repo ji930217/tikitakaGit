@@ -11,6 +11,100 @@
 	a{
 		cursor:pointer;
 	}
+	
+	/* 댓글 작성자 프로필 이미지 */
+	.bfkJdB {
+	    /* background-image: url(https://tumblbug-upi.imgix.net/defaults/avatar_0.png?ixlib=rb-1.1.0&w=200&h…a&facepad=2.0&ch=Save-Data&mask=ellipse&s=87ba671…); */
+	    background-position: 50% 38%;
+	    border-radius: 50%;
+	    border: 1px solid #ddd;
+	    background-size: cover;
+	    min-width: 30px;
+	    width: 30px;
+	    height: 30px;
+	    min-height: 30px;
+	}
+	/* 댓글 작성 스타일 */
+	.fONoPD {
+	    width: 100%;
+	    display: -webkit-box;
+	    display: -webkit-flex;
+	    display: -ms-flexbox;
+	    display: flex;
+	    -webkit-align-items: center;
+	    -webkit-box-align: center;
+	    -ms-flex-align: center;
+	    align-items: center;
+	    border-top: 1px solid #efefef;
+	    padding: 1.5rem 0 .5rem;
+	}
+	@media (min-width: 1080px){
+		.fONoPD {
+		    padding: 1.5rem .5rem 1rem;
+		}
+	}
+	.dFpkpv {
+	    display: inline-block;
+	    -webkit-flex-grow: 1;
+	    -ms-flex-grow: 1;
+	    flex-grow: 1;
+	    -webkit-transition: all .2s;
+	    transition: all .2s;
+	    margin: 0 .75rem;
+	}
+	.frnsHP {
+	    display: none;
+	}
+	@media (min-width: 1080px){
+		.frnsHP {
+		    display: block;
+		}
+	}
+	.iMlIpu {
+	    display: block;
+	}	
+	@media (min-width: 1080px){
+		.iMlIpu {
+		    display: none;
+		}
+	}	
+	i._1QY7TzdLHKX3-BKPDNNYKF, i.JXDnh3ZF3p-Ajae7ENKXc {
+    	font-size: 1em;
+	}
+	i._1QY7TzdLHKX3-BKPDNNYKF {
+	    display: inline-block;
+	    opacity: 1;
+	    margin: 0 .25rem 0 0;
+	    width: 1.18em;
+	    height: 1em;
+	    font-family: Icons;
+	    font-style: normal;
+	    font-weight: 400;
+	    text-decoration: inherit;
+	    text-align: center;
+	    speak: none;
+	    font-smoothing: antialiased;
+	    -moz-osx-font-smoothing: grayscale;
+	    -webkit-font-smoothing: antialiased;
+	    -webkit-backface-visibility: hidden;
+	    backface-visibility: hidden;
+	}
+	.gPUzbY {
+	    width: 100%;
+	    padding: .75rem;
+	    border: 1px solid #efefef;
+	    border-radius: 2px !important;
+	    outline: none;
+	    -webkit-appearance: none !important;
+	    -moz-appearance: none !important;
+	    appearance: none !important;
+	}
+	.gPUzbY:focus {
+	    border: 1px solid #7099ff;
+	    -webkit-transition: all .2s;
+	    transition: all .2s;
+	}
+	
 </style>
 </head>
 
@@ -28,12 +122,14 @@
 				<div
 					class="CommunityNewPost__CommunityNewPostWidget-s1s3p320-0 hIkOXr">
 					<div class="CommunityNewPost__LeftColumn-s1s3p320-1 fQMvgC">
-						<span class="ProfileImg__ProfileImg-s1o99mme-0 dLvdGo"></span>
 						<c:if test="${empty user }">
+							<span class="ProfileImg__ProfileImg-s1o99mme-0 dLvdGo">
+							</span>
 							로그인 해주세요
 						</c:if>
 						<!-- 커뮤니티 페이지로 이동 시 해당 프로젝트의 후원자/창작자인지 체크해야 해 -->
 						<c:if test="${!empty user }"><!-- && 후ㅇ원 한 사람}"> -->
+							<img class="ProfileImg__ProfileImg-s1o99mme-0 dLvdGo" src="<c:out value='${user.profile_img }'/>"/>
 							창작자에게 응원의 한마디!
 						</c:if>
 						<%-- <c:if test="${!empty user && 후원 안 한 사람}">
@@ -100,9 +196,8 @@
 	<!-- 게시글 상세보기 -->								
 	<div class="Post__PostCardWrapper-s1xz59uk-0 tojyI">
 		<div class="Post__PostCardWrapperHeader-s1xz59uk-1 fJeMWK">
-			<button class="Button__Button-s1ng5xda-0 dUWaDF">
-				<i
-					class="_1XlDYEGI6NQt_YZkSA5u6N _36JoJH6uhmIKdE1bWDYUlM _1QY7TzdLHKX3-BKPDNNYKF"></i>
+			<button class="Button__Button-s1ng5xda-0 dUWaDF" onclick="closePostDetail();">
+				<i	class="_1XlDYEGI6NQt_YZkSA5u6N _36JoJH6uhmIKdE1bWDYUlM _1QY7TzdLHKX3-BKPDNNYKF"></i>
 				커뮤니티로 돌아가기
 			</button>
 		</div>
@@ -136,9 +231,7 @@
 				<div
 					class="Post__CommunityPostCommentsAmount-s1xz59uk-25 jPVurM">
 					<strong>2</strong>
-					react-text: 4311
 					개의 댓글이 있습니다
-					/react-text
 				</div>
 				<div>
 					<div class="Comment__Comment-wppgnq-0 hlvHZI">
@@ -181,6 +274,24 @@
 						</div>
 					</div>
 				</div>
+
+				<!-- 댓글 작성 폼 -->
+				<div class="Post__NewCommentWidgetWrapper-s1xz59uk-19 fONoPD">
+					<div class="Post__NewCommentWidgetProfileImage-s1xz59uk-20 bfkJdB"></div>
+					<div class="Post__NewCommentWidget-s1xz59uk-21 dFpkpv">
+						<form action="">
+							<input class="Post__Input-s1xz59uk-22 gPUzbY"
+								placeholder="댓글을 작성해주세요" value=""><input type="submit"
+								style="display: none;">
+						</form>
+					</div>
+					<button class="Button__Button-s1ng5xda-0 cdAaGX" disabled="">
+						<span class="Post__ForDesktop-s1xz59uk-23 frnsHP">올리기</span><span
+							class="Post__ForMobile-s1xz59uk-24 iMlIpu"><i
+							class="_30LNYFhw6qsigZSbwlGCDz _1QY7TzdLHKX3-BKPDNNYKF"></i></span>
+					</button>
+				</div>
+				
 			</div>
 		</div>
 	</div>
@@ -192,9 +303,7 @@
 				class="CommunityNewPost__CommunityNewPostWidget-s1s3p320-0 hIkOXr">
 				<div class="CommunityNewPost__LeftColumn-s1s3p320-1 fQMvgC">
 					<span class="ProfileImg__ProfileImg-s1o99mme-0 fGeOXz"></span>
-					<!-- react-text: 1168 -->
 					후원자만 글을 쓸 수 있어요
-					<!-- /react-text -->
 				</div>
 			</div>
 		</div>

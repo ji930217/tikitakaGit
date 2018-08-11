@@ -1,7 +1,8 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
-<%@ taglib uri="http://java.sun.com/jsp/jstl/functions" prefix="fn" %> 
+<%@ taglib uri="http://java.sun.com/jsp/jstl/functions" prefix="fn" %>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %> 
 <!DOCTYPE html>
 <html>
 <head>
@@ -208,9 +209,6 @@
 	.show-on-scroll { visibility: hidden; }
 	.show-on-scroll.shown { visibility: visible; }
 	
-	.btnUnderline{
-		color: rgb(0, 0, 0); border-bottom: 3px solid rgb(0, 0, 0); padding-bottom: calc(0.5rem - 3px);
-	}
 </style>
 <script>
 	$(function(){
@@ -273,9 +271,11 @@
 	/* 스크롤 이벤트 */
 	$(window).scroll(function() {
 		 var $el = $('.show-on-scroll');
-		 /* console.log($(".hsuyOO").css("height").replace("px", ""));
-		 console.log($(this).scrollTop()); */
-		 if($(this).scrollTop() >= $(".hsuyOO").css("height").replace("px", "")) $el.addClass('shown');
+		 var height = $(".hsuyOO").css("height").replace("px", "");
+		 var height2 = $(".lblHJx").css("height").replace("px", "");
+		 var threshold = Math.ceil(height) + Math.ceil(height2) + 10;
+		 /* console.log($(this).scrollTop()); */
+		 if($(this).scrollTop() >= threshold) $el.addClass('shown');
 		 else $el.removeClass('shown');
 	});
 	
@@ -468,11 +468,11 @@
 							<div data-reactid="76">펀딩 진행중</div>
 								<span data-reactid="77">
 								목표 금액인
-								500,000
+								<fmt:formatNumber value="${project.price }" pattern="#,###"/>
 								원이 모여야만 결제됩니다.
 								<br data-reactid="81" />
 							결제는 
-								<c:out value="${project.endDate }"/>
+								<fmt:formatDate type="date" dateStyle="full" value="${project.endDate }"/>
 								에 다함께 진행됩니다.
 							</span>
 						</div>
