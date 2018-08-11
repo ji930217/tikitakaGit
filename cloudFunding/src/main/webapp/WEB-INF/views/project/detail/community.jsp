@@ -466,17 +466,6 @@
 
 </style>
 <script>
-
-	$(function(){
-		$(".eUjMK").click(function(){
-			$(".tojyI").css("display", "block");
-			$(".iFHoED").css("display", "none");
-			$("#postListDiv").css("display", "none");
-			$("#creatorPostDiv").css("display", "none");
-			$("#writeBtnDiv").css("display", "none");
-		});
-	});
-	
 	function openPostForm(){
 		$(".iFHoED").css("display", "block");
 		$("#postListDiv").css("display", "none");

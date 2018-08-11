@@ -20,6 +20,10 @@ public class CommunityService {
 	public int selectPostCount(int projectCode) {
 		return cDao.selectPostCount(projectCode);
 	}
+
+	public PostVo selectPost(int postCode) {
+		return cDao.selectPost(postCode);
+	}
 	
 	
 }

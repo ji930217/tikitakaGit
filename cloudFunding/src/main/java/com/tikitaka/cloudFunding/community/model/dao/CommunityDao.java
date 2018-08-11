@@ -20,5 +20,9 @@ public class CommunityDao {
 	public int selectPostCount(int projectCode) {
 		return sqlSession.selectOne("communityMapper.selectPostCount", projectCode);
 	}
+
+	public PostVo selectPost(int postCode) {
+		return sqlSession.selectOne("communityMapper.selectPost", postCode);
+	}
 	
 }

@@ -104,6 +104,48 @@
 	}
 	
 </style>
+
+<script>
+	var postCode;
+	$(function(){
+		$(".eUjMK").click(function(){
+			postCode = $(this).children("h3").text();
+			console.log(postCode);
+			
+			$(".tojyI").css("display", "block");
+			$(".iFHoED").css("display", "none");
+			$("#postListDiv").css("display", "none");
+			$("#creatorPostDiv").css("display", "none");
+			$("#writeBtnDiv").css("display", "none");
+			
+			$.ajax({
+				url : "selectPost.do",
+				type : "post",
+/* 				data : {index : $("#userIndexes").val()}, */
+				data : {postCode : postCode},
+				success : function(data){
+					console.log(data.postCode);
+					console.log(data.content);
+					console.log(data.replyList[0].content);
+					/* var $table = $("#outputTable");
+					var resultStr = "<tr><th>아이디</th><th>이름</th><th>나이</th></tr>";
+					for(var key in data) {
+						console.log(key);
+						var user = data[key];
+						resultStr += "<tr>";
+						resultStr += "<td>" + user.userId + "</td>";
+						resultStr += "<td>" + user.userName + "</td>";
+						resultStr += "<td>" + user.age + "</td>";
+						resultStr += "</tr>";
+					}
+					$table.html(resultStr); */
+				}, error : function(e){
+					console.log("ajax selectPost 에러");
+				}
+			});
+		});
+	});
+</script>
 </head>
 
 <body>
@@ -142,6 +184,7 @@
 				</div>
 			</a>
 		</div>
+		
 		<!-- 모든 게시글 리스트 -->
 		<div id="postListDiv">	
 			<div class="Community__Posts-s14atsnj-0 umGxa">
@@ -161,6 +204,7 @@
 				<c:if test="${count gt 1 }">
 					<c:forEach var="post" items="${postList }" varStatus="status">
 						<div	class="CommunityPostSummaryCard__PostSummaryCardWrapper-s1yavd3r-0 eUjMK">
+							<h3 style="visibility:hidden;"><c:out value="${post.postCode }"/></h3>
 							<div class="Card__Card-s1i1esb8-0 bJXRvz">
 								<div	class="CommunityPostSummaryCard__MetaWrapper-s1yavd3r-1 iLAsKd">
 									<c:if test="${post.email eq project.email }">
@@ -207,7 +251,10 @@
 			</div>
 		</div>
 								
-	<!-- 게시글 상세보기 -->								
+	<!-- 게시글 상세보기 -->
+	<script>
+		console.log(postCode);
+	</script>
 	<div class="Post__PostCardWrapper-s1xz59uk-0 tojyI">
 		<div class="Post__PostCardWrapperHeader-s1xz59uk-1 fJeMWK">
 			<button class="Button__Button-s1ng5xda-0 dUWaDF" onclick="closePostDetail();">
@@ -225,11 +272,13 @@
 				<div class="Post__Meta-s1xz59uk-8 bpPlVP">
 					<div class="Post__MetaInner-s1xz59uk-9 liBhuy">
 						<div class="Post__ProfileImageWrapper-s1xz59uk-10 hvbXDI">
-							<span class="ProfileImg__ProfileImg-s1o99mme-0 frVGN"></span>
+							<span class="ProfileImg__ProfileImg-s1o99mme-0 frVGN">
+								
+							</span>
 						</div>
 						<div class="Post__UserProfile-s1xz59uk-11 hjsiDH">
 							<div class="Post__AuthorWrapper-s1xz59uk-12 gkbGIo">
-								<div class="Post__AuthorFullname-s1xz59uk-13 hINlJw">이정표</div>
+								<div class="Post__AuthorFullname-s1xz59uk-13 hINlJw"></div>
 							</div>
 							<span>
 								7년 전
