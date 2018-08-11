@@ -205,7 +205,7 @@
 
 .gByEjI {color: rgba(0, 0, 0, .1);font-weight: bold;line-height: 1.5;font-size: 2rem;text-align: center;padding: 2em 0;}
 
-	#storyFixedBtn{
+	#storyFixedBtn, #storyBtn{
 		color: rgb(0, 0, 0); border-bottom: 3px solid rgb(0, 0, 0); padding-bottom: calc(0.5rem - 3px);
 	}
 		
@@ -226,33 +226,6 @@
 			
 			<c:import url="projectInfo.jsp"/>
 			
-			<div id="contentsNavigation" data-reactid="92">
-				<span style="font-size: 0;" data-reactid="93"></span>
-				<nav
-					class="ContentsNavigation__ProjectContentsNavigation-s6dhfrc-1 lblHJx"
-					data-reactid="94">
-					<div
-						class="ContentsNavigation__ProjectContentsNavigationInner-s6dhfrc-2 eeeApW"
-						data-reactid="95">
-						<div class="ContentsNavigation__NavLeft-s6dhfrc-3 eSsILz"
-							data-reactid="96">
-							<a class="ContentsNavigation__NavItem-s6dhfrc-0 gEWplf"
-								style="color: rgba(0, 0, 0, 1); border-bottom: 3px solid rgba(0, 0, 0, 1); padding-bottom: calc(0.5rem - 3px);"
-								href="projectDetail.do" data-reactid="97">스토리</a>
-								<a class="ContentsNavigation__NavItem-s6dhfrc-0 gEWplf"
-								href="projectCommunity.do?projectCode=<c:out value='${project }'/>" data-reactid="98">
-								커뮤니티
-								<span
-								class="ContentsNavigation__CommunityPostAmount-s6dhfrc-6 bReGoj"
-								data-reactid="100"></span>
-							</a><a class="ContentsNavigation__NavItem-s6dhfrc-0 gEWplf"
-								href="projectPolicy.do" data-reactid="101">환불 및 교환</a>
-						</div>
-					</div>
-				</nav>
-				
-				
-			</div>
 			<div class="ProjectPage__ProjectContentsBackground-b1letw-0 cNWmvR"
 				data-reactid="102">
 				<div class="Container__Container-s1sxg7g4-0 jdgWcI"

@@ -14,6 +14,7 @@ public class ReplyVo {
 	private char delflag;
 	
 	private String name;
+	private String profileImg;
 
 	public ReplyVo() {
 		super();
@@ -75,11 +76,19 @@ public class ReplyVo {
 		this.name = name;
 	}
 
+	public String getProfileImg() {
+		return profileImg;
+	}
+
+	public void setProfileImg(String profileImg) {
+		this.profileImg = profileImg;
+	}
+
 	@Override
 	public String toString() {
 		return "ReplyVo [replyCode=" + replyCode + ", postCode=" + postCode + ", content=" + content + ", email="
-				+ email + ", writtenDate=" + writtenDate + ", delflag=" + delflag + ", name=" + name + ", toString()="
-				+ super.toString() + "]";
+				+ email + ", writtenDate=" + writtenDate + ", delflag=" + delflag + ", name=" + name + ", profileImg="
+				+ profileImg + ", toString()=" + super.toString() + "]";
 	}
 	
 	

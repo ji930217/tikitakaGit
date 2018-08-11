@@ -1,6 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/functions" prefix="fn" %> 
 <!DOCTYPE html>
 <html>
 <head>
@@ -207,13 +208,16 @@
 	.show-on-scroll { visibility: hidden; }
 	.show-on-scroll.shown { visibility: visible; }
 	
-	
+	.btnUnderline{
+		color: rgb(0, 0, 0); border-bottom: 3px solid rgb(0, 0, 0); padding-bottom: calc(0.5rem - 3px);
+	}
 </style>
 <script>
 	$(function(){
 		$(".ceunQL").css("display", "block");
+		
 	});
-	
+		
 	function closeMessagePopup(){
 		$("#messageDiv, #messageDiv select").css("visibility", "hidden");
 	}
@@ -286,13 +290,15 @@
 			<div
 				class="ContentsNavigation__ProjectContentsNavigationInner-s6dhfrc-2 eeeApW">
 				<div class="ContentsNavigation__NavLeft-s6dhfrc-3 eSsILz">
-					<a id="storyFixedBtn" class="ContentsNavigation__NavItem-s6dhfrc-0 gEWplf" href="projectDetail.do">스토리
+					<a id="storyFixedBtn" class="ContentsNavigation__NavItem-s6dhfrc-0 gEWplf" href="projectDetail.do?projectCode=<c:out value='${project.projectCode }'/>">스토리
 					</a>
-					<a id="communityFixedBtn" class="ContentsNavigation__NavItem-s6dhfrc-0 gEWplf" href="projectCommunity.do">
-						커뮤니티
-						<span lass="ContentsNavigation__CommunityPostAmount-s6dhfrc-6 bReGoj">8</span>
+					<a id="communityFixedBtn" class="ContentsNavigation__NavItem-s6dhfrc-0 gEWplf" href="projectCommunity.do?projectCode=<c:out value='${project.projectCode }'/>">
+						커뮤니티 
+						<span class="ContentsNavigation__CommunityPostAmount-s6dhfrc-6 bReGoj">
+								<c:out value="${count }"/>
+						</span>
 					</a>
-					<a id="policyFixedBtn" class="ContentsNavigation__NavItem-s6dhfrc-0 gEWplf" href="projectPolicy.do">환불 및 교환</a>
+					<a id="policyFixedBtn" class="ContentsNavigation__NavItem-s6dhfrc-0 gEWplf" href="projectPolicy.do?projectCode=<c:out value='${project.projectCode }'/>">환불 및 교환</a>
 				</div>
 				<div class="ContentsNavigation__NavRight-s6dhfrc-4 eAgLGx">
 					<button class="Button__Button-s1ng5xda-0 jKslKa">프로젝트 밀어주기</button>
@@ -497,6 +503,34 @@
 				</aside>
 			</div>
 		</div>
+	</div>
+	
+	<!-- 스토리, 커뮤니티, 환불정책 버튼 영역 -->
+	<div id="contentsNavigation" data-reactid="92">
+		<span style="font-size: 0;" data-reactid="93"></span>
+		<nav
+			class="ContentsNavigation__ProjectContentsNavigation-s6dhfrc-1 lblHJx"
+			data-reactid="94">
+			<div
+				class="ContentsNavigation__ProjectContentsNavigationInner-s6dhfrc-2 eeeApW"
+				data-reactid="95">
+				<div class="ContentsNavigation__NavLeft-s6dhfrc-3 eSsILz"
+					data-reactid="96">
+					<a id="storyBtn" class="ContentsNavigation__NavItem-s6dhfrc-0 gEWplf"
+						href="projectDetail.do?projectCode=<c:out value='${project.projectCode }'/>" data-reactid="97">스토리</a>
+						<a id="communityBtn" class="ContentsNavigation__NavItem-s6dhfrc-0 gEWplf"
+						href="projectCommunity.do?projectCode=<c:out value='${project.projectCode }'/>" data-reactid="98">
+						커뮤니티 
+						<span class="ContentsNavigation__CommunityPostAmount-s6dhfrc-6 bReGoj" data-reactid="100">
+							<c:out value="${count }"/>
+						</span>
+					</a><a id="policyBtn" class="ContentsNavigation__NavItem-s6dhfrc-0 gEWplf"
+						href="projectPolicy.do?projectCode=<c:out value='${project.projectCode }'/>" data-reactid="101">환불 및 교환</a>
+				</div>
+			</div>
+		</nav>
+		
+		
 	</div>
 </body>
 </html>

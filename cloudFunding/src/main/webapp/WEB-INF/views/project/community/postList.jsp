@@ -1,6 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/functions" prefix="fn" %> 
 <!DOCTYPE html>
 <html>
 <head>
@@ -42,121 +43,57 @@
 							후원자에게 한마디!
 						</c:if> --%>
 					</div>
-					<i
-						class="yv2X_NOjMYirwH0R23J17 _1oJMWnMCW_Y6GmNc1mhqaW WU1ox0-AeDX_zneKjnNMO _1QY7TzdLHKX3-BKPDNNYKF"></i>
+					<i	class="yv2X_NOjMYirwH0R23J17 _1oJMWnMCW_Y6GmNc1mhqaW WU1ox0-AeDX_zneKjnNMO _1QY7TzdLHKX3-BKPDNNYKF"></i>
 				</div>
-			</div></a>
+			</div>
+		</a>
+		
 		<div class="Community__Posts-s14atsnj-0 umGxa">
 			<div class="PostFilter__FilterWrapper-vri3wd-0 gjgpkL">
-				<div class="PostFilter__FilterButton-vri3wd-1 gDEKBn">모든
-					게시글</div>
-				<!-- react-text: 1076 -->
+				<div class="PostFilter__FilterButton-vri3wd-1 gDEKBn">모든	게시글</div>
 				&nbsp;
-				<!-- /react-text -->
-				<div class="PostFilter__FilterButton-vri3wd-1 bvwsV">창작자
-					업데이트</div>
+				<div class="PostFilter__FilterButton-vri3wd-1 bvwsV">창작자	업데이트</div>
 			</div>
-			<div
-				class="CommunityPostSummaryCard__PostSummaryCardWrapper-s1yavd3r-0 eUjMK">
-				<div class="Card__Card-s1i1esb8-0 bJXRvz">
-					<div
-						class="CommunityPostSummaryCard__MetaWrapper-s1yavd3r-1 iLAsKd">
-						<div
-							class="CommunityPostSummaryCard__Meta-s1yavd3r-3 jmsIUt">
-							<div
-								class="CommunityPostSummaryCard__MetaInner-s1yavd3r-4 buEHkh">
-								<span class="ProfileImg__ProfileImg-s1o99mme-0 dCYRcO inline"></span>
-								<div
-									class="CommunityPostSummaryCard__UserProfile-s1yavd3r-5 bUjrcg inline">
-									<div
-										class="CommunityPostSummaryCard__AuthorWrapper-s1yavd3r-6 fvqxSw">
-										<div
-											class="CommunityPostSummaryCard__AuthorFullname-s1yavd3r-7 jghVVw">감자</div>
+			
+			<c:forEach var="post" items="${postList }" varStatus="status">
+				<div	class="CommunityPostSummaryCard__PostSummaryCardWrapper-s1yavd3r-0 eUjMK">
+					<div class="Card__Card-s1i1esb8-0 bJXRvz">
+						<div	class="CommunityPostSummaryCard__MetaWrapper-s1yavd3r-1 iLAsKd">
+							<div	class="CommunityPostSummaryCard__Meta-s1yavd3r-3 jmsIUt">
+								<div	class="CommunityPostSummaryCard__MetaInner-s1yavd3r-4 buEHkh">
+									<c:if test="${!empty post.profileImg }">
+										<img class="ProfileImg__ProfileImg-s1o99mme-0 dCYRcO" src="<c:out value='${post.profileImg }'/>"/>
+									</c:if>
+									<div	class="CommunityPostSummaryCard__UserProfile-s1yavd3r-5 bUjrcg">
+										<div	class="CommunityPostSummaryCard__AuthorWrapper-s1yavd3r-6 fvqxSw">
+											<div	class="CommunityPostSummaryCard__AuthorFullname-s1yavd3r-7 jghVVw">
+												<c:out value="${post.name }"/>
+											</div>
+										</div>
+										<span>
+											2일 전
+										</span>
 									</div>
-									<span>
-										<!-- react-text: 1088 -->2일 전<!-- /react-text -->
-										<!-- react-text: 1089 --> <!-- /react-text -->
-										<!-- react-text: 1090 -->
-										<!-- /react-text -->
-									</span>
 								</div>
 							</div>
 						</div>
-					</div>
-					<div
-						class="CommunityPostSummaryCard__ContentsWrapper-s1yavd3r-11 cywbQo"
-						style="cursor: pointer;">
-						<div>
-							<div
-								class="CommunityPostSummaryCard__Contents-s1yavd3r-13 fmSZUJ">
-								<div class="storyContent">책 한권과 코닥 뱃지 구매했습니다~한가지
-									의문점이 있어서 남겨요, 필름카메라 쪽으로 전문가이실것같아 여쭙니다. 후지필름은 우익 기업으로
-									알고있었는데, 혹시 확실히 알고계시나요? 코닥은 아닌걸로 알아서 코닥뱃지 선택했거든요. 앞으로의 필름
-									구매때문에 알아두고 싶네요.</div>
-							</div>
-						</div>
-					</div>
-					<div
-						class="CommunityPostSummarCard__Actions-s1yavd3r-15 jgodLB"
-						style="cursor: pointer;">
-						<i class="_30LNYFhw6qsigZSbwlGCDz _1QY7TzdLHKX3-BKPDNNYKF"></i>
-						<!-- react-text: 1097 -->
-						<!-- /react-text -->
-						<!-- react-text: 1098 -->
-						1
-						<!-- /react-text -->
-					</div>
-				</div>
-			</div>
-			<div
-				class="CommunityPostSummaryCard__PostSummaryCardWrapper-s1yavd3r-0 eUjMK">
-				<div class="Card__Card-s1i1esb8-0 bJXRvz">
-					<div
-						class="CommunityPostSummaryCard__MetaWrapper-s1yavd3r-1 iLAsKd">
-						<div
-							class="CommunityPostSummaryCard__Meta-s1yavd3r-3 jmsIUt">
-							<div
-								class="CommunityPostSummaryCard__MetaInner-s1yavd3r-4 buEHkh">
-								<span class="ProfileImg__ProfileImg-s1o99mme-0 hvlbLm"></span>
-								<div
-									class="CommunityPostSummaryCard__UserProfile-s1yavd3r-5 bUjrcg">
-									<div
-										class="CommunityPostSummaryCard__AuthorWrapper-s1yavd3r-6 fvqxSw">
-										<div
-											class="CommunityPostSummaryCard__AuthorFullname-s1yavd3r-7 jghVVw">장작</div>
+						<div	class="CommunityPostSummaryCard__ContentsWrapper-s1yavd3r-11 cywbQo"	style="cursor: pointer;">
+							<div>
+								<div	class="CommunityPostSummaryCard__Contents-s1yavd3r-13 fmSZUJ">
+									<div class="storyContent">
+										<c:out value="${post.content }"/>
 									</div>
-									<span>
-										<!-- react-text: 1130 -->12일 전<!-- /react-text -->
-										<!-- react-text: 1131 --> <!-- /react-text -->
-										<!-- react-text: 1132 -->
-										<!-- /react-text -->
-									</span>
 								</div>
 							</div>
 						</div>
-					</div>
-					<div
-						class="CommunityPostSummaryCard__ContentsWrapper-s1yavd3r-11 cywbQo"
-						style="cursor: pointer;">
-						<div>
-							<div
-								class="CommunityPostSummaryCard__Contents-s1yavd3r-13 fmSZUJ">
-								<div class="storyContent">기대됩니다!</div>
-							</div>
+						<div	class="CommunityPostSummarCard__Actions-s1yavd3r-15 jgodLB"style="cursor: pointer;">
+							<i class="_30LNYFhw6qsigZSbwlGCDz _1QY7TzdLHKX3-BKPDNNYKF"></i>
+							<c:out value="${fn:length(post.replyList) }"/>
 						</div>
 					</div>
-					<div
-						class="CommunityPostSummaryCard__Actions-s1yavd3r-15 jgodLB"
-						style="cursor: pointer;">
-						<i class="_30LNYFhw6qsigZSbwlGCDz _1QY7TzdLHKX3-BKPDNNYKF"></i>
-						<!-- react-text: 1139 -->
-						<!-- /react-text -->
-						<!-- react-text: 1140 -->
-						0
-						<!-- /react-text -->
-					</div>
 				</div>
-			</div>
+			</c:forEach>
+			
 		</div>
 	</div>
 								
@@ -186,9 +123,7 @@
 								<div class="Post__AuthorFullname-s1xz59uk-13 hINlJw">이정표</div>
 							</div>
 							<span>
-								react-text: 43057년 전/react-text
-								react-text: 4306
-								/react-text
+								7년 전
 							</span>
 						</div>
 					</div>

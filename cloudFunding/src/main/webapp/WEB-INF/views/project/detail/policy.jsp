@@ -265,10 +265,9 @@
 /* sc-component-id: sc-keyframes-fzoeFq */
 @-webkit-keyframes fzoeFq {0%,  100% {-webkit-transform: translateX(0);-ms-transform: translateX(0);transform: translateX(0);}50% {-webkit-transform: translateX(4px);-ms-transform: translateX(4px);transform: translateX(4px);}}@keyframes fzoeFq {0%,  100% {-webkit-transform: translateX(0);-ms-transform: translateX(0);transform: translateX(0);}50% {-webkit-transform: translateX(4px);-ms-transform: translateX(4px);transform: translateX(4px);}}
 
-	#policyFixedBtn{
+	#policyFixedBtn, #policyBtn{
 		color: rgb(0, 0, 0); border-bottom: 3px solid rgb(0, 0, 0); padding-bottom: calc(0.5rem - 3px);
 	}
-	
 </style>
 </head>
 <body>
@@ -280,31 +279,6 @@
 			<!-- react-empty: 35 -->
 			<c:import url="projectInfo.jsp"/>
 			
-			<div id="contentsNavigation" data-reactid="92">
-				<span style="font-size: 0;" data-reactid="93"></span>
-				<nav
-					class="ContentsNavigation__ProjectContentsNavigation-s6dhfrc-1 lblHJx"
-					data-reactid="94">
-					<div
-						class="ContentsNavigation__ProjectContentsNavigationInner-s6dhfrc-2 eeeApW"
-						data-reactid="95">
-						<div class="ContentsNavigation__NavLeft-s6dhfrc-3 eSsILz"
-							data-reactid="96">
-							<a class="ContentsNavigation__NavItem-s6dhfrc-0 gEWplf"
-								href="projectDetail.do" data-reactid="97">스토리</a><a
-								class="ContentsNavigation__NavItem-s6dhfrc-0 gEWplf"
-								href="projectCommunity.do" data-reactid="98">
-								<!-- react-text: 99 -->커뮤니티<!-- /react-text -->
-								<span
-								class="ContentsNavigation__CommunityPostAmount-s6dhfrc-6 bReGoj"
-								data-reactid="100"></span>
-							</a><a class="ContentsNavigation__NavItem-s6dhfrc-0 gEWplf"
-								style="color: rgba(0, 0, 0, 1); border-bottom: 3px solid rgba(0, 0, 0, 1); padding-bottom: calc(0.5rem - 3px);"
-								href="projectPolicy.do" data-reactid="101">환불 및 교환</a>
-						</div>
-					</div>
-				</nav>
-			</div>
 			<div class="ProjectPage__ProjectContentsBackground-b1letw-0 cNWmvR"
 				data-reactid="102">
 				<div class="Container__Container-s1sxg7g4-0 jdgWcI"

@@ -17,6 +17,7 @@ public class PostVo {
 	
 	// 화면에 보여질 변수
 	private String name;
+	private String profileImg;
 	
 	public PostVo() {
 		super();
@@ -85,12 +86,20 @@ public class PostVo {
 	public void setReplyList(ArrayList<ReplyVo> replyList) {
 		this.replyList = replyList;
 	}
+	
+	public String getProfileImg() {
+		return profileImg;
+	}
+
+	public void setProfileImg(String profileImg) {
+		this.profileImg = profileImg;
+	}
 
 	@Override
 	public String toString() {
 		return "PostVo [postCode=" + postCode + ", projectCode=" + projectCode + ", email=" + email + ", content="
 				+ content + ", writtenDate=" + writtenDate + ", delflag=" + delflag + ", replyList=" + replyList
-				+ ", name=" + name + ", toString()=" + super.toString() + "]";
+				+ ", name=" + name + ", profileImg=" + profileImg + ", toString()=" + super.toString() + "]";
 	}
 
 	
