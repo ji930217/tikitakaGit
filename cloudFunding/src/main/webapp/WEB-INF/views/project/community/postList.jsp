@@ -103,17 +103,96 @@
 	    transition: all .2s;
 	}
 	
+	/* 게시글 수정 버튼 스타일 */
+	.jzKhMi {
+	    position: absolute;
+	    right: -1rem;
+	}
+	.csIfer {
+    padding: 1em 1.5em;
+    font-size: 1em;
+    width: ;
+    opacity: 1;
+    pointer-events: ;
+    padding: 1em;
+    background-color: transparent;
+    color: black;
+}
+	.csIfer {
+	    color: rgba(0, 0, 0, .6);
+	    background-color: white;
+	}
+	.csIfer {
+	    cursor: pointer;
+	    display: inline-block;
+	    min-height: 1em;
+	    outline: none;
+	    border: none;
+	    vertical-align: baseline;
+	    box-shadow: 0px 0px 0px 1px transparent inset, 0px 0em 0px 0px rgba(0, 0, 0, 0.1) inset;
+	    -webkit-user-select: none;
+	    -moz-user-select: none;
+	    -ms-user-select: none;
+	    user-select: none;
+	    -webkit-transition: opacity 0.1s ease,  background-color 0.1s ease,  color 0.1s ease,  box-shadow 0.1s ease, background 0.1s ease;
+	    transition: opacity 0.1s ease,  background-color 0.1s ease,  color 0.1s ease,  box-shadow 0.1s ease, background 0.1s ease;
+	    -webkit-tap-highlight-color: transparent;
+	    margin: 0 .25em 0 0;
+	    border-radius: 0.28571429rem;
+	    text-transform: none;
+	    text-shadow: none;
+	    font-weight: bold;
+	    line-height: 1em;
+	    font-style: normal;
+	    text-align: center;
+	    text-decoration: none;
+	}
+	i._1oJMWnMCW_Y6GmNc1mhqaW._1QY7TzdLHKX3-BKPDNNYKF, i._1oJMWnMCW_Y6GmNc1mhqaW.JXDnh3ZF3p-Ajae7ENKXc {
+	    line-height: 1;
+	    vertical-align: middle;
+	    font-size: 1.5em;
+	}
+	.csIfer > i {
+	    margin: 0;
+	}
+	.csIfer > i {
+	    margin: 0 .42857143em 0 -.21428571em;
+	}
+	i._1QY7TzdLHKX3-BKPDNNYKF, i.JXDnh3ZF3p-Ajae7ENKXc {
+	    font-size: 1em;
+	}
+	i._1QY7TzdLHKX3-BKPDNNYKF {
+	    display: inline-block;
+	    opacity: 1;
+	    margin: 0 .25rem 0 0;
+	    width: 1.18em;
+	    height: 1em;
+	    font-family: Icons;
+	    font-style: normal;
+	    font-weight: 400;
+	    text-decoration: inherit;
+	    text-align: center;
+	    speak: none;
+	    font-smoothing: antialiased;
+	    -moz-osx-font-smoothing: grayscale;
+	    -webkit-font-smoothing: antialiased;
+	    -webkit-backface-visibility: hidden;
+	    backface-visibility: hidden;
+	}
+	
+	
+	
 </style>
 
 <script>
 	var postCode;
 	$(function(){
-		$(".eUjMK").click(function(){
+		$(".cywbQo").click(function(){
 			postCode = $(this).children("h3").text();
 			console.log(postCode);
 			
 			$(".tojyI").css("display", "block");
-			$(".iFHoED").css("display", "none");
+			$("#postFormDiv").css("display", "none");
 			$("#postListDiv").css("display", "none");
 			$("#creatorPostDiv").css("display", "none");
 			$("#writeBtnDiv").css("display", "none");
@@ -124,7 +203,8 @@
 /* 				data : {index : $("#userIndexes").val()}, */
 				data : {postCode : postCode},
 				success : function(data){
-					console.log($(".hKVypK > .storyContent").html(data.content));
+					$(".hKVypK > .storyContent").html(data.content);
+					$(".hINlJw").html(data.name);
 					console.log(data.postCode);
 					console.log(data.content);
 					// 댓글이 없는 경우 구분하기
@@ -203,10 +283,9 @@
 					</div>
 				</c:if>
 				
-				<c:if test="${count gt 1 }">
+				<c:if test="${count gt 0 }">
 					<c:forEach var="post" items="${postList }" varStatus="status">
 						<div	class="CommunityPostSummaryCard__PostSummaryCardWrapper-s1yavd3r-0 eUjMK">
-							<h3 style="visibility:hidden;"><c:out value="${post.postCode }"/></h3>
 							<div class="Card__Card-s1i1esb8-0 bJXRvz">
 								<div	class="CommunityPostSummaryCard__MetaWrapper-s1yavd3r-1 iLAsKd">
 									<c:if test="${post.email eq project.email }">
@@ -230,10 +309,21 @@
 													<c:out value="${post.writtenDate }"/>
 												</span>
 											</div>
+											
+											<c:if test="${user.email eq post.email }">
+												<!-- 게시글 수정 버튼 -->
+												<div	class="CommunityPostSummaryCard__PostEditModalButton-s1yavd3r-10 jzKhMi">
+													<button class="Button__Button-s1ng5xda-0 csIfer" onclick="openUpdatePostForm(<c:out value='${post.postCode}'/>);">
+														<i	class="_2ANNRn9vyCs0q8XuFwhk4r _1oJMWnMCW_Y6GmNc1mhqaW _1QY7TzdLHKX3-BKPDNNYKF"></i>
+													</button>
+												</div>
+											</c:if>
+											
 										</div>
 									</div>
 								</div>
 								<div	class="CommunityPostSummaryCard__ContentsWrapper-s1yavd3r-11 cywbQo"	style="cursor: pointer;">
+									<h3 style="display:none;"><c:out value="${post.postCode }"/></h3>
 									<div>
 										<div	class="CommunityPostSummaryCard__Contents-s1yavd3r-13 fmSZUJ">
 											<div class="storyContent">
@@ -272,12 +362,14 @@
 					<div class="Post__MetaInner-s1xz59uk-9 liBhuy">
 						<div class="Post__ProfileImageWrapper-s1xz59uk-10 hvbXDI">
 							<span class="ProfileImg__ProfileImg-s1o99mme-0 frVGN">
-								
+
 							</span>
 						</div>
 						<div class="Post__UserProfile-s1xz59uk-11 hjsiDH">
 							<div class="Post__AuthorWrapper-s1xz59uk-12 gkbGIo">
-								<div class="Post__AuthorFullname-s1xz59uk-13 hINlJw"></div>
+								<div class="Post__AuthorFullname-s1xz59uk-13 hINlJw">
+									<%-- <c:out value="${post.name }"/> --%>
+								</div>
 							</div>
 							<span>
 								7년 전
@@ -361,7 +453,7 @@
 			</div>
 			
 			<c:set var="creatorPostCount" value="0"/>
-			<c:if test="${count gt 1 }">
+			<c:if test="${count gt 0 }">
 				<c:forEach var="post" items="${postList }" varStatus="status">
 					<c:if test="${post.email eq project.email }">
 						<c:set var="creatorPostCount" value="${creatorPostCount +1 }"/>
@@ -390,6 +482,16 @@
 														<c:out value="${post.writtenDate }"/>
 													</span>
 												</div>
+												
+												<c:if test="${user.email eq post.email }">
+													<!-- 게시글 수정 버튼 -->
+													<div	class="CommunityPostSummaryCard__PostEditModalButton-s1yavd3r-10 jzKhMi">
+														<button class="Button__Button-s1ng5xda-0 csIfer" onclick="openUpdatePostForm();">
+															<i	class="_2ANNRn9vyCs0q8XuFwhk4r _1oJMWnMCW_Y6GmNc1mhqaW _1QY7TzdLHKX3-BKPDNNYKF"></i>
+														</button>
+													</div>
+												</c:if>
+												
 											</div>
 										</div>
 									</div>
@@ -397,7 +499,7 @@
 										<div>
 											<div	class="CommunityPostSummaryCard__Contents-s1yavd3r-13 fmSZUJ">
 												<div class="storyContent">
-													<c:out value="${post.content }"/>
+													<c:out value="${post.content }" escapeXml="false"/>
 												</div>
 											</div>
 										</div>

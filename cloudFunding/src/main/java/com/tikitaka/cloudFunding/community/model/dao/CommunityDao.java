@@ -29,5 +29,9 @@ public class CommunityDao {
 		return sqlSession.insert("communityMapper.insertPost", post);
 	}
 
+	public int updatePost(PostVo post) {
+		return sqlSession.update("communityMapper.updatePost", post);
+	}
+
 	
 }

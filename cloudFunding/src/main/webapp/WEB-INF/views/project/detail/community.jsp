@@ -460,19 +460,44 @@
 	}
 	
 	#postListDiv, #writeBtnDiv{ display:block; }
-	.iFHoED, .tojyI, #creatorPostDiv{	display:none; }
+	#postFormDiv, .tojyI, #creatorPostDiv, #updatePostFormDiv{	display:none; }
 	
 	#communityFixedBtn, #communityBtn{ color: rgb(0, 0, 0); border-bottom: 3px solid rgb(0, 0, 0); padding-bottom: calc(0.5rem - 3px); }
 
 </style>
 <script>
 	function openPostForm(){
-		$(".iFHoED").css("display", "block");
+		$("#postFormDiv").css("display", "block");
 		$("#postListDiv").css("display", "none");
 		$("#writeBtnDiv").css("display", "none");
 	}
 	function closePostForm(){
-		$(".iFHoED").css("display", "none");
+		$("#postFormDiv").css("display", "none");
+		$("#postListDiv").css("display", "block");
+		$("#writeBtnDiv").css("display", "block");
+	}
+	function openUpdatePostForm(postCode){
+		$("#updatePostFormDiv").css("display", "block");
+		$("#postListDiv").css("display", "none");
+		$("#writeBtnDiv").css("display", "none");
+		
+		/* 게시글 수정 */
+		$.ajax({
+			url : "selectPost.do",
+			type : "post",
+/* 		data : {index : $("#userIndexes").val()}, */
+			data : {postCode : postCode},
+			success : function(data){
+				$("#updatePostFormDiv .note-editable").html(data.content);
+				$("input[name=postCode]").val(data.postCode);
+				/* console.log($("input[name=postCode]").val()); */
+			}, error : function(e){
+				console.log("ajax 게시글 수정 페이지 이동 시 에러");
+			}
+		});
+	}
+	function closeUpdatePostForm(){
+		$("#updatePostFormDiv").css("display", "none");
 		$("#postListDiv").css("display", "block");
 		$("#writeBtnDiv").css("display", "block");
 	}
@@ -489,6 +514,7 @@
 		$("#postListDiv").css("display", "block");
 		$("#creatorPostDiv").css("display", "none");
 	}
+	
 	
 </script>
     </head>
@@ -509,6 +535,7 @@
 							<div class="ProjectPage__MainColumnInner-b1letw-4 giKgfw">
 								<c:import url="../community/postList.jsp"/>
 								<c:import url="../community/postForm.jsp"/>
+								<c:import url="../community/updatePostForm.jsp"/>
 							</div>
 						 
 						</div>

@@ -83,20 +83,24 @@
 	    AND P.DELFLAG != 'T'
 	    ORDER BY P.POST_CODE DESC
 	</select>
+	<select id="selectPost" parameterType="int" resultMap="postMap">
+		<include refid="selectPostHeader"/>   
+		WHERE P.DELFLAG != 'T' 
+		AND P.POST_CODE = #{postCode}
+	</select>
 	<select id="selectPostCount" parameterType="int" resultType="int">
 		SELECT COUNT(*) AS COUNT
 		FROM POST
 		WHERE P_PROJECT_CODE = #{projectCode}	   
 		AND DELFLAG != 'T' 
 	</select>
-	<select id="selectPost" parameterType="int" resultMap="postMap">
-		<include refid="selectPostHeader"/>   
-		WHERE P.DELFLAG != 'T' 
-		AND P.POST_CODE = #{postCode}
-	</select>
 	
 	<insert id="insertPost" parameterType="Post">
 		INSERT INTO POST VALUES(SEQ_POST.NEXTVAL, #{projectCode}, #{email}, #{content}, SYSDATE, DEFAULT)	    
 	</insert>
 
+	<update id="updatePost" parameterType="Post">
+	    UPDATE POST SET CONTENT = #{content}
+	    WHERE POST_CODE = #{postCode}
+	</update>
 </mapper>

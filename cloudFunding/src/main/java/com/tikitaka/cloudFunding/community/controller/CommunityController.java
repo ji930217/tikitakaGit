@@ -49,6 +49,16 @@ public class CommunityController {
 		return "redirect:projectCommunity.do?projectCode=" + projectCode;
 	}
 	
+	@RequestMapping("updatePost.do")
+	public String updatePost(int projectCode, int postCode, String content){
+		PostVo post = new PostVo();
+		post.setPostCode(postCode);
+		post.setContent(content);
+		int result = cService.updatePost(post);
+		
+		return "redirect:projectCommunity.do?projectCode=" + projectCode;
+	}
+	
 	@RequestMapping("selectPost.do")
 	@ResponseBody
 	public PostVo selectPost(int postCode){

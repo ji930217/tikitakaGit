@@ -145,7 +145,7 @@
 </script>
 </head>
 <body>
-		<div class="PostEditForm__PostNewFormCardWrapper-frv1rh-0 iFHoED">
+		<div id="postFormDiv" class="PostEditForm__PostNewFormCardWrapper-frv1rh-0 iFHoED">
 			<div
 				class="PostEditForm__PostNewFormCardWrapperHeader-frv1rh-1 jjrJpB">
 				<button class="Button__Button-s1ng5xda-0 dUWaDF" onclick="closePostForm();">

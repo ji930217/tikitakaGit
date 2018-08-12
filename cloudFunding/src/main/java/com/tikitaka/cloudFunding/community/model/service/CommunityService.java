@@ -29,6 +29,10 @@ public class CommunityService {
 		return cDao.insertPost(post);
 	}
 
+	public int updatePost(PostVo post) {
+		return cDao.updatePost(post);
+	}
+
 	
 	
 }
