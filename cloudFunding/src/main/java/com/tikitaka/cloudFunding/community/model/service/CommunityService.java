@@ -33,6 +33,10 @@ public class CommunityService {
 		return cDao.updatePost(post);
 	}
 
+	public int deletePost(int postCode) {
+		return cDao.deletePost(postCode);
+	}
+
 	
 	
 }

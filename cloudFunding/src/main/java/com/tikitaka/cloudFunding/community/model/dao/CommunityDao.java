@@ -33,5 +33,9 @@ public class CommunityDao {
 		return sqlSession.update("communityMapper.updatePost", post);
 	}
 
+	public int deletePost(int postCode) {
+		return sqlSession.delete("communityMapper.deletePost", postCode);
+	}
+
 	
 }

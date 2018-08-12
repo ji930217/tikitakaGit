@@ -208,6 +208,11 @@
 			});
 	});
 	
+	function deletePost(){
+		var postCode = $("input[name=postCode]").val();		
+		var projectCode = $("input[name=projectCode]").val();		
+		location.href="deletePost.do?postCode=" + postCode + "&projectCode=" + projectCode;
+	}
 	
 	
 </script>
@@ -225,7 +230,7 @@
 					<div class="PostEditForm__HeaderInner-frv1rh-4 dNDxZx">
 						<div class="PostEditForm__Title-frv1rh-5 jNnrdK">게시글 수정하기</div>
 						<div class="PostEditForm__DeleteButton-frv1rh-6 kWwLhn">
-							<button class="Button__Button-s1ng5xda-0 fkKFAu">
+							<button class="Button__Button-s1ng5xda-0 fkKFAu" onclick="deletePost();">
 								<i	class="_1pt-5UHn7rWHPExbDO4EbO _2rCeEoFeBzvCYn76udqnww _1QY7TzdLHKX3-BKPDNNYKF"></i>
 							</button>
 						</div>

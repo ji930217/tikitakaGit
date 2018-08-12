@@ -103,4 +103,16 @@
 	    UPDATE POST SET CONTENT = #{content}
 	    WHERE POST_CODE = #{postCode}
 	</update>
+	
+	<!-- <delete id="deletePost" parameterType="int">
+	    DELETE FROM POST
+	    WHERE POST_CODE = #{postCode}
+	</delete> -->
+	<delete id="deletePost" parameterType="int">
+	    UPDATE POST
+	    SET DELFLAG = 'T'
+	    WHERE POST_CODE = #{postCode}
+	</delete>
+	
+	
 </mapper>
