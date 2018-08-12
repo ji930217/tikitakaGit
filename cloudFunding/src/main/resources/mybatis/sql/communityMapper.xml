@@ -48,7 +48,7 @@
 
 	<resultMap type="Post" id="postMap">
 		<id property="postCode" column="POST_CODE" />
-		<result property="projectCode" column="P_POJECT_CODE"/>
+		<result property="projectCode" column="P_PROJECT_CODE"/>
 		<result property="email" column="EMAIL"/>
 		<result property="content" column="CONTENT"/>
 		<result property="writtenDate" column="WRITTEN_DATE"/>

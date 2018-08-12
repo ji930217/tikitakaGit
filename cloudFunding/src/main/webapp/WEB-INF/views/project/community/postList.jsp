@@ -180,7 +180,63 @@
 	    backface-visibility: hidden;
 	}
 	
+	/* 댓글 없을 때 영역 스타일 */
+	.cHZzdT {
+	    border-top: 1px solid #efefef;
+	    padding-top: 2rem;
+	    padding-bottom: 2rem;
+	    color: rgba(0,0,0,.15);
+	    text-align: center;
+	    font-size: 1.2rem;
+	}
+	i.t92eur5rwOw7wGfKPt3l8._1QY7TzdLHKX3-BKPDNNYKF {
+	    -webkit-transform: scaleX(-1);
+	    transform: scaleX(-1);
+	}
+	i._1QY7TzdLHKX3-BKPDNNYKF, i.JXDnh3ZF3p-Ajae7ENKXc {
+	    font-size: 1em;
+	}
+	i._1QY7TzdLHKX3-BKPDNNYKF {
+	    display: inline-block;
+	    opacity: 1;
+	    margin: 0 .25rem 0 0;
+	    width: 1.18em;
+	    height: 1em;
+	    font-family: Icons;
+	    font-style: normal;
+	    font-weight: 400;
+	    text-decoration: inherit;
+	    text-align: center;
+	    speak: none;
+	    font-smoothing: antialiased;
+	    -moz-osx-font-smoothing: grayscale;
+	    -webkit-font-smoothing: antialiased;
+	    -webkit-backface-visibility: hidden;
+	    backface-visibility: hidden;
+	}
 	
+	
+	/* 게시글 공유 버튼 스타일 */
+	@media (min-width: 1080px){
+		.jEZrVP {
+		    padding: 1rem;
+		}
+	}
+	.jEZrVP {
+	    padding: 1rem .5rem;
+	    display: -webkit-box;
+	    display: -webkit-flex;
+	    display: -ms-flexbox;
+	    display: flex;
+	    -webkit-box-pack: end;
+	    -webkit-justify-content: flex-end;
+	    -ms-flex-pack: end;
+	    justify-content: flex-end;
+	}
+	.hhJJZS {
+	    margin-left: 0.5em;
+	    cursor: pointer;
+	}
 	
 </style>
 
@@ -189,7 +245,6 @@
 	$(function(){
 		$(".cywbQo").click(function(){
 			postCode = $(this).children("h3").text();
-			console.log(postCode);
 			
 			$(".tojyI").css("display", "block");
 			$("#postFormDiv").css("display", "none");
@@ -205,22 +260,43 @@
 				success : function(data){
 					$(".hKVypK > .storyContent").html(data.content);
 					$(".hINlJw").html(data.name);
-					console.log(data.postCode);
-					console.log(data.content);
+					$(".Post__CommunityPostCommentsAmount-s1xz59uk-25").html("<strong>" + data.replyList.length + "</strong>개의 댓글이 있습니다");
+					
+					var projectCode = "<c:out value='${project.projectCode}'/>";		
+					var creatorEmail = "<c:out value='${project.email}'/>";
+					
 					// 댓글이 없는 경우 구분하기
-					console.log(data.replyList[0].content);
-					/* var $table = $("#outputTable");
-					var resultStr = "<tr><th>아이디</th><th>이름</th><th>나이</th></tr>";
-					for(var key in data) {
-						console.log(key);
-						var user = data[key];
-						resultStr += "<tr>";
-						resultStr += "<td>" + user.userId + "</td>";
-						resultStr += "<td>" + user.userName + "</td>";
-						resultStr += "<td>" + user.age + "</td>";
-						resultStr += "</tr>";
+					/* console.log(data.replyList[0].content); */
+					
+					var $replyDiv = $("#replyDiv");
+					var resultStr = "";
+					if(0 < data.replyList.length) {
+						for(var key in data.replyList) {
+							var reply = data.replyList[key];
+							resultStr += "<div class='Comment__Comment-wppgnq-0 hlvHZI'>";
+							resultStr += "<div class='Comment__CommentProfileImageWrapper-wppgnq-2 dbsGhw'>";
+							if(null != reply.profileImg) {
+								resultStr += "<img class='ProfileImg__ProfileImg-s1o99mme-0 wtQUk' src='" + reply.profileImg + "'/></div>";
+							} else {
+								resultStr += "<span class='ProfileImg__ProfileImg-s1o99mme-0 wtQUk'></span></div>";
+							}
+							resultStr += "<div class='Comment__CommentInner-wppgnq-1 TozEg'>";
+							resultStr += "<div class='Comment__CommentMeta-wppgnq-3 Ovbfn'>";
+							resultStr += "<div class='Comment__CommentAuthorFullnameWrapper-wppgnq-4 ingGrN'>";
+							resultStr += "<div class='Comment__CommentAuthorFullname-wppgnq-6 hGUkNg'>" + reply.name + "</div>";
+							if(creatorEmail == reply.email) {						
+								resultStr += "<span class='Comment__CommentCreatorLabel-wppgnq-7 heUSFE'>창작자</span>";
+							}
+							resultStr += "</div>";
+							resultStr += "<div class='Comment__CommentedAt-wppgnq-5 bryKXn'>" + reply.writtenDate + "</div></div>";
+							resultStr += "<div class='Comment__CommentContents-wppgnq-8 dNCkru'>" + reply.content + "</div></div></div>";
+						}
+					} else {
+						resultStr += "<div class='Post__NoCommentsPlaceHolder-s1xz59uk-26 cHZzdT'>";
+						resultStr += "<i class='_30LNYFhw6qsigZSbwlGCDz _1R0ZK0Z1zZIqLZ8NkjnsD6 t92eur5rwOw7wGfKPt3l8 _1QY7TzdLHKX3-BKPDNNYKF'></i>";
+						resultStr += "댓글이 없습니다</div>";
 					}
-					$table.html(resultStr); */
+					$replyDiv.html(resultStr);
 				}, error : function(e){
 					console.log("ajax selectPost 에러");
 				}
@@ -380,47 +456,46 @@
 				<div class="Post__ContentsWrapper-s1xz59uk-16 hKVypK">
 					<div class="storyContent"><%-- 게시글 내용 --%></div>
 				</div>
+
+				<!-- 게시글 공유 버튼(창작자의 게시글일 경우만 출력)-->
+				<div id="sharePostBtnDiv" class="Post__ShareWrapper-s1xz59uk-17 jEZrVP">
+					<div style="display: flex;">
+						<div	class="SocialMediaShareButton SocialMediaShareButton--facebook">
+							<div class="SocialMediaButtons__ShareButton-dpsnza-0 hhJJZS">
+								<div style="width: 32px; height: 32px;">
+									<svg viewBox="0 0 64 64" fill="#3b5998" width="32" height="32"
+										class="social-icon social-icon--facebook ">
+										<g>
+										<circle cx="32" cy="32" r="31" fill="#3b5998"
+											style="fill: rgb(255, 255, 255);"></circle></g>
+										<g>
+										<path d="M34.1,47V33.3h4.6l0.7-5.3h-5.3v-3.4c0-1.5,0.4-2.6,2.6-2.6l2.8,0v-4.8c-0.5-0.1-2.2-0.2-4.1-0.2 c-4.1,0-6.9,2.5-6.9,7V28H24v5.3h4.6V47H34.1z"></path></g></svg>
+								</div>
+							</div>
+						</div>
+						<div	class="SocialMediaShareButton SocialMediaShareButton--twitter">
+							<div class="SocialMediaButtons__ShareButton-dpsnza-0 hhJJZS">
+								<div style="width: 32px; height: 32px;">
+									<svg viewBox="0 0 64 64" fill="#1da1f2" width="32" height="32"
+										class="social-icon social-icon--twitter ">
+										<g>
+										<circle cx="32" cy="32" r="31" fill="#00aced"
+											style="fill: rgb(255, 255, 255);"></circle></g>
+										<g>
+										<path d="M48,22.1c-1.2,0.5-2.4,0.9-3.8,1c1.4-0.8,2.4-2.1,2.9-3.6c-1.3,0.8-2.7,1.3-4.2,1.6 C41.7,19.8,40,19,38.2,19c-3.6,0-6.6,2.9-6.6,6.6c0,0.5,0.1,1,0.2,1.5c-5.5-0.3-10.3-2.9-13.5-6.9c-0.6,1-0.9,2.1-0.9,3.3 c0,2.3,1.2,4.3,2.9,5.5c-1.1,0-2.1-0.3-3-0.8c0,0,0,0.1,0,0.1c0,3.2,2.3,5.8,5.3,6.4c-0.6,0.1-1.1,0.2-1.7,0.2c-0.4,0-0.8,0-1.2-0.1 c0.8,2.6,3.3,4.5,6.1,4.6c-2.2,1.8-5.1,2.8-8.2,2.8c-0.5,0-1.1,0-1.6-0.1c2.9,1.9,6.4,2.9,10.1,2.9c12.1,0,18.7-10,18.7-18.7 c0-0.3,0-0.6,0-0.8C46,24.5,47.1,23.4,48,22.1z"></path></g></svg>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+
 				<div	class="Post__CommunityPostCommentsAmount-s1xz59uk-25 jPVurM">
-					<strong>2</strong>
-					개의 댓글이 있습니다
+					<!-- <strong>2</strong>
+					개의 댓글이 있습니다 -->
 				</div>
-				<div>
-					<div class="Comment__Comment-wppgnq-0 hlvHZI">
-						<div	class="Comment__CommentProfileImageWrapper-wppgnq-2 dbsGhw">
-							<span class="ProfileImg__ProfileImg-s1o99mme-0 wtQUk"></span>
-						</div>
-						<div class="Comment__CommentInner-wppgnq-1 TozEg">
-							<div class="Comment__CommentMeta-wppgnq-3 Ovbfn">
-								<div	class="Comment__CommentAuthorFullnameWrapper-wppgnq-4 ingGrN">
-									<div	class="Comment__CommentAuthorFullname-wppgnq-6 hGUkNg">test2</div>
-									<span class="Comment__CommentCreatorLabel-wppgnq-7 heUSFE">창작자</span>
-								</div>
-								<div class="Comment__CommentedAt-wppgnq-5 bryKXn">
-									2011.8.21	23:49
-								</div>
-							</div>
-							<div class="Comment__CommentContents-wppgnq-8 dNCkru">
-								네	감사합니다. 꼭 책으로 만들도록 하겠습니다.^^
-							</div>
-						</div>
-					</div>
-					<div class="Comment__Comment-wppgnq-0 hlvHZI">
-						<div	class="Comment__CommentProfileImageWrapper-wppgnq-2 dbsGhw">
-							<span class="ProfileImg__ProfileImg-s1o99mme-0 jOwMBb"></span>
-						</div>
-						<div class="Comment__CommentInner-wppgnq-1 TozEg">
-							<div class="Comment__CommentMeta-wppgnq-3 Ovbfn">
-								<div	class="Comment__CommentAuthorFullnameWrapper-wppgnq-4 ingGrN">
-									<div	class="Comment__CommentAuthorFullname-wppgnq-6 hGUkNg">김태환</div>
-								</div>
-								<div class="Comment__CommentedAt-wppgnq-5 bryKXn">
-									2011.8.25 14:03
-								</div>
-							</div>
-							<div class="Comment__CommentContents-wppgnq-8 dNCkru">화이팅</div>
-						</div>
-					</div>
-				</div>
+				
+				<!-- 댓글 영역 ajax 이용 -->
+				<div id="replyDiv">	</div>
 
 				<!-- 댓글 작성 폼 -->
 				<div class="Post__NewCommentWidgetWrapper-s1xz59uk-19 fONoPD">

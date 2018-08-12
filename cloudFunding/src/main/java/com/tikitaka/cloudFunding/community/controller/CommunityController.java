@@ -1,23 +1,16 @@
 package com.tikitaka.cloudFunding.community.controller;
 
-import java.io.IOException;
-import java.net.URLEncoder;
-import java.sql.Date;
-import java.util.ArrayList;
 import java.util.List;
 
-import javax.servlet.http.HttpServletResponse;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
-import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
 
 import com.tikitaka.cloudFunding.community.model.service.CommunityService;
 import com.tikitaka.cloudFunding.community.model.vo.PostVo;
-import com.tikitaka.cloudFunding.community.model.vo.ReplyVo;
 import com.tikitaka.cloudFunding.project.model.service.ProjectService;
 import com.tikitaka.cloudFunding.project.model.vo.ProjectVo;
 
@@ -71,7 +64,6 @@ public class CommunityController {
 	public PostVo selectPost(int postCode){
 		// @ResponseBody 어노테이션 달아주니까 success data 전달 된다ㅠㅠㅠㅠ
 		PostVo post = cService.selectPost(postCode);
-		
 		return post;
 	}
 	
