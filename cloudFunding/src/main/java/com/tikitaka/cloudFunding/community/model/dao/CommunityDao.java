@@ -24,5 +24,10 @@ public class CommunityDao {
 	public PostVo selectPost(int postCode) {
 		return sqlSession.selectOne("communityMapper.selectPost", postCode);
 	}
+
+	public int insertPost(PostVo post) {
+		return sqlSession.insert("communityMapper.insertPost", post);
+	}
+
 	
 }

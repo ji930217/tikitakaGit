@@ -23,6 +23,13 @@ public class PostVo {
 		super();
 	}
 
+	public PostVo(int projectCode, String email, String content) {
+		super();
+		this.projectCode = projectCode;
+		this.email = email;
+		this.content = content;
+	}
+
 	public int getPostCode() {
 		return postCode;
 	}

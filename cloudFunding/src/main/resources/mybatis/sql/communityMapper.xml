@@ -94,5 +94,9 @@
 		WHERE P.DELFLAG != 'T' 
 		AND P.POST_CODE = #{postCode}
 	</select>
+	
+	<insert id="insertPost" parameterType="Post">
+		INSERT INTO POST VALUES(SEQ_POST.NEXTVAL, #{projectCode}, #{email}, #{content}, SYSDATE, DEFAULT)	    
+	</insert>
 
 </mapper>

@@ -124,8 +124,10 @@
 /* 				data : {index : $("#userIndexes").val()}, */
 				data : {postCode : postCode},
 				success : function(data){
+					console.log($(".hKVypK > .storyContent").html(data.content));
 					console.log(data.postCode);
 					console.log(data.content);
+					// 댓글이 없는 경우 구분하기
 					console.log(data.replyList[0].content);
 					/* var $table = $("#outputTable");
 					var resultStr = "<tr><th>아이디</th><th>이름</th><th>나이</th></tr>";
@@ -235,7 +237,7 @@
 									<div>
 										<div	class="CommunityPostSummaryCard__Contents-s1yavd3r-13 fmSZUJ">
 											<div class="storyContent">
-												<c:out value="${post.content }"/>
+												<c:out value='${post.content}' escapeXml="false"/>
 											</div>
 										</div>
 									</div>
@@ -251,10 +253,7 @@
 			</div>
 		</div>
 								
-	<!-- 게시글 상세보기 -->
-	<script>
-		console.log(postCode);
-	</script>
+	<!-- 게시글 상세보기 ajax 이용 -->
 	<div class="Post__PostCardWrapper-s1xz59uk-0 tojyI">
 		<div class="Post__PostCardWrapperHeader-s1xz59uk-1 fJeMWK">
 			<button class="Button__Button-s1ng5xda-0 dUWaDF" onclick="closePostDetail();">
@@ -287,51 +286,44 @@
 					</div>
 				</div>
 				<div class="Post__ContentsWrapper-s1xz59uk-16 hKVypK">
-					<div class="storyContent">
-						<p>웹툰 재미있게 봤는데... 책이 꼭 나왔으면 좋겠네요. 화이팅입니다~</p>
-					</div>
+					<div class="storyContent"><%-- 게시글 내용 --%></div>
 				</div>
-				<div
-					class="Post__CommunityPostCommentsAmount-s1xz59uk-25 jPVurM">
+				<div	class="Post__CommunityPostCommentsAmount-s1xz59uk-25 jPVurM">
 					<strong>2</strong>
 					개의 댓글이 있습니다
 				</div>
 				<div>
 					<div class="Comment__Comment-wppgnq-0 hlvHZI">
-						<div
-							class="Comment__CommentProfileImageWrapper-wppgnq-2 dbsGhw">
+						<div	class="Comment__CommentProfileImageWrapper-wppgnq-2 dbsGhw">
 							<span class="ProfileImg__ProfileImg-s1o99mme-0 wtQUk"></span>
 						</div>
 						<div class="Comment__CommentInner-wppgnq-1 TozEg">
 							<div class="Comment__CommentMeta-wppgnq-3 Ovbfn">
-								<div
-									class="Comment__CommentAuthorFullnameWrapper-wppgnq-4 ingGrN">
-									<div
-										class="Comment__CommentAuthorFullname-wppgnq-6 hGUkNg">test2</div>
-									<span
-										class="Comment__CommentCreatorLabel-wppgnq-7 heUSFE">창작자</span>
+								<div	class="Comment__CommentAuthorFullnameWrapper-wppgnq-4 ingGrN">
+									<div	class="Comment__CommentAuthorFullname-wppgnq-6 hGUkNg">test2</div>
+									<span class="Comment__CommentCreatorLabel-wppgnq-7 heUSFE">창작자</span>
 								</div>
-								<div class="Comment__CommentedAt-wppgnq-5 bryKXn">2011.8.21
-									23:49</div>
+								<div class="Comment__CommentedAt-wppgnq-5 bryKXn">
+									2011.8.21	23:49
+								</div>
 							</div>
-							<div class="Comment__CommentContents-wppgnq-8 dNCkru">네
-								감사합니다. 꼭 책으로 만들도록 하겠습니다.^^</div>
+							<div class="Comment__CommentContents-wppgnq-8 dNCkru">
+								네	감사합니다. 꼭 책으로 만들도록 하겠습니다.^^
+							</div>
 						</div>
 					</div>
 					<div class="Comment__Comment-wppgnq-0 hlvHZI">
-						<div
-							class="Comment__CommentProfileImageWrapper-wppgnq-2 dbsGhw">
+						<div	class="Comment__CommentProfileImageWrapper-wppgnq-2 dbsGhw">
 							<span class="ProfileImg__ProfileImg-s1o99mme-0 jOwMBb"></span>
 						</div>
 						<div class="Comment__CommentInner-wppgnq-1 TozEg">
 							<div class="Comment__CommentMeta-wppgnq-3 Ovbfn">
-								<div
-									class="Comment__CommentAuthorFullnameWrapper-wppgnq-4 ingGrN">
-									<div
-										class="Comment__CommentAuthorFullname-wppgnq-6 hGUkNg">김태환</div>
+								<div	class="Comment__CommentAuthorFullnameWrapper-wppgnq-4 ingGrN">
+									<div	class="Comment__CommentAuthorFullname-wppgnq-6 hGUkNg">김태환</div>
 								</div>
-								<div class="Comment__CommentedAt-wppgnq-5 bryKXn">2011.8.25
-									14:03</div>
+								<div class="Comment__CommentedAt-wppgnq-5 bryKXn">
+									2011.8.25 14:03
+								</div>
 							</div>
 							<div class="Comment__CommentContents-wppgnq-8 dNCkru">화이팅</div>
 						</div>

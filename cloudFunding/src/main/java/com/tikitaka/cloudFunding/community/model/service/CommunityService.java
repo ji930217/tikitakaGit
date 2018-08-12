@@ -24,6 +24,11 @@ public class CommunityService {
 	public PostVo selectPost(int postCode) {
 		return cDao.selectPost(postCode);
 	}
+
+	public int insertPost(PostVo post) {
+		return cDao.insertPost(post);
+	}
+
 	
 	
 }

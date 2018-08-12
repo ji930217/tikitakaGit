@@ -151,9 +151,7 @@
 				<button class="Button__Button-s1ng5xda-0 dUWaDF" onclick="closePostForm();">
 					<i
 						class="_1XlDYEGI6NQt_YZkSA5u6N _36JoJH6uhmIKdE1bWDYUlM _1QY7TzdLHKX3-BKPDNNYKF"></i>
-					<!-- react-text: 1256 -->
 					커뮤니티로 돌아가기
-					<!-- /react-text -->
 				</button>
 			</div>
 			<div class="PostEditForm__PostNewFormCard-frv1rh-2 jfvHVl">
@@ -163,24 +161,23 @@
 					</div>
 				</div>
 				
-				<div class="PostEditForm__Body-frv1rh-7 hPXsxV">
-					<form method="post" action="insertPost.do" enctype="multipart/form-data">
-						<%-- <input type="hidden" name="projectCode" value="<c:out value='${project.projectCode}'/>"/> --%>
-						<input type="hidden" name="email" value="<c:out value='${user.email}'/>"/>
-						<!-- <textarea id="summernote" name="content"></textarea> -->
-						<textarea id="summernote" name="content"></textarea>
-					</form>
-				</div>
-				
-				<div class="PostEditForm__Footer-frv1rh-8 bNqcJf">
-					<div></div>
-					<div class="PostEditForm__ButtonsWrapper-frv1rh-11 bTafcO">
-						<button id="insertPostBtn" class="Button__Button-s1ng5xda-0 cdAaGX" disabled>
-							<i class="-o8oGI_QAOKsVIJOUOUmV _1QY7TzdLHKX3-BKPDNNYKF"></i>
-							올리기
-						</button>
+				<form method="post" action="insertPost.do" enctype="multipart/form-data">
+					<div class="PostEditForm__Body-frv1rh-7 hPXsxV">
+							<input type="hidden" name="projectCode" value="<c:out value='${project.projectCode}'/>"/>
+							<input type="hidden" name="email" value="<c:out value='${user.email}'/>"/>
+							<textarea id="summernote" name="content"></textarea>
 					</div>
-				</div>
+					
+					<div class="PostEditForm__Footer-frv1rh-8 bNqcJf">
+						<div></div>
+						<div class="PostEditForm__ButtonsWrapper-frv1rh-11 bTafcO">
+							<button id="insertPostBtn" class="Button__Button-s1ng5xda-0 cdAaGX" disabled>
+								<i class="-o8oGI_QAOKsVIJOUOUmV _1QY7TzdLHKX3-BKPDNNYKF"></i>
+								올리기
+							</button>
+						</div>
+					</div>
+				</form>
 			</div>
 		</div>
 </body>

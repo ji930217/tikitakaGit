@@ -42,10 +42,11 @@ public class CommunityController {
 	}
 	
 	@RequestMapping("insertPost.do")
-	public ModelAndView insertPost(PostVo post, ModelAndView mv){
+	public String insertPost(int projectCode, String email, String content){
+		PostVo post = new PostVo(projectCode, email, content);
+		int result = cService.insertPost(post);
 		
-		
-		return mv;
+		return "redirect:projectCommunity.do?projectCode=" + projectCode;
 	}
 	
 	@RequestMapping("selectPost.do")
