@@ -7,6 +7,8 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
+<!-- ajax Date format -->
+<script src="http://cdnjs.cloudflare.com/ajax/libs/moment.js/2.6.0/moment.min.js"></script>
 <style>
 	a{ cursor:pointer;	}
 	
@@ -265,11 +267,11 @@
 					var projectCode = "<c:out value='${project.projectCode}'/>";		
 					var creatorEmail = "<c:out value='${project.email}'/>";
 					
-					// 댓글이 없는 경우 구분하기
-					/* console.log(data.replyList[0].content); */
 					
 					var $replyDiv = $("#replyDiv");
 					var resultStr = "";
+					// 댓글이 없는 경우 구분하기
+					/* console.log(data.replyList[0].content); */
 					if(0 < data.replyList.length) {
 						for(var key in data.replyList) {
 							var reply = data.replyList[key];
@@ -288,6 +290,7 @@
 								resultStr += "<span class='Comment__CommentCreatorLabel-wppgnq-7 heUSFE'>창작자</span>";
 							}
 							resultStr += "</div>";
+							/* moment(reply.writtenDate).format("YYYY.MM.DD hh:mm") */
 							resultStr += "<div class='Comment__CommentedAt-wppgnq-5 bryKXn'>" + reply.writtenDate + "</div></div>";
 							resultStr += "<div class='Comment__CommentContents-wppgnq-8 dNCkru'>" + reply.content + "</div></div></div>";
 						}
@@ -303,6 +306,7 @@
 			});
 		});
 	});
+	
 </script>
 </head>
 

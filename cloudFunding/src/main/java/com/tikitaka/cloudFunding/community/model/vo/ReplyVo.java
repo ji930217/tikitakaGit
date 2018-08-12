@@ -10,7 +10,8 @@ public class ReplyVo {
 	private int postCode;
 	private String content;
 	private String email;
-	private Date writtenDate;
+//	private Date writtenDate;
+	private String writtenDate;
 	private char delflag;
 	
 	private String name;
@@ -52,11 +53,11 @@ public class ReplyVo {
 		this.email = email;
 	}
 
-	public Date getWrittenDate() {
+	public String getWrittenDate() {
 		return writtenDate;
 	}
 
-	public void setWrittenDate(Date writtenDate) {
+	public void setWrittenDate(String writtenDate) {
 		this.writtenDate = writtenDate;
 	}
 
