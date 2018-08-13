@@ -44,6 +44,12 @@
 }) */
 
 
+$(function(){
+	$("#chartHome").click(function(){
+		location.reload(); 
+	})
+})
+
 	$(function(){
 		var tabIndex = sessionStorage.getItem("tab");
 		 /* console.log("test", tabIndex);  */
@@ -77,7 +83,7 @@
   
 
   <ul class="nav nav-tabs" id="tabHeader">
-    <li><a data-toggle="tab" href="#home" onclick="setTabIndex(0);">Home</a></li>
+    <li><a data-toggle="tab" href="#home" onclick="setTabIndex(0);" id = "chartHome">Home</a></li>
     <li><a data-toggle="tab" href="#menu1" onclick="setTabIndex(1);">회원관리</a></li>
     <li><a data-toggle="tab" href="#menu2" onclick="setTabIndex(2);">프로젝트 종료확인</a></li>
     <li><a data-toggle="tab" href="#menu3" onclick="setTabIndex(3);">프로젝트 승인여부</a></li>
@@ -105,8 +111,7 @@
     </div>
     
     <div id="menu4" class="tab-pane fade">
-     <p>Eaqu222222222e ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.</p>
-    </div>
+	<c:import url="banner.jsp"></c:import>    </div>
     
   </div>
 </div>

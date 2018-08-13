@@ -128,6 +128,69 @@ ORDER BY P_PROJECT_CODE
 </select>
 
 
+<resultMap id="bannerMap" type="Admin">
+
+<id column="BANNER_CODE" property="bannerCode"/>
+
+<result column="BANNER_IMAGE" property="bannerImage"/>
+
+<result column="BANNER_LEVEL" property="bannerLevel"/>
+
+</resultMap>
+
+
+<resultMap id="bannerMap2" type="Banner">
+
+<id column="EMAIL" property="email"/>
+
+<result column="P_PROJECT_CODE" property="projectCode"/>
+
+<result column="P_PROJECT_NUMBER" property="projectNum"/>
+
+<result column="P_TITLE" property="title"/>
+
+<result column="P_CATEGORY" property="category"/>
+
+<result column="P_PRICE" property="price"/>
+
+<result column="P_END_DATE" property="endDate"/>
+
+<result column="P_CURRENTAMOUNT" property="currentAmount"/>
+
+<result column="BANNER_IMAGE" property="bannerImage"/>
+
+<result column="BANNER_LEVEL" property="bannerLevel"/>
+
+</resultMap>
+
+
+<select id="bannerProjectList" resultMap="bannerMap2">
+SELECT EMAIL,P_PROJECT_CODE,P_PROJECT_NUMBER,P_TITLE,P_CATEGORY,P_PRICE,P_END_DATE,P_CURRENTAMOUNT,BANNER_IMAGE,BANNER_LEVEL FROM PROJECT LEFT JOIN BANNER ON (BANNER_CODE = P_PROJECT_CODE) 
+<!-- WHERE P_OK = 'T' AND P_SEND_CONFIRM = 'F' AND P_END_DATE >=SYSDATE -->
+
+
+<!-- 주석풀것 -->
+
+ORDER BY BANNER_LEVEL,P_PROJECT_CODE DESC 
+</select>
+
+
+<select id="bannerTotalCount" resultType="int">
+SELECT COUNT(*) FROM PROJECT 
+<!-- WHERE P_OK = 'T' AND P_SEND_CONFIRM = 'F' AND P_END_DATE >= SYSDATE -->
+
+
+</select>
+
+<select id="bannerSearchList" resultMap="bannerMap2"> SELECT * FROM(SELECT CEIL(ROWNUM/10) AS NUM1, EMAIL,P_PROJECT_CODE,P_PROJECT_NUMBER,P_TITLE,P_CATEGORY,P_PRICE,P_END_DATE,P_CURRENTAMOUNT,BANNER_IMAGE,BANNER_LEVEL FROM(SELECT EMAIL,P_PROJECT_CODE,P_PROJECT_NUMBER,P_TITLE,P_CATEGORY,P_PRICE,P_END_DATE,P_CURRENTAMOUNT,BANNER_IMAGE,BANNER_LEVEL FROM PROJECT LEFT JOIN BANNER ON (BANNER_CODE = P_PROJECT_CODE) ORDER BY BANNER_LEVEL,P_PROJECT_CODE DESC)) WHERE (BANNER_LEVEL = 1 OR BANNER_LEVEL = 2 OR BANNER_LEVEL = 3 OR BANNER_LEVEL = 4 OR BANNER_LEVEL = 5) OR P_PROJECT_CODE LIKE '%'||#{keyword}||'%' OR P_TITLE LIKE '%'||#{keyword}||'%' </select>
+
+<update id="bannerDelete"> UPDATE BANNER SET BANNER_LEVEL = NULL WHERE BANNER_LEVEL = #{bCode} </update>
+
+<update id="bannerUpdate"> UPDATE BANNER SET BANNER_LEVEL = #{bCode} WHERE BANNER_CODE = #{pCode} </update>
+
+<update id="imagePlus"> UPDATE BANNER SET BANNER_IMAGE = #{bannerImage} WHERE BANNER_CODE = #{projectCode} </update>
+
+
 
 
 
