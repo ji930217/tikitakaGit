@@ -459,6 +459,23 @@
 	    margin-right: 0;
 	}
 	
+	.kzDOep {
+	    color: #000;
+	    font-weight: bolder;
+	    font-size: .9rem;
+	    margin-left: .75rem;
+	}
+	.kFkoaw {
+	    display: inline-block;
+	    background-color: #000;
+	    color: #fff;
+	    font-size: .9rem;
+	    font-weight: bolder;
+	    padding: .2rem .6rem;
+	    margin: .5rem 0 1.5rem;
+	}
+	
+	
 	#postListDiv, #writeBtnDiv{ display:block; }
 	#postFormDiv, .tojyI, #creatorPostDiv, #updatePostFormDiv{	display:none; }
 	
@@ -495,8 +512,13 @@
 					var postWriterEmail = data.email;
 					if(creatorEmail == postWriterEmail){
 						$("#sharePostBtnDiv").css("display", "flex");
+						$("#creatorLabel").html("창작자");
+						$("#postCategory").html("창작자 업데이트");
+						$("#postCategory").addClass("kFkoaw");
 					}else {
 						$("#sharePostBtnDiv").css("display", "none");
+						$("#postCategory").html("");
+						$("#postCategory").removeClass("kFkoaw");
 					}
 					
 					var projectCode = "<c:out value='${project.projectCode}'/>";		

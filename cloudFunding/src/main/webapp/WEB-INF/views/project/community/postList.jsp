@@ -267,13 +267,17 @@
 					$("#postWriterProfileImgSpan").html("<img class='ProfileImg__ProfileImg-s1o99mme-0 frVGN' src='" + data.profileImg + "'/>");
 					$("#replyWriterProfileImgDiv").html("<img class='ProfileImg__ProfileImg-s1o99mme-0 frVGN' src='${user.profile_img}'/>")
 					$("#replyForm input[name=postCode]").val(data.postCode);
-					
 					var creatorEmail = "<c:out value='${project.email}'/>";
 					var postWriterEmail = data.email;
 					if(creatorEmail == postWriterEmail){
 						$("#sharePostBtnDiv").css("display", "flex");
+						$("#creatorLabel").html("창작자");
+						$("#postCategory").html("창작자 업데이트");
+						$("#postCategory").addClass("kFkoaw");
 					}else {
 						$("#sharePostBtnDiv").css("display", "none");
+						$("#postCategory").html("");
+						$("#postCategory").removeClass("kFkoaw");
 					}
 					
 					var projectCode = "<c:out value='${project.projectCode}'/>";		
@@ -463,6 +467,7 @@
 				</div>
 			</div>
 			<div class="Post__Body-s1xz59uk-6 jBfZzn">
+				<div id="postCategory" class="Post__PostCategory-s1xz59uk-7"></div>
 				<div class="Post__Meta-s1xz59uk-8 bpPlVP">
 					<div class="Post__MetaInner-s1xz59uk-9 liBhuy">
 						<div class="Post__ProfileImageWrapper-s1xz59uk-10 hvbXDI">
@@ -475,6 +480,7 @@
 								<div class="Post__AuthorFullname-s1xz59uk-13 hINlJw">
 									<%-- <c:out value="${post.name }"/> --%>
 								</div>
+								<span id="creatorLabel" class="Post__CreatorLabel-s1xz59uk-14 kzDOep"></span>
 							</div>
 							<span>
 								7년 전
@@ -526,26 +532,28 @@
 				<!-- 댓글 영역 ajax 이용 -->
 				<div id="replyDiv">	</div>
 
-				<!-- 댓글 작성 폼 -->
-				<div class="Post__NewCommentWidgetWrapper-s1xz59uk-19 fONoPD">
-					<div id="replyWriterProfileImgDiv" class="Post__NewCommentWidgetProfileImage-s1xz59uk-20 bfkJdB">
-						
+				<c:if test="${!empty user }">
+					<!-- 댓글 작성 폼 -->
+					<div class="Post__NewCommentWidgetWrapper-s1xz59uk-19 fONoPD">
+						<div id="replyWriterProfileImgDiv" class="Post__NewCommentWidgetProfileImage-s1xz59uk-20 bfkJdB">
+							
+						</div>
+						<div class="Post__NewCommentWidget-s1xz59uk-21 dFpkpv">
+							<form id="replyForm" action="insertReply.do">
+								<input type="hidden" name="postCode"/>
+								<input type="hidden" name="email" value="<c:out value='${user.email }'/>"/>
+								<input type="hidden" name="projectCode" value="<c:out value='${project.projectCode }'/>"/>
+								<input class="Post__Input-s1xz59uk-22 gPUzbY" name="content" placeholder="댓글을 작성해주세요" value="" id="replyInput">
+								<input type="submit" style="display: none;">
+							</form>
+						</div>
+						<button class="Button__Button-s1ng5xda-0 cdAaGX" disabled="" id="insertReplyBtn"  onclick="javascript:replyForm.submit();">
+							<span class="Post__ForDesktop-s1xz59uk-23 frnsHP">올리기</span><span
+								class="Post__ForMobile-s1xz59uk-24 iMlIpu"><i
+								class="_30LNYFhw6qsigZSbwlGCDz _1QY7TzdLHKX3-BKPDNNYKF"></i></span>
+						</button>
 					</div>
-					<div class="Post__NewCommentWidget-s1xz59uk-21 dFpkpv">
-						<form id="replyForm" action="insertReply.do">
-							<input type="hidden" name="postCode"/>
-							<input type="hidden" name="email" value="<c:out value='${user.email }'/>"/>
-							<input type="hidden" name="projectCode" value="<c:out value='${project.projectCode }'/>"/>
-							<input class="Post__Input-s1xz59uk-22 gPUzbY" name="content" placeholder="댓글을 작성해주세요" value="" id="replyInput">
-							<input type="submit" style="display: none;">
-						</form>
-					</div>
-					<button class="Button__Button-s1ng5xda-0 cdAaGX" disabled="" id="insertReplyBtn"  onclick="javascript:replyForm.submit();">
-						<span class="Post__ForDesktop-s1xz59uk-23 frnsHP">올리기</span><span
-							class="Post__ForMobile-s1xz59uk-24 iMlIpu"><i
-							class="_30LNYFhw6qsigZSbwlGCDz _1QY7TzdLHKX3-BKPDNNYKF"></i></span>
-					</button>
-				</div>
+				</c:if>
 				
 			</div>
 		</div>
