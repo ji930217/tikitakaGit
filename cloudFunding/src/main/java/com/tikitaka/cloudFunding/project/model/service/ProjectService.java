@@ -23,10 +23,13 @@ public class ProjectService {
 		return dao.selectProjectNum(userId);
 	}
 	
+<<<<<<< HEAD
 	public ProjectVo selectProjectDetail(int projectCode) {
 		return dao.selectProjectDetail(projectCode);
 	}
 
+=======
+>>>>>>> branch 'kky' of https://github.com/ji930217/tikitakaGit.git
 	public ProjectVo selectProject(HashMap params) {
 		return dao.selectProject(params);
 	}
