@@ -7,6 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.tikitaka.cloudFunding.admin.model.dao.AdminDao;
+import com.tikitaka.cloudFunding.admin.model.vo.bannerVo;
 import com.tikitaka.cloudFunding.member.model.vo.Member;
 import com.tikitaka.cloudFunding.project.model.vo.ProjectVo;
 
@@ -65,6 +66,38 @@ public class AdminService {
 		
 		return admindao.serachfProject(keyword,no);
 	}
+
+	public List<bannerVo> bannerProjectList() {//배너 프로젝트 리스트 조회
+		
+		return admindao.bannerProjectList();
+	}
+
+	public int bannerTotalCount() {//배너 토탈카운트
+		
+		return admindao.bannerTotalCount();
+	}
+
+	public List<bannerVo> bannerSearchList(String keyword, int no) {
+		
+		return admindao.bannerSearchList(keyword, no);
+	}
+
+	public int bannerDelete(String bCode) {//배너 삭제
+		
+		return admindao.bannerDelete(bCode);
+	}
+
+	public int bannerUpdate(String pCode, String bCode) {
+		
+		return admindao.bannerUpdate(pCode,bCode);
+	}
+
+	public int imagePlus(bannerVo banner) {
+		
+		return admindao.imagePlus(banner);
+	}
+
+	
 
 	
 

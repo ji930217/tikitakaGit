@@ -15,6 +15,7 @@
   <typeAliases>
   	<typeAlias type="com.tikitaka.cloudFunding.member.model.vo.Member" alias="Member"/>
   	<typeAlias type="com.tikitaka.cloudFunding.admin.model.vo.AdminVo" alias="Admin"/>
+  	<typeAlias type="com.tikitaka.cloudFunding.admin.model.vo.bannerVo" alias="Banner"/>
   	<typeAlias type="com.tikitaka.cloudFunding.project.model.vo.ProjectVo" alias="Project"/>
   </typeAliases>
   
