@@ -45,8 +45,9 @@ public class MemberController {
 			@RequestParam("googleProfileImage") String googleProfileImage,
 			ModelAndView mv) {
 		
-		
+			
 		Member member = new Member(googleEmail, googleName, "google", googleProfileImage);
+		
 		memberService.insertMember(member);
 		
 		
