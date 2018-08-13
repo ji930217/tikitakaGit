@@ -32,7 +32,7 @@ public class ProjectVo {
 	private String pConfirm; //프로젝트 승인여부
 	private String sendConfirm; //송금여부확인
 	private int currentAmount; // 현재금액
-	
+	private int updateNum;
 	public ProjectVo() {}
 
 	
@@ -67,6 +67,17 @@ public class ProjectVo {
 		this.pConfirm = pConfirm;
 		this.sendConfirm = sendConfirm;
 		this.currentAmount = currentAmount;
+	}
+
+
+	
+	public int getUpdateNum() {
+		return updateNum;
+	}
+
+
+	public void setUpdateNum(int updateNum) {
+		this.updateNum = updateNum;
 	}
 
 

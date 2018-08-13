@@ -137,16 +137,22 @@
 										<label>프로젝트 제목</label>
 										<div class="_13KHfN73YmQgsYHxXvuh_J _12TAeoYDPLF0sfa3UIt6uZ _3ZTEzsKL-qDLECUGq4QcLv" style="cursor: pointer;">
 											<div class="_2dKJQZGqcB1T0xe0DzKY0H _152MAijd_UogerBKCVqZR_ _1lLHKI5v9AoCyeggtffvGZ">
-												<div>
-													<a><i class="_3WyCNpfRrfze5XqBAKgG6j WU1ox0-AeDX_zneKjnNMO _3wXDp_9ZjMHMVuf2NIy5Cg _1QY7TzdLHKX3-BKPDNNYKF"></i>
-													<!-- react-text: 1599 -->프로젝트 제목을 입력해주세요<!-- /react-text --></a>
+												
+												<div class="titleDiv">
+												<c:if test="${null eq project.title }">
+													<a><i class="_3WyCNpfRrfze5XqBAKgG6j WU1ox0-AeDX_zneKjnNMO _3wXDp_9ZjMHMVuf2NIy5Cg _1QY7TzdLHKX3-BKPDNNYKF"></i>프로젝트 제목을 입력해주세요</a>
+													<h3 style="display:none;"></h3>
+												</c:if>
+																		
 												</div>
+											
 											</div>
-											<div class="_2joJTlnkt26WGpxyvkNuCH _152MAijd_UogerBKCVqZR_ WU1ox0-AeDX_zneKjnNMO _3G8CRXtomRhisiZsw7Spx- _1lLHKI5v9AoCyeggtffvGZ">
+											<div class="titleMode _2joJTlnkt26WGpxyvkNuCH _152MAijd_UogerBKCVqZR_ WU1ox0-AeDX_zneKjnNMO _3G8CRXtomRhisiZsw7Spx- _1lLHKI5v9AoCyeggtffvGZ">
 												<a><i class="w6FPSPr8JA6xb8SSjkPtI _1QY7TzdLHKX3-BKPDNNYKF"></i>
 												<!-- react-text: 1603 /react-text -->
 													<!-- react-text: 1604 -->
-													입력하기
+													<c:if test="${null eq project.title }">입력하기</c:if>
+													<c:if test="${null ne project.title }">수정하기</c:if>
 													<!-- /react-text --></a>
 											</div>
 										</div>
@@ -166,13 +172,13 @@
 											class="_13KHfN73YmQgsYHxXvuh_J _12TAeoYDPLF0sfa3UIt6uZ _3ZTEzsKL-qDLECUGq4QcLv"
 											style="cursor: pointer;">
 											<div
-												class="_10NcCOp7F98F1udFv3te-o _152MAijd_UogerBKCVqZR_ _1lLHKI5v9AoCyeggtffvGZ">
+												class="imagehint _10NcCOp7F98F1udFv3te-o _152MAijd_UogerBKCVqZR_ _1lLHKI5v9AoCyeggtffvGZ">
 												<a><i
 													class="_3WyCNpfRrfze5XqBAKgG6j WU1ox0-AeDX_zneKjnNMO _1QY7TzdLHKX3-BKPDNNYKF"></i>
 													<!-- react-text: 1613 --> 프로젝트 대표 이미지를 등록해주세요.<!-- /react-text --></a>
 											</div>
 											<div
-												class="_3bWlQdzIFpvwX2B8mnOzgn _152MAijd_UogerBKCVqZR_ WU1ox0-AeDX_zneKjnNMO _3G8CRXtomRhisiZsw7Spx- _1lLHKI5v9AoCyeggtffvGZ">
+												class="imageMode _3bWlQdzIFpvwX2B8mnOzgn _152MAijd_UogerBKCVqZR_ WU1ox0-AeDX_zneKjnNMO _3G8CRXtomRhisiZsw7Spx- _1lLHKI5v9AoCyeggtffvGZ">
 												<a><i
 													class="w6FPSPr8JA6xb8SSjkPtI _1QY7TzdLHKX3-BKPDNNYKF"></i>
 													<!-- react-text: 1617 -->업로드하기<!-- /react-text --></a>
@@ -263,7 +269,19 @@
 																<!-- react-text: 1369 -->이미지 파일 선택하기<!-- /react-text --></span>
 															</div>
 														</div>
-														<input type="file" accept="image/*" style="display: none;">
+										<div
+											class="projectImage2 O-evLfgVQbD3QZA_PvfT_ _152MAijd_UogerBKCVqZR_ _1lLHKI5v9AoCyeggtffvGZ">
+											<div class="_2aquK6B3D0GYX7zQT4_IR7 _1f86jtPAIf76j1fECudW7t">
+												<img
+													class="_13KHfN73YmQgsYHxXvuh_J _18bwsw29jDyAzIPXzQkoS- _2aquK6B3D0GYX7zQT4_IR7"
+													src=""
+													alt="프로젝트 대표">
+											</div>
+										</div>
+										<form id="fileRepImg" action="projectImageUpdate.do" method="post" enctype="multipart/form-data">
+															<input id="file" type="file" accept="image/*" style="display: none;">
+															
+														</form>
 													</div>
 												</div>
 											</div>
@@ -272,7 +290,15 @@
 													class=" _152MAijd_UogerBKCVqZR_ WU1ox0-AeDX_zneKjnNMO _3G8CRXtomRhisiZsw7Spx- _1lLHKI5v9AoCyeggtffvGZ">
 													<!-- react-text: 1373 -->
 													<!-- /react-text -->
-													<button
+									<button
+										class="imgeAddBtn _13KHfN73YmQgsYHxXvuh_J _3SbGdzxKM6M_AeOQWLNqks _18T1PLssfUK23Oz9uVd0fv _1Qdv504-1XMeYXZyb0xQZT">
+										<i class="_2Bj5CPWMCPsh-eeXFlOdE8 _1QY7TzdLHKX3-BKPDNNYKF"></i>
+										<!-- react-text: 267 -->
+										다른 이미지 파일로 교체하기
+										<!-- /react-text -->
+									</button>
+
+									<button
 														class="closeBtn _13KHfN73YmQgsYHxXvuh_J _3SbGdzxKM6M_AeOQWLNqks _18T1PLssfUK23Oz9uVd0fv ">
 														<i class="-o8oGI_QAOKsVIJOUOUmV _1QY7TzdLHKX3-BKPDNNYKF"></i>
 														<!-- react-text: 1376 -->
@@ -299,14 +325,15 @@
 											style="cursor: pointer;">
 											<div
 												class="_2dKJQZGqcB1T0xe0DzKY0H _152MAijd_UogerBKCVqZR_ _1lLHKI5v9AoCyeggtffvGZ">
-												<div>
+												<div class="summaryDiv">
 													<a><i
 														class="_3WyCNpfRrfze5XqBAKgG6j WU1ox0-AeDX_zneKjnNMO _3wXDp_9ZjMHMVuf2NIy5Cg _1QY7TzdLHKX3-BKPDNNYKF"></i>
 														<!-- react-text: 1627 -->프로젝트 요약을 입력해주세요<!-- /react-text --></a>
+													<h3 style="display:none;"></h3>
 												</div>
 											</div>
 											<div
-												class="_2joJTlnkt26WGpxyvkNuCH _152MAijd_UogerBKCVqZR_ WU1ox0-AeDX_zneKjnNMO _3G8CRXtomRhisiZsw7Spx- _1lLHKI5v9AoCyeggtffvGZ">
+												class="summaryMode _2joJTlnkt26WGpxyvkNuCH _152MAijd_UogerBKCVqZR_ WU1ox0-AeDX_zneKjnNMO _3G8CRXtomRhisiZsw7Spx- _1lLHKI5v9AoCyeggtffvGZ">
 												<a><i
 													class="w6FPSPr8JA6xb8SSjkPtI _1QY7TzdLHKX3-BKPDNNYKF"></i>
 													<!-- react-text: 1631 -->입력하기<!-- /react-text --></a>
@@ -372,14 +399,15 @@
 											style="cursor: pointer;">
 											<div
 												class="_2dKJQZGqcB1T0xe0DzKY0H _152MAijd_UogerBKCVqZR_ _1lLHKI5v9AoCyeggtffvGZ">
-												<div>
+												<div class="categoryDiv">
 													<a><i
 														class="_3WyCNpfRrfze5XqBAKgG6j WU1ox0-AeDX_zneKjnNMO _3wXDp_9ZjMHMVuf2NIy5Cg _1QY7TzdLHKX3-BKPDNNYKF"></i>
 														<!-- react-text: 1641 -->프로젝트 카테고리를 입력해주세요<!-- /react-text --></a>
+														<h3 style="display:none;"></h3>
 												</div>
 											</div>
 											<div
-												class="_2joJTlnkt26WGpxyvkNuCH _152MAijd_UogerBKCVqZR_ WU1ox0-AeDX_zneKjnNMO _3G8CRXtomRhisiZsw7Spx- _1lLHKI5v9AoCyeggtffvGZ">
+												class="categoryMode _2joJTlnkt26WGpxyvkNuCH _152MAijd_UogerBKCVqZR_ WU1ox0-AeDX_zneKjnNMO _3G8CRXtomRhisiZsw7Spx- _1lLHKI5v9AoCyeggtffvGZ">
 												<a><i
 													class="w6FPSPr8JA6xb8SSjkPtI _1QY7TzdLHKX3-BKPDNNYKF"></i>
 													<!-- react-text: 1645 -->입력하기<!-- /react-text --></a>
@@ -412,67 +440,67 @@
 																class="category _13KHfN73YmQgsYHxXvuh_J _3_IGkn3uaje0g2ZA6Tx9wd _3vQWHh2J_erdzly2Ip3e87"><option
 																	selected disabled value="프로젝트 카테고리를 정해주세요">프로젝트
 																	카테고리를 정해주세요</option>
-																<option value="game">게임</option>
-																<option value="tabletop-rpg">- TRPG</option>
-																<option value="mobile-game">- 모바일 게임</option>
-																<option value="board-game">- 보드게임</option>
-																<option value="video-game">- 비디오게임</option>
-																<option value="performance">공연</option>
-																<option value="dance">- 무용</option>
-																<option value="musical">- 뮤지컬</option>
-																<option value="theater">- 연극</option>
-																<option value="festival">- 페스티벌</option>
-																<option value="design">디자인</option>
-																<option value="space-design">- 공간디자인</option>
-																<option value="graphic-design">- 시각디자인</option>
-																<option value="product-design">- 제품디자인</option>
-																<option value="character-design">- 캐릭터 디자인</option>
-																<option value="comics">만화</option>
-																<option value="graphic-novel">- 그래픽 노블</option>
-																<option value="webtoon">- 웹툰</option>
-																<option value="comic-book">- 출판 만화</option>
-																<option value="art">미술</option>
-																<option value="public-art">- 공공예술</option>
-																<option value="digital-art">- 디지털 아트</option>
-																<option value="art-exhibition">- 미술 전시</option>
-																<option value="illustration">- 일러스트레이션</option>
-																<option value="performance-art">- 행위예술</option>
-																<option value="mixed-media">- 혼합매체</option>
-																<option value="painting">- 회화</option>
-																<option value="crafts">공예</option>
-																<option value="photography">사진</option>
-																<option value="film-and-video">영화 ∙ 비디오</option>
-																<option value="narrative-film">- 극영화</option>
-																<option value="documentary">- 다큐멘터리</option>
-																<option value="short-film">- 단편영화</option>
-																<option value="animation">- 애니메이션</option>
-																<option value="webseries">- 웹시리즈</option>
-																<option value="food">푸드</option>
-																<option value="baking">- 베이킹</option>
-																<option value="cookbook">- 요리책</option>
-																<option value="music">음악</option>
-																<option value="publication">출판</option>
-																<option value="nonfiction">- 논픽션</option>
-																<option value="magazine">- 매거진</option>
-																<option value="fiction">- 소설</option>
-																<option value="poetry">- 시집</option>
-																<option value="art-book">- 아트북</option>
-																<option value="childrens-book">- 어린이책</option>
-																<option value="journalism">- 저널리즘</option>
-																<option value="ebook">- 전자출판</option>
-																<option value="academic">- 학술</option>
-																<option value="technology">테크놀로지</option>
-																<option value="opensource-software">- 공개 소프트웨어</option>
-																<option value="app">- 어플리케이션</option>
-																<option value="hardware">- 하드웨어</option>
-																<option value="fashion">패션</option>
-																<option value="clothes">- 의류</option>
-																<option value="accessories">- 액세서리</option>
-																<option value="fashion_goods">- 패션잡화</option>
-																<option value="campaign">캠페인</option>
-																<option value="human_rights">- 인권</option>
-																<option value="environment">- 환경</option>
-																<option value="society">- 사회</option></select>
+																<option value="게임">게임</option>
+																<option value="TRPG">- TRPG</option>
+																<option value="모바일">- 모바일 게임</option>
+																<option value="보드게임">- 보드게임</option>
+																<option value="비디오게임">- 비디오게임</option>
+																<option value="공연">공연</option>
+																<option value="무용">- 무용</option>
+																<option value="뮤지컬">- 뮤지컬</option>
+																<option value="연극">- 연극</option>
+																<option value="페스티벌">- 페스티벌</option>
+																<option value="디자인">디자인</option>
+																<option value="공간디자인">- 공간디자인</option>
+																<option value="시각디자인">- 시각디자인</option>
+																<option value="제품디자인">- 제품디자인</option>
+																<option value="캐릭터 디자인">- 캐릭터 디자인</option>
+																<option value="만화">만화</option>
+																<option value="그래픽 노블">- 그래픽 노블</option>
+																<option value="웹툰">- 웹툰</option>
+																<option value="출판 만화">- 출판 만화</option>
+																<option value="미술">미술</option>
+																<option value="공공예술">- 공공예술</option>
+																<option value="디지털 아트">- 디지털 아트</option>
+																<option value="미술 전시">- 미술 전시</option>
+																<option value="일러스트레이션">- 일러스트레이션</option>
+																<option value="행위예술">- 행위예술</option>
+																<option value="혼합매체">- 혼합매체</option>
+																<option value="회화">- 회화</option>
+																<option value="공예">공예</option>
+																<option value="사진">사진</option>
+																<option value="영화 ∙ 비디오">영화 ∙ 비디오</option>
+																<option value="극영화">- 극영화</option>
+																<option value="다큐멘터리">- 다큐멘터리</option>
+																<option value="단편영화">- 단편영화</option>
+																<option value="애니메이션">- 애니메이션</option>
+																<option value="웹시리즈">- 웹시리즈</option>
+																<option value="푸드">푸드</option>
+																<option value="베이킹">- 베이킹</option>
+																<option value="요리책">- 요리책</option>
+																<option value="음악">음악</option>
+																<option value="출판">출판</option>
+																<option value="논픽션">- 논픽션</option>
+																<option value="매거진">- 매거진</option>
+																<option value="소설">- 소설</option>
+																<option value="시집">- 시집</option>
+																<option value="아트북">- 아트북</option>
+																<option value="어린이책">- 어린이책</option>
+																<option value="저널리즘">- 저널리즘</option>
+																<option value="전자출판">- 전자출판</option>
+																<option value="학술">- 학술</option>
+																<option value="테크놀로지">테크놀로지</option>
+																<option value="공개 소프트웨어">- 공개 소프트웨어</option>
+																<option value="어플리케이션">- 어플리케이션</option>
+																<option value="하드웨어">- 하드웨어</option>
+																<option value="패션">패션</option>
+																<option value="의류">- 의류</option>
+																<option value="액세서리">- 액세서리</option>
+																<option value="패션잡화">- 패션잡화</option>
+																<option value="캠페인">캠페인</option>
+																<option value="인권">- 인권</option>
+																<option value="환경">- 환경</option>
+																<option value="사회">- 사회</option></select>
 														</div>
 													</div>
 													<br>
@@ -522,13 +550,13 @@
 											class="_13KHfN73YmQgsYHxXvuh_J _12TAeoYDPLF0sfa3UIt6uZ _3ZTEzsKL-qDLECUGq4QcLv"
 											style="cursor: pointer;">
 											<div
-												class="_3lIDndOaEWwBcdNUKuMYOQ _152MAijd_UogerBKCVqZR_ _1lLHKI5v9AoCyeggtffvGZ">
+												class="profileHint _3lIDndOaEWwBcdNUKuMYOQ _152MAijd_UogerBKCVqZR_ _1lLHKI5v9AoCyeggtffvGZ">
 												<a><i
 													class="_3WyCNpfRrfze5XqBAKgG6j WU1ox0-AeDX_zneKjnNMO _1QY7TzdLHKX3-BKPDNNYKF"></i>
 												<!-- react-text: 1671 --> 진행자님의 프로필 이미지를 올려주세요.<!-- /react-text --></a>
 											</div>
 											<div
-												class="_25P2Jb3SrgiAhvibHBFOrS _152MAijd_UogerBKCVqZR_ WU1ox0-AeDX_zneKjnNMO _3G8CRXtomRhisiZsw7Spx- _1lLHKI5v9AoCyeggtffvGZ">
+												class="profileMode _25P2Jb3SrgiAhvibHBFOrS _152MAijd_UogerBKCVqZR_ WU1ox0-AeDX_zneKjnNMO _3G8CRXtomRhisiZsw7Spx- _1lLHKI5v9AoCyeggtffvGZ">
 												<a><i
 													class="w6FPSPr8JA6xb8SSjkPtI _1QY7TzdLHKX3-BKPDNNYKF"></i>
 												<!-- react-text: 1675 --> 입력하기<!-- /react-text --></a>
@@ -546,7 +574,8 @@
 											<!-- react-text: 235 -->
 											<!-- /react-text -->
 											<div class="_13KHfN73YmQgsYHxXvuh_J _3XFc3K1AoSi5ujhxKESb0P">
-												<div class="_13KHfN73YmQgsYHxXvuh_J rLqvd1axk9i-3cU72yTkF">
+												<!--프로필 업로드 전  -->
+												<div class="profileAfter _13KHfN73YmQgsYHxXvuh_J rLqvd1axk9i-3cU72yTkF">
 													<div class="_2aquK6B3D0GYX7zQT4_IR7">
 														<i
 															class="_3Hs9Qa2HoKTK0Bt1LDlMh_ _3C1GIkccqqGyujnub2YVhV _3sFSjAZS4gQdCAyN3OfyFG zuoIjgwLYtj967XtkNW-w _1QY7TzdLHKX3-BKPDNNYKF"></i>
@@ -564,12 +593,36 @@
 																이미지 파일 선택하기
 																<!-- /react-text -->
 															</button>
-															<input type="file" accept="image/*"
+															<input id="projectImageInput" type="file" accept="image/*"
 																style="display: none;">
 														</div>
 													</div>
 												</div>
-											</div>
+												<!--프로필 업로드 후  -->
+								<div
+									class="profileBefore _13KHfN73YmQgsYHxXvuh_J rLqvd1axk9i-3cU72yTkF">
+									<div class="_2aquK6B3D0GYX7zQT4_IR7">
+										<img
+											class="_13KHfN73YmQgsYHxXvuh_J _2-N-uV2y5apkjtxqdVnsop _3C1GIkccqqGyujnub2YVhV _2aquK6B3D0GYX7zQT4_IR7 "
+											src=""
+											alt="진행자님의 프로필">
+									</div>
+									<div
+										class="_1Q6Jc42wFxkau45kJfofPl _3G8CRXtomRhisiZsw7Spx- _3ZgG-OSv0XE3y-h3oPaDsl">
+										<p>파일 형식은 jpg 또는 png로, 사이즈는 가로 200px, 세로 200px 이상으로 올려주세요.</p>
+										<div class="">
+											<button
+												class="profileImage _13KHfN73YmQgsYHxXvuh_J _3SbGdzxKM6M_AeOQWLNqks _18T1PLssfUK23Oz9uVd0fv">
+												<i class="_2Bj5CPWMCPsh-eeXFlOdE8 _1QY7TzdLHKX3-BKPDNNYKF"></i>
+												<!-- react-text: 393 -->
+												다른 이미지 파일로 교체하기
+												<!-- /react-text -->
+											</button>
+											<input type="file" accept="image/*" style="display: none;">
+										</div>
+									</div>
+								</div>
+							</div>
 											<div class="_13KHfN73YmQgsYHxXvuh_J _3ZTEzsKL-qDLECUGq4QcLv">
 												<div
 													class=" _152MAijd_UogerBKCVqZR_ WU1ox0-AeDX_zneKjnNMO _3G8CRXtomRhisiZsw7Spx- _1lLHKI5v9AoCyeggtffvGZ">
@@ -599,7 +652,7 @@
 											style="cursor: pointer;">
 											<div
 												class="_2dKJQZGqcB1T0xe0DzKY0H _152MAijd_UogerBKCVqZR_ _1lLHKI5v9AoCyeggtffvGZ">
-												<div>
+												<div class="projectName">
 													<h3><c:out value="${project.name }"/></h3>
 												</div>
 											</div>
@@ -681,14 +734,15 @@
 											style="cursor: pointer;">
 											<div
 												class="_2dKJQZGqcB1T0xe0DzKY0H _152MAijd_UogerBKCVqZR_ _1lLHKI5v9AoCyeggtffvGZ">
-												<div>
+												<div class="MCIntroduceDiv">
 													<a><i
 														class="_3WyCNpfRrfze5XqBAKgG6j WU1ox0-AeDX_zneKjnNMO _3wXDp_9ZjMHMVuf2NIy5Cg _1QY7TzdLHKX3-BKPDNNYKF"></i>
 													<!-- react-text: 1697 -->진행자 소개를 입력해주세요<!-- /react-text --></a>
+													<h3 style="display:none;"></h3>
 												</div>
 											</div>
 											<div
-												class="_2joJTlnkt26WGpxyvkNuCH _152MAijd_UogerBKCVqZR_ WU1ox0-AeDX_zneKjnNMO _3G8CRXtomRhisiZsw7Spx- _1lLHKI5v9AoCyeggtffvGZ">
+												class="MCIntroduceMode _2joJTlnkt26WGpxyvkNuCH _152MAijd_UogerBKCVqZR_ WU1ox0-AeDX_zneKjnNMO _3G8CRXtomRhisiZsw7Spx- _1lLHKI5v9AoCyeggtffvGZ">
 												<a><i
 													class="w6FPSPr8JA6xb8SSjkPtI _1QY7TzdLHKX3-BKPDNNYKF"></i>
 												<!-- react-text: 1701 -->입력하기<!-- /react-text --></a>
