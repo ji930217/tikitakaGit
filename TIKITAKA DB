@@ -3,12 +3,12 @@ GRANT RESOURCE, CONNECT, CREATE VIEW TO TIKITAKA;
 
 =================
 
-Begin
+//Begin
   for c in (select table_name from user_tables) loop
     execute immediate ('drop table '||c.table_name||' cascade constraints');
   end loop;
 End;
-//맴버 
+//테이블 전체삭제!! 
 
 CREATE TABLE MEMBER(
   EMAIL VARCHAR2(200) PRIMARY KEY,
