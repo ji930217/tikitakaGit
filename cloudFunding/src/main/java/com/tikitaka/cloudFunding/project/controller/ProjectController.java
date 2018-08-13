@@ -20,13 +20,13 @@ public class ProjectController {
 
 	@Autowired
 	ProjectService projectService;
-<<<<<<< HEAD
+
 	
-=======
+
 	@Autowired
 	CommunityService cService;
 
->>>>>>> refs/heads/master
+
 	@RequestMapping("projectList.do")
 	public String projectList(){
 		return "project/projectList";
