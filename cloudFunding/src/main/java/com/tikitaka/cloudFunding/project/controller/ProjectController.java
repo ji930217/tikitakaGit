@@ -20,22 +20,10 @@ public class ProjectController {
 
 	@Autowired
 	ProjectService projectService;
-<<<<<<< HEAD
-	
-=======
+ 
 	@Autowired
 	CommunityService cService;
 
-<<<<<<< HEAD
->>>>>>> refs/heads/master
-	@RequestMapping("projectList.do")
-=======
-	@RequestMapping("projectPayment.do")
->>>>>>> branch 'kky' of https://github.com/ji930217/tikitakaGit.git
-	public String projectList(){
-<<<<<<< HEAD
-		return "project/projectList";
-	}
 	@RequestMapping("payment.do")
 	public String payment(){
 		return "project/payment/payment";
@@ -43,9 +31,6 @@ public class ProjectController {
 	@RequestMapping("payment_after.do")
 	public String payment_a(){
 		return "project/payment/payment_after";
-=======
-		return "project/payment/payment";
->>>>>>> branch 'kky' of https://github.com/ji930217/tikitakaGit.git
 	}
 	@RequestMapping("payment_a.do")
 	public String project_a(){
