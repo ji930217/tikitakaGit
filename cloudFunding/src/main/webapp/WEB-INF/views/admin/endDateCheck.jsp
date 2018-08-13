@@ -111,7 +111,7 @@ function validate2(){
       <th scope="col" id = "th3">진행자</th>
       <th scope="col" id = "th4">남은기간</th>
       <th scope="col" id = "th5">성공여부(금액)</th>
-      <th scope="col" id = "th6">상세정보</th>
+      <th scope="col" id = "th6">관리자기능</th>
     </tr>
   </thead>
   <tbody>
@@ -124,10 +124,10 @@ function validate2(){
       <td id = "td3"><c:out value = "${fp.name }"/></td>
       <td id = "td4">
       
-      <c:if test ="${fp.endDate < toDay }">
+      <c:if test ="${fp.endDate >= toDay }">
       <c:out value = "종료임박 (${fp.endDate }까지)"/>
       </c:if>
-      <c:if test ="${fp.endDate > toDay }">
+      <c:if test ="${fp.endDate < toDay }">
       <c:out value = "종료 "/>
       </c:if>
       </td>
@@ -144,8 +144,16 @@ function validate2(){
       <%-- <c:out value = "${fp.category }"/> --%>
       
       </td>
-      <td id = "td6"><button type="button" class="btn btn-secondary btn-xs">추가정보</button>
-      		<button type="button" class="btn btn-secondary btn-xs">종료확인</button></td>
+      <td id = "td6">
+      		<c:if test ="${fp.endDate >= toDay }">
+      			<button type="button" class="btn btn-secondary btn-xs">상세정보</button>
+      		</c:if>
+      		<c:if test ="${fp.endDate < toDay }">
+     			<button type="button" class="btn btn-secondary btn-xs">상세정보</button>
+      			<button type="button" class="btn btn-secondary btn-xs">종료확인</button>
+      		</c:if>
+      		
+      </td>
     </tr>
    </c:forEach>
   </c:if>

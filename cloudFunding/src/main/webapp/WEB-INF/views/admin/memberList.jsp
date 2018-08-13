@@ -120,7 +120,7 @@ function validate1(){
       <td id = "td1"><c:out value = "${m.name }"/></td>
       <td id = "td2"><c:out value = "${m.email }"/></td>
       <td id = "td3"><c:out value = "${m.enroll_date }"/></td>
-      <td id = "td4"><button type="button" class="btn btn-secondary btn-xs">상세보기</button>
+      <td id = "td4"><button type="button" class="btn btn-secondary btn-xs">상세정보</button>
       		<button type="button" class="btn btn-secondary btn-xs">정지</button></td>
     </tr>
    </c:forEach>

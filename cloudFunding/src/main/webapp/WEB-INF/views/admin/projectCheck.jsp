@@ -109,7 +109,7 @@ function validate(){
       <th scope="col" id = "th4">마감일</th>
       <th scope="col" id = "th5">목표금액</th>
       <th scope="col" id = "th6">분류</th>
-      <th scope="col" id = "th7">상세정보</th>
+      <th scope="col" id = "th7">관리자기능</th>
     </tr>
   </thead>
   <tbody>
@@ -121,7 +121,7 @@ function validate(){
       <td id = "td4"><c:out value = "${p.endDate }"/></td>
       <td id = "td5"><fmt:formatNumber value = "${p.price }" type = "number"/><c:out value="원"/></td>
       <td id = "td6"><c:out value = "${p.category }"/></td>
-      <td id = "td7"><button type="button" class="btn btn-secondary btn-xs">상세보기</button>
+      <td id = "td7"><button type="button" class="btn btn-secondary btn-xs">상세정보</button>
       		<button type="button" class="btn btn-secondary btn-xs">승인</button>
       		<button type="button" class="btn btn-secondary btn-xs">거절</button></td>
     </tr>
