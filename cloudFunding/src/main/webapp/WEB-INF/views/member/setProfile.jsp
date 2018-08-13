@@ -1,6 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
- <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
      
     
     
@@ -82,7 +82,7 @@
     
 <nav class="b-nav-global">
   <ul class="b-nav-global__items">
-    <a href="/" class="logo ">tumblbug</a>
+    <a href="/" class="logo ">TikiTaka</a>
   </ul>
 </nav> <!-- end .b-nav-global -->
  
@@ -119,7 +119,7 @@
       <ul class="b-menu b-menu_horiz_yes is_vaporable" style="opacity: 3.67969;">
         <li class="b-menu__item"> <a href="setProfile.do" class="b-menu__item__link">프로필 설정</a></li>
         <li class="b-menu__item"> <a href="#" class="b-menu__item__link">계정 설정</a></li>
-        <li class="b-menu__item"> <a href="#" class="b-menu__item__link">지불정보 설정</a></li>
+        <li class="b-menu__item"> <a href="setAccount.do" class="b-menu__item__link">지불정보 설정</a></li>
       </ul>
 
 

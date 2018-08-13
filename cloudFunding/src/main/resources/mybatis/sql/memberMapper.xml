@@ -41,7 +41,12 @@
 		  PHONE3 = #{phone3}
 		WHERE EMAIL = #{email}
   	</update>
-  
+  	
+  	<update id="updateMemberPassword" parameterType="Member">
+  		UPDATE  MEMBER SET
+		  PASSWORD = #{password}
+		WHERE EMAIL = #{email}		  	
+  	</update>
   
 
   

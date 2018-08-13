@@ -26,6 +26,10 @@ public class MemberService {
 		return dao.updateMemberProfile(member);
 	}
 
+	public int updateMemberPassword(Member member) {
+		return dao.updateMemberPassword(member);
+	}
+
 	
 
 	
