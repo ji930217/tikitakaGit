@@ -10,6 +10,12 @@
 <result property="password" column="PASSWORD"/>
 <result property="profile_img" column="PROFILE_IMG"/>
 <result property="enroll_date" column="ENROLL_DATE"/>
+<result property="location" column="LOCATION"/>
+<result property="shortDescription" column="SHORTDESCRIPTION"/>
+<result property="homepage" column="HOMEPAGE"/>
+<result property="phone1" column="PHONE1"/>
+<result property="phone2" column="PHONE2"/>
+<result property="phone3" column="PHONE3"/>
 </resultMap>
 
 <select id = "selectMemberList" resultMap="memberMap">
