@@ -25,7 +25,7 @@ public class ProjectController {
 	CommunityService cService;
 
 
-	@RequestMapping("projectList.do")
+	
 	@RequestMapping("projectList.do")
 	public String projectList(){
 		return "project/projectList";
