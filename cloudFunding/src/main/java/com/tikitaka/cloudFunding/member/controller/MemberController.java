@@ -45,8 +45,9 @@ public class MemberController {
 			@RequestParam("googleProfileImage") String googleProfileImage,
 			ModelAndView mv) {
 		
-		
+			
 		Member member = new Member(googleEmail, googleName, "google", googleProfileImage);
+		
 		memberService.insertMember(member);
 		
 		
@@ -248,11 +249,39 @@ public class MemberController {
 	int result = memberService.updateMemberProfile(member);
 		
 		
-	return "redirect:index.do";
+	return "index.do";
 	}
 	
 	
+	@RequestMapping("setAccount.do")
+	public String setAccount() {
+		return "member/setAccount";
+	}
 	
+	
+	@RequestMapping("setAccountImpl.do")
+	public String setAccountImpl(
+			@RequestParam("email") String email,
+			@RequestParam("before_password") String beforePassword,
+			@RequestParam("password") String password
+			) {
+		
+		
+		Member member = new Member();
+		member.setEmail(email);
+		member.setPassword(beforePassword);
+		
+		Member calledMember = memberService.selectMemeber(member);
+		
+		if(!member.getPassword().equals(calledMember.getPassword())) {
+			return "common/errorpage";
+		}
+		
+		member.setPassword(password);
+		int result = memberService.updateMemberPassword(member);
+		
+		return "index.do";
+	}
 	
 	
 	

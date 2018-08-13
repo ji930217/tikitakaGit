@@ -20,9 +20,19 @@ public class ProjectController {
 
 	@Autowired
 	ProjectService projectService;
+<<<<<<< HEAD
+=======
+
+	
+
+>>>>>>> refs/heads/master
 	@Autowired
 	CommunityService cService;
 
+<<<<<<< HEAD
+=======
+
+>>>>>>> refs/heads/master
 	@RequestMapping("projectList.do")
 	public String projectList(){
 		return "project/projectList";

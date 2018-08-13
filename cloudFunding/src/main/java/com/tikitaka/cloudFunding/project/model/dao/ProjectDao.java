@@ -31,6 +31,10 @@ public class ProjectDao {
 	public int updateProject(HashMap params) {
 		return sqlSession.update("projectMapper.updateProject",params);
 	}
+	
+	public ProjectVo selectProjectDetail(int projectCode) {
+	      return sqlSession.selectOne("projectMapper.selectProjectDetail",projectCode);
+	   }
 
 	public ProjectVo selectProjectDetail(int projectCode) {
 		return sqlSession.selectOne("projectMapper.selectProjectDetail",projectCode);
