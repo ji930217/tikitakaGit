@@ -22,6 +22,10 @@ public class ProjectService {
 	public int selectProjectNum(String userId) {
 		return dao.selectProjectNum(userId);
 	}
+	
+	public ProjectVo selectProjectDetail(int projectCode) {
+		return dao.selectProjectDetail(projectCode);
+	}
 
 	public ProjectVo selectProject(HashMap params) {
 		return dao.selectProject(params);

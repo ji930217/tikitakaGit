@@ -1147,7 +1147,7 @@ $('#carouselExampleIndicators').carousel({
       </div>
     </div>
     <div class="Carousel__CarouselContents iEZvlH" data-reactid="91">
-      <div class="Carousel__Column hEilqP" data-reactid="92"> <a class="ProjectItem__ProjectItemCard hFAREh" href="projectDetail.do" data-reactid="93"><img class="ProjectItem__ProjectCoverimage bGqbmB" src="resources/images/header/tumblbug-pci.imgix.net/fcdb199a7461439ec4083d3fa5aa05ddda97c7d9/6f13578acde5f434401db2340d6effacc378863e/4ed27b563664b37034ebeba6dac774fbe17fcf25/fb667098-0112-4782-9fc6-be178e9e7244cd3c.png?ixlib=rb-1.1.0&amp;w=620&amp;h=465&amp;auto=format%2Ccompress&amp;lossless=true&amp;fit=crop&amp;s=e1a11854f54300f644912e39523e5ffc" alt="&#x27;보통의 물건&#x27;에 &#x27;보통의 하루&#x27;를 담다 이미지" data-reactid="94"/>
+      <div class="Carousel__Column hEilqP" data-reactid="92"> <a class="ProjectItem__ProjectItemCard hFAREh" href="projectDetail.do?projectCode=1" data-reactid="93"><img class="ProjectItem__ProjectCoverimage bGqbmB" src="resources/images/header/tumblbug-pci.imgix.net/fcdb199a7461439ec4083d3fa5aa05ddda97c7d9/6f13578acde5f434401db2340d6effacc378863e/4ed27b563664b37034ebeba6dac774fbe17fcf25/fb667098-0112-4782-9fc6-be178e9e7244cd3c.png?ixlib=rb-1.1.0&amp;w=620&amp;h=465&amp;auto=format%2Ccompress&amp;lossless=true&amp;fit=crop&amp;s=e1a11854f54300f644912e39523e5ffc" alt="&#x27;보통의 물건&#x27;에 &#x27;보통의 하루&#x27;를 담다 이미지" data-reactid="94"/>
         <div class="ProjectItem__ProjectTextWrapper fOsIlY" data-reactid="95">
           <div class="ProjectItem__FundingTitle kCGzYC" data-reactid="96">
             <h1 class="ProjectItem__ProjectTitle gEZuLR" data-reactid="97">&#x27;보통의 물건&#x27;에 &#x27;보통의 하루&#x27;를 담다</h1>

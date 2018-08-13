@@ -82,7 +82,7 @@
       display: inline-block;
       background: white;
       color: #444;
-      width: 190px;
+      width: 320px;
       border-radius: 5px;
       border: thin solid #888;
       box-shadow: 1px 1px 1px grey;
@@ -92,15 +92,15 @@
       cursor: pointer;
     }
     span.label {
-      font-family: serif;
+      font-family: Times New Roman;
       font-weight: normal;
     }
     span.icon {
       background: url('/cloudFunding/resources/images/sign-in/g-normal.png') transparent 5px 50% no-repeat;
       display: inline-block;
       vertical-align: middle;
-      width: 42px;
-      height: 42px;
+      width: 90px;
+      height: 70px;
     }
     span.buttonText {
       display: inline-block;
@@ -240,7 +240,7 @@
                         <!-- <h3 class="panel-title"><div class="g-signin2" data-onsuccess="onSignIn" data-theme="dark"></div></h3> -->
                         
                         <div id="gSignInWrapper" >
-					    <span class="label" style="color: black">구글 계정으로 로그인 : </span>
+					    <span class="label" style="color: black"><!-- 구글 계정으로 로그인 : --> </span>
 					    <div id="customBtn" class="customGPlusSignIn">
 					      <span class="icon"></span>
 					      <span class="buttonText"> Google</span>

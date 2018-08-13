@@ -1,5 +1,8 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/functions" prefix="fn" %>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %> 
 <!DOCTYPE html>
 <html>
 <head>
@@ -206,13 +209,13 @@
 	.show-on-scroll { visibility: hidden; }
 	.show-on-scroll.shown { visibility: visible; }
 	
-	
 </style>
 <script>
 	$(function(){
 		$(".ceunQL").css("display", "block");
+		
 	});
-	
+		
 	function closeMessagePopup(){
 		$("#messageDiv, #messageDiv select").css("visibility", "hidden");
 	}
@@ -268,9 +271,11 @@
 	/* 스크롤 이벤트 */
 	$(window).scroll(function() {
 		 var $el = $('.show-on-scroll');
-		 /* console.log($(".hsuyOO").css("height").replace("px", ""));
-		 console.log($(this).scrollTop()); */
-		 if($(this).scrollTop() >= $(".hsuyOO").css("height").replace("px", "")) $el.addClass('shown');
+		 var height = $(".hsuyOO").css("height").replace("px", "");
+		 var height2 = $(".lblHJx").css("height").replace("px", "");
+		 var threshold = Math.ceil(height) + Math.ceil(height2) + 10;
+		 /* console.log($(this).scrollTop()); */
+		 if($(this).scrollTop() >= threshold) $el.addClass('shown');
 		 else $el.removeClass('shown');
 	});
 	
@@ -285,13 +290,17 @@
 			<div
 				class="ContentsNavigation__ProjectContentsNavigationInner-s6dhfrc-2 eeeApW">
 				<div class="ContentsNavigation__NavLeft-s6dhfrc-3 eSsILz">
-					<a id="storyFixedBtn" class="ContentsNavigation__NavItem-s6dhfrc-0 gEWplf" href="projectDetail.do">스토리
+					<a id="storyFixedBtn" class="ContentsNavigation__NavItem-s6dhfrc-0 gEWplf" href="projectDetail.do?projectCode=<c:out value='${project.projectCode }'/>">스토리
 					</a>
-					<a id="communityFixedBtn" class="ContentsNavigation__NavItem-s6dhfrc-0 gEWplf" href="projectCommunity.do">
-						커뮤니티
-						<span lass="ContentsNavigation__CommunityPostAmount-s6dhfrc-6 bReGoj">8</span>
+					<a id="communityFixedBtn" class="ContentsNavigation__NavItem-s6dhfrc-0 gEWplf" href="projectCommunity.do?projectCode=<c:out value='${project.projectCode }'/>">
+						커뮤니티 
+						<c:if test="${count gt 0 }">
+							<span class="ContentsNavigation__CommunityPostAmount-s6dhfrc-6 bReGoj">
+									<c:out value="${count }"/>
+							</span>
+						</c:if>
 					</a>
-					<a id="policyFixedBtn" class="ContentsNavigation__NavItem-s6dhfrc-0 gEWplf" href="projectPolicy.do">환불 및 교환</a>
+					<a id="policyFixedBtn" class="ContentsNavigation__NavItem-s6dhfrc-0 gEWplf" href="projectPolicy.do?projectCode=<c:out value='${project.projectCode }'/>">환불 및 교환</a>
 				</div>
 				<div class="ContentsNavigation__NavRight-s6dhfrc-4 eAgLGx">
 					<button class="Button__Button-s1ng5xda-0 jKslKa">프로젝트 밀어주기</button>
@@ -368,17 +377,16 @@
 						data-reactid="40">
 						<a href="/category/product-design" data-reactid="41"><span
 							class="ProjectIntroduction__ProjectCategory-c7b94s-4 boFKej"
-							data-reactid="42">제품디자인</span></a>
+							data-reactid="42"><c:out value="${project.category }"/></span></a>
 						<h1 class="ProjectIntroduction__ProjectTitle-c7b94s-5 cyqGTD"
-							data-reactid="43">고양이 다이어트에 딱, 스파이더 캣토이</h1>
+							data-reactid="43"><c:out value="${project.title }"/></h1>
 						<div class="ProjectIntroduction__Creators-c7b94s-6 guVzeB"
 							data-reactid="44">
 							<span class="ProfileImg__ProfileImg-s1o99mme-0 itDimW"
 								data-reactid="45"></span><a
 								class="ProjectIntroduction__CreatorName-c7b94s-7 gDTPbS"
 								href="https://tumblbug.com/u/donobawaromodaza/projects"
-								target="_blank" rel="noopener noreferrer" data-reactid="46">millicube
-								밀리큐브</a>
+								target="_blank" rel="noopener noreferrer" data-reactid="46"><c:out value="${project.name }"/></a>
 						</div>
 					</div>
 				</div>
@@ -417,10 +425,8 @@
 							<div
 								class="ProjectIntroduction__StatusTitle-c7b94s-15 htCDgL"
 								data-reactid="57">모인금액</div>
-							<div
-								class="ProjectIntroduction__StatusValue-c7b94s-16 bvKOwU"
-								data-reactid="58">
-								2,331,900
+							<div class="ProjectIntroduction__StatusValue-c7b94s-16 bvKOwU" data-reactid="58">
+								<c:out value="${project.currentAmount }"/>
 								<span class="ProjectIntroduction__Small-c7b94s-18 ihuRTA"
 									data-reactid="60">원</span><span
 									class="ProjectIntroduction__FundingRate-c7b94s-17 kIYDgq"
@@ -464,11 +470,11 @@
 							<div data-reactid="76">펀딩 진행중</div>
 								<span data-reactid="77">
 								목표 금액인
-								500,000
+								<fmt:formatNumber value="${project.price }" pattern="#,###"/>
 								원이 모여야만 결제됩니다.
 								<br data-reactid="81" />
 							결제는 
-								2018년 8월 18일
+								<fmt:formatDate type="date" dateStyle="full" value="${project.endDate }"/>
 								에 다함께 진행됩니다.
 							</span>
 						</div>
@@ -499,6 +505,36 @@
 				</aside>
 			</div>
 		</div>
+	</div>
+	
+	<!-- 스토리, 커뮤니티, 환불정책 버튼 영역 -->
+	<div id="contentsNavigation" data-reactid="92">
+		<span style="font-size: 0;" data-reactid="93"></span>
+		<nav
+			class="ContentsNavigation__ProjectContentsNavigation-s6dhfrc-1 lblHJx"
+			data-reactid="94">
+			<div
+				class="ContentsNavigation__ProjectContentsNavigationInner-s6dhfrc-2 eeeApW"
+				data-reactid="95">
+				<div class="ContentsNavigation__NavLeft-s6dhfrc-3 eSsILz"
+					data-reactid="96">
+					<a id="storyBtn" class="ContentsNavigation__NavItem-s6dhfrc-0 gEWplf"
+						href="projectDetail.do?projectCode=<c:out value='${project.projectCode }'/>" data-reactid="97">스토리</a>
+						<a id="communityBtn" class="ContentsNavigation__NavItem-s6dhfrc-0 gEWplf"
+						href="projectCommunity.do?projectCode=<c:out value='${project.projectCode }'/>" data-reactid="98">
+						커뮤니티 
+						<c:if test="${count gt 0 }">
+							<span class="ContentsNavigation__CommunityPostAmount-s6dhfrc-6 bReGoj">
+									<c:out value="${count }"/>
+							</span>
+						</c:if>
+					</a><a id="policyBtn" class="ContentsNavigation__NavItem-s6dhfrc-0 gEWplf"
+						href="projectPolicy.do?projectCode=<c:out value='${project.projectCode }'/>" data-reactid="101">환불 및 교환</a>
+				</div>
+			</div>
+		</nav>
+		
+		
 	</div>
 </body>
 </html>

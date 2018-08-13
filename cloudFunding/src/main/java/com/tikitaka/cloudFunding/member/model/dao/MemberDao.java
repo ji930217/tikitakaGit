@@ -6,6 +6,7 @@ import org.springframework.stereotype.Repository;
 
 import com.tikitaka.cloudFunding.member.model.vo.Member;
 
+
 @Repository
 public class MemberDao {
 
@@ -18,8 +19,19 @@ public class MemberDao {
 	}
 
 	public Member selectMember(Member member) {
-		System.out.println("dao.selectMember");
+		
 		return sqlSession.selectOne("MemberMapper.selectMemberEmail", member);
 	}
+
+	public int updateMemberProfile(Member member) {
+		return sqlSession.update("MemberMapper.updateMemberProfile", member);
+	}
+
+	
+
+	
+	
+
+	
 	
 }

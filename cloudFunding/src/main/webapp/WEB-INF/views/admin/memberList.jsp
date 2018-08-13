@@ -16,6 +16,7 @@
 	
 	#memberTable{
 	margin-top:50px;
+	
 	}
 	
 	#searchBar{
@@ -26,7 +27,10 @@
 	border-radius: 5px;
 	}
 	
-	#th3{
+	#th1,#th2,#th3,#th4{
+		text-align: center;
+	}
+	#td1,#td2,#td3,#td4{
 		text-align: center;
 	}
 	
@@ -104,20 +108,20 @@ function validate1(){
 <c:if test="${!empty memberList }">
   <thead>
     <tr>    
-      <th scope="col">이름</th>
-      <th scope="col">이메일</th>
+      <th scope="col" id = "th1">이름</th>
+      <th scope="col" id = "th2">이메일</th>
       <th scope="col" id = "th3">가입일</th>
-      <th scope="col">관리자기능</th>
+      <th scope="col" id = "th4">관리자기능</th>
     </tr>
   </thead>
   <tbody>
   <c:forEach var="m" items="${memberList}">
     <tr>
-      <td><c:out value = "${m.name }"/></td>
-      <td><c:out value = "${m.email }"/></td>
-      <td><c:out value = "${m.enroll_date }"/></td>
-      <td><button type="button" class="btn btn-secondary btn-xs">수정</button>
-      		<button type="button" class="btn btn-secondary btn-xs">삭제</button></td>
+      <td id = "td1"><c:out value = "${m.name }"/></td>
+      <td id = "td2"><c:out value = "${m.email }"/></td>
+      <td id = "td3"><c:out value = "${m.enroll_date }"/></td>
+      <td id = "td4"><button type="button" class="btn btn-secondary btn-xs">상세보기</button>
+      		<button type="button" class="btn btn-secondary btn-xs">정지</button></td>
     </tr>
    </c:forEach>
   </c:if>

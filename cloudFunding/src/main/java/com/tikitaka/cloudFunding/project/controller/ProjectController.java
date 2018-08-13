@@ -10,6 +10,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
 
+import com.tikitaka.cloudFunding.community.model.service.CommunityService;
 import com.tikitaka.cloudFunding.member.model.vo.Member;
 import com.tikitaka.cloudFunding.project.model.service.ProjectService;
 import com.tikitaka.cloudFunding.project.model.vo.ProjectVo;
@@ -19,7 +20,13 @@ public class ProjectController {
 
 	@Autowired
 	ProjectService projectService;
+<<<<<<< HEAD
 	
+=======
+	@Autowired
+	CommunityService cService;
+
+>>>>>>> refs/heads/master
 	@RequestMapping("projectList.do")
 	public String projectList(){
 		return "project/projectList";
@@ -77,26 +84,21 @@ public class ProjectController {
 	}
 	
 	@RequestMapping("projectDetail.do")
-	public ModelAndView projectDetail(/*int pProjectCode, */ModelAndView mv){
-		/*ProjectVo project = pService.selectProject(pProjectCode);
-		mv.addObject("project", project);*/
+	public ModelAndView selectProjectDetail(int projectCode, ModelAndView mv){
+		ProjectVo project = projectService.selectProjectDetail(projectCode);
+		int count = cService.selectPostCount(projectCode);
+		mv.addObject("count", count);
+		mv.addObject("project", project);
 		mv.setViewName("project/detail/projectDetail");
 		return mv;
 		
 	}
-	@RequestMapping("projectCommunity.do")
-	public ModelAndView projectCommunity(/*int pProjectCode, */ModelAndView mv){
-		// 해당 프로젝트의 게시글/댓글 조회해서 넘겨주기
-		/*ProjectVo project = pService.selectProject(pProjectCode);
-		mv.addObject("project", project);*/
-		mv.setViewName("project/detail/community");
-		return mv;
-	}
 	@RequestMapping("projectPolicy.do")
-	public ModelAndView projectPolicy(/*int pProjectCode, */ModelAndView mv){
-		// 해당 프로젝트의 교환 및 환불 정책 조회해서 넘겨주기
-		/*ProjectVo project = pService.selectProject(pProjectCode);
-		mv.addObject("project", project);*/
+	public ModelAndView projectPolicy(int projectCode, ModelAndView mv){
+		ProjectVo project = projectService.selectProjectDetail(projectCode);
+		int count = cService.selectPostCount(projectCode);
+		mv.addObject("count", count);
+		mv.addObject("project", project);
 		mv.setViewName("project/detail/policy");
 		return mv;
 	}

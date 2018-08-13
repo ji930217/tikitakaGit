@@ -271,11 +271,6 @@
 	    align-items: center;
 	}
 		
-	.buEHkh {
-	    display: inherit;
-	    position: relative;
-	    width: 100%;
-	}
 </style>
 
 <script>

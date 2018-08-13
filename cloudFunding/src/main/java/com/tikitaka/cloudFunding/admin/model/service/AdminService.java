@@ -61,6 +61,13 @@ public class AdminService {
 		return admindao.selectfProjectList();
 	}
 
+	public List<ProjectVo> searchfProject(String keyword, int no) {//끝나가는 프로젝트 검색
+		
+		return admindao.serachfProject(keyword,no);
+	}
+
+	
+
 
 
 

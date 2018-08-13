@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC
+"-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="communityMapper">
+<!-- <mapper namespace="PhotoMapper">
+    <resultMap type="Photo" id="resultPhoto">
+		<id property="no" column="NO"/>        
+		<result property="title" column="TITLE"/>
+		<result property="content" column="CONTENT"/>
+		<result property="readCount" column="READ_COUNT"/>
+		<result property="writeDate" column="WRITE_DATE"/>
+		<result property="userId" column="USER_ID"/>
+		<collection property="reply" column="NO" ofType="Reply" resultMap="replyMap"/>
+    </resultMap>
+    <resultMap type="Reply" id="replyMap">
+        <id property="no" column="R_NO"/>        
+		<result property="photoNo" column="PHOTO_NO"/>
+		<result property="writer" column="WRITER"/>
+		<result property="content" column="R_CONTENT"/>
+		<result property="writeDate" column="R_DATE"/>
+    </resultMap>
+    config에서 낙타체로 자동 매핑되도록 설정함
+	<select id="selectPhotoList" resultType="Photo">
+	<select id="selectPhotoList" resultMap="resultPhoto">
+		<include refid="photoHeader"/>
+		SELECT NO, TITLE, CONTENT, READ_COUNT, WRITE_DATE, USER_ID
+		FROM PHOTO
+	</select> 
+	
+	<select id="selectPhoto" parameterType="hashmap" resultMap="resultPhoto">
+	<select id="selectPhoto" parameterType="hashmap" resultType="Photo">
+		SELECT P.NO, P.TITLE, P.CONTENT, P.READ_COUNT, P.WRITE_DATE, P.USER_ID, R.NO AS R_NO, P.NO AS PHOTO_NO, R.WRITER, R.CONTENT AS R_CONTENT, R.WRITE_DATE AS R_DATE
+		FROM PHOTO P
+		LEFT OUTER JOIN PHOTO_REPLY R ON (P.NO = R.PHOTO_NO)
+		SELECT NO, TITLE, CONTENT, READ_COUNT, WRITE_DATE, USER_ID
+		FROM PHOTO
+		<include refid="photoHeader"/>
+		WHERE P.NO = #{no} 
+	</select>
+	<sql id="photoHeader">
+	    SELECT NO, TITLE, CONTENT, READ_COUNT, WRITE_DATE, USER_ID
+		FROM PHOTO
+	</sql>
+    
+</mapper> -->
+
+	<resultMap type="Post" id="postMap">
+		<id property="postCode" column="POST_CODE" />
+		<result property="projectCode" column="P_PROJECT_CODE"/>
+		<result property="email" column="EMAIL"/>
+		<result property="content" column="CONTENT"/>
+		<result property="writtenDate" column="WRITTEN_DATE"/>
+		<result property="delflag" column="DELFLAG"/>
+		<result property="name" column="NAME"/>
+		<result property="profileImg" column="PROFILE_IMG"/>
+		<collection property="replyList" column="REPLY_CODE" ofType="Reply" resultMap="replyMap"/>
+	</resultMap>
+	<resultMap type="Reply" id="replyMap">
+		<id property="replyCode" column="REPLY_CODE"/>        
+		<result property="postCode" column="R_POST_CODE"/>
+		<result property="content" column="R_CONTENT"/>
+		<result property="email" column="R_EMAIL"/>
+		<result property="writtenDate" column="R_WRITTEN_DATE"/>
+		<result property="delflag" column="R_DELFLAG"/>
+		<result property="name" column="R_NAME"/>
+		<result property="profileImg" column="R_PROFILE_IMG"/>
+	</resultMap>
+
+	<sql id="selectPostHeader">
+	   SELECT P.POST_CODE, P_PROJECT_CODE, P.EMAIL, P.CONTENT, P.WRITTEN_DATE, P.DELFLAG, NAME, PROFILE_IMG,
+        				R.REPLY_CODE, R.EMAIL AS R_EMAIL, R.CONTENT AS R_CONTENT, R.WRITTEN_DATE AS R_WRITTEN_DATE, R.DELFLAG AS R_DELFLAG, 
+        					(SELECT NAME FROM MEMBER WHERE MEMBER.EMAIL = R.EMAIL) AS R_NAME,
+                  (SELECT PROFILE_IMG FROM MEMBER WHERE MEMBER.EMAIL = R.EMAIL) AS R_PROFILE_IMG
+		FROM POST P
+		LEFT JOIN REPLY R ON(P.POST_CODE = R.POST_CODE)
+    	LEFT JOIN MEMBER M ON(P.EMAIL = M.EMAIL)
+	</sql>
+	<select id="selectPostList" parameterType="int" resultMap="postMap">
+	    <include refid="selectPostHeader"/>
+	    WHERE P_PROJECT_CODE = #{projectCode}
+	    AND P.DELFLAG != 'T'
+	    ORDER BY P.POST_CODE DESC
+	</select>
+	<select id="selectPost" parameterType="int" resultMap="postMap">
+		<include refid="selectPostHeader"/>   
+		WHERE P.DELFLAG != 'T' 
+		AND P.POST_CODE = #{postCode}
+	</select>
+	<select id="selectPostCount" parameterType="int" resultType="int">
+		SELECT COUNT(*) AS COUNT
+		FROM POST
+		WHERE P_PROJECT_CODE = #{projectCode}	   
+		AND DELFLAG != 'T' 
+	</select>
+	
+	<insert id="insertPost" parameterType="Post">
+		INSERT INTO POST VALUES(SEQ_POST.NEXTVAL, #{projectCode}, #{email}, #{content}, SYSDATE, DEFAULT)	    
+	</insert>
+
+	<update id="updatePost" parameterType="Post">
+	    UPDATE POST SET CONTENT = #{content}
+	    WHERE POST_CODE = #{postCode}
+	</update>
+	
+	<!-- <delete id="deletePost" parameterType="int">
+	    DELETE FROM POST
+	    WHERE POST_CODE = #{postCode}
+	</delete> -->
+	<delete id="deletePost" parameterType="int">
+	    UPDATE POST
+	    SET DELFLAG = 'T'
+	    WHERE POST_CODE = #{postCode}
+	</delete>
+	
+	
+</mapper>

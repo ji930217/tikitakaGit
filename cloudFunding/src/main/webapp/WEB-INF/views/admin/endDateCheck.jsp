@@ -1,8 +1,12 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
     <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
-    
-    
+    <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
+	<jsp:useBean id="toDay" class="java.util.Date" />
+	
+	<fmt:formatDate value="${toDay}" pattern="yyyy-MM-dd"  var = "toDay"/>
+
+
     
     <style>
 	
@@ -14,7 +18,7 @@
 	margin-top:50px;
 	}
 	
-	#searchBar2{
+	#searchBar{
 	float: right;
 	}
 	
@@ -22,7 +26,10 @@
 	border-radius: 5px;
 	}
 	
-	#th3{
+	#th1,#th2,#th3,#th4, #th5, #th6{
+		text-align: center;
+	}
+	#td1,#td2,#td3,#td4, #td5, #td6{
 		text-align: center;
 	}
 	
@@ -33,6 +40,7 @@
 	
 	#nodatatitle{
 	margin-top:80px;	
+	margin-bottom:150px;
 	text-align: center;
 	font-size:30px;
 	}
@@ -60,8 +68,8 @@ function validate2(){
 	return true;
 }
 
-  function finishprojectSelectAll(){
-	 location.href = "finishprojectSelectAll.do"; 
+  function fprojectSelectAll(){
+	 location.href = "selectAll.do"; 
 	
 }  
 
@@ -85,12 +93,12 @@ function validate2(){
 
 </script>
 
- <div id = "searchBar2">
-<form class="navbar-form pull-left" action = "searchFinishProject.do" onsubmit = "return validate2();">
+ <div id = "searchBar">
+<form class="navbar-form pull-left" action = "searchfProject.do" onsubmit = "return validate2();">
   <input type="text" class="span2" id = "finishprojectInputBar" name = "keyword">
   <button type="submit" class="btn">검색</button>
 </form>
-<button type="button" class="btn" id = "allfinishProjectSelectBtn" onclick = "finishprojectSelectAll();">전체조회</button>
+<button type="button" class="btn" id = "allfinishProjectSelectBtn" onclick = "fprojectSelectAll();">전체조회</button>
 </div> 
 
 
@@ -98,31 +106,46 @@ function validate2(){
 <c:if test="${!empty fprojectList }">
   <thead>
     <tr>    
-      <th scope="col">프로젝트번호</th>
-      <th scope="col">제목</th>
+      <th scope="col" id = "th1">프로젝트코드</th>
+      <th scope="col" id = "th2">제목</th>
       <th scope="col" id = "th3">진행자</th>
-      <th scope="col">성공여부(금액)</th>
-      <th scope="col">상세정보</th>
+      <th scope="col" id = "th4">남은기간</th>
+      <th scope="col" id = "th5">성공여부(금액)</th>
+      <th scope="col" id = "th6">상세정보</th>
     </tr>
   </thead>
   <tbody>
   <c:forEach var="fp" items="${fprojectList}">
+  
+  
     <tr>
-      <td><c:out value = "${fp.projectNum }"/></td>
-      <td><c:out value = "${fp.title }"/></td>
-      <td><c:out value = "${fp.name }"/></td>
-      <td>
-      <c:if test = "${fp.price < fp.currentAmount }">
-      성공
+      <td id = "td1"><c:out value = "${fp.projectCode }"/></td>
+      <td id = "td2"><c:out value = "${fp.title }"/></td>
+      <td id = "td3"><c:out value = "${fp.name }"/></td>
+      <td id = "td4">
+      
+      <c:if test ="${fp.endDate < toDay }">
+      <c:out value = "종료임박 (${fp.endDate }까지)"/>
+      </c:if>
+      <c:if test ="${fp.endDate > toDay }">
+      <c:out value = "종료 "/>
+      </c:if>
+      </td>
+     
+      <td id = "td5">
+      <c:if test = "${fp.price < fp.currentAmount }">   
+      <c:out value = "성공		("/><fmt:formatNumber value = "${fp.currentAmount }" type = "number"/><c:out value="원, "/>
+      <fmt:formatNumber value = "${(fp.currentAmount/fp.price)*100 }" pattern = ".00"/><c:out value = "%)"/>
       </c:if>
       <c:if test = "${fp.price > fp.currentAmount }">
-      실패
+      <c:out value = "실패		("/><fmt:formatNumber value = "${fp.currentAmount }" type = "number"/><c:out value="원, "/>
+      <fmt:formatNumber value = "${(fp.currentAmount/fp.price)*100 }" pattern = ".00"/><c:out value = "%)"/>
       </c:if>
       <%-- <c:out value = "${fp.category }"/> --%>
       
       </td>
-      <td><button type="button" class="btn btn-secondary btn-xs">상세보기</button>
-      		<button type="button" class="btn btn-secondary btn-xs">승인</button></td>
+      <td id = "td6"><button type="button" class="btn btn-secondary btn-xs">추가정보</button>
+      		<button type="button" class="btn btn-secondary btn-xs">종료확인</button></td>
     </tr>
    </c:forEach>
   </c:if>
