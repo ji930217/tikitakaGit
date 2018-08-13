@@ -32,4 +32,8 @@ public class ProjectDao {
 		return sqlSession.update("projectMapper.updateProject",params);
 	}
 
+	public ProjectVo selectProjectDetail(int projectCode) {
+		return sqlSession.selectOne("projectMapper.selectProjectDetail",projectCode);
+	}
+
 }

@@ -463,13 +463,92 @@
 	#postFormDiv, .tojyI, #creatorPostDiv, #updatePostFormDiv{	display:none; }
 	
 	#communityFixedBtn, #communityBtn{ color: rgb(0, 0, 0); border-bottom: 3px solid rgb(0, 0, 0); padding-bottom: calc(0.5rem - 3px); }
-
+	#sharePostBtnDiv{ display:none; }
+	
+	
 </style>
 <script>
+	$(function(){
+		// 댓글 달고나면 해당 게시글 상세화면 영역 보이게
+		var postCode = sessionStorage.getItem("postCode");
+	       /* console.log("test", tabIndex);  */
+	      if(postCode != null){
+			$(".tojyI").css("display", "block");
+			$("#postFormDiv").css("display", "none");
+			$("#postListDiv").css("display", "none");
+			$("#creatorPostDiv").css("display", "none");
+			$("#writeBtnDiv").css("display", "none");	   
+			
+			$.ajax({
+				url : "selectPost.do",
+				type : "post",
+/* 				data : {index : $("#userIndexes").val()}, */
+				data : {postCode : postCode},
+				success : function(data){
+					$(".hKVypK > .storyContent").html(data.content);
+					$(".hINlJw").html(data.name);
+					$("#postWriterProfileImgSpan").html("<img class='ProfileImg__ProfileImg-s1o99mme-0 frVGN' src='" + data.profileImg + "'/>");
+					$("#replyWriterProfileImgDiv").html("<img class='ProfileImg__ProfileImg-s1o99mme-0 frVGN' src='${user.profile_img}'/>")
+					$("#replyForm input[name=postCode]").val(data.postCode);
+					
+					var creatorEmail = "<c:out value='${project.email}'/>";
+					var postWriterEmail = data.email;
+					if(creatorEmail == postWriterEmail){
+						$("#sharePostBtnDiv").css("display", "flex");
+					}else {
+						$("#sharePostBtnDiv").css("display", "none");
+					}
+					
+					var projectCode = "<c:out value='${project.projectCode}'/>";		
+					
+					$(".Post__CommunityPostCommentsAmount-s1xz59uk-25").html("<strong>" + data.replyList.length + "</strong>개의 댓글이 있습니다");
+					var $replyDiv = $("#replyDiv");
+					var resultStr = "";
+					// 댓글이 없는 경우 구분하기
+					/* console.log(data.replyList[0].content); */
+					if(0 < data.replyList.length) {
+						for(var key in data.replyList) {
+							var reply = data.replyList[key];
+							resultStr += "<div class='Comment__Comment-wppgnq-0 hlvHZI'>";
+							resultStr += "<div class='Comment__CommentProfileImageWrapper-wppgnq-2 dbsGhw'>";
+							if(null != reply.profileImg) {
+								resultStr += "<img class='ProfileImg__ProfileImg-s1o99mme-0 wtQUk' src='" + reply.profileImg + "'/></div>";
+							} else {
+								resultStr += "<span class='ProfileImg__ProfileImg-s1o99mme-0 wtQUk'></span></div>";
+							}
+							resultStr += "<div class='Comment__CommentInner-wppgnq-1 TozEg'>";
+							resultStr += "<div class='Comment__CommentMeta-wppgnq-3 Ovbfn'>";
+							resultStr += "<div class='Comment__CommentAuthorFullnameWrapper-wppgnq-4 ingGrN'>";
+							resultStr += "<div class='Comment__CommentAuthorFullname-wppgnq-6 hGUkNg'>" + reply.name + "</div>";
+							if(creatorEmail == reply.email) {						
+								resultStr += "<span class='Comment__CommentCreatorLabel-wppgnq-7 heUSFE'>창작자</span>";
+							}
+							resultStr += "</div>";
+							/* moment(reply.writtenDate).format("YYYY.MM.DD hh:mm") */
+							resultStr += "<div class='Comment__CommentedAt-wppgnq-5 bryKXn'>" + reply.writtenDate + "</div></div>";
+							resultStr += "<div class='Comment__CommentContents-wppgnq-8 dNCkru'>" + reply.content + "</div></div></div>";
+						}
+					} else {
+						resultStr += "<div class='Post__NoCommentsPlaceHolder-s1xz59uk-26 cHZzdT'>";
+						resultStr += "<i class='_30LNYFhw6qsigZSbwlGCDz _1R0ZK0Z1zZIqLZ8NkjnsD6 t92eur5rwOw7wGfKPt3l8 _1QY7TzdLHKX3-BKPDNNYKF'></i>";
+						resultStr += "댓글이 없습니다</div>";
+					}
+					$replyDiv.html(resultStr);
+				}, error : function(e){
+					console.log("ajax insertReply 에러");
+				}
+			});
+			
+			sessionStorage.removeItem("postCode");
+	      }
+	      
+	});
+
 	function openPostForm(){
 		$("#postFormDiv").css("display", "block");
 		$("#postListDiv").css("display", "none");
 		$("#writeBtnDiv").css("display", "none");
+		$("#creatorPostDiv").css("display", "none");
 	}
 	function closePostForm(){
 		$("#postFormDiv").css("display", "none");
@@ -490,6 +569,7 @@
 			success : function(data){
 				$("#updatePostFormDiv .note-editable").html(data.content);
 				$("input[name=postCode]").val(data.postCode);
+				
 				/* console.log($("input[name=postCode]").val()); */
 			}, error : function(e){
 				console.log("ajax 게시글 수정 페이지 이동 시 에러");
@@ -514,6 +594,8 @@
 		$("#postListDiv").css("display", "block");
 		$("#creatorPostDiv").css("display", "none");
 	}
+	
+	
 	
 	
 </script>

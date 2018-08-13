@@ -10,7 +10,8 @@ public class ReplyVo {
 	private int postCode;
 	private String content;
 	private String email;
-	private Date writtenDate;
+//	private Date writtenDate;
+	private String writtenDate;
 	private char delflag;
 	
 	private String name;
@@ -20,9 +21,18 @@ public class ReplyVo {
 		super();
 	}
 
+
 	public int getReplyCode() {
 		return replyCode;
 	}
+
+	public ReplyVo(int postCode, String email, String content) {
+		super();
+		this.postCode = postCode;
+		this.email = email;
+		this.content = content;
+	}
+
 
 	public void setReplyCode(int replyCode) {
 		this.replyCode = replyCode;
@@ -52,11 +62,11 @@ public class ReplyVo {
 		this.email = email;
 	}
 
-	public Date getWrittenDate() {
+	public String getWrittenDate() {
 		return writtenDate;
 	}
 
-	public void setWrittenDate(Date writtenDate) {
+	public void setWrittenDate(String writtenDate) {
 		this.writtenDate = writtenDate;
 	}
 

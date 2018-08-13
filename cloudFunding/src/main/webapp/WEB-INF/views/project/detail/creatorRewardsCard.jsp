@@ -292,47 +292,34 @@
 					<div class="CreatorCard__CreatorProfile-yeytpy-2 eYscdN">
 						<span class="ProfileImg__ProfileImg-s1o99mme-0 owWgL"></span><a
 							href="/u/film13536/projects"><span
-							class="CreatorCard__CreatorName-yeytpy-3 fVfxlF">일삼오-삼육</span></a>
+							class="CreatorCard__CreatorName-yeytpy-3 fVfxlF"><c:out value="${project.name }"/></span></a>
 					</div>
-					<div class="CreatorCard__CreatorBiography-yeytpy-4 dHxdxH">‘135-36’필름은
-						우리가 가장 많이 사용하는 36컷짜리 35mm 필름을 일컫습니다. 가장 많이 쓰이며 누구나 쉽게 쓸수 있는
-						35mm 필름처럼, 필름생활을 즐기는 모두와 함께하고 싶은 ‘일삼오-삼육’입니다.</div>
+					<div class="CreatorCard__CreatorBiography-yeytpy-4 dHxdxH"><c:out value="${project.introduce }"/></div>
 					<div class="Divider__Divider-s16ihjfx-0 ilHpOi"></div>
 					<div class="CreatorCard__CreatorStats-yeytpy-5 iBGoJt">
 						<div>
-							<!-- react-text: 699 -->
-							마지막 로그인&nbsp;&nbsp;
-							<!-- /react-text -->
-							<b>2시간 전</b>
+							<!-- 마지막 로그인&nbsp;&nbsp;
+							<b>2시간 전</b> -->
 						</div>
-						<!-- react-text: 701 -->
 						진행한 프로젝트&nbsp;&nbsp;
-						<!-- /react-text -->
-						<b>1</b>
-						<!-- react-text: 703 -->
+						<b><c:out value="${project.projectNum }"/></b>
 						&nbsp;&nbsp;&nbsp;&nbsp; 밀어준 프로젝트&nbsp;&nbsp;
-						<!-- /react-text -->
+						<!-- 밀어준건 후원현황 테이블에서 이메일을 조건으로 해서 count 값 조회 -->
 						<b>0</b>
 					</div>
 					<div class="CreatorCard__CreatorContactButton-yeytpy-6 khYIRi">
 						<button class="Button__Button-s1ng5xda-0 dxWcyc" onclick="openMessagePopup();">
 							<i class="_3YmAkQhwzI7o-uUWz_8Mp4 _1QY7TzdLHKX3-BKPDNNYKF"></i>
-							<!-- react-text: 708 -->
 							창작자에게 문의하기
-							<!-- /react-text -->
 						</button>
 					</div>
 				</div>
 			</div>
 			<div class="Rewards__Rewards-s13hisnh-0 bfEmee">
 				<div class="Rewards__RewardsLabel-s13hisnh-1 spnVx">
-					<!-- react-text: 712 -->
 					선택할 수 있는
-					<!-- /react-text -->
 					<b>8</b>
-					<!-- react-text: 714 -->
 					개의 선물이 있습니다
-					<!-- /react-text -->
 				</div>
 				<div class="RewardCard__RewardCardWrapper-ibjars-0 kcmHIB">
 					<div class="Card__Card-s1i1esb8-0 hBOBRE">

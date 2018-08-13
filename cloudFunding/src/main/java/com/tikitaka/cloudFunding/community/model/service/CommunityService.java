@@ -7,6 +7,7 @@ import org.springframework.stereotype.Service;
 
 import com.tikitaka.cloudFunding.community.model.dao.CommunityDao;
 import com.tikitaka.cloudFunding.community.model.vo.PostVo;
+import com.tikitaka.cloudFunding.community.model.vo.ReplyVo;
 
 @Service
 public class CommunityService {
@@ -35,6 +36,10 @@ public class CommunityService {
 
 	public int deletePost(int postCode) {
 		return cDao.deletePost(postCode);
+	}
+
+	public int insertReply(ReplyVo reply) {
+		return cDao.insertReply(reply);
 	}
 
 	
