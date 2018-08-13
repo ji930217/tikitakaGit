@@ -25,7 +25,27 @@
   		FROM MEMBER
 		WHERE EMAIL = #{email}
   	</select>
-  
+  	
+  	
+  	<update id="updateMemberProfile" parameterType="Member" >
+  		UPDATE  MEMBER SET
+		  NAME = #{name}, PASSWORD = #{password}, 
+		  PROFILE_IMG = #{profile_img},
+		  LOCATION = #{location},
+		  SHORTDESCRIPTION = #{shortDescription},
+		  HOMEPAGE = #{homepage},
+		  PHONE1 = #{phone1},
+		  PHONE2 = #{phone2},
+		  PHONE3 = #{phone3}
+		WHERE EMAIL = #{email}
+  	</update>
+  	
+  	<update id="updateMemberPassword" parameterType="Member">
+  		UPDATE  MEMBER SET
+		  PASSWORD = #{password}
+		WHERE EMAIL = #{email}		  	
+  	</update>
+
   
 
   
