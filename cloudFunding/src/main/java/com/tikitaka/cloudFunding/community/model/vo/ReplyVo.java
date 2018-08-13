@@ -21,9 +21,18 @@ public class ReplyVo {
 		super();
 	}
 
+
 	public int getReplyCode() {
 		return replyCode;
 	}
+
+	public ReplyVo(int postCode, String email, String content) {
+		super();
+		this.postCode = postCode;
+		this.email = email;
+		this.content = content;
+	}
+
 
 	public void setReplyCode(int replyCode) {
 		this.replyCode = replyCode;

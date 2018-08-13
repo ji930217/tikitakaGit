@@ -116,5 +116,8 @@
 	    WHERE POST_CODE = #{postCode}
 	</delete>
 	
+	<insert id="insertReply" parameterType="Reply">
+		INSERT INTO REPLY VALUES(SEQ_REPLY.NEXTVAL, #{postCode}, #{content}, #{email}, SYSDATE, DEFAULT)    
+	</insert>
 	
 </mapper>

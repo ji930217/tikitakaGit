@@ -211,11 +211,7 @@
 	
 </style>
 <script>
-	$(function(){
-		$(".ceunQL").css("display", "block");
-		
-	});
-		
+	
 	function closeMessagePopup(){
 		$("#messageDiv, #messageDiv select").css("visibility", "hidden");
 	}

@@ -4,6 +4,7 @@
   <html>
     <head>
       <script src="//developers.kakao.com/sdk/js/kakao.min.js"></script>
+      <script type="text/javascript" src="resources/js/jquery-3.3.1.min.js"></script>
       <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=no">
       <link rel="dns-prefetch" href="https://tumblbug-assets.imgix.net">
       <link rel="dns-prefetch" href="https://tumblbug-pci2.imgix.net">
@@ -212,7 +213,10 @@
 </style>
 	
 <script>
-
+	$(function(){
+		$(".ceunQL").css("display", "block");
+	});
+	
 </script>
 </head>
 <body>

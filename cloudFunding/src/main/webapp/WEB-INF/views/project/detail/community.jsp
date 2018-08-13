@@ -463,13 +463,16 @@
 	#postFormDiv, .tojyI, #creatorPostDiv, #updatePostFormDiv{	display:none; }
 	
 	#communityFixedBtn, #communityBtn{ color: rgb(0, 0, 0); border-bottom: 3px solid rgb(0, 0, 0); padding-bottom: calc(0.5rem - 3px); }
-
+	#sharePostBtnDiv{ display:none; }
+	
+	
 </style>
 <script>
 	function openPostForm(){
 		$("#postFormDiv").css("display", "block");
 		$("#postListDiv").css("display", "none");
 		$("#writeBtnDiv").css("display", "none");
+		$("#creatorPostDiv").css("display", "none");
 	}
 	function closePostForm(){
 		$("#postFormDiv").css("display", "none");
@@ -490,6 +493,7 @@
 			success : function(data){
 				$("#updatePostFormDiv .note-editable").html(data.content);
 				$("input[name=postCode]").val(data.postCode);
+				
 				/* console.log($("input[name=postCode]").val()); */
 			}, error : function(e){
 				console.log("ajax 게시글 수정 페이지 이동 시 에러");

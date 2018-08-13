@@ -7,6 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
 import com.tikitaka.cloudFunding.community.model.vo.PostVo;
+import com.tikitaka.cloudFunding.community.model.vo.ReplyVo;
 
 @Repository
 public class CommunityDao {
@@ -35,6 +36,10 @@ public class CommunityDao {
 
 	public int deletePost(int postCode) {
 		return sqlSession.delete("communityMapper.deletePost", postCode);
+	}
+
+	public int insertReply(ReplyVo reply) {
+		return sqlSession.insert("communityMapper.insertReply", reply);
 	}
 
 	
