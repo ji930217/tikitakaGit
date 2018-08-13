@@ -43,6 +43,12 @@
 	})
 }) */
 
+$(function(){
+	$("#chartHome").click(function(){
+		location.reload(); 
+	})
+})
+
 
 	$(function(){
 		var tabIndex = sessionStorage.getItem("tab");
