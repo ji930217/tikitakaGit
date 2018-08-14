@@ -70,8 +70,41 @@ P_NAME, P_INTRODUCE, P_PRICE, P_END_DATE, P_GIFT_ITEM, P_REFUND, P_DESCRIPTION_V
 FROM PROJECT WHERE  EMAIL = #{userId} AND P_PROJECT_NUMBER = #{projectNum}
 </select>
 
-<update id="updateProject" parameterType="hashmap">
-	UPDATE PROJECT SET P_TITLE =#{projectTitle}where EMAIL = #{userId} AND P_PROJECT_NUMBER=#{projectNum}
+<update id="updateProject" parameterType="Project">
+	UPDATE PROJECT
+	<choose>
+    	<when test="updateNum == 1">
+     	 SET P_TITLE =#{title}
+    	</when>
+    	
+      	<when test="updateNum ==2">
+      	SET P_REP_IMG = #{repImg}
+      	</when>
+      	
+      	<when test="updateNum==3">
+      	SET P_SUMMARY = #{summary}
+      	</when>
+      	
+      	<when test="updateNum==4">
+      	SET P_CATEGORY = #{category}
+      	</when>
+      	
+      	<when test="updateNum==5">
+      	SET P_PROFILE_IMG = #{profileImg}
+      	</when>
+      	
+      	<when test="updateNum==6">
+      	SET P_NAME = #{name}
+      	</when>
+      	
+      	<when test="updateNum==7">
+      	SET P_INTRODUCE = #{introduce}
+      	</when>
+      	<otherwise>
+      	
+    	</otherwise>
+	</choose>
+	 WHERE EMAIL = #{email} AND P_PROJECT_NUMBER=#{projectNum}
 </update>
 
 

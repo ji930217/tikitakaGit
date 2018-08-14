@@ -31,8 +31,8 @@ public class ProjectService {
 		return dao.selectProject(params);
 	}
 
-	public int updateProject(HashMap params) {
-		return dao.updateProject(params);
+	public int updateProject(ProjectVo projectVo) {
+		return dao.updateProject(projectVo);
 	}
 
 }
