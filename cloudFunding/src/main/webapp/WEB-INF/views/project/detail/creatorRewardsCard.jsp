@@ -290,7 +290,9 @@
 					<div class="CreatorCard__CreatorCardLabel-yeytpy-1 fuCNpE">창작자
 						소개</div>
 					<div class="CreatorCard__CreatorProfile-yeytpy-2 eYscdN">
-						<span class="ProfileImg__ProfileImg-s1o99mme-0 owWgL"></span><a
+						<span class="ProfileImg__ProfileImg-s1o99mme-0 owWgL">
+							<img class="ProfileImg__ProfileImg-s1o99mme-0 owWgL" src="<c:out value='${project.profileImg }'/>"/>
+						</span><a
 							href="/u/film13536/projects"><span
 							class="CreatorCard__CreatorName-yeytpy-3 fVfxlF"><c:out value="${project.name }"/></span></a>
 					</div>
