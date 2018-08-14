@@ -20,12 +20,9 @@ public class ProjectController {
 
 	@Autowired
 	ProjectService projectService;
-
 	@Autowired
 	CommunityService cService;
 
-
-	
 	@RequestMapping("projectList.do")
 	public String projectList(){
 		return "project/projectList";
