@@ -280,7 +280,6 @@
 										</div>
 										<form id="fileRepImg" action="projectImageUpdate.do" method="post" enctype="multipart/form-data">
 															<input id="file" type="file" accept="image/*" style="display: none;">
-															
 														</form>
 													</div>
 												</div>

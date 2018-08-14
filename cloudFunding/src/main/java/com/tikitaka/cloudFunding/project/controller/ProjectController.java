@@ -113,7 +113,7 @@ public class ProjectController {
 		
 		ProjectVo project = projectService.selectProject(params);
 		
-		if(project.getRepImg()!=null && Integer.parseInt(updateNum)==4){
+		if(project.getRepImg()!=null && Integer.parseInt(updateNum)==2){
 			filePath = folder + "\\" +project.getRepImg();
 			oldFile = new File(filePath);
 			oldFile.delete();
@@ -124,7 +124,6 @@ public class ProjectController {
 			oldFile = new File(filePath);
 			oldFile.delete();
 		}
-		
 		String rename =  new MyRenamePolicy().rename(file.getOriginalFilename());
 		
 		filePath = folder + "\\" + rename;
@@ -138,11 +137,14 @@ public class ProjectController {
 		ProjectVo projectVo = new ProjectVo();
 		projectVo.setEmail(email);
 		projectVo.setProjectNum(Integer.parseInt(projectNum));
-		if(Integer.parseInt(updateNum)==4){
+		
+		if(Integer.parseInt(updateNum)==2){
 			projectVo.setRepImg(rename);
-		}else{
+		}
+		if(Integer.parseInt(updateNum)==5){
 			projectVo.setProfileImg(rename);
 		}
+		
 		projectVo.setUpdateNum(Integer.parseInt(updateNum));
 		
 		int result = projectService.updateProject(projectVo);
