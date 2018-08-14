@@ -607,6 +607,7 @@
 		$(".tojyI").css("display", "none");
 		$("#postListDiv").css("display", "block");
 		$("#writeBtnDiv").css("display", "block");
+		sessionStorage.removeItem("postCode", postCode);
 	}
 	function openCreatorPost(){
 		$("#creatorPostDiv").css("display", "block");
@@ -633,20 +634,18 @@
 			<div class="ProjectPage__ProjectContentsBackground-b1letw-0 cNWmvR">
 				<div class="Container__Container-s1sxg7g4-0 jdgWcI">
 					<div class="ProjectPage__ProjectContents-b1letw-1 jPEdlL">
-						<div
-							class="ProjectPage__ProjectContentsMainColumn-b1letw-2 kJUlye">
+						<div	class="ProjectPage__ProjectContentsMainColumn-b1letw-2 kJUlye">
 							
 							<div class="ProjectPage__MainColumnInner-b1letw-4 giKgfw">
 								<c:import url="../community/postList.jsp"/>
 								<c:import url="../community/postForm.jsp"/>
 								<c:import url="../community/updatePostForm.jsp"/>
 							</div>
-						 
 						</div>
-						
+
 						<!-- 오른쪽 고정 영역(창작자소개, 선물 목록) -->
 						<c:import url="creatorRewardsCard.jsp"/>
-						
+
 					</div>
 				</div>
 			</div>

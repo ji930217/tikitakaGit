@@ -13,6 +13,7 @@ public class PostVo {
 	private String content;
 	private Date writtenDate;
 	private char delflag;
+	private int replyCount;
 	private ArrayList<ReplyVo> replyList;
 	
 	// 화면에 보여질 변수
@@ -86,6 +87,14 @@ public class PostVo {
 		this.name = name;
 	}
 
+	public int getReplyCount() {
+		return replyCount;
+	}
+
+	public void setReplyCount(int replyCount) {
+		this.replyCount = replyCount;
+	}
+
 	public ArrayList<ReplyVo> getReplyList() {
 		return replyList;
 	}
@@ -105,8 +114,9 @@ public class PostVo {
 	@Override
 	public String toString() {
 		return "PostVo [postCode=" + postCode + ", projectCode=" + projectCode + ", email=" + email + ", content="
-				+ content + ", writtenDate=" + writtenDate + ", delflag=" + delflag + ", replyList=" + replyList
-				+ ", name=" + name + ", profileImg=" + profileImg + ", toString()=" + super.toString() + "]";
+				+ content + ", writtenDate=" + writtenDate + ", delflag=" + delflag + ", replyCount=" + replyCount
+				+ ", replyList=" + replyList + ", name=" + name + ", profileImg=" + profileImg + ", toString()="
+				+ super.toString() + "]";
 	}
 
 	
