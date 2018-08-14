@@ -609,12 +609,14 @@
 		$("#updatePostFormDiv").css("display", "none");
 		$("#postListDiv").css("display", "block");
 		$("#writeBtnDiv").css("display", "block");
+		setMoreBtnDisplayBlock();
 	}
 	function closePostDetail(){
 		$(".tojyI").css("display", "none");
 		$("#postListDiv").css("display", "block");
 		$("#writeBtnDiv").css("display", "block");
 		sessionStorage.removeItem("postCode");
+		setMoreBtnDisplayBlock();
 	}
 	function openCreatorPost(){
 		$("#creatorPostDiv").css("display", "block");
@@ -623,10 +625,23 @@
 	function closeCreatorPost(){
 		$("#postListDiv").css("display", "block");
 		$("#creatorPostDiv").css("display", "none");
+		setMoreBtnDisplayBlock();
 	}
 	function setWindowScrollTop(){
 		var height = $(".hsuyOO").css("height").replace("px", "");
 	 	$(window).scrollTop(Math.ceil(height) + 10);
+	}
+	function setMoreBtnDisplayBlock(){
+		/* 더보기 버튼 보이게 */
+		$(".cywbQo").each(function(){
+			var height = $(this).css("height").replace("px", "");
+			var maxHeight = $(".fmSZUJ").css("max-height").replace("px", "");
+			
+			if(maxHeight <= height) {
+				$(this).children(".hwdRmE").css("display", "block");
+				$(this).siblings(".bPLTTN").css("display", "block");
+			}
+		});
 	}
 	
 </script>

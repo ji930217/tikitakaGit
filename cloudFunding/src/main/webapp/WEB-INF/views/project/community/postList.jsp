@@ -410,16 +410,7 @@
 			}
 		});
 		
-		/* 더보기 버튼 보이게 */
-		$(".cywbQo").each(function(){
-			var height = $(this).css("height").replace("px", "");
-			var maxHeight = $(".fmSZUJ").css("max-height").replace("px", "");
-			
-			if(maxHeight <= height) {
-				$(this).children(".hwdRmE").css("display", "block");
-				$(this).siblings(".bPLTTN").css("display", "block");
-			}
-		});
+		setMoreBtnDisplayBlock();
 		
 	});
 	
