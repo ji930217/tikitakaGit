@@ -58,7 +58,7 @@ function validate(){
 	var projectInputBar = $("#projectInputBar").val();
 	
 	if(projectInputBar == ""){
-		alert("프로젝트코드나 제목을 입력하세요");
+		alert("분류 또는 제목을 입력하세요");
 		return false;
 	}
 	
@@ -140,17 +140,17 @@ function validate(){
   </c:if>
   
   <c:if test="${!empty projectList }">
-	<a href="adminMenuList.do?no=${pPaging.prevPage}" class="next"><span class="next">◀</span></a>&nbsp;
+	<a href="adminMenuList.do?pNo=${pPaging.prevPage}" class="next"><span class="next">◀</span></a>&nbsp;
 
 	<c:forEach var="i" begin="${pPaging.startPage }" end="${pPaging.endPage }" step="1">
 		<c:if test = "${pPaging.curPage == i }">
-			<a href="adminMenuList.do?no=${i}" class = "selectI" onclick = "return false;">${i}</a>&nbsp;
+			<a href="adminMenuList.do?pNo=${i}" class = "selectI" onclick = "return false;">${i}</a>&nbsp;
 		</c:if>
 		<c:if test = "${pPaging.curPage != i }">
-			<a href="adminMenuList.do?no=${i}">${i}</a>&nbsp;
+			<a href="adminMenuList.do?pNo=${i}">${i}</a>&nbsp;
 		</c:if>
 	</c:forEach>
 
-	<a href="adminMenuList.do?no=${pPaging.nextPage}" class="next"><span class="next">▶</span></a>
+	<a href="adminMenuList.do?pNo=${pPaging.nextPage}" class="next"><span class="next">▶</span></a>
 	</c:if>
 </div><!-- 페이징 --> 
