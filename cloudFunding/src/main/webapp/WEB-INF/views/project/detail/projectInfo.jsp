@@ -268,11 +268,15 @@
 	$(window).scroll(function() {
 		 var $el = $('.show-on-scroll');
 		 var height = $(".hsuyOO").css("height").replace("px", "");
-		 var height2 = $(".lblHJx").css("height").replace("px", "");
-		 var threshold = Math.ceil(height) + Math.ceil(height2) + 10;
-		 /* console.log($(this).scrollTop()); */
-		 if($(this).scrollTop() >= threshold) $el.addClass('shown');
-		 else $el.removeClass('shown');
+		 var threshold = Math.ceil(height) + 10;
+		 if($(this).scrollTop() >= threshold) { 
+			 $el.addClass('shown');
+			 $("#contentsNavigation").css("visibility", "hidden");
+		 }
+		 else {
+			 $el.removeClass('shown');
+			 $("#contentsNavigation").css("visibility", "visible");
+		 }
 	});
 	
 </script>

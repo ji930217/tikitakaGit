@@ -495,6 +495,7 @@
 			$("#postListDiv").css("display", "none");
 			$("#creatorPostDiv").css("display", "none");
 			$("#writeBtnDiv").css("display", "none");	   
+			setWindowScrollTop();
 			
 			$.ajax({
 				url : "selectPost.do",
@@ -567,6 +568,7 @@
 	});
 
 	function openPostForm(){
+		setWindowScrollTop();
 		$("#postFormDiv").css("display", "block");
 		$("#postListDiv").css("display", "none");
 		$("#writeBtnDiv").css("display", "none");
@@ -578,6 +580,7 @@
 		$("#writeBtnDiv").css("display", "block");
 	}
 	function openUpdatePostForm(postCode){
+		setWindowScrollTop();
 		$("#updatePostFormDiv").css("display", "block");
 		$("#postListDiv").css("display", "none");
 		$("#writeBtnDiv").css("display", "none");
@@ -617,9 +620,10 @@
 		$("#postListDiv").css("display", "block");
 		$("#creatorPostDiv").css("display", "none");
 	}
-	
-	
-	
+	function setWindowScrollTop(){
+		var height = $(".hsuyOO").css("height").replace("px", "");
+	 	$(window).scrollTop(Math.ceil(height) + 10);
+	}
 	
 </script>
     </head>

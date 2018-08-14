@@ -247,6 +247,8 @@
 	$(function(){
 		// 게시글 상세보기
 		$(".cywbQo").click(function(){
+			setWindowScrollTop();
+			
 			postCode = $(this).children("h3").text();
 			sessionStorage.setItem("postCode", postCode);
 			
