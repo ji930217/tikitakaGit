@@ -240,13 +240,80 @@
 	    cursor: pointer;
 	}
 	
+	/* 게시글 상세보기 더보기 */
+	.cywbQo {
+	    width: 100%;
+	    margin-bottom: 1rem;
+	    position: relative;
+	}
+	.bPLTTN {
+	    margin: 1rem 1.5rem;
+	}
+	.dxWcyc {
+	    padding: 1em 1.5em;
+	    font-size: 1em;
+	    width: 100%;
+	    opacity: 1;
+	    pointer-events: ;
+	}
+	.dxWcyc {
+	    color: rgba(0, 0, 0, .6);
+	    background-color: #e7e7e7;
+	}
+	.dxWcyc {
+	    cursor: pointer;
+	    display: inline-block;
+	    min-height: 1em;
+	    outline: none;
+	    border: none;
+	    vertical-align: baseline;
+	    box-shadow: 0px 0px 0px 1px transparent inset, 0px 0em 0px 0px rgba(0, 0, 0, 0.1) inset;
+	    -webkit-user-select: none;
+	    -moz-user-select: none;
+	    -ms-user-select: none;
+	    user-select: none;
+	    -webkit-transition: opacity 0.1s ease,  background-color 0.1s ease,  color 0.1s ease,  box-shadow 0.1s ease, background 0.1s ease;
+	    transition: opacity 0.1s ease,  background-color 0.1s ease,  color 0.1s ease,  box-shadow 0.1s ease, background 0.1s ease;
+	    -webkit-tap-highlight-color: transparent;
+	    margin: 0 .25em 0 0;
+	    border-radius: 0.28571429rem;
+	    text-transform: none;
+	    text-shadow: none;
+	    font-weight: bold;
+	    line-height: 1em;
+	    font-style: normal;
+	    text-align: center;
+	    text-decoration: none;
+	}
+	/* button, html input[type=button], input[type=reset], input[type=submit] {
+	    -webkit-appearance: button;
+	    cursor: pointer;
+	} */
+	.hwdRmE {
+	    position: absolute;
+	    display: block;
+	    bottom: 0;
+	    left: 0;
+	    right: 0;
+	    height: 50px;
+	    z-index: 200;
+	    background: linear-gradient(to bottom,rgba(255,255,255,0), rgba(255,255,255,.5) 45%, rgba(255,255,255,1));
+	    content: "";
+	}
+	.fmSZUJ {
+	    min-height: 30px;
+	    max-height: 500px;
+	    overflow: hidden;
+	}
+	
+	
 </style>
 
 <script>
 	var postCode;
 	$(function(){
 		// 게시글 상세보기
-		$(".cywbQo").click(function(){
+		$(".cywbQo, .bPLTTN").click(function(){
 			setWindowScrollTop();
 			
 			postCode = $(this).children("h3").text();
@@ -340,6 +407,17 @@
 				$("#insertReplyBtn").removeClass();
 				$("#insertReplyBtn").removeClass("dUWaDF");
 				$("#insertReplyBtn").addClass("cdAaGX");
+			}
+		});
+		
+		/* 더보기 버튼 보이게 */
+		$(".cywbQo").each(function(){
+			var height = $(this).css("height").replace("px", "");
+			var maxHeight = $(".fmSZUJ").css("max-height").replace("px", "");
+			
+			if(maxHeight <= height) {
+				$(this).children(".hwdRmE").css("display", "block");
+				$(this).siblings(".bPLTTN").css("display", "block");
 			}
 		});
 		
@@ -453,8 +531,17 @@
 											</div>
 										</div>
 									</div>
+									
+									<div class="CommunityPostSummaryCard__ContentsWrapperGradient-s1yavd3r-12 hwdRmE" style="display:none;"></div>
+									
 								</div>
-								<div	class="CommunityPostSummarCard__Actions-s1yavd3r-15 jgodLB"style="cursor: pointer;">
+								
+								<div	class="CommunityPostSummaryCard__ReadMoreButton-s1yavd3r-14 bPLTTN" style="display:none;">
+									<h3 style="display:none;"><c:out value="${post.postCode }"/></h3>
+									<button id="moreBtn" class="Button__Button-s1ng5xda-0 dxWcyc"  style="cursor: pointer;">더 보기</button>
+								</div>
+									
+							<div	class="CommunityPostSummarCard__Actions-s1yavd3r-15 jgodLB"style="cursor: pointer;">
 									<i class="_30LNYFhw6qsigZSbwlGCDz _1QY7TzdLHKX3-BKPDNNYKF"></i>
 									<%-- <c:out value="${fn:length(post.replyList) }"/> --%>
 									<c:out value="${post.replyCount }"/>
