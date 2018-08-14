@@ -345,6 +345,10 @@
 		
 	});
 	
+	function insertReply(){
+		$("#replyForm").submit();
+	}
+	
 </script>
 </head>
 
@@ -550,7 +554,7 @@
 					</div>
 					<div class="Post__NewCommentWidget-s1xz59uk-21 dFpkpv">
 						<form id="replyForm" action="insertReply.do">
-							<input type="hidden" name="postCode"/>
+							<input type="hidden" name="postCode" />
 							<input type="hidden" name="email" value="<c:out value='${user.email }'/>"/>
 							<input type="hidden" name="projectCode" value="<c:out value='${project.projectCode }'/>"/>
 							<input class="Post__Input-s1xz59uk-22 gPUzbY" name="content" placeholder="댓글을 작성해주세요" value="" id="replyInput">
@@ -558,7 +562,7 @@
 						</form>
 					</div>
 				
-					<button class="Button__Button-s1ng5xda-0 cdAaGX" disabled="" id="insertReplyBtn"  onclick="javascript:replyForm.submit();">
+					<button class="Button__Button-s1ng5xda-0 cdAaGX" disabled="" id="insertReplyBtn"  onclick="insertReply();">
 						<span class="Post__ForDesktop-s1xz59uk-23 frnsHP">올리기</span>
 						<span class="Post__ForMobile-s1xz59uk-24 iMlIpu">
 							<i class="_30LNYFhw6qsigZSbwlGCDz _1QY7TzdLHKX3-BKPDNNYKF"></i>

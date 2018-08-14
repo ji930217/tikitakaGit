@@ -487,8 +487,12 @@
 <script>
 	$(function(){
 		// 댓글 달고나면 해당 게시글 상세화면 영역 보이게
-		var postCode = sessionStorage.getItem("postCode");
-	       /* console.log("test", tabIndex);  */
+		var postCode;
+		if(null != sessionStorage.getItem("postCode")){
+			postCode = sessionStorage.getItem("postCode");
+		}
+		
+		/* console.log("test", tabIndex);  */
 	      if(postCode != null){
 			$(".tojyI").css("display", "block");
 			$("#postFormDiv").css("display", "none");
@@ -561,10 +565,7 @@
 					console.log("ajax insertReply 에러");
 				}
 			});
-			
-			sessionStorage.removeItem("postCode");
 	      }
-	      
 	});
 
 	function openPostForm(){
@@ -612,7 +613,7 @@
 		$(".tojyI").css("display", "none");
 		$("#postListDiv").css("display", "block");
 		$("#writeBtnDiv").css("display", "block");
-		sessionStorage.removeItem("postCode", postCode);
+		sessionStorage.removeItem("postCode");
 	}
 	function openCreatorPost(){
 		$("#creatorPostDiv").css("display", "block");
