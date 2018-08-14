@@ -1,8 +1,6 @@
 package com.tikitaka.cloudFunding.project.controller;
 
 import java.io.File;
-import java.sql.Date;
-import java.text.SimpleDateFormat;
 import java.util.HashMap;
 
 import javax.servlet.http.HttpSession;
@@ -73,7 +71,7 @@ public class ProjectController {
 	}
 	
 	/*,produces="application/text; charset=utf-8"*/
-	@RequestMapping("projectUpdate.do")
+	@RequestMapping("projectUpdate.do" )
 	public @ResponseBody ProjectVo projectUpdate(ProjectVo projectVo,String projectTitle,String projectShortTitle,String date){
 		String ptitle = projectTitle+','+projectShortTitle;
 		HashMap params = new HashMap();
@@ -92,6 +90,7 @@ public class ProjectController {
 			params.put("projectNum",projectVo.getProjectNum());
 			project = projectService.selectProject(params);
 		}
+		
 		return project;
 	}
 	@RequestMapping("projectImageUpdate.do")
@@ -117,7 +116,9 @@ public class ProjectController {
 		params.put("userId", email);
 		params.put("projectNum",projectNum);
 		
-		ProjectVo project = projectService.selectProject(params);
+		ProjectVo project =null;
+		
+		project = projectService.selectProject(params);
 		
 		if(project.getRepImg()!=null && Integer.parseInt(updateNum)==2){
 			filePath = folder + "\\" +project.getRepImg();
@@ -157,9 +158,10 @@ public class ProjectController {
 		
 		if(0<result){
 			System.out.println("업데이트 성공");
+			project = projectService.selectProject(params);
 		}
 		
-		return projectVo;
+		return project;
 	}
 	
 	

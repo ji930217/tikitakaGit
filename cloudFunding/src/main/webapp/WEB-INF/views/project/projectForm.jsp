@@ -3313,7 +3313,6 @@ px
 			if (0 < $("#projectShortTitle").val().length) {
 				$(".titleBtn").attr('disabled', false);
 			}
-			console.log();
 			$('.titleRemit').text(32 - $(this).val().length + '자 남았습니다');
 		});
 
@@ -3360,6 +3359,7 @@ px
 					$(".titleMode").children('a').append("<i class='w6FPSPr8JA6xb8SSjkPtI _1QY7TzdLHKX3-BKPDNNYKF'></i>"+'수정하기');
 					$(".addD").hide();
 					$(".defaultD").show();
+					blue(data);
 				},
 				error : function(e) {
 					console.log('ajax에러');
@@ -3387,7 +3387,6 @@ px
 				$("#projectSummary").focus();
 				return;
 			}
-			console.log($("#projectSummary").val());
 			
 			$.ajax({
 				url : 'projectUpdate.do',
@@ -3407,6 +3406,7 @@ px
 					$(".summaryDiv").children('a').remove();
 					$(".summaryMode").children('a').text('');
 					$(".summaryMode").children('a').append("<i class='w6FPSPr8JA6xb8SSjkPtI _1QY7TzdLHKX3-BKPDNNYKF'></i>"+'수정하기');
+					blue(data);
 				},
 				error : function(e) {
 					console.log('ajax에러');
@@ -3427,7 +3427,6 @@ px
 			formData.append("email",'${project.email}');
 			formData.append("projectNum",'${project.projectNum}');
 			formData.append("updateNum",'2');
-			console.log($("#file")[0].files[0]);
 			 $.ajax({
 	                url:'projectImageUpdate.do',
 	                processData: false,
@@ -3447,6 +3446,7 @@ px
 						$(".imageMode").children('a').append("<i class='w6FPSPr8JA6xb8SSjkPtI _1QY7TzdLHKX3-BKPDNNYKF'></i>"+'수정하기');
 						$(".imagehint").children('a').text('');
 						$(".imagehint").children('a').append("<i class='_3WyCNpfRrfze5XqBAKgG6j WU1ox0-AeDX_zneKjnNMO _1QY7TzdLHKX3-BKPDNNYKF'></i>"+"이미지 등록 완료");
+						blue(result);
 	                },error:function(){
 	                	console.log("ajax에러");
 	                }
@@ -3484,6 +3484,7 @@ px
 					$(".categoryDiv").children('a').remove();
 					$(".categoryMode").children('a').text('');
 					$(".categoryMode").children('a').append("<i class='w6FPSPr8JA6xb8SSjkPtI _1QY7TzdLHKX3-BKPDNNYKF'></i>"+'수정하기');
+					blue(data);
 				},
 				error : function(e) {
 					console.log('ajax에러');
@@ -3517,7 +3518,8 @@ px
 	                	$(".profileMode").children('a').text('');
 						$(".profileMode").children('a').append("<i class='w6FPSPr8JA6xb8SSjkPtI _1QY7TzdLHKX3-BKPDNNYKF'></i>"+'수정하기');
 						$(".profileHint").children('a').text('');
-						$(".profileHint").children('a').append("<i class='_3WyCNpfRrfze5XqBAKgG6j WU1ox0-AeDX_zneKjnNMO _1QY7TzdLHKX3-BKPDNNYKF'></i>"+"이미지 등록 완료"); 
+						$(".profileHint").children('a').append("<i class='_3WyCNpfRrfze5XqBAKgG6j WU1ox0-AeDX_zneKjnNMO _1QY7TzdLHKX3-BKPDNNYKF'></i>"+"이미지 등록 완료");
+						blue(result);
 	                },error:function(){
 	                	console.log("ajax에러");
 	                }
@@ -3549,6 +3551,7 @@ px
 					$(".defaultD").show();
 					$("#MCName").val(data.name);
 					$(".projectName").children('h3').text(data.name);
+					blue(data);
 				},
 				error : function(e) {
 					console.log('ajax에러');
@@ -3593,6 +3596,7 @@ px
 					$(".MCIntroduceDiv").children('h3').append("<span style='white-space: pre-wrap;'>"+data.introduce+"</span>");
 					$(".MCIntroduceDiv").children('h3').css('display','inline-block');
 					$(".MCIntroduceDiv").children('a').remove();
+					blue(data);
 				},
 				error : function(e) {
 					console.log('ajax에러');
@@ -3727,7 +3731,7 @@ px
 					"date" :$("#deadlineDate").val(),
 				},
 				success : function(data) {
-					 var date = new Date(data.endDate);
+					var date = new Date(data.endDate);
 					
 					var year = date.getFullYear();
 					var month = date.getMonth() + 1;
@@ -3849,7 +3853,17 @@ px
 			}
 			})
 		});
-
+		
+		function blue(pro){
+			if(null != pro.title && null != pro.repImg &&null != pro.summary &&
+					null != pro.category &&null != pro.profileImg&&null != pro.name&&null != pro.introduce){
+				console.log("파란불");
+				$(".row1").children('i').remove();
+				$(".row1").prepend("<i class='_13KHfN73YmQgsYHxXvuh_J _1oJMWnMCW_Y6GmNc1mhqaW _3sFSjAZS4gQdCAyN3OfyFG -o8oGI_QAOKsVIJOUOUmV _254YPhBOB9qv7-J8bIg7co _1QY7TzdLHKX3-BKPDNNYKF'></i>");
+			}
+		}
+				
+				
 	});
 </script>
 </head>
@@ -3949,8 +3963,9 @@ px
 
 										<a class="rLqvd1axk9i-3cU72yTkF _3Syz9fGXYtzMNqK_55A2BW"
 											href="#projectOutline">
-											<h5>
-												<i
+											<h5 class="row1">
+												
+												 <i
 													class="_13KHfN73YmQgsYHxXvuh_J _1oJMWnMCW_Y6GmNc1mhqaW _3RAU_1dXrlkkPhtkKyXSVj _3fJsfvAPykJzj2xoMnxzWW _254YPhBOB9qv7-J8bIg7co _1QY7TzdLHKX3-BKPDNNYKF"></i><label><span><span>프로젝트</span>
 														<!-- react-text: 789 --> <!-- /react-text --> <span>개요</span></span></label>
 											</h5>
