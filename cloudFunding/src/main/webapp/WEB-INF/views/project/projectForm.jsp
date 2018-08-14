@@ -1,6 +1,8 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt" %>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -3652,7 +3654,7 @@ px
 		}
 
 		$(".goalBtn").click(function() {
-			var regexp = /^[0-	9]*$/;
+			var regexp = /^[0-9]*$/;
 			var goal = $("#fundingGoalAmountInput").val();
 			if (!regexp.test(goal)) {
 				alert("목표 금액은 숫자만 입력 가능합니다.");
@@ -3665,7 +3667,31 @@ px
 				$("#fundingGoalAmountInput").focus();
 				return;
 			}
-			alert("목표 금액 제출");
+			
+			$.ajax({
+				url : 'projectUpdate.do',
+				type : 'post',
+				data : {
+					"updateNum":8,
+					"email" : '<c:out value="${user.email }"/>',
+					"projectNum" : <c:out value="${project.projectNum}"/>,
+					"price":$("#fundingGoalAmountInput").val(),
+				},
+				success : function(data) {
+					 $(".addD").hide();
+					$(".defaultD").show();
+					$(".priceMode").children('a').text('');
+					$(".priceMode").children('a').append("<i class='w6FPSPr8JA6xb8SSjkPtI _1QY7TzdLHKX3-BKPDNNYKF'></i>"+'수정하기');
+					$(".priceDiv").children('h3').text('');
+					$(".priceDiv").children('h3').append("<span style='white-space: pre-wrap;'>"+numberWithCommas(data.price)+"</span>");
+					$(".priceDiv").children('h3').css('display','inline-block');
+					$(".priceDiv").children('a').remove(); 
+				},
+				error : function(e) {
+					console.log('ajax에러');
+				}
+			});
+			
 		});
 
 		$("#deadlineDay").on('click keyup', function() {
@@ -3679,7 +3705,7 @@ px
 			var month = date.getMonth() + 1;
 			var day = date.getDate();
 
-			$("#deadlineDate").val(year + '.' + month + '.' + day);
+			$("#deadlineDate").val(year + '-' + month + '-' + day);
 		});
 
 		$(".deadlineBtn").click(function() {
@@ -3689,7 +3715,38 @@ px
 				$("#deadlineDay").focus();
 				return;
 			}
-			alert("마감일 제출");
+			var date = new Date();
+			date.setDate(parseInt(date.getDate()) + parseInt($("#deadlineDay").val()));
+			 $.ajax({
+				url : 'projectUpdate.do',
+				type : 'post',
+				data : {
+					"updateNum":9,
+					"email" : '<c:out value="${user.email }"/>',
+					"projectNum" : <c:out value	="${project.projectNum}"/>,
+					"date" :$("#deadlineDate").val(),
+				},
+				success : function(data) {
+					 var date = new Date(data.endDate);
+					
+					var year = date.getFullYear();
+					var month = date.getMonth() + 1;
+					var day = date.getDate();
+					var fulldate = year + '-' + month + '-' + day; 
+					
+					$(".addD").hide();
+					$(".defaultD").show();
+					$(".dtaeMode").children('a').text('');
+					$(".dtaeMode").children('a').append("<i class='w6FPSPr8JA6xb8SSjkPtI _1QY7TzdLHKX3-BKPDNNYKF'></i>"+'수정하기');
+					$(".dateDiv").children('h3').text('');
+					$(".dateDiv").children('h3').append("<span style='white-space: pre-wrap;'>"+fulldate+"</span>");
+					$(".dateDiv").children('h3').css('display','inline-block');
+					$(".dateDiv").children('a').remove(); 
+				},
+				error : function(e) {
+					console.log('ajax에러');
+				}
+			}); 
 		});
 		$(".projectItemModal").hide();
 
@@ -3767,7 +3824,30 @@ px
 				$("#RefundTextArea").focus();
 				return;
 			}
-			alert("환불및교환제출");
+			
+			$.ajax({
+			url : 'projectUpdate.do',
+			type : 'post',
+			data : {
+				"updateNum":11,
+				"email" : '<c:out value="${user.email }"/>',
+				"projectNum" : <c:out value	="${project.projectNum}"/>,
+				"refund" :$("#RefundTextArea").val(),
+			},
+			success : function(data) {
+				$(".addD").hide();
+				$(".defaultD").show();
+				$(".refundMode").children('a').text('');
+				$(".refundMode").children('a').append("<i class='w6FPSPr8JA6xb8SSjkPtI _1QY7TzdLHKX3-BKPDNNYKF'></i>"+'수정하기');
+				$(".refundDiv").children('h3').text('');
+				$(".refundDiv").children('h3').append("<span style='white-space: pre-wrap;'>"+data.refund+"</span>");
+				$(".refundDiv").children('h3').css('display','inline-block');
+				$(".refundDiv").children('a').remove(); 
+			},
+			error : function(e) {
+				console.log('ajax에러');
+			}
+			})
 		});
 
 	});

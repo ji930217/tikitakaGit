@@ -29,14 +29,15 @@
 								style="cursor: pointer;">
 								<div
 									class="_2dKJQZGqcB1T0xe0DzKY0H _152MAijd_UogerBKCVqZR_ _1lLHKI5v9AoCyeggtffvGZ">
-									<div>
+									<div class="priceDiv">
 										<a><i
 											class="_3WyCNpfRrfze5XqBAKgG6j WU1ox0-AeDX_zneKjnNMO _3wXDp_9ZjMHMVuf2NIy5Cg _1QY7TzdLHKX3-BKPDNNYKF"></i>
 											<!-- react-text: 7471 -->목표 금액을 입력해주세요<!-- /react-text --></a>
+										<h3 style="display:none;"></h3>	
 									</div>
 								</div>
 								<div
-									class="_2joJTlnkt26WGpxyvkNuCH _152MAijd_UogerBKCVqZR_ WU1ox0-AeDX_zneKjnNMO _3G8CRXtomRhisiZsw7Spx- _1lLHKI5v9AoCyeggtffvGZ">
+									class="priceMode _2joJTlnkt26WGpxyvkNuCH _152MAijd_UogerBKCVqZR_ WU1ox0-AeDX_zneKjnNMO _3G8CRXtomRhisiZsw7Spx- _1lLHKI5v9AoCyeggtffvGZ">
 									<a><i class="w6FPSPr8JA6xb8SSjkPtI _1QY7TzdLHKX3-BKPDNNYKF"></i>
 										<!-- react-text: 7475 -->입력하기<!-- /react-text --></a>
 								</div>
@@ -181,12 +182,15 @@
 								style="cursor: pointer;">
 								<div
 									class="_2dKJQZGqcB1T0xe0DzKY0H _152MAijd_UogerBKCVqZR_ _1lLHKI5v9AoCyeggtffvGZ">
-									<div>
-										<h3>2018-08-10</h3>
+									<div class="dateDiv">
+											<a><i
+											class="_3WyCNpfRrfze5XqBAKgG6j WU1ox0-AeDX_zneKjnNMO _3wXDp_9ZjMHMVuf2NIy5Cg _1QY7TzdLHKX3-BKPDNNYKF"></i>
+											<!-- react-text: 7471 -->프로젝트 마감일을 입력해주세요<!-- /react-text --></a>
+										<h3 style="display:none;"></h3>	
 									</div>
 								</div>
 								<div
-									class="_2joJTlnkt26WGpxyvkNuCH _152MAijd_UogerBKCVqZR_ WU1ox0-AeDX_zneKjnNMO _3G8CRXtomRhisiZsw7Spx- _1lLHKI5v9AoCyeggtffvGZ">
+									class="dtaeMode _2joJTlnkt26WGpxyvkNuCH _152MAijd_UogerBKCVqZR_ WU1ox0-AeDX_zneKjnNMO _3G8CRXtomRhisiZsw7Spx- _1lLHKI5v9AoCyeggtffvGZ">
 									<a><i class="w6FPSPr8JA6xb8SSjkPtI _1QY7TzdLHKX3-BKPDNNYKF"></i>
 										<!-- react-text: 7487 -->수정하기<!-- /react-text --></a>
 								</div>
@@ -549,14 +553,15 @@
 								style="cursor: pointer;">
 								<div
 									class="_2dKJQZGqcB1T0xe0DzKY0H _152MAijd_UogerBKCVqZR_ _1lLHKI5v9AoCyeggtffvGZ">
-									<div>
+									<div class="refundDiv">
 										<a><i
 											class="_3WyCNpfRrfze5XqBAKgG6j WU1ox0-AeDX_zneKjnNMO _3wXDp_9ZjMHMVuf2NIy5Cg _1QY7TzdLHKX3-BKPDNNYKF"></i>
 											<!-- react-text: 7513 -->환불 및 교환 정책을 입력해주세요<!-- /react-text --></a>
+											<h3 style="display:none;"></h3>	
 									</div>
 								</div>
 								<div
-									class="_2joJTlnkt26WGpxyvkNuCH _152MAijd_UogerBKCVqZR_ WU1ox0-AeDX_zneKjnNMO _3G8CRXtomRhisiZsw7Spx- _1lLHKI5v9AoCyeggtffvGZ">
+									class="refundMode _2joJTlnkt26WGpxyvkNuCH _152MAijd_UogerBKCVqZR_ WU1ox0-AeDX_zneKjnNMO _3G8CRXtomRhisiZsw7Spx- _1lLHKI5v9AoCyeggtffvGZ">
 									<a><i class="w6FPSPr8JA6xb8SSjkPtI _1QY7TzdLHKX3-BKPDNNYKF"></i>
 										<!-- react-text: 7517 -->입력하기<!-- /react-text --></a>
 								</div>

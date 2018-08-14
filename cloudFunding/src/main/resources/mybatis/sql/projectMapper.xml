@@ -100,7 +100,20 @@ FROM PROJECT WHERE  EMAIL = #{userId} AND P_PROJECT_NUMBER = #{projectNum}
       	<when test="updateNum==7">
       	SET P_INTRODUCE = #{introduce}
       	</when>
+      	
+      	<when test="updateNum==8">
+      	SET P_PRICE = #{price}
+      	</when>
+      	
+      	<when test="updateNum==9">
+      	SET P_END_DATE = #{endDate}
+      	</when>
+      	
+      	<when test="updateNum==11">
+      	SET P_REFUND = #{refund}
+      	</when>
       	<otherwise>
+      	
       	
     	</otherwise>
 	</choose>

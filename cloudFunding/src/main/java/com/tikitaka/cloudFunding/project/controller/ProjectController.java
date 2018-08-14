@@ -1,6 +1,8 @@
 package com.tikitaka.cloudFunding.project.controller;
 
 import java.io.File;
+import java.sql.Date;
+import java.text.SimpleDateFormat;
 import java.util.HashMap;
 
 import javax.servlet.http.HttpSession;
@@ -71,12 +73,17 @@ public class ProjectController {
 	}
 	
 	/*,produces="application/text; charset=utf-8"*/
-	@RequestMapping("projectUpdate.do" )
-	public @ResponseBody ProjectVo projectUpdate(ProjectVo projectVo,String projectTitle,String projectShortTitle){
+	@RequestMapping("projectUpdate.do")
+	public @ResponseBody ProjectVo projectUpdate(ProjectVo projectVo,String projectTitle,String projectShortTitle,String date){
 		String ptitle = projectTitle+','+projectShortTitle;
 		HashMap params = new HashMap();
 		ProjectVo project=null;
+		
 		projectVo.setTitle(ptitle);
+		
+		if(projectVo.getUpdateNum()==9){
+			projectVo.setEndDate(java.sql.Date.valueOf(date));
+		}
 		
 		int result = projectService.updateProject(projectVo);
 		
@@ -85,7 +92,6 @@ public class ProjectController {
 			params.put("projectNum",projectVo.getProjectNum());
 			project = projectService.selectProject(params);
 		}
-		
 		return project;
 	}
 	@RequestMapping("projectImageUpdate.do")
