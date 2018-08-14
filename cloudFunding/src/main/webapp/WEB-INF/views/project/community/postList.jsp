@@ -247,6 +247,8 @@
 	$(function(){
 		// 게시글 상세보기
 		$(".cywbQo").click(function(){
+			setWindowScrollTop();
+			
 			postCode = $(this).children("h3").text();
 			sessionStorage.setItem("postCode", postCode);
 			
@@ -267,6 +269,7 @@
 					$("#postWriterProfileImgSpan").html("<img class='ProfileImg__ProfileImg-s1o99mme-0 frVGN' src='" + data.profileImg + "'/>");
 					$("#replyWriterProfileImgDiv").html("<img class='ProfileImg__ProfileImg-s1o99mme-0 frVGN' src='${user.profile_img}'/>")
 					$("#replyForm input[name=postCode]").val(data.postCode);
+					
 					var creatorEmail = "<c:out value='${project.email}'/>";
 					var postWriterEmail = data.email;
 					if(creatorEmail == postWriterEmail){
@@ -278,8 +281,7 @@
 						$("#sharePostBtnDiv").css("display", "none");
 						$("#postCategory").html("");
 						$("#postCategory").removeClass("kFkoaw");
-					
-					var creatorEmail = "<c:out value='${project.email}'/>";
+					}
 					var postWriterEmail = data.email;
 					if(creatorEmail == postWriterEmail){
 						$("#sharePostBtnDiv").css("display", "flex");
@@ -342,6 +344,10 @@
 		});
 		
 	});
+	
+	function insertReply(){
+		$("#replyForm").submit();
+	}
 	
 </script>
 </head>
@@ -450,7 +456,8 @@
 								</div>
 								<div	class="CommunityPostSummarCard__Actions-s1yavd3r-15 jgodLB"style="cursor: pointer;">
 									<i class="_30LNYFhw6qsigZSbwlGCDz _1QY7TzdLHKX3-BKPDNNYKF"></i>
-									<c:out value="${fn:length(post.replyList) }"/>
+									<%-- <c:out value="${fn:length(post.replyList) }"/> --%>
+									<c:out value="${post.replyCount }"/>
 								</div>
 							</div>
 						</div>
@@ -540,25 +547,6 @@
 				<div id="replyDiv">	</div>
 
 				<c:if test="${!empty user }">
-					<!-- 댓글 작성 폼 -->
-					<div class="Post__NewCommentWidgetWrapper-s1xz59uk-19 fONoPD">
-						<div id="replyWriterProfileImgDiv" class="Post__NewCommentWidgetProfileImage-s1xz59uk-20 bfkJdB">
-							
-						</div>
-						<div class="Post__NewCommentWidget-s1xz59uk-21 dFpkpv">
-							<form id="replyForm" action="insertReply.do">
-								<input type="hidden" name="postCode"/>
-								<input type="hidden" name="email" value="<c:out value='${user.email }'/>"/>
-								<input type="hidden" name="projectCode" value="<c:out value='${project.projectCode }'/>"/>
-								<input class="Post__Input-s1xz59uk-22 gPUzbY" name="content" placeholder="댓글을 작성해주세요" value="" id="replyInput">
-								<input type="submit" style="display: none;">
-							</form>
-						</div>
-						<button class="Button__Button-s1ng5xda-0 cdAaGX" disabled="" id="insertReplyBtn"  onclick="javascript:replyForm.submit();">
-							<span class="Post__ForDesktop-s1xz59uk-23 frnsHP">올리기</span><span
-								class="Post__ForMobile-s1xz59uk-24 iMlIpu"><i
-								class="_30LNYFhw6qsigZSbwlGCDz _1QY7TzdLHKX3-BKPDNNYKF"></i></span>
-						</button>
 				<!-- 댓글 작성 폼 -->
 				<div class="Post__NewCommentWidgetWrapper-s1xz59uk-19 fONoPD">
 					<div id="replyWriterProfileImgDiv" class="Post__NewCommentWidgetProfileImage-s1xz59uk-20 bfkJdB">
@@ -566,25 +554,25 @@
 					</div>
 					<div class="Post__NewCommentWidget-s1xz59uk-21 dFpkpv">
 						<form id="replyForm" action="insertReply.do">
-							<input type="hidden" name="postCode"/>
+							<input type="hidden" name="postCode" />
 							<input type="hidden" name="email" value="<c:out value='${user.email }'/>"/>
 							<input type="hidden" name="projectCode" value="<c:out value='${project.projectCode }'/>"/>
 							<input class="Post__Input-s1xz59uk-22 gPUzbY" name="content" placeholder="댓글을 작성해주세요" value="" id="replyInput">
 							<input type="submit" style="display: none;">
 						</form>
 					</div>
-				</c:if>
-					<button class="Button__Button-s1ng5xda-0 cdAaGX" disabled="" id="insertReplyBtn"  onclick="javascript:replyForm.submit();">
-						<span class="Post__ForDesktop-s1xz59uk-23 frnsHP">올리기</span><span
-							class="Post__ForMobile-s1xz59uk-24 iMlIpu"><i
-							class="_30LNYFhw6qsigZSbwlGCDz _1QY7TzdLHKX3-BKPDNNYKF"></i></span>
+				
+					<button class="Button__Button-s1ng5xda-0 cdAaGX" disabled="" id="insertReplyBtn"  onclick="insertReply();">
+						<span class="Post__ForDesktop-s1xz59uk-23 frnsHP">올리기</span>
+						<span class="Post__ForMobile-s1xz59uk-24 iMlIpu">
+							<i class="_30LNYFhw6qsigZSbwlGCDz _1QY7TzdLHKX3-BKPDNNYKF"></i>
+						</span>
 					</button>
 				</div>
-				
+				</c:if>
 			</div>
 		</div>
 	</div>
-	
 	<!-- 창작자 업데이트 클릭 시 보여지는 영역 -->
 	<div id="creatorPostDiv">
 		<div class="Community__Posts-s14atsnj-0 umGxa">
@@ -648,7 +636,8 @@
 									</div>
 									<div	class="CommunityPostSummarCard__Actions-s1yavd3r-15 jgodLB"style="cursor: pointer;">
 										<i class="_30LNYFhw6qsigZSbwlGCDz _1QY7TzdLHKX3-BKPDNNYKF"></i>
-										<c:out value="${fn:length(post.replyList) }"/>
+										<%-- <c:out value="${fn:length(post.replyList) }"/> --%>
+										<c:out value="${post.replyCount }"/>
 									</div>
 								</div>
 							</div>

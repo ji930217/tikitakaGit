@@ -5,6 +5,7 @@ import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
@@ -69,7 +70,7 @@ public class CommunityController {
 	}
 	
 	@RequestMapping("insertReply.do")
-	public String insertReply(int projectCode, int postCode, String email, String content){
+	public String insertReply(int projectCode, int postCode, String email, String content, Model model){
 		ReplyVo reply = new ReplyVo(postCode, email, content);
 		int result = cService.insertReply(reply);
 		

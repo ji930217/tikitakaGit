@@ -487,14 +487,19 @@
 <script>
 	$(function(){
 		// 댓글 달고나면 해당 게시글 상세화면 영역 보이게
-		var postCode = sessionStorage.getItem("postCode");
-	       /* console.log("test", tabIndex);  */
+		var postCode;
+		if(null != sessionStorage.getItem("postCode")){
+			postCode = sessionStorage.getItem("postCode");
+		}
+		
+		/* console.log("test", tabIndex);  */
 	      if(postCode != null){
 			$(".tojyI").css("display", "block");
 			$("#postFormDiv").css("display", "none");
 			$("#postListDiv").css("display", "none");
 			$("#creatorPostDiv").css("display", "none");
 			$("#writeBtnDiv").css("display", "none");	   
+			setWindowScrollTop();
 			
 			$.ajax({
 				url : "selectPost.do",
@@ -560,24 +565,24 @@
 					console.log("ajax insertReply 에러");
 				}
 			});
-			
-			sessionStorage.removeItem("postCode");
 	      }
-	      
 	});
 
 	function openPostForm(){
+		setWindowScrollTop();
 		$("#postFormDiv").css("display", "block");
 		$("#postListDiv").css("display", "none");
 		$("#writeBtnDiv").css("display", "none");
 		$("#creatorPostDiv").css("display", "none");
 	}
 	function closePostForm(){
+		setWindowScrollTop();
 		$("#postFormDiv").css("display", "none");
 		$("#postListDiv").css("display", "block");
 		$("#writeBtnDiv").css("display", "block");
 	}
 	function openUpdatePostForm(postCode){
+		setWindowScrollTop();
 		$("#updatePostFormDiv").css("display", "block");
 		$("#postListDiv").css("display", "none");
 		$("#writeBtnDiv").css("display", "none");
@@ -599,6 +604,7 @@
 		});
 	}
 	function closeUpdatePostForm(){
+		setWindowScrollTop();
 		$("#updatePostFormDiv").css("display", "none");
 		$("#postListDiv").css("display", "block");
 		$("#writeBtnDiv").css("display", "block");
@@ -607,6 +613,7 @@
 		$(".tojyI").css("display", "none");
 		$("#postListDiv").css("display", "block");
 		$("#writeBtnDiv").css("display", "block");
+		sessionStorage.removeItem("postCode");
 	}
 	function openCreatorPost(){
 		$("#creatorPostDiv").css("display", "block");
@@ -616,9 +623,10 @@
 		$("#postListDiv").css("display", "block");
 		$("#creatorPostDiv").css("display", "none");
 	}
-	
-	
-	
+	function setWindowScrollTop(){
+		var height = $(".hsuyOO").css("height").replace("px", "");
+	 	$(window).scrollTop(Math.ceil(height) + 10);
+	}
 	
 </script>
     </head>
@@ -633,20 +641,18 @@
 			<div class="ProjectPage__ProjectContentsBackground-b1letw-0 cNWmvR">
 				<div class="Container__Container-s1sxg7g4-0 jdgWcI">
 					<div class="ProjectPage__ProjectContents-b1letw-1 jPEdlL">
-						<div
-							class="ProjectPage__ProjectContentsMainColumn-b1letw-2 kJUlye">
+						<div	class="ProjectPage__ProjectContentsMainColumn-b1letw-2 kJUlye">
 							
 							<div class="ProjectPage__MainColumnInner-b1letw-4 giKgfw">
 								<c:import url="../community/postList.jsp"/>
 								<c:import url="../community/postForm.jsp"/>
 								<c:import url="../community/updatePostForm.jsp"/>
 							</div>
-						 
 						</div>
-						
+
 						<!-- 오른쪽 고정 영역(창작자소개, 선물 목록) -->
 						<c:import url="creatorRewardsCard.jsp"/>
-						
+
 					</div>
 				</div>
 			</div>

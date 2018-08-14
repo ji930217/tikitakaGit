@@ -209,9 +209,16 @@
 	});
 	
 	function deletePost(){
+		if(confirm("게시글을 삭제하시겠습니까? 삭제된 글을 복구할 수 없습니다.")) {
+			var postCode = $("input[name=postCode]").val();		
+			var projectCode = $("input[name=projectCode]").val();		
+			location.href="deletePost.do?postCode=" + postCode + "&projectCode=" + projectCode;
+		}
+	}
+	
+	function updatePost(){
 		var postCode = $("input[name=postCode]").val();		
-		var projectCode = $("input[name=projectCode]").val();		
-		location.href="deletePost.do?postCode=" + postCode + "&projectCode=" + projectCode;
+		sessionStorage.setItem("postCode", postCode);
 	}
 	
 	
@@ -252,7 +259,7 @@
 					</span>
 				</div>
 				<div class="PostEditForm__ButtonsWrapper-frv1rh-11 bTafcO">
-						<button id="updatePostBtn" class="Button__Button-s1ng5xda-0 cdAaGX" disabled>
+						<button id="updatePostBtn" class="Button__Button-s1ng5xda-0 cdAaGX" disabled onclick="updatePost();">
 							<i class="-o8oGI_QAOKsVIJOUOUmV _1QY7TzdLHKX3-BKPDNNYKF"></i>
 							수정하기
 						</button>

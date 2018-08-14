@@ -682,6 +682,25 @@
 	    text-decoration: none;
 	}
 	
+	/* header 프로필 이미지 스타일 */
+	.ePsyRU {
+	    display: inline-block;
+	    background-image: url(https://tumblbug-upi.imgix.net/eba2053….jpg…a&facepad=2.0&ch=Save-Data&mask=ellipse&s=cb779d0…);
+	    width: 28px;
+	    height: 28px;
+	    background-size: cover;
+	    background-position: 50% 38%;
+	    border-radius: 50%;
+	    border: 1px solid #ddd;
+	    margin-right: 0;
+	}
+	@media (min-width: 1080px){
+		.ePsyRU {
+		    width: 38px;
+		    height: 38px;
+		}
+	}
+	
 </style>
 <script>
 
@@ -763,11 +782,17 @@
 					
 					
 					<c:if test="${!empty user }">
-						<c:out value="${user.name } "/>   
-						<img  src="${user.profile_img }" width="42" height="42" /> 
+						<a class="sc-htoDjs fQwQfp" data-reactid="30">
+							<span class="SiteHeader__ItemLabel-s1s56ls8-8 iGOIal" data-reactid="31">
+								<c:out value="${user.name } "/>
+							</span>
+							<span class="SiteHeader__ProfileImageWrapper-s1s56ls8-10 gqXDKx" data-reactid="32">
+								<img class="ProfileImg__ProfileImg-s1o99mme-0 ePsyRU" src="${user.profile_img }" width="42" height="42" />
+							</span>
+						</a>
+						 
 					
 					</c:if>
-					
 					
 					<c:if test="${empty user }">
 							<div id="login" class="SiteHeader__RightMenu-s1s56ls8-4 buZCDD"

@@ -55,6 +55,7 @@
 		<result property="delflag" column="DELFLAG"/>
 		<result property="name" column="NAME"/>
 		<result property="profileImg" column="PROFILE_IMG"/>
+		<result property="replyCount" column="REPLY_COUNT"/>
 		<collection property="replyList" column="REPLY_CODE" ofType="Reply" resultMap="replyMap"/>
 	</resultMap>
 	<resultMap type="Reply" id="replyMap">
@@ -80,7 +81,11 @@
     	LEFT JOIN MEMBER M ON(P.EMAIL = M.EMAIL)
 	</sql>
 	<select id="selectPostList" parameterType="int" resultMap="postMap">
-	    <include refid="selectPostHeader"/>
+	    SELECT P.POST_CODE, P_PROJECT_CODE, P.EMAIL, P.CONTENT, P.WRITTEN_DATE, P.DELFLAG, NAME, PROFILE_IMG,
+        				(SELECT COUNT(*) FROM REPLY WHERE P.POST_CODE = POST_CODE) AS REPLY_COUNT
+		FROM POST P
+		LEFT JOIN REPLY R ON(P.POST_CODE = R.POST_CODE)
+    	LEFT JOIN MEMBER M ON(P.EMAIL = M.EMAIL)
 	    WHERE P_PROJECT_CODE = #{projectCode}
 	    AND P.DELFLAG != 'T'
 	    ORDER BY P.POST_CODE DESC
