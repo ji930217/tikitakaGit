@@ -577,6 +577,7 @@
 	}
 	function closePostForm(){
 		setWindowScrollTop();
+		$("#postForm .note-editable").text("");
 		$("#postFormDiv").css("display", "none");
 		$("#postListDiv").css("display", "block");
 		$("#writeBtnDiv").css("display", "block");
