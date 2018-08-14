@@ -3569,6 +3569,7 @@ px
 			if (10 > $("#MCIntroduce").val().length) {
 				alert("진행자소개는 최소 10자 이상 입력하셔야 됩니다.");
 				$("#MCIntroduce").focus();
+				
 				return;
 			}
 			
