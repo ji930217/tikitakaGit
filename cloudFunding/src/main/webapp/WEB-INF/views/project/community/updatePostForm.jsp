@@ -214,6 +214,11 @@
 		location.href="deletePost.do?postCode=" + postCode + "&projectCode=" + projectCode;
 	}
 	
+	function updatePost(){
+		var postCode = $("input[name=postCode]").val();		
+		sessionStorage.setItem("postCode", postCode);
+	}
+	
 	
 </script>
 </head>
@@ -252,7 +257,7 @@
 					</span>
 				</div>
 				<div class="PostEditForm__ButtonsWrapper-frv1rh-11 bTafcO">
-						<button id="updatePostBtn" class="Button__Button-s1ng5xda-0 cdAaGX" disabled>
+						<button id="updatePostBtn" class="Button__Button-s1ng5xda-0 cdAaGX" disabled onclick="updatePost();">
 							<i class="-o8oGI_QAOKsVIJOUOUmV _1QY7TzdLHKX3-BKPDNNYKF"></i>
 							수정하기
 						</button>

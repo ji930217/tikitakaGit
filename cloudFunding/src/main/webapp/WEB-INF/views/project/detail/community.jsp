@@ -575,6 +575,7 @@
 		$("#creatorPostDiv").css("display", "none");
 	}
 	function closePostForm(){
+		setWindowScrollTop();
 		$("#postFormDiv").css("display", "none");
 		$("#postListDiv").css("display", "block");
 		$("#writeBtnDiv").css("display", "block");
@@ -602,6 +603,7 @@
 		});
 	}
 	function closeUpdatePostForm(){
+		setWindowScrollTop();
 		$("#updatePostFormDiv").css("display", "none");
 		$("#postListDiv").css("display", "block");
 		$("#writeBtnDiv").css("display", "block");
