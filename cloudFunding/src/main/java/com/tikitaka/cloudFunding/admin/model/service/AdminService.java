@@ -7,6 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.tikitaka.cloudFunding.admin.model.dao.AdminDao;
+import com.tikitaka.cloudFunding.admin.model.vo.AdminVo;
 import com.tikitaka.cloudFunding.admin.model.vo.bannerVo;
 import com.tikitaka.cloudFunding.member.model.vo.Member;
 import com.tikitaka.cloudFunding.project.model.vo.ProjectVo;
@@ -36,20 +37,27 @@ public class AdminService {
 		
 		return admindao.TotalCount();
 	}
+	public int searchMemberCount(String	keyword) {//멤버 검색 토탈카운트
+		return admindao.searchMemberCount(keyword);
+	}
 
 	public int projectTotalCount() {//프로젝트승인 토탈카운트
 		
 		return admindao.projectTotalCount();
 	}
-	
-	public List<ProjectVo> selectProjectList() {//프로젝트승인 조회
+	public int searchProjectCount(String keyword) {
 		
-		return admindao.selectProjectList();
+		return admindao.searchProjectCount(keyword);
+	}
+	
+	public List<ProjectVo> selectProjectList(int pNo) {//프로젝트승인 조회
+		
+		return admindao.selectProjectList(pNo);
 	}
 
-	public List<ProjectVo> searchProject(String keyword, int no) {//프로젝트승인 검색조회
+	public List<ProjectVo> searchProject(String keyword, int pNo) {//프로젝트승인 검색조회
 		
-		return admindao.searchProject(keyword,no);
+		return admindao.searchProject(keyword,pNo);
 	}
 
 	public int fprojectTotalCount() {//끝나가는 프로젝트 토탈카운트
@@ -57,29 +65,37 @@ public class AdminService {
 		return admindao.fprojectTotalCount();
 	}
 
-	public List<ProjectVo> selectfProjectList() {//끝나가는 프로젝트 조회
+	public int searchfProjectCount(String keyword) {
 		
-		return admindao.selectfProjectList();
+		return admindao.searchfProjectCount(keyword);
+	}
+	public List<ProjectVo> selectfProjectList(int fpNo) {//끝나가는 프로젝트 조회
+		
+		return admindao.selectfProjectList(fpNo);
 	}
 
-	public List<ProjectVo> searchfProject(String keyword, int no) {//끝나가는 프로젝트 검색
+	public List<ProjectVo> searchfProject(String keyword, int fpNo) {//끝나가는 프로젝트 검색
 		
-		return admindao.serachfProject(keyword,no);
+		return admindao.serachfProject(keyword,fpNo);
 	}
 
-	public List<bannerVo> bannerProjectList() {//배너 프로젝트 리스트 조회
+	public List<bannerVo> bannerProjectList(int bNo) {//배너 프로젝트 리스트 조회
 		
-		return admindao.bannerProjectList();
+		return admindao.bannerProjectList(bNo);
 	}
 
 	public int bannerTotalCount() {//배너 토탈카운트
 		
 		return admindao.bannerTotalCount();
 	}
-
-	public List<bannerVo> bannerSearchList(String keyword, int no) {
+	public int searchBannerCount(String keyword) {
 		
-		return admindao.bannerSearchList(keyword, no);
+		return admindao.searchBannerCount(keyword);
+	}
+
+	public List<bannerVo> bannerSearchList(String keyword, int bNo) {
+		
+		return admindao.bannerSearchList(keyword, bNo);
 	}
 
 	public int bannerDelete(String bCode) {//배너 삭제
@@ -96,6 +112,15 @@ public class AdminService {
 		
 		return admindao.imagePlus(banner);
 	}
+
+	public List<AdminVo> bannerList() {
+		
+		return admindao.bannerList();
+	}
+
+
+
+
 
 	
 

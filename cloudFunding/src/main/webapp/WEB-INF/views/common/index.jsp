@@ -1096,6 +1096,10 @@ $('#carouselExampleIndicators').carousel({
 	  interval: 2000,
 	  parse:"hover"
 	})
+	
+	
+	
+	
 </script>
 </head>
 <body> 
@@ -1137,6 +1141,8 @@ $('#carouselExampleIndicators').carousel({
     <span class="sr-only">다음</span>
   </a>
 </div>
+ 
+
  <div class="Divider__Divider hEIXJa" data-reactid="184"></div>
 <div class="Container__Container jdgWcI" data-reactid="78">
   <div data-reactid="79">

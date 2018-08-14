@@ -141,6 +141,7 @@ function validate3(){
   
  </script>
 
+
 <div id="searchBar">
 	<form class="navbar-form pull-left" action="searchBanner.do"
 		onsubmit="return validate3();">
@@ -253,21 +254,21 @@ function validate3(){
 	</c:if>
 
 	<c:if test="${!empty bannerList }">
-		<a href="adminMenuList.do?no=${bPaging.prevPage}" class="next"><span
+		<a href="adminMenuList.do?bNo=${bPaging.prevPage}" class="next"><span
 			class="next">◀</span></a>&nbsp;
 
 	<c:forEach var="i" begin="${bPaging.startPage }"
 			end="${bPaging.endPage }" step="1">
 			<c:if test="${bPaging.curPage == i }">
-				<a href="adminMenuList.do?no=${i}" class="selectI"
+				<a href="adminMenuList.do?bNo=${i}" class="selectI"
 					onclick="return false;">${i}</a>&nbsp;
 		</c:if>
 			<c:if test="${bPaging.curPage != i }">
-				<a href="adminMenuList.do?no=${i}">${i}</a>&nbsp;
+				<a href="adminMenuList.do?bNo=${i}">${i}</a>&nbsp;
 		</c:if>
 		</c:forEach>
 
-		<a href="adminMenuList.do?no=${bPaging.nextPage}" class="next"><span
+		<a href="adminMenuList.do?bNo=${bPaging.nextPage}" class="next"><span
 			class="next">▶</span></a>
 	</c:if>
 </div>

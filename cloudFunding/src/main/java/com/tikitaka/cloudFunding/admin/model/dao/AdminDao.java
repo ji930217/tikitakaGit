@@ -8,6 +8,7 @@ import org.mybatis.spring.SqlSessionTemplate;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
+import com.tikitaka.cloudFunding.admin.model.vo.AdminVo;
 import com.tikitaka.cloudFunding.admin.model.vo.bannerVo;
 import com.tikitaka.cloudFunding.member.model.vo.Member;
 import com.tikitaka.cloudFunding.project.model.vo.ProjectVo;
@@ -43,9 +44,9 @@ public class AdminDao {
 		return sqlSession.selectOne("AdminMapper.TotalCount");
 	}
 
-	public List<ProjectVo> selectProjectList() {
+	public List<ProjectVo> selectProjectList(int pNo) {
 		
-		return sqlSession.selectList("AdminMapper.selectProjectList");
+		return sqlSession.selectList("AdminMapper.selectProjectList", pNo);
 	}
 
 	public int projectTotalCount() {
@@ -53,12 +54,12 @@ public class AdminDao {
 		return sqlSession.selectOne("AdminMapper.projectTotalCount");
 	}
 
-	public List<ProjectVo> searchProject(String keyword, int no) {
+	public List<ProjectVo> searchProject(String keyword, int pNo) {
 		
 		HashMap params = new HashMap();
 		
 		params.put("keyword", keyword);
-		params.put("no",no);
+		params.put("pNo",pNo);
 		
 		return sqlSession.selectList("AdminMapper.searchProject",params);
 	}
@@ -70,24 +71,24 @@ public class AdminDao {
 		return sqlSession.selectOne("AdminMapper.fprojectTotalCount");
 	}
 
-	public List<ProjectVo> selectfProjectList() {
+	public List<ProjectVo> selectfProjectList(int fpNo) {
 		
-		return sqlSession.selectList("AdminMapper.selectfProjectList");
+		return sqlSession.selectList("AdminMapper.selectfProjectList", fpNo);
 	}
 
-	public List<ProjectVo> serachfProject(String keyword, int no) {
+	public List<ProjectVo> serachfProject(String keyword, int fpNo) {
 		
 		HashMap params = new HashMap();
 		
 		params.put("keyword", keyword);
-		params.put("no",no);
+		params.put("fpNo",fpNo);
 		
 		return sqlSession.selectList("AdminMapper.searchfProject",params);
 	}
 
-	public List<bannerVo> bannerProjectList() {
+	public List<bannerVo> bannerProjectList(int bNo) {
 		
-		return sqlSession.selectList("AdminMapper.bannerProjectList");
+		return sqlSession.selectList("AdminMapper.bannerProjectList", bNo);
 	}
 
 	public int bannerTotalCount() {
@@ -95,12 +96,12 @@ public class AdminDao {
 		return sqlSession.selectOne("AdminMapper.bannerTotalCount");
 	}
 
-	public List<bannerVo> bannerSearchList(String keyword, int no) {
+	public List<bannerVo> bannerSearchList(String keyword, int bNo) {
 		
 		HashMap params = new HashMap();
 		
 		params.put("keyword", keyword);
-		params.put("no",no);
+		params.put("bNo",bNo);
 		
 		return sqlSession.selectList("AdminMapper.bannerSearchList",params);
 	}
@@ -122,7 +123,31 @@ public class AdminDao {
 
 	public int imagePlus(bannerVo banner) {
 		
-		return sqlSession.update("AdminMapper.imagePlus",banner);
+		return sqlSession.insert("AdminMapper.imagePlus",banner);
+	}
+
+	public int searchMemberCount(String keyword) {
+		
+		return sqlSession.selectOne("AdminMapper.searchMemberCount", keyword);
+	}
+
+	public int searchProjectCount(String keyword) {
+		return sqlSession.selectOne("AdminMapper.searchProjectCount",keyword);
+	}
+
+	public int searchfProjectCount(String keyword) {
+		
+		return sqlSession.selectOne("AdminMapper.searchfProjectCount",keyword);
+	}
+
+	public int searchBannerCount(String keyword) {
+		
+		return sqlSession.selectOne("AdminMapper.searchBannerCount", keyword);
+	}
+
+	public List<AdminVo> bannerList() {
+		
+		return sqlSession.selectList("AdminMapper.bannerList");
 	}
 
 	
