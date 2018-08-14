@@ -3230,6 +3230,11 @@ px
 
 		$(".nextBtn").click(
 				function() {
+					
+					console.log("next");
+					console.log(currentPage);
+					console.log(pageNum);
+					
 					$(".rLqvd1axk9i-3cU72yTkF").prevAll('a').removeClass(
 							'_3Syz9fGXYtzMNqK_55A2BW');
 					$(".rLqvd1axk9i-3cU72yTkF").nextAll('a').removeClass(
@@ -3465,7 +3470,6 @@ px
 		});
 
 		$(".categoryBtn").click(function() {
-			
 			$.ajax({
 				url : 'projectUpdate.do',
 				type : 'post',
@@ -3520,6 +3524,7 @@ px
 						$(".profileHint").children('a').text('');
 						$(".profileHint").children('a').append("<i class='_3WyCNpfRrfze5XqBAKgG6j WU1ox0-AeDX_zneKjnNMO _1QY7TzdLHKX3-BKPDNNYKF'></i>"+"이미지 등록 완료");
 						blue(result);
+						currentPage="#projectOutline";
 	                },error:function(){
 	                	console.log("ajax에러");
 	                }
@@ -3778,7 +3783,7 @@ px
 			if (1 > $("#modalItemInput").val().length) {
 				alert("아이템 이름은 최소 한글자 이상 입력해야 됩니다.");
 			}
-			alert("mdoalItem 제출");
+			
 		});
 
 		$("#giftDescription").keyup(function() {
