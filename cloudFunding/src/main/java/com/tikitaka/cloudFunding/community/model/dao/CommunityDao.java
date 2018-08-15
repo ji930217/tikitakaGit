@@ -42,5 +42,9 @@ public class CommunityDao {
 		return sqlSession.insert("communityMapper.insertReply", reply);
 	}
 
+	public int deleteReply(int replyCode) {
+		return sqlSession.delete("communityMapper.deleteReply", replyCode);
+	}
+
 	
 }

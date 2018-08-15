@@ -82,17 +82,19 @@
 	</sql>
 	<select id="selectPostList" parameterType="int" resultMap="postMap">
 	    SELECT P.POST_CODE, P_PROJECT_CODE, P.EMAIL, P.CONTENT, P.WRITTEN_DATE, P.DELFLAG, NAME, PROFILE_IMG,
-        				(SELECT COUNT(*) FROM REPLY WHERE P.POST_CODE = POST_CODE) AS REPLY_COUNT
+        				(SELECT COUNT(*) FROM REPLY WHERE P.POST_CODE = POST_CODE  AND DELFLAG != 'T') AS REPLY_COUNT
 		FROM POST P
 		LEFT JOIN REPLY R ON(P.POST_CODE = R.POST_CODE)
     	LEFT JOIN MEMBER M ON(P.EMAIL = M.EMAIL)
 	    WHERE P_PROJECT_CODE = #{projectCode}
 	    AND P.DELFLAG != 'T'
+	    AND R.DELFLAG != 'T'
 	    ORDER BY P.POST_CODE DESC
 	</select>
 	<select id="selectPost" parameterType="int" resultMap="postMap">
 		<include refid="selectPostHeader"/>   
 		WHERE P.DELFLAG != 'T' 
+		AND R.DELFLAG != 'T'
 		AND P.POST_CODE = #{postCode}
 	</select>
 	<select id="selectPostCount" parameterType="int" resultType="int">
@@ -125,4 +127,9 @@
 		INSERT INTO REPLY VALUES(SEQ_REPLY.NEXTVAL, #{postCode}, #{content}, #{email}, SYSDATE, DEFAULT)    
 	</insert>
 	
+	<delete id="deleteReply" parameterType="int">
+	    UPDATE REPLY
+	    SET DELFLAG = 'T'
+	    WHERE REPLY_CODE = #{replyCode}
+	</delete>
 </mapper>

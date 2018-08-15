@@ -240,13 +240,79 @@
 	    cursor: pointer;
 	}
 	
+	/* 게시글 상세보기 더보기 */
+	.cywbQo {
+	    width: 100%;
+	    margin-bottom: 1rem;
+	    position: relative;
+	}
+	.bPLTTN {
+	    margin: 1rem 1.5rem;
+	}
+	.dxWcyc {
+	    padding: 1em 1.5em;
+	    font-size: 1em;
+	    width: 100%;
+	    opacity: 1;
+	    pointer-events: ;
+	}
+	.dxWcyc {
+	    color: rgba(0, 0, 0, .6);
+	    background-color: #e7e7e7;
+	}
+	.dxWcyc {
+	    cursor: pointer;
+	    display: inline-block;
+	    min-height: 1em;
+	    outline: none;
+	    border: none;
+	    vertical-align: baseline;
+	    box-shadow: 0px 0px 0px 1px transparent inset, 0px 0em 0px 0px rgba(0, 0, 0, 0.1) inset;
+	    -webkit-user-select: none;
+	    -moz-user-select: none;
+	    -ms-user-select: none;
+	    user-select: none;
+	    -webkit-transition: opacity 0.1s ease,  background-color 0.1s ease,  color 0.1s ease,  box-shadow 0.1s ease, background 0.1s ease;
+	    transition: opacity 0.1s ease,  background-color 0.1s ease,  color 0.1s ease,  box-shadow 0.1s ease, background 0.1s ease;
+	    -webkit-tap-highlight-color: transparent;
+	    margin: 0 .25em 0 0;
+	    border-radius: 0.28571429rem;
+	    text-transform: none;
+	    text-shadow: none;
+	    font-weight: bold;
+	    line-height: 1em;
+	    font-style: normal;
+	    text-align: center;
+	    text-decoration: none;
+	}
+	/* button, html input[type=button], input[type=reset], input[type=submit] {
+	    -webkit-appearance: button;
+	    cursor: pointer;
+	} */
+	.hwdRmE {
+	    position: absolute;
+	    display: block;
+	    bottom: 0;
+	    left: 0;
+	    right: 0;
+	    height: 50px;
+	    z-index: 200;
+	    background: linear-gradient(to bottom,rgba(255,255,255,0), rgba(255,255,255,.5) 45%, rgba(255,255,255,1));
+	    content: "";
+	}
+	.fmSZUJ {
+	    min-height: 30px;
+	    max-height: 500px;
+	    overflow: hidden;
+	}
+	
 </style>
 
 <script>
 	var postCode;
 	$(function(){
 		// 게시글 상세보기
-		$(".cywbQo").click(function(){
+		$(".cywbQo, .bPLTTN").click(function(){
 			setWindowScrollTop();
 			
 			postCode = $(this).children("h3").text();
@@ -267,9 +333,11 @@
 					$(".hKVypK > .storyContent").html(data.content);
 					$(".hINlJw").html(data.name);
 					$("#postWriterProfileImgSpan").html("<img class='ProfileImg__ProfileImg-s1o99mme-0 frVGN' src='" + data.profileImg + "'/>");
-					$("#replyWriterProfileImgDiv").html("<img class='ProfileImg__ProfileImg-s1o99mme-0 frVGN' src='${user.profile_img}'/>")
+					$("#replyWriterProfileImgDiv").html("<img class='ProfileImg__ProfileImg-s1o99mme-0 frVGN' src='${user.profile_img}'/>");
+					$("#postWrittenDate").html(moment(data.writtenDate).format("YYYY-MM-DD"));
 					$("#replyForm input[name=postCode]").val(data.postCode);
 					
+					var loginUserEmail = "<c:out value='${user.email}'/>";
 					var creatorEmail = "<c:out value='${project.email}'/>";
 					var postWriterEmail = data.email;
 					if(creatorEmail == postWriterEmail){
@@ -316,7 +384,19 @@
 							resultStr += "</div>";
 							/* moment(reply.writtenDate).format("YYYY.MM.DD hh:mm") */
 							resultStr += "<div class='Comment__CommentedAt-wppgnq-5 bryKXn'>" + reply.writtenDate + "</div></div>";
-							resultStr += "<div class='Comment__CommentContents-wppgnq-8 dNCkru'>" + reply.content + "</div></div></div>";
+							resultStr += "<div class='Comment__CommentContents-wppgnq-8 dNCkru'>" + reply.content + "</div>";
+							
+							/* 댓글 삭제 버튼 */
+							resultStr += "<div class='PostEditForm__DeleteButton-frv1rh-6 kWwLhn'>";
+							if(loginUserEmail == reply.email) {
+								resultStr += "<button id='deleteReplyBtn' class='Button__Button-s1ng5xda-0 fkKFAu' onclick='deleteReply(" + reply.replyCode + ", " + data.postCode + ");'>";
+								resultStr += "<i class='_1pt-5UHn7rWHPExbDO4EbO _2rCeEoFeBzvCYn76udqnww _1QY7TzdLHKX3-BKPDNNYKF'></i></button></div></div>";
+							} else {
+								resultStr += "<button class='Button__Button-s1ng5xda-0 fkKFAu'>";
+								resultStr += "</button></div></div>";
+							}
+							
+							resultStr += "</div>";
 						}
 					} else {
 						resultStr += "<div class='Post__NoCommentsPlaceHolder-s1xz59uk-26 cHZzdT'>";
@@ -342,6 +422,8 @@
 				$("#insertReplyBtn").addClass("cdAaGX");
 			}
 		});
+		
+		setMoreBtnDisplayBlock();
 		
 	});
 	
@@ -453,8 +535,17 @@
 											</div>
 										</div>
 									</div>
+									
+									<div class="CommunityPostSummaryCard__ContentsWrapperGradient-s1yavd3r-12 hwdRmE" style="display:none;"></div>
+									
 								</div>
-								<div	class="CommunityPostSummarCard__Actions-s1yavd3r-15 jgodLB"style="cursor: pointer;">
+								
+								<div	class="CommunityPostSummaryCard__ReadMoreButton-s1yavd3r-14 bPLTTN" style="display:none;">
+									<h3 style="display:none;"><c:out value="${post.postCode }"/></h3>
+									<button id="moreBtn" class="Button__Button-s1ng5xda-0 dxWcyc"  style="cursor: pointer;">더 보기</button>
+								</div>
+									
+							<div	class="CommunityPostSummarCard__Actions-s1yavd3r-15 jgodLB"style="cursor: pointer;">
 									<i class="_30LNYFhw6qsigZSbwlGCDz _1QY7TzdLHKX3-BKPDNNYKF"></i>
 									<%-- <c:out value="${fn:length(post.replyList) }"/> --%>
 									<c:out value="${post.replyCount }"/>
@@ -496,8 +587,8 @@
 								</div>
 								<span id="creatorLabel" class="Post__CreatorLabel-s1xz59uk-14 kzDOep"></span>
 							</div>
-							<span>
-								7년 전
+							<span id="postWrittenDate">
+								<!-- 7년 전 -->
 							</span>
 						</div>
 					</div>
@@ -573,6 +664,7 @@
 			</div>
 		</div>
 	</div>
+	
 	<!-- 창작자 업데이트 클릭 시 보여지는 영역 -->
 	<div id="creatorPostDiv">
 		<div class="Community__Posts-s14atsnj-0 umGxa">

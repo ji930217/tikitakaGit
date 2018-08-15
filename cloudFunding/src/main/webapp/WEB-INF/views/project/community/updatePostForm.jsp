@@ -114,7 +114,7 @@
 	
 	/* 게시글 삭제 버튼 스타일 */
 	.kWwLhn {
-	    position: absolute;
+	    position: relative;
 	    right: 0;
 	    float: right;
 	}

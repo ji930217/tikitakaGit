@@ -126,7 +126,7 @@
 			  lang: 'ko-KR'
 		  });
 		  
-		  $(".note-editable").on('input selectionchange propertychange', function() {
+		  $("#postForm .note-editable").on('input selectionchange propertychange', function() {
 				if($(".note-editable").text().length > 0) {
 					$("#insertPostBtn").removeClass("cdAaGX");
 					$("#insertPostBtn").addClass("dUWaDF");
