@@ -306,7 +306,6 @@
 	    overflow: hidden;
 	}
 	
-	
 </style>
 
 <script>
@@ -334,9 +333,11 @@
 					$(".hKVypK > .storyContent").html(data.content);
 					$(".hINlJw").html(data.name);
 					$("#postWriterProfileImgSpan").html("<img class='ProfileImg__ProfileImg-s1o99mme-0 frVGN' src='" + data.profileImg + "'/>");
-					$("#replyWriterProfileImgDiv").html("<img class='ProfileImg__ProfileImg-s1o99mme-0 frVGN' src='${user.profile_img}'/>")
+					$("#replyWriterProfileImgDiv").html("<img class='ProfileImg__ProfileImg-s1o99mme-0 frVGN' src='${user.profile_img}'/>");
+					$("#postWrittenDate").html(moment(data.writtenDate).format("YYYY-MM-DD"));
 					$("#replyForm input[name=postCode]").val(data.postCode);
 					
+					var loginUserEmail = "<c:out value='${user.email}'/>";
 					var creatorEmail = "<c:out value='${project.email}'/>";
 					var postWriterEmail = data.email;
 					if(creatorEmail == postWriterEmail){
@@ -383,7 +384,19 @@
 							resultStr += "</div>";
 							/* moment(reply.writtenDate).format("YYYY.MM.DD hh:mm") */
 							resultStr += "<div class='Comment__CommentedAt-wppgnq-5 bryKXn'>" + reply.writtenDate + "</div></div>";
-							resultStr += "<div class='Comment__CommentContents-wppgnq-8 dNCkru'>" + reply.content + "</div></div></div>";
+							resultStr += "<div class='Comment__CommentContents-wppgnq-8 dNCkru'>" + reply.content + "</div>";
+							
+							/* 댓글 삭제 버튼 */
+							resultStr += "<div class='PostEditForm__DeleteButton-frv1rh-6 kWwLhn'>";
+							if(loginUserEmail == reply.email) {
+								resultStr += "<button id='deleteReplyBtn' class='Button__Button-s1ng5xda-0 fkKFAu' onclick='deleteReply(" + reply.replyCode + ", " + data.postCode + ");'>";
+								resultStr += "<i class='_1pt-5UHn7rWHPExbDO4EbO _2rCeEoFeBzvCYn76udqnww _1QY7TzdLHKX3-BKPDNNYKF'></i></button></div></div>";
+							} else {
+								resultStr += "<button class='Button__Button-s1ng5xda-0 fkKFAu'>";
+								resultStr += "</button></div></div>";
+							}
+							
+							resultStr += "</div>";
 						}
 					} else {
 						resultStr += "<div class='Post__NoCommentsPlaceHolder-s1xz59uk-26 cHZzdT'>";
@@ -574,8 +587,8 @@
 								</div>
 								<span id="creatorLabel" class="Post__CreatorLabel-s1xz59uk-14 kzDOep"></span>
 							</div>
-							<span>
-								7년 전
+							<span id="postWrittenDate">
+								<!-- 7년 전 -->
 							</span>
 						</div>
 					</div>
@@ -651,6 +664,7 @@
 			</div>
 		</div>
 	</div>
+	
 	<!-- 창작자 업데이트 클릭 시 보여지는 영역 -->
 	<div id="creatorPostDiv">
 		<div class="Community__Posts-s14atsnj-0 umGxa">

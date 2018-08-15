@@ -76,4 +76,10 @@ public class CommunityController {
 		
 		return "redirect:projectCommunity.do?projectCode=" + projectCode;
 	}
+	@RequestMapping("deleteReply.do")
+	public String deleteReply(int projectCode, int replyCode){
+		int result = cService.deleteReply(replyCode);
+		
+		return "redirect:projectCommunity.do?projectCode=" + projectCode;
+	}
 }

@@ -42,6 +42,10 @@ public class CommunityService {
 		return cDao.insertReply(reply);
 	}
 
+	public int deleteReply(int replyCode) {
+		return cDao.deleteReply(replyCode);
+	}
+
 	
 	
 }

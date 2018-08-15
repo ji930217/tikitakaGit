@@ -280,8 +280,8 @@
 	.frVGN {
 	    display: inline-block;
 	    /* background-image: url(https://tumblbug-upi.imgix.net/8976925….JPG…a&facepad=2.0&ch=Save-Data&mask=ellipse&s=a1136e6…); */
-	    width: 40px;
-	    height: 40px;
+	    width: 30px;
+	    height: 30px;
 	    background-size: cover;
 	    background-position: 50% 38%;
 	    border-radius: 50%;
@@ -475,6 +475,10 @@
 	    margin: .5rem 0 1.5rem;
 	}
 	
+	#deleteReplyBtn{
+		padding: inherit;
+    	margin-left: 10px;
+	}
 	
 	#postListDiv, #writeBtnDiv{ display:block; }
 	#postFormDiv, .tojyI, #creatorPostDiv, #updatePostFormDiv{	display:none; }
@@ -511,8 +515,10 @@
 					$(".hINlJw").html(data.name);
 					$("#postWriterProfileImgSpan").html("<img class='ProfileImg__ProfileImg-s1o99mme-0 frVGN' src='" + data.profileImg + "'/>");
 					$("#replyWriterProfileImgDiv").html("<img class='ProfileImg__ProfileImg-s1o99mme-0 frVGN' src='${user.profile_img}'/>")
+					$("#postWrittenDate").html(moment(data.writtenDate).format("YYYY-MM-DD"));
 					$("#replyForm input[name=postCode]").val(data.postCode);
 					
+					var loginUserEmail = "<c:out value='${user.email}'/>";
 					var creatorEmail = "<c:out value='${project.email}'/>";
 					var postWriterEmail = data.email;
 					if(creatorEmail == postWriterEmail){
@@ -553,7 +559,19 @@
 							resultStr += "</div>";
 							/* moment(reply.writtenDate).format("YYYY.MM.DD hh:mm") */
 							resultStr += "<div class='Comment__CommentedAt-wppgnq-5 bryKXn'>" + reply.writtenDate + "</div></div>";
-							resultStr += "<div class='Comment__CommentContents-wppgnq-8 dNCkru'>" + reply.content + "</div></div></div>";
+							resultStr += "<div class='Comment__CommentContents-wppgnq-8 dNCkru'>" + reply.content + "</div>";
+							
+							/* 댓글 삭제 버튼 */
+							resultStr += "<div class='PostEditForm__DeleteButton-frv1rh-6 kWwLhn'>";
+							if(loginUserEmail == reply.email) {
+								resultStr += "<button id='deleteReplyBtn' class='Button__Button-s1ng5xda-0 fkKFAu' onclick='deleteReply(" + reply.replyCode + ", " + data.postCode + ");'>";
+								resultStr += "<i class='_1pt-5UHn7rWHPExbDO4EbO _2rCeEoFeBzvCYn76udqnww _1QY7TzdLHKX3-BKPDNNYKF'></i></button></div></div>";
+							} else {
+								resultStr += "<button class='Button__Button-s1ng5xda-0 fkKFAu'>";
+								resultStr += "</button></div></div>";
+							}
+							
+							resultStr += "</div>";
 						}
 					} else {
 						resultStr += "<div class='Post__NoCommentsPlaceHolder-s1xz59uk-26 cHZzdT'>";
@@ -581,6 +599,7 @@
 		$("#postFormDiv").css("display", "none");
 		$("#postListDiv").css("display", "block");
 		$("#writeBtnDiv").css("display", "block");
+		setMoreBtnDisplayBlock();
 	}
 	function openUpdatePostForm(postCode){
 		setWindowScrollTop();
@@ -613,6 +632,19 @@
 	}
 	function closePostDetail(){
 		$(".tojyI").css("display", "none");
+		
+		$(".hKVypK > .storyContent").html("");
+		$(".hINlJw").html("");
+		$("#postWriterProfileImgSpan").html("");
+		$("#replyWriterProfileImgDiv").html("");
+		$("#replyDiv").html("");
+		$(".Post__CommunityPostCommentsAmount-s1xz59uk-25").html("");
+		$("#sharePostBtnDiv").css("display", "none");
+		$("#creatorLabel").html("");
+		$("#postCategory").html("");
+		$("#postCategory").removeClass("kFkoaw");
+		$("#postWrittenDate").html("");
+		
 		$("#postListDiv").css("display", "block");
 		$("#writeBtnDiv").css("display", "block");
 		sessionStorage.removeItem("postCode");
@@ -634,7 +666,8 @@
 	function setMoreBtnDisplayBlock(){
 		/* 더보기 버튼 보이게 */
 		$(".cywbQo").each(function(){
-			var height = $(this).css("height").replace("px", "");
+			var $storyContentDiv = $(this).children("div").eq(0).children("div").children("div").eq(0);
+			var height = $storyContentDiv.css("height").replace("px", "");
 			var maxHeight = $(".fmSZUJ").css("max-height").replace("px", "");
 			
 			if(maxHeight <= height) {
@@ -642,6 +675,11 @@
 				$(this).siblings(".bPLTTN").css("display", "block");
 			}
 		});
+	}
+	function deleteReply(replyCode, postCode){
+		sessionStorage.setItem("postCode", postCode);
+		var projectCode = "<c:out value='${project.projectCode}'/>";
+		location.href="deleteReply.do?projectCode=" + projectCode + "&replyCode=" + replyCode;
 	}
 	
 </script>
