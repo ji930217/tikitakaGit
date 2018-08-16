@@ -18,6 +18,7 @@ import org.springframework.web.servlet.ModelAndView;
 
 import com.tikitaka.cloudFunding.member.model.service.MemberService;
 import com.tikitaka.cloudFunding.member.model.vo.Member;
+import com.tikitaka.cloudFunding.member.model.vo.PaymentInfo;
 
 
 @Controller
@@ -249,7 +250,7 @@ public class MemberController {
 	int result = memberService.updateMemberProfile(member);
 		
 		
-	return "index.do";
+	return "redirect:index.do";
 	}
 	
 	
@@ -280,10 +281,94 @@ public class MemberController {
 		member.setPassword(password);
 		int result = memberService.updateMemberPassword(member);
 		
-		return "index.do";
+		return "redirect:index.do";
 	}
 	
 	
+	@RequestMapping("setPayment.do")
+	public String setPayment() {
+		return "member/setPayment";
+	}
+	
+	
+	@RequestMapping("setPaymentImpl.do")
+	public String setPaymentInmp(
+			@RequestParam(value="billKey", required=false) String billKey,
+			@RequestParam(value="cardMonth", required=false) String cardMonth,
+			@RequestParam(value="cardYear", required=false) String cardYear,
+			@RequestParam(value="billKeyBirth", required=false) String billKeyBirth,
+			@RequestParam(value="billKeyPwd", required=false) String billKeyPwd,
+			@RequestParam(value="bankName", required=false) String bankName,
+			@RequestParam(value="accOwnerName", required=false) String accOwnerName,
+			@RequestParam(value="privateBusiness", required=false) String privateBusiness,
+			@RequestParam(value="ownerBirth", required=false) String ownerBirth,
+			@RequestParam(value="accNumber", required=false) String accNumber,
+			@RequestParam(value="phone1", required=false) String phone1,
+			@RequestParam(value="phone2", required=false) String phone2,
+			@RequestParam(value="phone3", required=false) String phone3,
+			HttpServletRequest request
+	) {
+		
+		
+		/*
+		카드번호 - billKey
+		유효기간 월 - cardMonth
+		유효기간 연 - cardYear
+		생년월일 - billKeyBirth
+		비밀번호 두자리 - billKeyPwd
+		
+		결제은행 - bankName
+		예금주명 - accOwnerName
+		사업자 구분 - privateBusiness
+		예금주 생년월일 6자리 - ownerBirth
+		계좌번호 - accNumber
+		전화번호 - phone1 phone2 phone3
+		 */
+		
+		
+		if(billKey != null && billKey.length() > 0) {
+			System.out.println("카드 ");
+			
+			PaymentInfo pi = new PaymentInfo();
+			
+			Member member = (Member) request.getSession().getAttribute("user");
+			
+			pi.setEmail(member.getEmail());
+			pi.setP_method("card");
+			pi.setCardnum(billKey);
+			pi.setValidity(cardMonth + cardYear);
+			pi.setBirthday(Integer.parseInt(billKeyBirth));
+			pi.setCardpwd(Integer.parseInt(billKeyPwd));
+			
+			System.out.println(pi.toString());
+			
+			
+		
+			
+		}else {
+			System.out.println("은행");
+			
+			PaymentInfo pi = new PaymentInfo();
+			
+			Member member = (Member) request.getSession().getAttribute("user");
+			
+			System.out.println(member.getEmail() + " / " + bankName + " / " + 
+					accOwnerName + " / " + privateBusiness + " / " + ownerBirth + " / " + accNumber);
+			
+			pi.setEmail(member.getEmail());
+			pi.setP_method("bank");
+			pi.setBank(bankName);
+			pi.setAcname(accOwnerName);
+			pi.setAcinfo(privateBusiness);
+			pi.setBirthday(Integer.parseInt(ownerBirth));
+			pi.setAcnum(Integer.parseInt(accNumber));
+			
+			System.out.println(pi.toString());
+		
+		}
+		
+		return "redirect:index.do";
+	}
 	
 	
 	
