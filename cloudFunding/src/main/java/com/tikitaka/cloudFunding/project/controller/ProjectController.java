@@ -168,6 +168,8 @@ public class ProjectController {
 	@RequestMapping("projectDetail.do")
 	public ModelAndView selectProjectDetail(int projectCode, ModelAndView mv){
 		ProjectVo project = projectService.selectProjectDetail(projectCode);
+		// GiftVo 리스트도 함께 조회해서 넘겨줘야함.
+		
 		int count = cService.selectPostCount(projectCode);
 		mv.addObject("count", count);
 		mv.addObject("project", project);

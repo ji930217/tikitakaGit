@@ -268,7 +268,8 @@
 	$(window).scroll(function() {
 		 var $el = $('.show-on-scroll');
 		 var height = $(".hsuyOO").css("height").replace("px", "");
-		 var threshold = Math.ceil(height) + 10;
+		 var height2 = $("#contentsNavigation").css("height").replace("px", "");
+		 var threshold = Math.ceil(height) + Math.ceil(height2) + 10;
 		 if($(this).scrollTop() >= threshold) { 
 			 $el.addClass('shown');
 			 $("#contentsNavigation").css("visibility", "hidden");
