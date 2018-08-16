@@ -2,6 +2,7 @@
     pageEncoding="UTF-8"%>
     <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
     
+  
     
 
   <script src="//www.google.com/jsapi"></script>
@@ -68,12 +69,14 @@
 
   function drawChart() {
 
-	  var dd = 100000;
+	  var allPrice = ${allPrice-price };
+	  var price = ${price };
+	  
 	  
     var data = google.visualization.arrayToDataTable([
       ['후원금', '금액'],
-      ['남은 후원금',     60000],
-      ['받은 후원금',      dd]
+      ['남은 후원금',     allPrice],
+      ['받은 후원금',     price]
      
     ]);
 
@@ -92,14 +95,17 @@
   google.charts.load("current", {packages:["corechart"]});
   google.charts.setOnLoadCallback(drawChart);
   function drawChart() {
+	  
+	  var category1 = ${category1};
+	  var category2 = ${category2};
+	  var category3 = ${category3};
+	  
     var data = google.visualization.arrayToDataTable([
       ['카테고리', '갯수'],
-      ['푸드',     11],
-      ['음악',      2],
-      /* ['캠페인',  2],
-      ['공연', 2], */
-      ['미술',    7],
-      ['기타', 3]
+      ['게임',    category1 ],
+      ['공연',      category2],
+      ['디자인',    category3],
+      
     ]);
 
     var options = {
@@ -143,4 +149,5 @@
    <div id="curve_chart" style="width: 60%; height: 200px;"></div> 
    <div id="donutchart" style="width: 40%; height: 200px;"></div>
   </div>
+  
   

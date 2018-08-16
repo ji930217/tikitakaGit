@@ -37,6 +37,25 @@ public class AdminController {
 			@RequestParam(defaultValue = "1") int fpNo) {
 
 		
+		//챠트
+		int allPrice = adminservice.allPrice(); //전체모금액
+		int price = adminservice.price(); //받은모금액
+		int category1 = adminservice.category();//카테고리 게임조회
+		int category2 = adminservice.category2();//카테고리 공연조회
+		int category3 = adminservice.category3();//카테고리 디자인조회
+		int memberMonth = adminservice.memberMonth();
+		int projectMonth = adminservice.projectMonth();
+		
+		
+		
+		mv.addObject("allPrice", allPrice);
+		mv.addObject("price", price);
+		mv.addObject("category1", category1);
+		mv.addObject("category2", category2);
+		mv.addObject("category3", category3);
+		
+		
+		
 		
 		//////////////////////////////////////////////////////////멤버 조회
 		int noticeCount = adminservice.TotalCount();
@@ -1569,7 +1588,7 @@ public class AdminController {
 		
 		@RequestMapping("bannerChange.do") 
 		public String bannerChange(PagingVo paging,projectPagingVo pPaging,fProjectPagingVo fpPaging, @RequestParam(defaultValue = "1") int no
-				,HttpServletRequest request, Model model) {
+				,HttpServletRequest request, ModelAndView mv) {
 			
 			String pCode = request.getParameter("pCode");// 배너계시하고싶은 프로젝트코드 >> 등록
 			String bCode = request.getParameter("bCode");//배치하고싶은 배너코드 >> 이용해서 >>삭제
@@ -1578,13 +1597,14 @@ public class AdminController {
 			int bDelete = adminservice.bannerDelete(bCode);
 			int bUpdate = adminservice.bannerUpdate(pCode,bCode);
 			
-			List<AdminVo> bannerList = adminservice.bannerList();
+			/*List<AdminVo> bannerList = adminservice.bannerList();
 			
 System.out.println(bannerList);
 			
-			model.addAttribute("indexBannerList", bannerList);
+		mv.addObject("indexBannerList", bannerList);*/
+		/*mv.setViewName("home");*/
 			
-			return "redirect:index.do";
+			return "redirect:adminMenuList.do";
 		}
 		
 		@RequestMapping("bannerPlus.do")

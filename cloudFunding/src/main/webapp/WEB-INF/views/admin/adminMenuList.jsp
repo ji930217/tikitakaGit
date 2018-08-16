@@ -19,9 +19,9 @@
 	margin-top:20px;
 	}
 	
-	/* input:focus {
-  outline: none;
-} */
+	#tebMenu{
+	margin-bottom: 30px;
+	}
 </style>
 
   <title>관리자메인페이지</title>
