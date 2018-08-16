@@ -209,6 +209,9 @@
       
       
       $(function(){
+    	  
+    	 $("#fieldsetBorder").css("border","0px");
+    	  
     	 $("#join").click(function(){
     		 location.href="joinPage.do";
     	 });
@@ -255,7 +258,7 @@
                     <!-- accept-charset="UTF-8" role="form" -->
                     
                         <form method="post" action="login.do" >
-                            <fieldset>
+                            <fieldset id="fieldsetBorder">
                                 <div class="form-group">
                                     <input class="form-control" placeholder="yourmail@example.com" name="email" type="text">
                                 </div>
