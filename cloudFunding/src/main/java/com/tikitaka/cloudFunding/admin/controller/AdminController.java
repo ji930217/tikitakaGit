@@ -44,7 +44,7 @@ public class AdminController {
 		int category2 = adminservice.category2();//카테고리 공연조회
 		int category3 = adminservice.category3();//카테고리 디자인조회
 		int memberMonth = adminservice.memberMonth();
-		int projectMonth = adminservice.projectMonth();
+		/*int projectMonth = adminservice.projectMonth();*/
 		
 		
 		
@@ -53,6 +53,7 @@ public class AdminController {
 		mv.addObject("category1", category1);
 		mv.addObject("category2", category2);
 		mv.addObject("category3", category3);
+		mv.addObject("memberMonth", memberMonth);
 		
 		
 		
