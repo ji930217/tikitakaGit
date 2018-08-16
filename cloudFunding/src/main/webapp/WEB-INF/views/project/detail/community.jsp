@@ -545,12 +545,13 @@
 					
 					var projectCode = "<c:out value='${project.projectCode}'/>";		
 					
-					$(".Post__CommunityPostCommentsAmount-s1xz59uk-25").html("<strong>" + data.replyList.length + "</strong>개의 댓글이 있습니다");
+					var replyCount = data.replyCount == null ? 0 : data.replyCount;
+					$(".Post__CommunityPostCommentsAmount-s1xz59uk-25").html("<strong>" + replyCount + "</strong>개의 댓글이 있습니다");
 					var $replyDiv = $("#replyDiv");
 					var resultStr = "";
 					// 댓글이 없는 경우 구분하기
 					/* console.log(data.replyList[0].content); */
-					if(0 < data.replyList.length) {
+					if(0 < replyCount) {
 						for(var key in data.replyList) {
 							var reply = data.replyList[key];
 							resultStr += "<div class='Comment__Comment-wppgnq-0 hlvHZI'>";
@@ -590,11 +591,12 @@
 						resultStr += "댓글이 없습니다</div>";
 					}
 					$replyDiv.html(resultStr);
-				}/* , beforeSend:function(){
-			        $(".tojyI").hide();
+				}, beforeSend:function(){
+			        $(".loadingIndicator").css("display", "inline-block");  
 			    }, complete:function(){
-			    	$(".tojyI").show();
-			    } */, error : function(e){
+			        $(".loadingIndicator").css("display", "none");  
+					$(".dLYLGx").css("margin", "unset"); 
+			    }, error : function(e){
 					console.log("ajax insertReply 에러 : ", e);
 				}
 			});
@@ -684,9 +686,10 @@
 		$(".cywbQo").each(function(){
 			var $storyContentDiv = $(this).children("div").eq(0).children("div").children("div").eq(0);
 			var height = $storyContentDiv.css("height").replace("px", "");
-			var maxHeight = $(".fmSZUJ").css("max-height").replace("px", "");
+			/* var maxHeight = $(".fmSZUJ").css("max-height").replace("px", "");
+			console.log(maxHeight); */
 			
-			if(maxHeight <= height) {
+			if(500 <= height) {
 				$(this).children(".hwdRmE").css("display", "block");
 				$(this).siblings(".bPLTTN").css("display", "block");
 			}
