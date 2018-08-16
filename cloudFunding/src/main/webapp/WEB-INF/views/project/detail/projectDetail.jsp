@@ -212,10 +212,21 @@
 	#storyFixedBtn, #storyBtn{
 		color: rgb(0, 0, 0); border-bottom: 3px solid rgb(0, 0, 0); padding-bottom: calc(0.5rem - 3px);
 	}
+	.eQgQLo{ display:none; }
 		
+	.loadingIndicator{
+		display:inline-block;
+	}
+	
 </style>
 	
 <script>
+	$(window).on("load", function(){ 
+		$(".loadingIndicator").css("display", "none");  
+		$(".dLYLGx").css("margin", "unset");  
+		$(".eQgQLo").css("display", "flex");  
+	});
+	
 	$(function(){
 		$(".ceunQL").css("display", "block");
 	});
@@ -247,15 +258,25 @@
 								<div class="Card__Card-s1i1esb8-0 bJXRvz" data-reactid="107">
 									<div class="StoryCard__StoryCardInner-s1hr1q2m-0 ewlCRY"
 										data-reactid="108">
+										
+										<!-- 로딩중 -->
+										<div class="LoadingIndicator__Wrapper-s1ikuj59-1 dLYLGx" data-reactid="110" align="center">
+											<div class="loadingIndicator">
+												<div class="LoadingIndicator__Circle-s1ikuj59-2 hGGMaO" data-reactid="111"></div>
+												<div class="sc-htpNat btBxPj" data-reactid="112"></div>
+												<div class="sc-bxivhb cgjPcA" data-reactid="113"></div>
+											</div>
+										</div>
+										
 										<div class="sc-bdVaJa eQgQLo" data-reactid="109">
 											여기에 프로젝트 스토리 출력
-											<%-- <div class="LoadingIndicator__Wrapper-s1ikuj59-1 dLYLGx"
+											<!-- <div class="LoadingIndicator__Wrapper-s1ikuj59-1 dLYLGx"
 												data-reactid="110">
 												<div class="LoadingIndicator__Circle-s1ikuj59-2 hGGMaO"
 													data-reactid="111"></div>
 												<div class="sc-htpNat btBxPj" data-reactid="112"></div>
 												<div class="sc-bxivhb cgjPcA" data-reactid="113"></div>
-											</div> --%>
+											</div> -->
 										</div>
 									</div>
 								</div>

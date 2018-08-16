@@ -480,8 +480,8 @@
     	margin-left: 10px;
 	}
 	
-	#postListDiv, #writeBtnDiv{ display:block; }
-	#postFormDiv, .tojyI, #creatorPostDiv, #updatePostFormDiv{	display:none; }
+	/* #postListDiv,  */#writeBtnDiv{ display:block; }
+	#postFormDiv, .tojyI, #creatorPostDiv, #updatePostFormDiv, #postListDiv{	display:none; }
 	
 	#communityFixedBtn, #communityBtn{ color: rgb(0, 0, 0); border-bottom: 3px solid rgb(0, 0, 0); padding-bottom: calc(0.5rem - 3px); }
 	#sharePostBtnDiv{ display:none; }
@@ -489,6 +489,13 @@
 	
 </style>
 <script>
+	$(window).on("load", function(){ 
+		$(".loadingIndicator").css("display", "none");  
+		$(".dLYLGx").css("margin", "unset");  
+		$("#postListDiv").css("display", "block");  
+		setMoreBtnDisplayBlock();
+	});
+	 
 	$(function(){
 		// 댓글 달고나면 해당 게시글 상세화면 영역 보이게
 		var postCode;
@@ -579,8 +586,12 @@
 						resultStr += "댓글이 없습니다</div>";
 					}
 					$replyDiv.html(resultStr);
-				}, error : function(e){
-					console.log("ajax insertReply 에러");
+				}, beforeSend:function(){
+			        $(".tojyI").hide();
+			    }, complete:function(){
+			    	$(".tojyI").show();
+			    }, error : function(e){
+					console.log("ajax insertReply 에러 : ", e);
 				}
 			});
 	      }
@@ -653,6 +664,7 @@
 	function openCreatorPost(){
 		$("#creatorPostDiv").css("display", "block");
 		$("#postListDiv").css("display", "none");
+		setMoreBtnDisplayBlock();
 	}
 	function closeCreatorPost(){
 		$("#postListDiv").css("display", "block");
@@ -688,29 +700,28 @@
     	<header>
 			<c:import url="../../common/header.jsp"/>
 		</header>
-			<div data-reactid="34">
-				
-				<c:import url="projectInfo.jsp"/>
-				
-			<div class="ProjectPage__ProjectContentsBackground-b1letw-0 cNWmvR">
-				<div class="Container__Container-s1sxg7g4-0 jdgWcI">
-					<div class="ProjectPage__ProjectContents-b1letw-1 jPEdlL">
-						<div	class="ProjectPage__ProjectContentsMainColumn-b1letw-2 kJUlye">
-							
-							<div class="ProjectPage__MainColumnInner-b1letw-4 giKgfw">
-								<c:import url="../community/postList.jsp"/>
-								<c:import url="../community/postForm.jsp"/>
-								<c:import url="../community/updatePostForm.jsp"/>
-							</div>
+		<div data-reactid="34">
+			
+			<c:import url="projectInfo.jsp"/>
+			
+		<div class="ProjectPage__ProjectContentsBackground-b1letw-0 cNWmvR">
+			<div class="Container__Container-s1sxg7g4-0 jdgWcI">
+				<div class="ProjectPage__ProjectContents-b1letw-1 jPEdlL">
+					<div	class="ProjectPage__ProjectContentsMainColumn-b1letw-2 kJUlye">
+						<div class="ProjectPage__MainColumnInner-b1letw-4 giKgfw">
+							<c:import url="../community/postList.jsp"/>
+							<c:import url="../community/postForm.jsp"/>
+							<c:import url="../community/updatePostForm.jsp"/>
 						</div>
-
-						<!-- 오른쪽 고정 영역(창작자소개, 선물 목록) -->
-						<c:import url="creatorRewardsCard.jsp"/>
-
 					</div>
+
+					<!-- 오른쪽 고정 영역(창작자소개, 선물 목록) -->
+					<c:import url="creatorRewardsCard.jsp"/>
+
 				</div>
 			</div>
 		</div>
+	</div>
 </body>
   
 </html>

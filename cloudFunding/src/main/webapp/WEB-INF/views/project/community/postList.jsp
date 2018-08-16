@@ -306,6 +306,10 @@
 	    overflow: hidden;
 	}
 	
+	.loadingIndicator{
+		display:inline-block;
+	}
+	
 </style>
 
 <script>
@@ -469,6 +473,15 @@
 					</div>
 				</div>
 			</a>
+		</div>
+		
+		<!-- 로딩중 -->
+		<div class="LoadingIndicator__Wrapper-s1ikuj59-1 dLYLGx" data-reactid="110" align="center">
+			<div class="loadingIndicator">
+				<div class="LoadingIndicator__Circle-s1ikuj59-2 hGGMaO" data-reactid="111"></div>
+				<div class="sc-htpNat btBxPj" data-reactid="112"></div>
+				<div class="sc-bxivhb cgjPcA" data-reactid="113"></div>
+			</div>
 		</div>
 		
 		<!-- 모든 게시글 리스트 -->
@@ -725,7 +738,16 @@
 												</div>
 											</div>
 										</div>
-									</div>
+									
+										<div class="CommunityPostSummaryCard__ContentsWrapperGradient-s1yavd3r-12 hwdRmE" style="display:none;"></div>
+								
+								</div>
+								
+								<div	class="CommunityPostSummaryCard__ReadMoreButton-s1yavd3r-14 bPLTTN" style="display:none;">
+									<h3 style="display:none;"><c:out value="${post.postCode }"/></h3>
+									<button id="moreBtn" class="Button__Button-s1ng5xda-0 dxWcyc"  style="cursor: pointer;">더 보기</button>
+								</div>
+								
 									<div	class="CommunityPostSummarCard__Actions-s1yavd3r-15 jgodLB"style="cursor: pointer;">
 										<i class="_30LNYFhw6qsigZSbwlGCDz _1QY7TzdLHKX3-BKPDNNYKF"></i>
 										<%-- <c:out value="${fn:length(post.replyList) }"/> --%>
