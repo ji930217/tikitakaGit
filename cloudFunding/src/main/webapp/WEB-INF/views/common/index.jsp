@@ -1117,7 +1117,7 @@ $('#carouselExampleIndicators').carousel({
   </ol>
   <div class="carousel-inner">
  
-    <div class="carousel-item active">
+    <%-- <div class="carousel-item active">
       <img class="d-block w-100" src="resources/images/carousel/${indexBannerList[0].bannerImage}" alt="첫번째 슬라이드">
     </div>  
     <div class="carousel-item">
@@ -1131,6 +1131,21 @@ $('#carouselExampleIndicators').carousel({
     </div>
     <div class="carousel-item">
       <img class="d-block w-100" src="resources/images/carousel/${indexBannerList[4].bannerImage}" alt="다섯번째 슬라이드">
+    </div> --%>
+    <div class="carousel-item active">
+      <img class="d-block w-100" src="resources/images/carousel/slide1.jpg" alt="첫번째 슬라이드">
+    </div>  
+    <div class="carousel-item">
+      <img class="d-block w-100" src="resources/images/carousel/slide2.jpg" alt="두번째 슬라이드">
+    </div>
+    <div class="carousel-item">
+      <img class="d-block w-100" src="resources/images/carousel/slide3.jpg" alt="세번째 슬라이드">
+    </div>
+    <div class="carousel-item">
+      <img class="d-block w-100" src="resources/images/carousel/slide4.jpg" alt="네번째 슬라이드">
+    </div>
+    <div class="carousel-item">
+      <img class="d-block w-100" src="resources/images/carousel/slide5.jpg" alt="다섯번째 슬라이드">
     </div>
 
   </div>
@@ -1155,6 +1170,7 @@ $('#carouselExampleIndicators').carousel({
         <button class="Button__Button csIfer" data-reactid="89"><i class="WU1ox0-AeDX_zneKjnNMO _1XlDYEGI6NQt_YZkSA5u6N _1QY7TzdLHKX3-BKPDNNYKF" data-reactid="90"></i></button>
       </div>
     </div>
+    
     <div class="Carousel__CarouselContents iEZvlH" data-reactid="91">
       <div class="Carousel__Column hEilqP" data-reactid="92"> <a class="ProjectItem__ProjectItemCard hFAREh" href="projectDetail.do?projectCode=1" data-reactid="93"><img class="ProjectItem__ProjectCoverimage bGqbmB" src="resources/images/header/tumblbug-pci.imgix.net/fcdb199a7461439ec4083d3fa5aa05ddda97c7d9/6f13578acde5f434401db2340d6effacc378863e/4ed27b563664b37034ebeba6dac774fbe17fcf25/fb667098-0112-4782-9fc6-be178e9e7244cd3c.png?ixlib=rb-1.1.0&amp;w=620&amp;h=465&amp;auto=format%2Ccompress&amp;lossless=true&amp;fit=crop&amp;s=e1a11854f54300f644912e39523e5ffc" alt="&#x27;보통의 물건&#x27;에 &#x27;보통의 하루&#x27;를 담다 이미지" data-reactid="94"/>
         <div class="ProjectItem__ProjectTextWrapper fOsIlY" data-reactid="95">
