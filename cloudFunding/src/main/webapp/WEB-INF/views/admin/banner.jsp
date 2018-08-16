@@ -84,6 +84,9 @@ function validate3(){
 	return true;
 }
 
+
+
+
   function selectAll(){
 	 location.href = "selectAll.do"; 
 	
@@ -134,11 +137,30 @@ function validate3(){
 
    	};
    	
-  
- 
-
+   	function imageChack(name){
+   		
+   		var pathpoint = name.lastIndexOf('.');
+   		var filepoint = name.substring(pathpoint+1,name.lenght);
+   		var filetype = filepoint.toLowerCase();
+   		
+   		if(filetype == 'jpg' || filetype == 'gif' || filetype == 'png' || filetype == 'jpeg' || filetype == 'bmp'){
+   			alert("업로드 가능합니다");
+   			
+   		}else{
+   			alert("지정된 확장자만 등록가능합니다(jpg, gif, png, jpeg, bmp)");
+   			
+   		}
+   		
+   	}
    	
-  
+   	function formCheck(){
+   		var dd = $("#fileInput").val();
+   		alert(dd);
+   		return false;
+   	}
+   	
+
+
  </script>
 
 
@@ -218,17 +240,15 @@ function validate3(){
 
 								<c:if test="${b.bannerImage == null }">
 									<form method="post" action="bannerPlus.do"
-										enctype="multipart/form-data" id="form1">
+										enctype="multipart/form-data" id="form1" onsubmit="return formCheck();">
 										<input type="hidden" name="pjCode" id="pjCode" value="${b.projectCode }" />
-										<div
-											class="file btn btn-lg btn-primary btn btn-secondary btn-xs"
-											id="fileDiv">
-											Upload <input type="file" name="file" id="fileInput" />
+										<div class="file btn btn-lg btn-primary btn btn-secondary btn-xs" id="fileDiv">Upload 
+										<input type="file" name="file" id="fileInput" accept="image/gif, image/jpeg, image/png" onchange = "imageChack(value);"/>
 										</div>
-
+												
 
 										<button type="submit" class="btn btn-secondary btn-xs">등록</button>
-								<button type="button" class="btn btn-secondary btn-xs" id="btn2">상세정보</button>
+										<button type="button" class="btn btn-secondary btn-xs" id="btn2">상세정보</button>
 									</form>
 
 								</c:if>

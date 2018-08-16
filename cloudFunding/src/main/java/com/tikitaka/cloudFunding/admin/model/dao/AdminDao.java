@@ -150,6 +150,43 @@ public class AdminDao {
 		return sqlSession.selectList("AdminMapper.bannerList");
 	}
 
+	public int allPrice() {
+
+		return sqlSession.selectOne("AdminMapper.allPrice");
+	}
+
+	public int price() {
+		
+		return sqlSession.selectOne("AdminMapper.price");
+	}
+
+	public int category() {
+		
+		return sqlSession.selectOne("AdminMapper.category1");
+	}
+
+	public int category2() {
+		
+		return sqlSession.selectOne("AdminMapper.category2");
+	}
+
+	public int category3() {
+		
+		return sqlSession.selectOne("AdminMapper.category3");
+	}
+
+	public int memberMonth() {
+		
+		return sqlSession.selectOne("AdminMapper.memberMonth");
+	}
+
+	public int projectMonth() {
+		
+		return sqlSession.selectOne("AdminMapper.projectMonth");
+	}
+
+	
+
 	
 
 	

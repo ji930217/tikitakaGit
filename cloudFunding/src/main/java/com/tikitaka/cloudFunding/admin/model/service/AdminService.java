@@ -118,6 +118,43 @@ public class AdminService {
 		return admindao.bannerList();
 	}
 
+	public int allPrice() {
+		
+		return admindao.allPrice(); //전체 모금액
+	}
+
+	public int price() {
+		
+		return admindao.price(); //받은 모금액
+	}
+
+	public int category() {
+		
+		return admindao.category();
+	}
+
+	public int category2() {
+		
+		return admindao.category2();
+	}
+
+	public int category3() {
+		
+		return admindao.category3();
+	}
+
+	public int memberMonth() {
+		
+		return admindao.memberMonth();
+	}
+
+	public int projectMonth() {
+		
+		return admindao.projectMonth();
+	}
+
+	
+
 
 
 

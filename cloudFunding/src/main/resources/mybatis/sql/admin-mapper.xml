@@ -67,6 +67,7 @@
 <result property="pConfirm" column="P_OK"/>
 <result property="sendConfirm" column="P_SEND_CONFIRM"/>
 <result property="currentAmount" column="P_CURRENTAMOUNT"/>
+<result property="currentAmount" column="P_ENROLL_DATE"/>
 </resultMap>
 
 
@@ -213,9 +214,51 @@ INSERT INTO BANNER VALUES (#{projectCode},#{bannerImage},NULL)
 SELECT *
 FROM BANNER
 WHERE BANNER_LEVEL = 1 OR BANNER_LEVEL = 2 OR BANNER_LEVEL = 3 OR BANNER_LEVEL = 4 OR BANNER_LEVEL = 5
+ORDER BY BANNER_LEVEL
+</select>
+
+<select id = "allPrice" resultType="int">
+SELECT SUM(P_PRICE)
+FROM PROJECT
+WHERE P_OK = '2' AND SYSDATE >=P_END_DATE 
 </select>
 
 
+<select id = "price" resultType="int">
+SELECT SUM(P_CURRENTAMOUNT)
+FROM PROJECT
+WHERE P_OK = '2' AND SYSDATE >=P_END_DATE 
+</select>
+
+<select id="category1" resultType="int">
+SELECT COUNT(P_CATEGORY)
+FROM PROJECT
+WHERE P_CATEGORY = '게임'
+</select>
+
+<select id="category2" resultType="int">
+SELECT COUNT(P_CATEGORY)
+FROM PROJECT
+WHERE P_CATEGORY = '공연'
+</select>
+
+<select id="category3" resultType="int">
+SELECT COUNT(P_CATEGORY)
+FROM PROJECT
+WHERE P_CATEGORY = '디자인'
+</select>
+
+<select id="memberMonth" resultType="int">  
+SELECT COUNT(*)
+FROM MEMBER
+WHERE TO_CHAR(ENROLL_DATE,'YY') = '18' AND TO_CHAR(ENROLL_DATE,'MM') = '08'
+</select>
+
+<select id="projectMonth" resultType="int">  
+SELECT COUNT(*)
+FROM PROJECT
+WHERE TO_CHAR(ENROLL_DATE,'YY') = '18' AND TO_CHAR(ENROLL_DATE,'MM') = '08'
+</select>
 
 
 

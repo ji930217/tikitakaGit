@@ -1116,22 +1116,25 @@ $('#carouselExampleIndicators').carousel({
     <li data-target="#carouselExampleIndicators" data-slide-to="4"></li>
   </ol>
   <div class="carousel-inner">
+ 
     <div class="carousel-item active">
-      <img class="d-block w-100" src="resources/images/carousel/slide5.jpg" alt="첫번째 슬라이드">
+      <img class="d-block w-100" src="resources/images/carousel/${indexBannerList[0].bannerImage}" alt="첫번째 슬라이드">
+    </div>  
+    <div class="carousel-item">
+      <img class="d-block w-100" src="resources/images/carousel/${indexBannerList[1].bannerImage}" alt="두번째 슬라이드">
     </div>
     <div class="carousel-item">
-      <img class="d-block w-100" src="resources/images/carousel/slide2.jpg" alt="두번째 슬라이드">
+      <img class="d-block w-100" src="resources/images/carousel/${indexBannerList[2].bannerImage}" alt="세번째 슬라이드">
     </div>
     <div class="carousel-item">
-      <img class="d-block w-100" src="resources/images/carousel/slide3.jpg" alt="세번째 슬라이드">
+      <img class="d-block w-100" src="resources/images/carousel/${indexBannerList[3].bannerImage}" alt="네번째 슬라이드">
     </div>
     <div class="carousel-item">
-      <img class="d-block w-100" src="resources/images/carousel/slide4.jpg" alt="네번째 슬라이드">
+      <img class="d-block w-100" src="resources/images/carousel/${indexBannerList[4].bannerImage}" alt="다섯번째 슬라이드">
     </div>
-    <div class="carousel-item">
-      <img class="d-block w-100" src="resources/images/carousel/slide1.jpg" alt="다섯번째 슬라이드">
-    </div>
+
   </div>
+  
   <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
     <span class="carousel-control-prev-icon" aria-hidden="true"></span>
     <span class="sr-only">이전</span>
