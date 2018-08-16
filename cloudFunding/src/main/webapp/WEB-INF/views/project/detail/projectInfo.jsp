@@ -426,7 +426,8 @@
 								class="ProjectIntroduction__StatusTitle-c7b94s-15 htCDgL"
 								data-reactid="57">모인금액</div>
 							<div class="ProjectIntroduction__StatusValue-c7b94s-16 bvKOwU" data-reactid="58">
-								<c:out value="${project.currentAmount }"/>
+								<fmt:formatNumber value="${project.currentAmount }" pattern="#,###"/>
+								<%-- <c:out value="${project.currentAmount }"/> --%>
 								<span class="ProjectIntroduction__Small-c7b94s-18 ihuRTA"
 									data-reactid="60">원</span><span
 									class="ProjectIntroduction__FundingRate-c7b94s-17 kIYDgq"

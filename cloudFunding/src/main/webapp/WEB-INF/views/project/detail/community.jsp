@@ -480,8 +480,8 @@
     	margin-left: 10px;
 	}
 	
-	/* #postListDiv,  */#writeBtnDiv{ display:block; }
-	#postFormDiv, .tojyI, #creatorPostDiv, #updatePostFormDiv, #postListDiv{	display:none; }
+	#writeBtnDiv{ display:block; }
+	#postFormDiv, .tojyI, #creatorPostDiv, #updatePostFormDiv, #postListDiv{ display:none; }
 	
 	#communityFixedBtn, #communityBtn{ color: rgb(0, 0, 0); border-bottom: 3px solid rgb(0, 0, 0); padding-bottom: calc(0.5rem - 3px); }
 	#sharePostBtnDiv{ display:none; }
@@ -489,16 +489,19 @@
 	
 </style>
 <script>
+	var postCode;
 	$(window).on("load", function(){ 
 		$(".loadingIndicator").css("display", "none");  
 		$(".dLYLGx").css("margin", "unset");  
-		$("#postListDiv").css("display", "block");  
+		if(null == sessionStorage.getItem("postCode")){
+			$("#postListDiv").css("display", "block");  
+			$("#writeBtnDiv").css("display", "block");  
+		}
 		setMoreBtnDisplayBlock();
 	});
 	 
 	$(function(){
 		// 댓글 달고나면 해당 게시글 상세화면 영역 보이게
-		var postCode;
 		if(null != sessionStorage.getItem("postCode")){
 			postCode = sessionStorage.getItem("postCode");
 		}
@@ -507,6 +510,7 @@
 	      if(postCode != null){
 			$(".tojyI").css("display", "block");
 			$("#postFormDiv").css("display", "none");
+			$("#updatePostFormDiv").css("display", "none");
 			$("#postListDiv").css("display", "none");
 			$("#creatorPostDiv").css("display", "none");
 			$("#writeBtnDiv").css("display", "none");	   
@@ -586,11 +590,11 @@
 						resultStr += "댓글이 없습니다</div>";
 					}
 					$replyDiv.html(resultStr);
-				}, beforeSend:function(){
+				}/* , beforeSend:function(){
 			        $(".tojyI").hide();
 			    }, complete:function(){
 			    	$(".tojyI").show();
-			    }, error : function(e){
+			    } */, error : function(e){
 					console.log("ajax insertReply 에러 : ", e);
 				}
 			});
