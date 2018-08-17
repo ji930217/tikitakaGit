@@ -1116,23 +1116,28 @@ $('#carouselExampleIndicators').carousel({
     <li data-target="#carouselExampleIndicators" data-slide-to="4"></li>
   </ol>
   <div class="carousel-inner">
- 
-    <%-- <div class="carousel-item active">
+
+   	<div class="carousel-item active">
       <img class="d-block w-100" src="resources/images/carousel/${indexBannerList[0].bannerImage}" alt="첫번째 슬라이드">
+      <!-- <a href = "projectDetail.do?projectCode="+${indexBannerList[0].bannerCode}></a>추가 -->
     </div>  
     <div class="carousel-item">
       <img class="d-block w-100" src="resources/images/carousel/${indexBannerList[1].bannerImage}" alt="두번째 슬라이드">
+       <!-- <a href = "projectDetail.do?projectCode="+${indexBannerList[1].bannerCode}></a>추가 -->
     </div>
     <div class="carousel-item">
       <img class="d-block w-100" src="resources/images/carousel/${indexBannerList[2].bannerImage}" alt="세번째 슬라이드">
+       <!-- <a href = "projectDetail.do?projectCode="+${indexBannerList[2].bannerCode}></a>추가 -->
     </div>
     <div class="carousel-item">
       <img class="d-block w-100" src="resources/images/carousel/${indexBannerList[3].bannerImage}" alt="네번째 슬라이드">
+       <!-- <a href = "projectDetail.do?projectCode="+${indexBannerList[3].bannerCode}></a>추가 -->
     </div>
     <div class="carousel-item">
       <img class="d-block w-100" src="resources/images/carousel/${indexBannerList[4].bannerImage}" alt="다섯번째 슬라이드">
-    </div> --%>
-    <div class="carousel-item active">
+       <!-- <a href = "projectDetail.do?projectCode="+${indexBannerList[4].bannerCode}></a>추가 -->
+    </div>
+    <!-- <div class="carousel-item active">
       <img class="d-block w-100" src="resources/images/carousel/slide1.jpg" alt="첫번째 슬라이드">
     </div>  
     <div class="carousel-item">
@@ -1146,7 +1151,7 @@ $('#carouselExampleIndicators').carousel({
     </div>
     <div class="carousel-item">
       <img class="d-block w-100" src="resources/images/carousel/slide5.jpg" alt="다섯번째 슬라이드">
-    </div>
+    </div> -->
 
   </div>
   

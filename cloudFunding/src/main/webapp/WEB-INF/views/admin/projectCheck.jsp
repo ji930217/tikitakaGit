@@ -85,6 +85,32 @@ function validate(){
 	})
 })  */
 
+function okCheck(code){
+	
+	var code = code;
+	
+	var okConfirm = confirm("코드번호"+code+"번의 프로젝트를 승인하겠습니다");
+	
+	if(okConfirm){
+		
+	location.href = "okCheck.do?code="+code; 
+	}
+}
+
+function noCheck(code){
+	
+	var code = code;
+	
+	var noConfirm = confirm("코드번호"+code+"번의 프로젝트를 거절하겠습니다");
+	
+	if(noConfirm){
+		
+	
+	location.href = "noCheck.do?code="+code; 
+	}
+	
+}
+
 
 
 
@@ -109,7 +135,7 @@ function validate(){
       <th scope="col" id = "th4">마감일</th>
       <th scope="col" id = "th5">목표금액</th>
       <th scope="col" id = "th6">분류</th>
-      <th scope="col" id = "th7">상세정보</th>
+      <th scope="col" id = "th7">관리자기능</th>
     </tr>
   </thead>
   <tbody>
@@ -122,8 +148,8 @@ function validate(){
       <td id = "td5"><fmt:formatNumber value = "${p.price }" type = "number"/><c:out value="원"/></td>
       <td id = "td6"><c:out value = "${p.category }"/></td>
       <td id = "td7"><button type="button" class="btn btn-secondary btn-xs">상세보기</button>
-      		<button type="button" class="btn btn-secondary btn-xs">승인</button>
-      		<button type="button" class="btn btn-secondary btn-xs">거절</button></td>
+      		<button type="button" class="btn btn-secondary btn-xs" onclick = "okCheck('${p.projectCode }');">승인</button>
+      		<button type="button" class="btn btn-secondary btn-xs" onclick = "noCheck('${p.projectCode }');">거절</button></td>
     </tr>
    </c:forEach>
   </c:if>

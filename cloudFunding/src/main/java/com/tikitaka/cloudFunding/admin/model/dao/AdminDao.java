@@ -185,6 +185,26 @@ public class AdminDao {
 		return sqlSession.selectOne("AdminMapper.projectMonth");
 	}
 
+	public int stopDate(String email) {
+		
+		return sqlSession.update("AdminMapper.stopDate",email);
+	}
+
+	public int endDateCheck(String pCode) {
+		
+		return sqlSession.update("AdminMapper.endDateCheck",pCode);
+	}
+
+	public int okCheck(String code) {
+		
+		return sqlSession.update("AdminMapper.okCheck",code);
+	}
+
+	public int noCheck(String code) {
+		
+		return sqlSession.update("AdminMapper.noCheck",code);
+	}
+
 	
 
 	

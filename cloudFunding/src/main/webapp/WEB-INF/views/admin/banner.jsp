@@ -153,11 +153,7 @@ function validate3(){
    		
    	}
    	
-   	function formCheck(){
-   		var dd = $("#fileInput").val();
-   		alert(dd);
-   		return false;
-   	}
+   
    	
 
 
@@ -240,7 +236,7 @@ function validate3(){
 
 								<c:if test="${b.bannerImage == null }">
 									<form method="post" action="bannerPlus.do"
-										enctype="multipart/form-data" id="form1" onsubmit="return formCheck();">
+										enctype="multipart/form-data" id="form1">
 										<input type="hidden" name="pjCode" id="pjCode" value="${b.projectCode }" />
 										<div class="file btn btn-lg btn-primary btn btn-secondary btn-xs" id="fileDiv">Upload 
 										<input type="file" name="file" id="fileInput" accept="image/gif, image/jpeg, image/png" onchange = "imageChack(value);"/>
@@ -255,6 +251,7 @@ function validate3(){
 								<c:if test="${b.bannerImage != null }">
 								<button type="button" class="btn btn-secondary btn-xs"
 									onclick="bannerChange(${b.projectCode });" id="btn1" >배너등록</button>
+									<button type="button" class="btn btn-secondary btn-xs">상세정보</button>
 								</c:if>
 							</c:otherwise>
 						</c:choose></td>

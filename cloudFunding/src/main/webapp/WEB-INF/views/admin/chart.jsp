@@ -14,12 +14,14 @@
 
   function drawChart() {
 	  
-	  var month8 = ${memberMonth};
+	  var mMonth8 = ${memberMonth};
+	  /* var pMonth8 = ${projectMonth}; */
+	  
 	  
     var data = google.visualization.arrayToDataTable([
       ['month', '회원', '프로젝트'],
       ['7월', 1, 4],
-      ['8월', month8, 3],
+      ['8월', mMonth8, 2],
       ['9월', 6, 5],
       ['10월', 26, 10],
       ['11월', 41, 33],

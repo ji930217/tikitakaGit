@@ -20,6 +20,7 @@ public class Member {
 	private String phone1;
 	private String phone2;
 	private String phone3;
+	private Date stopDate;
 
 	
 	public Member() {
@@ -156,13 +157,24 @@ public class Member {
 	public void setPhone3(String phone3) {
 		this.phone3 = phone3;
 	}
+	
+
+	public Date getStopDate() {
+		return stopDate;
+	}
+
+	public void setStopDate(Date stopDate) {
+		this.stopDate = stopDate;
+	}
 
 	@Override
 	public String toString() {
 		return "Member [email=" + email + ", name=" + name + ", password=" + password + ", profile_img=" + profile_img
 				+ ", enroll_date=" + enroll_date + ", location=" + location + ", shortDescription=" + shortDescription
-				+ ", homepage=" + homepage + ", phone1=" + phone1 + ", phone2=" + phone2 + ", phone3=" + phone3 + "]";
+				+ ", homepage=" + homepage + ", phone1=" + phone1 + ", phone2=" + phone2 + ", phone3=" + phone3
+				+ ", stop_date=" + stopDate + "]";
 	}
+
 	
 	
 	

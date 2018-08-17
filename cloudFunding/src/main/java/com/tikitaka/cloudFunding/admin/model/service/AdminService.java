@@ -153,6 +153,26 @@ public class AdminService {
 		return admindao.projectMonth();
 	}
 
+	public int stopDate(String email) {
+		
+		return admindao.stopDate(email);
+	}
+
+	public int endDateCheck(String pCode) {
+		
+		return admindao.endDateCheck(pCode);
+	}
+
+	public int okCheck(String code) {
+		
+		return admindao.okCheck(code);
+	}
+
+	public int noCheck(String code) {
+		
+		return admindao.noCheck(code);
+	}
+
 	
 
 
