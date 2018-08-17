@@ -111,7 +111,9 @@ function noCheck(code){
 	
 }
 
-
+function projectDetail(code){
+	location.href = "projectDetail.do?projectCode="+code;
+}
 
 
 </script>
@@ -147,7 +149,7 @@ function noCheck(code){
       <td id = "td4"><c:out value = "${p.endDate }"/></td>
       <td id = "td5"><fmt:formatNumber value = "${p.price }" type = "number"/><c:out value="원"/></td>
       <td id = "td6"><c:out value = "${p.category }"/></td>
-      <td id = "td7"><button type="button" class="btn btn-secondary btn-xs">상세보기</button>
+      <td id = "td7"><button type="button" class="btn btn-secondary btn-xs" onclick = "projectDetail('${p.projectCode }');">상세보기</button>
       		<button type="button" class="btn btn-secondary btn-xs" onclick = "okCheck('${p.projectCode }');">승인</button>
       		<button type="button" class="btn btn-secondary btn-xs" onclick = "noCheck('${p.projectCode }');">거절</button></td>
     </tr>

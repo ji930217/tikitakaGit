@@ -22,6 +22,8 @@
 	#tebMenu{
 	margin-bottom: 30px;
 	}
+	
+	
 </style>
 
   <title>관리자메인페이지</title>
@@ -47,6 +49,7 @@
 $(function(){
 	$("#chartHome").click(function(){
 		location.reload(); 
+		
 	})
 })
 
@@ -83,7 +86,7 @@ $(function(){
   
 
   <ul class="nav nav-tabs" id="tabHeader">
-    <li><a data-toggle="tab" href="#home" onclick="setTabIndex(0);" id = "chartHome">Home</a></li>
+    <li><a data-toggle="tab" href="#home" onclick="setTabIndex(0);" id = "chartHome" style="cursor:pointer">Home</a></li>
     <li><a data-toggle="tab" href="#menu1" onclick="setTabIndex(1);">회원관리</a></li>
     <li><a data-toggle="tab" href="#menu2" onclick="setTabIndex(2);">프로젝트 종료확인</a></li>
     <li><a data-toggle="tab" href="#menu3" onclick="setTabIndex(3);">프로젝트 승인여부</a></li>

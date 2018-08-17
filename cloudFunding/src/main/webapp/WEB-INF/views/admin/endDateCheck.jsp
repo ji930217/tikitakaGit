@@ -101,7 +101,9 @@ function endDateCheck(pCode){
 	}
 }
 
-
+function projectDetail(code){
+	location.href = "projectDetail.do?projectCode="+code;
+}
 
 
 </script>
@@ -158,7 +160,7 @@ function endDateCheck(pCode){
       
       </td>
       		<td id = "td6">
-      		<button type="button" class="btn btn-secondary btn-xs">상세정보</button>
+      		<button type="button" class="btn btn-secondary btn-xs" onclick = "projectDetail('${fp.projectCode }');">상세정보</button>
       		<c:if test="${fp.endDate > toDay }">
       		<button type="button" class="btn btn-secondary btn-xs" onclick = "endDateCheck('${fp.projectCode }');">종료확인</button>
       		</c:if>
