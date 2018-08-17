@@ -10,17 +10,18 @@
 <result property="password" column="PASSWORD"/>
 <result property="profile_img" column="PROFILE_IMG"/>
 <result property="enroll_date" column="ENROLL_DATE"/>
+<result property="stopDate" column="STOP_DATE"/>
 </resultMap>
 
 <select id = "selectMemberList" resultMap="memberMap">
-	SELECT EMAIL, NAME, PASSWORD, PROFILE_IMG, ENROLL_DATE
+	SELECT EMAIL, NAME, PASSWORD, PROFILE_IMG, ENROLL_DATE,STOP_DATE
 	FROM MEMBER
 	ORDER BY ENROLL_DATE DESC
 </select>
 
 <select id="searchMemberList" resultMap="memberMap">
 	SELECT * 
-	FROM(SELECT CEIL(ROWNUM/10) AS NUM1, EMAIL, NAME, PASSWORD, PROFILE_IMG, ENROLL_DATE
+	FROM(SELECT CEIL(ROWNUM/10) AS NUM1, EMAIL, NAME, PASSWORD, PROFILE_IMG, ENROLL_DATE,STOP_DATE
 	FROM(SELECT * FROM MEMBER WHERE NAME LIKE '%'||#{keyword}||'%' OR EMAIL LIKE '%'||#{keyword}||'%'))
 	WHERE NUM1 = #{no}
 </select>
@@ -35,10 +36,14 @@
 
 <select id="selectMemberList2" resultMap="memberMap">
  	SELECT * 
-	FROM(SELECT CEIL(ROWNUM/10) AS NUM1, EMAIL, NAME, PASSWORD, PROFILE_IMG, ENROLL_DATE
+	FROM(SELECT CEIL(ROWNUM/10) AS NUM1, EMAIL, NAME, PASSWORD, PROFILE_IMG, ENROLL_DATE,STOP_DATE
 	FROM(SELECT * FROM MEMBER ORDER BY ENROLL_DATE DESC))
 	WHERE NUM1 = #{no}
 </select> 
+
+<update id="stopDate" >
+UPDATE MEMBER SET STOP_DATE = SYSDATE+3 WHERE EMAIL = #{email}
+</update>
 			
 			
 <resultMap type="Project" id="projectMap">
@@ -67,7 +72,7 @@
 <result property="pConfirm" column="P_OK"/>
 <result property="sendConfirm" column="P_SEND_CONFIRM"/>
 <result property="currentAmount" column="P_CURRENTAMOUNT"/>
-<result property="currentAmount" column="P_ENROLL_DATE"/>
+<result property="" column="P_ENROLL_DATE"/>
 </resultMap>
 
 
@@ -145,6 +150,10 @@ SELECT COUNT(*) FROM PROJECT WHERE (P_CATEGORY LIKE '%'||#{keyword}||'%' OR P_TI
 	]]>
 </select>
 
+<update id="endDateCheck">
+UPDATE PROJECT SET P_SEND_CONFIRM = 'T' WHERE P_PROJECT_CODE = #{pCode}
+</update>
+
 
 <resultMap id="bannerMap" type="Admin">
 <id column="BANNER_CODE" property="bannerCode"/>
@@ -173,7 +182,7 @@ SELECT COUNT(*) FROM PROJECT WHERE (P_CATEGORY LIKE '%'||#{keyword}||'%' OR P_TI
 SELECT *
 FROM (SELECT CEIL(ROWNUM/10) AS NUM1, EMAIL,P_PROJECT_CODE,P_PROJECT_NUMBER,P_TITLE,P_CATEGORY,P_PRICE,P_END_DATE,
 P_CURRENTAMOUNT,BANNER_IMAGE,BANNER_LEVEL
-FROM(SELECT * FROM PROJECT LEFT JOIN BANNER ON (BANNER_CODE = P_PROJECT_CODE) WHERE P_OK = '2' AND P_SEND_CONFIRM = 'F' AND P_END_DATE >SYSDATE ORDER BY BANNER_LEVEL,P_PROJECT_CODE DESC))
+FROM(SELECT * FROM PROJECT LEFT JOIN BANNER ON (BANNER_CODE = P_PROJECT_CODE) WHERE P_OK = '2' AND P_SEND_CONFIRM = 'F' AND P_END_DATE >SYSDATE ORDER BY BANNER_LEVEL,P_END_DATE DESC))
 WHERE NUM1 =#{bNo} 
 </select>
 
@@ -197,6 +206,10 @@ WHERE (BANNER_LEVEL = 1 OR BANNER_LEVEL = 2 OR BANNER_LEVEL = 3 OR BANNER_LEVEL 
   	FROM PROJECT LEFT JOIN BANNER ON (BANNER_CODE = P_PROJECT_CODE) WHERE (BANNER_LEVEL = 1 OR BANNER_LEVEL = 2 OR BANNER_LEVEL = 3 OR BANNER_LEVEL = 4 OR BANNER_LEVEL = 5) OR P_PROJECT_CODE LIKE '%'||#{keyword}||'%' OR P_TITLE LIKE '%'||#{keyword}||'%' ORDER BY BANNER_LEVEL,P_PROJECT_CODE DESC))
   	 WHERE NUM1 = #{bNo}
    </select>
+   
+   <update id="okCheck">UPDATE PROJECT SET P_OK = '2' WHERE P_PROJECT_CODE = #{code}</update>
+   
+   <update id="noCheck">UPDATE PROJECT SET P_OK = '3' WHERE P_PROJECT_CODE = #{code}</update>
 
 
 
@@ -257,8 +270,10 @@ WHERE TO_CHAR(ENROLL_DATE,'YY') = '18' AND TO_CHAR(ENROLL_DATE,'MM') = '08'
 <select id="projectMonth" resultType="int">  
 SELECT COUNT(*)
 FROM PROJECT
-WHERE TO_CHAR(ENROLL_DATE,'YY') = '18' AND TO_CHAR(ENROLL_DATE,'MM') = '08'
+WHERE TO_CHAR(P_ENROLL_DATE,'YY') = '18' AND TO_CHAR(P_ENROLL_DATE,'MM') = '08'
 </select>
+
+
 
 
 

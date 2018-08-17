@@ -88,6 +88,19 @@ function validate2(){
 	})
 })  */
 
+function endDateCheck(pCode){
+	
+	var pCode = pCode;
+	
+	var endDateConfirm = confirm("코드번호"+pCode+"번의 프로젝트를 종료하겠습니다");
+	
+	if(endDateConfirm){
+		
+	
+	 location.href = "endDateCheck.do?pCode="+pCode; 
+	}
+}
+
 
 
 
@@ -111,7 +124,7 @@ function validate2(){
       <th scope="col" id = "th3">진행자</th>
       <th scope="col" id = "th4">남은기간</th>
       <th scope="col" id = "th5">성공여부(금액)</th>
-      <th scope="col" id = "th6">상세정보</th>
+      <th scope="col" id = "th6">관리자기능</th>
     </tr>
   </thead>
   <tbody>
@@ -144,8 +157,12 @@ function validate2(){
       <%-- <c:out value = "${fp.category }"/> --%>
       
       </td>
-      <td id = "td6"><button type="button" class="btn btn-secondary btn-xs">추가정보</button>
-      		<button type="button" class="btn btn-secondary btn-xs">종료확인</button></td>
+      		<td id = "td6">
+      		<button type="button" class="btn btn-secondary btn-xs">상세정보</button>
+      		<c:if test="${fp.endDate > toDay }">
+      		<button type="button" class="btn btn-secondary btn-xs" onclick = "endDateCheck('${fp.projectCode }');">종료확인</button>
+      		</c:if>
+      		</td>
     </tr>
    </c:forEach>
   </c:if>

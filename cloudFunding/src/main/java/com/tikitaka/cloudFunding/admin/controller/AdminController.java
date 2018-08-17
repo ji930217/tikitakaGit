@@ -54,6 +54,7 @@ public class AdminController {
 		mv.addObject("category2", category2);
 		mv.addObject("category3", category3);
 		mv.addObject("memberMonth", memberMonth);
+		/*mv.addObject("projectMonth", projectMonth);*/
 		
 		
 		
@@ -755,7 +756,7 @@ public class AdminController {
 		
 		List<bannerVo> list4 = adminservice.bannerProjectList(bNo);
 		
-		int bannerCount = adminservice.TotalCount();
+		int bannerCount = adminservice.bannerTotalCount();
 		int bRangeSize = bPaging.getRangeSize();
 		int bPageSize = bPaging.getPageSize();
 		bPaging.setCurPage(bNo); // 현재 페이지 번호
@@ -1609,7 +1610,7 @@ System.out.println(bannerList);
 		}
 		
 		@RequestMapping("bannerPlus.do")
-		public ModelAndView bannerPlus(ModelAndView mv, PagingVo paging,projectPagingVo pPaging,fProjectPagingVo fpPaging, @RequestParam(defaultValue = "1") int no
+		public String bannerPlus(ModelAndView mv, PagingVo paging,projectPagingVo pPaging,fProjectPagingVo fpPaging, @RequestParam(defaultValue = "1") int no
 				,HttpServletRequest request,@RequestParam("file") MultipartFile file, bannerVo banner) {
 			
 			String pjCode =  request.getParameter("pjCode"); //배너이미지 추가한 프로젝트 코드
@@ -1643,8 +1644,56 @@ System.out.println(bannerList);
 			
 			int imagePlus = adminservice.imagePlus(banner);
 			
-			mv.setViewName("admin/adminMenuList");
 			
-			return mv;
+			
+			return "redirect:adminMenuList.do";
 		}
+		
+		
+			@RequestMapping("stop.do") 
+		public String stop(PagingVo paging,projectPagingVo pPaging,fProjectPagingVo fpPaging, @RequestParam(defaultValue = "1") int no
+				,HttpServletRequest request, ModelAndView mv) {
+				
+				String email = request.getParameter("email");
+				
+				int stopDate = adminservice.stopDate(email);
+				
+			
+				return "redirect:adminMenuList.do";
+		}
+			
+			
+				@RequestMapping("endDateCheck.do") 
+				public String endDateCheck(PagingVo paging,projectPagingVo pPaging,fProjectPagingVo fpPaging, @RequestParam(defaultValue = "1") int no
+						,HttpServletRequest request, ModelAndView mv) {
+					
+					String pCode = request.getParameter("pCode");
+					
+					int endDateCheck = adminservice.endDateCheck(pCode);
+					
+					
+					return "redirect:adminMenuList.do";
+				}
+				
+				@RequestMapping("okCheck.do") 
+				public String okCheck(PagingVo paging,projectPagingVo pPaging,fProjectPagingVo fpPaging, @RequestParam(defaultValue = "1") int no
+						,HttpServletRequest request, ModelAndView mv) {
+					
+					String code = request.getParameter("code");
+					
+					int okCheck = adminservice.okCheck(code);
+					
+					return "redirect:adminMenuList.do";
+				}
+				
+				@RequestMapping("noCheck.do") 
+				public String noCheck(PagingVo paging,projectPagingVo pPaging,fProjectPagingVo fpPaging, @RequestParam(defaultValue = "1") int no
+						,HttpServletRequest request, ModelAndView mv) {
+					
+					String code = request.getParameter("code");
+					
+					int noCheck = adminservice.noCheck(code);
+					
+					return "redirect:adminMenuList.do";
+				}
 }

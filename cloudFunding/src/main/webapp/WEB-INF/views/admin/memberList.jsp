@@ -90,6 +90,24 @@ function validate1(){
 	})
 })  */
 
+function stop(email){
+	
+	var email = email;
+	
+	var stopConfirm = confirm("해당회원을 3일 정지하겠습니다");
+	
+	if(stopConfirm){
+		
+	  location.href = "stop.do?email="+email;   
+	}
+	
+}
+
+function stopCheck(stopDate){
+	var date = stopDate;
+	alert("해당회원의 정지종료일은"+date+"까지입니다")
+}
+
 
 
 
@@ -120,8 +138,18 @@ function validate1(){
       <td id = "td1"><c:out value = "${m.name }"/></td>
       <td id = "td2"><c:out value = "${m.email }"/></td>
       <td id = "td3"><c:out value = "${m.enroll_date }"/></td>
-      <td id = "td4"><button type="button" class="btn btn-secondary btn-xs">상세정보</button>
-      		<button type="button" class="btn btn-secondary btn-xs">정지</button></td>
+      <td id = "td4">
+      <c:if test = "${!empty m.stopDate }">
+      	
+      	<button type="button" class="btn btn-secondary btn-xs">상세정보</button>
+      	<button type="button" class="btn btn-secondary btn-xs" onclick = "stopCheck('${m.stopDate}');">정지확인</button>
+      	
+      </c:if>
+      <c:if test = "${empty m.stopDate }">
+      		<button type="button" class="btn btn-secondary btn-xs">상세정보</button>
+      		<button type="button" class="btn btn-secondary btn-xs" onclick = "stop('${m.email}');">정지</button>
+      </c:if>
+      </td>
     </tr>
    </c:forEach>
   </c:if>
