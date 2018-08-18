@@ -3,6 +3,7 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/functions" prefix="fn" %>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %> 
+<jsp:useBean id="now" class="java.util.Date" />
 <!DOCTYPE html>
 <html>
 <head>
@@ -433,8 +434,9 @@
 									data-reactid="60">원</span><span
 									class="ProjectIntroduction__FundingRate-c7b94s-17 kIYDgq"
 									data-reactid="61">
-									466
-									%
+									<fmt:parseNumber var="percent" value="${project.currentAmount / project.price * 100 }" integerOnly="true"/>
+									<c:out value="${percent }%"/>
+									<%-- <c:out value="${Math.floor(project.currentAmount / project.price * 100) }%"/> --%>
 								</span>
 							</div>
 						</div>
@@ -446,7 +448,9 @@
 							<div
 								class="ProjectIntroduction__StatusValue-c7b94s-16 bvKOwU"
 								data-reactid="66">
-								16
+								
+									<%-- <fmt:parseNumber value="${(now.time - project.endDate) / (1000*60*60*24) }" integerOnly="true" /> --%>
+								
 								<span class="ProjectIntroduction__Small-c7b94s-18 ihuRTA"
 									data-reactid="68">일</span>
 							</div>

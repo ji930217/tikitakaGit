@@ -363,7 +363,6 @@
 					
 					var projectCode = "<c:out value='${project.projectCode}'/>";		
 					
-					console.log(data.replyCount);
 					var replyCount = data.replyCount == null ? 0 : data.replyCount;
 					$(".Post__CommunityPostCommentsAmount-s1xz59uk-25").html("<strong>" + replyCount + "</strong>개의 댓글이 있습니다");
 					var $replyDiv = $("#replyDiv");
@@ -739,6 +738,7 @@
 										</div>
 									</div>
 									<div	class="CommunityPostSummaryCard__ContentsWrapper-s1yavd3r-11 cywbQo"	style="cursor: pointer;">
+										<h3 style="display:none;"><c:out value="${post.postCode }"/></h3>
 										<div>
 											<div	class="CommunityPostSummaryCard__Contents-s1yavd3r-13 fmSZUJ">
 												<div class="storyContent">
