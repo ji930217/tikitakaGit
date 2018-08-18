@@ -4,6 +4,7 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/functions" prefix="fn" %>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %> 
 <jsp:useBean id="now" class="java.util.Date" />
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -11,6 +12,12 @@
 <title>Insert title here</title>
 
 <script src="//developers.kakao.com/sdk/js/kakao.min.js"></script>
+
+<!-- video 관련 -->
+<link href="https://vjs.zencdn.net/7.1.0/video-js.css" rel="stylesheet">
+<script src="https://vjs.zencdn.net/7.1.0/video.js"></script>
+<!-- If you'd like to support IE8 (for Video.js versions prior to v7) -->
+<!-- <script src="https://vjs.zencdn.net/ie8/ie8-version/videojs-ie8.min.js"></script> -->
 
 <style>
 	
@@ -210,6 +217,11 @@
 	.show-on-scroll { visibility: hidden; }
 	.show-on-scroll.shown { visibility: visible; }
 	
+	#projectDescriptionVideo{
+		display:none;
+	}
+	
+	
 </style>
 <script>
 	
@@ -281,6 +293,14 @@
 		 }
 	});
 	
+	function playVideo(){
+		$("._28l6WJgn2lALsbqKkv3zIA").css("display", "none");
+		$("#projectDescriptionVideo").css("display", "block");
+		var video = $('#projectVideo');
+		var src = "<c:out value='${project.descriptionVideo}'/>";
+		video.attr('src', src); 
+		video.get(0).	play();
+	}
 </script>
 
 </head>
@@ -401,18 +421,34 @@
 						<div
 							class="ProjectIntroduction__ProjectCoverVideo-c7b94s-10 qtLrt"
 							data-reactid="49">
-							<div class="_28l6WJgn2lALsbqKkv3zIA " data-reactid="50">
-								<img class="_28l6WJgn2lALsbqKkv3zIA _3_tz3Sy3FDfeZv5NgSfOZK"
-									alt="기본 프로젝트 커버 이미지"
-									src="https://tumblbug-pci.imgix.net/4b161a793b1b7d9646d00b52f112de112a6e75e0/7ad81f8e5d8c79ed9534d70ee460540cab01def4/81e49cf2918a523dd68764560a0b4490d66c5e54/0edaa339-09ea-4b9d-a01f-7d32ea5f1092.jpg?ixlib=rb-1.1.0&amp;w=620&amp;h=465&amp;auto=format%2Ccompress&amp;lossless=true&amp;fit=crop&amp;s=2396f5a89d18993a2c59ad99362d4a9b"
-									data-reactid="51" />
-								<div class="_28l6WJgn2lALsbqKkv3zIA Go6I0FosWRXRZxpmYjWEE"
-									data-reactid="52">
-									<i
-										class="_28l6WJgn2lALsbqKkv3zIA SRDMui3_OYHbzIL_aQFCl _1QY7TzdLHKX3-BKPDNNYKF"
-										style="color: black;" data-reactid="53"></i>
+							
+							<!-- 동영상 재생버튼 클릭 이후 보여지는 영역 -->
+							<div	class="ProjectIntroduction__ProjectCoverVideo-c7b94s-10 qtLrt">
+								<div id="projectDescriptionVideo" class="_13KHfN73YmQgsYHxXvuh_J " style="height: 100%;">
+									<video id="projectVideo" controls style="width: 100%; height: 100%;">
+										<p class="vjs-no-js">
+									      To view this video please enable JavaScript, and consider upgrading to a web browser that
+									      <a href="https://videojs.com/html5-video-support/" target="_blank">supports HTML5 video</a>
+									    </p>
+									
+									</video>
 								</div>
+								
+								<!-- 동영상 재생버튼 클릭 이전 -->
+								<div class="_28l6WJgn2lALsbqKkv3zIA " data-reactid="50">
+									<img class="_28l6WJgn2lALsbqKkv3zIA _3_tz3Sy3FDfeZv5NgSfOZK" alt="기본 프로젝트 커버 이미지"
+										src="<c:out value='${project.repImg }'/>" data-reactid="51"/>
+									
+									<c:if test="${null ne project.descriptionVideo }">
+										<div class="_28l6WJgn2lALsbqKkv3zIA Go6I0FosWRXRZxpmYjWEE"	data-reactid="52">
+											<i	class="_28l6WJgn2lALsbqKkv3zIA SRDMui3_OYHbzIL_aQFCl _1QY7TzdLHKX3-BKPDNNYKF"
+												style="color: black;" data-reactid="53" onclick="playVideo();"></i>
+										</div>
+									</c:if>
+								</div>
+								
 							</div>
+							
 						</div>
 					</figure>
 				</div>
