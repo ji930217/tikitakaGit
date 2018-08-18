@@ -7,6 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
 import com.tikitaka.cloudFunding.member.model.vo.Member;
+import com.tikitaka.cloudFunding.project.model.vo.GiftVo;
 import com.tikitaka.cloudFunding.project.model.vo.ProjectVo;
 
 
@@ -35,6 +36,14 @@ public class ProjectDao {
 	public ProjectVo selectProjectDetail(int projectCode) {
 	      return sqlSession.selectOne("projectMapper.selectProjectDetail",projectCode);
 	   }
+
+	public int insertGift(GiftVo gift) {
+		return sqlSession.insert("projectMapper.insertGift",gift);
+	}
+
+	public ProjectVo selectProjectGift(int projectCode) {
+		return sqlSession.selectOne("projectMapper.selectProjectGift", projectCode);
+	}
 
 
 }

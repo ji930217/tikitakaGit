@@ -1,6 +1,7 @@
 package com.tikitaka.cloudFunding.project.model.vo;
 
 import java.sql.Date;
+import java.util.List;
 
 import org.springframework.stereotype.Component;
 
@@ -33,6 +34,8 @@ public class ProjectVo {
 	private String sendConfirm; //송금여부확인
 	private int currentAmount; // 현재금액
 	private int updateNum;
+	private List <GiftVo> giftArry;
+	
 	public ProjectVo() {}
 
 	
@@ -69,8 +72,20 @@ public class ProjectVo {
 		this.currentAmount = currentAmount;
 	}
 
-
 	
+	
+	public List<GiftVo> getGiftArry() {
+		return giftArry;
+	}
+
+
+
+	public void setGiftArry(List<GiftVo> giftArry) {
+		this.giftArry = giftArry;
+	}
+
+
+
 	public int getUpdateNum() {
 		return updateNum;
 	}
@@ -296,13 +311,10 @@ public class ProjectVo {
 				+ endDate + ", giftItem=" + giftItem + ", refund=" + refund + ", descriptionVideo=" + descriptionVideo
 				+ ", story=" + story + ", pEmail=" + pEmail + ", pPhone=" + pPhone + ", bankTrading=" + bankTrading
 				+ ", bankName=" + bankName + ", bankNumber=" + bankNumber + ", bankKinds=" + bankKinds + ", pConfirm="
-				+ pConfirm + ", sendConfirm=" + sendConfirm + ", currentAmount=" + currentAmount + "]";
+				+ pConfirm + ", sendConfirm=" + sendConfirm + ", currentAmount=" + currentAmount + ", updateNum="
+				+ updateNum + ", giftArry=" + giftArry + "]";
 	}
 
-	
-	
-	
-	
-	
-	
+
+
 }

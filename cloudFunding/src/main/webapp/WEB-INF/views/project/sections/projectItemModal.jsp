@@ -69,7 +69,7 @@
 								<div
 									class=" _152MAijd_UogerBKCVqZR_ WU1ox0-AeDX_zneKjnNMO _3G8CRXtomRhisiZsw7Spx- _1lLHKI5v9AoCyeggtffvGZ">
 									<button
-										class="_13KHfN73YmQgsYHxXvuh_J _3SbGdzxKM6M_AeOQWLNqks _2-N-uV2y5apkjtxqdVnsop">
+										class="modalItemCancelBtn _13KHfN73YmQgsYHxXvuh_J _3SbGdzxKM6M_AeOQWLNqks _2-N-uV2y5apkjtxqdVnsop">
 										<i class="RyvusKQjJRQNgaH8kOM4J _1QY7TzdLHKX3-BKPDNNYKF"></i>
 										<!-- react-text: 1139 -->
 										취소하기
@@ -88,30 +88,29 @@
 						</div>
 					</div>
 				</div>
-				<div class="_3FckuZRYMnXp7KE90TjSEn">
+				<!--아이템이 없을때 보여주는 태그  -->
+				<div class="noneItem" style="vertical-align: middle; padding: 2rem 0px;">
+					<div
+						class="_13KHfN73YmQgsYHxXvuh_J _1Qdv504-1XMeYXZyb0xQZT _2mDWoxwh1QMJyLM49w7kMZ _3G8CRXtomRhisiZsw7Spx- _1WARcEqqT_Pem8leg2dkMj">
+						<i
+							class="_13KHfN73YmQgsYHxXvuh_J XfQPqj7DOoFzLDvDyUsyP _3Hs9Qa2HoKTK0Bt1LDlMh_ _3RAU_1dXrlkkPhtkKyXSVj _3fJsfvAPykJzj2xoMnxzWW _1QY7TzdLHKX3-BKPDNNYKF"></i>
+						<h3
+							class="_13KHfN73YmQgsYHxXvuh_J _2rpTvKkYYdMbVEklWlLfhl -UobvSeyUG6cEWYnht50S"
+							style="color: rgb(167, 167, 167); margin: 1rem 0px;">추가된
+							아이템이 없습니다</h3>
+					</div>
+				</div>
+				<!--아이템 추가  -->
+				 <div class="existItem _3FckuZRYMnXp7KE90TjSEn">
 					<div
 						style="color: rgb(117, 117, 117); font-weight: 700; margin: 1.5rem 0px 0.5rem; font-size: 0.9rem;">아이템
 						목록</div>
-					<div
-						class="_13KHfN73YmQgsYHxXvuh_J _18bwsw29jDyAzIPXzQkoS- CoIrJwj-n2Pdokdf8d4qE">
-						<div
-							class="_13KHfN73YmQgsYHxXvuh_J saXk0rx00KnB6O_X8xIAv _2uxYQ-nuPwdol9sQhOjfH-">
-							<div class="_13KHfN73YmQgsYHxXvuh_J _3U6RUH-EASpZ_j8ls1HJyP">
-								<div class="_13KHfN73YmQgsYHxXvuh_J _3_IGkn3uaje0g2ZA6Tx9wd">
-									<div class="_3ECP69YABwRBC-kxTDAokV">
-										<div class="UVz11B8HH3zPgaD3ITNbg">쇼핑백</div>
-										<div class="_1oHVPuCWp3V0T31vaNkzNX">
-											<div>
-												<a class="_3wn6m5g7iiO4BmmcRH091v" style="color: grey;">수정하기</a><a
-													class="_3wn6m5g7iiO4BmmcRH091v" style="color: grey;">삭제하기</a>
-											</div>
-										</div>
-									</div>
-								</div>
-							</div>
-						</div>
+					<div class="appnedItem _13KHfN73YmQgsYHxXvuh_J _18bwsw29jDyAzIPXzQkoS- CoIrJwj-n2Pdokdf8d4qE">
+						
 					</div>
-				</div>
+				</div> 
+				
+				
 			</div>
 		</div>
 		<div class="X7YR5TpNnzSm-0Uq0m3WG _2CUIp0iWu3m8i2s5YORj9k">
