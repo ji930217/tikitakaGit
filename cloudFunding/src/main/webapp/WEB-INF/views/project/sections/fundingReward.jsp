@@ -192,7 +192,7 @@
 								<div
 									class="dtaeMode _2joJTlnkt26WGpxyvkNuCH _152MAijd_UogerBKCVqZR_ WU1ox0-AeDX_zneKjnNMO _3G8CRXtomRhisiZsw7Spx- _1lLHKI5v9AoCyeggtffvGZ">
 									<a><i class="w6FPSPr8JA6xb8SSjkPtI _1QY7TzdLHKX3-BKPDNNYKF"></i>
-										<!-- react-text: 7487 -->수정하기<!-- /react-text --></a>
+										<!-- react-text: 7487 -->입력하기<!-- /react-text --></a>
 								</div>
 							</div>
 						</div>
@@ -292,9 +292,64 @@
 			</h3>
 			<div class="_13KHfN73YmQgsYHxXvuh_J _1WARcEqqT_Pem8leg2dkMj">
 				
-				<div class="_13KHfN73YmQgsYHxXvuh_J _2TxjgvEda9YWbTe8CpK_Ye">
+				<div class="rewardappend _13KHfN73YmQgsYHxXvuh_J _2TxjgvEda9YWbTe8CpK_Ye">
+
+					<div class="rewardlist _13KHfN73YmQgsYHxXvuh_J _18bwsw29jDyAzIPXzQkoS- _18TDror949wcy2NyVIqpHo false" style="display: none">
+						<div class="_3ZgG-OSv0XE3y-h3oPaDsl">
+							<span class="WU1ox0-AeDX_zneKjnNMO oAeG34mYkuDyUTybhBMrQ"><a
+								class="ContextualAction__LinkButton-lcypnk-0 ddtTLO"><i
+									class="_1pt-5UHn7rWHPExbDO4EbO _1QY7TzdLHKX3-BKPDNNYKF"></i><span
+									class="ContextualAction__Label-lcypnk-1 gETbSh">삭제하기</span></a><a
+								class="ContextualAction__LinkButton-lcypnk-0 ddtTLO"><i
+									class="fR8YMq5am2mTnuMN_wvL0 _1QY7TzdLHKX3-BKPDNNYKF"></i><span
+									class="ContextualAction__Label-lcypnk-1 gETbSh">복제하기</span></a><a
+								class="ContextualAction__LinkButton-lcypnk-0 ddtTLO"><i
+									class="w6FPSPr8JA6xb8SSjkPtI _1QY7TzdLHKX3-BKPDNNYKF"></i><span
+									class="ContextualAction__Label-lcypnk-1 gETbSh">수정하기</span></a></span>
+							<div class="-UobvSeyUG6cEWYnht50S">
+								<h4>
+									<!-- react-text: 616 -->
+									5,000
+									<!-- /react-text -->
+									<!-- react-text: 617 -->
+									원 이상 밀어주시는 분께
+									<!-- /react-text -->
+								</h4>
+							</div>
+							<div class="_3F_kXgcqjiYVIFqaGYLV_x">
+								<p>asdasdasd</p>
+							</div>
+							<div
+								class="_13KHfN73YmQgsYHxXvuh_J dVsuWLqvhq0SupdyOYVal _3XFc3K1AoSi5ujhxKESb0P _1zkZUwfhEQvC8LFxMO9pO9">
+								<div class="_13KHfN73YmQgsYHxXvuh_J rLqvd1axk9i-3cU72yTkF">
+									<!-- react-text: 622 -->
+									ㅁㄴㅇ
+									<!-- /react-text -->
+									<b> ( ✕ 1 )</b>
+								</div>
+							</div>
+							<div class="VgMYktFPH-SSPJjPTFMC">
+								<span class="">예상 전달일:</span><strong>2018년 8월 19일</strong>
+							</div>
+						</div>
+						<div class="_2Pv5906z-UsZ07dcVfvk9A _3ZgG-OSv0XE3y-h3oPaDsl">
+							<span><i
+								class="_1QY7TzdLHKX3-BKPDNNYKF _254YPhBOB9qv7-J8bIg7co _1R0ZK0Z1zZIqLZ8NkjnsD6"></i>
+							<!-- react-text: 630 -->선택한 사람이 없음 <!-- /react-text -->
+								<span
+								class="_13KHfN73YmQgsYHxXvuh_J IHUALIalgwgMpH2DEQooZ _3fJsfvAPykJzj2xoMnxzWW _1Qdv504-1XMeYXZyb0xQZT _3D9sfZXrWd8it3eUCuCTc8">3개
+									남음</span>
+							<div class="WU1ox0-AeDX_zneKjnNMO oAeG34mYkuDyUTybhBMrQ">
+									<!-- react-text: 633 -->
+									<!-- /react-text -->
+									<div
+										class="_13KHfN73YmQgsYHxXvuh_J IHUALIalgwgMpH2DEQooZ _3fJsfvAPykJzj2xoMnxzWW _1Qdv504-1XMeYXZyb0xQZT _3D9sfZXrWd8it3eUCuCTc8">배송
+										필요</div>
+								</div></span>
+						</div>
+					</div>
 					
-						<a id="new-reward"
+					<a id="new-reward"
 							class="_13KHfN73YmQgsYHxXvuh_J _18bwsw29jDyAzIPXzQkoS- _18TDror949wcy2NyVIqpHo ">
 							<div class="_2mDWoxwh1QMJyLM49w7kMZ _3G8CRXtomRhisiZsw7Spx- _3ZgG-OSv0XE3y-h3oPaDsl">
 								<p></p>
@@ -339,7 +394,7 @@
 									<div>
 										<div
 											class="_13KHfN73YmQgsYHxXvuh_J _1za37OzUQqJfl3TEKlkYHi _3jflGAwHlQ83oL7U52brix _3_IGkn3uaje0g2ZA6Tx9wd">
-											<input type="text" value="5,000" id="supportGoal"><label
+											<input type="text" value="5000" id="supportGoal"><label
 												for="supportGoal">
 												<!-- react-text: 10772 -->원 <!-- /react-text -->
 												<!-- react-text: 10773 -->이상 밀어주시는 분께 드리는 선물입니다.<!-- /react-text -->
@@ -364,7 +419,7 @@
 									을 말합니다. 이 금액대의 선물을 선택한 후원자에게 어떤 아이템들을 얼마나 전달하실건가요?
 									<!-- /react-text -->
 								</p>
-								<div class="_13KHfN73YmQgsYHxXvuh_J CoIrJwj-n2Pdokdf8d4qE">
+								<div class="itemAddplace _13KHfN73YmQgsYHxXvuh_J CoIrJwj-n2Pdokdf8d4qE">
 									<div id="itemBox"
 										class="_13KHfN73YmQgsYHxXvuh_J _2BIT5x1MzYkxpZlDSFDBBf _2uxYQ-nuPwdol9sQhOjfH-"
 										style="padding: 0.5rem 1rem; background-color: rgb(239, 237, 237);">
@@ -378,36 +433,44 @@
 												설정</div>
 										</div>
 									</div>
-									<div id="itemAdd" class="_13KHfN73YmQgsYHxXvuh_J _2uxYQ-nuPwdol9sQhOjfH-"
+									
+									<div  class="itemAdd _13KHfN73YmQgsYHxXvuh_J _2uxYQ-nuPwdol9sQhOjfH-"
 										style="padding: 0.5rem 1rem;">
 										<div class="_13KHfN73YmQgsYHxXvuh_J _3U6RUH-EASpZ_j8ls1HJyP">
 											<div class="_13KHfN73YmQgsYHxXvuh_J _3_IGkn3uaje0g2ZA6Tx9wd">
 												<div class="_2zMGQBNRbNCEdnOi6MuA_q">
 													<div class="_3Cp0C9yr76hSCHJjdv7vs8">
+														<a href="#" onclick="return select(this)">
 														<button
-															class="_13KHfN73YmQgsYHxXvuh_J _3SbGdzxKM6M_AeOQWLNqks _1DLNFgQRrQNEosKFB0zOK5 _1QY7TzdLHKX3-BKPDNNYKF _3C1GIkccqqGyujnub2YVhV _1QY7TzdLHKX3-BKPDNNYKF _2rpTvKkYYdMbVEklWlLfhl">
+															 class=" _13KHfN73YmQgsYHxXvuh_J _3SbGdzxKM6M_AeOQWLNqks _1DLNFgQRrQNEosKFB0zOK5 _1QY7TzdLHKX3-BKPDNNYKF _3C1GIkccqqGyujnub2YVhV _1QY7TzdLHKX3-BKPDNNYKF _2rpTvKkYYdMbVEklWlLfhl">
 															<i class="-o8oGI_QAOKsVIJOUOUmV _1QY7TzdLHKX3-BKPDNNYKF"></i>
 														</button>
+														</a>
 													</div>
 													<div class="_29JGBV0ggQH38jcZcbYX3L"
 														style="color: rgb(117, 117, 117);">아이템을 만들어주세요</div>
-													<div class="_1isO96lTbXHWwvrnbZpWqR" style="display: flex;">
-														<button
+													<div  class="_1isO96lTbXHWwvrnbZpWqR" style="display: flex;">
+														<a  href="#" onclick="return down(this);">
+														<button 
 															class="_1DLNFgQRrQNEosKFB0zOK5 _3C1GIkccqqGyujnub2YVhV _13KHfN73YmQgsYHxXvuh_J _1QY7TzdLHKX3-BKPDNNYKF _3SbGdzxKM6M_AeOQWLNqks _2rpTvKkYYdMbVEklWlLfhl">
 															<i class="TsF0gblod8vlP0wj23avH _1QY7TzdLHKX3-BKPDNNYKF"></i>
-														</button>
+														</button >
+														</a>
 														<div
-															style="min-width: 3rem; display: flex; justify-content: center; align-items: center; color: rgb(117, 117, 117);">0</div>
-														<button
+															 style="min-width: 3rem; display: flex; justify-content: center; align-items: center; color: rgb(117, 117, 117);">0</div>
+														<a  href="#" onclick="return up(this);">
+														<button  
 															class="_1DLNFgQRrQNEosKFB0zOK5 _3C1GIkccqqGyujnub2YVhV _13KHfN73YmQgsYHxXvuh_J _1QY7TzdLHKX3-BKPDNNYKF _2rpTvKkYYdMbVEklWlLfhl _3SbGdzxKM6M_AeOQWLNqks">
-															<i
-																class="_3oZSOY3gf6z2DAwcScAvoY _1QY7TzdLHKX3-BKPDNNYKF"></i>
-														</button>
+															<i class="_3oZSOY3gf6z2DAwcScAvoY _1QY7TzdLHKX3-BKPDNNYKF"></i>
+														</button >
+														</a>
 													</div>
 												</div>
 											</div>
 										</div>
 									</div>
+
+									
 								</div>
 								<div class="_2uiHxjf6pbNOjrUj1iIApL"
 									style="margin-top: 1rem; margin-bottom: 0.5rem;">
@@ -459,7 +522,7 @@
 											<!-- react-text: 10828 -->로부터<!-- /react-text -->
 										</label><input type="number"
 											class="giftDay _3OMXzNQeMKl4iooK-BKZYd _152MAijd_UogerBKCVqZR_ _3_IGkn3uaje0g2ZA6Tx9wd "
-											value="0"><label for=""> 일 뒤인 </label>
+											value="0" min="1" max="30"><label for=""> 일 뒤인 </label>
 										<div class="_2SKerhxZJUQwe_7t7kn8ej">
 											<div class="react-datepicker__input-container">
 												<input type="text"
@@ -517,7 +580,7 @@
 										<!-- /react-text -->
 									</button>
 									<button
-										class="_13KHfN73YmQgsYHxXvuh_J _3SbGdzxKM6M_AeOQWLNqks _2-N-uV2y5apkjtxqdVnsop _1j452e49HyLjnC-u8oPCHq"
+										class="itemSendBtn _13KHfN73YmQgsYHxXvuh_J _3SbGdzxKM6M_AeOQWLNqks _2-N-uV2y5apkjtxqdVnsop _1j452e49HyLjnC-u8oPCHq"
 										disabled="">
 										<i class="-o8oGI_QAOKsVIJOUOUmV _1QY7TzdLHKX3-BKPDNNYKF"></i>
 										<!-- react-text: 10863 -->

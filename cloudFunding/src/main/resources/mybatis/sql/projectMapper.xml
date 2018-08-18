@@ -20,11 +20,24 @@
 	(#{email},SEQ_P_NUM.NEXTVAL,(select count(*) from project where EMAIL = #{email})+1,#{name},#{email},0,SYSDATE,'F','F',0)
 </insert>
 
+<insert id="insertGift" parameterType="Gift">
+	INSERT INTO GIFT VALUES(#{projectCode},#{email},#{price},#{description},#{item},#{sendDate},#{remited},#{transferCheck})
+</insert>
 <select id="selectProjectNum" parameterType="string" resultType="int">
 	SELECT COUNT(*)  FROM PROJECT 
 	WHERE EMAIL = #{userId}
 </select>			
 
+<resultMap type="Gift" id="giftMap">
+		<result property="email" column="EMAIL_1"/>
+		<result property="projectCode" column="P_PROJECT_CODE_0"/>
+		<result property="price" column="G_PRICE"/>
+		<result property="description" column="G_DESCRIPTION"/>
+		<result property="item" column="G_ITEM"/>
+		<result property="sendDate" column="G_SEND_DATE"/>
+		<result property="remited" column="G_REMITED"/>
+		<result property="transferCheck" column="G_TRANSFER_CHECK"/>
+</resultMap>
 
 <resultMap type="Project" id="projectMap">
 <id property="email" column="EMAIL" />
@@ -52,6 +65,7 @@
 <result property="pConfirm" column="P_OK"/>
 <result property="sendConfirm" column="P_SEND_CONFIRM"/>
 <result property="currentAmount" column="P_CURRENTAMOUNT"/>
+<collection property="giftArry" column="EMAIL" ofType="Gift" resultMap="giftMap"></collection>
 </resultMap>
 
 <select id = "selectProjectDetail" resultMap="projectMap" parameterType="int">
@@ -62,6 +76,47 @@ P_NAME, P_INTRODUCE, P_PRICE, P_END_DATE, P_GIFT_ITEM, P_REFUND, P_DESCRIPTION_V
 FROM PROJECT WHERE P_PROJECT_CODE = #{projectCode}
 </select>
 
+<select id="selectProjectGift" resultMap="projectMap" parameterType="int">
+SELECT P.EMAIL EMAIL,
+P.P_PROJECT_CODE P_PROJECT_CODE,
+P.P_PROJECT_NUMBER P_PROJECT_NUMBER,
+P.P_TITLE P_TITLE,
+P.P_REP_IMG P_REP_IMG,
+P.P_SUMMARY P_SUMMARY,
+P.P_CATEGORY P_CATEGORY,
+P.P_PROFILE_IMG P_PROFILE_IMG,
+P.P_NAME P_NAME,
+P.P_INTRODUCE P_INTRODUCE,
+P.P_PRICE P_PRICE,
+P.P_END_DATE P_END_DATE,
+P.P_GIFT_ITEM P_GIFT_ITEM,
+P.P_REFUND P_REFUND,
+P.P_DESCRIPTION_VIDEO P_DESCRIPTION_VIDEO,
+P.P_STORY P_STORY,
+P.P_EMAIL P_EMAIL,
+P.P_PHONE P_PHONE,
+P.P_BANK_TRADING P_BANK_TRADING,
+P.P_BANK_NAME P_BANK_NAME,
+P.P_BANK_NUMBER P_BANK_NUMBER,
+P.P_BANK_KINDS P_BANK_KINDS,
+P.P_OK P_OK,
+P.P_SEND_CONFIRM P_SEND_CONFIRM,
+P.P_CURRENTAMOUNT P_CURRENTAMOUNT,
+P.P_SPONSOR_COUNT P_SPONSOR_COUNT,
+P.P_ENROLL_DATE P_ENROLL_DATE,
+G.P_PROJECT_CODE P_PROJECT_CODE_0,
+G.EMAIL EMAIL_1,
+G.G_PRICE G_PRICE,
+G.G_DESCRIPTION G_DESCRIPTION,
+G.G_ITEM G_ITEM,
+G.G_SEND_DATE G_SEND_DATE,
+G.G_REMITED G_REMITED,
+G.G_TRANSFER_CHECK G_TRANSFER_CHECK FROM PROJECT P
+JOIN GIFT G ON(P.P_PROJECT_CODE=G.P_PROJECT_CODE)
+WHERE P.P_PROJECT_CODE=#{projectCode}
+</select>
+
+
 <select id = "selectProject" resultMap="projectMap" parameterType="hashmap">
 SELECT EMAIL, P_PROJECT_CODE,P_PROJECT_NUMBER, P_TITLE, P_REP_IMG, P_SUMMARY, P_CATEGORY, P_PROFILE_IMG, 
 P_NAME, P_INTRODUCE, P_PRICE, P_END_DATE, P_GIFT_ITEM, P_REFUND, P_DESCRIPTION_VIDEO,
@@ -69,6 +124,7 @@ P_NAME, P_INTRODUCE, P_PRICE, P_END_DATE, P_GIFT_ITEM, P_REFUND, P_DESCRIPTION_V
  P_OK, P_SEND_CONFIRM, P_CURRENTAMOUNT
 FROM PROJECT WHERE  EMAIL = #{userId} AND P_PROJECT_NUMBER = #{projectNum}
 </select>
+
 
 <update id="updateProject" parameterType="Project">
 	UPDATE PROJECT
@@ -107,6 +163,10 @@ FROM PROJECT WHERE  EMAIL = #{userId} AND P_PROJECT_NUMBER = #{projectNum}
       	
       	<when test="updateNum==9">
       	SET P_END_DATE = #{endDate}
+      	</when>
+      	
+      	<when test="updateNum==10">
+      	SET P_GIFT_ITEM = #{giftItem}
       	</when>
       	
       	<when test="updateNum==11">

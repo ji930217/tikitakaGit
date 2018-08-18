@@ -15,11 +15,11 @@ import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.multipart.MultipartHttpServletRequest;
 import org.springframework.web.servlet.ModelAndView;
 
-
-import com.tikitaka.cloudFunding.community.model.service.CommunityService;
 import com.tikitaka.cloudFunding.common.MyRenamePolicy;
+import com.tikitaka.cloudFunding.community.model.service.CommunityService;
 import com.tikitaka.cloudFunding.member.model.vo.Member;
 import com.tikitaka.cloudFunding.project.model.service.ProjectService;
+import com.tikitaka.cloudFunding.project.model.vo.GiftVo;
 import com.tikitaka.cloudFunding.project.model.vo.ProjectVo;
 
 @Controller
@@ -72,10 +72,14 @@ public class ProjectController {
 	
 	/*,produces="application/text; charset=utf-8"*/
 	@RequestMapping("projectUpdate.do" )
-	public @ResponseBody ProjectVo projectUpdate(ProjectVo projectVo,String projectTitle,String projectShortTitle,String date){
+	public @ResponseBody ProjectVo projectUpdate(ProjectVo projectVo,String projectTitle,String projectShortTitle,String date
+			,String item,String deletestr){
 		String ptitle = projectTitle+','+projectShortTitle;
 		HashMap params = new HashMap();
 		ProjectVo project=null;
+		params.put("userId", projectVo.getEmail());
+		params.put("projectNum",projectVo.getProjectNum());
+		project = projectService.selectProject(params);
 		
 		projectVo.setTitle(ptitle);
 		
@@ -83,11 +87,29 @@ public class ProjectController {
 			projectVo.setEndDate(java.sql.Date.valueOf(date));
 		}
 		
+		if(projectVo.getUpdateNum()==10&&project.getGiftItem()!=null){
+			projectVo.setGiftItem(project.getGiftItem()+","+item);
+		}else{
+			projectVo.setGiftItem(item);
+		}
+		
+		
+		if(projectVo.getUpdateNum()==12&&project.getGiftItem()!=null){
+			String newGiftItem="";
+			String shim = project.getGiftItem().contains(",")?",":"";
+			int maxLength = project.getGiftItem().length();
+			
+			newGiftItem = project.getGiftItem().replaceAll(deletestr+shim, "");
+			if(maxLength==newGiftItem.length()){
+				newGiftItem =project.getGiftItem().replaceAll(shim+deletestr, "");
+			}
+			projectVo.setGiftItem(newGiftItem);
+			projectVo.setUpdateNum(10);
+		}
+		
 		int result = projectService.updateProject(projectVo);
 		
 		if(0<result){
-			params.put("userId", projectVo.getEmail());
-			params.put("projectNum",projectVo.getProjectNum());
 			project = projectService.selectProject(params);
 		}
 		
@@ -185,5 +207,24 @@ public class ProjectController {
 		mv.addObject("project", project);
 		mv.setViewName("project/detail/policy");
 		return mv;
+	}
+	
+	//, @RequestParam("items") String[] items
+	@RequestMapping("insertGift.do")
+	public @ResponseBody ProjectVo insertGift(GiftVo gift ,String remit,@RequestParam(value="items[]") String items){
+		ProjectVo project =null;
+		if(!remit.equals("null")){
+			gift.setRemited(Integer.parseInt(remit));
+		}
+		gift.setItem(items);
+		System.out.println(gift);
+		int result = projectService.insertGift(gift);
+		
+		if(0<result){
+			project = projectService.selectProjectGift(gift.getProjectCode());
+		}
+		System.out.println(project);
+		
+		return project;
 	}
 }

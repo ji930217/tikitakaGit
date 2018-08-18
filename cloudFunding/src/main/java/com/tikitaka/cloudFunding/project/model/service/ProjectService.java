@@ -7,6 +7,7 @@ import org.springframework.stereotype.Service;
 
 import com.tikitaka.cloudFunding.member.model.vo.Member;
 import com.tikitaka.cloudFunding.project.model.dao.ProjectDao;
+import com.tikitaka.cloudFunding.project.model.vo.GiftVo;
 import com.tikitaka.cloudFunding.project.model.vo.ProjectVo;
 
 @Service
@@ -33,6 +34,14 @@ public class ProjectService {
 
 	public int updateProject(ProjectVo projectVo) {
 		return dao.updateProject(projectVo);
+	}
+
+	public int insertGift(GiftVo gift) {
+		return dao.insertGift(gift);
+	}
+
+	public ProjectVo selectProjectGift(int projectCode) {
+		return dao.selectProjectGift(projectCode);
 	}
 
 }

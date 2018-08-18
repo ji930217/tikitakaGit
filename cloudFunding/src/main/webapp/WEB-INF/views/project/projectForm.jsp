@@ -3157,7 +3157,10 @@ px
 					if ($(this).attr('id') == 'create-reward'
 							|| $(this).attr('id') == 'itemAdd'
 							|| $(this).attr('id') == 'itemBox'
-							|| $(this).attr('id') == 'addItem' || closeOn) {
+							|| $(this).attr('id') == 'addItem' ) {
+						return;
+					}
+					if(closeOn){
 						closeOn = false;
 						return;
 					}
@@ -3171,6 +3174,7 @@ px
 
 		$("#defaultItem").click(function() {
 			$(this).hide();
+			alert("아이템 이름이 중복 될때 같이 삭제되니 이름을 따로 정해 주세요");
 			$("#addItem").show();
 		});
 
@@ -3770,6 +3774,7 @@ px
 			$(".projectItemModal").hide();
 
 		});
+		
 		$("#modalItemInput").keyup(function() {
 			$(".modalItemBtn").attr('disabled', false);
 			if ($(this).val().length > 50) {
@@ -3778,14 +3783,62 @@ px
 			}
 			$(".modalRemit").text(50 - $(this).val().length + '자 남았습니다');
 		});
-
+		
+		
+			
+		$(".existItem").hide();
 		$(".modalItemBtn").click(function() {
 			if (1 > $("#modalItemInput").val().length) {
 				alert("아이템 이름은 최소 한글자 이상 입력해야 됩니다.");
+				return;
 			}
+			$.ajax({
+				url : 'projectUpdate.do',
+				type : 'post',
+				data : {
+					"updateNum":10,
+					"email" : '<c:out value="${user.email }"/>',
+					"projectNum" : <c:out value	="${project.projectNum}"/>,
+					"item" :$("#modalItemInput").val(),
+				},
+				success : function(data) {
+					$("#modalItemInput").val('');
+					$("#addItem").hide();
+					$("#defaultItem").show();
+					$(".noneItem").hide();
+					$(".existItem").show();
+					
+					var temp = new Array();
+					temp = data.giftItem.split(",");
+					$(".appnedItem").children('div').remove();
+					for(var i=0;i<temp.length;i++){
+						$(".appnedItem").append("<div class='_13KHfN73YmQgsYHxXvuh_J saXk0rx00KnB6O_X8xIAv _2uxYQ-nuPwdol9sQhOjfH-'><div class='_13KHfN73YmQgsYHxXvuh_J _3U6RUH-EASpZ_j8ls1HJyP'><div class='_3ECP69YABwRBC-kxTDAokV'><div class='UVz11B8HH3zPgaD3ITNbg'>"+temp[i]+"</div> <div class='_1oHVPuCWp3V0T31vaNkzNX'><div><a class='_3wn6m5g7iiO4BmmcRH091v' onclick='deleteItem(this);' style='color: grey;'>삭제하기</a></div></div></div></div></div>");
+					}
+					
+					var itemAdd = $(".itemAdd").eq(0);
+					$(".itemAdd").remove();
+					 for(var i=0;i<temp.length;i++){
+						itemAdd.children().children().children().children('._29JGBV0ggQH38jcZcbYX3L').text(temp[i]);
+						itemAdd.children().children().children().children().children().children('button').css("background-color","rgb(224, 225, 226)");
+						itemAdd.children().children().children().children("._1isO96lTbXHWwvrnbZpWqR").children('div').text(0);
+						itemAdd.clone().insertAfter($("#itemBox"));
+					} 
+					 itemName.splice(0,itemName.length); 
+				},
+				error : function(e) {
+					console.log('ajax에러');
+				}	
+			});
+			
 			
 		});
 
+		
+		$(".modalItemCancelBtn").click(function(){
+			$("#addItem").hide();
+			$("#defaultItem").show();
+		});
+		
 		$("#giftDescription").keyup(function() {
 			if ($(this).val().length > 50) {
 				alert("최대 50자만 입력 가능합니다.");
@@ -3795,16 +3848,27 @@ px
 		});
 
 		$(".giftDay").on('click keyup', function() {
+			if($("#deadlineDate").val()==""){
+				alert("프로젝트 마감일을 정해주세요");
+				$(".giftDay").val(0);
+				$("#deadlineDate").focus();
+				return;
+			}
+			
+			
 			var date = new Date($("#deadlineDate").val());
 			var giftDay = $(".giftDay").val();
-
+			if(parseInt(giftDay)<0){
+				giftDay=0;
+				$(".giftDay").val(0);
+			}
 			date.setDate(parseInt(date.getDate()) + parseInt(giftDay));
 
 			var year = date.getFullYear();
 			var month = date.getMonth() + 1;
 			var day = date.getDate();
 
-			$(".giftDate").val(year + '.' + month + '.' + day);
+			$(".giftDate").val(year + '-' + month + '-' + day);
 		});
 
 		$("#isRewardQuantityLimited").click(function() {
@@ -3858,7 +3922,6 @@ px
 			}
 			})
 		});
-		
 		function blue(pro){
 			if(null != pro.title && null != pro.repImg &&null != pro.summary &&
 					null != pro.category &&null != pro.profileImg&&null != pro.name&&null != pro.introduce){
@@ -3867,9 +3930,214 @@ px
 				$(".row1").prepend("<i class='_13KHfN73YmQgsYHxXvuh_J _1oJMWnMCW_Y6GmNc1mhqaW _3sFSjAZS4gQdCAyN3OfyFG -o8oGI_QAOKsVIJOUOUmV _254YPhBOB9qv7-J8bIg7co _1QY7TzdLHKX3-BKPDNNYKF'></i>");
 			}
 		}
-				
-				
+		
+		$(".itemSendBtn").click(function(){
+			itemSend();
+		});
 	});
+	
+				var itemName = new Array();	
+				
+				function select(item){
+					var str = $(item).parent().siblings('._29JGBV0ggQH38jcZcbYX3L').text();
+					var count = $(item).parent().siblings('._1isO96lTbXHWwvrnbZpWqR').children('div').text();
+					
+					var text = str+"(x"+count+")";
+					
+					
+					if(str=="아이템을 만들어주세요"){
+						alert("아이템을 만들어주세요");
+						return;
+					}
+					var color = $(item).children().css('background-color');
+					if(color=='rgb(224, 225, 226)'){
+						$(item).children().css('background-color','blue');
+					}else{
+						$(item).children().css('background-color','rgb(224, 225, 226)');
+					}
+					
+					
+					
+					var itemlength = itemName.length;
+					for(var i=0;i<itemlength;i++){
+						if(itemName[i]==text){
+							itemName.splice(i, 1);
+						}
+					}
+					if(itemlength==itemName.length){
+						itemName[itemName.length]=text;
+					}
+					if(itemName.length==0){
+						$(".itemSendBtn").attr("disabled",true);
+					}else{
+						$(".itemSendBtn").attr("disabled",false);
+					}
+					return false;
+				}
+	
+	function up(item){
+		var str = $(item).parent().siblings('._29JGBV0ggQH38jcZcbYX3L').text();
+		if(str=="아이템을 만들어주세요"){
+			alert("아이템을 만들어주세요");
+			return;
+		}
+		var count = $(item).siblings('div').text();
+		var text = str+"(x"+count+")";
+		if(parseInt(count)!=100){
+		$(item).siblings('div').text(parseInt(count)+1);
+		}
+		var itemlength = itemName.length;
+		for(var i=0;i<itemlength;i++){
+			if(itemName[i]==text&&parseInt(count)!=100){
+				text=str+"(x"+(parseInt(count)+1)+")";
+				itemName[i]=text;
+				
+			}
+			
+		}
+		
+		return false;
+	}	
+	
+	function down(item){
+		var str = $(item).parent().siblings('._29JGBV0ggQH38jcZcbYX3L').text();
+		
+		if(str=="아이템을 만들어주세요"){
+			alert("아이템을 만들어주세요");
+			return;
+		}
+		var count = $(item).siblings('div').text();
+		var text = str+"(x"+count+")";
+		if(parseInt(count)!=0){
+			$(item).siblings('div').text(parseInt(count)-1);
+		}
+		var itemlength = itemName.length;
+		for(var i=0;i<itemlength;i++){
+			if(itemName[i]==text &&parseInt(count)!=0){
+				text=str+"(x"+(parseInt(count)-1)+")";
+				itemName[i]=text;
+			}
+			
+		}
+		
+		return false;
+	}		
+	
+	
+	
+	
+	function deleteItem(item){
+		var lastindex = $(item).parent().parent().parent().text().indexOf(" ");
+		var deletestr = $(item).parent().parent().parent().text().substring(0,lastindex);
+		$.ajax({
+			url : 'projectUpdate.do',
+			type : 'post',
+			data : {
+				"updateNum":12,
+				"email" : '<c:out value="${user.email }"/>',
+				"projectNum" : <c:out value	="${project.projectNum}"/>,
+				"deletestr" :deletestr,
+			},
+			success : function(data) {
+				
+				var temp = new Array();
+				if(null!=data.giftItem){
+					temp = data.giftItem.split(",");
+				}else{
+					temp[0] = "아이템을 만들어주세요";
+				}
+				
+				$(".appnedItem").children('div').remove();
+				for(var i=0;i<temp.length;i++){
+					if(temp!='아이템을 만들어주세요'){
+						$(".appnedItem").append("<div class='_13KHfN73YmQgsYHxXvuh_J saXk0rx00KnB6O_X8xIAv _2uxYQ-nuPwdol9sQhOjfH-'><div class='_13KHfN73YmQgsYHxXvuh_J _3U6RUH-EASpZ_j8ls1HJyP'><div class='_3ECP69YABwRBC-kxTDAokV'><div class='UVz11B8HH3zPgaD3ITNbg'>"+temp[i]+"</div> <div class='_1oHVPuCWp3V0T31vaNkzNX'><div><a class='_3wn6m5g7iiO4BmmcRH091v' onclick='deleteItem(this);' style='color: grey;'>삭제하기</a></div></div></div></div></div>");	
+					}else{
+						 $(".noneItem").show();
+						 $(".existItem").hide();
+					}
+				}
+				
+				var itemAdd = $(".itemAdd").eq(0);
+				$(".itemAdd").remove();
+				 for(var i=0;i<temp.length;i++){
+					itemAdd.children().children().children().children('._29JGBV0ggQH38jcZcbYX3L').text(temp[i]);
+					itemAdd.clone().insertAfter($("#itemBox"));
+				} 
+			},
+			error : function(e) {
+				console.log('ajax에러');
+			}
+		});
+	}			
+	function itemSend(){
+		var regexp = /^[0-9]*$/;
+		var price = $("#supportGoal").val();
+		var description = $("#giftDescription").val();
+		var remited ="null"; 
+		var transferCheck =$("#transferCheck").is(":checked");
+		
+		if($("#isRewardQuantityLimited").is(":checked")){
+			remited = $("#rewardLimit").val();
+		}else{
+			remited="null";
+		}
+		
+		if (!regexp.test(price)) {
+			alert("목표 금액은 숫자만 입력 가능합니다.");
+			$("#supportGoal").val('');
+			$("#supportGoal").focus();
+			return;
+		}
+		if (5000 > price) {
+			alert("금액은 5000원 이상 가능합니다.");
+			$("#supportGoal").focus();
+			return;
+		}
+		if($(".giftDate ").val()==""){
+			alert("프로젝트 마감일을 저장해 주세요");
+			$("#new-reward").show();				
+			$("#create-reward").hide();
+			return;
+		}
+		$.ajax({
+			url: 'insertGift.do',			
+			type : 'post',
+			data : {
+				"email" : '<c:out value="${user.email }"/>',
+				"projectCode" : <c:out value="${project.projectCode}"/>,
+				"price": price,
+				"description" : description,
+				"remit" : remited,
+				"transferCheck":transferCheck, 
+				"sendDate" : $(".giftDate ").val(),
+				"items" :itemName,
+			},
+			success : function(data) {
+				itemName.splice(0,itemName.length); 
+				$(".itemAdd").children().children().children().children().children().children('button').css("background-color","rgb(224, 225, 226)");
+				$(".itemAdd").children().children().children().children("._1isO96lTbXHWwvrnbZpWqR").children('div').text(0);
+				$("#giftDescription").val('');
+				$(".giftRemit").val('50자 남았습니다');
+				$("#isRewardQuantityLimited").prop('checked', false);
+				$("#transferCheck").prop('checked', false) ;
+				$("#rewardLimit").val(0);
+				$("#rewardLimit").attr("disabled",true);
+				$("#new-reward").show();				
+				$("#create-reward").hide();
+				$(".rewardlist").css("display","inline-block");
+				var rewardlist = $(".rewardlist").eq(0);
+				$(".rewardlist").remove();
+				for(var i=0;i<data.giftArry.length;i++){
+					rewardlist.clone().insertAfter($(".rewardappend"));
+				}
+				console.log(data);
+			},
+			error : function(e) {
+				console.log('ajax에러');
+			}
+			
+		});
+	}
 </script>
 </head>
 <body>
