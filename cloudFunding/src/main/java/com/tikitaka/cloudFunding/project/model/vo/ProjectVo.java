@@ -33,6 +33,7 @@ public class ProjectVo {
 	private String sendConfirm; //송금여부확인
 	private int currentAmount; // 현재금액
 	private int updateNum;
+	
 	public ProjectVo() {}
 
 	

@@ -306,7 +306,7 @@
 						진행한 프로젝트&nbsp;&nbsp;
 						<b><c:out value="${project.projectNum }"/></b>
 						&nbsp;&nbsp;&nbsp;&nbsp; 밀어준 프로젝트&nbsp;&nbsp;
-						<!-- 밀어준건 후원현황 테이블에서 이메일을 조건으로 해서 count 값 조회 -->
+						<!-- 밀어준건 후원현황 테이블에서 이메일(project.email)을 조건으로 해서 count 값 조회 -->
 						<b>0</b>
 					</div>
 					<div class="CreatorCard__CreatorContactButton-yeytpy-6 khYIRi">
@@ -335,12 +335,8 @@
 							<div class="RewardCard__RewardContents-ibjars-7 dQJbED">
 								<div
 									class="RewardCard__RewardMinimumPledgeAmount-ibjars-8 dOjYPK">
-									<!-- react-text: 725 -->
 									10,000
-									<!-- /react-text -->
-									<!-- react-text: 726 -->
 									원 +
-									<!-- /react-text -->
 								</div>
 								<div class="RewardCard__RewardDescription-ibjars-9 kDYAge">배송비가
 									포함된 가격입니다.</div>

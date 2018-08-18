@@ -480,8 +480,8 @@
     	margin-left: 10px;
 	}
 	
-	/* #postListDiv,  */#writeBtnDiv{ display:block; }
-	#postFormDiv, .tojyI, #creatorPostDiv, #updatePostFormDiv, #postListDiv{	display:none; }
+	#writeBtnDiv{ display:block; }
+	#postFormDiv, .tojyI, #creatorPostDiv, #updatePostFormDiv, #postListDiv{ display:none; }
 	
 	#communityFixedBtn, #communityBtn{ color: rgb(0, 0, 0); border-bottom: 3px solid rgb(0, 0, 0); padding-bottom: calc(0.5rem - 3px); }
 	#sharePostBtnDiv{ display:none; }
@@ -489,16 +489,19 @@
 	
 </style>
 <script>
+	var postCode;
 	$(window).on("load", function(){ 
 		$(".loadingIndicator").css("display", "none");  
 		$(".dLYLGx").css("margin", "unset");  
-		$("#postListDiv").css("display", "block");  
+		if(null == sessionStorage.getItem("postCode")){
+			$("#postListDiv").css("display", "block");  
+			$("#writeBtnDiv").css("display", "block");  
+		}
 		setMoreBtnDisplayBlock();
 	});
 	 
 	$(function(){
 		// 댓글 달고나면 해당 게시글 상세화면 영역 보이게
-		var postCode;
 		if(null != sessionStorage.getItem("postCode")){
 			postCode = sessionStorage.getItem("postCode");
 		}
@@ -507,6 +510,7 @@
 	      if(postCode != null){
 			$(".tojyI").css("display", "block");
 			$("#postFormDiv").css("display", "none");
+			$("#updatePostFormDiv").css("display", "none");
 			$("#postListDiv").css("display", "none");
 			$("#creatorPostDiv").css("display", "none");
 			$("#writeBtnDiv").css("display", "none");	   
@@ -541,12 +545,13 @@
 					
 					var projectCode = "<c:out value='${project.projectCode}'/>";		
 					
-					$(".Post__CommunityPostCommentsAmount-s1xz59uk-25").html("<strong>" + data.replyList.length + "</strong>개의 댓글이 있습니다");
+					var replyCount = data.replyCount == null ? 0 : data.replyCount;
+					$(".Post__CommunityPostCommentsAmount-s1xz59uk-25").html("<strong>" + replyCount + "</strong>개의 댓글이 있습니다");
 					var $replyDiv = $("#replyDiv");
 					var resultStr = "";
 					// 댓글이 없는 경우 구분하기
 					/* console.log(data.replyList[0].content); */
-					if(0 < data.replyList.length) {
+					if(0 < replyCount) {
 						for(var key in data.replyList) {
 							var reply = data.replyList[key];
 							resultStr += "<div class='Comment__Comment-wppgnq-0 hlvHZI'>";
@@ -587,9 +592,10 @@
 					}
 					$replyDiv.html(resultStr);
 				}, beforeSend:function(){
-			        $(".tojyI").hide();
+			        $(".loadingIndicator").css("display", "inline-block");  
 			    }, complete:function(){
-			    	$(".tojyI").show();
+			        $(".loadingIndicator").css("display", "none");  
+					$(".dLYLGx").css("margin", "unset"); 
 			    }, error : function(e){
 					console.log("ajax insertReply 에러 : ", e);
 				}
@@ -680,9 +686,10 @@
 		$(".cywbQo").each(function(){
 			var $storyContentDiv = $(this).children("div").eq(0).children("div").children("div").eq(0);
 			var height = $storyContentDiv.css("height").replace("px", "");
-			var maxHeight = $(".fmSZUJ").css("max-height").replace("px", "");
+			/* var maxHeight = $(".fmSZUJ").css("max-height").replace("px", "");
+			console.log(maxHeight); */
 			
-			if(maxHeight <= height) {
+			if(500 <= height) {
 				$(this).children(".hwdRmE").css("display", "block");
 				$(this).siblings(".bPLTTN").css("display", "block");
 			}
