@@ -192,9 +192,7 @@ public class ProjectController {
 	
 	@RequestMapping("projectDetail.do")
 	public ModelAndView selectProjectDetail(int projectCode, ModelAndView mv){
-		ProjectVo project = projectService.selectProjectDetail(projectCode);
-		// GiftVo 리스트도 함께 조회해서 넘겨줘야함.
-		
+		ProjectVo project = projectService.selectProjectGift(projectCode);
 		List<PostVo> postList = cService.selectPostList(projectCode);
 		
 		int count = cService.selectPostCount(projectCode);
@@ -208,10 +206,6 @@ public class ProjectController {
 	@RequestMapping("projectPolicy.do")
 	public @ResponseBody ProjectVo projectPolicy(int projectCode){
 		ProjectVo project = projectService.selectProjectDetail(projectCode);
-		/*int count = cService.selectPostCount(projectCode);
-	/*	mv.addObject("count", count);
-		mv.addObject("project", project);*/
-		/*mv.setViewName("project/detail/community");*/
 		return project;
 	}
 	

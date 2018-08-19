@@ -1,6 +1,8 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/functions" prefix="fn" %> 
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %> 
 <!DOCTYPE html>
 <html>
 <head>
@@ -320,358 +322,58 @@
 			<div class="Rewards__Rewards-s13hisnh-0 bfEmee">
 				<div class="Rewards__RewardsLabel-s13hisnh-1 spnVx">
 					선택할 수 있는
-					<b>8</b>
+					<b><c:out value="${fn:length(project.giftArry)}"/></b>
 					개의 선물이 있습니다
 				</div>
-				<div class="RewardCard__RewardCardWrapper-ibjars-0 kcmHIB">
-					<div class="Card__Card-s1i1esb8-0 hBOBRE">
-						<div class="RewardCard__RewardCardInner-ibjars-1 cEqFlc">
-							<div class="RewardCard__RewardHeader-ibjars-2 iwEBnW">
-								<span class="RewardCard__PledgeAmount-ibjars-3 etxsCe"><i
-									class="-o8oGI_QAOKsVIJOUOUmV _1QY7TzdLHKX3-BKPDNNYKF"></i>
-								<!-- react-text: 721 -->570<!-- /react-text -->
-									<!-- react-text: 722 -->명이 선택<!-- /react-text --></span>
-							</div>
-							<div class="RewardCard__RewardContents-ibjars-7 dQJbED">
-								<div
-									class="RewardCard__RewardMinimumPledgeAmount-ibjars-8 dOjYPK">
-									10,000
-									원 +
-								</div>
-								<div class="RewardCard__RewardDescription-ibjars-9 kDYAge">배송비가
-									포함된 가격입니다.</div>
-							</div>
-							<div class="RewardCard__Items-ibjars-10 iYIWgz">
-								<li class="RewardCard__ItemList-ibjars-11 gSgsr">
-									<!-- react-text: 730 -->'필름생활안내서' 1권<!-- /react-text -->
-									<!-- react-text: 731 -->&nbsp;<!-- /react-text -->
-									<span>( x 1 )</span>
-								</li>
-							</div>
-							<div class="RewardCard__DeliveryDate-ibjars-12 chNsfw">
-								<span>
-									<!-- react-text: 735 -->예상 전달일 &nbsp;<!-- /react-text -->
-									<b>2018년 9월 13일</b>
-								</span>
-							</div>
-							<div class="Divider__Divider-s16ihjfx-0 ilHpOi"></div>
-							<button class="Button__Button-s1ng5xda-0 dxWcyc">선물
-								선택하고 밀어주기</button>
-						</div>
-					</div>
-				</div>
-				<div class="RewardCard__RewardCardWrapper-ibjars-0 kcmHIB">
-					<div class="Card__Card-s1i1esb8-0 hBOBRE">
-						<div class="RewardCard__RewardCardInner-ibjars-1 cEqFlc">
-							<div class="RewardCard__RewardHeader-ibjars-2 iwEBnW">
-								<span class="RewardCard__PledgeAmount-ibjars-3 etxsCe"><i
-									class="-o8oGI_QAOKsVIJOUOUmV _1QY7TzdLHKX3-BKPDNNYKF"></i>
-								<!-- react-text: 745 -->24<!-- /react-text -->
-									<!-- react-text: 746 -->명이 선택<!-- /react-text --></span>
-								 <span class="RewardCard__RewardQuantityLimit-ibjars-4 fGxdGR">
-									 <span class="RewardCard__LimitedRewardLabel-ibjars-5 jJjTiD">
-									<!-- react-text: 1073 -->72<!-- /react-text -->
-									<!-- react-text: 1074 -->개 남음<!-- /react-text -->
+				
+				<c:forEach var="gift" items="${project.giftArry }" varStatus="status">
+					<div class="RewardCard__RewardCardWrapper-ibjars-0 kcmHIB">
+						<div class="Card__Card-s1i1esb8-0 hBOBRE">
+							<div class="RewardCard__RewardCardInner-ibjars-1 cEqFlc">
+								<div class="RewardCard__RewardHeader-ibjars-2 iwEBnW">
+									<span class="RewardCard__PledgeAmount-ibjars-3 etxsCe">
+									<i	class="-o8oGI_QAOKsVIJOUOUmV _1QY7TzdLHKX3-BKPDNNYKF"></i>
+									<!-- react-text: 745 -->24<!-- /react-text -->
+										<!-- react-text: 746 -->명이 선택<!-- /react-text --></span>
+									 <span class="RewardCard__RewardQuantityLimit-ibjars-4 fGxdGR">
+										 
+										<!-- 준비된 선물수량 <= 100 -->
+										<span class="RewardCard__LimitedRewardLabel-ibjars-5 jJjTiD">
+											72개 남음
+										</span>
+										
+										<!-- 준비된 선물수량 == 후원자수. 프로젝트 밀어주기 버튼도 변경되어야 함 -->
+										<!-- <span class="RewardCard__SoldoutLabel-ibjars-6 ktzKui">선착순	마감</span> -->
 									</span>
-								</span>
-						</div>
-							<div class="RewardCard__RewardContents-ibjars-7 dQJbED">
-								<div
-									class="RewardCard__RewardMinimumPledgeAmount-ibjars-8 dOjYPK">
-									<!-- react-text: 749 -->
-									11,000
-									<!-- /react-text -->
-									<!-- react-text: 750 -->
-									원 +
-									<!-- /react-text -->
 								</div>
-								<div class="RewardCard__RewardDescription-ibjars-9 kDYAge">추후
-									메일로 서베이를 보내드립니다 꼭 작성해 주세요.(디자인 선택) 배송비 포함.</div>
-							</div>
-							<div class="RewardCard__Items-ibjars-10 iYIWgz">
-								<li class="RewardCard__ItemList-ibjars-11 gSgsr">
-									<!-- react-text: 754 -->필름 뱃지 1개 <!-- /react-text -->
-									<!-- react-text: 755 -->&nbsp;<!-- /react-text -->
-									<span>( x 1 )</span>
-								</li>
-							</div>
-							<div class="RewardCard__DeliveryDate-ibjars-12 chNsfw">
-								<span>
-									<!-- react-text: 759 -->예상 전달일 &nbsp;<!-- /react-text -->
-									<b>2018년 9월 13일</b>
-								</span>
-							</div>
-							<div class="Divider__Divider-s16ihjfx-0 ilHpOi"></div>
-							<button class="Button__Button-s1ng5xda-0 dxWcyc">선물
-								선택하고 밀어주기</button>
-						</div>
-					</div>
-				</div>
-				<div class="RewardCard__RewardCardWrapper-ibjars-0 kcmHIB">
-					<div class="Card__Card-s1i1esb8-0 hBOBRE">
-						<div class="RewardCard__RewardCardInner-ibjars-1 cEqFlc">
-							<div class="RewardCard__RewardHeader-ibjars-2 iwEBnW">
-								<span class="RewardCard__PledgeAmount-ibjars-3 etxsCe"><i
-									class="-o8oGI_QAOKsVIJOUOUmV _1QY7TzdLHKX3-BKPDNNYKF"></i>
-								<!-- react-text: 769 -->22<!-- /react-text -->
-									<!-- react-text: 770 -->명이 선택<!-- /react-text --></span>
-							</div>
-							<div class="RewardCard__RewardContents-ibjars-7 dQJbED">
-								<div
-									class="RewardCard__RewardMinimumPledgeAmount-ibjars-8 dOjYPK">
-									<!-- react-text: 773 -->
-									17,000
-									<!-- /react-text -->
-									<!-- react-text: 774 -->
-									원 +
-									<!-- /react-text -->
+								<div class="RewardCard__RewardContents-ibjars-7 dQJbED">
+									<div	class="RewardCard__RewardMinimumPledgeAmount-ibjars-8 dOjYPK">
+										<fmt:formatNumber value="${gift.price }" pattern="#,###"/>
+										원 +
+									</div>
+									<div class="RewardCard__RewardDescription-ibjars-9 kDYAge">
+										<c:out value="${gift.description }"/>
+									</div>
 								</div>
-								<div class="RewardCard__RewardDescription-ibjars-9 kDYAge">배송비가
-									포함된 가격입니다.</div>
-							</div>
-							<div class="RewardCard__Items-ibjars-10 iYIWgz">
-								<li class="RewardCard__ItemList-ibjars-11 gSgsr">
-									<!-- react-text: 778 -->'필름생활안내서' 2권<!-- /react-text -->
-									<!-- react-text: 779 -->&nbsp;<!-- /react-text -->
-									<span>( x 1 )</span>
-								</li>
-							</div>
-							<div class="RewardCard__DeliveryDate-ibjars-12 chNsfw">
-								<span>
-									<!-- react-text: 783 -->예상 전달일 &nbsp;<!-- /react-text -->
-									<b>2018년 9월 13일</b>
-								</span>
-							</div>
-							<div class="Divider__Divider-s16ihjfx-0 ilHpOi"></div>
-							<button class="Button__Button-s1ng5xda-0 dxWcyc">선물
-								선택하고 밀어주기</button>
-						</div>
-					</div>
-				</div>
-				<div class="RewardCard__RewardCardWrapper-ibjars-0 kcmHIB">
-					<div class="Card__Card-s1i1esb8-0 hBOBRE">
-						<div class="RewardCard__RewardCardInner-ibjars-1 cEqFlc">
-							<div class="RewardCard__RewardHeader-ibjars-2 iwEBnW">
-								<span class="RewardCard__PledgeAmount-ibjars-3 etxsCe"><i
-									class="-o8oGI_QAOKsVIJOUOUmV _1QY7TzdLHKX3-BKPDNNYKF"></i>
-								<!-- react-text: 793 -->88<!-- /react-text -->
-									<!-- react-text: 794 -->명이 선택<!-- /react-text --></span>
-							</div>
-							<div class="RewardCard__RewardContents-ibjars-7 dQJbED">
-								<div
-									class="RewardCard__RewardMinimumPledgeAmount-ibjars-8 dOjYPK">
-									<!-- react-text: 797 -->
-									18,000
-									<!-- /react-text -->
-									<!-- react-text: 798 -->
-									원 +
-									<!-- /react-text -->
+								<div class="RewardCard__Items-ibjars-10 iYIWgz">
+									<li class="RewardCard__ItemList-ibjars-11 gSgsr">
+										<c:out value="${gift.item }"/>&nbsp;
+										<span>( x 1 )</span>
+									</li>
 								</div>
-								<div class="RewardCard__RewardDescription-ibjars-9 kDYAge">추후
-									메일로 서베이를 보내드립니다 꼭 작성해 주세요.(디자인 선택) 배송비 포함.</div>
-							</div>
-							<div class="RewardCard__Items-ibjars-10 iYIWgz">
-								<li class="RewardCard__ItemList-ibjars-11 gSgsr">
-									<!-- react-text: 802 -->'필름생활안내서' 1권<!-- /react-text -->
-									<!-- react-text: 803 -->&nbsp;<!-- /react-text -->
-									<span>( x 1 )</span>
-								</li>
-								<li class="RewardCard__ItemList-ibjars-11 gSgsr">
-									<!-- react-text: 806 -->필름 뱃지 1개 <!-- /react-text -->
-									<!-- react-text: 807 -->&nbsp;<!-- /react-text -->
-									<span>( x 1 )</span>
-								</li>
-							</div>
-							<div class="RewardCard__DeliveryDate-ibjars-12 chNsfw">
-								<span>
-									<!-- react-text: 811 -->예상 전달일 &nbsp;<!-- /react-text -->
-									<b>2018년 9월 13일</b>
-								</span>
-							</div>
-							<div class="Divider__Divider-s16ihjfx-0 ilHpOi"></div>
-							<button class="Button__Button-s1ng5xda-0 dxWcyc">선물
-								선택하고 밀어주기</button>
-						</div>
-					</div>
-				</div>
-				<div class="RewardCard__RewardCardWrapper-ibjars-0 kcmHIB">
-					<div class="Card__Card-s1i1esb8-0 hBOBRE">
-						<div class="RewardCard__RewardCardInner-ibjars-1 cEqFlc">
-							<div class="RewardCard__RewardHeader-ibjars-2 iwEBnW">
-								<span class="RewardCard__PledgeAmount-ibjars-3 etxsCe"><i
-									class="-o8oGI_QAOKsVIJOUOUmV _1QY7TzdLHKX3-BKPDNNYKF"></i>
-								<!-- react-text: 821 -->4<!-- /react-text -->
-									<!-- react-text: 822 -->명이 선택<!-- /react-text --></span>
-							</div>
-							<div class="RewardCard__RewardContents-ibjars-7 dQJbED">
-								<div
-									class="RewardCard__RewardMinimumPledgeAmount-ibjars-8 dOjYPK">
-									<!-- react-text: 825 -->
-									19,000
-									<!-- /react-text -->
-									<!-- react-text: 826 -->
-									원 +
-									<!-- /react-text -->
-								</div>
-								<div class="RewardCard__RewardDescription-ibjars-9 kDYAge">추후
-									메일로 서베이를 보내드립니다. 작성해 주세요.(디자인 선택) 배송비 포함.</div>
-							</div>
-							<div class="RewardCard__Items-ibjars-10 iYIWgz">
-								<li class="RewardCard__ItemList-ibjars-11 gSgsr">
-									<!-- react-text: 830 -->필름 뱃지 2개 <!-- /react-text -->
-									<!-- react-text: 831 -->&nbsp;<!-- /react-text -->
-									<span>( x 1 )</span>
-								</li>
-							</div>
-							<div class="RewardCard__DeliveryDate-ibjars-12 chNsfw">
-								<span>
-									<!-- react-text: 835 -->예상 전달일 &nbsp;<!-- /react-text -->
-									<b>2018년 9월 13일</b>
-								</span>
-							</div>
-							<div class="Divider__Divider-s16ihjfx-0 ilHpOi"></div>
-							<button class="Button__Button-s1ng5xda-0 dxWcyc">선물
-								선택하고 밀어주기</button>
-						</div>
-					</div>
-				</div>
-				<div class="RewardCard__RewardCardWrapper-ibjars-0 kcmHIB">
-					<div class="Card__Card-s1i1esb8-0 hBOBRE">
-						<div class="RewardCard__RewardCardInner-ibjars-1 cEqFlc">
-							<div class="RewardCard__RewardHeader-ibjars-2 iwEBnW">
-								<span class="RewardCard__PledgeAmount-ibjars-3 etxsCe"><i
-									class="-o8oGI_QAOKsVIJOUOUmV _1QY7TzdLHKX3-BKPDNNYKF"></i>
-								<!-- react-text: 845 -->27<!-- /react-text -->
-									<!-- react-text: 846 -->명이 선택<!-- /react-text --></span>
-								<span class="RewardCard__RewardQuantityLimit-ibjars-4 fGxdGR">
-									<span class="RewardCard__SoldoutLabel-ibjars-6 ktzKui">선착순
-									마감
+								<div class="RewardCard__DeliveryDate-ibjars-12 chNsfw">
+									<span>
+										예상 전달일 &nbsp;
+										<b><fmt:formatDate type="date" dateStyle="full" value="${gift.sendDate }"/></b>
 									</span>
-								</span>
-						</div>
-							<div class="RewardCard__RewardContents-ibjars-7 dQJbED">
-								<div
-									class="RewardCard__RewardMinimumPledgeAmount-ibjars-8 dOjYPK">
-									<!-- react-text: 849 -->
-									26,000
-									<!-- /react-text -->
-									<!-- react-text: 850 -->
-									원 +
-									<!-- /react-text -->
 								</div>
-								<div class="RewardCard__RewardDescription-ibjars-9 kDYAge">추후
-									메일로 서베이를 보내드립니다. 작성해 주세요.(디자인 선택) 배송비 포함.</div>
+								<div class="Divider__Divider-s16ihjfx-0 ilHpOi"></div>
+								<button class="Button__Button-s1ng5xda-0 dxWcyc">선물 선택하고 밀어주기</button>
 							</div>
-							<div class="RewardCard__Items-ibjars-10 iYIWgz">
-								<li class="RewardCard__ItemList-ibjars-11 gSgsr">
-									<!-- react-text: 854 -->'필름생활안내서' 1권<!-- /react-text -->
-									<!-- react-text: 855 -->&nbsp;<!-- /react-text -->
-									<span>( x 1 )</span>
-								</li>
-								<li class="RewardCard__ItemList-ibjars-11 gSgsr">
-									<!-- react-text: 858 -->필름 뱃지 2개 <!-- /react-text -->
-									<!-- react-text: 859 -->&nbsp;<!-- /react-text -->
-									<span>( x 1 )</span>
-								</li>
-							</div>
-							<div class="RewardCard__DeliveryDate-ibjars-12 chNsfw">
-								<span>
-									<!-- react-text: 863 -->예상 전달일 &nbsp;<!-- /react-text -->
-									<b>2018년 9월 13일</b>
-								</span>
-							</div>
-							<div class="Divider__Divider-s16ihjfx-0 ilHpOi"></div>
-								<button class="Button__Button-s1ng5xda-0 fNWWcT" disabled="">선물 선택하고 밀어주기</button>
 						</div>
 					</div>
-				</div>
-				<div class="RewardCard__RewardCardWrapper-ibjars-0 kcmHIB">
-					<div class="Card__Card-s1i1esb8-0 hBOBRE">
-						<div class="RewardCard__RewardCardInner-ibjars-1 cEqFlc">
-							<div class="RewardCard__RewardHeader-ibjars-2 iwEBnW">
-								<span class="RewardCard__PledgeAmount-ibjars-3 etxsCe"><i
-									class="-o8oGI_QAOKsVIJOUOUmV _1QY7TzdLHKX3-BKPDNNYKF"></i>
-								<!-- react-text: 873 -->16<!-- /react-text -->
-									<!-- react-text: 874 -->명이 선택<!-- /react-text --></span>
-							</div>
-							<div class="RewardCard__RewardContents-ibjars-7 dQJbED">
-								<div
-									class="RewardCard__RewardMinimumPledgeAmount-ibjars-8 dOjYPK">
-									<!-- react-text: 877 -->
-									26,000
-									<!-- /react-text -->
-									<!-- react-text: 878 -->
-									원 +
-									<!-- /react-text -->
-								</div>
-								<div class="RewardCard__RewardDescription-ibjars-9 kDYAge">추후
-									메일로 서베이를 보내드립니다. 작성해 주세요.(디자인 선택) 배송비 포함.</div>
-							</div>
-							<div class="RewardCard__Items-ibjars-10 iYIWgz">
-								<li class="RewardCard__ItemList-ibjars-11 gSgsr">
-									<!-- react-text: 882 -->필름 뱃지 3개 <!-- /react-text -->
-									<!-- react-text: 883 -->&nbsp;<!-- /react-text -->
-									<span>( x 1 )</span>
-								</li>
-							</div>
-							<div class="RewardCard__DeliveryDate-ibjars-12 chNsfw">
-								<span>
-									<!-- react-text: 887 -->예상 전달일 &nbsp;<!-- /react-text -->
-									<b>2018년 9월 13일</b>
-								</span>
-							</div>
-							<div class="Divider__Divider-s16ihjfx-0 ilHpOi"></div>
-							<button class="Button__Button-s1ng5xda-0 dxWcyc">선물
-								선택하고 밀어주기</button>
-						</div>
-					</div>
-				</div>
-				<div class="RewardCard__RewardCardWrapper-ibjars-0 kcmHIB">
-					<div class="Card__Card-s1i1esb8-0 hBOBRE">
-						<div class="RewardCard__RewardCardInner-ibjars-1 cEqFlc">
-							<div class="RewardCard__RewardHeader-ibjars-2 iwEBnW">
-								<span class="RewardCard__PledgeAmount-ibjars-3 etxsCe"><i
-									class="-o8oGI_QAOKsVIJOUOUmV _1QY7TzdLHKX3-BKPDNNYKF"></i>
-								<!-- react-text: 897 -->123<!-- /react-text -->
-									<!-- react-text: 898 -->명이 선택<!-- /react-text --></span>
-							</div>
-							<div class="RewardCard__RewardContents-ibjars-7 dQJbED">
-								<div
-									class="RewardCard__RewardMinimumPledgeAmount-ibjars-8 dOjYPK">
-									<!-- react-text: 901 -->
-									33,000
-									<!-- /react-text -->
-									<!-- react-text: 902 -->
-									원 +
-									<!-- /react-text -->
-								</div>
-								<div class="RewardCard__RewardDescription-ibjars-9 kDYAge">추후
-									메일로 서베이를 보내드립니다. 작성해 주세요.(디자인 선택) 배송비 포함.</div>
-							</div>
-							<div class="RewardCard__Items-ibjars-10 iYIWgz">
-								<li class="RewardCard__ItemList-ibjars-11 gSgsr">
-									<!-- react-text: 906 -->'필름생활안내서' 1권<!-- /react-text -->
-									<!-- react-text: 907 -->&nbsp;<!-- /react-text -->
-									<span>( x 1 )</span>
-								</li>
-								<li class="RewardCard__ItemList-ibjars-11 gSgsr">
-									<!-- react-text: 910 -->필름 뱃지 3개 <!-- /react-text -->
-									<!-- react-text: 911 -->&nbsp;<!-- /react-text -->
-									<span>( x 1 )</span>
-								</li>
-							</div>
-							<div class="RewardCard__DeliveryDate-ibjars-12 chNsfw">
-								<span>
-									<!-- react-text: 915 -->예상 전달일 &nbsp;<!-- /react-text -->
-									<b>2018년 9월 13일</b>
-								</span>
-							</div>
-							<div class="Divider__Divider-s16ihjfx-0 ilHpOi"></div>
-							<button class="Button__Button-s1ng5xda-0 dxWcyc">선물
-								선택하고 밀어주기</button>
-						</div>
-					</div>
-				</div>
+				</c:forEach>
+				
 			</div>
 		</div>
 	</div>
