@@ -226,7 +226,7 @@
 	$(window).on("load", function(){ 
 		$(".loadingIndicator").css("display", "none");  
 		$(".dLYLGx").css("margin", "unset");  
-		$("#storyDiv").css("display", "flex");  
+		/* $("#storyDiv").css("display", "flex");   */
 	});
 	
 	$(function(){

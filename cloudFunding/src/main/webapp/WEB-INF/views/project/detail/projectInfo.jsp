@@ -227,6 +227,7 @@
 	$(function(){
 		var projectCode = "<c:out value='${project.projectCode}'/>";
 		$("#storyBtn, #storyFixedBtn").click(function(){
+			sessionStorage.removeItem("postCode");
 			sessionStorage.removeItem("page");
 			$.ajax({
 				url : "projectDetail.do",
@@ -258,6 +259,10 @@
 				success : function(data){
 					$("#policyDiv").css("display", "none");
 					$("#storyDiv").css("display", "none");
+					$(".tojyI").css("display", "none");
+					$("#updatePostFormDiv").css("display", "none");
+					$("#postFormDiv").css("display", "none");
+					$("#creatorPostDiv").css("display", "none");
 					$("#communityDiv").css("display", "block");
 					
 					$("#policyFixedBtn, #policyBtn, #storyFixedBtn, #storyBtn").removeClass("btnUnderline");
@@ -282,6 +287,7 @@
 		
 		$("#policyBtn, #policyFixedBtn").click(function(){
 			sessionStorage.removeItem("page");
+			sessionStorage.removeItem("postCode");
 			sessionStorage.setItem("page", "policy");
 			$.ajax({
 				url : "projectPolicy.do",

@@ -521,6 +521,7 @@
 				data : {postCode : postCode},
 				success : function(data){
 					$(".hKVypK > .storyContent").html(data.content);
+					$(".storyContent img").css("width", "100%");
 					$(".hINlJw").html(data.name);
 					$("#postWriterProfileImgSpan").html("<img class='ProfileImg__ProfileImg-s1o99mme-0 frVGN' src='" + data.profileImg + "'/>");
 					$("#replyWriterProfileImgDiv").html("<img class='ProfileImg__ProfileImg-s1o99mme-0 frVGN' src='${user.profile_img}'/>")
