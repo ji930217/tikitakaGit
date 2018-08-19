@@ -229,8 +229,15 @@
 		/* $("#storyDiv").css("display", "flex");   */
 	});
 	
+	var page = sessionStorage.getItem("page");
+	/* $(window).resize(function(){
+		console.log($(window).width());
+		if(1080 <= $(window).width()){
+			$(".ceunQL").css("display", "block");
+		}
+	});
+	 */
 	$(function(){
-		var page = sessionStorage.getItem("page");
 		if(page == null) {
 			$("#storyDiv").css("display", "block");
 			$(".storyContent img").css("width", "100%");

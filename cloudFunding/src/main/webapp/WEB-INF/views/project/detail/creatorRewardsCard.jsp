@@ -319,62 +319,63 @@
 					</div>
 				</div>
 			</div>
-			<div class="Rewards__Rewards-s13hisnh-0 bfEmee">
-				<div class="Rewards__RewardsLabel-s13hisnh-1 spnVx">
-					선택할 수 있는
-					<b><c:out value="${fn:length(project.giftArry)}"/></b>
-					개의 선물이 있습니다
-				</div>
+			<c:if test="${!empty project.giftArry }">
+				<div class="Rewards__Rewards-s13hisnh-0 bfEmee">
+					<div class="Rewards__RewardsLabel-s13hisnh-1 spnVx">
+						선택할 수 있는
+						<b><c:out value="${fn:length(project.giftArry)}"/></b>
+						개의 선물이 있습니다
+					</div>
 				
-				<c:forEach var="gift" items="${project.giftArry }" varStatus="status">
-					<div class="RewardCard__RewardCardWrapper-ibjars-0 kcmHIB">
-						<div class="Card__Card-s1i1esb8-0 hBOBRE">
-							<div class="RewardCard__RewardCardInner-ibjars-1 cEqFlc">
-								<div class="RewardCard__RewardHeader-ibjars-2 iwEBnW">
-									<span class="RewardCard__PledgeAmount-ibjars-3 etxsCe">
-									<i	class="-o8oGI_QAOKsVIJOUOUmV _1QY7TzdLHKX3-BKPDNNYKF"></i>
-									<!-- react-text: 745 -->24<!-- /react-text -->
-										<!-- react-text: 746 -->명이 선택<!-- /react-text --></span>
-									 <span class="RewardCard__RewardQuantityLimit-ibjars-4 fGxdGR">
-										 
-										<!-- 준비된 선물수량 <= 100 -->
-										<span class="RewardCard__LimitedRewardLabel-ibjars-5 jJjTiD">
-											72개 남음
+					<c:forEach var="gift" items="${project.giftArry }" varStatus="status">
+						<div class="RewardCard__RewardCardWrapper-ibjars-0 kcmHIB">
+							<div class="Card__Card-s1i1esb8-0 hBOBRE">
+								<div class="RewardCard__RewardCardInner-ibjars-1 cEqFlc">
+									<div class="RewardCard__RewardHeader-ibjars-2 iwEBnW">
+										<span class="RewardCard__PledgeAmount-ibjars-3 etxsCe">
+										<i	class="-o8oGI_QAOKsVIJOUOUmV _1QY7TzdLHKX3-BKPDNNYKF"></i>
+										<!-- react-text: 745 -->24<!-- /react-text -->
+											<!-- react-text: 746 -->명이 선택<!-- /react-text --></span>
+										 <span class="RewardCard__RewardQuantityLimit-ibjars-4 fGxdGR">
+											 
+											<!-- 준비된 선물수량 <= 100 -->
+											<span class="RewardCard__LimitedRewardLabel-ibjars-5 jJjTiD">
+												72개 남음
+											</span>
+											
+											<!-- 준비된 선물수량 == 후원자수. 프로젝트 밀어주기 버튼도 변경되어야 함 -->
+											<!-- <span class="RewardCard__SoldoutLabel-ibjars-6 ktzKui">선착순	마감</span> -->
 										</span>
-										
-										<!-- 준비된 선물수량 == 후원자수. 프로젝트 밀어주기 버튼도 변경되어야 함 -->
-										<!-- <span class="RewardCard__SoldoutLabel-ibjars-6 ktzKui">선착순	마감</span> -->
-									</span>
-								</div>
-								<div class="RewardCard__RewardContents-ibjars-7 dQJbED">
-									<div	class="RewardCard__RewardMinimumPledgeAmount-ibjars-8 dOjYPK">
-										<fmt:formatNumber value="${gift.price }" pattern="#,###"/>
-										원 +
 									</div>
-									<div class="RewardCard__RewardDescription-ibjars-9 kDYAge">
-										<c:out value="${gift.description }"/>
+									<div class="RewardCard__RewardContents-ibjars-7 dQJbED">
+										<div	class="RewardCard__RewardMinimumPledgeAmount-ibjars-8 dOjYPK">
+											<fmt:formatNumber value="${gift.price }" pattern="#,###"/>
+											원 +
+										</div>
+										<div class="RewardCard__RewardDescription-ibjars-9 kDYAge">
+											<c:out value="${gift.description }"/>
+										</div>
 									</div>
+									<div class="RewardCard__Items-ibjars-10 iYIWgz">
+										<li class="RewardCard__ItemList-ibjars-11 gSgsr">
+											<c:out value="${gift.item }"/>&nbsp;
+											<span>( x 1 )</span>
+										</li>
+									</div>
+									<div class="RewardCard__DeliveryDate-ibjars-12 chNsfw">
+										<span>
+											예상 전달일 &nbsp;
+											<b><fmt:formatDate type="date" dateStyle="full" value="${gift.sendDate }"/></b>
+										</span>
+									</div>
+									<div class="Divider__Divider-s16ihjfx-0 ilHpOi"></div>
+									<button class="Button__Button-s1ng5xda-0 dxWcyc">선물 선택하고 밀어주기</button>
 								</div>
-								<div class="RewardCard__Items-ibjars-10 iYIWgz">
-									<li class="RewardCard__ItemList-ibjars-11 gSgsr">
-										<c:out value="${gift.item }"/>&nbsp;
-										<span>( x 1 )</span>
-									</li>
-								</div>
-								<div class="RewardCard__DeliveryDate-ibjars-12 chNsfw">
-									<span>
-										예상 전달일 &nbsp;
-										<b><fmt:formatDate type="date" dateStyle="full" value="${gift.sendDate }"/></b>
-									</span>
-								</div>
-								<div class="Divider__Divider-s16ihjfx-0 ilHpOi"></div>
-								<button class="Button__Button-s1ng5xda-0 dxWcyc">선물 선택하고 밀어주기</button>
 							</div>
 						</div>
-					</div>
-				</c:forEach>
-				
-			</div>
+					</c:forEach>
+				</div>
+			</c:if>
 		</div>
 	</div>
 </body>
