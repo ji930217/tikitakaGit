@@ -342,6 +342,7 @@ public class MemberController {
 			
 			System.out.println(pi.toString());
 			
+			int result = memberService.insertUpdateCardInfo(pi);
 			
 		
 			
@@ -364,6 +365,8 @@ public class MemberController {
 			pi.setAcnum(Integer.parseInt(accNumber));
 			
 			System.out.println(pi.toString());
+			
+			int result = memberService.insertUpdateBankInfo(pi);
 		
 		}
 		

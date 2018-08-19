@@ -19,6 +19,7 @@
   	<typeAlias type="com.tikitaka.cloudFunding.project.model.vo.ProjectVo" alias="Project"/>
   	<typeAlias type="com.tikitaka.cloudFunding.community.model.vo.PostVo" alias="Post"/>
   	<typeAlias type="com.tikitaka.cloudFunding.community.model.vo.ReplyVo" alias="Reply"/>
+  	<typeAlias type="com.tikitaka.cloudFunding.member.model.vo.PaymentInfo" alias="PaymentInfo"/>
   </typeAliases>
   
 
