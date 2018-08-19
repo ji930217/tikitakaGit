@@ -227,6 +227,7 @@
 	$(function(){
 		var projectCode = "<c:out value='${project.projectCode}'/>";
 		$("#storyBtn, #storyFixedBtn").click(function(){
+			sessionStorage.removeItem("page");
 			$.ajax({
 				url : "projectDetail.do",
 				type : "post",
@@ -247,6 +248,8 @@
 		});
 		
 		$("#communityBtn, #communityFixedBtn").click(function(){
+			sessionStorage.removeItem("page");
+			sessionStorage.setItem("page", "community");
 			$.ajax({
 				url : "projectCommunity.do",
 				type : "post",
@@ -278,6 +281,8 @@
 		});
 		
 		$("#policyBtn, #policyFixedBtn").click(function(){
+			sessionStorage.removeItem("page");
+			sessionStorage.setItem("page", "policy");
 			$.ajax({
 				url : "projectPolicy.do",
 				type : "post",

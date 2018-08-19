@@ -211,7 +211,7 @@
 
 	#communityDiv, #policyDiv{ display:none; }
 
-	.eQgQLo{ display:none; }
+	#storyDiv{ display:none; }
 		
 	.loadingIndicator{
 		display:inline-block;
@@ -226,13 +226,36 @@
 	$(window).on("load", function(){ 
 		$(".loadingIndicator").css("display", "none");  
 		$(".dLYLGx").css("margin", "unset");  
-		$(".eQgQLo").css("display", "flex");  
+		$("#storyDiv").css("display", "flex");  
 	});
 	
 	$(function(){
-		$(".ceunQL").css("display", "block");
-		$("#storyFixedBtn").addClass("btnUnderline");
-		$("#storyBtn").addClass("btnUnderline");
+		var page = sessionStorage.getItem("page");
+		if(page == null) {
+			$(".ceunQL").css("display", "block");
+			$("#storyFixedBtn").addClass("btnUnderline");
+			$("#storyBtn").addClass("btnUnderline");
+		} else if(page == "community"){
+			$("#policyDiv").css("display", "none");
+			$("#storyDiv").css("display", "none");
+			$("#communityDiv").css("display", "block");
+			
+			$("#policyFixedBtn, #policyBtn, #storyFixedBtn, #storyBtn").removeClass("btnUnderline");
+			$("#communityFixedBtn, #communityBtn").addClass("btnUnderline");
+			
+			if(null == sessionStorage.getItem("postCode")){
+				$("#postListDiv").css("display", "block");  
+				$("#writeBtnDiv").css("display", "block");  
+			}
+			setMoreBtnDisplayBlock();
+		} else if(page == "policy"){
+			$("#storyDiv").css("display", "none");
+			$("#communityDiv").css("display", "none");
+			$("#policyDiv").css("display", "block");
+			
+			$("#storyFixedBtn, #storyBtn, #communityFixedBtn, #communityBtn").removeClass("btnUnderline");
+			$("#policyFixedBtn, #policyBtn").addClass("btnUnderline");
+		}
 	});
 	
 </script>
@@ -257,19 +280,20 @@
 						<div
 							class="ProjectPage__ProjectContentsMainColumn-b1letw-2 kJUlye" data-reactid="105">
 							
+							<!-- 로딩중 -->
+							<div class="LoadingIndicator__Wrapper-s1ikuj59-1 dLYLGx" data-reactid="110" align="center">
+								<div class="loadingIndicator">
+									<div class="LoadingIndicator__Circle-s1ikuj59-2 hGGMaO" data-reactid="111"></div>
+									<div class="sc-htpNat btBxPj" data-reactid="112"></div>
+									<div class="sc-bxivhb cgjPcA" data-reactid="113"></div>
+								</div>
+							</div>
+							
 							<!-- 스토리 -->
 							<div id="storyDiv">
 								<div class="ProjectPage__MainColumnInner-b1letw-4 giKgfw" data-reactid="106">
 									<div class="Card__Card-s1i1esb8-0 bJXRvz" data-reactid="107">
 										<div class="StoryCard__StoryCardInner-s1hr1q2m-0 ewlCRY" data-reactid="108">
-											<!-- 로딩중 -->
-											<div class="LoadingIndicator__Wrapper-s1ikuj59-1 dLYLGx" data-reactid="110" align="center">
-												<div class="loadingIndicator">
-													<div class="LoadingIndicator__Circle-s1ikuj59-2 hGGMaO" data-reactid="111"></div>
-													<div class="sc-htpNat btBxPj" data-reactid="112"></div>
-													<div class="sc-bxivhb cgjPcA" data-reactid="113"></div>
-												</div>
-											</div>
 											
 											<div class="sc-bdVaJa eQgQLo" data-reactid="109">
 												여기에 프로젝트 스토리 출력
@@ -297,6 +321,5 @@
 			</div>
 		</div>
 	</section>
-	<!-- <script type="application/javascript" src="https://d2om2e6rfn032x.cloudfront.net/wpa/bundle.app.e7b8de0e233cf13f392b.js"> -->
-    </body>
-  </html>
+</body>
+</html>
