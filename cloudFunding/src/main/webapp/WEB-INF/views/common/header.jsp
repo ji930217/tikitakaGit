@@ -701,6 +701,27 @@
 		}
 	}
 	
+	.cwYjsy2{
+		margin-bottom: .75rem;
+	    display: -webkit-box;
+	    display: -webkit-flex;
+	    display: -ms-flexbox;
+	    display: flex;
+	    -webkit-align-items: center;
+	    -webkit-box-align: center;
+	    -ms-flex-align: center;
+	    align-items: center;
+	}
+	.cwYjsy2 > span{
+		color: rgba(0, 0, 0, 0.3);
+	}
+	.enzRKc2{
+		font-size: 2rem;
+	    color: black;
+	    font-weight: bolder;
+	    line-height: 1.2;
+	}
+	
 </style>
 <script>
 
@@ -1032,17 +1053,22 @@
 					</div>
 					<div>
 						<div>
-							<div class="MenuItem__MenuItem-no2u3j-0 cwYjsy">
-								<span class="MenuItem__MenuItemTitle-no2u3j-1 enzRKc">만화</span><span><div
-										class="DiscoverMenuDropdown__TriangleDownIcon-s116h97f-1 OZgBR"></div></span>
+							<div class="MenuItem__MenuItem-no2u3j-0 cwYjsy2">
+								<span class="MenuItem__MenuItemTitle-no2u3j-1 enzRKc2">만화</span>
+								<span style="margin-left:5px;">
+									<div	class="DiscoverMenuDropdown__TriangleDownIcon-s116h97f-1">준비중</div>
+								</span>
+								<!-- <span>
+									<div	class="DiscoverMenuDropdown__TriangleDownIcon-s116h97f-1 OZgBR"></div>
+								</span> -->
 							</div>
 						</div>
-						<div>
+						<!-- <div>
 							<div class="DropdownItem__DropdownItem-s12jl0ab-0 lhFUmi">
 								<a href="/category/comics">
-									<!-- react-text: 987 -->모든 <!-- /react-text -->
-									<!-- react-text: 988 -->만화<!-- /react-text -->
-									<!-- react-text: 989 --> 프로젝트<!-- /react-text -->
+									react-text: 987모든 /react-text
+									react-text: 988만화/react-text
+									react-text: 989 프로젝트/react-text
 								</a>
 							</div>
 							<div class="DropdownItem__DropdownItem-s12jl0ab-0 lhFUmi">
@@ -1054,23 +1080,23 @@
 							<div class="DropdownItem__DropdownItem-s12jl0ab-0 lhFUmi">
 								<a href="/category/comic-book">출판 만화</a>
 							</div>
-						</div>
+						</div> -->
 					</div>
 					<div>
 						<div>
-							<div class="MenuItem__MenuItem-no2u3j-0 cwYjsy">
-								<span class="MenuItem__MenuItemTitle-no2u3j-1 enzRKc">미술</span>
-								<span>
+							<div class="MenuItem__MenuItem-no2u3j-0 cwYjsy2">
+								<span class="MenuItem__MenuItemTitle-no2u3j-1 enzRKc2">미술</span>
+								<!-- <span>
 									<div class="DiscoverMenuDropdown__TriangleDownIcon-s116h97f-1 OZgBR"></div>
-								</span>
+								</span> -->
 							</div>
 						</div>
-						<div>
+						<!-- <div>
 							<div class="DropdownItem__DropdownItem-s12jl0ab-0 lhFUmi">
 								<a href="/category/art">
-									<!-- react-text: 1001 -->모든 <!-- /react-text -->
-									<!-- react-text: 1002 -->미술<!-- /react-text -->
-									<!-- react-text: 1003 --> 프로젝트<!-- /react-text -->
+									react-text: 1001모든 /react-text
+									react-text: 1002미술/react-text
+									react-text: 1003 프로젝트/react-text
 								</a>
 							</div>
 							<div class="DropdownItem__DropdownItem-s12jl0ab-0 lhFUmi">
@@ -1094,30 +1120,32 @@
 							<div class="DropdownItem__DropdownItem-s12jl0ab-0 lhFUmi">
 								<a href="/category/painting">회화</a>
 							</div>
-						</div>
+						</div> -->
 					</div>
-					<div class="MenuItem__MenuItem-no2u3j-0 cwYjsy">
-						<a href="/category/crafts"><span
-							class="MenuItem__MenuItemTitle-no2u3j-1 enzRKc">공예</span></a>
+					<div class="MenuItem__MenuItem-no2u3j-0 cwYjsy2">
+						<!-- <a href="/category/crafts"> --><span
+							class="MenuItem__MenuItemTitle-no2u3j-1 enzRKc2">공예</span></a>
 					</div>
-					<div class="MenuItem__MenuItem-no2u3j-0 cwYjsy">
-						<a href="/category/photography"><span
-							class="MenuItem__MenuItemTitle-no2u3j-1 enzRKc">사진</span></a>
+					<div class="MenuItem__MenuItem-no2u3j-0 cwYjsy2">
+						<!-- <a href="/category/photography"> --><span
+							class="MenuItem__MenuItemTitle-no2u3j-1 enzRKc2">사진</span></a>
 					</div>
 					<div>
 						<div>
-							<div class="MenuItem__MenuItem-no2u3j-0 cwYjsy">
-								<span class="MenuItem__MenuItemTitle-no2u3j-1 enzRKc">영화
-									∙ 비디오</span><span><div
-										class="DiscoverMenuDropdown__TriangleDownIcon-s116h97f-1 OZgBR"></div></span>
+							<div class="MenuItem__MenuItem-no2u3j-0 cwYjsy2">
+								<span class="MenuItem__MenuItemTitle-no2u3j-1 enzRKc2">영화
+									∙ 비디오</span>
+								<!-- <span>
+									<div	class="DiscoverMenuDropdown__TriangleDownIcon-s116h97f-1 OZgBR"></div>
+								</span> -->
 							</div>
 						</div>
-						<div>
+						<!-- <div>
 							<div class="DropdownItem__DropdownItem-s12jl0ab-0 lhFUmi">
 								<a href="/category/film-and-video">
-									<!-- react-text: 2531 -->모든 <!-- /react-text -->
-									<!-- react-text: 2532 -->영화 ∙ 비디오<!-- /react-text -->
-									<!-- react-text: 2533 --> 프로젝트<!-- /react-text -->
+									react-text: 2531모든 /react-text
+									react-text: 2532영화 ∙ 비디오/react-text
+									react-text: 2533 프로젝트/react-text
 								</a>
 							</div>
 							<div class="DropdownItem__DropdownItem-s12jl0ab-0 lhFUmi">
@@ -1135,21 +1163,23 @@
 							<div class="DropdownItem__DropdownItem-s12jl0ab-0 lhFUmi">
 								<a href="/category/webseries">웹시리즈</a>
 							</div>
-						</div>
+						</div> -->
 					</div>
 					<div>
 						<div>
-							<div class="MenuItem__MenuItem-no2u3j-0 cwYjsy">
-								<span class="MenuItem__MenuItemTitle-no2u3j-1 enzRKc">푸드</span><span><div
-										class="DiscoverMenuDropdown__TriangleDownIcon-s116h97f-1 OZgBR"></div></span>
+							<div class="MenuItem__MenuItem-no2u3j-0 cwYjsy2">
+								<span class="MenuItem__MenuItemTitle-no2u3j-1 enzRKc2">푸드</span>
+								<!-- <span>
+									<div	class="DiscoverMenuDropdown__TriangleDownIcon-s116h97f-1 OZgBR"></div>
+								</span> -->
 							</div>
 						</div>
-						<div>
+						<!-- <div>
 							<div class="DropdownItem__DropdownItem-s12jl0ab-0 lhFUmi">
 								<a href="/category/food">
-									<!-- react-text: 2549 -->모든 <!-- /react-text -->
-									<!-- react-text: 2550 -->푸드<!-- /react-text -->
-									<!-- react-text: 2551 --> 프로젝트<!-- /react-text -->
+									react-text: 2549모든 /react-text
+									react-text: 2550푸드/react-text
+									react-text: 2551 프로젝트/react-text
 								</a>
 							</div>
 							<div class="DropdownItem__DropdownItem-s12jl0ab-0 lhFUmi">
@@ -1158,25 +1188,27 @@
 							<div class="DropdownItem__DropdownItem-s12jl0ab-0 lhFUmi">
 								<a href="/category/cookbook">요리책</a>
 							</div>
-						</div>
+						</div> -->
 					</div>
-					<div class="MenuItem__MenuItem-no2u3j-0 cwYjsy">
-						<a href="/category/music"><span
-							class="MenuItem__MenuItemTitle-no2u3j-1 enzRKc">음악</span></a>
+					<div class="MenuItem__MenuItem-no2u3j-0 cwYjsy2">
+						<!-- <a href="/category/music"> --><span
+							class="MenuItem__MenuItemTitle-no2u3j-1 enzRKc2">음악</span></a>
 					</div>
 					<div>
 						<div>
-							<div class="MenuItem__MenuItem-no2u3j-0 cwYjsy">
-								<span class="MenuItem__MenuItemTitle-no2u3j-1 enzRKc">출판</span><span><div
-										class="DiscoverMenuDropdown__TriangleDownIcon-s116h97f-1 OZgBR"></div></span>
+							<div class="MenuItem__MenuItem-no2u3j-0 cwYjsy2">
+								<span class="MenuItem__MenuItemTitle-no2u3j-1 enzRKc2">출판</span>
+								<!-- <span>
+									<div	class="DiscoverMenuDropdown__TriangleDownIcon-s116h97f-1 OZgBR"></div>
+								</span> -->
 							</div>
 						</div>
-						<div>
+						<!-- <div>
 							<div class="DropdownItem__DropdownItem-s12jl0ab-0 lhFUmi">
 								<a href="/category/publication">
-									<!-- react-text: 2560 -->모든 <!-- /react-text -->
-									<!-- react-text: 2561 -->출판<!-- /react-text -->
-									<!-- react-text: 2562 --> 프로젝트<!-- /react-text -->
+									react-text: 2560모든 /react-text
+									react-text: 2561출판/react-text
+									react-text: 2562 프로젝트/react-text
 								</a>
 							</div>
 							<div class="DropdownItem__DropdownItem-s12jl0ab-0 lhFUmi">
@@ -1206,21 +1238,23 @@
 							<div class="DropdownItem__DropdownItem-s12jl0ab-0 lhFUmi">
 								<a href="/category/academic">학술</a>
 							</div>
-						</div>
+						</div> -->
 					</div>
 					<div>
 						<div>
-							<div class="MenuItem__MenuItem-no2u3j-0 cwYjsy">
-								<span class="MenuItem__MenuItemTitle-no2u3j-1 enzRKc">테크놀로지</span><span><div
-										class="DiscoverMenuDropdown__TriangleDownIcon-s116h97f-1 OZgBR"></div></span>
+							<div class="MenuItem__MenuItem-no2u3j-0 cwYjsy2">
+								<span class="MenuItem__MenuItemTitle-no2u3j-1 enzRKc2">테크놀로지</span>
+								<!-- <span>
+									<div	class="DiscoverMenuDropdown__TriangleDownIcon-s116h97f-1 OZgBR"></div>
+								</span> -->
 							</div>
 						</div>
-						<div>
+						<!-- <div>
 							<div class="DropdownItem__DropdownItem-s12jl0ab-0 lhFUmi">
 								<a href="/category/technology">
-									<!-- react-text: 2586 -->모든 <!-- /react-text -->
-									<!-- react-text: 2587 -->테크놀로지<!-- /react-text -->
-									<!-- react-text: 2588 --> 프로젝트<!-- /react-text -->
+									react-text: 2586모든 /react-text
+									react-text: 2587테크놀로지/react-text
+									react-text: 2588 프로젝트/react-text
 								</a>
 							</div>
 							<div class="DropdownItem__DropdownItem-s12jl0ab-0 lhFUmi">
@@ -1232,21 +1266,23 @@
 							<div class="DropdownItem__DropdownItem-s12jl0ab-0 lhFUmi">
 								<a href="/category/hardware">하드웨어</a>
 							</div>
-						</div>
+						</div> -->
 					</div>
 					<div>
 						<div>
-							<div class="MenuItem__MenuItem-no2u3j-0 cwYjsy">
-								<span class="MenuItem__MenuItemTitle-no2u3j-1 enzRKc">패션</span><span><div
-										class="DiscoverMenuDropdown__TriangleDownIcon-s116h97f-1 OZgBR"></div></span>
+							<div class="MenuItem__MenuItem-no2u3j-0 cwYjsy2">
+								<span class="MenuItem__MenuItemTitle-no2u3j-1 enzRKc2">패션</span>
+								<!-- <span>
+									<div	class="DiscoverMenuDropdown__TriangleDownIcon-s116h97f-1 OZgBR"></div>
+								</span> -->
 							</div>
 						</div>
-						<div>
+						<!-- <div>
 							<div class="DropdownItem__DropdownItem-s12jl0ab-0 lhFUmi">
 								<a href="/category/fashion">
-									<!-- react-text: 2600 -->모든 <!-- /react-text -->
-									<!-- react-text: 2601 -->패션<!-- /react-text -->
-									<!-- react-text: 2602 --> 프로젝트<!-- /react-text -->
+									react-text: 2600모든 /react-text
+									react-text: 2601패션/react-text
+									react-text: 2602 프로젝트/react-text
 								</a>
 							</div>
 							<div class="DropdownItem__DropdownItem-s12jl0ab-0 lhFUmi">
@@ -1258,21 +1294,23 @@
 							<div class="DropdownItem__DropdownItem-s12jl0ab-0 lhFUmi">
 								<a href="/category/fashion_goods">패션잡화</a>
 							</div>
-						</div>
+						</div> -->
 					</div>
 					<div>
 						<div>
-							<div class="MenuItem__MenuItem-no2u3j-0 cwYjsy">
-								<span class="MenuItem__MenuItemTitle-no2u3j-1 enzRKc">캠페인</span><span><div
-										class="DiscoverMenuDropdown__TriangleDownIcon-s116h97f-1 OZgBR"></div></span>
+							<div class="MenuItem__MenuItem-no2u3j-0 cwYjsy2">
+								<span class="MenuItem__MenuItemTitle-no2u3j-1 enzRKc2">캠페인</span>
+								<!-- <span>
+									<div	class="DiscoverMenuDropdown__TriangleDownIcon-s116h97f-1 OZgBR"></div>
+								</span> -->
 							</div>
 						</div>
-						<div>
+						<!-- <div>
 							<div class="DropdownItem__DropdownItem-s12jl0ab-0 lhFUmi">
 								<a href="/category/campaign">
-									<!-- react-text: 2614 -->모든 <!-- /react-text -->
-									<!-- react-text: 2615 -->캠페인<!-- /react-text -->
-									<!-- react-text: 2616 --> 프로젝트<!-- /react-text -->
+									react-text: 2614모든 /react-text
+									react-text: 2615캠페인/react-text
+									react-text: 2616 프로젝트/react-text
 								</a>
 							</div>
 							<div class="DropdownItem__DropdownItem-s12jl0ab-0 lhFUmi">
@@ -1284,7 +1322,7 @@
 							<div class="DropdownItem__DropdownItem-s12jl0ab-0 lhFUmi">
 								<a href="/category/society">사회</a>
 							</div>
-						</div>
+						</div> -->
 					</div>
 				</div>
 			</div>
