@@ -44,4 +44,8 @@ public class ProjectService {
 		return dao.selectProjectGift(projectCode);
 	}
 
+	public int deleteGift(int giftCode) {
+		return dao.deleteGift(giftCode);
+	}
+
 }

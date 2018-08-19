@@ -45,5 +45,9 @@ public class ProjectDao {
 		return sqlSession.selectOne("projectMapper.selectProjectGift", projectCode);
 	}
 
+	public int deleteGift(int giftCode) {
+		return sqlSession.delete("projectMapper.deleteProjectGift",giftCode);
+	}
+
 
 }

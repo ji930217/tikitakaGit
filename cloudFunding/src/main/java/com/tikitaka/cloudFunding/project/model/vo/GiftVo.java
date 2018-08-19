@@ -7,6 +7,7 @@ import org.springframework.stereotype.Component;
 @Component
 public class GiftVo {
 	
+	private int giftCode;
 	private int projectCode;
 	private String email;
 	private int price;
@@ -16,14 +17,17 @@ public class GiftVo {
 	private int remited;
 	private String transferCheck;
 	
+	
+	
 	public GiftVo() {
 		// TODO Auto-generated constructor stub
 	}
 	
-	
-	public GiftVo(int projectCode, String email, int price, String description, String item, Date sendDate, int remited,
-			String transferCheck) {
+
+	public GiftVo(int giftCode, int projectCode, String email, int price, String description, String item,
+			Date sendDate, int remited, String transferCheck) {
 		super();
+		this.giftCode = giftCode;
 		this.projectCode = projectCode;
 		this.email = email;
 		this.price = price;
@@ -35,6 +39,12 @@ public class GiftVo {
 	}
 
 
+	public int getGiftCode() {
+		return giftCode;
+	}
+	public void setGiftCode(int giftCode) {
+		this.giftCode = giftCode;
+	}
 	public int getProjectCode() {
 		return projectCode;
 	}
@@ -84,13 +94,12 @@ public class GiftVo {
 		this.transferCheck = transferCheck;
 	}
 
-
 	@Override
 	public String toString() {
-		return "GiftVo [projectCode=" + projectCode + ", email=" + email + ", price=" + price + ", description="
-				+ description + ", item=" + item + ", sendDate=" + sendDate + ", remited=" + remited
+		return "GiftVo [giftCode=" + giftCode + ", projectCode=" + projectCode + ", email=" + email + ", price=" + price
+				+ ", description=" + description + ", item=" + item + ", sendDate=" + sendDate + ", remited=" + remited
 				+ ", transferCheck=" + transferCheck + "]";
 	}
-	
+
 	
 }
