@@ -227,4 +227,15 @@ public class ProjectController {
 		
 		return project;
 	}
+	
+	@RequestMapping("deleteGift.do")
+	public @ResponseBody ProjectVo deleteGfit(String projectCode, String giftCode){
+		
+		ProjectVo project =null;
+		int result = projectService.deleteGift(Integer.parseInt(giftCode));
+		if(0<result){
+			project = projectService.selectProjectGift(Integer.parseInt(projectCode));
+		}
+		return project;
+	}
 }

@@ -21,7 +21,7 @@
 </insert>
 
 <insert id="insertGift" parameterType="Gift">
-	INSERT INTO GIFT VALUES(#{projectCode},#{email},#{price},#{description},#{item},#{sendDate},#{remited},#{transferCheck})
+	INSERT INTO GIFT VALUES(#{projectCode},#{email},SEQ_G_NUM.NEXTVAL,#{price},#{description},#{item},#{sendDate},#{remited},#{transferCheck})
 </insert>
 <select id="selectProjectNum" parameterType="string" resultType="int">
 	SELECT COUNT(*)  FROM PROJECT 
@@ -29,6 +29,7 @@
 </select>			
 
 <resultMap type="Gift" id="giftMap">
+		<id property="giftCode" column="G_CODE"/>
 		<result property="email" column="EMAIL_1"/>
 		<result property="projectCode" column="P_PROJECT_CODE_0"/>
 		<result property="price" column="G_PRICE"/>
@@ -106,6 +107,7 @@ P.P_SPONSOR_COUNT P_SPONSOR_COUNT,
 P.P_ENROLL_DATE P_ENROLL_DATE,
 G.P_PROJECT_CODE P_PROJECT_CODE_0,
 G.EMAIL EMAIL_1,
+G.G_CODE,
 G.G_PRICE G_PRICE,
 G.G_DESCRIPTION G_DESCRIPTION,
 G.G_ITEM G_ITEM,
@@ -180,7 +182,9 @@ FROM PROJECT WHERE  EMAIL = #{userId} AND P_PROJECT_NUMBER = #{projectNum}
 	 WHERE EMAIL = #{email} AND P_PROJECT_NUMBER=#{projectNum}
 </update>
 
-
+<delete id="deleteProjectGift" parameterType="int">
+	DELETE FROM GIFT WHERE G_CODE = #{giftCode}
+</delete>
 
 
 

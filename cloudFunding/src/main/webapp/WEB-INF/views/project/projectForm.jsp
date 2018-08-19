@@ -3235,10 +3235,6 @@ px
 		$(".nextBtn").click(
 				function() {
 					
-					console.log("next");
-					console.log(currentPage);
-					console.log(pageNum);
-					
 					$(".rLqvd1axk9i-3cU72yTkF").prevAll('a').removeClass(
 							'_3Syz9fGXYtzMNqK_55A2BW');
 					$(".rLqvd1axk9i-3cU72yTkF").nextAll('a').removeClass(
@@ -4093,8 +4089,7 @@ px
 			$("#supportGoal").focus();
 			return;
 		}
-		if($(".giftDate ").val()==""){
-			alert("프로젝트 마감일을 저장해 주세요");
+		if($(".giftDate").val()=="마감일을 설정해 주세요"){
 			$("#new-reward").show();				
 			$("#create-reward").hide();
 			return;
@@ -4128,9 +4123,25 @@ px
 				var rewardlist = $(".rewardlist").eq(0);
 				$(".rewardlist").remove();
 				for(var i=0;i<data.giftArry.length;i++){
+					var date = new Date(data.giftArry[i].sendDate);
+					var year = date.getFullYear();
+					var month = date.getMonth() + 1;
+					var day = date.getDate();
+					var fulldate = year + '년' + month + '월' + day+'일'; 
+					
+					rewardlist.children().children(".-UobvSeyUG6cEWYnht50S").children('h4').text(data.giftArry[i].price+" 원 이상 밀어주시는 분께");
+					rewardlist.children().children("._3F_kXgcqjiYVIFqaGYLV_x").children('p').text(data.giftArry[i].description);
+					rewardlist.children().children(".itemLists").children('div').text(data.giftArry[i].item);
+					rewardlist.children().children(".VgMYktFPH-SSPJjPTFMC").children('strong').text(fulldate);
+					rewardlist.children("._3ZgG-OSv0XE3y-h3oPaDsl").children().children('.remitDisplay').text(data.giftArry[i].remited+"개 남음");
+					rewardlist.children().children().children().attr('onclick','deleteItemList('+data.giftArry[i].giftCode+')');
+					if(data.giftArry[i].transferCheck=="false"){
+						rewardlist.children("._3ZgG-OSv0XE3y-h3oPaDsl").children().children('.sendCondition').hide();
+					} else{
+						rewardlist.children("._3ZgG-OSv0XE3y-h3oPaDsl").children().children('.sendCondition').show();
+					}
 					rewardlist.clone().insertAfter($(".rewardappend"));
 				}
-				console.log(data);
 			},
 			error : function(e) {
 				console.log('ajax에러');
@@ -4138,6 +4149,52 @@ px
 			
 		});
 	}
+	
+	 function deleteItemList(giftNum){
+		 $.ajax({
+			url:'deleteGift.do',
+			type : 'post',
+			data : {
+				"projectCode" : <c:out value="${project.projectCode}"/>,
+				"giftCode":giftNum,
+			},
+			success : function(data) {
+				if(data==""){
+					$(".rewardlist").hide();
+				}else{
+					var rewardlist = $(".rewardlist").eq(0);
+					
+					$(".rewardlist").remove();
+					for(var i=0;i<data.giftArry.length;i++){
+						var date = new Date(data.giftArry[i].sendDate);
+						var year = date.getFullYear();
+						var month = date.getMonth() + 1;
+						var day = date.getDate();
+						var fulldate = year + '년' + month + '월' + day+'일'; 
+						
+						rewardlist.children().children(".-UobvSeyUG6cEWYnht50S").children('h4').text(data.giftArry[i].price+" 원 이상 밀어주시는 분께");
+						rewardlist.children().children("._3F_kXgcqjiYVIFqaGYLV_x").children('p').text(data.giftArry[i].description);
+						rewardlist.children().children(".itemLists").children('div').text(data.giftArry[i].item);
+						rewardlist.children().children(".VgMYktFPH-SSPJjPTFMC").children('strong').text(fulldate);
+						rewardlist.children("._3ZgG-OSv0XE3y-h3oPaDsl").children().children('.remitDisplay').text(data.giftArry[i].remited+"개 남음");
+						rewardlist.children().children().children().attr('onclick','deleteItemList('+data.giftArry[i].giftCode+')');
+						if(data.giftArry[i].transferCheck=="false"){
+							rewardlist.children("._3ZgG-OSv0XE3y-h3oPaDsl").children().children('.sendCondition').hide();
+						} else{
+							rewardlist.children("._3ZgG-OSv0XE3y-h3oPaDsl").children().children('.sendCondition').show();
+						}
+						rewardlist.clone().insertAfter($(".rewardappend"));
+					}
+				}
+				
+			},
+			error : function(e) {
+				console.log('ajax에러');
+			}
+			
+		});
+ 		return false;
+	} 
 </script>
 </head>
 <body>

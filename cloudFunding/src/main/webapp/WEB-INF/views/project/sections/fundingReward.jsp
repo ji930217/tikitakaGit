@@ -231,7 +231,7 @@
 													<div class="react-datepicker__input-container">
 														<input id="deadlineDate" type="text"
 															class="_2HJjAyHwCOYLop8JvycDDF _152MAijd_UogerBKCVqZR_ _3_IGkn3uaje0g2ZA6Tx9wd "
-															value="">
+															value="" readonly>
 													</div>
 												</div>
 												<label for="">
@@ -296,16 +296,11 @@
 
 					<div class="rewardlist _13KHfN73YmQgsYHxXvuh_J _18bwsw29jDyAzIPXzQkoS- _18TDror949wcy2NyVIqpHo false" style="display: none">
 						<div class="_3ZgG-OSv0XE3y-h3oPaDsl">
-							<span class="WU1ox0-AeDX_zneKjnNMO oAeG34mYkuDyUTybhBMrQ"><a
-								class="ContextualAction__LinkButton-lcypnk-0 ddtTLO"><i
-									class="_1pt-5UHn7rWHPExbDO4EbO _1QY7TzdLHKX3-BKPDNNYKF"></i><span
-									class="ContextualAction__Label-lcypnk-1 gETbSh">삭제하기</span></a><a
-								class="ContextualAction__LinkButton-lcypnk-0 ddtTLO"><i
-									class="fR8YMq5am2mTnuMN_wvL0 _1QY7TzdLHKX3-BKPDNNYKF"></i><span
-									class="ContextualAction__Label-lcypnk-1 gETbSh">복제하기</span></a><a
-								class="ContextualAction__LinkButton-lcypnk-0 ddtTLO"><i
-									class="w6FPSPr8JA6xb8SSjkPtI _1QY7TzdLHKX3-BKPDNNYKF"></i><span
-									class="ContextualAction__Label-lcypnk-1 gETbSh">수정하기</span></a></span>
+							<span class="WU1ox0-AeDX_zneKjnNMO oAeG34mYkuDyUTybhBMrQ">
+								<a class="ContextualAction__LinkButton-lcypnk-0 ddtTLO">
+								<i class="_1pt-5UHn7rWHPExbDO4EbO _1QY7TzdLHKX3-BKPDNNYKF"></i>
+								<span class="ContextualAction__Label-lcypnk-1 gETbSh">삭제하기</span></a>
+							</span>
 							<div class="-UobvSeyUG6cEWYnht50S">
 								<h4>
 									<!-- react-text: 616 -->
@@ -320,7 +315,7 @@
 								<p>asdasdasd</p>
 							</div>
 							<div
-								class="_13KHfN73YmQgsYHxXvuh_J dVsuWLqvhq0SupdyOYVal _3XFc3K1AoSi5ujhxKESb0P _1zkZUwfhEQvC8LFxMO9pO9">
+								class="itemLists _13KHfN73YmQgsYHxXvuh_J dVsuWLqvhq0SupdyOYVal _3XFc3K1AoSi5ujhxKESb0P _1zkZUwfhEQvC8LFxMO9pO9">
 								<div class="_13KHfN73YmQgsYHxXvuh_J rLqvd1axk9i-3cU72yTkF">
 									<!-- react-text: 622 -->
 									ㅁㄴㅇ
@@ -337,9 +332,9 @@
 								class="_1QY7TzdLHKX3-BKPDNNYKF _254YPhBOB9qv7-J8bIg7co _1R0ZK0Z1zZIqLZ8NkjnsD6"></i>
 							<!-- react-text: 630 -->선택한 사람이 없음 <!-- /react-text -->
 								<span
-								class="_13KHfN73YmQgsYHxXvuh_J IHUALIalgwgMpH2DEQooZ _3fJsfvAPykJzj2xoMnxzWW _1Qdv504-1XMeYXZyb0xQZT _3D9sfZXrWd8it3eUCuCTc8">3개
+								class="remitDisplay _13KHfN73YmQgsYHxXvuh_J IHUALIalgwgMpH2DEQooZ _3fJsfvAPykJzj2xoMnxzWW _1Qdv504-1XMeYXZyb0xQZT _3D9sfZXrWd8it3eUCuCTc8">3개
 									남음</span>
-							<div class="WU1ox0-AeDX_zneKjnNMO oAeG34mYkuDyUTybhBMrQ">
+							<div class="sendCondition WU1ox0-AeDX_zneKjnNMO oAeG34mYkuDyUTybhBMrQ">
 									<!-- react-text: 633 -->
 									<!-- /react-text -->
 									<div
@@ -527,7 +522,7 @@
 											<div class="react-datepicker__input-container">
 												<input type="text"
 													class="giftDate _2HJjAyHwCOYLop8JvycDDF _152MAijd_UogerBKCVqZR_ _3_IGkn3uaje0g2ZA6Tx9wd "
-													value="2018.08.11">
+													value="2018.08.11" readonly>
 											</div>
 										</div>
 										<label for="">
