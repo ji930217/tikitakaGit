@@ -3694,7 +3694,8 @@ px
 					$(".priceDiv").children('h3').text('');
 					$(".priceDiv").children('h3').append("<span style='white-space: pre-wrap;'>"+numberWithCommas(data.price)+"</span>");
 					$(".priceDiv").children('h3').css('display','inline-block');
-					$(".priceDiv").children('a').remove(); 
+					$(".priceDiv").children('a').remove();
+					blue(data);
 				},
 				error : function(e) {
 					console.log('ajax에러');
@@ -3750,7 +3751,8 @@ px
 					$(".dateDiv").children('h3').text('');
 					$(".dateDiv").children('h3').append("<span style='white-space: pre-wrap;'>"+fulldate+"</span>");
 					$(".dateDiv").children('h3').css('display','inline-block');
-					$(".dateDiv").children('a').remove(); 
+					$(".dateDiv").children('a').remove();
+					blue(data);
 				},
 				error : function(e) {
 					console.log('ajax에러');
@@ -3912,26 +3914,36 @@ px
 				$(".refundDiv").children('h3').append("<span style='white-space: pre-wrap;'>"+data.refund+"</span>");
 				$(".refundDiv").children('h3').css('display','inline-block');
 				$(".refundDiv").children('a').remove(); 
+				blue(data);
 			},
 			error : function(e) {
 				console.log('ajax에러');
 			}
 			})
 		});
-		function blue(pro){
-			if(null != pro.title && null != pro.repImg &&null != pro.summary &&
-					null != pro.category &&null != pro.profileImg&&null != pro.name&&null != pro.introduce){
-				console.log("파란불");
-				$(".row1").children('i').remove();
-				$(".row1").prepend("<i class='_13KHfN73YmQgsYHxXvuh_J _1oJMWnMCW_Y6GmNc1mhqaW _3sFSjAZS4gQdCAyN3OfyFG -o8oGI_QAOKsVIJOUOUmV _254YPhBOB9qv7-J8bIg7co _1QY7TzdLHKX3-BKPDNNYKF'></i>");
-			}
-		}
+		
 		
 		$(".itemSendBtn").click(function(){
 			itemSend();
 		});
 	});
-	
+				var itemListLength=0;
+				function blue(pro){
+					if(null != pro.title && null != pro.repImg &&null != pro.summary &&
+							null != pro.category &&null != pro.profileImg&&null != pro.name&&null != pro.introduce){
+						console.log("파란불");
+						$(".row1").children('i').remove();
+						$(".row1").prepend("<i class='_13KHfN73YmQgsYHxXvuh_J _1oJMWnMCW_Y6GmNc1mhqaW _3sFSjAZS4gQdCAyN3OfyFG -o8oGI_QAOKsVIJOUOUmV _254YPhBOB9qv7-J8bIg7co _1QY7TzdLHKX3-BKPDNNYKF'></i>");
+					}
+					if(0<pro.price&&null!=pro.endDate&&0 < itemListLength&&null!=pro.refund){
+						$(".row2").children('i').remove();
+						$(".row2").prepend("<i class='_13KHfN73YmQgsYHxXvuh_J _1oJMWnMCW_Y6GmNc1mhqaW _3sFSjAZS4gQdCAyN3OfyFG -o8oGI_QAOKsVIJOUOUmV _254YPhBOB9qv7-J8bIg7co _1QY7TzdLHKX3-BKPDNNYKF'></i>");
+					}else{
+						$(".row2").children('i').remove();
+						$(".row2").prepend("<i class='_13KHfN73YmQgsYHxXvuh_J _1oJMWnMCW_Y6GmNc1mhqaW _3RAU_1dXrlkkPhtkKyXSVj _3fJsfvAPykJzj2xoMnxzWW _254YPhBOB9qv7-J8bIg7co _1QY7TzdLHKX3-BKPDNNYKF'></i>");
+					}
+				}
+				
 				var itemName = new Array();	
 				
 				function select(item){
@@ -4090,6 +4102,7 @@ px
 			return;
 		}
 		if($(".giftDate").val()=="마감일을 설정해 주세요"){
+			alert("마감일을 설정해 주세요");
 			$("#new-reward").show();				
 			$("#create-reward").hide();
 			return;
@@ -4142,6 +4155,8 @@ px
 					}
 					rewardlist.clone().insertAfter($(".rewardappend"));
 				}
+				itemListLength = data.giftArry.length;
+				blue(data);
 			},
 			error : function(e) {
 				console.log('ajax에러');
@@ -4160,7 +4175,9 @@ px
 			},
 			success : function(data) {
 				if(data==""){
+					itemListLength = 0;					
 					$(".rewardlist").hide();
+					blue(data);
 				}else{
 					var rewardlist = $(".rewardlist").eq(0);
 					
@@ -4300,7 +4317,7 @@ px
 														<!-- react-text: 789 --> <!-- /react-text --> <span>개요</span></span></label>
 											</h5>
 										</a> <a class="rLqvd1axk9i-3cU72yTkF" href="#fundingReward">
-											<h5>
+											<h5 class="row2">
 												<i
 													class="_13KHfN73YmQgsYHxXvuh_J _1oJMWnMCW_Y6GmNc1mhqaW _3RAU_1dXrlkkPhtkKyXSVj _3fJsfvAPykJzj2xoMnxzWW _254YPhBOB9qv7-J8bIg7co _1QY7TzdLHKX3-BKPDNNYKF"></i><label><span><span>펀딩
 															및</span> <!-- react-text: 797 --> <!-- /react-text --> <span>선물
