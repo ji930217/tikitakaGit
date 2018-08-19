@@ -177,7 +177,7 @@
 .kJUlye {-webkit-order: 1;-ms-flex-order: 1;order: 1;width: 100%;margin: .25rem 0 .75rem;}@media (min-width: 1080px) {.kJUlye {width: 670px;margin: 0 .5rem 0 1rem;}}
 /* sc-component-id: ProjectPage__ProjectContentsSubColumn-b1letw-3 */
 
-.ceunQL {-webkit-order: 2;-ms-flex-order: 2;order: 2;width: 100%;margin: .25rem 0;}@media (max-width: 1079px) {.ceunQL {display: none;;}}@media (min-width: 1080px) {.ceunQL {width: 360px;margin: 0 1rem 0 .5rem;}}
+.ceunQL {-webkit-order: 2;-ms-flex-order: 2;order: 2;width: 100%;margin: .25rem 0;}@media (max-width: 1079px) {.ceunQL {display: none;}}@media (min-width: 1080px) {.ceunQL {width: 360px;margin: 0 1rem 0 .5rem;}}
 
 .iChtTV {-webkit-order: 2;-ms-flex-order: 2;order: 2;width: 100%;margin: .25rem 0;}@media (max-width: 1079px) {.iChtTV {;}}@media (min-width: 1080px) {.iChtTV {width: 360px;margin: 0 1rem 0 .5rem;}}
 /* sc-component-id: ProjectPage__MainColumnInner-b1letw-4 */
@@ -232,7 +232,8 @@
 	$(function(){
 		var page = sessionStorage.getItem("page");
 		if(page == null) {
-			$(".ceunQL").css("display", "block");
+			$("#storyDiv").css("display", "block");
+			$(".storyContent img").css("width", "100%");
 			$("#storyFixedBtn").addClass("btnUnderline");
 			$("#storyBtn").addClass("btnUnderline");
 		} else if(page == "community"){
@@ -296,7 +297,9 @@
 										<div class="StoryCard__StoryCardInner-s1hr1q2m-0 ewlCRY" data-reactid="108">
 											
 											<div class="sc-bdVaJa eQgQLo" data-reactid="109">
-												여기에 프로젝트 스토리 출력
+												<div class="storyContent">
+													<c:out value="${project.story }" escapeXml="false"/>
+												</div>
 											</div>
 										</div>
 									</div>

@@ -548,14 +548,10 @@
 								data-reactid="57">모인금액</div>
 							<div class="ProjectIntroduction__StatusValue-c7b94s-16 bvKOwU" data-reactid="58">
 								<fmt:formatNumber value="${project.currentAmount }" pattern="#,###"/>
-								<%-- <c:out value="${project.currentAmount }"/> --%>
-								<span class="ProjectIntroduction__Small-c7b94s-18 ihuRTA"
-									data-reactid="60">원</span><span
-									class="ProjectIntroduction__FundingRate-c7b94s-17 kIYDgq"
-									data-reactid="61">
+								<span class="ProjectIntroduction__Small-c7b94s-18 ihuRTA" data-reactid="60">원</span>
+								<span class="ProjectIntroduction__FundingRate-c7b94s-17 kIYDgq" data-reactid="61">
 									<fmt:parseNumber var="percent" value="${project.currentAmount / project.price * 100 }" integerOnly="true"/>
 									<c:out value="${percent }%"/>
-									<%-- <c:out value="${Math.floor(project.currentAmount / project.price * 100) }%"/> --%>
 								</span>
 							</div>
 						</div>
@@ -589,13 +585,9 @@
 						<div class="FundingInformation__FundingInformationInner-s1sct7xv-1 iJcLQj" data-reactid="75">
 							<div data-reactid="76">펀딩 진행중</div>
 								<span data-reactid="77">
-								목표 금액인
-								<fmt:formatNumber value="${project.price }" pattern="#,###"/>
-								원이 모여야만 결제됩니다.
+								목표 금액인	<fmt:formatNumber value="${project.price }" pattern="#,###"/>원이 모여야만 결제됩니다.
 								<br data-reactid="81" />
-							결제는 
-								<fmt:formatDate type="date" dateStyle="full" value="${project.endDate }"/>
-								에 다함께 진행됩니다.
+							결제는 <fmt:formatDate type="date" dateStyle="full" value="${project.endDate }"/>	에 다함께 진행됩니다.
 							</span>
 						</div>
 					</div>
