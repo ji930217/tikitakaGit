@@ -5,6 +5,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
 import com.tikitaka.cloudFunding.member.model.vo.Member;
+import com.tikitaka.cloudFunding.member.model.vo.PaymentInfo;
 
 
 @Repository
@@ -30,6 +31,14 @@ public class MemberDao {
 
 	public int updateMemberPassword(Member member) {
 		return sqlSession.update("MemberMapper.updateMemberPassword", member);
+	}
+
+	public int insertUpdateCardInfo(PaymentInfo pi) {
+		return sqlSession.update("MemberMapper.insertUpdateCardInfo", pi);
+	}
+
+	public int insertUpdateBankInfo(PaymentInfo pi) {
+		return sqlSession.update("MemberMapper.insertUpdateBankInfo", pi);
 	}
 
 	

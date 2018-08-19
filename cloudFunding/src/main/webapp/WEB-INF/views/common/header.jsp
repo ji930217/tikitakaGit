@@ -781,7 +781,8 @@
 					
 					
 					
-					<c:if test="${!empty user }">
+					<c:if test="${(!empty user) && (null eq user.stopDate) }">						
+		
 						<a class="sc-htoDjs fQwQfp" data-reactid="30">
 							<span class="SiteHeader__ItemLabel-s1s56ls8-8 iGOIal" data-reactid="31">
 								<c:out value="${user.name } "/>
@@ -790,9 +791,9 @@
 								<img class="ProfileImg__ProfileImg-s1o99mme-0 ePsyRU" src="${user.profile_img }" width="42" height="42" />
 							</span>
 						</a>
-						 
-					
+						 					
 					</c:if>
+					
 					
 					<c:if test="${empty user }">
 							<div id="login" class="SiteHeader__RightMenu-s1s56ls8-4 buZCDD"
@@ -808,6 +809,18 @@
 					
 					</c:if>
 					
+					
+					
+					
+					<%-- <c:if test="${null ne user.stopDate && new Date() < user.expDate }">
+						<a class="sc-htoDjs fQwQfp" data-reactid="30">
+							<span class="SiteHeader__ItemLabel-s1s56ls8-8 iGOIal" data-reactid="31">
+								정지된 계정입니다.
+							</span>
+							
+						</a>
+					
+					</c:if> --%>
 					
 					
 					

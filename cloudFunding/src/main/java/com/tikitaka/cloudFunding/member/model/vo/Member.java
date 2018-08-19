@@ -21,7 +21,7 @@ public class Member {
 	private String phone2;
 	private String phone3;
 	private Date stopDate;
-
+	private Date expDate;
 	
 	public Member() {
 		
@@ -167,14 +167,25 @@ public class Member {
 		this.stopDate = stopDate;
 	}
 
+	
+
+	public Date getExpDate() {
+		return expDate;
+	}
+
+	public void setExpDate(Date expDate) {
+		this.expDate = expDate;
+	}
+
 	@Override
 	public String toString() {
 		return "Member [email=" + email + ", name=" + name + ", password=" + password + ", profile_img=" + profile_img
 				+ ", enroll_date=" + enroll_date + ", location=" + location + ", shortDescription=" + shortDescription
 				+ ", homepage=" + homepage + ", phone1=" + phone1 + ", phone2=" + phone2 + ", phone3=" + phone3
-				+ ", stop_date=" + stopDate + "]";
+				+ ", stopDate=" + stopDate + ", expDate=" + expDate + "]";
 	}
 
+	
 	
 	
 	
