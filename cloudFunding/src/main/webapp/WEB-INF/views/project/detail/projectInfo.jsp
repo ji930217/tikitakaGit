@@ -224,6 +224,79 @@
 	
 </style>
 <script>
+	$(function(){
+		var projectCode = "<c:out value='${project.projectCode}'/>";
+		$("#storyBtn, #storyFixedBtn").click(function(){
+			$.ajax({
+				url : "projectDetail.do",
+				type : "post",
+ 				/* data : {index : $("#userIndexes").val()}, */ 
+				data : {projectCode : projectCode},
+				success : function(project){
+					/* console.log(data); */
+					$("#policyDiv").css("display", "none");
+					$("#communityDiv").css("display", "none");
+					$("#storyDiv").css("display", "block");
+					
+					$("#policyFixedBtn, #policyBtn, #communityFixedBtn, #communityBtn").removeClass("btnUnderline");
+					$("#storyFixedBtn, #storyBtn").addClass("btnUnderline");
+				}, error:function(e){
+					console.log("프로젝트 스토리 조회 에러 : ", e);
+				}
+			});
+		});
+		
+		$("#communityBtn, #communityFixedBtn").click(function(){
+			$.ajax({
+				url : "projectCommunity.do",
+				type : "post",
+ 				/* data : {index : $("#userIndexes").val()}, */ 
+				data : {projectCode : projectCode},
+				success : function(data){
+					$("#policyDiv").css("display", "none");
+					$("#storyDiv").css("display", "none");
+					$("#communityDiv").css("display", "block");
+					
+					$("#policyFixedBtn, #policyBtn, #storyFixedBtn, #storyBtn").removeClass("btnUnderline");
+					$("#communityFixedBtn, #communityBtn").addClass("btnUnderline");
+					
+					if(null == sessionStorage.getItem("postCode")){
+						$("#postListDiv").css("display", "block");  
+						$("#writeBtnDiv").css("display", "block");  
+					}
+					setMoreBtnDisplayBlock();
+				}/* , beforeSend:function(){
+			        $(".loadingIndicator").css("display", "inline-block");  
+			    }, complete:function(){
+			        $(".loadingIndicator").css("display", "none");  
+					$(".dLYLGx").css("margin", "unset"); 
+					$(".tojyI").css("display", "block");
+			    } */, error:function(e){
+					console.log("프로젝트 스토리 조회 에러 : ", e);
+				}
+			});
+		});
+		
+		$("#policyBtn, #policyFixedBtn").click(function(){
+			$.ajax({
+				url : "projectPolicy.do",
+				type : "post",
+ 				/* data : {index : $("#userIndexes").val()}, */ 
+				data : {projectCode : projectCode},
+				success : function(project){
+					/* console.log(data); */
+					$("#storyDiv").css("display", "none");
+					$("#communityDiv").css("display", "none");
+					$("#policyDiv").css("display", "block");
+					
+					$("#storyFixedBtn, #storyBtn, #communityFixedBtn, #communityBtn").removeClass("btnUnderline");
+					$("#policyFixedBtn, #policyBtn").addClass("btnUnderline");
+				}, error:function(e){
+					console.log("환불정책 조회 에러 : ", e);
+				}
+			});
+		});
+	});
 	
 	function closeMessagePopup(){
 		$("#messageDiv, #messageDiv select").css("visibility", "hidden");
@@ -235,7 +308,6 @@
 		$(".bPaPOl").css("display", "none");
 	}
 	
-
     Kakao.init('539e3b78ee3a96a21d1fda301fae080a');
 	function shareKakao(){
 		//<![CDATA[
@@ -312,9 +384,9 @@
 			<div
 				class="ContentsNavigation__ProjectContentsNavigationInner-s6dhfrc-2 eeeApW">
 				<div class="ContentsNavigation__NavLeft-s6dhfrc-3 eSsILz">
-					<a id="storyFixedBtn" class="ContentsNavigation__NavItem-s6dhfrc-0 gEWplf" href="projectDetail.do?projectCode=<c:out value='${project.projectCode }'/>">스토리
+					<a id="storyFixedBtn" class="ContentsNavigation__NavItem-s6dhfrc-0 gEWplf">스토리
 					</a>
-					<a id="communityFixedBtn" class="ContentsNavigation__NavItem-s6dhfrc-0 gEWplf" href="projectCommunity.do?projectCode=<c:out value='${project.projectCode }'/>">
+					<a id="communityFixedBtn" class="ContentsNavigation__NavItem-s6dhfrc-0 gEWplf">
 						커뮤니티 
 						<c:if test="${count gt 0 }">
 							<span class="ContentsNavigation__CommunityPostAmount-s6dhfrc-6 bReGoj">
@@ -322,7 +394,7 @@
 							</span>
 						</c:if>
 					</a>
-					<a id="policyFixedBtn" class="ContentsNavigation__NavItem-s6dhfrc-0 gEWplf" href="projectPolicy.do?projectCode=<c:out value='${project.projectCode }'/>">환불 및 교환</a>
+					<a id="policyFixedBtn" class="ContentsNavigation__NavItem-s6dhfrc-0 gEWplf">환불 및 교환</a>
 				</div>
 				<div class="ContentsNavigation__NavRight-s6dhfrc-4 eAgLGx">
 					<button class="Button__Button-s1ng5xda-0 jKslKa">프로젝트 밀어주기</button>
@@ -560,18 +632,15 @@
 				data-reactid="95">
 				<div class="ContentsNavigation__NavLeft-s6dhfrc-3 eSsILz"
 					data-reactid="96">
-					<a id="storyBtn" class="ContentsNavigation__NavItem-s6dhfrc-0 gEWplf"
-						href="projectDetail.do?projectCode=<c:out value='${project.projectCode }'/>" data-reactid="97">스토리</a>
-						<a id="communityBtn" class="ContentsNavigation__NavItem-s6dhfrc-0 gEWplf"
-						href="projectCommunity.do?projectCode=<c:out value='${project.projectCode }'/>" data-reactid="98">
+					<a id="storyBtn" class="ContentsNavigation__NavItem-s6dhfrc-0 gEWplf"	 data-reactid="97">스토리</a>
+						<a id="communityBtn" class="ContentsNavigation__NavItem-s6dhfrc-0 gEWplf" data-reactid="98">
 						커뮤니티 
 						<c:if test="${count gt 0 }">
 							<span class="ContentsNavigation__CommunityPostAmount-s6dhfrc-6 bReGoj">
 									<c:out value="${count }"/>
 							</span>
 						</c:if>
-					</a><a id="policyBtn" class="ContentsNavigation__NavItem-s6dhfrc-0 gEWplf"
-						href="projectPolicy.do?projectCode=<c:out value='${project.projectCode }'/>" data-reactid="101">환불 및 교환</a>
+					</a><a id="policyBtn" class="ContentsNavigation__NavItem-s6dhfrc-0 gEWplf" data-reactid="101">환불 및 교환</a>
 				</div>
 			</div>
 		</nav>

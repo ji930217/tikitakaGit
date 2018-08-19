@@ -266,13 +266,13 @@
 /* sc-component-id: sc-keyframes-fzoeFq */
 @-webkit-keyframes fzoeFq {0%,  100% {-webkit-transform: translateX(0);-ms-transform: translateX(0);transform: translateX(0);}50% {-webkit-transform: translateX(4px);-ms-transform: translateX(4px);transform: translateX(4px);}}@keyframes fzoeFq {0%,  100% {-webkit-transform: translateX(0);-ms-transform: translateX(0);transform: translateX(0);}50% {-webkit-transform: translateX(4px);-ms-transform: translateX(4px);transform: translateX(4px);}}
 
-	#policyFixedBtn, #policyBtn{
+	/* #policyFixedBtn, #policyBtn{
 		color: rgb(0, 0, 0); border-bottom: 3px solid rgb(0, 0, 0); padding-bottom: calc(0.5rem - 3px);
-	}
+	} */
 </style>
 </head>
 <body>
-   	<header>
+   <%-- 	<header>
 		<c:import url="../../common/header.jsp"/>
 	</header>
 		<div data-reactid="34">
@@ -288,9 +288,8 @@
 						data-reactid="104">
 						<div
 							class="ProjectPage__ProjectContentsMainColumn-b1letw-2 kJUlye"
-							data-reactid="105">
-							<div class="ProjectPage__MainColumnInner-b1letw-4 giKgfw"
-								data-reactid="106">
+							data-reactid="105"> --%>
+							<div class="ProjectPage__MainColumnInner-b1letw-4 giKgfw" data-reactid="106">
 								<div data-reactid="107">
 									<div class="Card__Card-s1i1esb8-0 bJXRvz" data-reactid="108">
 										<div class="PolicyCard__PolicyCardInner-s15bkvr9-0 gOXuOg"
@@ -311,14 +310,14 @@
 									</div>
 								</div>
 							</div>
-						</div>
+						<%-- </div>
 						
 						<c:import url="creatorRewardsCard.jsp"/>
 						
 					</div>
 				</div>
 			</div>
-		</div>
+		</div> --%>
 </body>
   
 <!-- Mirrored from tumblbug.com/doubledown/policy by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 20 Jul 2018 07:21:32 GMT -->
