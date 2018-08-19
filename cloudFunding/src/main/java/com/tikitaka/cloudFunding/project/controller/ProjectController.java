@@ -2,6 +2,7 @@ package com.tikitaka.cloudFunding.project.controller;
 
 import java.io.File;
 import java.util.HashMap;
+import java.util.List;
 
 import javax.servlet.http.HttpSession;
 
@@ -15,8 +16,10 @@ import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.multipart.MultipartHttpServletRequest;
 import org.springframework.web.servlet.ModelAndView;
 
-import com.tikitaka.cloudFunding.common.MyRenamePolicy;
 import com.tikitaka.cloudFunding.community.model.service.CommunityService;
+import com.tikitaka.cloudFunding.community.model.vo.PostVo;
+import com.tikitaka.cloudFunding.common.MyRenamePolicy;
+
 import com.tikitaka.cloudFunding.member.model.vo.Member;
 import com.tikitaka.cloudFunding.project.model.service.ProjectService;
 import com.tikitaka.cloudFunding.project.model.vo.GiftVo;
@@ -192,21 +195,24 @@ public class ProjectController {
 		ProjectVo project = projectService.selectProjectDetail(projectCode);
 		// GiftVo 리스트도 함께 조회해서 넘겨줘야함.
 		
+		List<PostVo> postList = cService.selectPostList(projectCode);
+		
 		int count = cService.selectPostCount(projectCode);
 		mv.addObject("count", count);
 		mv.addObject("project", project);
+		mv.addObject("postList", postList);
 		mv.setViewName("project/detail/projectDetail");
 		return mv;
 		
 	}
 	@RequestMapping("projectPolicy.do")
-	public ModelAndView projectPolicy(int projectCode, ModelAndView mv){
+	public @ResponseBody ProjectVo projectPolicy(int projectCode){
 		ProjectVo project = projectService.selectProjectDetail(projectCode);
-		int count = cService.selectPostCount(projectCode);
-		mv.addObject("count", count);
-		mv.addObject("project", project);
-		mv.setViewName("project/detail/policy");
-		return mv;
+		/*int count = cService.selectPostCount(projectCode);
+	/*	mv.addObject("count", count);
+		mv.addObject("project", project);*/
+		/*mv.setViewName("project/detail/community");*/
+		return project;
 	}
 	
 	//, @RequestParam("items") String[] items

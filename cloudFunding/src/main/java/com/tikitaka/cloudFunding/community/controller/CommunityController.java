@@ -24,16 +24,10 @@ public class CommunityController {
 	ProjectService projectService;
 	
 	@RequestMapping("projectCommunity.do")
-	public ModelAndView projectCommunity(int projectCode, ModelAndView mv){
+	public @ResponseBody List<PostVo> projectCommunity(int projectCode, ModelAndView mv){
 		// 해당 프로젝트의 게시글/댓글 조회해서 넘겨주기
-		ProjectVo project = projectService.selectProjectDetail(projectCode);
-		List<PostVo> postList = cService.selectPostList(project.getProjectCode());
-		int count = cService.selectPostCount(projectCode);
-		mv.addObject("count", count);
-		mv.addObject("project", project);
-		mv.addObject("postList", postList);
-		mv.setViewName("project/detail/community");
-		return mv;
+		List<PostVo> postList = cService.selectPostList(projectCode);
+		return postList;
 	}
 	
 	@RequestMapping("insertPost.do")
@@ -41,7 +35,7 @@ public class CommunityController {
 		PostVo post = new PostVo(projectCode, email, content);
 		int result = cService.insertPost(post);
 		
-		return "redirect:projectCommunity.do?projectCode=" + projectCode;
+		return "redirect:projectDetail.do?projectCode=" + projectCode;
 	}
 	
 	@RequestMapping("updatePost.do")
@@ -51,14 +45,14 @@ public class CommunityController {
 		post.setContent(content);
 		int result = cService.updatePost(post);
 		
-		return "redirect:projectCommunity.do?projectCode=" + projectCode;
+		return "redirect:projectDetail.do?projectCode=" + projectCode;
 	}
 	
 	@RequestMapping("deletePost.do")
 	public String deletePost(int projectCode, int postCode){
 		int result = cService.deletePost(postCode);
 		
-		return "redirect:projectCommunity.do?projectCode=" + projectCode;
+		return "redirect:projectDetail.do?projectCode=" + projectCode;
 	}
 	
 	@RequestMapping("selectPost.do")
@@ -74,12 +68,12 @@ public class CommunityController {
 		ReplyVo reply = new ReplyVo(postCode, email, content);
 		int result = cService.insertReply(reply);
 		
-		return "redirect:projectCommunity.do?projectCode=" + projectCode;
+		return "redirect:projectDetail.do?projectCode=" + projectCode;
 	}
 	@RequestMapping("deleteReply.do")
 	public String deleteReply(int projectCode, int replyCode){
 		int result = cService.deleteReply(replyCode);
 		
-		return "redirect:projectCommunity.do?projectCode=" + projectCode;
+		return "redirect:projectDetail.do?projectCode=" + projectCode;
 	}
 }

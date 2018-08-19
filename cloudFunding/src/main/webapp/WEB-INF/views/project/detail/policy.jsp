@@ -266,60 +266,23 @@
 /* sc-component-id: sc-keyframes-fzoeFq */
 @-webkit-keyframes fzoeFq {0%,  100% {-webkit-transform: translateX(0);-ms-transform: translateX(0);transform: translateX(0);}50% {-webkit-transform: translateX(4px);-ms-transform: translateX(4px);transform: translateX(4px);}}@keyframes fzoeFq {0%,  100% {-webkit-transform: translateX(0);-ms-transform: translateX(0);transform: translateX(0);}50% {-webkit-transform: translateX(4px);-ms-transform: translateX(4px);transform: translateX(4px);}}
 
-	#policyFixedBtn, #policyBtn{
-		color: rgb(0, 0, 0); border-bottom: 3px solid rgb(0, 0, 0); padding-bottom: calc(0.5rem - 3px);
-	}
 </style>
 </head>
 <body>
-   	<header>
-		<c:import url="../../common/header.jsp"/>
-	</header>
-		<div data-reactid="34">
-			
-			<!-- react-empty: 35 -->
-			<c:import url="projectInfo.jsp"/>
-			
-			<div class="ProjectPage__ProjectContentsBackground-b1letw-0 cNWmvR"
-				data-reactid="102">
-				<div class="Container__Container-s1sxg7g4-0 jdgWcI"
-					data-reactid="103">
-					<div class="ProjectPage__ProjectContents-b1letw-1 jPEdlL"
-						data-reactid="104">
-						<div
-							class="ProjectPage__ProjectContentsMainColumn-b1letw-2 kJUlye"
-							data-reactid="105">
-							<div class="ProjectPage__MainColumnInner-b1letw-4 giKgfw"
-								data-reactid="106">
-								<div data-reactid="107">
-									<div class="Card__Card-s1i1esb8-0 bJXRvz" data-reactid="108">
-										<div class="PolicyCard__PolicyCardInner-s15bkvr9-0 gOXuOg"
-											data-reactid="109">
-											<div class="PolicyCard__PolicyCardLabel-s15bkvr9-1 hPoBAu"
-												data-reactid="110">이 프로젝트의 환불 및 교환 정책</div>
-											<div class="PolicyCard__PolicyContents-s15bkvr9-2 cgTcFG"
-												data-reactid="111">
-												<p
-													class="PolicyCard__RefundExchangePolicyText-s15bkvr9-4 bAjPoG"
-													data-reactid="112">후원자의 배송지가 잘못 기재 된 경우, 후원자가 진행자에게
-													사전 고지 없이 배송지를 수정하여 배송에 문제가 발생 한 경우엔, 착불로 재배송이 진행됩니다. 파손이나
-													불량품을 받으신 경우엔 30일 이내, 새 제품으로 교환 해 드립니다. 만약 예상 전달일보다 30일 이상
-													배송이 지연되는 경우엔 전액 환불을 약속드립니다. (2018년 08월 16일 배송예정. 환불시 수수료
-													포함 후 환불 가능.)</p>
-											</div>
-										</div>
-									</div>
-								</div>
-							</div>
-						</div>
-						
-						<c:import url="creatorRewardsCard.jsp"/>
-						
+	<div class="ProjectPage__MainColumnInner-b1letw-4 giKgfw" data-reactid="106">
+		<div data-reactid="107">
+			<div class="Card__Card-s1i1esb8-0 bJXRvz" data-reactid="108">
+				<div class="PolicyCard__PolicyCardInner-s15bkvr9-0 gOXuOg" data-reactid="109">
+					<div class="PolicyCard__PolicyCardLabel-s15bkvr9-1 hPoBAu" data-reactid="110">이 프로젝트의 환불 및 교환 정책</div>
+					<div class="PolicyCard__PolicyContents-s15bkvr9-2 cgTcFG"	data-reactid="111">
+						<p class="PolicyCard__RefundExchangePolicyText-s15bkvr9-4 bAjPoG"	data-reactid="112">
+							<c:out value="${project.refund }"/>
+						</p>
 					</div>
 				</div>
 			</div>
 		</div>
+	</div>
 </body>
   
-<!-- Mirrored from tumblbug.com/doubledown/policy by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 20 Jul 2018 07:21:32 GMT -->
 </html>

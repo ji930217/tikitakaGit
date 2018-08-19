@@ -315,6 +315,8 @@
 <script>
 	var postCode;
 	$(function(){
+		$(".storyContent img").css("width", "100%");
+		
 		// 게시글 상세보기
 		$(".cywbQo, .bPLTTN").click(function(){
 			setWindowScrollTop();
@@ -335,6 +337,7 @@
 				data : {postCode : postCode},
 				success : function(data){
 					$(".hKVypK > .storyContent").html(data.content);
+					$(".storyContent img").css("width", "100%");
 					$(".hINlJw").html(data.name);
 					$("#postWriterProfileImgSpan").html("<img class='ProfileImg__ProfileImg-s1o99mme-0 frVGN' src='" + data.profileImg + "'/>");
 					$("#replyWriterProfileImgDiv").html("<img class='ProfileImg__ProfileImg-s1o99mme-0 frVGN' src='${user.profile_img}'/>");
@@ -411,6 +414,7 @@
 					$replyDiv.html(resultStr);
 				}, beforeSend:function(){
 			        $(".loadingIndicator").css("display", "inline-block");  
+			        $(".dLYLGx").css("margin", "2rem 0"); 
 			    }, complete:function(){
 			        $(".loadingIndicator").css("display", "none");  
 					$(".dLYLGx").css("margin", "unset"); 
@@ -483,13 +487,13 @@
 		</div>
 		
 		<!-- 로딩중 -->
-		<div class="LoadingIndicator__Wrapper-s1ikuj59-1 dLYLGx" data-reactid="110" align="center">
+		<!-- <div class="LoadingIndicator__Wrapper-s1ikuj59-1 dLYLGx" data-reactid="110" align="center">
 			<div class="loadingIndicator">
 				<div class="LoadingIndicator__Circle-s1ikuj59-2 hGGMaO" data-reactid="111"></div>
 				<div class="sc-htpNat btBxPj" data-reactid="112"></div>
 				<div class="sc-bxivhb cgjPcA" data-reactid="113"></div>
 			</div>
-		</div>
+		</div> -->
 		
 		<!-- 모든 게시글 리스트 -->
 		<div id="postListDiv">	

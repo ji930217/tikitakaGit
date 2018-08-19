@@ -483,9 +483,7 @@
 	#writeBtnDiv{ display:block; }
 	#postFormDiv, .tojyI, #creatorPostDiv, #updatePostFormDiv, #postListDiv{ display:none; }
 	
-	#communityFixedBtn, #communityBtn{ color: rgb(0, 0, 0); border-bottom: 3px solid rgb(0, 0, 0); padding-bottom: calc(0.5rem - 3px); }
 	#sharePostBtnDiv{ display:none; }
-	
 	
 </style>
 <script>
@@ -523,6 +521,7 @@
 				data : {postCode : postCode},
 				success : function(data){
 					$(".hKVypK > .storyContent").html(data.content);
+					$(".storyContent img").css("width", "100%");
 					$(".hINlJw").html(data.name);
 					$("#postWriterProfileImgSpan").html("<img class='ProfileImg__ProfileImg-s1o99mme-0 frVGN' src='" + data.profileImg + "'/>");
 					$("#replyWriterProfileImgDiv").html("<img class='ProfileImg__ProfileImg-s1o99mme-0 frVGN' src='${user.profile_img}'/>")
@@ -702,33 +701,13 @@
 	}
 	
 </script>
-    </head>
-    <body>
-    	<header>
-			<c:import url="../../common/header.jsp"/>
-		</header>
-		<div data-reactid="34">
-			
-			<c:import url="projectInfo.jsp"/>
-			
-		<div class="ProjectPage__ProjectContentsBackground-b1letw-0 cNWmvR">
-			<div class="Container__Container-s1sxg7g4-0 jdgWcI">
-				<div class="ProjectPage__ProjectContents-b1letw-1 jPEdlL">
-					<div	class="ProjectPage__ProjectContentsMainColumn-b1letw-2 kJUlye">
-						<div class="ProjectPage__MainColumnInner-b1letw-4 giKgfw">
-							<c:import url="../community/postList.jsp"/>
-							<c:import url="../community/postForm.jsp"/>
-							<c:import url="../community/updatePostForm.jsp"/>
-						</div>
-					</div>
-
-					<!-- 오른쪽 고정 영역(창작자소개, 선물 목록) -->
-					<c:import url="creatorRewardsCard.jsp"/>
-
-				</div>
-			</div>
+</head>
+<body>
+		<div class="ProjectPage__MainColumnInner-b1letw-4 giKgfw">
+			<c:import url="../community/postList.jsp"/>
+			<c:import url="../community/postForm.jsp"/>
+			<c:import url="../community/updatePostForm.jsp"/>
 		</div>
-	</div>
 </body>
   
 </html>

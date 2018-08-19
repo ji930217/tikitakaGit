@@ -4,6 +4,7 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/functions" prefix="fn" %>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %> 
 <jsp:useBean id="now" class="java.util.Date" />
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -11,6 +12,12 @@
 <title>Insert title here</title>
 
 <script src="//developers.kakao.com/sdk/js/kakao.min.js"></script>
+
+<!-- video 관련 -->
+<link href="https://vjs.zencdn.net/7.1.0/video-js.css" rel="stylesheet">
+<script src="https://vjs.zencdn.net/7.1.0/video.js"></script>
+<!-- If you'd like to support IE8 (for Video.js versions prior to v7) -->
+<!-- <script src="https://vjs.zencdn.net/ie8/ie8-version/videojs-ie8.min.js"></script> -->
 
 <style>
 	
@@ -210,8 +217,97 @@
 	.show-on-scroll { visibility: hidden; }
 	.show-on-scroll.shown { visibility: visible; }
 	
+	#projectDescriptionVideo{
+		display:none;
+	}
+	
+	
 </style>
 <script>
+	$(function(){
+		var projectCode = "<c:out value='${project.projectCode}'/>";
+		$("#storyBtn, #storyFixedBtn").click(function(){
+			sessionStorage.removeItem("postCode");
+			sessionStorage.removeItem("page");
+			$.ajax({
+				url : "projectDetail.do",
+				type : "post",
+ 				/* data : {index : $("#userIndexes").val()}, */ 
+				data : {projectCode : projectCode},
+				success : function(project){
+					/* console.log(data); */
+					$("#policyDiv").css("display", "none");
+					$("#communityDiv").css("display", "none");
+					$("#storyDiv").css("display", "block");
+					
+					$("#policyFixedBtn, #policyBtn, #communityFixedBtn, #communityBtn").removeClass("btnUnderline");
+					$("#storyFixedBtn, #storyBtn").addClass("btnUnderline");
+				}, error:function(e){
+					console.log("프로젝트 스토리 조회 에러 : ", e);
+				}
+			});
+		});
+		
+		$("#communityBtn, #communityFixedBtn").click(function(){
+			sessionStorage.removeItem("page");
+			sessionStorage.setItem("page", "community");
+			$.ajax({
+				url : "projectCommunity.do",
+				type : "post",
+ 				/* data : {index : $("#userIndexes").val()}, */ 
+				data : {projectCode : projectCode},
+				success : function(data){
+					$("#policyDiv").css("display", "none");
+					$("#storyDiv").css("display", "none");
+					$(".tojyI").css("display", "none");
+					$("#updatePostFormDiv").css("display", "none");
+					$("#postFormDiv").css("display", "none");
+					$("#creatorPostDiv").css("display", "none");
+					$("#communityDiv").css("display", "block");
+					
+					$("#policyFixedBtn, #policyBtn, #storyFixedBtn, #storyBtn").removeClass("btnUnderline");
+					$("#communityFixedBtn, #communityBtn").addClass("btnUnderline");
+					
+					if(null == sessionStorage.getItem("postCode")){
+						$("#postListDiv").css("display", "block");  
+						$("#writeBtnDiv").css("display", "block");  
+					}
+					setMoreBtnDisplayBlock();
+				}/* , beforeSend:function(){
+			        $(".loadingIndicator").css("display", "inline-block");  
+			    }, complete:function(){
+			        $(".loadingIndicator").css("display", "none");  
+					$(".dLYLGx").css("margin", "unset"); 
+					$(".tojyI").css("display", "block");
+			    } */, error:function(e){
+					console.log("프로젝트 스토리 조회 에러 : ", e);
+				}
+			});
+		});
+		
+		$("#policyBtn, #policyFixedBtn").click(function(){
+			sessionStorage.removeItem("page");
+			sessionStorage.removeItem("postCode");
+			sessionStorage.setItem("page", "policy");
+			$.ajax({
+				url : "projectPolicy.do",
+				type : "post",
+ 				/* data : {index : $("#userIndexes").val()}, */ 
+				data : {projectCode : projectCode},
+				success : function(project){
+					/* console.log(data); */
+					$("#storyDiv").css("display", "none");
+					$("#communityDiv").css("display", "none");
+					$("#policyDiv").css("display", "block");
+					
+					$("#storyFixedBtn, #storyBtn, #communityFixedBtn, #communityBtn").removeClass("btnUnderline");
+					$("#policyFixedBtn, #policyBtn").addClass("btnUnderline");
+				}, error:function(e){
+					console.log("환불정책 조회 에러 : ", e);
+				}
+			});
+		});
+	});
 	
 	function closeMessagePopup(){
 		$("#messageDiv, #messageDiv select").css("visibility", "hidden");
@@ -223,7 +319,6 @@
 		$(".bPaPOl").css("display", "none");
 	}
 	
-
     Kakao.init('539e3b78ee3a96a21d1fda301fae080a');
 	function shareKakao(){
 		//<![CDATA[
@@ -281,6 +376,14 @@
 		 }
 	});
 	
+	function playVideo(){
+		$("._28l6WJgn2lALsbqKkv3zIA").css("display", "none");
+		$("#projectDescriptionVideo").css("display", "block");
+		var video = $('#projectVideo');
+		var src = "<c:out value='${project.descriptionVideo}'/>";
+		video.attr('src', src); 
+		video.get(0).	play();
+	}
 </script>
 
 </head>
@@ -292,9 +395,9 @@
 			<div
 				class="ContentsNavigation__ProjectContentsNavigationInner-s6dhfrc-2 eeeApW">
 				<div class="ContentsNavigation__NavLeft-s6dhfrc-3 eSsILz">
-					<a id="storyFixedBtn" class="ContentsNavigation__NavItem-s6dhfrc-0 gEWplf" href="projectDetail.do?projectCode=<c:out value='${project.projectCode }'/>">스토리
+					<a id="storyFixedBtn" class="ContentsNavigation__NavItem-s6dhfrc-0 gEWplf">스토리
 					</a>
-					<a id="communityFixedBtn" class="ContentsNavigation__NavItem-s6dhfrc-0 gEWplf" href="projectCommunity.do?projectCode=<c:out value='${project.projectCode }'/>">
+					<a id="communityFixedBtn" class="ContentsNavigation__NavItem-s6dhfrc-0 gEWplf">
 						커뮤니티 
 						<c:if test="${count gt 0 }">
 							<span class="ContentsNavigation__CommunityPostAmount-s6dhfrc-6 bReGoj">
@@ -302,7 +405,7 @@
 							</span>
 						</c:if>
 					</a>
-					<a id="policyFixedBtn" class="ContentsNavigation__NavItem-s6dhfrc-0 gEWplf" href="projectPolicy.do?projectCode=<c:out value='${project.projectCode }'/>">환불 및 교환</a>
+					<a id="policyFixedBtn" class="ContentsNavigation__NavItem-s6dhfrc-0 gEWplf">환불 및 교환</a>
 				</div>
 				<div class="ContentsNavigation__NavRight-s6dhfrc-4 eAgLGx">
 					<button class="Button__Button-s1ng5xda-0 jKslKa">프로젝트 밀어주기</button>
@@ -401,18 +504,34 @@
 						<div
 							class="ProjectIntroduction__ProjectCoverVideo-c7b94s-10 qtLrt"
 							data-reactid="49">
-							<div class="_28l6WJgn2lALsbqKkv3zIA " data-reactid="50">
-								<img class="_28l6WJgn2lALsbqKkv3zIA _3_tz3Sy3FDfeZv5NgSfOZK"
-									alt="기본 프로젝트 커버 이미지"
-									src="https://tumblbug-pci.imgix.net/4b161a793b1b7d9646d00b52f112de112a6e75e0/7ad81f8e5d8c79ed9534d70ee460540cab01def4/81e49cf2918a523dd68764560a0b4490d66c5e54/0edaa339-09ea-4b9d-a01f-7d32ea5f1092.jpg?ixlib=rb-1.1.0&amp;w=620&amp;h=465&amp;auto=format%2Ccompress&amp;lossless=true&amp;fit=crop&amp;s=2396f5a89d18993a2c59ad99362d4a9b"
-									data-reactid="51" />
-								<div class="_28l6WJgn2lALsbqKkv3zIA Go6I0FosWRXRZxpmYjWEE"
-									data-reactid="52">
-									<i
-										class="_28l6WJgn2lALsbqKkv3zIA SRDMui3_OYHbzIL_aQFCl _1QY7TzdLHKX3-BKPDNNYKF"
-										style="color: black;" data-reactid="53"></i>
+							
+							<!-- 동영상 재생버튼 클릭 이후 보여지는 영역 -->
+							<div	class="ProjectIntroduction__ProjectCoverVideo-c7b94s-10 qtLrt">
+								<div id="projectDescriptionVideo" class="_13KHfN73YmQgsYHxXvuh_J " style="height: 100%;">
+									<video id="projectVideo" controls style="width: 100%; height: 100%;">
+										<p class="vjs-no-js">
+									      To view this video please enable JavaScript, and consider upgrading to a web browser that
+									      <a href="https://videojs.com/html5-video-support/" target="_blank">supports HTML5 video</a>
+									    </p>
+									
+									</video>
 								</div>
+								
+								<!-- 동영상 재생버튼 클릭 이전 -->
+								<div class="_28l6WJgn2lALsbqKkv3zIA " data-reactid="50">
+									<img class="_28l6WJgn2lALsbqKkv3zIA _3_tz3Sy3FDfeZv5NgSfOZK" alt="기본 프로젝트 커버 이미지"
+										src="<c:out value='${project.repImg }'/>" data-reactid="51"/>
+									
+									<c:if test="${null ne project.descriptionVideo }">
+										<div class="_28l6WJgn2lALsbqKkv3zIA Go6I0FosWRXRZxpmYjWEE"	data-reactid="52">
+											<i	class="_28l6WJgn2lALsbqKkv3zIA SRDMui3_OYHbzIL_aQFCl _1QY7TzdLHKX3-BKPDNNYKF"
+												style="color: black;" data-reactid="53" onclick="playVideo();"></i>
+										</div>
+									</c:if>
+								</div>
+								
 							</div>
+							
 						</div>
 					</figure>
 				</div>
@@ -457,15 +576,10 @@
 						</div>
 						<div class="ProjectIntroduction__Metric-c7b94s-14 leXkjY"
 							data-reactid="69">
-							<div
-								class="ProjectIntroduction__StatusTitle-c7b94s-15 htCDgL"
-								data-reactid="70">후원자</div>
-							<div
-								class="ProjectIntroduction__StatusValue-c7b94s-16 bvKOwU"
-								data-reactid="71">
-								105
-								<span class="ProjectIntroduction__Small-c7b94s-18 ihuRTA"
-									data-reactid="73">명</span>
+							<div	class="ProjectIntroduction__StatusTitle-c7b94s-15 htCDgL" data-reactid="70">후원자</div>
+							<div	class="ProjectIntroduction__StatusValue-c7b94s-16 bvKOwU" data-reactid="71">
+								
+								<span class="ProjectIntroduction__Small-c7b94s-18 ihuRTA" data-reactid="73">명</span>
 							</div>
 						</div>
 					</div>
@@ -524,18 +638,15 @@
 				data-reactid="95">
 				<div class="ContentsNavigation__NavLeft-s6dhfrc-3 eSsILz"
 					data-reactid="96">
-					<a id="storyBtn" class="ContentsNavigation__NavItem-s6dhfrc-0 gEWplf"
-						href="projectDetail.do?projectCode=<c:out value='${project.projectCode }'/>" data-reactid="97">스토리</a>
-						<a id="communityBtn" class="ContentsNavigation__NavItem-s6dhfrc-0 gEWplf"
-						href="projectCommunity.do?projectCode=<c:out value='${project.projectCode }'/>" data-reactid="98">
+					<a id="storyBtn" class="ContentsNavigation__NavItem-s6dhfrc-0 gEWplf"	 data-reactid="97">스토리</a>
+						<a id="communityBtn" class="ContentsNavigation__NavItem-s6dhfrc-0 gEWplf" data-reactid="98">
 						커뮤니티 
 						<c:if test="${count gt 0 }">
 							<span class="ContentsNavigation__CommunityPostAmount-s6dhfrc-6 bReGoj">
 									<c:out value="${count }"/>
 							</span>
 						</c:if>
-					</a><a id="policyBtn" class="ContentsNavigation__NavItem-s6dhfrc-0 gEWplf"
-						href="projectPolicy.do?projectCode=<c:out value='${project.projectCode }'/>" data-reactid="101">환불 및 교환</a>
+					</a><a id="policyBtn" class="ContentsNavigation__NavItem-s6dhfrc-0 gEWplf" data-reactid="101">환불 및 교환</a>
 				</div>
 			</div>
 		</nav>
