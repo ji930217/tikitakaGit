@@ -576,15 +576,10 @@
 						</div>
 						<div class="ProjectIntroduction__Metric-c7b94s-14 leXkjY"
 							data-reactid="69">
-							<div
-								class="ProjectIntroduction__StatusTitle-c7b94s-15 htCDgL"
-								data-reactid="70">후원자</div>
-							<div
-								class="ProjectIntroduction__StatusValue-c7b94s-16 bvKOwU"
-								data-reactid="71">
-								105
-								<span class="ProjectIntroduction__Small-c7b94s-18 ihuRTA"
-									data-reactid="73">명</span>
+							<div	class="ProjectIntroduction__StatusTitle-c7b94s-15 htCDgL" data-reactid="70">후원자</div>
+							<div	class="ProjectIntroduction__StatusValue-c7b94s-16 bvKOwU" data-reactid="71">
+								
+								<span class="ProjectIntroduction__Small-c7b94s-18 ihuRTA" data-reactid="73">명</span>
 							</div>
 						</div>
 					</div>
