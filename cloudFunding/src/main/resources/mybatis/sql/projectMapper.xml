@@ -69,7 +69,7 @@
 <result property="bankKinds" column="P_BANK_KINDS"/>
 <result property="pConfirm" column="P_OK"/>
 <result property="sendConfirm" column="P_SEND_CONFIRM"/>
-<result property="sponsorCount" column="P_SPONSOR_COUNT"/>
+<result property="supportCount" column="P_SPONSOR_COUNT"/>
 <result property="currentAmount" column="P_CURRENTAMOUNT"/>
 <result property="supportCount" column="P_SPONSOR_COUNT"/>
 <result property="enrollDate" column="P_ENROLL_DATE"/>
