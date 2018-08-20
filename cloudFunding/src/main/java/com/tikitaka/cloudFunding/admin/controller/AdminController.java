@@ -314,6 +314,27 @@ public class AdminController {
 			@RequestParam(defaultValue = "1") int bNo,@RequestParam(defaultValue = "1") int pNo,
 			@RequestParam(defaultValue = "1") int fpNo) {
 
+		
+		
+		//챠트
+				int allPrice = adminservice.allPrice(); //전체모금액
+				int price = adminservice.price(); //받은모금액
+				int category1 = adminservice.category();//카테고리 게임조회
+				int category2 = adminservice.category2();//카테고리 공연조회
+				int category3 = adminservice.category3();//카테고리 디자인조회
+				int memberMonth = adminservice.memberMonth();
+				/*int projectMonth = adminservice.projectMonth();*/
+				
+				
+				
+				mv.addObject("allPrice", allPrice);
+				mv.addObject("price", price);
+				mv.addObject("category1", category1);
+				mv.addObject("category2", category2);
+				mv.addObject("category3", category3);
+				mv.addObject("memberMonth", memberMonth);
+				/*mv.addObject("projectMonth", projectMonth);*/
+		
 	
 	
 									////////////////////////////////////////멤버페이징
@@ -573,6 +594,25 @@ public class AdminController {
 			HttpServletRequest request, fProjectPagingVo fpPaging) {
 		
 		
+		//챠트
+				int allPrice = adminservice.allPrice(); //전체모금액
+				int price = adminservice.price(); //받은모금액
+				int category1 = adminservice.category();//카테고리 게임조회
+				int category2 = adminservice.category2();//카테고리 공연조회
+				int category3 = adminservice.category3();//카테고리 디자인조회
+				int memberMonth = adminservice.memberMonth();
+				/*int projectMonth = adminservice.projectMonth();*/
+				
+				
+				
+				mv.addObject("allPrice", allPrice);
+				mv.addObject("price", price);
+				mv.addObject("category1", category1);
+				mv.addObject("category2", category2);
+				mv.addObject("category3", category3);
+				mv.addObject("memberMonth", memberMonth);
+				/*mv.addObject("projectMonth", projectMonth);*/
+		
 		
 		String keyword = request.getParameter("keyword");
 
@@ -825,6 +865,25 @@ public class AdminController {
 			@RequestParam(defaultValue = "1") int fpNo,bPagingVo bPaging,
 			HttpServletRequest request, fProjectPagingVo fpPaging) {
 			
+			
+			//챠트
+			int allPrice = adminservice.allPrice(); //전체모금액
+			int price = adminservice.price(); //받은모금액
+			int category1 = adminservice.category();//카테고리 게임조회
+			int category2 = adminservice.category2();//카테고리 공연조회
+			int category3 = adminservice.category3();//카테고리 디자인조회
+			int memberMonth = adminservice.memberMonth();
+			/*int projectMonth = adminservice.projectMonth();*/
+			
+			
+			
+			mv.addObject("allPrice", allPrice);
+			mv.addObject("price", price);
+			mv.addObject("category1", category1);
+			mv.addObject("category2", category2);
+			mv.addObject("category3", category3);
+			mv.addObject("memberMonth", memberMonth);
+			/*mv.addObject("projectMonth", projectMonth);*/
 			
 			
 			String keyword = request.getParameter("keyword");
@@ -1079,6 +1138,26 @@ public class AdminController {
 				@RequestParam(defaultValue = "1") int fpNo,bPagingVo bPaging,
 				HttpServletRequest request, fProjectPagingVo fpPaging) {
 			
+			
+			
+			//챠트
+			int allPrice = adminservice.allPrice(); //전체모금액
+			int price = adminservice.price(); //받은모금액
+			int category1 = adminservice.category();//카테고리 게임조회
+			int category2 = adminservice.category2();//카테고리 공연조회
+			int category3 = adminservice.category3();//카테고리 디자인조회
+			int memberMonth = adminservice.memberMonth();
+			/*int projectMonth = adminservice.projectMonth();*/
+			
+			
+			
+			mv.addObject("allPrice", allPrice);
+			mv.addObject("price", price);
+			mv.addObject("category1", category1);
+			mv.addObject("category2", category2);
+			mv.addObject("category3", category3);
+			mv.addObject("memberMonth", memberMonth);
+			/*mv.addObject("projectMonth", projectMonth);*/
 			
 			
 			String keyword = request.getParameter("keyword");
@@ -1337,6 +1416,27 @@ public class AdminController {
 				@RequestParam(defaultValue = "1") int bNo,@RequestParam(defaultValue = "1") int pNo,
 				@RequestParam(defaultValue = "1") int fpNo,bPagingVo bPaging,
 				HttpServletRequest request, fProjectPagingVo fpPaging) {
+				
+				
+				//챠트
+				int allPrice = adminservice.allPrice(); //전체모금액
+				int price = adminservice.price(); //받은모금액
+				int category1 = adminservice.category();//카테고리 게임조회
+				int category2 = adminservice.category2();//카테고리 공연조회
+				int category3 = adminservice.category3();//카테고리 디자인조회
+				int memberMonth = adminservice.memberMonth();
+				/*int projectMonth = adminservice.projectMonth();*/
+				
+				
+				
+				mv.addObject("allPrice", allPrice);
+				mv.addObject("price", price);
+				mv.addObject("category1", category1);
+				mv.addObject("category2", category2);
+				mv.addObject("category3", category3);
+				mv.addObject("memberMonth", memberMonth);
+				/*mv.addObject("projectMonth", projectMonth);*/
+				
 			
 				String keyword = request.getParameter("keyword");
 				

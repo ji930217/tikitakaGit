@@ -14,24 +14,24 @@
 
   function drawChart() {
 	  
-	  var mMonth8 = ${memberMonth};
+	  var mMonth08 = ${memberMonth};
 	  /* var pMonth8 = ${projectMonth}; */
 	  
 	  
     var data = google.visualization.arrayToDataTable([
       ['month', '회원', '프로젝트'],
-      ['7월', 1, 4],
-      ['8월', mMonth8, 2],
-      ['9월', 6, 5],
-      ['10월', 26, 10],
-      ['11월', 41, 33],
-      ['12월', 50, 40]
+      ['03월', 1, 1],
+      ['04월', 3, 2],
+      ['05월', 6, 4],
+      ['06월', 10, 6],
+      ['07월', 12, 8],
+      ['08월', mMonth08, 10]
     ]);
 
     var options = {
       chart: {
-         title: 'TIKITAKA 하반기 회원&프로젝트',
-        subtitle: '18/07/01~18/12/31', 
+         title: '최근 6개월간 TIKITAKA 회원&프로젝트',
+        subtitle: '18/03/01~18/08/31', 
       }
     };
 
@@ -45,21 +45,22 @@
   google.charts.load('current', {'packages':['corechart']});
   google.charts.setOnLoadCallback(drawChart);
   
-  
+  var mMonth08 = ${memberMonth};
+  /* var pMonth8 = ${projectMonth}; */
 
   function drawChart() {
     var data = google.visualization.arrayToDataTable([
     	['month', '회원', '프로젝트'],
-        ['7월', 1, 4],
-        ['8월', 6, 7],
-        ['9월', 12, 12],
-        ['10월', 38, 22],
-        ['11월', 79, 55],
-        ['12월', 139, 95]
+        ['03월', 1, 1],
+        ['04월', 4, 3],
+        ['05월', 10, 7],
+        ['06월', 20, 13],
+        ['07월', 32, 21],
+        ['08월', mMonth08+32, 31]
     ]);
 
     var options = {
-       title: '회원&프로젝트 합계', 
+       title: '최근 6개월간 TIKITAKA 회원&프로젝트 합계', 
       curveType: 'function',
       legend: { position: 'bottom' }
     };
@@ -88,8 +89,8 @@
     ]);
 
     var options = {
-      title: '후원금현황',
-      slices: {0: {color: 'black'}, 1: {color: 'red'}}
+      title: '전체후원금현황'
+      /* slices: {0: {color: 'red'}, 1: {color: 'blue'}} */
     };
 
     var chart = new google.visualization.PieChart(document.getElementById('piechart'));
