@@ -3864,7 +3864,14 @@ px
 	data-react-helmet="true">
 
 </head>
+<script>
+function sorting(){
+	var condition = $("#searchCondition").val();
+	location.href = "projectList.do?condtion=" + condition;
+	
+}
 
+</script>
 
 <body>
 
@@ -3886,14 +3893,15 @@ px
 					<div
 						class="PageIntroduction__ProjectSortDropdownWrapper-s7qbeqe-3 iZgHCU"
 						data-reactid="42">
+						
 						<select
 							class="PageIntroduction__ProjectsSortDropdown-s7qbeqe-4 hDDlHs"
-							id="searchCondition">
-							<option selected="" value="count" data-reactid="44">최다 후원순</option>
+							id="searchCondition" onchange="sorting(value)">
+							<option <c:if test="${검색값key == 'count'}">selected='selected'</c:if>value="count" data-reactid="44">최다 후원순</option>
 							<option value="amount" data-reactid="45">최다 금액순</option>
-							<option value="ended_at" data-reactid="46">마감 임박순</option>
 							<option value="published_at" data-reactid="47">최신순</option>
 						</select>
+						
 					</div>
 					<span class="PageIntroduction__ProjectsFilter-s7qbeqe-5 kEslfd" data-reactid="48"> <input type="checkbox" value="true"
 						data-reactid="49" /> 펀딩 마감된 프로젝트 보기
@@ -3939,7 +3947,7 @@ px
 												class="_13KHfN73YmQgsYHxXvuh_J _28LKn930rfRFkZT8rldrUE IHUALIalgwgMpH2DEQooZ _1Wxx18kEfVPxJvla-FdZGF _3Syz9fGXYtzMNqK_55A2BW gVW7lZgUR9vVu2Lczdjm3"
 												>
 												<div class="_2L0-7hWDrYoa3rVDPaZC_T"
-													style="width: <c:out value="${percent }"/>%; min-width: 0%; background: rgb(250, 100, 98); transition-duration: 200ms; height: 2px;">
+													style="width: <c:out value="${percent }"/>%; max-width: 100%; min-width: 0%; background: rgb(250, 100, 98); transition-duration: 200ms; height: 2px;">
 													<div class="_1Wxx18kEfVPxJvla-FdZGF"></div>
 												</div>
 											</div>

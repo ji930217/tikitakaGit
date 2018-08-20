@@ -3864,7 +3864,9 @@ px
 	data-react-helmet="true">
 
 </head>
+<script>
 
+</script>
 
 <body>
 
@@ -3876,7 +3878,7 @@ px
 				<div class="Container__Container-s1sxg7g4-0 jdgWcI"
 					data-reactid="38">
 					<h1 class="PageIntroduction__IntroductionTitle-s7qbeqe-1 gfyIVD"
-						data-reactid="39"> </h1>
+						data-reactid="39">분야별 인기 프로젝트</h1>
 				</div>
 			</div>
 			<div class="PageIntroduction__ProjectsFilterBar-s7qbeqe-2 knAdBT"
@@ -3889,15 +3891,12 @@ px
 						<select
 							class="PageIntroduction__ProjectsSortDropdown-s7qbeqe-4 hDDlHs"
 							id="searchCondition">
-							<option selected="" value="count" data-reactid="44">최다 후원순</option>
+							<option selected value="count" data-reactid="44">최다 후원순</option>
 							<option value="amount" data-reactid="45">최다 금액순</option>
-							<option value="ended_at" data-reactid="46">마감 임박순</option>
 							<option value="published_at" data-reactid="47">최신순</option>
 						</select>
 					</div>
-					<span class="PageIntroduction__ProjectsFilter-s7qbeqe-5 kEslfd" data-reactid="48"> <input type="checkbox" value="true"
-						data-reactid="49" /> 펀딩 마감된 프로젝트 보기
-					</span>
+					
 				</div>
 			</div>
 		</div>

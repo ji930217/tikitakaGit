@@ -50,8 +50,8 @@ public class ProjectDao {
 		return sqlSession.delete("projectMapper.deleteProjectGift",giftCode);
 	}
 	
-	public List<ProjectVo> selectProjectList() {
-		return sqlSession.selectList("projectMapper.selectProjectList");
+	public List<ProjectVo> selectProjectList(String condition) {
+		return sqlSession.selectList("projectMapper.selectProjectList",condition);
 	}
 
 	public List<ProjectVo> selectPopularList() {
