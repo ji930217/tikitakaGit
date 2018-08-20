@@ -750,6 +750,12 @@
 				$("#searchBtn").addClass("cdAaGX");
 			}
 		});
+		
+		$(".searchProjectByCategory").click(function(){
+			var category = $(this).text();
+			location.href="searchProjectByCategory.do?category=" + category;
+		});
+		
 	});
 	
 	function closeTab(){
@@ -794,7 +800,6 @@
 					
 	});
 
-	
 </script>
 </head>
 <body>
@@ -912,7 +917,7 @@
 					<div class="Discover__Search-s1vowecn-1 fdKmEL">
 						<div class="Discover__DiscoverMenuTitle-s1vowecn-0 cWTOml">검색</div>
 						<div class="SearchWidget__SerchInputWidget-s9c21z8-0 hJaXtH">
-							<form action="searchProjectList.do">
+							<form action="searchProjectByKeyword.do">
 								<input type="search" id="searchText" name="keyword" class="SearchWidget__Input-s9c21z8-1 cEJRUu" placeholder="프로젝트를 검색해주세요">
 								<input	type="submit" style="display: none;">
 								<button id="searchBtn" class="Button__Button-s1ng5xda-0 cdAaGX" disabled>검색하기</button>
@@ -924,11 +929,11 @@
 				<div class="Container__Container-s1sxg7g4-0 iTXcwb">
 					<div class="Divider__Divider-s16ihjfx-0 cdILTf"></div>
 					<div class="MenuItem__MenuItem-no2u3j-0 cwYjsy">
-						<a href="/projects"><span
+						<a href="projectList.do"><span
 							class="MenuItem__MenuItemTitle-no2u3j-1 enzRKc">모든 프로젝트</span></a>
 					</div>
 					<div class="MenuItem__MenuItem-no2u3j-0 cwYjsy">
-						<a href="/projects/popular"><span
+						<a href="popularList.do"><span
 							class="MenuItem__MenuItemTitle-no2u3j-1 enzRKc">분야별 인기
 								프로젝트</span></a>
 					</div>
@@ -943,7 +948,7 @@
 								프로젝트</span></a>
 					</div>
 					<div class="Divider__Divider-s16ihjfx-0 hEIXJa"></div>
-					<div>
+					<div style="display:none;">
 						<div class="Discover__DiscoverMenuTitle-s1vowecn-0 cWTOml">기획전</div>
 						<div class="MenuItem__MenuItem-no2u3j-0 cwYjsy">
 							<a href="/collections/jfac2018"><span
@@ -1003,23 +1008,21 @@
 						</div>
 						<div>
 							<div class="DropdownItem__DropdownItem-s12jl0ab-0 lhFUmi">
-								<a href="/category/game">
-									<!-- react-text: 849 -->모든 <!-- /react-text -->
-									<!-- react-text: 850 -->게임<!-- /react-text -->
-									<!-- react-text: 851 --> 프로젝트<!-- /react-text -->
+								<a href="searchProjectByCategory.do?category=게임">
+									모든 게임 프로젝트
 								</a>
 							</div>
 							<div class="DropdownItem__DropdownItem-s12jl0ab-0 lhFUmi">
-								<a href="/category/tabletop-rpg">TRPG</a>
+								<a class="searchProjectByCategory">TRPG</a>
 							</div>
 							<div class="DropdownItem__DropdownItem-s12jl0ab-0 lhFUmi">
-								<a href="/category/mobile-game">모바일 게임</a>
+								<a class="searchProjectByCategory">모바일 게임</a>
 							</div>
 							<div class="DropdownItem__DropdownItem-s12jl0ab-0 lhFUmi">
-								<a href="/category/board-game">보드게임</a>
+								<a class="searchProjectByCategory">보드게임</a>
 							</div>
 							<div class="DropdownItem__DropdownItem-s12jl0ab-0 lhFUmi">
-								<a href="/category/video-game">비디오게임</a>
+								<a class="searchProjectByCategory">비디오게임</a>
 							</div>
 						</div>
 					</div>
@@ -1032,23 +1035,21 @@
 						</div>
 						<div>
 							<div class="DropdownItem__DropdownItem-s12jl0ab-0 lhFUmi">
-								<a href="/category/performance">
-									<!-- react-text: 865 -->모든 <!-- /react-text -->
-									<!-- react-text: 866 -->공연<!-- /react-text -->
-									<!-- react-text: 867 --> 프로젝트<!-- /react-text -->
+								<a href="searchProjectByCategory.do?category=공연">
+									모든 공연 프로젝트
 								</a>
 							</div>
 							<div class="DropdownItem__DropdownItem-s12jl0ab-0 lhFUmi">
-								<a href="/category/dance">무용</a>
+								<a class="searchProjectByCategory">무용</a>
 							</div>
 							<div class="DropdownItem__DropdownItem-s12jl0ab-0 lhFUmi">
-								<a href="/category/musical">뮤지컬</a>
+								<a class="searchProjectByCategory">뮤지컬</a>
 							</div>
 							<div class="DropdownItem__DropdownItem-s12jl0ab-0 lhFUmi">
-								<a href="/category/theater">연극</a>
+								<a class="searchProjectByCategory">연극</a>
 							</div>
 							<div class="DropdownItem__DropdownItem-s12jl0ab-0 lhFUmi">
-								<a href="/category/festival">페스티벌</a>
+								<a class="searchProjectByCategory">페스티벌</a>
 							</div>
 						</div>
 					</div>
@@ -1063,23 +1064,21 @@
 						</div>
 						<div>
 							<div class="DropdownItem__DropdownItem-s12jl0ab-0 lhFUmi">
-								<a href="/category/design">
-									<!-- react-text: 929 -->모든 <!-- /react-text -->
-									<!-- react-text: 930 -->디자인<!-- /react-text -->
-									<!-- react-text: 931 --> 프로젝트<!-- /react-text -->
+								<a href="searchProjectByCategory.do?category=디자인">
+									모든 디자인 프로젝트
 								</a>
 							</div>
 							<div class="DropdownItem__DropdownItem-s12jl0ab-0 lhFUmi">
-								<a href="/category/space-design">공간디자인</a>
+								<a class="searchProjectByCategory">공간디자인</a>
 							</div>
 							<div class="DropdownItem__DropdownItem-s12jl0ab-0 lhFUmi">
-								<a href="/category/graphic-design">시각디자인</a>
+								<a class="searchProjectByCategory">시각디자인</a>
 							</div>
 							<div class="DropdownItem__DropdownItem-s12jl0ab-0 lhFUmi">
-								<a href="/category/product-design">제품디자인</a>
+								<a class="searchProjectByCategory">제품디자인</a>
 							</div>
 							<div class="DropdownItem__DropdownItem-s12jl0ab-0 lhFUmi">
-								<a href="/category/character-design">캐릭터 디자인</a>
+								<a class="searchProjectByCategory">캐릭터 디자인</a>
 							</div>
 						</div>
 					</div>

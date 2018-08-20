@@ -216,17 +216,27 @@ public class ProjectController {
 		return project;
 	}
 	
-	@RequestMapping("searchProjectList.do")
-	public ModelAndView searchProjectList(String keyword, ModelAndView mv){
-		List<ProjectVo> list = projectService.searchProjectList(keyword);
+	@RequestMapping("searchProjectByKeyword.do")
+	public ModelAndView searchProjectByKeyword(String keyword, ModelAndView mv){
+		List<ProjectVo> list = projectService.searchProjectByKeyword(keyword);
 		
 		mv.addObject("keyword", keyword);
 		mv.addObject("list", list);
-		mv.setViewName("project/searchProjectList");
+		mv.setViewName("project/projectListByKeyword");
 		
 		return mv;
 	}
 	
+	@RequestMapping("searchProjectByCategory.do")
+	public ModelAndView searchProjectByCategory(String category, ModelAndView mv){
+		List<ProjectVo> list = projectService.searchProjectByCategory(category);
+		
+		mv.addObject("category", category);
+		mv.addObject("list", list);
+		mv.setViewName("project/projectListByCategory");
+		
+		return mv;
+	}
 	
 	//, @RequestParam("items") String[] items
 	@RequestMapping("insertGift.do")

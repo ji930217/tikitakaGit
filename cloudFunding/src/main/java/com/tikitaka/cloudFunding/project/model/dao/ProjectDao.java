@@ -62,8 +62,12 @@ public class ProjectDao {
 		return sqlSession.selectOne("projectMapper.selectSupportedCount",email);
 	}
 
-	public List<ProjectVo> searchProjectList(String keyword) {
-		return sqlSession.selectList("projectMapper.searchProjectList", keyword);
+	public List<ProjectVo> searchProjectByKeyword(String keyword) {
+		return sqlSession.selectList("projectMapper.searchProjectByKeyword", keyword);
+	}
+
+	public List<ProjectVo> searchProjectByCategory(String category) {
+		return sqlSession.selectList("projectMapper.searchProjectByCategory", category);
 	}
 
 
