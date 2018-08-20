@@ -720,11 +720,23 @@
 	    line-height: 1.2;
 	}
 	
+	/* 마이페이지 탭 프로필 이미지 스타일 */
+	.kIYXPc {
+	    display: inline-block;
+	    width: 4rem;
+	    height: 4rem;
+	    background-size: cover;
+	    background-position: 50% 38%;
+	    border-radius: 50%;
+	    border: 1px solid #ddd;
+	    margin-right: 1rem;
+	}
+	
 </style>
 <script>
 
 	$(function(){
-		// 카테고리 펼치기/접기
+		// 프로젝트 둘러보기 카테고리 버튼 하위메뉴 펼치기/접기
 		$(".cwYjsy").click(function(){
 			$(this).parent().siblings(0).children().toggle();
 			if($(this).children("span").eq(1).children("div").attr("class") == "DiscoverMenuDropdown__TriangleUpIcon-s116h97f-0 bVfzeY"){
@@ -758,15 +770,22 @@
 		
 	});
 	
-	function closeTab(){
+	function closeSearchTab(){
 		$("body").css("overflow", "auto");
-		$(".FullscreenModal__Modal-s1csgj37-0").css("display", "none");
+		$("#searchTab").css("display", "none");
+	}
+	function openSearchTab(){
+		$("body").css("overflow", "hidden");
+		$("#searchTab").css("display", "block");
 	}
 	
-	function openTab(){
+	function closeMyPageTab(){
+		$("body").css("overflow", "auto");
+		$("#myPageTab").css("display", "none");
+	}
+	function openMyPageTab(){
 		$("body").css("overflow", "hidden");
-		$(".FullscreenModal__Modal-s1csgj37-0").css("display", "block");
-		
+		$("#myPageTab").css("display", "block");
 	}
 	
 	
@@ -795,6 +814,8 @@
 		$("#loginIdAcc").click(function(){
 			if(memberAdmin.email == 'admin@admin.com'){
 				location.href="adminMenuList.do";
+			} else {
+				openMyPageTab();
 			}
 		});
 					
@@ -811,7 +832,7 @@
 					data-reactid="7">
 					<div class="SiteHeader__LeftMenu-s1s56ls8-2 kZLTLQ"
 						data-reactid="8">
-						<button class="SiteHeader__LinkButton-s1s56ls8-7 hcvfVq" onclick="openTab();"
+						<button class="SiteHeader__LinkButton-s1s56ls8-7 hcvfVq" onclick="openSearchTab();"
 							data-reactid="9">
 							<i class="_3ZgG-OSv0XE3y-h3oPaDsl _1QY7TzdLHKX3-BKPDNNYKF"
 								data-reactid="10"></i><span
@@ -889,17 +910,16 @@
 			</div>
 		</div>
 	</div>
+	
 	<div>
-	
-	
 		<!-- 프로젝트 검색 탭 -->
-		<div class="FullscreenModal__Modal-s1csgj37-0 gXCSaI">
+		<div id="searchTab" class="FullscreenModal__Modal-s1csgj37-0 gXCSaI">
 			<div class="Header__Header-s10wde3a-0 ewshKB">
 				<div class="Container__Container-s1sxg7g4-0 iTXcwb">
 					<div class="FullscreenModal__ModalHeader-s1csgj37-1 gDcVdH">
 						<div class="FullscreenModal__ActionMenu-s1csgj37-2 bwyOOq">
 							<div class="FullscreenModal__CloseButton-s1csgj37-6 GTIIn">
-								<button class="Button__Button-s1ng5xda-0 fkKFAu" onclick="closeTab();">
+								<button class="Button__Button-s1ng5xda-0 fkKFAu" onclick="closeSearchTab();">
 									<i class="RyvusKQjJRQNgaH8kOM4J _1QY7TzdLHKX3-BKPDNNYKF"></i>
 								</button>
 							</div>
@@ -1355,6 +1375,64 @@
 							</div>
 						</div> -->
 					</div>
+				</div>
+			</div>
+		</div>
+		
+		<!-- 로그인한 사용자 페이지 탭 -->
+		<div id="myPageTab" class="FullscreenModal__Modal-s1csgj37-0 gXCSaI">
+			<div class="Header__Header-s10wde3a-0 ewshKB">
+				<div class="Container__Container-s1sxg7g4-0 iTXcwb">
+					<div class="FullscreenModal__ModalHeader-s1csgj37-1 gDcVdH">
+						<div class="FullscreenModal__ActionMenu-s1csgj37-2 bwyOOq"></div>
+						<div class="FullscreenModal__CenterMenu-s1csgj37-3 dvzFpS">
+							<div class="FullscreenModal__ModalTitle-s1csgj37-4 dPAoUk">내
+								페이지</div>
+						</div>
+						<div class="FullscreenModal__ActionMenu-s1csgj37-2 bwyOOq">
+							<div class="FullscreenModal__CloseButton-s1csgj37-6 jBPHQu">
+								<button class="Button__Button-s1ng5xda-0 fkKFAu" onclick="closeMyPageTab();">
+									<i class="RyvusKQjJRQNgaH8kOM4J _1QY7TzdLHKX3-BKPDNNYKF"></i>
+								</button>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="FullscreenModal__ModalBody-s1csgj37-5 eiVCyY">
+				<div class="Container__Container-s1sxg7g4-0 iTXcwb">
+					<div class="MyPage__MyPageProfile-s1rrrcge-0 hvPJrg">
+						<!-- <span class="ProfileImg__ProfileImg-s1o99mme-0 kIYXPc"> -->
+							<img class="ProfileImg__ProfileImg-s1o99mme-0 kIYXPc" src="<c:out value='${user.profile_img }'/>"/>
+						<!-- </span> -->
+						<span class="MyPage__UserFullname-s1rrrcge-1 bPHUVK"><c:out value="${user.name }"/></span>
+					</div>
+					<div class="Divider__Divider-s16ihjfx-0 XTtld"></div>
+					<a href="/messages"><div
+							class="MenuItem__MenuItem-no2u3j-0 cwYjsy">
+							<span class="MenuItem__MenuItemTitle-no2u3j-1 enzRKc">메시지</span>
+						</div></a><a href="/pledges"><div
+							class="MenuItem__MenuItem-no2u3j-0 cwYjsy">
+							<span class="MenuItem__MenuItemTitle-no2u3j-1 enzRKc">내
+								후원현황</span>
+						</div></a><a href="/u/domoyozudupinedo/projects"><div
+							class="MenuItem__MenuItem-no2u3j-0 cwYjsy">
+							<span class="MenuItem__MenuItemTitle-no2u3j-1 enzRKc">내가
+								만든 프로젝트</span>
+						</div></a>
+					<div class="Divider__Divider-s16ihjfx-0 XTtld"></div>
+					<a href="/u/domoyozudupinedo/edit"><div
+							class="MenuItem__MenuItem-no2u3j-0 cwYjsy">
+							<span class="MenuItem__MenuItemTitle-no2u3j-1 enzRKc">프로필
+								설정</span>
+						</div></a><a href="/users/payment"><div
+							class="MenuItem__MenuItem-no2u3j-0 cwYjsy">
+							<span class="MenuItem__MenuItemTitle-no2u3j-1 enzRKc">지불
+								정보 설정</span>
+						</div></a><a href="/logout"><div
+							class="MenuItem__MenuItem-no2u3j-0 cwYjsy">
+							<span class="MenuItem__MenuItemTitle-no2u3j-1 enzRKc">로그아웃</span>
+						</div></a>
 				</div>
 			</div>
 		</div>
