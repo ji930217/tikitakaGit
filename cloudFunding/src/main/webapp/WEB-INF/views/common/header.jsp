@@ -1,15 +1,13 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+
+
 <!DOCTYPE html>
 <html>
 
 <head>
 
-	<script>
-		function loginPage(){
-			location.href="loginPage.do";
-		}
-	</script>
+	
 
       <meta charset="utf-8">
       <title>티키타카 :: TIKITAKA</title>
@@ -765,6 +763,38 @@
 		
 	}
 	
+	
+	function loginPage(){
+		location.href="loginPage.do";
+	}
+	
+	$(function(){
+		var memberAdmin = new Object();
+		
+		memberAdmin.email = "${user.email}";
+		memberAdmin.name = "${user.name}";
+		memberAdmin.password = "${user.password}";
+		memberAdmin.profile_img = "${user.profile_img}";
+		memberAdmin.enroll_date = "${user.enroll_date}";
+		memberAdmin.location = "${user.location}";
+		memberAdmin.shortDescription = "${user.shortDescription}";
+		memberAdmin.homepage = "${user.homepage}";
+		memberAdmin.phone1 = "${user.phone1}";
+		memberAdmin.phone2 = "${user.phone2}";
+		memberAdmin.phone3 = "${user.phone3}";
+		memberAdmin.stopDate = "${user.stopDate}";
+		memberAdmin.expDate = "${user.expDate}";
+		
+		console.log(memberAdmin.email);
+		$("#loginIdAcc").click(function(){
+			if(memberAdmin.email == 'admin@admin.com'){
+				location.href="adminMenuList.do";
+			}
+		});
+					
+	});
+
+	
 </script>
 </head>
 <body>
@@ -804,7 +834,7 @@
 					
 					<c:if test="${(!empty user) && (null eq user.stopDate) }">						
 		
-						<a class="sc-htoDjs fQwQfp" data-reactid="30">
+						<a id="loginIdAcc" class="sc-htoDjs fQwQfp" data-reactid="30">
 							<span class="SiteHeader__ItemLabel-s1s56ls8-8 iGOIal" data-reactid="31">
 								<c:out value="${user.name } "/>
 							</span>
@@ -813,8 +843,12 @@
 								src="${user.profile_img }" width="42" height="42" />
 							</span>
 						</a>
+						
+					
 						 					
 					</c:if>
+					
+					
 					
 					
 					<c:if test="${empty user }">
