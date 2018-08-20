@@ -355,10 +355,13 @@
 										</div>
 									</div>
 									<div class="RewardCard__Items-ibjars-10 iYIWgz">
-										<li class="RewardCard__ItemList-ibjars-11 gSgsr">
-											<c:out value="${gift.item }"/>&nbsp;
-											<span>( x 1 )</span>
-										</li>
+										<c:set var="items" value="${gift.item.split(', ') }"/>
+										<c:forEach var="item" items="${items }">
+											<li class="RewardCard__ItemList-ibjars-11 gSgsr">
+												<c:out value="${item }"/>&nbsp;
+												<!-- <span>( x 1 )</span> -->
+											</li>
+										</c:forEach>
 									</div>
 									<div class="RewardCard__DeliveryDate-ibjars-12 chNsfw">
 										<span>
