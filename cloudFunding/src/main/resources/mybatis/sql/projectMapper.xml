@@ -42,6 +42,7 @@
 		<result property="sendDate" column="G_SEND_DATE"/>
 		<result property="remited" column="G_REMITED"/>
 		<result property="transferCheck" column="G_TRANSFER_CHECK"/>
+		<result property="selectedCount" column="G_SELECTED_COUNT"/>
 </resultMap>
 
 <resultMap type="Project" id="projectMap">
@@ -185,7 +186,9 @@ G.G_DESCRIPTION G_DESCRIPTION,
 G.G_ITEM G_ITEM,
 G.G_SEND_DATE G_SEND_DATE,
 G.G_REMITED G_REMITED,
-G.G_TRANSFER_CHECK G_TRANSFER_CHECK FROM PROJECT P
+G.G_TRANSFER_CHECK G_TRANSFER_CHECK,
+G.G_SELECTED_COUNT 
+FROM PROJECT P
 LEFT JOIN GIFT G ON(P.P_PROJECT_CODE=G.P_PROJECT_CODE)
 WHERE P.P_PROJECT_CODE=#{projectCode}
 </select>

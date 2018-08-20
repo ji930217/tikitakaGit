@@ -15,6 +15,7 @@ public class GiftVo {
 	private String item;
 	private Date sendDate;
 	private int remited;
+	private int selectedCount;
 	private String transferCheck;
 	
 	
@@ -93,12 +94,22 @@ public class GiftVo {
 	public void setTransferCheck(String transferCheck) {
 		this.transferCheck = transferCheck;
 	}
+	
+	public int getSelectedCount() {
+		return selectedCount;
+	}
+
+	public void setSelectedCount(int selectedCount) {
+		this.selectedCount = selectedCount;
+	}
+
 
 	@Override
 	public String toString() {
 		return "GiftVo [giftCode=" + giftCode + ", projectCode=" + projectCode + ", email=" + email + ", price=" + price
 				+ ", description=" + description + ", item=" + item + ", sendDate=" + sendDate + ", remited=" + remited
-				+ ", transferCheck=" + transferCheck + "]";
+				+ ", selectedCount=" + selectedCount + ", transferCheck=" + transferCheck + ", toString()="
+				+ super.toString() + "]";
 	}
 
 	
