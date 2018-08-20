@@ -34,17 +34,17 @@ public class ProjectVo {
 	private String sendConfirm; //송금여부확인
 	private int currentAmount; // 현재금액
 	private int updateNum;
+	private int supportCount;
+	private Date enrollDate;
 	private List <GiftVo> giftArry;
 	
 	public ProjectVo() {}
-
-	
 
 	public ProjectVo(String email, int projectCode, int projectNum, String title, String repImg, String summary,
 			String category, String profileImg, String name, String introduce, int price, Date endDate, String giftItem,
 			String refund, String descriptionVideo, String story, String pEmail, String pPhone, String bankTrading,
 			String bankName, String bankNumber, String bankKinds, String pConfirm, String sendConfirm,
-			int currentAmount) {
+			int currentAmount,int supportCount,Date enrollDate) {
 		this.email = email;
 		this.projectCode = projectCode;
 		this.projectNum = projectNum;
@@ -70,6 +70,8 @@ public class ProjectVo {
 		this.pConfirm = pConfirm;
 		this.sendConfirm = sendConfirm;
 		this.currentAmount = currentAmount;
+		this.supportCount = supportCount;
+		this.enrollDate = enrollDate;
 	}
 
 	
@@ -302,6 +304,21 @@ public class ProjectVo {
 	}
 
 
+	public int getSupportCount() {
+		return supportCount;
+	}
+
+	public void setSupportCount(int supportCount) {
+		this.supportCount = supportCount;
+	}
+
+	public Date getEnrollDate() {
+		return enrollDate;
+	}
+
+	public void setEnrollDate(Date enrollDate) {
+		this.enrollDate = enrollDate;
+	}
 
 	@Override
 	public String toString() {
@@ -312,7 +329,7 @@ public class ProjectVo {
 				+ ", story=" + story + ", pEmail=" + pEmail + ", pPhone=" + pPhone + ", bankTrading=" + bankTrading
 				+ ", bankName=" + bankName + ", bankNumber=" + bankNumber + ", bankKinds=" + bankKinds + ", pConfirm="
 				+ pConfirm + ", sendConfirm=" + sendConfirm + ", currentAmount=" + currentAmount + ", updateNum="
-				+ updateNum + ", giftArry=" + giftArry + "]";
+				+ updateNum + ", supportCount=" + supportCount + ", enrollDate=" + enrollDate + ", giftArry=" + giftArry + "]";
 	}
 
 

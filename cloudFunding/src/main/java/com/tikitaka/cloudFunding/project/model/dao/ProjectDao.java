@@ -1,6 +1,7 @@
 package com.tikitaka.cloudFunding.project.model.dao;
 
 import java.util.HashMap;
+import java.util.List;
 
 import org.mybatis.spring.SqlSessionTemplate;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -48,6 +49,13 @@ public class ProjectDao {
 	public int deleteGift(int giftCode) {
 		return sqlSession.delete("projectMapper.deleteProjectGift",giftCode);
 	}
+	
+	public List<ProjectVo> selectProjectList() {
+		return sqlSession.selectList("projectMapper.selectProjectList");
+	}
 
+	public List<ProjectVo> selectPopularList() {
+		return sqlSession.selectList("projectMapper.selectPopularList");
+	}
 
 }

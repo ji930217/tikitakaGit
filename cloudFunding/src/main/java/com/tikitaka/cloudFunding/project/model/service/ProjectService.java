@@ -1,6 +1,7 @@
 package com.tikitaka.cloudFunding.project.model.service;
 
 import java.util.HashMap;
+import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -24,6 +25,7 @@ public class ProjectService {
 		return dao.selectProjectNum(userId);
 	}
 	
+
 	public ProjectVo selectProjectDetail(int projectCode) {
 		return dao.selectProjectDetail(projectCode);
 	}
@@ -46,6 +48,14 @@ public class ProjectService {
 
 	public int deleteGift(int giftCode) {
 		return dao.deleteGift(giftCode);
+	}
+
+	public List<ProjectVo> selectprojectList() {
+		return dao.selectProjectList();
+	}
+
+	public List<ProjectVo> selectPopularList() {
+		return dao.selectPopularList();
 	}
 
 }

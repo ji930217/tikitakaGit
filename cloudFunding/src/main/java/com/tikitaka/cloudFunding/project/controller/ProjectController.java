@@ -34,16 +34,20 @@ public class ProjectController {
 	CommunityService cService;
 
 	@RequestMapping("projectList.do")
-	public String projectList(){
-		return "project/projectList";
+	public ModelAndView projectList(ModelAndView mv){
+		List<ProjectVo> list = projectService.selectprojectList();
+		mv.addObject("list", list);
+		mv.setViewName("project/projectList");
+		return mv;
 	}
-	@RequestMapping("payment.do")
-	public String payment(){
-		return "project/payment/payment";
-	}
-	@RequestMapping("payment_after.do")
-	public String payment_a(){
-		return "project/payment/payment_after";
+	
+	@RequestMapping("popularList.do")
+	public ModelAndView popularList(ModelAndView mv){
+		List<ProjectVo> list = projectService.selectPopularList();
+		System.out.println(list);
+		mv.addObject("list", list);
+		mv.setViewName("project/popularList");
+		return mv;
 	}
 
 	@RequestMapping("projectStart.do")
