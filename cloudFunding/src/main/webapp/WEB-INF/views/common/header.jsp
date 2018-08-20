@@ -878,11 +878,9 @@
 					<div class="Discover__Search-s1vowecn-1 fdKmEL">
 						<div class="Discover__DiscoverMenuTitle-s1vowecn-0 cWTOml">검색</div>
 						<div class="SearchWidget__SerchInputWidget-s9c21z8-0 hJaXtH">
-							<form action="">
-								<input type="search" id="searchText"
-									class="SearchWidget__Input-s9c21z8-1 cEJRUu"
-									placeholder="프로젝트를 검색해주세요"><input
-									type="submit" style="display: none;">
+							<form action="searchProjectList.do">
+								<input type="search" id="searchText" name="keyword" class="SearchWidget__Input-s9c21z8-1 cEJRUu" placeholder="프로젝트를 검색해주세요">
+								<input	type="submit" style="display: none;">
 								<button id="searchBtn" class="Button__Button-s1ng5xda-0 cdAaGX" disabled>검색하기</button>
 							</form>
 						</div>

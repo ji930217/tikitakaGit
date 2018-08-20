@@ -625,7 +625,7 @@
 				<!-- 게시글 공유 버튼(창작자의 게시글일 경우만 출력)-->
 				<div id="sharePostBtnDiv" class="Post__ShareWrapper-s1xz59uk-17 jEZrVP">
 					<div style="display: flex;">
-						<div	class="SocialMediaShareButton SocialMediaShareButton--facebook">
+						<div	class="SocialMediaShareButton SocialMediaShareButton--facebook" onclick="shareFacebook();">
 							<div class="SocialMediaButtons__ShareButton-dpsnza-0 hhJJZS">
 								<div style="width: 32px; height: 32px;">
 									<svg viewBox="0 0 64 64" fill="#3b5998" width="32" height="32"
@@ -638,7 +638,7 @@
 								</div>
 							</div>
 						</div>
-						<div	class="SocialMediaShareButton SocialMediaShareButton--twitter">
+						<div	class="SocialMediaShareButton SocialMediaShareButton--twitter" onclick="shareTwitter();">
 							<div class="SocialMediaButtons__ShareButton-dpsnza-0 hhJJZS">
 								<div style="width: 32px; height: 32px;">
 									<svg viewBox="0 0 64 64" fill="#1da1f2" width="32" height="32"
@@ -651,6 +651,14 @@
 								</div>
 							</div>
 						</div>
+						<div	class="SocialMediaShareButton SocialMediaShareButton--kakaotalk" onclick="shareKakao();">
+							<div class="SocialMediaButtons__ShareButton-dpsnza-0 hhJJZS">
+								<div style="width: 32px; height: 32px;">
+									<img class="social-icon social-icon--twitter" src="resources/images/project/share/kakaoBtn.png" style="width:16px; height:16px; margin-left: 8px; margin-bottom: -3px;" >
+								</div>
+							</div>
+						</div>
+						
 					</div>
 				</div>
 

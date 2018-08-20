@@ -62,5 +62,9 @@ public class ProjectService {
 		return dao.selectSupportedCount(email);
 	}
 
+	public List<ProjectVo> searchProjectList(String keyword) {
+		return dao.searchProjectList(keyword);
+	}
+
 
 }
