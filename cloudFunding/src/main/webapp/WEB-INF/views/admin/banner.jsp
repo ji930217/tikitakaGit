@@ -137,7 +137,15 @@ function validate3(){
 
    	};
    	
-   	function imageChack(name){
+
+   	function fileCheck(){
+   		
+   		var name = document.getElementById("fileInput").value;
+   		
+   		if(name == ""){
+   			alert("Upload를 먼저해주세요");
+   			return false;  			
+   		}
    		
    		var pathpoint = name.lastIndexOf('.');
    		var filepoint = name.substring(pathpoint+1,name.lenght);
@@ -145,15 +153,18 @@ function validate3(){
    		
    		if(filetype == 'jpg' || filetype == 'gif' || filetype == 'png' || filetype == 'jpeg' || filetype == 'bmp'){
    			alert("업로드 가능합니다");
+   			return true;
    			
    		}else{
    			alert("지정된 확장자만 등록가능합니다(jpg, gif, png, jpeg, bmp)");
+   			return false;
    			
    		}
-   		
    	}
    	
-   
+   	function projectDetail(code){
+   		location.href = "projectDetail.do?projectCode="+code;
+   	}
    	
 
 
@@ -218,40 +229,40 @@ function validate3(){
 						</c:choose></td>
 					<td id="td6"><c:choose>
 							<c:when test="${b.bannerLevel==1}">
-								<button type="button" class="btn btn-secondary btn-xs">상세정보</button>
+								<button type="button" class="btn btn-secondary btn-xs" onclick = "projectDetail('${b.projectCode }');">상세정보</button>
 							</c:when>
 							<c:when test="${b.bannerLevel==2}">
-								<button type="button" class="btn btn-secondary btn-xs">상세정보</button>
+								<button type="button" class="btn btn-secondary btn-xs" onclick = "projectDetail('${b.projectCode }');">상세정보</button>
 							</c:when>
 							<c:when test="${b.bannerLevel==3}">
-								<button type="button" class="btn btn-secondary btn-xs">상세정보</button>
+								<button type="button" class="btn btn-secondary btn-xs" onclick = "projectDetail('${b.projectCode }');">상세정보</button>
 							</c:when>
 							<c:when test="${b.bannerLevel==4}">
-								<button type="button" class="btn btn-secondary btn-xs">상세정보</button>
+								<button type="button" class="btn btn-secondary btn-xs" onclick = "projectDetail('${b.projectCode }');">상세정보</button>
 							</c:when>
 							<c:when test="${b.bannerLevel==5}">
-								<button type="button" class="btn btn-secondary btn-xs">상세정보</button>
+								<button type="button" class="btn btn-secondary btn-xs" onclick = "projectDetail('${b.projectCode }');">상세정보</button>
 							</c:when>
 							<c:otherwise>
 
 								<c:if test="${b.bannerImage == null }">
 									<form method="post" action="bannerPlus.do"
-										enctype="multipart/form-data" id="form1">
+										enctype="multipart/form-data" onsubmit = 'return fileCheck();'>
 										<input type="hidden" name="pjCode" id="pjCode" value="${b.projectCode }" />
 										<div class="file btn btn-lg btn-primary btn btn-secondary btn-xs" id="fileDiv">Upload 
-										<input type="file" name="file" id="fileInput" accept="image/gif, image/jpeg, image/png" onchange = "imageChack(value);"/>
+										<input type="file" name="file" id="fileInput" accept="image/gif, image/jpeg, image/png" />
 										</div>
 												
 
 										<button type="submit" class="btn btn-secondary btn-xs">등록</button>
-										<button type="button" class="btn btn-secondary btn-xs" id="btn2">상세정보</button>
+										<button type="button" class="btn btn-secondary btn-xs" id="btn2"  onclick = "projectDetail('${b.projectCode }');">상세정보</button>
 									</form>
 
 								</c:if>
 								<c:if test="${b.bannerImage != null }">
 								<button type="button" class="btn btn-secondary btn-xs"
 									onclick="bannerChange(${b.projectCode });" id="btn1" >배너등록</button>
-									<button type="button" class="btn btn-secondary btn-xs">상세정보</button>
+									<button type="button" class="btn btn-secondary btn-xs"  onclick = "projectDetail('${b.projectCode }');">상세정보</button>
 								</c:if>
 							</c:otherwise>
 						</c:choose></td>

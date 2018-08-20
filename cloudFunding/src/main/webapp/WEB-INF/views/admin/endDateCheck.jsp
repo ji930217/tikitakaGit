@@ -101,7 +101,9 @@ function endDateCheck(pCode){
 	}
 }
 
-
+function projectDetail(code){
+	location.href = "projectDetail.do?projectCode="+code;
+}
 
 
 </script>
@@ -137,10 +139,10 @@ function endDateCheck(pCode){
       <td id = "td3"><c:out value = "${fp.name }"/></td>
       <td id = "td4">
       
-      <c:if test ="${fp.endDate <= toDay }">
+      <c:if test ="${fp.endDate >= toDay }">
       <c:out value = "종료임박 ( "/><c:out value = "${fp.endDate } "/><c:out value = " 까지) "/>
       </c:if>
-      <c:if test ="${fp.endDate > toDay }">
+      <c:if test ="${fp.endDate < toDay }">
       <c:out value = "종료 "/>
       </c:if> 
       </td>
@@ -158,8 +160,8 @@ function endDateCheck(pCode){
       
       </td>
       		<td id = "td6">
-      		<button type="button" class="btn btn-secondary btn-xs">상세정보</button>
-      		<c:if test="${fp.endDate > toDay }">
+      		<button type="button" class="btn btn-secondary btn-xs" onclick = "projectDetail('${fp.projectCode }');">상세정보</button>
+      		<c:if test="${fp.endDate < toDay }">
       		<button type="button" class="btn btn-secondary btn-xs" onclick = "endDateCheck('${fp.projectCode }');">종료확인</button>
       		</c:if>
       		</td>

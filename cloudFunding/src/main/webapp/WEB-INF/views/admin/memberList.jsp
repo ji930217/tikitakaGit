@@ -108,6 +108,9 @@ function stopCheck(stopDate){
 	alert("해당회원의 정지종료일은"+date+"까지입니다")
 }
 
+function memberDetail(){
+	//맴버상세보기
+}
 
 
 
@@ -141,12 +144,12 @@ function stopCheck(stopDate){
       <td id = "td4">
       <c:if test = "${!empty m.stopDate }">
       	
-      	<button type="button" class="btn btn-secondary btn-xs">상세정보</button>
+      	<button type="button" class="btn btn-secondary btn-xs" onclick = "memberDetail();">상세정보</button>
       	<button type="button" class="btn btn-secondary btn-xs" onclick = "stopCheck('${m.stopDate}');">정지확인</button>
       	
       </c:if>
       <c:if test = "${empty m.stopDate }">
-      		<button type="button" class="btn btn-secondary btn-xs">상세정보</button>
+      		<button type="button" class="btn btn-secondary btn-xs" onclick = "memberDetail();">상세정보</button>
       		<button type="button" class="btn btn-secondary btn-xs" onclick = "stop('${m.email}');">정지</button>
       </c:if>
       </td>
