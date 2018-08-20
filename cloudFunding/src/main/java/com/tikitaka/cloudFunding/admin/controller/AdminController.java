@@ -29,6 +29,12 @@ public class AdminController {
 
 	@Autowired
 	AdminService adminservice;
+	
+	@RequestMapping("readyPage.do")
+	public String readyPage() {
+		
+		return "common/readypage";
+	}
 
 	@RequestMapping("adminMenuList.do") // 관리자 페이지 이동
 	public ModelAndView adminMenuList(ModelAndView mv, PagingVo paging,projectPagingVo pPaging,
