@@ -376,7 +376,7 @@
 	}
 	function shareTwitter() {
 		var content = "<c:out value='${project.title}'/>";
- 		var link = "<a href='http://localhost:8081/cloudFunding/projectDetail.do?projectCode=<c:out value='${project.projectCode}'/>'>여기로 이동</a>'";
+ 		var link = "http://localhost:8081/cloudFunding/projectDetail.do?projectCode=<c:out value='${project.projectCode}'/>";
 		var popOption = "width=370, height=360, resizable=no, scrollbars=no, status=no;";
 		var wp = window.open("http://twitter.com/share?text="+ encodeURIComponent(content) + "&url="
 				+ encodeURIComponent(link), 'twitter', popOption);

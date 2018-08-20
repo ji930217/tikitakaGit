@@ -208,13 +208,25 @@ public class ProjectController {
 		
 		mv.setViewName("project/detail/projectDetail");
 		return mv;
-		
 	}
+
 	@RequestMapping("projectPolicy.do")
 	public @ResponseBody ProjectVo projectPolicy(int projectCode){
 		ProjectVo project = projectService.selectProjectDetail(projectCode);
 		return project;
 	}
+	
+	@RequestMapping("searchProjectList.do")
+	public ModelAndView searchProjectList(String keyword, ModelAndView mv){
+		List<ProjectVo> list = projectService.searchProjectList(keyword);
+		
+		mv.addObject("keyword", keyword);
+		mv.addObject("list", list);
+		mv.setViewName("project/searchProjectList");
+		
+		return mv;
+	}
+	
 	
 	//, @RequestParam("items") String[] items
 	@RequestMapping("insertGift.do")

@@ -143,6 +143,12 @@ WHERE P_PROJECT_CODE = #{projectCode}
 	WHERE EMAIL = #{email}
 </select>
 
+<select id="searchProjectList" parameterType="string" resultMap="projectMap2">
+    SELECT * FROM PROJECT 
+    WHERE P_TITLE LIKE '%' || #{keyword} || '%'
+    OR P_CATEGORY LIKE '%' || #{keyword} || '%'
+</select>
+
 <select id="selectProjectGift" resultMap="projectMap" parameterType="int">
 SELECT P.EMAIL EMAIL,
 P.P_PROJECT_CODE P_PROJECT_CODE,
