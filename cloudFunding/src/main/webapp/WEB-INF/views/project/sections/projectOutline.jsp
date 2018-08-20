@@ -280,7 +280,7 @@
 										</div>
 										<form id="fileRepImg" action="projectImageUpdate.do" method="post" enctype="multipart/form-data">
 															<input id="file" type="file" accept="image/*" style="display: none;">
-														</form>
+										</form>
 													</div>
 												</div>
 											</div>
@@ -592,8 +592,10 @@
 																이미지 파일 선택하기
 																<!-- /react-text -->
 															</button>
+															<form id="projectImageform">
 															<input id="projectImageInput" type="file" accept="image/*"
 																style="display: none;">
+															</form>
 														</div>
 													</div>
 												</div>

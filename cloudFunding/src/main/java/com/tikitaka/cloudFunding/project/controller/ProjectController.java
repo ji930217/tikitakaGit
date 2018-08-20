@@ -80,7 +80,7 @@ public class ProjectController {
 	/*,produces="application/text; charset=utf-8"*/
 	@RequestMapping("projectUpdate.do" )
 	public @ResponseBody ProjectVo projectUpdate(ProjectVo projectVo,String projectTitle,String projectShortTitle,String date
-			,String item,String deletestr){
+			,String item,String deletestr ){
 		String ptitle = projectTitle+','+projectShortTitle;
 		HashMap params = new HashMap();
 		ProjectVo project=null;
@@ -119,9 +119,67 @@ public class ProjectController {
 		if(0<result){
 			project = projectService.selectProject(params);
 		}
+		return project;
+	}
+	@RequestMapping("projectVideo.do")
+	public @ResponseBody ProjectVo videoUpdate(MultipartHttpServletRequest mreq,@RequestParam("email") String email,
+			@RequestParam("projectNum") String projectNum, @RequestParam("updateNum") String updateNum,@RequestParam("projectCode") String projectCode){
+		
+		
+		MultipartFile file = mreq.getFile("file");
+		System.out.println(file.getOriginalFilename());
+		String root = mreq.getSession().getServletContext().getRealPath("resources");
+		String path = root + "\\video";
+		String filePath = "";
+		File oldFile = null;
+		File folder = new File(path);
+		
+		if(!folder.exists()){	
+			folder.mkdirs();
+		}
+		
+		HashMap params = new HashMap();
+		
+		params.put("userId", email);
+		params.put("projectNum",projectNum);
+		
+		ProjectVo project =null;
+		
+		project = projectService.selectProject(params);
+		
+		if(project.getDescriptionVideo()!=null && Integer.parseInt(updateNum)==16){
+			filePath = folder + "\\" +project.getDescriptionVideo();
+			oldFile = new File(filePath);
+			oldFile.delete();
+		}
+		
+		String rename =  new MyRenamePolicy().rename(file.getOriginalFilename());
+		
+		filePath = folder + "\\" + rename;
+		
+		try {
+			file.transferTo(new File(filePath));
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		
+		ProjectVo projectVo = new ProjectVo();
+		projectVo.setEmail(email);
+		projectVo.setProjectNum(Integer.parseInt(projectNum));
+		projectVo.setProjectCode(Integer.parseInt(projectCode));
+		projectVo.setDescriptionVideo(rename);
+		projectVo.setUpdateNum(Integer.parseInt(updateNum));
+		
+		int result = projectService.updateProject(projectVo);
+		
+		if(0<result){
+			System.out.println("업데이트 성공");
+			project = projectService.selectProject(params);
+		}
 		
 		return project;
 	}
+	
 	@RequestMapping("projectImageUpdate.do")
 	public @ResponseBody ProjectVo projectUpdate(MultipartHttpServletRequest mreq,@RequestParam("email") String email,
 			@RequestParam("projectNum") String projectNum, @RequestParam("updateNum") String updateNum,@RequestParam("projectCode") String projectCode){
@@ -266,5 +324,27 @@ public class ProjectController {
 			project = projectService.selectProjectGift(Integer.parseInt(projectCode));
 		}
 		return project;
+	}
+	
+	@RequestMapping("summerUpdate.do")
+	public ModelAndView summerUpdate(String projectNum, String email,String content,ModelAndView mv){
+		HashMap params = new HashMap();
+		params.put("userId", email.substring(email.indexOf("'")+1,email.lastIndexOf("'")));
+		params.put("projectNum",projectNum.substring(projectNum.indexOf("'")+1,projectNum.lastIndexOf("'")));
+		ProjectVo projectVo=null;
+		projectVo = projectService.selectProject(params);
+		
+		projectVo.setUpdateNum(15);
+		projectVo.setStory(content);
+		int result = projectService.updateProject(projectVo);
+		
+		if(0<result){
+			System.out.println(projectVo);
+			System.out.println("업데이트 성공");
+		}
+		
+		mv.addObject("project", projectVo);
+		mv.setViewName("project/projectForm");
+		return mv;
 	}
 }

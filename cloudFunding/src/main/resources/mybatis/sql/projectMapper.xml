@@ -260,6 +260,12 @@ FROM PROJECT WHERE  EMAIL = #{userId} AND P_PROJECT_NUMBER = #{projectNum}
       	<when test="updateNum==14">
       	SET P_BANK_TRADING = #{bankTrading} ,P_BANK_NAME =#{bankName} ,P_BANK_NUMBER= #{bankNumber},P_BANK_KINDS=#{bankKinds}
       	</when>
+      	<when test="updateNum==15">
+      	SET P_STORY = #{story}
+      	</when>
+      	<when test="updateNum==16">
+      	SET P_DESCRIPTION_VIDEO = #{descriptionVideo}
+      	</when>
       	<otherwise>
       	
       	
