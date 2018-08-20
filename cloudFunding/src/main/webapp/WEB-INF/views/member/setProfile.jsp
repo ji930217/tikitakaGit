@@ -68,6 +68,39 @@
 
 <script>
 
+	$(function(){
+		var member = new Object();
+		
+		
+		
+		member.email = "${user.email}";
+		member.name = "${user.name}";
+		member.password = "${user.password}";
+		member.profile_img = "${user.profile_img}";
+		member.enroll_date = "${user.enroll_date}";
+		member.location = "${user.location}";
+		member.shortDescription = "${user.shortDescription}";
+		member.homepage = "${user.homepage}";
+		member.phone1 = "${user.phone1}";
+		member.phone2 = "${user.phone2}";
+		member.phone3 = "${user.phone3}";
+		member.stopDate = "${user.stopDate}";
+		member.expDate = "${user.expDate}";
+	
+		if(member.location != null){
+			$("#user_fullname").val(member.name);
+			$("#user_locname").val(member.location);
+			$("#user_short_description").val(member.shortDescription);
+			$("#user_homepage").val(member.homepage);
+			$("#user_phone1").val(member.phone1);
+			$("#user_phone2").val(member.phone2);
+			$("#user_phone3").val(member.phone3);
+			
+			
+		}
+		
+		
+	});
 
 
 

@@ -10,6 +10,7 @@ import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
@@ -145,6 +146,19 @@ public class MemberController {
 		System.out.println(user);
 		if(user != null) {
 			session.setAttribute("user", user);
+			boolean isExpired = true;
+			
+			if(user.getExpDate() != null) {
+				long now = System.currentTimeMillis();
+				long exp = user.getExpDate().getTime();
+				
+				if(now < exp) {
+					isExpired = false;
+				}
+			}
+			
+			session.setAttribute("isExpired", isExpired);
+			
 			
 		}else {
 			
@@ -178,7 +192,12 @@ public class MemberController {
 	
 	
 	@RequestMapping("setProfile.do")
-	public String setProfile() {
+	public String setProfile(Model model, HttpServletRequest request) {
+		
+//		Member member = (Member)request.getAttribute("user");
+//		Member memberProfile = memberService.selectMemeber(member);		
+//		model.addAttribute("memberProfile", memberProfile);
+		
 		return "member/setProfile";
 	}
 	

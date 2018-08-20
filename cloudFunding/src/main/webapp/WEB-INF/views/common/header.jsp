@@ -809,7 +809,8 @@
 								<c:out value="${user.name } "/>
 							</span>
 							<span class="SiteHeader__ProfileImageWrapper-s1s56ls8-10 gqXDKx" data-reactid="32">
-								<img class="ProfileImg__ProfileImg-s1o99mme-0 ePsyRU" src="${user.profile_img }" width="42" height="42" />
+								<img class="ProfileImg__ProfileImg-s1o99mme-0 ePsyRU" 
+								src="${user.profile_img }" width="42" height="42" />
 							</span>
 						</a>
 						 					
@@ -831,17 +832,16 @@
 					</c:if>
 					
 					
-					
-					
-					<%-- <c:if test="${null ne user.stopDate && new Date() < user.expDate }">
+					<c:if test="${false eq isExpired }">
 						<a class="sc-htoDjs fQwQfp" data-reactid="30">
 							<span class="SiteHeader__ItemLabel-s1s56ls8-8 iGOIal" data-reactid="31">
 								정지된 계정입니다.
 							</span>
 							
 						</a>
+					</c:if>
 					
-					</c:if> --%>
+					
 					
 					
 					
