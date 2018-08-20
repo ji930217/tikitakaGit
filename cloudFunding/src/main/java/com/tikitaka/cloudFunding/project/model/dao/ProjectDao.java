@@ -57,5 +57,9 @@ public class ProjectDao {
 	public List<ProjectVo> selectPopularList() {
 		return sqlSession.selectList("projectMapper.selectPopularList");
 	}
+	
+	public int selectSupportedCount(String email) {
+		return sqlSession.selectOne("projectMapper.selectSupportedCount",email);
+	}
 
 }

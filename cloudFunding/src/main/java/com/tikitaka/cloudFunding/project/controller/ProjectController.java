@@ -194,16 +194,18 @@ public class ProjectController {
 		return project;
 	}
 	
-	
 	@RequestMapping("projectDetail.do")
 	public ModelAndView selectProjectDetail(int projectCode, ModelAndView mv){
 		ProjectVo project = projectService.selectProjectGift(projectCode);
 		List<PostVo> postList = cService.selectPostList(projectCode);
-		
 		int count = cService.selectPostCount(projectCode);
+		int supportedCount = projectService.selectSupportedCount(project.getEmail());
+		
 		mv.addObject("count", count);
 		mv.addObject("project", project);
 		mv.addObject("postList", postList);
+		mv.addObject("supportedCount", supportedCount);
+		
 		mv.setViewName("project/detail/projectDetail");
 		return mv;
 		

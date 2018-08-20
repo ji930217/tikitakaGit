@@ -289,8 +289,7 @@
 		<div class="ProjectPage__SubColumnInner-b1letw-5 deZznN">
 			<div class="Card__Card-s1i1esb8-0 bJXRvz">
 				<div class="CreatorCard__CreatorCardInner-yeytpy-0 cBbkfc">
-					<div class="CreatorCard__CreatorCardLabel-yeytpy-1 fuCNpE">창작자
-						소개</div>
+					<div class="CreatorCard__CreatorCardLabel-yeytpy-1 fuCNpE">창작자	소개</div>
 					<div class="CreatorCard__CreatorProfile-yeytpy-2 eYscdN">
 						<span class="ProfileImg__ProfileImg-s1o99mme-0 owWgL">
 							<img class="ProfileImg__ProfileImg-s1o99mme-0 owWgL" src="<c:out value='${project.profileImg }'/>"/>
@@ -308,8 +307,7 @@
 						진행한 프로젝트&nbsp;&nbsp;
 						<b><c:out value="${project.projectNum }"/></b>
 						&nbsp;&nbsp;&nbsp;&nbsp; 밀어준 프로젝트&nbsp;&nbsp;
-						<!-- 밀어준건 후원현황 테이블에서 이메일(project.email)을 조건으로 해서 count 값 조회 -->
-						<b>0</b>
+						<b><c:out value="${supportedCount }"/></b>
 					</div>
 					<div class="CreatorCard__CreatorContactButton-yeytpy-6 khYIRi">
 						<button class="Button__Button-s1ng5xda-0 dxWcyc" onclick="openMessagePopup();">
@@ -357,10 +355,13 @@
 										</div>
 									</div>
 									<div class="RewardCard__Items-ibjars-10 iYIWgz">
-										<li class="RewardCard__ItemList-ibjars-11 gSgsr">
-											<c:out value="${gift.item }"/>&nbsp;
-											<span>( x 1 )</span>
-										</li>
+										<c:set var="items" value="${gift.item.split(', ') }"/>
+										<c:forEach var="item" items="${items }">
+											<li class="RewardCard__ItemList-ibjars-11 gSgsr">
+												<c:out value="${item }"/>&nbsp;
+												<!-- <span>( x 1 )</span> -->
+											</li>
+										</c:forEach>
 									</div>
 									<div class="RewardCard__DeliveryDate-ibjars-12 chNsfw">
 										<span>

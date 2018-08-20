@@ -58,4 +58,9 @@ public class ProjectService {
 		return dao.selectPopularList();
 	}
 
+	public int selectSupportedCount(String email) {
+		return dao.selectSupportedCount(email);
+	}
+
+
 }

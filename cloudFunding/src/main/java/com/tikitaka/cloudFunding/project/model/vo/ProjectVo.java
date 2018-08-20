@@ -303,7 +303,6 @@ public class ProjectVo {
 		this.currentAmount = currentAmount;
 	}
 
-
 	public int getSupportCount() {
 		return supportCount;
 	}
@@ -329,7 +328,8 @@ public class ProjectVo {
 				+ ", story=" + story + ", pEmail=" + pEmail + ", pPhone=" + pPhone + ", bankTrading=" + bankTrading
 				+ ", bankName=" + bankName + ", bankNumber=" + bankNumber + ", bankKinds=" + bankKinds + ", pConfirm="
 				+ pConfirm + ", sendConfirm=" + sendConfirm + ", currentAmount=" + currentAmount + ", updateNum="
-				+ updateNum + ", supportCount=" + supportCount + ", enrollDate=" + enrollDate + ", giftArry=" + giftArry + "]";
+				+ updateNum + ", supportCount=" + supportCount + ", enrollDate=" + enrollDate + ", giftArry=" + giftArry + "]"
+				+ super.toString() + "]";
 	}
 
 

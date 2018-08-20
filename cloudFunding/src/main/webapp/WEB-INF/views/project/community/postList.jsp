@@ -415,6 +415,7 @@
 				}, beforeSend:function(){
 			        $(".loadingIndicator").css("display", "inline-block");  
 			        $(".dLYLGx").css("margin", "2rem 0"); 
+			        $(".tojyI").css("display", "none");
 			    }, complete:function(){
 			        $(".loadingIndicator").css("display", "none");  
 					$(".dLYLGx").css("margin", "unset"); 
