@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -32,20 +33,20 @@
 								class="_2dKJQZGqcB1T0xe0DzKY0H _152MAijd_UogerBKCVqZR_ _1lLHKI5v9AoCyeggtffvGZ">
 								<h3 class="_13KHfN73YmQgsYHxXvuh_J -UobvSeyUG6cEWYnht50S">
 									<!-- react-text: 8321 -->
-									tlsdml7410@gmail.com
+									<c:out value="${project.email}"/>
 									<!-- /react-text -->
 									<!-- react-text: 8322 -->
 									<!-- /react-text -->
-									<span
+									<!-- <span
 										class="_13KHfN73YmQgsYHxXvuh_J _2-N-uV2y5apkjtxqdVnsop _1Qdv504-1XMeYXZyb0xQZT _3sFSjAZS4gQdCAyN3OfyFG _3D9sfZXrWd8it3eUCuCTc8"><i
 										class="-o8oGI_QAOKsVIJOUOUmV _1QY7TzdLHKX3-BKPDNNYKF"></i>
-									<!-- react-text: 8325 -->인증됨<!-- /react-text --></span>
+									react-text: 8325인증됨/react-text</span> -->
 								</h3>
 							</div>
 							<div
 								class="_2joJTlnkt26WGpxyvkNuCH _152MAijd_UogerBKCVqZR_ WU1ox0-AeDX_zneKjnNMO _3G8CRXtomRhisiZsw7Spx- _1lLHKI5v9AoCyeggtffvGZ">
 								<a><i class="_1QY7TzdLHKX3-BKPDNNYKF w6FPSPr8JA6xb8SSjkPtI"></i>
-								<!-- react-text: 8329 --> 수정하기<!-- /react-text --></a>
+								<!-- react-text: 8329 --> 확인하기<!-- /react-text --></a>
 							</div>
 						</div>
 					</div>
@@ -61,25 +62,25 @@
 								<!-- /react-text -->
 								<div
 									class="_13KHfN73YmQgsYHxXvuh_J _3lIDndOaEWwBcdNUKuMYOQ _152MAijd_UogerBKCVqZR_ _3_IGkn3uaje0g2ZA6Tx9wd _3nB1fZxEqXMiqXF-c7b1XQ">
-									<input type="text" value="tlsdml7410@gmail.com">
+									<input class="emailInput" type="text" value="<c:out value='${project.email }'/>" readonly>
 								</div>
 								<div class="_13KHfN73YmQgsYHxXvuh_J _3ZTEzsKL-qDLECUGq4QcLv">
 									<div
 										class=" _152MAijd_UogerBKCVqZR_ WU1ox0-AeDX_zneKjnNMO _3G8CRXtomRhisiZsw7Spx- _1lLHKI5v9AoCyeggtffvGZ">
-										<button
+										<!-- <button
 											class="closeBtn _13KHfN73YmQgsYHxXvuh_J _2-N-uV2y5apkjtxqdVnsop _3SbGdzxKM6M_AeOQWLNqks">
 											<i class="RyvusKQjJRQNgaH8kOM4J _1QY7TzdLHKX3-BKPDNNYKF"></i>
-											<!-- react-text: 9215 -->
+											react-text: 9215
 											취소하기
-											<!-- /react-text -->
+											/react-text
 										</button>
 										<button
-											class="_13KHfN73YmQgsYHxXvuh_J _2-N-uV2y5apkjtxqdVnsop _1j452e49HyLjnC-u8oPCHq _3SbGdzxKM6M_AeOQWLNqks">
+											class="emailBtn _13KHfN73YmQgsYHxXvuh_J _2-N-uV2y5apkjtxqdVnsop _1j452e49HyLjnC-u8oPCHq _3SbGdzxKM6M_AeOQWLNqks">
 											<i class="_3YmAkQhwzI7o-uUWz_8Mp4 _1QY7TzdLHKX3-BKPDNNYKF"></i>
-											<!-- react-text: 9218 -->
-											인증메일 받기
-											<!-- /react-text -->
-										</button>
+											react-text: 9218
+											저장하기
+											/react-text
+										</button> -->
 									</div>
 								</div>
 							</div>
@@ -94,13 +95,16 @@
 						<div class="_13KHfN73YmQgsYHxXvuh_J _12TAeoYDPLF0sfa3UIt6uZ _3ZTEzsKL-qDLECUGq4QcLv" style="cursor: pointer;">
 							
 							<div class="_2dKJQZGqcB1T0xe0DzKY0H _152MAijd_UogerBKCVqZR_ _1lLHKI5v9AoCyeggtffvGZ">
+								<div class="telDiv">
 								<a><i class="_3WyCNpfRrfze5XqBAKgG6j WU1ox0-AeDX_zneKjnNMO _1QY7TzdLHKX3-BKPDNNYKF"></i>
 								<!-- react-text: 8338 -->연락을 위한 휴대폰 번호를 입력해주세요<!-- /react-text --></a>
+								<h3 style="display:none;"></h3>
+								</div>
 							</div>
 							<div
-								class="_2joJTlnkt26WGpxyvkNuCH _152MAijd_UogerBKCVqZR_ WU1ox0-AeDX_zneKjnNMO _3G8CRXtomRhisiZsw7Spx- _1lLHKI5v9AoCyeggtffvGZ">
+								class="telMode _2joJTlnkt26WGpxyvkNuCH _152MAijd_UogerBKCVqZR_ WU1ox0-AeDX_zneKjnNMO _3G8CRXtomRhisiZsw7Spx- _1lLHKI5v9AoCyeggtffvGZ">
 								<a><i class="w6FPSPr8JA6xb8SSjkPtI _1QY7TzdLHKX3-BKPDNNYKF"></i>
-								<!-- react-text: 8342 --> 인증하기<!-- /react-text --></a>
+								<!-- react-text: 8342 --> 입력하기<!-- /react-text --></a>
 							</div>
 						</div>
 					</div>
@@ -116,7 +120,7 @@
 										<!-- /react-text -->
 										<div
 											class="_13KHfN73YmQgsYHxXvuh_J _3_IGkn3uaje0g2ZA6Tx9wd O-evLfgVQbD3QZA_PvfT_ _152MAijd_UogerBKCVqZR_ _3nB1fZxEqXMiqXF-c7b1XQ ">
-											<input type="tel" value="" placeholder="0101234567">
+											<input class="telInput" type="tel" value="" placeholder="010-1234-5678">
 										</div>
 										<div class="_13KHfN73YmQgsYHxXvuh_J _3ZTEzsKL-qDLECUGq4QcLv">
 											<div
@@ -129,7 +133,7 @@
 													<!-- /react-text -->
 												</button>
 												<button
-													class="_13KHfN73YmQgsYHxXvuh_J _3SbGdzxKM6M_AeOQWLNqks _18T1PLssfUK23Oz9uVd0fv _1j452e49HyLjnC-u8oPCHq">
+													class="telInBtn _13KHfN73YmQgsYHxXvuh_J _3SbGdzxKM6M_AeOQWLNqks _18T1PLssfUK23Oz9uVd0fv _1j452e49HyLjnC-u8oPCHq">
 													<i class="_30LNYFhw6qsigZSbwlGCDz _1QY7TzdLHKX3-BKPDNNYKF"></i>
 													<!-- react-text: 9539 -->
 													저장하기
@@ -165,13 +169,16 @@
 							<div
 								class="_2dKJQZGqcB1T0xe0DzKY0H _152MAijd_UogerBKCVqZR_ _1lLHKI5v9AoCyeggtffvGZ">
 								<div>
+									<div class="bankDiv">
 									<a><i
 										class="_3WyCNpfRrfze5XqBAKgG6j WU1ox0-AeDX_zneKjnNMO _1QY7TzdLHKX3-BKPDNNYKF"></i>
 									<!-- react-text: 8355 --> 후원금을 수령할 은행 계좌를 등록해주세요<!-- /react-text --></a>
+									<h3 style="display:none;"></h3>
+									</div>
 								</div>
 							</div>
 							<div
-								class="_2joJTlnkt26WGpxyvkNuCH _152MAijd_UogerBKCVqZR_ WU1ox0-AeDX_zneKjnNMO _3G8CRXtomRhisiZsw7Spx- _1lLHKI5v9AoCyeggtffvGZ">
+								class="bankMode _2joJTlnkt26WGpxyvkNuCH _152MAijd_UogerBKCVqZR_ WU1ox0-AeDX_zneKjnNMO _3G8CRXtomRhisiZsw7Spx- _1lLHKI5v9AoCyeggtffvGZ">
 								<a><i class="w6FPSPr8JA6xb8SSjkPtI _1QY7TzdLHKX3-BKPDNNYKF"></i>
 								<!-- react-text: 8359 -->등록하기<!-- /react-text --></a>
 							</div>
@@ -200,7 +207,7 @@
 											<div class="_2kFYk6JzqvHcH7GPoomy2s">
 												<div>
 													<select
-														class="_13KHfN73YmQgsYHxXvuh_J _3_IGkn3uaje0g2ZA6Tx9wd _3vQWHh2J_erdzly2Ip3e87"><option
+														class="bankNameSelect _13KHfN73YmQgsYHxXvuh_J _3_IGkn3uaje0g2ZA6Tx9wd _3vQWHh2J_erdzly2Ip3e87"><option
 															disabled="" value="은행을 선택하세요">은행을 선택하세요</option>
 														<option value="KDB산업은행">KDB산업은행</option>
 														<option value="BOA">BOA</option>
@@ -240,7 +247,7 @@
 													<div>
 														<div
 															class="_13KHfN73YmQgsYHxXvuh_J _3_IGkn3uaje0g2ZA6Tx9wd _3nB1fZxEqXMiqXF-c7b1XQ  ">
-															<input type="text" value="" placeholder="">
+															<input class="bankNameInput" type="text" value="" placeholder="">
 															<!-- react-text: 9301 -->
 															<!-- /react-text -->
 														</div>
@@ -265,7 +272,7 @@
 													<div>
 														<div
 															class="_13KHfN73YmQgsYHxXvuh_J _3_IGkn3uaje0g2ZA6Tx9wd _3nB1fZxEqXMiqXF-c7b1XQ  _1QY7TzdLHKX3-BKPDNNYKF">
-															<input type="text" value="" placeholder=""><i
+															<input class="bankNumInput" type="text" value="" placeholder=""><i
 																class="_5njYujG6OOxwCaFtExFoA _1QY7TzdLHKX3-BKPDNNYKF"></i>
 														</div>
 													</div>
@@ -308,30 +315,6 @@
 											</div>
 											<div class="_13KHfN73YmQgsYHxXvuh_J _4S0ikJ5kL9iaC8TQbNr2J"></div>
 										</div>
-										<div class="_3_IGkn3uaje0g2ZA6Tx9wd">
-											<label>예금주 생년월일</label>
-											<p>입력하신 생년월일은 입금 계좌를 인증하는데 사용됩니다.</p>
-											<div class="_2j8ngxpI9ltphQ5HCQFs15">
-												<div style="width: 100%;">
-													<div>
-														<div
-															class="_13KHfN73YmQgsYHxXvuh_J _3_IGkn3uaje0g2ZA6Tx9wd _3nB1fZxEqXMiqXF-c7b1XQ  _1QY7TzdLHKX3-BKPDNNYKF">
-															<input type="text" value="" placeholder=""><i
-																class="_5njYujG6OOxwCaFtExFoA _1QY7TzdLHKX3-BKPDNNYKF"></i>
-														</div>
-													</div>
-													<div style="display: flex; justify-content: space-between;">
-														<div>
-															<span
-																class="_13KHfN73YmQgsYHxXvuh_J _3WyCNpfRrfze5XqBAKgG6j _1Qdv504-1XMeYXZyb0xQZT _3D9sfZXrWd8it3eUCuCTc8">숫자로만
-																입력해주세요 (예시: 820123)</span>
-														</div>
-														<!-- react-text: 9347 -->
-														<!-- /react-text -->
-													</div>
-												</div>
-											</div>
-										</div>
 									</div>
 									<div class="_13KHfN73YmQgsYHxXvuh_J _3ZTEzsKL-qDLECUGq4QcLv">
 										<div
@@ -344,7 +327,7 @@
 												<!-- /react-text -->
 											</button>
 											<button
-												class="_13KHfN73YmQgsYHxXvuh_J _3SbGdzxKM6M_AeOQWLNqks _2-N-uV2y5apkjtxqdVnsop _1j452e49HyLjnC-u8oPCHq"
+												class="bankBtn _13KHfN73YmQgsYHxXvuh_J _3SbGdzxKM6M_AeOQWLNqks _2-N-uV2y5apkjtxqdVnsop _1j452e49HyLjnC-u8oPCHq"
 												disabled="">
 												<i class="-o8oGI_QAOKsVIJOUOUmV _1QY7TzdLHKX3-BKPDNNYKF"></i>
 												<!-- react-text: 9354 -->

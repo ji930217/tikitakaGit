@@ -120,7 +120,7 @@ public class ProjectController {
 	}
 	@RequestMapping("projectImageUpdate.do")
 	public @ResponseBody ProjectVo projectUpdate(MultipartHttpServletRequest mreq,@RequestParam("email") String email,
-			@RequestParam("projectNum") String projectNum, @RequestParam("updateNum") String updateNum){
+			@RequestParam("projectNum") String projectNum, @RequestParam("updateNum") String updateNum,@RequestParam("projectCode") String projectCode){
 		
 		
 		
@@ -169,6 +169,7 @@ public class ProjectController {
 		ProjectVo projectVo = new ProjectVo();
 		projectVo.setEmail(email);
 		projectVo.setProjectNum(Integer.parseInt(projectNum));
+		projectVo.setProjectCode(Integer.parseInt(projectCode));
 		
 		if(Integer.parseInt(updateNum)==2){
 			projectVo.setRepImg(rename);

@@ -15,9 +15,9 @@
 
 <insert id="insertProject" parameterType="Member">
 	INSERT INTO PROJECT 
-	(EMAIL,P_PROJECT_CODE,P_PROJECT_NUMBER,P_NAME,P_EMAIL,P_PRICE,P_END_DATE,P_OK,P_SEND_CONFIRM,P_CURRENTAMOUNT)  
+	(EMAIL,P_PROJECT_CODE,P_PROJECT_NUMBER,P_NAME,P_EMAIL,P_PRICE,P_END_DATE,P_OK,P_SEND_CONFIRM,P_CURRENTAMOUNT,P_SPONSOR_COUNT,P_ENROLL_DATE)  
 	VALUES
-	(#{email},SEQ_P_NUM.NEXTVAL,(select count(*) from project where EMAIL = #{email})+1,#{name},#{email},0,SYSDATE,'F','F',0)
+	(#{email},SEQ_P_NUM.NEXTVAL,(select count(*) from project where EMAIL = #{email})+1,#{name},#{email},0,SYSDATE,'0','F',0,0,SYSDATE)
 </insert>
 
 <insert id="insertGift" parameterType="Gift">
@@ -175,12 +175,18 @@ FROM PROJECT WHERE  EMAIL = #{userId} AND P_PROJECT_NUMBER = #{projectNum}
       	<when test="updateNum==11">
       	SET P_REFUND = #{refund}
       	</when>
+      	<when test="updateNum==13">
+      	SET P_PHONE = #{pPhone}
+      	</when>
+      	<when test="updateNum==14">
+      	SET P_BANK_TRADING = #{bankTrading} ,P_BANK_NAME =#{bankName} ,P_BANK_NUMBER= #{bankNumber},P_BANK_KINDS=#{bankKinds}
+      	</when>
       	<otherwise>
       	
       	
     	</otherwise>
 	</choose>
-	 WHERE EMAIL = #{email} AND P_PROJECT_NUMBER=#{projectNum}
+	 WHERE P_PROJECT_CODE=#{projectCode}
 </update>
 
 <delete id="deleteProjectGift" parameterType="int">

@@ -3350,6 +3350,7 @@ px
 					"projectNum" : <c:out value="${project.projectNum}"/>,
 					"projectTitle" : $("#projectTitle").val(),
 					"projectShortTitle" : $("#projectShortTitle").val(),
+					"projectCode" : <c:out value="${project.projectCode}"/>,
 				},
 				success : function(data) {
 					var index = data.title.indexOf(',');
@@ -3399,6 +3400,7 @@ px
 				data : {
 					"updateNum":3,
 					"email" : '<c:out value="${user.email }"/>',
+					"projectCode" : <c:out value="${project.projectCode}"/>,
 					"projectNum" : <c:out value="${project.projectNum}"/>,
 					"summary":$("#projectSummary").val(),
 				},
@@ -3432,6 +3434,7 @@ px
 			formData.append("email",'${project.email}');
 			formData.append("projectNum",'${project.projectNum}');
 			formData.append("updateNum",'2');
+			formData.append("projectCode",'${project.projectCode}');
 			 $.ajax({
 	                url:'projectImageUpdate.do',
 	                processData: false,
@@ -3476,6 +3479,7 @@ px
 				data : {
 					"updateNum":4,
 					"email" : '<c:out value="${user.email }"/>',
+					"projectCode" : <c:out value="${project.projectCode}"/>,
 					"projectNum" : <c:out value="${project.projectNum}"/>,
 					"category":$(".category").val(),
 				},
@@ -3506,6 +3510,7 @@ px
 			formData.append("email",'${project.email}');
 			formData.append("projectNum",'${project.projectNum}');
 			formData.append("updateNum",'5');
+			formData.append("projectCode",'${project.projectCode}');
 			 $.ajax({
 	                url:'projectImageUpdate.do',
 	                processData: false,
@@ -3548,6 +3553,7 @@ px
 				data : {
 					"updateNum":6,
 					"email" : '<c:out value="${user.email }"/>',
+					"projectCode" : <c:out value="${project.projectCode}"/>,
 					"projectNum" : <c:out value="${project.projectNum}"/>,
 					"name":$("#MCName").val(),
 				},
@@ -3589,6 +3595,7 @@ px
 				data : {
 					"updateNum":7,
 					"email" : '<c:out value="${user.email }"/>',
+					"projectCode" : <c:out value="${project.projectCode}"/>,
 					"projectNum" : <c:out value="${project.projectNum}"/>,
 					"introduce":$("#MCIntroduce").val(),
 				},
@@ -3683,6 +3690,7 @@ px
 				data : {
 					"updateNum":8,
 					"email" : '<c:out value="${user.email }"/>',
+					"projectCode" : <c:out value="${project.projectCode}"/>,
 					"projectNum" : <c:out value="${project.projectNum}"/>,
 					"price":$("#fundingGoalAmountInput").val(),
 				},
@@ -3733,6 +3741,7 @@ px
 				data : {
 					"updateNum":9,
 					"email" : '<c:out value="${user.email }"/>',
+					"projectCode" : <c:out value="${project.projectCode}"/>,
 					"projectNum" : <c:out value	="${project.projectNum}"/>,
 					"date" :$("#deadlineDate").val(),
 				},
@@ -3796,6 +3805,7 @@ px
 				data : {
 					"updateNum":10,
 					"email" : '<c:out value="${user.email }"/>',
+					"projectCode" : <c:out value="${project.projectCode}"/>,
 					"projectNum" : <c:out value	="${project.projectNum}"/>,
 					"item" :$("#modalItemInput").val(),
 				},
@@ -3902,6 +3912,7 @@ px
 			data : {
 				"updateNum":11,
 				"email" : '<c:out value="${user.email }"/>',
+				"projectCode" : <c:out value="${project.projectCode}"/>,
 				"projectNum" : <c:out value	="${project.projectNum}"/>,
 				"refund" :$("#RefundTextArea").val(),
 			},
@@ -3919,19 +3930,113 @@ px
 			error : function(e) {
 				console.log('ajax에러');
 			}
-			})
+			});
 		});
 		
 		
 		$(".itemSendBtn").click(function(){
 			itemSend();
 		});
+		
+		/* $(".emailBtn").click(function(){
+			
+		}); */
+		
+		$(".telInBtn").click(function(){
+			var regExp = /^\d{3}-\d{3,4}-\d{4}$/;
+			if ( !regExp.test($(".telInput").val())) {
+			      alert("잘못된 휴대폰 번호입니다. 숫자, - 를 포함한 숫자만 입력하세요.");
+			      return;
+			}
+			$.ajax({
+				url : 'projectUpdate.do',
+				type : 'post',
+				data : {
+					"updateNum":13,
+					"email" : '<c:out value="${user.email }"/>',
+					"projectCode" : <c:out value="${project.projectCode}"/>,
+					"projectNum" : <c:out value	="${project.projectNum}"/>,
+					"pPhone" :$(".telInput").val(),
+				},
+				success : function(data) {
+					$(".telDiv").children('h3').text('');
+					$(".telDiv").children('h3').append(data.pPhone);
+					$(".telDiv").children('h3').css('display','inline-block');
+					$(".telDiv").children('a').remove();
+					$(".telMode").children('a').text('');
+					$(".telMode").children('a').append("<i class='w6FPSPr8JA6xb8SSjkPtI _1QY7TzdLHKX3-BKPDNNYKF'></i>"+'수정하기');
+					$(".addD").hide();
+					$(".defaultD").show();
+					blue(data);
+				},
+				error : function(e) {
+					console.log('ajax에러');
+				}
+				});
+			
+			
+		});
+		
+		$(".bankNameInput").keyup(function(){
+			$(".bankBtn").attr("disabled",false);	
+		});
+		$('input[name="depositAccountType"]').change(function(){
+			currentPage='#accountSetup';
+		});
+		
+		 $(".bankBtn").click(function(){
+			var bankNameSelect=$(".bankNameSelect").val();
+			var bankNameInput=$(".bankNameInput").val();
+			var bankNumInput=$(".bankNumInput").val();
+			var radio = $('input[name="depositAccountType"]:checked').val();
+			var regExp = /(5[1-5]\d{14})|(4\d{12})(\d{3}?)|3[47]\d{13}|(6011\d{12})/; 
+			console.log();
+			 if(""==bankNameInput||""==bankNumInput||"undefined"==radio){
+				alert("계좌 정보는 필수 입력 정보 입니다.");
+				return;
+			} 
+			
+			 if(!regExp.test(bankNumInput)){
+				alert("계좌 번호를 확인해 주세요.");
+				return;
+			} 
+			 
+			  $.ajax({
+					url : 'projectUpdate.do',
+					type : 'post',
+					data : {
+						"updateNum":14,
+						"email" : '<c:out value="${user.email }"/>',
+						"projectCode" : <c:out value="${project.projectCode}"/>,
+						"projectNum" : <c:out value	="${project.projectNum}"/>,
+						"bankTrading":bankNameSelect,
+						"bankName":bankNameSelect,
+						"bankNumber":bankNumInput,
+						"bankKinds":radio=="personal"?'P':'B',
+					},
+					success : function(data) {
+						currentPage='#accountSetup';
+						$(".bankDiv").children('h3').text('');
+						$(".bankDiv").children('h3').append(data.bankTrading);
+						$(".bankDiv").children('h3').css('display','inline-block');
+						$(".bankDiv").children('a').remove();
+						$(".bankMode").children('a').text('');
+						$(".bankMode").children('a').append("<i class='w6FPSPr8JA6xb8SSjkPtI _1QY7TzdLHKX3-BKPDNNYKF'></i>"+'수정하기');
+						$(".addD").hide();
+						$(".defaultD").show();
+						blue(data);
+					},
+					error : function(e) {
+						console.log('실패');
+					}
+					}); 
+		}); 
+		
 	});
 				var itemListLength=0;
 				function blue(pro){
 					if(null != pro.title && null != pro.repImg &&null != pro.summary &&
 							null != pro.category &&null != pro.profileImg&&null != pro.name&&null != pro.introduce){
-						console.log("파란불");
 						$(".row1").children('i').remove();
 						$(".row1").prepend("<i class='_13KHfN73YmQgsYHxXvuh_J _1oJMWnMCW_Y6GmNc1mhqaW _3sFSjAZS4gQdCAyN3OfyFG -o8oGI_QAOKsVIJOUOUmV _254YPhBOB9qv7-J8bIg7co _1QY7TzdLHKX3-BKPDNNYKF'></i>");
 					}
@@ -4043,6 +4148,7 @@ px
 			data : {
 				"updateNum":12,
 				"email" : '<c:out value="${user.email }"/>',
+				"projectCode" : <c:out value="${project.projectCode}"/>,
 				"projectNum" : <c:out value	="${project.projectNum}"/>,
 				"deletestr" :deletestr,
 			},
