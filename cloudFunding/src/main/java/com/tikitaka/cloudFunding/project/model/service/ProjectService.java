@@ -48,4 +48,9 @@ public class ProjectService {
 		return dao.deleteGift(giftCode);
 	}
 
+	public int selectSupportedCount(String email) {
+		return dao.selectSupportedCount(email);
+	}
+
+
 }

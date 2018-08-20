@@ -3,7 +3,6 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/functions" prefix="fn" %>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %> 
-<jsp:useBean id="now" class="java.util.Date" />
 
 <!DOCTYPE html>
 <html>
@@ -377,15 +376,15 @@
 	}
 	function shareTwitter() {
 		var content = "<c:out value='${project.title}'/>";
-		var link = "http://localhost:8081/cloudFunding/projectDetail.do?projectCode=<c:out value='${project.projectCode}'/>";
+ 		var link = "<a href='http://localhost:8081/cloudFunding/projectDetail.do?projectCode=<c:out value='${project.projectCode}'/>'>여기로 이동</a>'";
 		var popOption = "width=370, height=360, resizable=no, scrollbars=no, status=no;";
-		var wp = window.open("http://twitter.com/share?url="
-				+ encodeURIComponent(link) + "&text="
-				+ encodeURIComponent(content), 'twitter', popOption);
+		var wp = window.open("http://twitter.com/share?text="+ encodeURIComponent(content) + "&url="
+				+ encodeURIComponent(link), 'twitter', popOption);
 		if (wp) {
 			wp.focus();
-		}
+		}	
 	}
+	
 	function shareFacebook() {
 		var content = "<c:out value='${project.title}'/>";
 		var link = "http://localhost:8081/cloudFunding/projectDetail.do?projectCode=<c:out value='${project.projectCode}'/>";
@@ -574,16 +573,17 @@
 								남은시간
 							</div>
 							<div	class="ProjectIntroduction__StatusValue-c7b94s-16 bvKOwU"  data-reactid="66">
-								
-									<%-- <fmt:parseNumber value="${(now.time - project.endDate) / (1000*60*60*24) }" integerOnly="true" /> --%>
-								
+								<jsp:useBean id="now" class="java.util.Date" />
+								<c:set var="DateData" value="${project.endDate }"/>
+								<fmt:parseNumber var="remain" value="${( DateData.time-now.time ) / (1000*60*60*24) }" integerOnly="true" />
+								<c:out value="${remain }"/>
 								<span class="ProjectIntroduction__Small-c7b94s-18 ihuRTA" data-reactid="68">일</span>
 							</div>
 						</div>
 						<div class="ProjectIntroduction__Metric-c7b94s-14 leXkjY"	data-reactid="69">
 							<div	class="ProjectIntroduction__StatusTitle-c7b94s-15 htCDgL" data-reactid="70">후원자</div>
 							<div	class="ProjectIntroduction__StatusValue-c7b94s-16 bvKOwU" data-reactid="71">
-								
+								<c:out value="${project.sponsorCount }"/>
 								<span class="ProjectIntroduction__Small-c7b94s-18 ihuRTA" data-reactid="73">명</span>
 							</div>
 						</div>

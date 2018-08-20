@@ -34,6 +34,7 @@ public class ProjectVo {
 	private String sendConfirm; //송금여부확인
 	private int currentAmount; // 현재금액
 	private int updateNum;
+	private int sponsorCount;
 	private List <GiftVo> giftArry;
 	
 	public ProjectVo() {}
@@ -301,7 +302,13 @@ public class ProjectVo {
 		this.currentAmount = currentAmount;
 	}
 
+	public int getSponsorCount() {
+		return sponsorCount;
+	}
 
+	public void setSponsorCount(int sponsorCount) {
+		this.sponsorCount = sponsorCount;
+	}
 
 	@Override
 	public String toString() {
@@ -312,7 +319,8 @@ public class ProjectVo {
 				+ ", story=" + story + ", pEmail=" + pEmail + ", pPhone=" + pPhone + ", bankTrading=" + bankTrading
 				+ ", bankName=" + bankName + ", bankNumber=" + bankNumber + ", bankKinds=" + bankKinds + ", pConfirm="
 				+ pConfirm + ", sendConfirm=" + sendConfirm + ", currentAmount=" + currentAmount + ", updateNum="
-				+ updateNum + ", giftArry=" + giftArry + "]";
+				+ updateNum + ", sponsorCount=" + sponsorCount + ", giftArry=" + giftArry + ", toString()="
+				+ super.toString() + "]";
 	}
 
 
