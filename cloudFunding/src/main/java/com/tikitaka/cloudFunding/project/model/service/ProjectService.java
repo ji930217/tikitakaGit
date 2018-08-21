@@ -70,6 +70,10 @@ public class ProjectService {
 		return dao.searchProjectByCategory(category);
 	}
 
+	public List<ProjectVo> selectPopularList4(int btnIdx) {
+		return dao.selectPopularList4(btnIdx);
+	}
+
 
 
 }

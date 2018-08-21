@@ -49,6 +49,12 @@ public class ProjectController {
 		mv.setViewName("project/popularList");
 		return mv;
 	}
+	
+	@RequestMapping("popularList4.do")
+	public @ResponseBody List<ProjectVo> popularList4(int btnIdx, ModelAndView mv){
+		List<ProjectVo> list = projectService.selectPopularList4(btnIdx);
+		return list;
+	}
 
 	@RequestMapping("projectStart.do")
 	public String projectStart(){
