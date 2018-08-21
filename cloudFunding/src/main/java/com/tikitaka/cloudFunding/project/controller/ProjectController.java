@@ -34,8 +34,8 @@ public class ProjectController {
 	CommunityService cService;
 
 	@RequestMapping("projectList.do")
-	public ModelAndView projectList(ModelAndView mv){
-		List<ProjectVo> list = projectService.selectprojectList();
+	public ModelAndView projectList(String condition,ModelAndView mv){
+		List<ProjectVo> list = projectService.selectprojectList(condition);
 		mv.addObject("list", list);
 		mv.setViewName("project/projectList");
 		return mv;

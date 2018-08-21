@@ -50,8 +50,8 @@ public class ProjectService {
 		return dao.deleteGift(giftCode);
 	}
 
-	public List<ProjectVo> selectprojectList() {
-		return dao.selectProjectList();
+	public List<ProjectVo> selectprojectList(String condition) {
+		return dao.selectProjectList(condition);
 	}
 
 	public List<ProjectVo> selectPopularList() {
