@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -35,14 +36,32 @@
 								style="cursor: pointer;">
 								<div
 									class="videoHint _2dKJQZGqcB1T0xe0DzKY0H _152MAijd_UogerBKCVqZR_ _1lLHKI5v9AoCyeggtffvGZ">
-									<a><i
+									<a>
+									<c:if test="${null eq project.descriptionVideo }">
+									<i
 										class="_3WyCNpfRrfze5XqBAKgG6j WU1ox0-AeDX_zneKjnNMO _1QY7TzdLHKX3-BKPDNNYKF"></i>
-										<!-- react-text: 8272 -->프로젝트 소개 영상을 등록해주세요<!-- /react-text --></a>
+										<!-- react-text: 8272 -->프로젝트 소개 영상을 등록해주세요<!-- /react-text -->
+									</c:if>
+									<c:if test="${null ne project.descriptionVideo }">
+									<i
+										class="_3WyCNpfRrfze5XqBAKgG6j WU1ox0-AeDX_zneKjnNMO _1QY7TzdLHKX3-BKPDNNYKF"></i>
+										<!-- react-text: 8272 -->동영상 등록 완료<!-- /react-text -->
+									</c:if>										
+										</a>
 								</div>
 								<div
 									class="videoMode _2joJTlnkt26WGpxyvkNuCH _152MAijd_UogerBKCVqZR_ WU1ox0-AeDX_zneKjnNMO _3G8CRXtomRhisiZsw7Spx- _1lLHKI5v9AoCyeggtffvGZ">
-									<a><i class="_1QY7TzdLHKX3-BKPDNNYKF w6FPSPr8JA6xb8SSjkPtI"></i>
-										<!-- react-text: 8276 -->등록하기<!-- /react-text --></a>
+									<a>
+									<c:if test="${null eq project.descriptionVideo }">
+									<i class="_1QY7TzdLHKX3-BKPDNNYKF w6FPSPr8JA6xb8SSjkPtI"></i>
+										<!-- react-text: 8276 -->등록하기<!-- /react-text -->
+									</c:if>	
+									<c:if test="${null ne project.descriptionVideo }">
+									<i class="_1QY7TzdLHKX3-BKPDNNYKF w6FPSPr8JA6xb8SSjkPtI"></i>
+										<!-- react-text: 8276 -->수정하기<!-- /react-text -->
+									</c:if>	
+										
+										</a>
 								</div>
 							</div>
 						</div>
@@ -103,13 +122,7 @@
 								<div class="_13KHfN73YmQgsYHxXvuh_J _3ZTEzsKL-qDLECUGq4QcLv">
 								<div class="videoplay" style="width: 650px; height: 480px;">
 									<div class="_13KHfN73YmQgsYHxXvuh_J " style="height: 100%;">
-										<video controls="" autoplay=""
-											style="width: 100%; height: 100%;">
-											<source type="video/mp4; codecs='avc1.64001E, mp4a.40.2'"
-												src="resources/video/201808210624466990.mp4">
-											<source type="video/webm"
-												src="resources/video/201808210624466990.mp4">
-										</video>
+										<video id="video" controls style="width: 100%; height: 100%;"></video>
 									</div>
 								</div>
 								
@@ -156,15 +169,32 @@
 									class="_13KHfN73YmQgsYHxXvuh_J _12TAeoYDPLF0sfa3UIt6uZ _3ZTEzsKL-qDLECUGq4QcLv">
 									<div
 										class="_2dKJQZGqcB1T0xe0DzKY0H _152MAijd_UogerBKCVqZR_ _1lLHKI5v9AoCyeggtffvGZ">
-										<a><i
+										
+										<a>
+										<c:if test="${null eq project.story }">
+										<i
 											class="_3WyCNpfRrfze5XqBAKgG6j WU1ox0-AeDX_zneKjnNMO _1QY7TzdLHKX3-BKPDNNYKF"></i>
-											<!-- react-text: 8289 --> 프로젝트 스토리를 입력해주세요<!-- /react-text --></a>
+											<!-- react-text: 8289 --> 프로젝트 스토리를 입력해주세요<!-- /react-text -->
+										</c:if>
+										<c:if test="${null ne project.story }">
+										<i
+											class="_3WyCNpfRrfze5XqBAKgG6j WU1ox0-AeDX_zneKjnNMO _1QY7TzdLHKX3-BKPDNNYKF"></i>
+											<!-- react-text: 8289 --> 프로젝트 스토리 입력 완료!<!-- /react-text -->
+										</c:if>
+										</a>
 									</div>
 									<div
-										class="_2joJTlnkt26WGpxyvkNuCH _152MAijd_UogerBKCVqZR_ WU1ox0-AeDX_zneKjnNMO _3G8CRXtomRhisiZsw7Spx- _1lLHKI5v9AoCyeggtffvGZ">
-										<a><i
+										class="sotryDiv _2joJTlnkt26WGpxyvkNuCH _152MAijd_UogerBKCVqZR_ WU1ox0-AeDX_zneKjnNMO _3G8CRXtomRhisiZsw7Spx- _1lLHKI5v9AoCyeggtffvGZ">
+										<a>
+										<c:if test="${null eq project.story }">
+										<i
 											class="w6FPSPr8JA6xb8SSjkPtI _1QY7TzdLHKX3-BKPDNNYKF"></i> <!-- react-text: 8293 -->
-											입력하기<!-- /react-text --></a>
+											입력하기<!-- /react-text -->
+										</c:if>
+										<c:if test="${null ne project.story }">
+											<i class='w6FPSPr8JA6xb8SSjkPtI _1QY7TzdLHKX3-BKPDNNYKF'></i>수정하기
+										</c:if>
+										</a>
 									</div>
 								</div>
 							</div>
@@ -191,7 +221,7 @@
 								<!-- /react-text -->
 								<input type="hidden" name="projectNum" value="<c:out value='${project.projectNum}'/>"/>
 								<input type="hidden" name="email" value="<c:out value='${user.email}'/>"/>
-								<textarea id="summernote" name="content" ></textarea>
+								<textarea id="summernote" name="content" ><c:out value="${project.story }"></c:out> </textarea>
 								<div class="_13KHfN73YmQgsYHxXvuh_J _3ZTEzsKL-qDLECUGq4QcLv">
 									<div
 										class="_2EKbr4mCy_TvmSkhnSfA_a _152MAijd_UogerBKCVqZR_ WU1ox0-AeDX_zneKjnNMO _3G8CRXtomRhisiZsw7Spx- _1lLHKI5v9AoCyeggtffvGZ">

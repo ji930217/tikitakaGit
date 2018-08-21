@@ -2,15 +2,15 @@
 	pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt" %>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/functions" prefix="fn"%>
 <!DOCTYPE html>
 <html>
 <head>
 <meta charset=UTF-8>
 <title>프로젝트 만드기 :: 티키타카</title>
 <!-- include libraries(jQuery, bootstrap) -->
-
-
-
+<link href="https://vjs.zencdn.net/7.1.0/video-js.css" rel="stylesheet">
+<script src="https://vjs.zencdn.net/7.1.0/video.js"></script>
 <meta name="viewport"
 	content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=no">
 <link rel="dns-prefetch" href="https://tumblbug-assets.imgix.net">
@@ -35,8 +35,8 @@
 <meta data-react-helmet="true" name="twitter:card"
 	content="summary_large_image">
 	<link href="http://netdna.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.css" rel="stylesheet">
-<link rel="stylesheet" type="text/css"
-	href="https://d2om2e6rfn032x.cloudfront.net/wpa/app.f0ed3932e778a7f95ef1c52983d12741.css">
+ <link rel="stylesheet" type="text/css"
+	href="https://d2om2e6rfn032x.cloudfront.net/wpa/app.f0ed3932e778a7f95ef1c52983d12741.css"> 
 	
 <link
 	href="https://tumblbug-assets.imgix.net/appicon/favicon/favicon-32x32.png"
@@ -3157,13 +3157,16 @@ px
 
 			closeOn = true;
 		});
-
+		
+		
+		
 		$("._2uxYQ-nuPwdol9sQhOjfH-").click(
 				function() {
 					if ($(this).attr('id') == 'create-reward'
 							|| $(this).attr('id') == 'itemAdd'
 							|| $(this).attr('id') == 'itemBox'
-							|| $(this).attr('id') == 'addItem' ) {
+							|| $(this).attr('id') == 'addItem'
+							||$(this).attr('class').indexOf('itemAdd')!=-1) {
 						return;
 					}
 					if(closeOn){
@@ -3245,19 +3248,18 @@ px
 							'_3Syz9fGXYtzMNqK_55A2BW');
 					$(".rLqvd1axk9i-3cU72yTkF").nextAll('a').removeClass(
 							'_3Syz9fGXYtzMNqK_55A2BW');
-
 					switch (currentPage) {
 					case '#projectOutline':
-						currentPage = '#fundingReward';
-						pageNum = 3;
 						$("#projectOutline").hide();
 						$("#fundingReward").show();
 						$("#storytelling").hide();
 						$("#accountSetup").hide();
+						pageNum = 2;
+						currentPage = '#fundingReward';
 						break;
 					case '#fundingReward':
 						currentPage = '#storytelling';
-						pageNum = 4;
+						pageNum = 3;
 						$("#fundingReward").hide();
 						$("#projectOutline").hide();
 						$("#storytelling").show();
@@ -3265,7 +3267,7 @@ px
 						break;
 					case '#storytelling':
 						currentPage = '#accountSetup';
-						pageNum = 5;
+						pageNum = 4;
 						$("#storytelling").hide();
 						$("#projectOutline").hide();
 						$("#fundingReward").hide();
@@ -3290,7 +3292,7 @@ px
 					switch (currentPage) {
 					case '#fundingReward':
 						currentPage = '#projectOutline';
-						pageNum = 2;
+						pageNum = 1;
 						$("#fundingReward").hide();
 						$("#projectOutline").show();
 						$("#storytelling").hide();
@@ -3298,7 +3300,7 @@ px
 						break;
 					case '#storytelling':
 						currentPage = '#fundingReward';
-						pageNum = 3;
+						pageNum = 2;
 						$("#storytelling").hide();
 						$("#projectOutline").hide();
 						$("#fundingReward").show();
@@ -3306,7 +3308,7 @@ px
 						break;
 					case '#accountSetup':
 						currentPage = '#storytelling';
-						pageNum = 4;
+						pageNum = 3;
 						$("#accountSetup").hide();
 						$("#projectOutline").hide();
 						$("#fundingReward").hide();
@@ -3434,8 +3436,18 @@ px
 			var $image = $("#fileRepImg").children('input').click();
 		});
 		
-		$(".projectImage2").css("display",'none');
-		$(".imgeAddBtn").css("display","none");
+		
+		
+		if('${project.repImg}'!=""){
+			$(".imgeAddBtn").css("display","inline-block");
+			$(".projectImage").css("display",'none');
+			var imgsrc= 'resources/pupload/'+'${project.repImg}';
+			$(".projectImage2").children().children('img').attr("src",imgsrc);
+		}else{
+			$(".imgeAddBtn").css("display","none");
+			$(".projectImage2").css("display",'none');
+		}	
+		
 		 $("#fileRepImg").children('input').change(function(){
 			
 			var formData = new FormData();
@@ -3474,7 +3486,9 @@ px
 		 $(".imgeAddBtn").click(function(){
 			 $("#fileRepImg").children('input').click();
 		 });
-		 
+		if('${project.category}'!=""){
+			$(".category").val('${project.category}').prop("selected", true);
+		}		 
 		$(".category").click(function() {
 			if ($(this).val() != '프로젝트 카테고리를 정해주세요') {
 				$(".categoryBtn").attr("disabled", false);
@@ -3516,7 +3530,14 @@ px
 			$("#projectImageform").children('input').click();
 		});
 		$(".videoplay").hide();
-		$(".profileBefore").hide();
+		if('${project.profileImg}'!=""){
+			$(".profileAfter").hide();
+			var imgsrc= 'resources/pupload/'+'${project.profileImg}';
+			$(".profileBefore").children().children('img').attr("src",imgsrc);
+		}else{
+			$(".profileBefore").hide();
+		}
+		
 		$(".updateVideoBtn").hide();
 		$("#projectImageInput").change(function(){
 			var formData = new FormData();
@@ -3550,7 +3571,10 @@ px
 	                		$(".videoplay").show();
 	                		$(".updateVideoBtn").show();
 	                		var videosrc= 'resources/video/'+result.descriptionVideo;
-	                		$(".videoplay").children().children().children('source').attr("src",videosrc);
+	                		//$(".videoplay").children().children().children('source').attr("src",videosrc);
+	                		var video = $("#video");
+	                		video.attr('src',videosrc);
+	                		//video.get(0).play();
 	                		$(".videoMode").children('a').text('');
 							$(".videoMode").children('a').append("<i class='w6FPSPr8JA6xb8SSjkPtI _1QY7TzdLHKX3-BKPDNNYKF'></i>"+'수정하기');
 							$(".videoHint").children('a').text('');
@@ -3656,7 +3680,32 @@ px
 				}
 			});
 		});
-
+		if('${project.price}'!=0){
+			$(".goalBtn").attr("disabled", false);
+			var payment = '${project.price}' * 0.04;
+			var platform = '${project.price}' * 0.055;
+			var acount = payment + platform;
+			if (parseInt(acount) > 0) {
+				$(".fees")
+						.each(
+								function(index) {
+									switch (index) {
+									case 0:
+										$(this).text( numberWithCommas($( "#fundingGoalAmountInput").val()- acount));
+										break;
+									case 1:
+										$(this).text(numberWithCommas(payment));
+										break;
+									case 2:
+										$(this).text(numberWithCommas(platform));
+										break;
+									case 3:
+										$(this).text(numberWithCommas(acount));
+										break;
+									}
+								});
+			}
+		}
 		$("#fundingGoalAmountInput")
 				.keyup(
 						function() {
@@ -4025,14 +4074,23 @@ px
 		$('input[name="depositAccountType"]').change(function(){
 			currentPage='#accountSetup';
 		});
-		
+			
+		 if('${project.bankNumber}'!=""){
+			 $(".bankNameSelect").val('${project.bankTrading}').prop("selected", true);
+			 if('${project.bankKinds}'=='P'){
+				 $("#deposit-account-type-is-personal").prop("checked", true);
+			 }else{
+				 $("#deposit-account-type-is-business").prop("checked", true);
+			 }
+			
+		 }
+		 
 		 $(".bankBtn").click(function(){
 			var bankNameSelect=$(".bankNameSelect").val();
 			var bankNameInput=$(".bankNameInput").val();
 			var bankNumInput=$(".bankNumInput").val();
 			var radio = $('input[name="depositAccountType"]:checked').val();
 			var regExp = /(5[1-5]\d{14})|(4\d{12})(\d{3}?)|3[47]\d{13}|(6011\d{12})/; 
-			console.log();
 			 if(""==bankNameInput||""==bankNumInput||"undefined"==radio){
 				alert("계좌 정보는 필수 입력 정보 입니다.");
 				return;
@@ -4052,7 +4110,7 @@ px
 						"projectCode" : <c:out value="${project.projectCode}"/>,
 						"projectNum" : <c:out value	="${project.projectNum}"/>,
 						"bankTrading":bankNameSelect,
-						"bankName":bankNameSelect,
+						"bankName":bankNameInput,
 						"bankNumber":bankNumInput,
 						"bankKinds":radio=="personal"?'P':'B',
 					},
@@ -4074,7 +4132,16 @@ px
 					}
 					}); 
 		}); 
-		
+		if('${fn:length(project.giftArry)}'>0){
+				//작업중
+				$(".rewardlist").eq(0).remove();
+				$(".rewardlist").show();
+				console.log($(".itemAdd").eq(0));
+				$(".itemAdd").eq(0).remove();
+				$(".itemAdd").show();
+				
+		}
+				
 	});
 				var itemListLength=0;
 				function blue(pro){
@@ -4091,6 +4158,10 @@ px
 						$(".row2").prepend("<i class='_13KHfN73YmQgsYHxXvuh_J _1oJMWnMCW_Y6GmNc1mhqaW _3RAU_1dXrlkkPhtkKyXSVj _3fJsfvAPykJzj2xoMnxzWW _254YPhBOB9qv7-J8bIg7co _1QY7TzdLHKX3-BKPDNNYKF'></i>");
 					}
 					
+					if(null!=pro.story){
+						$(".row3").children('i').remove();
+						$(".row3").prepend("<i class='_13KHfN73YmQgsYHxXvuh_J _1oJMWnMCW_Y6GmNc1mhqaW _3sFSjAZS4gQdCAyN3OfyFG -o8oGI_QAOKsVIJOUOUmV _254YPhBOB9qv7-J8bIg7co _1QY7TzdLHKX3-BKPDNNYKF'></i>");
+					}
 					if(null!=pro.pPhone&&null!=pro.bankNumber){
 						$(".row4").children('i').remove();
 						$(".row4").prepend("<i class='_13KHfN73YmQgsYHxXvuh_J _1oJMWnMCW_Y6GmNc1mhqaW _3sFSjAZS4gQdCAyN3OfyFG -o8oGI_QAOKsVIJOUOUmV _254YPhBOB9qv7-J8bIg7co _1QY7TzdLHKX3-BKPDNNYKF'></i>");
@@ -4241,7 +4312,7 @@ px
 		if($("#isRewardQuantityLimited").is(":checked")){
 			remited = $("#rewardLimit").val();
 		}else{
-			remited="null";
+			remited="-1";
 		}
 		
 		if (!regexp.test(price)) {
@@ -4372,6 +4443,19 @@ px
 				$("#summerForm").submit();
 			}
 	}
+	function review(){
+		var row1 = $(".row1").children().attr('class');
+		var row2 = $(".row2").children().attr('class');
+		var row3 = $(".row3").children().attr('class');
+		var row4 = $(".row4").children().attr('class');
+		var checkString="_13KHfN73YmQgsYHxXvuh_J _1oJMWnMCW_Y6GmNc1mhqaW _3sFSjAZS4gQdCAyN3OfyFG -o8oGI_QAOKsVIJOUOUmV _254YPhBOB9qv7-J8bIg7co _1QY7TzdLHKX3-BKPDNNYKF";
+		if(row1!=checkString||row2!=checkString||row3!=checkString||row4!=checkString){
+			alert("선택항목을 제외한 모든 항목을 작성해 주세요");
+			return;
+		} 
+		location.href="review.do?updateNum=17&projectCode="+<c:out value='${project.projectCode}'></c:out>;
+		return false;
+	} 
 </script>
 </head>
 <body>
@@ -4446,14 +4530,14 @@ px
 									</div>
 									<div
 										class="_13KHfN73YmQgsYHxXvuh_J _2-N-uV2y5apkjtxqdVnsop T5IOxRC0hd8rBc-PLPMlF">
-										<a
+										<!-- <a
 											class="_13KHfN73YmQgsYHxXvuh_J _3fJsfvAPykJzj2xoMnxzWW _1Qdv504-1XMeYXZyb0xQZT _3SbGdzxKM6M_AeOQWLNqks"
-											href="http://www.tumblbug.com/002b6727-e999-40ea-ba7d-3622154c927b"
+											href="#"
 											style="z-index: 11; position: relative;"><i
-											class="_12_kkIo9po-wf5m9SVSerq _1QY7TzdLHKX3-BKPDNNYKF"></i><label>미리보기</label></a><a
+											class="_12_kkIo9po-wf5m9SVSerq _1QY7TzdLHKX3-BKPDNNYKF"></i><label>미리보기</label></a> --><a href="#" onclick="review();"
 											class="_13KHfN73YmQgsYHxXvuh_J _2rCeEoFeBzvCYn76udqnww _1Qdv504-1XMeYXZyb0xQZT _3SbGdzxKM6M_AeOQWLNqks"
 											style="z-index: 11; position: relative;"><i
-											class="_1QY7TzdLHKX3-BKPDNNYKF _3NmqRmOUOqMEJDy6qtw95t"></i><label>검토
+											class="_1QY7TzdLHKX3-BKPDNNYKF _3NmqRmOUOqMEJDy6qtw95t" ></i><label>검토
 												요청하기</label></a>
 									</div>
 								</div>
@@ -4466,25 +4550,55 @@ px
 										<a class="rLqvd1axk9i-3cU72yTkF _3Syz9fGXYtzMNqK_55A2BW"
 											href="#projectOutline">
 											<h5 class="row1">
-												
+												<c:if test="${null eq project.title or null eq project.repImg or null eq project.summary or null eq project.category or null eq project.profileImg or null eq project.introduce}">
 												 <i
-													class="_13KHfN73YmQgsYHxXvuh_J _1oJMWnMCW_Y6GmNc1mhqaW _3RAU_1dXrlkkPhtkKyXSVj _3fJsfvAPykJzj2xoMnxzWW _254YPhBOB9qv7-J8bIg7co _1QY7TzdLHKX3-BKPDNNYKF"></i><label><span><span>프로젝트</span>
+													class="_13KHfN73YmQgsYHxXvuh_J _1oJMWnMCW_Y6GmNc1mhqaW _3RAU_1dXrlkkPhtkKyXSVj _3fJsfvAPykJzj2xoMnxzWW _254YPhBOB9qv7-J8bIg7co _1QY7TzdLHKX3-BKPDNNYKF"></i>
+												</c:if>
+												<c:if test="${null ne project.title and null ne project.repImg and null ne project.summary and null ne project.category and null ne project.profileImg and null ne project.introduce}">
+												 <i class='_13KHfN73YmQgsYHxXvuh_J _1oJMWnMCW_Y6GmNc1mhqaW _3sFSjAZS4gQdCAyN3OfyFG -o8oGI_QAOKsVIJOUOUmV _254YPhBOB9qv7-J8bIg7co _1QY7TzdLHKX3-BKPDNNYKF'></i>
+												</c:if>
+													<label><span><span>프로젝트</span>
 														<!-- react-text: 789 --> <!-- /react-text --> <span>개요</span></span></label>
 											</h5>
 										</a> <a class="rLqvd1axk9i-3cU72yTkF" href="#fundingReward">
 											<h5 class="row2">
+												<c:if test="${null eq project.price or null eq project.endDate or null eq project.giftItem or null eq project.refund}">
 												<i
-													class="_13KHfN73YmQgsYHxXvuh_J _1oJMWnMCW_Y6GmNc1mhqaW _3RAU_1dXrlkkPhtkKyXSVj _3fJsfvAPykJzj2xoMnxzWW _254YPhBOB9qv7-J8bIg7co _1QY7TzdLHKX3-BKPDNNYKF"></i><label><span><span>펀딩
+													class="_13KHfN73YmQgsYHxXvuh_J _1oJMWnMCW_Y6GmNc1mhqaW _3RAU_1dXrlkkPhtkKyXSVj _3fJsfvAPykJzj2xoMnxzWW _254YPhBOB9qv7-J8bIg7co _1QY7TzdLHKX3-BKPDNNYKF"></i>
+												</c:if>
+												
+												<c:if test="${null ne project.price and null ne project.endDate and null ne project.giftItem and null ne project.refund}">
+												<i class='_13KHfN73YmQgsYHxXvuh_J _1oJMWnMCW_Y6GmNc1mhqaW _3sFSjAZS4gQdCAyN3OfyFG -o8oGI_QAOKsVIJOUOUmV _254YPhBOB9qv7-J8bIg7co _1QY7TzdLHKX3-BKPDNNYKF'></i>
+												</c:if>
+												<label><span><span>펀딩
 															및</span> <!-- react-text: 797 --> <!-- /react-text --> <span>선물
 															구성</span></span></label>
 											</h5>
-										</a> <a class="rLqvd1axk9i-3cU72yTkF" href="#storytelling"><h5 class="row3">
+										</a> 
+										<a class="rLqvd1axk9i-3cU72yTkF" href="#storytelling">
+										<h5 class="row3">
+												<c:if test="${null eq project.story }">
 												<i
-													class="_13KHfN73YmQgsYHxXvuh_J _1oJMWnMCW_Y6GmNc1mhqaW _3RAU_1dXrlkkPhtkKyXSVj _3fJsfvAPykJzj2xoMnxzWW _254YPhBOB9qv7-J8bIg7co _1QY7TzdLHKX3-BKPDNNYKF"></i><label><span><span>스토리</span><span>텔링</span></span></label>
-											</h5 > </a> <a class="rLqvd1axk9i-3cU72yTkF" href="#accountSetup"><h5 class="row4">
-
+													class="_13KHfN73YmQgsYHxXvuh_J _1oJMWnMCW_Y6GmNc1mhqaW _3RAU_1dXrlkkPhtkKyXSVj _3fJsfvAPykJzj2xoMnxzWW _254YPhBOB9qv7-J8bIg7co _1QY7TzdLHKX3-BKPDNNYKF"></i>
+												</c:if>
+												
+												<c:if test="${null ne project.story}">
+												<i class='_13KHfN73YmQgsYHxXvuh_J _1oJMWnMCW_Y6GmNc1mhqaW _3sFSjAZS4gQdCAyN3OfyFG -o8oGI_QAOKsVIJOUOUmV _254YPhBOB9qv7-J8bIg7co _1QY7TzdLHKX3-BKPDNNYKF'></i>
+												</c:if>
+													<label><span><span>스토리</span><span>텔링</span></span></label>
+											</h5 > </a> 
+											<a class="rLqvd1axk9i-3cU72yTkF" href="#accountSetup">
+											<h5 class="row4">
+												<c:if test="${null eq project.pPhone or null eq project.bankNumber }">
 												<i
-													class="_13KHfN73YmQgsYHxXvuh_J _1oJMWnMCW_Y6GmNc1mhqaW _3RAU_1dXrlkkPhtkKyXSVj _3fJsfvAPykJzj2xoMnxzWW _254YPhBOB9qv7-J8bIg7co _1QY7TzdLHKX3-BKPDNNYKF"></i><label><span><span>계좌</span>
+													class="_13KHfN73YmQgsYHxXvuh_J _1oJMWnMCW_Y6GmNc1mhqaW _3RAU_1dXrlkkPhtkKyXSVj _3fJsfvAPykJzj2xoMnxzWW _254YPhBOB9qv7-J8bIg7co _1QY7TzdLHKX3-BKPDNNYKF"></i>
+												</c:if>
+												
+												<c:if test="${null ne project.pPhone and null ne project.bankNumber }">
+												<i class='_13KHfN73YmQgsYHxXvuh_J _1oJMWnMCW_Y6GmNc1mhqaW _3sFSjAZS4gQdCAyN3OfyFG -o8oGI_QAOKsVIJOUOUmV _254YPhBOB9qv7-J8bIg7co _1QY7TzdLHKX3-BKPDNNYKF'></i>
+												</c:if>
+													
+													<label><span><span>계좌</span>
 														<!-- react-text: 812 --> <!-- /react-text --> <span>설정</span></span></label>
 											</h5> </a>
 

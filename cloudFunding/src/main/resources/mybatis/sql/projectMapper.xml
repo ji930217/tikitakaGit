@@ -19,13 +19,13 @@
 
 <insert id="insertProject" parameterType="Member">
 	INSERT INTO PROJECT 
-	(EMAIL,P_PROJECT_CODE,P_PROJECT_NUMBER,P_NAME,P_EMAIL,P_PRICE,P_END_DATE,P_OK,P_SEND_CONFIRM,P_CURRENTAMOUNT,P_SPONSOR_COUNT,P_ENROLL_DATE)  
+	(EMAIL,P_PROJECT_CODE,P_PROJECT_NUMBER,P_NAME,P_EMAIL,P_PRICE,P_OK,P_SEND_CONFIRM,P_CURRENTAMOUNT,P_SPONSOR_COUNT,P_ENROLL_DATE)  
 	VALUES
-	(#{email},SEQ_P_NUM.NEXTVAL,(select count(*) from project where EMAIL = #{email})+1,#{name},#{email},0,SYSDATE,'0','F',0,0,SYSDATE)
+	(#{email},SEQ_P_NUM.NEXTVAL,(select count(*) from project where EMAIL = #{email})+1,#{name},#{email},0,'0','F',0,0,SYSDATE)
 </insert>
 
 <insert id="insertGift" parameterType="Gift">
-	INSERT INTO GIFT VALUES(#{projectCode},#{email},SEQ_G_NUM.NEXTVAL,#{price},#{description},#{item},#{sendDate},#{remited},#{transferCheck})
+	INSERT INTO GIFT VALUES(#{projectCode},#{email},SEQ_G_NUM.NEXTVAL,#{price},#{description},#{item},#{sendDate},#{remited},#{transferCheck},0)
 </insert>
 <select id="selectProjectNum" parameterType="string" resultType="int">
 	SELECT COUNT(*)  FROM PROJECT 
@@ -266,6 +266,9 @@ FROM PROJECT WHERE  EMAIL = #{userId} AND P_PROJECT_NUMBER = #{projectNum}
       	</when>
       	<when test="updateNum==16">
       	SET P_DESCRIPTION_VIDEO = #{descriptionVideo}
+      	</when>
+      	<when test="updateNum==17">
+      	SET P_OK = '1'
       	</when>
       	<otherwise>
       	
