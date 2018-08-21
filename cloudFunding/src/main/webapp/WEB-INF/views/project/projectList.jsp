@@ -3864,15 +3864,6 @@ px
 	data-react-helmet="true">
 
 </head>
-<script>
-function sorting(){
-	var condition = $("#searchCondition").val();
-	location.href = "projectList.do?condtion=" + condition;
-	$('searchCondition option[value=condition]').prop('selected','selected');
-	
-}
-
-</script>
 
 <body>
 
@@ -3891,22 +3882,8 @@ function sorting(){
 				data-reactid="40">
 				<div class="Container__Container-s1sxg7g4-0 iTXcwb"
 					data-reactid="41">
-					<div
-						class="PageIntroduction__ProjectSortDropdownWrapper-s7qbeqe-3 iZgHCU"
-						data-reactid="42">
-						
-						<select
-							class="PageIntroduction__ProjectsSortDropdown-s7qbeqe-4 hDDlHs"
-							id="searchCondition" onchange="sorting(value)">
-							<option value="count" data-reactid="44">최다 후원순</option>
-							<option value="amount" data-reactid="45">최다 금액순</option>
-							<option value="published_at" data-reactid="47">최신순</option>
-						</select>
-						
-					</div>
-					<span class="PageIntroduction__ProjectsFilter-s7qbeqe-5 kEslfd" data-reactid="48"> <input type="checkbox" value="true"
-						data-reactid="49" /> 펀딩 마감된 프로젝트 보기
-					</span>
+					
+					
 				</div>
 			</div>
 		</div>

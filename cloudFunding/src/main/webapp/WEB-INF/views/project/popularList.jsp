@@ -3864,10 +3864,6 @@ px
 	data-react-helmet="true">
 
 </head>
-<script>
-
-</script>
-
 <body>
 
 	<c:import url="../common/header.jsp" />
@@ -3885,17 +3881,7 @@ px
 				data-reactid="40">
 				<div class="Container__Container-s1sxg7g4-0 iTXcwb"
 					data-reactid="41">
-					<div
-						class="PageIntroduction__ProjectSortDropdownWrapper-s7qbeqe-3 iZgHCU"
-						data-reactid="42">
-						<select
-							class="PageIntroduction__ProjectsSortDropdown-s7qbeqe-4 hDDlHs"
-							id="searchCondition">
-							<option selected value="count" data-reactid="44">최다 후원순</option>
-							<option value="amount" data-reactid="45">최다 금액순</option>
-							<option value="published_at" data-reactid="47">최신순</option>
-						</select>
-					</div>
+					
 					
 				</div>
 			</div>
