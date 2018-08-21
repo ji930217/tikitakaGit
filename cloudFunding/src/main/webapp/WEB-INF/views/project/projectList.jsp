@@ -3868,6 +3868,7 @@ px
 function sorting(){
 	var condition = $("#searchCondition").val();
 	location.href = "projectList.do?condtion=" + condition;
+	$('searchCondition option[value=condition]').prop('selected','selected');
 	
 }
 
@@ -3897,7 +3898,7 @@ function sorting(){
 						<select
 							class="PageIntroduction__ProjectsSortDropdown-s7qbeqe-4 hDDlHs"
 							id="searchCondition" onchange="sorting(value)">
-							<option <c:if test="${검색값key == 'count'}">selected='selected'</c:if>value="count" data-reactid="44">최다 후원순</option>
+							<option value="count" data-reactid="44">최다 후원순</option>
 							<option value="amount" data-reactid="45">최다 금액순</option>
 							<option value="published_at" data-reactid="47">최신순</option>
 						</select>
