@@ -1,5 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/functions" prefix="fn"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -30,10 +32,15 @@
 								<div
 									class="_2dKJQZGqcB1T0xe0DzKY0H _152MAijd_UogerBKCVqZR_ _1lLHKI5v9AoCyeggtffvGZ">
 									<div class="priceDiv">
+										<c:if test="${0 eq project.price }">
 										<a><i
 											class="_3WyCNpfRrfze5XqBAKgG6j WU1ox0-AeDX_zneKjnNMO _3wXDp_9ZjMHMVuf2NIy5Cg _1QY7TzdLHKX3-BKPDNNYKF"></i>
 											<!-- react-text: 7471 -->목표 금액을 입력해주세요<!-- /react-text --></a>
-										<h3 style="display:none;"></h3>	
+										<h3 style="display:none;"></h3>
+										</c:if>	
+										<c:if test="${0 ne project.price }">
+										<h3><span style='white-space: pre-wrap;'><c:out value="${project.price }"></c:out> </span></h3>
+										</c:if>	
 									</div>
 								</div>
 								<div
@@ -70,7 +77,7 @@
 										<div>
 											<div
 												class="_13KHfN73YmQgsYHxXvuh_J _1za37OzUQqJfl3TEKlkYHi _3jflGAwHlQ83oL7U52brix _3_IGkn3uaje0g2ZA6Tx9wd">
-												<input type="text" value="0" id="fundingGoalAmountInput"><label
+												<input type="text" value='<c:out value="${project.price }"></c:out>' id="fundingGoalAmountInput"><label
 													for="fundingGoalAmountInput"> <!-- react-text: 8502 -->원
 													<!-- /react-text --> <!-- react-text: 8503 --> <!-- /react-text -->
 												</label>
@@ -183,16 +190,31 @@
 								<div
 									class="_2dKJQZGqcB1T0xe0DzKY0H _152MAijd_UogerBKCVqZR_ _1lLHKI5v9AoCyeggtffvGZ">
 									<div class="dateDiv">
+									<c:if test="${null eq project.endDate }">
 											<a><i
 											class="_3WyCNpfRrfze5XqBAKgG6j WU1ox0-AeDX_zneKjnNMO _3wXDp_9ZjMHMVuf2NIy5Cg _1QY7TzdLHKX3-BKPDNNYKF"></i>
 											<!-- react-text: 7471 -->프로젝트 마감일을 입력해주세요<!-- /react-text --></a>
-										<h3 style="display:none;"></h3>	
+										<h3 style="display:none;"></h3>
+									</c:if>
+									<c:if test="${null ne project.endDate }">
+										<h3><span style='white-space: pre-wrap;'><c:out value="${project.endDate }"></c:out> </span></h3>
+									</c:if>	
 									</div>
 								</div>
 								<div
 									class="dtaeMode _2joJTlnkt26WGpxyvkNuCH _152MAijd_UogerBKCVqZR_ WU1ox0-AeDX_zneKjnNMO _3G8CRXtomRhisiZsw7Spx- _1lLHKI5v9AoCyeggtffvGZ">
-									<a><i class="w6FPSPr8JA6xb8SSjkPtI _1QY7TzdLHKX3-BKPDNNYKF"></i>
-										<!-- react-text: 7487 -->입력하기<!-- /react-text --></a>
+									<a>
+									
+									<i class="w6FPSPr8JA6xb8SSjkPtI _1QY7TzdLHKX3-BKPDNNYKF"></i>
+										<c:if test="${null eq project.endDate }">
+										<!-- react-text: 7487 -->입력하기<!-- /react-text -->
+										</c:if>
+										<c:if test="${null ne project.endDate }">
+										수정하기
+										</c:if>
+										
+										
+										</a>
 								</div>
 							</div>
 						</div>
@@ -231,7 +253,7 @@
 													<div class="react-datepicker__input-container">
 														<input id="deadlineDate" type="text"
 															class="_2HJjAyHwCOYLop8JvycDDF _152MAijd_UogerBKCVqZR_ _3_IGkn3uaje0g2ZA6Tx9wd "
-															value="" readonly>
+															value='<c:out value="${project.endDate }"></c:out>' readonly>
 													</div>
 												</div>
 												<label for="">
@@ -293,6 +315,54 @@
 			<div class="_13KHfN73YmQgsYHxXvuh_J _1WARcEqqT_Pem8leg2dkMj">
 				
 				<div class="rewardappend _13KHfN73YmQgsYHxXvuh_J _2TxjgvEda9YWbTe8CpK_Ye">
+				<div class="rewardlist _13KHfN73YmQgsYHxXvuh_J _18bwsw29jDyAzIPXzQkoS- _18TDror949wcy2NyVIqpHo false" style="display: none">
+						<div class="_3ZgG-OSv0XE3y-h3oPaDsl">
+							<span class="WU1ox0-AeDX_zneKjnNMO oAeG34mYkuDyUTybhBMrQ">
+								<a class="ContextualAction__LinkButton-lcypnk-0 ddtTLO">
+								<i class="_1pt-5UHn7rWHPExbDO4EbO _1QY7TzdLHKX3-BKPDNNYKF"></i>
+								<span class="ContextualAction__Label-lcypnk-1 gETbSh">삭제하기</span></a>
+							</span>
+							<div class="-UobvSeyUG6cEWYnht50S">
+								<h4>
+									<!-- react-text: 616 -->
+									<!-- /react-text -->
+									<!-- react-text: 617 -->
+									원 이상 밀어주시는 분께
+									<!-- /react-text -->
+								</h4>
+							</div>
+							<div class="_3F_kXgcqjiYVIFqaGYLV_x">
+								<p></p>
+							</div>
+							<div
+								class="itemLists _13KHfN73YmQgsYHxXvuh_J dVsuWLqvhq0SupdyOYVal _3XFc3K1AoSi5ujhxKESb0P _1zkZUwfhEQvC8LFxMO9pO9">
+								<div class="_13KHfN73YmQgsYHxXvuh_J rLqvd1axk9i-3cU72yTkF">
+								</div>
+							</div>
+							<div class="VgMYktFPH-SSPJjPTFMC">
+								<span class="">예상 전달일:</span><strong><c:out value="${list.sendDate }"></c:out> </strong>
+							</div>
+						</div>
+						<div class="_2Pv5906z-UsZ07dcVfvk9A _3ZgG-OSv0XE3y-h3oPaDsl">
+							<span><i
+								class="_1QY7TzdLHKX3-BKPDNNYKF _254YPhBOB9qv7-J8bIg7co _1R0ZK0Z1zZIqLZ8NkjnsD6"></i>
+							<!-- react-text: 630 -->선택한 사람이 없음 <!-- /react-text -->
+								<span
+								class="remitDisplay _13KHfN73YmQgsYHxXvuh_J IHUALIalgwgMpH2DEQooZ _3fJsfvAPykJzj2xoMnxzWW _1Qdv504-1XMeYXZyb0xQZT _3D9sfZXrWd8it3eUCuCTc8">
+								
+								</span>
+							<div class="sendCondition WU1ox0-AeDX_zneKjnNMO oAeG34mYkuDyUTybhBMrQ">
+									<!-- react-text: 633 -->
+									<!-- /react-text -->
+									<div
+										class="_13KHfN73YmQgsYHxXvuh_J IHUALIalgwgMpH2DEQooZ _3fJsfvAPykJzj2xoMnxzWW _1Qdv504-1XMeYXZyb0xQZT _3D9sfZXrWd8it3eUCuCTc8">배송
+										필요</div>
+									
+								</div>	</span>
+								
+						</div>
+					</div>
+					<c:forEach items="${project.giftArry}" var="list">
 
 					<div class="rewardlist _13KHfN73YmQgsYHxXvuh_J _18bwsw29jDyAzIPXzQkoS- _18TDror949wcy2NyVIqpHo false" style="display: none">
 						<div class="_3ZgG-OSv0XE3y-h3oPaDsl">
@@ -304,7 +374,7 @@
 							<div class="-UobvSeyUG6cEWYnht50S">
 								<h4>
 									<!-- react-text: 616 -->
-									5,000
+									<c:out value="${list.price }"></c:out>
 									<!-- /react-text -->
 									<!-- react-text: 617 -->
 									원 이상 밀어주시는 분께
@@ -312,19 +382,16 @@
 								</h4>
 							</div>
 							<div class="_3F_kXgcqjiYVIFqaGYLV_x">
-								<p>asdasdasd</p>
+								<p><c:out value="${list.description }"></c:out></p>
 							</div>
 							<div
 								class="itemLists _13KHfN73YmQgsYHxXvuh_J dVsuWLqvhq0SupdyOYVal _3XFc3K1AoSi5ujhxKESb0P _1zkZUwfhEQvC8LFxMO9pO9">
 								<div class="_13KHfN73YmQgsYHxXvuh_J rLqvd1axk9i-3cU72yTkF">
-									<!-- react-text: 622 -->
-									ㅁㄴㅇ
-									<!-- /react-text -->
-									<b> ( ✕ 1 )</b>
+									<c:out value="${list.item }"></c:out>
 								</div>
 							</div>
 							<div class="VgMYktFPH-SSPJjPTFMC">
-								<span class="">예상 전달일:</span><strong>2018년 8월 19일</strong>
+								<span class="">예상 전달일:</span><strong><c:out value="${list.sendDate }"></c:out> </strong>
 							</div>
 						</div>
 						<div class="_2Pv5906z-UsZ07dcVfvk9A _3ZgG-OSv0XE3y-h3oPaDsl">
@@ -332,18 +399,23 @@
 								class="_1QY7TzdLHKX3-BKPDNNYKF _254YPhBOB9qv7-J8bIg7co _1R0ZK0Z1zZIqLZ8NkjnsD6"></i>
 							<!-- react-text: 630 -->선택한 사람이 없음 <!-- /react-text -->
 								<span
-								class="remitDisplay _13KHfN73YmQgsYHxXvuh_J IHUALIalgwgMpH2DEQooZ _3fJsfvAPykJzj2xoMnxzWW _1Qdv504-1XMeYXZyb0xQZT _3D9sfZXrWd8it3eUCuCTc8">3개
-									남음</span>
+								class="remitDisplay _13KHfN73YmQgsYHxXvuh_J IHUALIalgwgMpH2DEQooZ _3fJsfvAPykJzj2xoMnxzWW _1Qdv504-1XMeYXZyb0xQZT _3D9sfZXrWd8it3eUCuCTc8">
+								<c:if test="${-1==list.remited }">0</c:if>
+								<c:if test="${-1!=list.remited }"><c:out value="${list.remited }"></c:out> </c:if>
+								</span>
+								<c:if test="${list.transferCheck }">
 							<div class="sendCondition WU1ox0-AeDX_zneKjnNMO oAeG34mYkuDyUTybhBMrQ">
 									<!-- react-text: 633 -->
 									<!-- /react-text -->
 									<div
 										class="_13KHfN73YmQgsYHxXvuh_J IHUALIalgwgMpH2DEQooZ _3fJsfvAPykJzj2xoMnxzWW _1Qdv504-1XMeYXZyb0xQZT _3D9sfZXrWd8it3eUCuCTc8">배송
 										필요</div>
-								</div></span>
+									
+								</div></c:if>	</span>
+								
 						</div>
 					</div>
-					
+					</c:forEach>
 					<a id="new-reward"
 							class="_13KHfN73YmQgsYHxXvuh_J _18bwsw29jDyAzIPXzQkoS- _18TDror949wcy2NyVIqpHo ">
 							<div class="_2mDWoxwh1QMJyLM49w7kMZ _3G8CRXtomRhisiZsw7Spx- _3ZgG-OSv0XE3y-h3oPaDsl">
@@ -464,8 +536,44 @@
 											</div>
 										</div>
 									</div>
-
-									
+											
+									<c:forTokens items="${project.giftItem }" delims="," var="item">
+									<div  class="itemAdd _13KHfN73YmQgsYHxXvuh_J _2uxYQ-nuPwdol9sQhOjfH-"
+										style="padding: 0.5rem 1rem;">
+										<div class="_13KHfN73YmQgsYHxXvuh_J _3U6RUH-EASpZ_j8ls1HJyP">
+											<div class="_13KHfN73YmQgsYHxXvuh_J _3_IGkn3uaje0g2ZA6Tx9wd">
+												<div class="_2zMGQBNRbNCEdnOi6MuA_q">
+													<div class="_3Cp0C9yr76hSCHJjdv7vs8">
+														<a href="#" onclick="return select(this)">
+														<button
+															 class=" _13KHfN73YmQgsYHxXvuh_J _3SbGdzxKM6M_AeOQWLNqks _1DLNFgQRrQNEosKFB0zOK5 _1QY7TzdLHKX3-BKPDNNYKF _3C1GIkccqqGyujnub2YVhV _1QY7TzdLHKX3-BKPDNNYKF _2rpTvKkYYdMbVEklWlLfhl">
+															<i class="-o8oGI_QAOKsVIJOUOUmV _1QY7TzdLHKX3-BKPDNNYKF"></i>
+														</button>
+														</a>
+													</div>
+													<div class="_29JGBV0ggQH38jcZcbYX3L"
+														style="color: rgb(117, 117, 117);">${item}</div>
+													<div  class="_1isO96lTbXHWwvrnbZpWqR" style="display: flex;">
+														<a  href="#" onclick="return down(this);">
+														<button 
+															class="_1DLNFgQRrQNEosKFB0zOK5 _3C1GIkccqqGyujnub2YVhV _13KHfN73YmQgsYHxXvuh_J _1QY7TzdLHKX3-BKPDNNYKF _3SbGdzxKM6M_AeOQWLNqks _2rpTvKkYYdMbVEklWlLfhl">
+															<i class="TsF0gblod8vlP0wj23avH _1QY7TzdLHKX3-BKPDNNYKF"></i>
+														</button >
+														</a>
+														<div
+															 style="min-width: 3rem; display: flex; justify-content: center; align-items: center; color: rgb(117, 117, 117);">0</div>
+														<a  href="#" onclick="return up(this);">
+														<button  
+															class="_1DLNFgQRrQNEosKFB0zOK5 _3C1GIkccqqGyujnub2YVhV _13KHfN73YmQgsYHxXvuh_J _1QY7TzdLHKX3-BKPDNNYKF _2rpTvKkYYdMbVEklWlLfhl _3SbGdzxKM6M_AeOQWLNqks">
+															<i class="_3oZSOY3gf6z2DAwcScAvoY _1QY7TzdLHKX3-BKPDNNYKF"></i>
+														</button >
+														</a>
+													</div>
+												</div>
+											</div>
+										</div>
+									</div>
+									</c:forTokens>
 								</div>
 								<div class="_2uiHxjf6pbNOjrUj1iIApL"
 									style="margin-top: 1rem; margin-bottom: 0.5rem;">
@@ -612,16 +720,23 @@
 								<div
 									class="_2dKJQZGqcB1T0xe0DzKY0H _152MAijd_UogerBKCVqZR_ _1lLHKI5v9AoCyeggtffvGZ">
 									<div class="refundDiv">
+										<c:if test="${null eq project.refund }">
 										<a><i
 											class="_3WyCNpfRrfze5XqBAKgG6j WU1ox0-AeDX_zneKjnNMO _3wXDp_9ZjMHMVuf2NIy5Cg _1QY7TzdLHKX3-BKPDNNYKF"></i>
 											<!-- react-text: 7513 -->환불 및 교환 정책을 입력해주세요<!-- /react-text --></a>
-											<h3 style="display:none;"></h3>	
+											<h3 style="display:none;"></h3>
+										</c:if>
+										<c:if test="${null ne project.refund }">
+											<h3><span style='white-space: pre-wrap;'><c:out value="${project.refund }"></c:out> </span></h3>
+										</c:if>		
 									</div>
 								</div>
 								<div
 									class="refundMode _2joJTlnkt26WGpxyvkNuCH _152MAijd_UogerBKCVqZR_ WU1ox0-AeDX_zneKjnNMO _3G8CRXtomRhisiZsw7Spx- _1lLHKI5v9AoCyeggtffvGZ">
 									<a><i class="w6FPSPr8JA6xb8SSjkPtI _1QY7TzdLHKX3-BKPDNNYKF"></i>
-										<!-- react-text: 7517 -->입력하기<!-- /react-text --></a>
+										<c:if test="${null eq eqproject.refund }"><!-- react-text: 7517 -->입력하기<!-- /react-text --></c:if>
+										<c:if test="${null ne eqproject.refund }"><!-- react-text: 7517 -->수정하기<!-- /react-text --></c:if>
+										</a>
 								</div>
 							</div>
 						</div>
@@ -670,11 +785,11 @@
 										<div class="_3_IGkn3uaje0g2ZA6Tx9wd">
 											<div class="_3_IGkn3uaje0g2ZA6Tx9wd">
 												<textarea id="RefundTextArea" placeholder="환불 및 교환 정책을 입력해주세요" rows="4"
-													style="width: 100%;"></textarea>
+													style="width: 100%;"><c:out value="${project.refund }"></c:out> </textarea>
 												<div
 													class="RefundRemit _13KHfN73YmQgsYHxXvuh_J WU1ox0-AeDX_zneKjnNMO _3G8CRXtomRhisiZsw7Spx- _2-N-uV2y5apkjtxqdVnsop _1xou6XDdjhr5t3_tfAMqmg jvBXmsw6c8TD5NU0Gn0P6
           ">
-													 1000자 남았습니다/최소 10자</div>
+													 ${1000 -fn:length(project.refund) }자 남았습니다/최소 10자</div>
 											</div>
 										</div>
 										<br>

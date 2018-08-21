@@ -329,8 +329,10 @@ public class ProjectController {
 	@RequestMapping("summerUpdate.do")
 	public ModelAndView summerUpdate(String projectNum, String email,String content,ModelAndView mv){
 		HashMap params = new HashMap();
-		params.put("userId", email.substring(email.indexOf("'")+1,email.lastIndexOf("'")));
-		params.put("projectNum",projectNum.substring(projectNum.indexOf("'")+1,projectNum.lastIndexOf("'")));
+		/*params.put("userId", email.substring(email.indexOf("'")+1,email.lastIndexOf("'")));
+		params.put("projectNum",projectNum.substring(projectNum.indexOf("'")+1,projectNum.lastIndexOf("'")));*/
+		params.put("userId", email);
+		params.put("projectNum",projectNum);
 		ProjectVo projectVo=null;
 		projectVo = projectService.selectProject(params);
 		
@@ -342,9 +344,22 @@ public class ProjectController {
 			System.out.println(projectVo);
 			System.out.println("업데이트 성공");
 		}
-		
-		mv.addObject("project", projectVo);
+		projectVo = projectService.selectProjectGift(projectVo.getProjectCode());
+		mv.addObject("project",projectVo);
 		mv.setViewName("project/projectForm");
 		return mv;
+	}
+	
+	@RequestMapping("review.do")
+	public String review(int projectCode,int updateNum){
+		ProjectVo projectVo =new ProjectVo();
+		projectVo.setProjectCode(projectCode);
+		projectVo.setUpdateNum(updateNum);
+		int result = projectService.updateProject(projectVo);
+		if(0<result){
+			System.out.println("검토 제출 성공");
+		}
+		
+		return "redirect:index.do";
 	}
 }

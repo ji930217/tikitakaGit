@@ -1,6 +1,8 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt" %>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/functions" prefix="fn"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -143,7 +145,9 @@
 													<a><i class="_3WyCNpfRrfze5XqBAKgG6j WU1ox0-AeDX_zneKjnNMO _3wXDp_9ZjMHMVuf2NIy5Cg _1QY7TzdLHKX3-BKPDNNYKF"></i>프로젝트 제목을 입력해주세요</a>
 													<h3 style="display:none;"></h3>
 												</c:if>
-																		
+												<c:if test="${null ne project.title }">
+												<h3>${fn:substringBefore(project.title, ",")}<span class='_13KHfN73YmQgsYHxXvuh_J IHUALIalgwgMpH2DEQooZ _3sFSjAZS4gQdCAyN3OfyFG _1Qdv504-1XMeYXZyb0xQZT _3D9sfZXrWd8it3eUCuCTc8'>${fn:substringAfter(project.title, ",") }</span></h3>
+												</c:if>						
 												</div>
 											
 											</div>
@@ -171,18 +175,34 @@
 										<div
 											class="_13KHfN73YmQgsYHxXvuh_J _12TAeoYDPLF0sfa3UIt6uZ _3ZTEzsKL-qDLECUGq4QcLv"
 											style="cursor: pointer;">
+											
 											<div
 												class="imagehint _10NcCOp7F98F1udFv3te-o _152MAijd_UogerBKCVqZR_ _1lLHKI5v9AoCyeggtffvGZ">
 												<a><i
 													class="_3WyCNpfRrfze5XqBAKgG6j WU1ox0-AeDX_zneKjnNMO _1QY7TzdLHKX3-BKPDNNYKF"></i>
-													<!-- react-text: 1613 --> 프로젝트 대표 이미지를 등록해주세요.<!-- /react-text --></a>
+													<c:if test="${null eq project.repImg }">
+													<!-- react-text: 1613 --> 프로젝트 대표 이미지를 등록해주세요.<!-- /react-text -->
+													</c:if>
+													<c:if test="${null ne project.repImg }">
+													<!-- react-text: 1613 --> 이미지 등록 완료<!-- /react-text -->
+													</c:if>
+													</a>
 											</div>
 											<div
 												class="imageMode _3bWlQdzIFpvwX2B8mnOzgn _152MAijd_UogerBKCVqZR_ WU1ox0-AeDX_zneKjnNMO _3G8CRXtomRhisiZsw7Spx- _1lLHKI5v9AoCyeggtffvGZ">
+												<c:if test="${null eq project.repImg }">
 												<a><i
 													class="w6FPSPr8JA6xb8SSjkPtI _1QY7TzdLHKX3-BKPDNNYKF"></i>
 													<!-- react-text: 1617 -->업로드하기<!-- /react-text --></a>
+												</c:if>
+												<c:if test="${null ne project.repImg }">
+												<a><i class='w6FPSPr8JA6xb8SSjkPtI _1QY7TzdLHKX3-BKPDNNYKF'></i>
+													<!-- react-text: 1617 -->수정하기<!-- /react-text --></a>
+												</c:if>
 											</div>
+											
+											
+											
 										</div>
 									</div>
 								</div>
@@ -278,6 +298,7 @@
 													alt="프로젝트 대표">
 											</div>
 										</div>
+										
 										<form id="fileRepImg" action="projectImageUpdate.do" method="post" enctype="multipart/form-data">
 															<input id="file" type="file" accept="image/*" style="display: none;">
 										</form>
@@ -325,17 +346,27 @@
 											<div
 												class="_2dKJQZGqcB1T0xe0DzKY0H _152MAijd_UogerBKCVqZR_ _1lLHKI5v9AoCyeggtffvGZ">
 												<div class="summaryDiv">
+													<c:if test="${null eq project.summary }">
 													<a><i
 														class="_3WyCNpfRrfze5XqBAKgG6j WU1ox0-AeDX_zneKjnNMO _3wXDp_9ZjMHMVuf2NIy5Cg _1QY7TzdLHKX3-BKPDNNYKF"></i>
 														<!-- react-text: 1627 -->프로젝트 요약을 입력해주세요<!-- /react-text --></a>
-													<h3 style="display:none;"></h3>
+													<h3 style="display:none;">
+													</c:if>
+													<c:if test="${null ne project.summary }">
+													<h3><span style='white-space: pre-wrap;'><c:out value="${project.summary }"></c:out> </span></h3>
+													</c:if>
 												</div>
 											</div>
 											<div
 												class="summaryMode _2joJTlnkt26WGpxyvkNuCH _152MAijd_UogerBKCVqZR_ WU1ox0-AeDX_zneKjnNMO _3G8CRXtomRhisiZsw7Spx- _1lLHKI5v9AoCyeggtffvGZ">
+												<c:if test="${null eq project.summary }">
 												<a><i
 													class="w6FPSPr8JA6xb8SSjkPtI _1QY7TzdLHKX3-BKPDNNYKF"></i>
 													<!-- react-text: 1631 -->입력하기<!-- /react-text --></a>
+												</c:if>
+												<c:if test="${null ne project.summary }">
+												<a><i class='w6FPSPr8JA6xb8SSjkPtI _1QY7TzdLHKX3-BKPDNNYKF'></i>수정하기</a>
+												</c:if>
 											</div>
 										</div>
 									</div>
@@ -351,11 +382,11 @@
 													<div class="_3_IGkn3uaje0g2ZA6Tx9wd">
 														<div class="_3_IGkn3uaje0g2ZA6Tx9wd">
 															<textarea id="projectSummary" placeholder="프로젝트 요약을 입력해주세요" rows="2"
-																style="width: 100%;"></textarea>
+																style="width: 100%;"><c:out value="${project.summary }"></c:out> </textarea>
 															<div
 																class="summaryRemit _13KHfN73YmQgsYHxXvuh_J WU1ox0-AeDX_zneKjnNMO _3G8CRXtomRhisiZsw7Spx- _2-N-uV2y5apkjtxqdVnsop _1xou6XDdjhr5t3_tfAMqmg jvBXmsw6c8TD5NU0Gn0P6
-          ">
-																 50자 남았습니다/최소 10자</div>
+          ">														${50-fn:length(project.summary)}자 남았습니다/최소 10자</div>
+																 
 														</div>
 													</div>
 													<br>
@@ -399,17 +430,27 @@
 											<div
 												class="_2dKJQZGqcB1T0xe0DzKY0H _152MAijd_UogerBKCVqZR_ _1lLHKI5v9AoCyeggtffvGZ">
 												<div class="categoryDiv">
+													<c:if test="${null eq project.category }">
 													<a><i
 														class="_3WyCNpfRrfze5XqBAKgG6j WU1ox0-AeDX_zneKjnNMO _3wXDp_9ZjMHMVuf2NIy5Cg _1QY7TzdLHKX3-BKPDNNYKF"></i>
 														<!-- react-text: 1641 -->프로젝트 카테고리를 입력해주세요<!-- /react-text --></a>
 														<h3 style="display:none;"></h3>
+													</c:if>
+													<c:if test="${null ne project.category }">
+														<h3><span style='white-space: pre-wrap;'><c:out value="${project.category }"></c:out> </span></h3>
+													</c:if>
 												</div>
 											</div>
 											<div
 												class="categoryMode _2joJTlnkt26WGpxyvkNuCH _152MAijd_UogerBKCVqZR_ WU1ox0-AeDX_zneKjnNMO _3G8CRXtomRhisiZsw7Spx- _1lLHKI5v9AoCyeggtffvGZ">
-												<a><i
+												<c:if test="${null eq project.category }">
+														<a><i
 													class="w6FPSPr8JA6xb8SSjkPtI _1QY7TzdLHKX3-BKPDNNYKF"></i>
 													<!-- react-text: 1645 -->입력하기<!-- /react-text --></a>
+												</c:if>
+												<c:if test="${null ne project.category }">
+													<a><i class='w6FPSPr8JA6xb8SSjkPtI _1QY7TzdLHKX3-BKPDNNYKF'></i>수정하기</a>
+												</c:if>
 											</div>
 										</div>
 									</div>
@@ -550,15 +591,27 @@
 											style="cursor: pointer;">
 											<div
 												class="profileHint _3lIDndOaEWwBcdNUKuMYOQ _152MAijd_UogerBKCVqZR_ _1lLHKI5v9AoCyeggtffvGZ">
+												
 												<a><i
 													class="_3WyCNpfRrfze5XqBAKgG6j WU1ox0-AeDX_zneKjnNMO _1QY7TzdLHKX3-BKPDNNYKF"></i>
-												<!-- react-text: 1671 --> 진행자님의 프로필 이미지를 올려주세요.<!-- /react-text --></a>
+												<c:if test="${null eq project.profileImg }">
+												<!-- react-text: 1671 --> 진행자님의 프로필 이미지를 올려주세요.<!-- /react-text -->
+												</c:if>
+												<c:if test="${null ne project.profileImg }">
+												<!-- react-text: 1671 --> 이미지 등록 완료<!-- /react-text -->
+												</c:if>
+												</a>
 											</div>
 											<div
 												class="profileMode _25P2Jb3SrgiAhvibHBFOrS _152MAijd_UogerBKCVqZR_ WU1ox0-AeDX_zneKjnNMO _3G8CRXtomRhisiZsw7Spx- _1lLHKI5v9AoCyeggtffvGZ">
+												<c:if test="${null eq project.profileImg }">
 												<a><i
 													class="w6FPSPr8JA6xb8SSjkPtI _1QY7TzdLHKX3-BKPDNNYKF"></i>
 												<!-- react-text: 1675 --> 입력하기<!-- /react-text --></a>
+												</c:if>
+												<c:if test="${null ne project.profileImg }">
+												<a><i class='w6FPSPr8JA6xb8SSjkPtI _1QY7TzdLHKX3-BKPDNNYKF'></i>수정하기</a>
+												</c:if>
 											</div>
 										</div>
 									</div>
@@ -736,17 +789,27 @@
 											<div
 												class="_2dKJQZGqcB1T0xe0DzKY0H _152MAijd_UogerBKCVqZR_ _1lLHKI5v9AoCyeggtffvGZ">
 												<div class="MCIntroduceDiv">
+												<c:if test="${null eq project.introduce }">
 													<a><i
 														class="_3WyCNpfRrfze5XqBAKgG6j WU1ox0-AeDX_zneKjnNMO _3wXDp_9ZjMHMVuf2NIy5Cg _1QY7TzdLHKX3-BKPDNNYKF"></i>
 													<!-- react-text: 1697 -->진행자 소개를 입력해주세요<!-- /react-text --></a>
 													<h3 style="display:none;"></h3>
+												</c:if>
+												<c:if test="${null ne project.introduce }">
+													<h3><span style='white-space: pre-wrap;'><c:out value="${project.introduce }"></c:out> </span></h3>
+												</c:if>
 												</div>
 											</div>
 											<div
 												class="MCIntroduceMode _2joJTlnkt26WGpxyvkNuCH _152MAijd_UogerBKCVqZR_ WU1ox0-AeDX_zneKjnNMO _3G8CRXtomRhisiZsw7Spx- _1lLHKI5v9AoCyeggtffvGZ">
-												<a><i
+												<c:if test="${null eq project.introduce }">
+													<a><i
 													class="w6FPSPr8JA6xb8SSjkPtI _1QY7TzdLHKX3-BKPDNNYKF"></i>
 												<!-- react-text: 1701 -->입력하기<!-- /react-text --></a>
+												</c:if>
+												<c:if test="${null ne project.introduce }">
+													<a><i class='w6FPSPr8JA6xb8SSjkPtI _1QY7TzdLHKX3-BKPDNNYKF'></i>수정하기</a>
+												</c:if>
 											</div>
 										</div>
 									</div>
@@ -777,11 +840,11 @@
 													<div class="_3_IGkn3uaje0g2ZA6Tx9wd">
 														<div class="_3_IGkn3uaje0g2ZA6Tx9wd">
 															<textarea id="MCIntroduce" placeholder="진행자 소개를 입력해주세요" rows="3"
-																style="width: 100%;"></textarea>
+																style="width: 100%;"><c:out value="${project.introduce }"></c:out> </textarea>
 															<div
 																class="MCRemit _13KHfN73YmQgsYHxXvuh_J WU1ox0-AeDX_zneKjnNMO _3G8CRXtomRhisiZsw7Spx- _2-N-uV2y5apkjtxqdVnsop _1xou6XDdjhr5t3_tfAMqmg jvBXmsw6c8TD5NU0Gn0P6
           ">
-																 300자 남았습니다/최소 10자</div>
+																 ${300-fn:length(project.introduce)}자 남았습니다/최소 10자</div>
 														</div>
 													</div>
 													<br>
