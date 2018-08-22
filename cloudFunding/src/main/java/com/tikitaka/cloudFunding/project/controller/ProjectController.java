@@ -56,6 +56,19 @@ public class ProjectController {
 		return list;
 	}
 	
+	@RequestMapping("index_enrollDateList.do")
+	public @ResponseBody List<ProjectVo> index_enrollDateList(int btnIdx1, ModelAndView mv){
+		List<ProjectVo> list = projectService.selectindex_enrollDateList(btnIdx1);
+		return list;
+	}
+	
+	@RequestMapping("index_DeadlineList.do")
+	public @ResponseBody List<ProjectVo> index_DeadlineList(int btnIdx2, ModelAndView mv){
+		List<ProjectVo> list = projectService.selectindex_DeadlineList(btnIdx2);
+		return list;
+	}
+	
+	
 	@RequestMapping("projectStart.do")
 	public String projectStart(){
 		return "project/projectstart";
@@ -179,7 +192,7 @@ public class ProjectController {
 		int result = projectService.updateProject(projectVo);
 		
 		if(0<result){
-			System.out.println("업데이트 성공");
+			System.out.println("�뾽�뜲�씠�듃 �꽦怨�");
 			project = projectService.selectProject(params);
 		}
 		
@@ -251,7 +264,7 @@ public class ProjectController {
 		int result = projectService.updateProject(projectVo);
 		
 		if(0<result){
-			System.out.println("업데이트 성공");
+			System.out.println("�뾽�뜲�씠�듃 �꽦怨�");
 			project = projectService.selectProject(params);
 		}
 		
@@ -307,7 +320,7 @@ public class ProjectController {
 		List<ProjectVo> list = projectService.projectListOrderByDeadline();
 		
 		mv.addObject("list", list);
-		mv.addObject("text", "마감 앞둔 프로젝트");
+		mv.addObject("text", "留덇컧 �븵�몦 �봽濡쒖젥�듃");
 		mv.setViewName("project/projectList");
 		
 		return mv;
@@ -318,7 +331,7 @@ public class ProjectController {
 		List<ProjectVo> list = projectService.projectListOrderByEnrollDate();
 		
 		mv.addObject("list", list);
-		mv.addObject("text", "새로운 프로젝트");
+		mv.addObject("text", "�깉濡쒖슫 �봽濡쒖젥�듃");
 		mv.setViewName("project/projectList");
 		
 		return mv;
@@ -370,7 +383,7 @@ public class ProjectController {
 		
 		if(0<result){
 			System.out.println(projectVo);
-			System.out.println("업데이트 성공");
+			System.out.println("�뾽�뜲�씠�듃 �꽦怨�");
 		}
 		projectVo = projectService.selectProjectGift(projectVo.getProjectCode());
 		mv.addObject("project",projectVo);
@@ -385,7 +398,7 @@ public class ProjectController {
 		projectVo.setUpdateNum(updateNum);
 		int result = projectService.updateProject(projectVo);
 		if(0<result){
-			System.out.println("검토 제출 성공");
+			System.out.println("寃��넗 �젣異� �꽦怨�");
 		}
 		
 		return "redirect:index.do";

@@ -33,8 +33,6 @@ public class HomeController {
 	 */
 	@Autowired
 	AdminService adminservice;
-	@Autowired
-	ProjectService projectService;
 	
 	
 	@RequestMapping(value = "index.do", method = RequestMethod.GET)
@@ -49,11 +47,8 @@ public class HomeController {
 		model.addAttribute("serverTime", formattedDate );*/
 		
 		
-		
-				List<ProjectVo> popularList=projectService.selectPopularList();
-				List<AdminVo> bannerList = adminservice.bannerList();//배너 리스트 인덱스 전달
+				List<AdminVo> bannerList = adminservice.bannerList();//諛곕꼫 由ъ뒪�듃 �씤�뜳�뒪 �쟾�떖
 				
-				mv.addObject("popularList", popularList);
 				mv.addObject("indexBannerList", bannerList);
 				mv.setViewName("home");
 				return mv;

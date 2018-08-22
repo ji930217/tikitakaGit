@@ -86,6 +86,14 @@ public class ProjectService {
 		return dao.selectMyProjectList(member);
 	}
 
+	public List<ProjectVo> selectindex_enrollDateList(int btnIdx1) {
+		return dao.selectindex_enrollDateList(btnIdx1);
+	}
+
+	public List<ProjectVo> selectindex_DeadlineList(int btnIdx2) {
+		return dao.selectindex_DeadlineList(btnIdx2);
+	}
+
 
 
 }
