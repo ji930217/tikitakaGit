@@ -70,6 +70,10 @@ public class ProjectService {
 		return dao.searchProjectByCategory(category);
 	}
 
+	public List<ProjectVo> selectMyProjectList(Member member) {
+		return dao.selectMyProjectList(member);
+	}
+
 
 
 }

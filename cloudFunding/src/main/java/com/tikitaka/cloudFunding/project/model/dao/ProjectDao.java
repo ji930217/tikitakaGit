@@ -70,5 +70,9 @@ public class ProjectDao {
 		return sqlSession.selectList("projectMapper.searchProjectByCategory", category);
 	}
 
+	public List<ProjectVo> selectMyProjectList(Member member) {
+		return sqlSession.selectList("projectMapper.selectMyProjectList", member);
+	}
+
 
 }

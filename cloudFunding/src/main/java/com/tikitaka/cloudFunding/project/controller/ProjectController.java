@@ -167,7 +167,7 @@ public class ProjectController {
 		projectVo.setEmail(email);
 		projectVo.setProjectNum(Integer.parseInt(projectNum));
 		projectVo.setProjectCode(Integer.parseInt(projectCode));
-		projectVo.setDescriptionVideo(rename);
+		projectVo.setDescriptionVideo("resources/video/"+rename);
 		projectVo.setUpdateNum(Integer.parseInt(updateNum));
 		
 		int result = projectService.updateProject(projectVo);
@@ -234,10 +234,10 @@ public class ProjectController {
 		projectVo.setProjectCode(Integer.parseInt(projectCode));
 		
 		if(Integer.parseInt(updateNum)==2){
-			projectVo.setRepImg(rename);
+			projectVo.setRepImg("resources/pupload/"+rename);
 		}
 		if(Integer.parseInt(updateNum)==5){
-			projectVo.setProfileImg(rename);
+			projectVo.setProfileImg("resources/pupload/"+rename);
 		}
 		
 		projectVo.setUpdateNum(Integer.parseInt(updateNum));
@@ -361,5 +361,24 @@ public class ProjectController {
 		}
 		
 		return "redirect:index.do";
+	}
+	
+	@RequestMapping("myProject.do")
+	public ModelAndView myProject(HttpSession session,ModelAndView mv){
+		Member member = (Member)session.getAttribute("user");
+		List<ProjectVo> list = projectService.selectMyProjectList(member);
+		mv.addObject("list", list);
+		mv.setViewName("project/projects");
+		return mv;
+	}
+	
+	@RequestMapping("updateProjectForm.do")
+	public ModelAndView updateProject(int projectCode , ModelAndView mv){
+		ProjectVo projectVo = new ProjectVo();
+		projectVo.setProjectCode(projectCode);
+		projectVo = projectService.selectProjectGift(projectCode);
+		mv.addObject("project",projectVo);
+		mv.setViewName("project/projectForm");
+		return mv;
 	}
 }
