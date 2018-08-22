@@ -9,7 +9,19 @@
 	#mainTitle{
 		text-align: center;
 		margin-top:50px;
+		font-family: 'Anton', sans-serif;
+		font-family: 'Jua', sans-serif;
 	}
+	
+	#nodatatitle{
+	font-family: 'Anton', sans-serif;
+		font-family: 'Jua', sans-serif;
+	}
+	
+	/* #searchBar{
+	font-family: 'Anton', sans-serif;
+		font-family: 'Jua', sans-serif;
+	} */
 	
 	.container{
 	margin-top:70px;
@@ -32,6 +44,7 @@
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <link href="https://fonts.googleapis.com/css?family=Anton|Jua" rel="stylesheet">
 <script>
 
 /* $(function(){
@@ -81,7 +94,7 @@ $(function(){
 <body>
 	<c:import url="../common/header.jsp"></c:import>
 
-  <h1 id = "mainTitle">TIKITAKA 관리</h1>
+  <h1 id = "mainTitle">TIKITAKA 관리자페이지</h1>
 <div class="container" id = "tebMenu">
   
 

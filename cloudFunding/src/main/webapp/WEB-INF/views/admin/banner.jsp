@@ -67,6 +67,10 @@ thead {
 	right: 0;
 	top: 0;
 }
+
+#bannerInputBar{
+border-radius: 5px;
+}
 </style>
 
 <script>

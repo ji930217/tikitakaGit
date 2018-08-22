@@ -856,9 +856,20 @@
 							</div></a>
 					</div>
 					
+					<c:if test = "${user.email == 'admin@admin.com' }">
+						<a id="loginIdAcc" class="sc-htoDjs fQwQfp" data-reactid="30">
+							<span class="SiteHeader__ItemLabel-s1s56ls8-8 iGOIal" data-reactid="31">
+								<c:out value="관리자페이지 "/>
+							</span>
+							<span class="SiteHeader__ProfileImageWrapper-s1s56ls8-10 gqXDKx" data-reactid="32">
+								<img class="ProfileImg__ProfileImg-s1o99mme-0 ePsyRU" 
+								src="${user.profile_img }" width="42" height="42" />
+							</span>
+					</c:if>
 					
 					
-					<c:if test="${(!empty user) && (null eq user.stopDate) }">						
+					
+					<c:if test="${(!empty user) && (null eq user.stopDate) && (user.email != 'admin@admin.com') }">						
 		
 						<a id="loginIdAcc" class="sc-htoDjs fQwQfp" data-reactid="30">
 							<span class="SiteHeader__ItemLabel-s1s56ls8-8 iGOIal" data-reactid="31">

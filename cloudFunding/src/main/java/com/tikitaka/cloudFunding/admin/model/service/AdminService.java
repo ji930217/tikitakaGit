@@ -173,6 +173,11 @@ public class AdminService {
 		return admindao.noCheck(code);
 	}
 
+	public List<Member> memberDetail(String email) {
+		
+		return admindao.memberDetail(email);
+	}
+
 	
 
 
