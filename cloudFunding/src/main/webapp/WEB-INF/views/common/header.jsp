@@ -1411,7 +1411,7 @@
 					<a href="/messages"><div
 							class="MenuItem__MenuItem-no2u3j-0 cwYjsy">
 							<span class="MenuItem__MenuItemTitle-no2u3j-1 enzRKc">메시지</span>
-						</div></a><a href="/pledges"><div
+						</div></a><a href="readyPage.do"><div
 							class="MenuItem__MenuItem-no2u3j-0 cwYjsy">
 							<span class="MenuItem__MenuItemTitle-no2u3j-1 enzRKc">내
 								후원현황</span>
@@ -1421,11 +1421,11 @@
 								만든 프로젝트</span>
 						</div></a>
 					<div class="Divider__Divider-s16ihjfx-0 XTtld"></div>
-					<a href="/u/domoyozudupinedo/edit"><div
+					<a href="setProfile.do"><div
 							class="MenuItem__MenuItem-no2u3j-0 cwYjsy">
 							<span class="MenuItem__MenuItemTitle-no2u3j-1 enzRKc">프로필
 								설정</span>
-						</div></a><a href="/users/payment"><div
+						</div></a><a href="setPayment.do"><div
 							class="MenuItem__MenuItem-no2u3j-0 cwYjsy">
 							<span class="MenuItem__MenuItemTitle-no2u3j-1 enzRKc">지불
 								정보 설정</span>
