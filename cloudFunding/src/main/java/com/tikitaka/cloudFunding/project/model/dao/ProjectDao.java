@@ -86,6 +86,7 @@ public class ProjectDao {
 		return sqlSession.selectList("projectMapper.selectMyProjectList", member);
 	}
 
+
 	public List<ProjectVo> selectindex_enrollDateList(int btnIdx1) {
 		return sqlSession.selectList("projectMapper.selectindex_enrollDateList", btnIdx1);
 	}
@@ -95,4 +96,3 @@ public class ProjectDao {
 	}
 
 
-}

@@ -732,6 +732,45 @@
 	    margin-right: 1rem;
 	}
 	
+	/* 메시지 알림 스타일 */
+	.xfBEx {
+	    width: 10px;
+	    height: 10px;
+	    border-radius: 50%;
+	    background-color: white;
+	    position: absolute;
+	    right: 0;
+	    bottom: 0;
+	}
+	@media (min-width: 1080px){
+		.xfBEx {
+		    width: 16px;
+		    height: 16px;
+		}
+	}
+	.gXPwyp {
+	    -webkit-animation: bYqief 1s infinite;
+	    animation: bYqief 1s infinite;
+	}
+	.gXPwyp {
+	    position: absolute;
+	    width: 8px;
+	    height: 8px;
+	    border-radius: 50%;
+	    margin: auto;
+	    left: 0;
+	    right: 0;
+	    top: 0;
+	    bottom: 0;
+	    background-color: #fa6462;
+	}
+	@media (min-width: 1080px){
+		.gXPwyp {
+		    width: 12px;
+		    height: 12px;
+		}
+	}
+
 </style>
 <script>
 
@@ -878,7 +917,12 @@
 							<span class="SiteHeader__ProfileImageWrapper-s1s56ls8-10 gqXDKx" data-reactid="32">
 								<img class="ProfileImg__ProfileImg-s1o99mme-0 ePsyRU" 
 								src="${user.profile_img }" width="42" height="42" />
-							</span>
+								
+								<!-- 새로운 메시지를 받을 경우 나타나는 영역 -->
+								<div class="SiteHeader__SiteHeaderAlert-s1s56ls8-11 xfBEx">
+									<div class="SiteHeader__RedPoint-s1s56ls8-12 gXPwyp"></div>
+								</div>
+						</span>
 						</a>
 						
 					
@@ -1419,8 +1463,8 @@
 						<span class="MyPage__UserFullname-s1rrrcge-1 bPHUVK"><c:out value="${user.name }"/></span>
 					</div>
 					<div class="Divider__Divider-s16ihjfx-0 XTtld"></div>
-					<a href="/messages"><div
-							class="MenuItem__MenuItem-no2u3j-0 cwYjsy">
+					<a href="messagePage.do">
+						<div	class="MenuItem__MenuItem-no2u3j-0 cwYjsy">
 							<span class="MenuItem__MenuItemTitle-no2u3j-1 enzRKc">메시지</span>
 						</div></a><a href="readyPage.do"><div
 							class="MenuItem__MenuItem-no2u3j-0 cwYjsy">
