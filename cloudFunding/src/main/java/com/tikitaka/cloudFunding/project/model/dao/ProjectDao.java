@@ -94,5 +94,6 @@ public class ProjectDao {
 	public List<ProjectVo> selectindex_DeadlineList(int btnIdx2) {
 		return sqlSession.selectList("projectMapper.selectindex_DeadlineList", btnIdx2);
 	}
+}
 
 
