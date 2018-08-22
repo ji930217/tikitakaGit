@@ -82,5 +82,9 @@ public class ProjectDao {
 		return sqlSession.selectList("projectMapper.selectPopularList4", btnIdx);
 	}
 
+	public List<ProjectVo> selectMyProjectList(Member member) {
+		return sqlSession.selectList("projectMapper.selectMyProjectList", member);
+	}
+
 
 }

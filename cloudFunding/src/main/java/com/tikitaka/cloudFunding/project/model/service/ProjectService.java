@@ -70,6 +70,7 @@ public class ProjectService {
 		return dao.searchProjectByCategory(category);
 	}
 
+<<<<<<< HEAD
 	public List<ProjectVo> projectListOrderByDeadline() {
 		return dao.projectListOrderByDeadline();
 	}
@@ -80,6 +81,10 @@ public class ProjectService {
 
 	public List<ProjectVo> selectPopularList4(int btnIdx) {
 		return dao.selectPopularList4(btnIdx);
+=======
+	public List<ProjectVo> selectMyProjectList(Member member) {
+		return dao.selectMyProjectList(member);
+>>>>>>> refs/heads/sini
 	}
 
 

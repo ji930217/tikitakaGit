@@ -1,7 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
-<%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt" %>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/functions" prefix="fn"%>
 <!DOCTYPE html>
 <html>
@@ -34,10 +34,12 @@
 <meta data-react-helmet="true" name="twitter:creator" content="tumblbug">
 <meta data-react-helmet="true" name="twitter:card"
 	content="summary_large_image">
-	<link href="http://netdna.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.css" rel="stylesheet">
- <link rel="stylesheet" type="text/css"
-	href="https://d2om2e6rfn032x.cloudfront.net/wpa/app.f0ed3932e778a7f95ef1c52983d12741.css"> 
-	
+<link
+	href="http://netdna.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.css"
+	rel="stylesheet">
+<link rel="stylesheet" type="text/css"
+	href="https://d2om2e6rfn032x.cloudfront.net/wpa/app.f0ed3932e778a7f95ef1c52983d12741.css">
+
 <link
 	href="https://tumblbug-assets.imgix.net/appicon/favicon/favicon-32x32.png"
 	rel="icon" type="image/x-icon">
@@ -63,17 +65,24 @@
 <meta name="apple-mobile-web-app-title" content="tumblbug">
 <meta name="application-name" content="tumblbug">
 <script type="text/javascript" src="resources/js/jquery-3.3.1.min.js"></script>
-<script type="text/javascript" async="" src="https://www.google-analytics.com/analytics.js"></script>
+<script type="text/javascript" async=""
+	src="https://www.google-analytics.com/analytics.js"></script>
 <!-- <script type="text/javascript" async=""
 	src="https://cdn.astronomer.io/analytics.js/v1/jMrtLL6v6xXmMGP7h/analytics.min.js"></script> -->
 <script type="application/javascript">
+	
         window.MOBX_STATE = {"app":{"ssrLocation":"/"},"currentUser":{"isLoading":false,"isLoaded":true,"id":757220,"uuid":"4779dc72-e6ff-4b2e-a9c8-aef90143556b","fullname":"나신의","userPermalink":"doneyanibetaruza","avatarUrl":"https://tumblbug-upi.imgix.net/defaults/avatar_0.png?ixlib=rb-1.1.0&w=200&h=250&auto=format%2Ccompress&fit=facearea&facepad=2.0&ch=Save-Data&mask=ellipse&s=87ba671c98b3debfae8ac85d36d0e7b4","email":"tlsdml7410@gmail.com","isCreator":true,"isAdmin":false},"pledgeStore":{"apiEndpoint":"/api/v1/pledges.json?fields=id,createdAt,amount,isSurveyRequested,isSurveyResponded,paymentStatus&project=title,coverImageUrl,creatorName,fundingStatus&reward=description,items&&coverImageUrl[h]=240&coverImageUrl[w]=320&coverImageUrl[fit]=crop","isLoading":false,"isLoaded":false,"pledges":[],"pledgesCount":{},"currentPage":1,"filterType":"all","isPledgeDataLoading":false,"isMetaDataLoaded":false,"isPledgeDetailsDataLoading":true},"surveyStore":{"apiEndpoint":"/api/v1/pledges.json?fields=id,createdAt,amount,isSurveyRequested,isSurveyResponded,paymentStatus&project=title,coverImageUrl,creatorName,fundingStatus&reward=description,items&filter=surveyResponseNeeded&coverImageUrl[h]=240&coverImageUrl[w]=320&coverImageUrl[fit]=crop"},"taxpayerInformationStore":{"isLoaded":false},"collectionStore":{"collections":{"0c2e12a5-0778-4a9d-9879-bd5aad92bc2e":{"id":"0c2e12a5-0778-4a9d-9879-bd5aad92bc2e","title":"에디터 추천 프로젝트","permalink":"editorspick","isPublic":true,"description":"텀블벅 분야별 에디터들이 매주 주목할 만한 프로젝트들을 추천해 드립니다.","authorId":136643,"coverImage":{"imageUrl":"https://tumblbug-cci.imgix.net/0c2e12a5-0778-4a9d-9879-bd5aad92bc2e/c6fa60a7-5a3e-4b01-9593-e05d020ef479.jpg?ixlib=rb-1.1.0&w=465&h=465&q=100&fit=crop&s=7cd29efe8a5263a0c042f1825befcbf9","color":"#adbfbd"},"projects":[{"title":"같은 날 같은 회사를 그만두었습니다, <퇴사동료>","summary":"1년차 디자이너, 3년차 마케터, 11년차 오퍼레이터 - 같이 퇴사한 세 사람의 에세이.","permalink":"1311","category":"nonfiction","fundingGoal":1500000,"fundingDeadline":"2018-08-19T23:59:59+09:00","coverImageUrl":"https://tumblbug-pci.imgix.net/e19d09fa2ddd88baeac7eb80b38c23ffabeebb6e/bbf3a285168bb574d7551b8750187ef3195f0913/9871c2ee4418d52340ac2f3d926ba3db25997c09/299bd47a-6a12-4a45-8490-cbc10a9d2f27.jpeg?ixlib=rb-1.1.0&w=620&h=465&auto=format%2Ccompress&lossless=true&fit=crop&s=ef22e6a929d634587b06dcce2a959558","id":"7a7d7dab-17db-4049-a439-f98ab730aee5","creatorName":"퇴사동료","fundingStatus":"ongoing_reached","fundedAmount":1599842},{"title":"불안한 당신에게 건네는 '관악구 동네책방'의 위로","summary":"불안하고 힘든가요? 관악구 동네책방 5곳이 여러분을 위해 인생책 추천해줄게요.","permalink":"gwanakbookshop","category":"nonfiction","fundingGoal":2500000,"fundingDeadline":"2018-08-31T23:59:59+09:00","coverImageUrl":"https://tumblbug-pci.imgix.net/0a67984fa5f64c8ba098fd5a26c48b67f8e47d48/89e6019163428e2db8448212b7bc794e601e85a8/c355355a53f17dc4b77b8c77faa3e171a37f9725/5e3281b4-7db1-48b5-8b79-aa67b16e4b4b.jpg?ixlib=rb-1.1.0&w=620&h=465&auto=format%2Ccompress&lossless=true&fit=crop&s=bc4a36f438277fd86853c182d93a317c","id":"5baf05ea-5017-4bbd-b111-3569ed63fc2c","creatorName":"관악구 책방연합","fundingStatus":"ongoing_not_reached","fundedAmount":663500},{"title":"이태원 우사단길 예술가들과 <망고서림>의 만남","summary":"이태원 우사단길에 위치한 동네서점 '망고서림'의 추천도서와 동네사람들이 만드는 리워드","permalink":"mangoseolim00","category":"publication","fundingGoal":3500000,"fundingDeadline":"2018-09-04T23:59:59+09:00","coverImageUrl":"https://tumblbug-pci.imgix.net/4b161a793b1b7d9646d00b52f112de112a6e75e0/6c82493c34ecda05f42387f53f23cc80808cfe76/c514b7b14d04cfc9009a5f867767bc6db5e77e2a/f2e14505-a3e3-43d9-bdff-4cdec14fc05f.jpg?ixlib=rb-1.1.0&w=620&h=465&auto=format%2Ccompress&lossless=true&fit=crop&s=92c1381598f22afb29cab6196a99fbfd","id":"80c93fb0-30f0-48d7-90b6-d3472d8c0a04","creatorName":"망고서림","fundingStatus":"ongoing_not_reached","fundedAmount":561400},{"title":"책 읽는 조향사가 선물하는 일상의 여유","summary":"조향사인 책방 주인장이 직접만든 향과 블라인드 북을 한곳에 담았습니다.","permalink":"prescent14","category":"publication","fundingGoal":1000000,"fundingDeadline":"2018-08-23T23:59:59+09:00","coverImageUrl":"https://tumblbug-pci.imgix.net/4b161a793b1b7d9646d00b52f112de112a6e75e0/7afec9efebf6554726d0d460b38d04be64c45073/c7e05cd912f8c66b33a6041ab11b246b2fed2672/ff300c55-71da-460e-aa25-274777e7103e.jpg?ixlib=rb-1.1.0&w=620&h=465&auto=format%2Ccompress&lossless=true&fit=crop&s=d459239d36e5a1683497ac063f963485","id":"e20a7258-f28b-4e4c-9b30-45f10f6593c4","creatorName":"프레센트.14","fundingStatus":"ongoing_not_reached","fundedAmount":246000},{"title":"[YOYO] 데코라 일러스트 북","summary":"약 3년간 그린 데코라 소녀들의 일러스트를 모아서 책을 만듭니다","permalink":"kimedeco","category":"illustration","fundingGoal":2500000,"fundingDeadline":"2018-09-02T23:59:59+09:00","coverImageUrl":"https://tumblbug-pci.imgix.net/e19d09fa2ddd88baeac7eb80b38c23ffabeebb6e/207dea0b739941ffe7ed714a79b9bf1ca9ae5c0b/95757dd7ccde8cbcaea60e31492fb23a46ed411e/c1ea68fd-fc5b-4a5e-91e7-eda0792d1ffe.png?ixlib=rb-1.1.0&w=620&h=465&auto=format%2Ccompress&lossless=true&fit=crop&s=7d9a8ab9efc28018707090135f88b66a","id":"37b00bab-4b66-42af-8dc0-410ff9bf8ed5","creatorName":"yoyo","fundingStatus":"ongoing_reached","fundedAmount":4205300},{"title":"다시 만난 세계로 가는 <포탈>","summary":"언니미티드 기획 전시 <포탈> X 여예기네 <보스들의 네트워킹 파티>","permalink":"unnimited2","category":"art-exhibition","fundingGoal":2000000,"fundingDeadline":"2018-08-07T23:59:59+09:00","coverImageUrl":"https://tumblbug-pci.imgix.net/4b161a793b1b7d9646d00b52f112de112a6e75e0/11faa5d77ebf6f727a870f5563dd4c9464314776/f1dd16bbcf7b61a577e408271502facc0fd82249/b4ddad32-526a-4e31-95fa-50dc7d263189.jpg?ixlib=rb-1.1.0&w=620&h=465&auto=format%2Ccompress&lossless=true&fit=crop&s=daa088f447b7fd69f588a566cd37b32a","id":"ba7eeca8-1776-4b29-b8a5-eeae5e13fa5c","creatorName":"언니미티드","fundingStatus":"ongoing_not_reached","fundedAmount":1708000},{"title":"필름카메라를 사랑하는 모든 분들을 위한 안내서","summary":"'일삼오-삼육' 의 '필름생활안내서'","permalink":"filmguidebook","category":"photography","fundingGoal":1000000,"fundingDeadline":"2018-08-28T23:59:59+09:00","coverImageUrl":"https://tumblbug-pci.imgix.net/4b161a793b1b7d9646d00b52f112de112a6e75e0/ba66876acd8823742bb2b717b5d7a00a5bc39a79/684a03cfc00c0cd0fbff5734d225df5d06416343/c7edc7af-04b2-4aef-8713-0dabd80f9c48.jpg?ixlib=rb-1.1.0&w=620&h=465&auto=format%2Ccompress&lossless=true&fit=crop&s=1543866695500e983cf90f3b4091dcf5","id":"2622b2d1-83f8-4475-acac-8a91b9f0b6e7","creatorName":"일삼오-삼육","fundingStatus":"ongoing_reached","fundedAmount":11044000},{"title":"뱃지포스터[2018 평창 에디션]","summary":"2018 평창 동계올림픽의 폐현수막을 재활용한 뱃지포스터[2018 평창 에디션]","permalink":"badgeposter_pyeongchang","category":"product-design","fundingGoal":2200000,"fundingDeadline":"2018-08-19T23:59:59+09:00","coverImageUrl":"https://tumblbug-pci.imgix.net/4c91156c8bb2e286b5bb757da8ee918a5be6de16/c6c169a36ce8be7588f5185ed251a86141d6cd24/664addaaf5145737a16886d99dfd237157c94823/d1258768-29ed-45e5-bd30-a775a40c9732.jpg?ixlib=rb-1.1.0&w=620&h=465&auto=format%2Ccompress&lossless=true&fit=crop&s=dc5e343334a378b763c6765702134244","id":"f73c6956-04e4-4087-bac7-187844b4bdad","creatorName":"PRAG(프래그)","fundingStatus":"ongoing_reached","fundedAmount":2402000},{"title":"공예를 통한 연대: 페미니스트 손뜨개질 공동 작품 참여하기","summary":"거대한 코바늘 타페스트리, 함께 만들어봐요!","permalink":"witchknitcrew","category":"crafts","fundingGoal":500000,"fundingDeadline":"2018-08-08T23:59:59+09:00","coverImageUrl":"https://tumblbug-pci.imgix.net/4b161a793b1b7d9646d00b52f112de112a6e75e0/0c980930a1f9695a78dbb4f105612a185eb9b083/b80370d83084cf3684f0834a2917a9e6a97f0415/32d8d6fb-bf84-4578-9b59-050c6b3b92a2.jpg?ixlib=rb-1.1.0&w=620&h=465&auto=format%2Ccompress&lossless=true&fit=crop&s=31d59b05a36fd3074a716a652ee0a60b","id":"f855f8c8-af1b-403e-b45f-cc4dbe6e4595","creatorName":"위치니트크루","fundingStatus":"ongoing_not_reached","fundedAmount":497666},{"title":"내 안에 쌓인 독소를 날려버리자! 네이처샵 레몬머틀 플러스","summary":"올여름, 몸과 마음에 쌓여있는 독소를 날리자! 티톡스 프로젝트, 네이처샵 레몬머틀 플러스!","permalink":"natureshop_lemonmyrtle","category":"food","fundingGoal":1000000,"fundingDeadline":"2018-08-26T23:59:59+09:00","coverImageUrl":"https://tumblbug-pci.imgix.net/e19d09fa2ddd88baeac7eb80b38c23ffabeebb6e/ab0bfc22a0d2404fb7ab763bd868aef06e53ae2e/54951c105c2f3b32062e28f27a505130bc4dcfef/fe4be58a-1951-4b79-ae3c-e70821f2d5ae.jpg?ixlib=rb-1.1.0&w=620&h=465&auto=format%2Ccompress&lossless=true&fit=crop&s=7d0c81c9bbb189f2047f84c7d383afe6","id":"c6325aef-bd86-42cf-b942-9f3d568ce57d","creatorName":"네이처샵","fundingStatus":"ongoing_reached","fundedAmount":1677500},{"title":"1950년대 항구의 라이프 스타일을 담은 캔버스화, 캐치볼","summary":"1950년대 미국 동부 항구의 라이프스타일을 담은 CATCH BALL 두번째 협업","permalink":"catchball2","category":"fashion","fundingGoal":10000000,"fundingDeadline":"2018-08-15T23:59:59+09:00","coverImageUrl":"https://tumblbug-pci.imgix.net/4b161a793b1b7d9646d00b52f112de112a6e75e0/79cb1e9a63a04ee35ca3fdf6661c3a110e6399ee/97d10f990f4bb2429938854661b0d83a6c815f12/2f2feac3-b4ae-4002-8820-d67cda1f7cc6.jpg?ixlib=rb-1.1.0&w=620&h=465&auto=format%2Ccompress&lossless=true&fit=crop&s=6e794f5dbf46495ae855eae7f20aceed","id":"79dcf7ab-a8be-45c5-9a8c-94834aaa22c2","creatorName":"브러셔","fundingStatus":"ongoing_reached","fundedAmount":16245700},{"title":"지방청소부 귀리우유, 어떻게 선택 할까요? #산패방지가공","summary":"영양소 파괴, 산패, 변비 걱정 끝 : 렛츠귀리","permalink":"grainluvfam","category":"food","fundingGoal":5000000,"fundingDeadline":"2018-08-06T23:59:59+09:00","coverImageUrl":"https://tumblbug-pci.imgix.net/f85c7e07d406f25fd3ea73c668eaa69a8712eaa8/cdb39540a5432e2b181769978492a71a8da486d7/61c3a5febcf9341ea6ae52b4f4a5ed13693b52fb/59968a0e-cb47-4372-8f44-9c1e97b4a884.jpg?ixlib=rb-1.1.0&w=620&h=465&auto=format%2Ccompress&lossless=true&fit=crop&s=5766d19cf0d510890f80ccef0c29db96","id":"4e31b626-7189-4fd0-bb58-5d1ec441b400","creatorName":"애곡가","fundingStatus":"ongoing_not_reached","fundedAmount":3295877},{"title":"[앵콜]깊고 달콤한 꿀잠을 책임질게요. 딥-슬립 테라피","summary":"밤늦도록 잠들지 못하는 분이시라면, 아로마테라피 기반의 굿슬립 필로우 미스트를 만나보세요!","permalink":"deepsleep2","category":"product-design","fundingGoal":500000,"fundingDeadline":"2018-08-22T23:59:59+09:00","coverImageUrl":"https://tumblbug-pci.imgix.net/4b161a793b1b7d9646d00b52f112de112a6e75e0/3929952430e14ce8bed92af8e76e37bd674122cc/7fb7adf422d70f8f769451acc8997a28789fc3f6/b5cc4357-c118-4c04-b087-482131a65230.png?ixlib=rb-1.1.0&w=620&h=465&auto=format%2Ccompress&lossless=true&fit=crop&s=ca1ae5cc5e73f5bac483280fda915c93","id":"0e9ce9ac-ea23-4152-b6e5-da2ffb9a763e","creatorName":"라이프스타일 브랜드 휘겔리다올리","fundingStatus":"ongoing_reached","fundedAmount":12844500},{"title":"농부를 살리고 환경을 살리는 머시주스의 100% 수박주스","summary":"맛과 영양엔 이상이 없는 못난이 과일을 클렌즈 주스로 변화시키는 '어글리뷰티' 프로젝트","permalink":"uglybeauty187","category":"food","fundingGoal":1000000,"fundingDeadline":"2018-08-17T23:59:59+09:00","coverImageUrl":"https://tumblbug-pci.imgix.net/4b161a793b1b7d9646d00b52f112de112a6e75e0/5ebd18f21d3f0276ca253cfbfdfdfe2e08a061f4/bfba98425443439994976e894d314a50bb4c024f/2eb261a3-81de-4a49-950a-fa3e865c3b29.jpg?ixlib=rb-1.1.0&w=620&h=465&auto=format%2Ccompress&lossless=true&fit=crop&s=ce7f78ec540a4356e66d455edf5cfe3d","id":"e89dc68a-6ab8-4bca-bed5-c964000bd5ac","creatorName":"머시주스","fundingStatus":"ongoing_reached","fundedAmount":2197000},{"title":"짜먹는 아보카도는 처음이지? 보존료, 색소 무첨가!","summary":"무거운 쨈은 이제 그만! 짜먹는 아보카도로 건강하게 가벼워질까요?","permalink":"kinimeal","category":"baking","fundingGoal":500000,"fundingDeadline":"2018-08-31T23:59:59+09:00","coverImageUrl":"https://tumblbug-pci.imgix.net/8b085638008ca0dae709b236a3d55e79acf01841/abfbdd6a4ca243183576b5e229da312e250bd5d8/b8c2439cc044696c28130cce33c6dbf1469998b9/31382f3a-f3df-4c74-95be-f6b6288b3985.jpg?ixlib=rb-1.1.0&w=620&h=465&auto=format%2Ccompress&lossless=true&fit=crop&s=f5048b98b4bfbb93b5f2c85c85d8aa87","id":"f43b7ad2-de21-471a-bccd-7e967f1fbbbe","creatorName":"끼니밀","fundingStatus":"ongoing_reached","fundedAmount":814600},{"title":"조테타","summary":"조테타는 2~6인이 즐길 수 있는 보드게임입니다.","permalink":"zoteta","category":"board-game","fundingGoal":5000000,"fundingDeadline":"2018-09-30T23:59:59+09:00","coverImageUrl":"https://tumblbug-pci.imgix.net/e19d09fa2ddd88baeac7eb80b38c23ffabeebb6e/7210710668ef6107aabdeff1cddc9f04bfb47332/0369e37c8f64ccdf6b271c4f1fb0432d14ac1e6e/6174207e-d1bc-4607-8b61-c9b0acb05710.jpg?ixlib=rb-1.1.0&w=620&h=465&auto=format%2Ccompress&lossless=true&fit=crop&s=b35c0101aeb7a42d71b0049dbeb7b1d9","id":"54f34186-8eb2-484c-8a3a-27693fb6bac0","creatorName":"앵무","fundingStatus":"ongoing_not_reached","fundedAmount":1907000},{"title":"산후우울증을 앓는 초보 엄마들을 위한 영화, <산후>","summary":"산후우울증을 앓는 초보엄마 수현의 다양한 감정을 보여주고 일상을 따라가는 이야기입니다.","permalink":"a_film_soo","category":"narrative-film","fundingGoal":1200000,"fundingDeadline":"2018-08-28T23:59:59+09:00","coverImageUrl":"https://tumblbug-pci.imgix.net/4b161a793b1b7d9646d00b52f112de112a6e75e0/d248bfd62799eaf31e1a4623f714a5f9e578ff71/6e664cd39621088d3a64d8b78a48a5b942d22e67/759ed55f-8b59-43d7-ba7b-a06af78c359d.jpg?ixlib=rb-1.1.0&w=620&h=465&auto=format%2Ccompress&lossless=true&fit=crop&s=9593b2d187d84c44eb1e1e7312e47c4c","id":"de4aadec-52a7-468d-be68-39c309d88eea","creatorName":"영상제작소 홍수","fundingStatus":"ongoing_not_reached","fundedAmount":461000},{"title":"온 가족이 함께 즐기는 역사 보드게임 '세종'","summary":"세종과 수많은 역사영웅들, 그리고 조선의 중앙행정조직을 컨셉으로 만든 역사보드게임입니다.","permalink":"sejong","category":"board-game","fundingGoal":5000000,"fundingDeadline":"2018-08-15T23:59:59+09:00","coverImageUrl":"https://tumblbug-pci.imgix.net/8b085638008ca0dae709b236a3d55e79acf01841/5a140a2e64562e60e5edb02afc5f7175e74ce3d4/dd41977fb780634a498779ef339831396ac0ecd4/df30072e-0c73-4d23-9b43-a583d923719b.png?ixlib=rb-1.1.0&w=620&h=465&auto=format%2Ccompress&lossless=true&fit=crop&s=c865c4f9c947077a7ffe25a207c440c4","id":"770f2dd6-b959-47fe-9cb0-054314dbce3b","creatorName":"이동건","fundingStatus":"ongoing_reached","fundedAmount":5045000},{"title":"식물 킬러, 당신도 키울 수 있다! '식물 기초 클럽'","summary":"식물에 관련된 책 큐레이션과 식물 워크숍","permalink":"overgreenpark","category":"publication","fundingGoal":1000000,"fundingDeadline":"2018-08-22T23:59:59+09:00","coverImageUrl":"https://tumblbug-pci.imgix.net/4b161a793b1b7d9646d00b52f112de112a6e75e0/53300c01a733a47ab2a29b582c18386c7160d053/a58cc239f30e388fadc537b5c7875984381b99ce/2ed31fbd-ccf8-46e3-80e2-12dde1e0afe9.jpg?ixlib=rb-1.1.0&w=620&h=465&auto=format%2Ccompress&lossless=true&fit=crop&s=efb63829c22bd587a6ac0675cc555e22","id":"e743f2dd-fcdc-4e98-8ac9-6e9ca1a84aa2","creatorName":"오버그린파크","fundingStatus":"ongoing_not_reached","fundedAmount":200000},{"title":"윤하윤의 첫 번째 싱글 앨범 \"Prunus\"","summary":"작곡가, 프로듀서가 아닌 아티스트 윤하윤의 첫 시작을 함께 도와주세요","permalink":"prunus","category":"music","fundingGoal":500000,"fundingDeadline":"2018-08-25T23:59:59+09:00","coverImageUrl":"https://tumblbug-pci.imgix.net/d3257920215d297de816e473e280cbe3f3e8ec3f/7ed264021a912dc0b191ebe0f56264f8be7f8316/434c0fd94744bcfea8fd9c48dec14f7d66acd0a8/a9ffd4f3-744f-42f9-99c3-f9fab25597ba.jpeg?ixlib=rb-1.1.0&w=620&h=465&auto=format%2Ccompress&lossless=true&fit=crop&s=6ead6751fbd780ce2d25ce2b66072524","id":"5107edf5-b3e0-4802-9f55-bf932773f10b","creatorName":"윤하윤","fundingStatus":"ongoing_reached","fundedAmount":512000}],"coverImagePath":"","backgroundColorHexCode":"#adbfbd","ongoingProjectsCount":20}},"featuredCollections":[{"id":"73df1830-2410-41b2-8762-c500dc675323","title":"좋음직허여: 제주 청년들의 문화예술 프로젝트","permalink":"jfac2018","coverImagePath":"https://tumblbug-assets.imgix.net/banners/banner-jfac2018-3.png?w=2000&h=250","backgroundColorHexCode":"#19378a"},{"id":"0c2e12a5-0778-4a9d-9879-bd5aad92bc2e","title":"에디터 추천 프로젝트","permalink":"editorspick","coverImagePath":"","backgroundColorHexCode":"#adbfbd"},{"id":"8512a359-66df-4e0f-92b8-690691ed9574","title":"동네책방에서 건져 올린 인생책","permalink":"bookstores2018","coverImagePath":"https://tumblbug-assets.imgix.net/banners/banner-bookstores2018.png?w=2000&h=250","backgroundColorHexCode":"#e59b42"},{"id":"d92cd673-a2f3-456d-b8ce-b98c6ac353e4","title":"#한여름의음료","permalink":"summerdrink","coverImagePath":"","backgroundColorHexCode":"#46ccc2"},{"id":"2386b858-d0bf-4d8a-a6ed-19d1f69b1860","title":"#피서는텀블벅에서","permalink":"tumblbugsummer","coverImagePath":"","backgroundColorHexCode":"#ff4b2f"},{"id":"61630265-ee15-4b1a-8b52-9fd553cd9e73","title":"#스타트업","permalink":"startup","coverImagePath":"","backgroundColorHexCode":"#ead303"},{"id":"73bec309-1dc4-42b5-8dd5-d4467c934043","title":"#문화생활","permalink":"cultural","coverImagePath":"","backgroundColorHexCode":"#ffa47a"},{"id":"8710d3b2-2d21-4fad-aef7-8c33268686aa","title":"#돌아온창작자","permalink":"comeback","coverImagePath":"","backgroundColorHexCode":"#73b6ff"},{"id":"68604208-5cab-42d6-b159-7e245e3062ca","title":"#광복절","permalink":"815","coverImagePath":"","backgroundColorHexCode":"#afb9c6"}]},"projectStore":{},"messageThreadStore":{"_unreadThreads":{"asCreator":[],"asUser":[]},"projectFilters":[],"_messageThreads":{},"isLoadingMessageThreads":false,"selectedThreadId":null,"selectedThread":null},"messageArchiveThreadStore":{"_messageArchiveThreads":{},"_paging":{"offset":0,"limit":10,"next":""}},"rewardStore":{},"itemStore":{},"heroStore":{"heroes":[{"title":"시 읽기 좋은 날은  　　 이렇게 문득 옵니다 ","description":"시인들이 추천하는 시집, <아침달> 시리즈 론칭","url":"https://tumblbug.com/achimdal","coverImageFilename":"achimdal.jpg","coverImageUrl":"https://tumblbug-assets.imgix.net/heroes/achimdal.jpg?w=1800&h=600&fit=crop&q=60"},{"title":"짧아도 충분한  　　　　 포들한 휴식을 위하여 ","description":"허그와 같은 안락함을 전달하는 <포들 담요>","url":"https://tumblbug.com/podulblanket","coverImageFilename":"podulblanket.jpg","coverImageUrl":"https://tumblbug-assets.imgix.net/heroes/podulblanket.jpg?w=1800&h=600&fit=crop&q=60"},{"title":"개성 있는 캐릭터의 일상 취향 저격 판타지 만화!","description":"<친구따라 우주해적>이 된 외계조류와 해적들 이야기","url":"https://tumblbug.com/space_pirate_5","coverImageFilename":"space_pirate_5.jpg","coverImageUrl":"https://tumblbug-assets.imgix.net/heroes/space_pirate_5.jpg?w=1800&h=600&fit=crop&q=60"},{"title":"내 발걸음을   　　　　 보다 가볍고 멋스럽게 ","description":"300g의 무게, 가벼운 라이크 썸 모어 <폴리토 구두>","url":"https://tumblbug.com/lsm_88","coverImageFilename":"lsm_88.jpg","coverImageUrl":"https://tumblbug-assets.imgix.net/heroes/lsm_88.jpg?w=1800&h=600&fit=crop&q=60"}],"isLoaded":true,"randomHeroSeed":0},"postStore":{"_cachedProjectId":null,"_posts":{},"_postsPagination":null,"_comments":{},"_cachedPostId":null,"_commentPagination":null},"depositAccountStore":{}};
+
 </script>
-<script src="http://netdna.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.js"></script> 
+<script
+	src="http://netdna.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.js"></script>
 <!-- include summernote css/js -->
-<link href="http://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.9/summernote.css" rel="stylesheet">
-<script src="http://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.9/summernote.js"></script>
-<script src="resources/js/summernote-ko-KR.js"></script> 
+<link
+	href="http://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.9/summernote.css"
+	rel="stylesheet">
+<script
+	src="http://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.9/summernote.js"></script>
+<script src="resources/js/summernote-ko-KR.js"></script>
 <style type="text/css"
 	data-styled-components="cXdlcp bYqief fzoeFq jPcWZN iVCTYT jdgWcI bteafZ kZLTLQ hcvfVq iGOIal kizyZz cfMrMC hHUgvf bpfGNO JUlEd buZCDD fQwQfp gqXDKx labhhf hEFTbE ikLgAw cyOybj iuosEt fNAOQh iToKBr jfnFWI bzlVdT gXZEJk kBDldE brhEhF iCczEI dUSIGe fhXjWk duKZDT iSHaZi jtYVGd ervGwJ hgvQtm buxDxm csIfer iEZvlH hEilqP hFAREh bGqbmB fOsIlY kCGzYC gEZuLR gUQbvW cWrfUF beYdFz ddAStM bpoHzD hEIXJa bxRvdW cEnTNJ nuOjL fmLEMz jftTar gEQpFE ykGDF hOKtVI bzwbvF bmtKYw qHzrD cSKjGh jYcZV"
 	data-styled-components-is-local="true">
@@ -106,7 +115,10 @@
 
 
 
+
+
 :
+
 
 
 
@@ -114,7 +126,10 @@
 
 
 
+
 translateY
+
+
 
 
 
@@ -129,7 +144,10 @@ translateY
 
 
 
+
+
 :
+
 
 
 
@@ -137,7 +155,10 @@ translateY
 
 
 
+
 translateY
+
+
 
 
 
@@ -152,7 +173,10 @@ transform
 
 
 
+
+
 :
+
 
 
 
@@ -160,7 +184,10 @@ transform
 
 
 
+
 translateY
+
+
 
 
 
@@ -175,7 +202,10 @@ opacity
 
 
 
+
+
 :
+
 
 
 
@@ -183,7 +213,10 @@ opacity
 
 
 
+
 .3
+
+
 
 
 
@@ -201,7 +234,10 @@ opacity
 
 
 
+
+
 :
+
 
 
 
@@ -209,7 +245,10 @@ opacity
 
 
 
+
 translateY
+
+
 
 
 
@@ -224,7 +263,10 @@ translateY
 
 
 
+
+
 :
+
 
 
 
@@ -232,7 +274,10 @@ translateY
 
 
 
+
 translateY
+
+
 
 
 
@@ -247,7 +292,10 @@ transform
 
 
 
+
+
 :
+
 
 
 
@@ -255,7 +303,10 @@ transform
 
 
 
+
 translateY
+
+
 
 
 
@@ -270,11 +321,15 @@ opacity
 
 
 
+
+
 :
 
 
 
+
  
+
 
 
 
@@ -298,7 +353,10 @@ keyframes cXdlcp { 0% {
 
 
 
+
+
 :
+
 
 
 
@@ -306,7 +364,10 @@ keyframes cXdlcp { 0% {
 
 
 
+
 translateY
+
+
 
 
 
@@ -321,7 +382,10 @@ translateY
 
 
 
+
+
 :
+
 
 
 
@@ -329,7 +393,10 @@ translateY
 
 
 
+
 translateY
+
+
 
 
 
@@ -344,7 +411,10 @@ transform
 
 
 
+
+
 :
+
 
 
 
@@ -352,7 +422,10 @@ transform
 
 
 
+
 translateY
+
+
 
 
 
@@ -367,7 +440,10 @@ opacity
 
 
 
+
+
 :
+
 
 
 
@@ -375,7 +451,10 @@ opacity
 
 
 
+
 .3
+
+
 
 
 
@@ -393,7 +472,10 @@ opacity
 
 
 
+
+
 :
+
 
 
 
@@ -401,7 +483,10 @@ opacity
 
 
 
+
 translateY
+
+
 
 
 
@@ -416,7 +501,10 @@ translateY
 
 
 
+
+
 :
+
 
 
 
@@ -424,7 +512,10 @@ translateY
 
 
 
+
 translateY
+
+
 
 
 
@@ -439,7 +530,10 @@ transform
 
 
 
+
+
 :
+
 
 
 
@@ -447,7 +541,10 @@ transform
 
 
 
+
 translateY
+
+
 
 
 
@@ -462,11 +559,15 @@ opacity
 
 
 
+
+
 :
 
 
 
+
  
+
 
 
 
@@ -903,11 +1004,15 @@ opacity
 
 
 
+
+
 :
 
 
 
+
  
+
 
 
 
@@ -928,11 +1033,15 @@ opacity
 
 
 
+
+
 :
 
 
 
+
  
+
 
 
 
@@ -1774,11 +1883,15 @@ opacity
 
 
 
+
+
 :
 
 
 
+
  
+
 
 
 
@@ -1789,8 +1902,12 @@ translateX
 
 
 
+
+
 (4
 px
+
+
 
 
 
@@ -1803,11 +1920,15 @@ px
 
 
 
+
+
 :
 
 
 
+
  
+
 
 
 
@@ -1818,8 +1939,12 @@ translateX
 
 
 
+
+
 (4
 px
+
+
 
 
 
@@ -1832,11 +1957,15 @@ transform
 
 
 
+
+
 :
 
 
 
+
  
+
 
 
 
@@ -1847,8 +1976,12 @@ translateX
 
 
 
+
+
 (4
 px
+
+
 
 
 
@@ -1871,11 +2004,15 @@ keyframes fzoeFq { 0%, 100% {
 
 
 
+
+
 :
 
 
 
+
  
+
 
 
 
@@ -1886,8 +2023,12 @@ translateX
 
 
 
+
+
 (4
 px
+
+
 
 
 
@@ -1900,11 +2041,15 @@ px
 
 
 
+
+
 :
 
 
 
+
  
+
 
 
 
@@ -1915,8 +2060,12 @@ translateX
 
 
 
+
+
 (4
 px
+
+
 
 
 
@@ -1929,11 +2078,15 @@ transform
 
 
 
+
+
 :
 
 
 
+
  
+
 
 
 
@@ -1944,8 +2097,12 @@ translateX
 
 
 
+
+
 (4
 px
+
+
 
 
 
@@ -3140,12 +3297,12 @@ px
 
 <script>
 	$(function() {
-		
-		 $('#summernote').summernote({
-			  height: 600,
-			  lang: 'ko-KR'
-		  }); 
-		
+
+		$('#summernote').summernote({
+			height : 600,
+			lang : 'ko-KR'
+		});
+
 		$(".addD").hide();
 
 		var closeOn = false;
@@ -3157,19 +3314,17 @@ px
 
 			closeOn = true;
 		});
-		
-		
-		
+
 		$("._2uxYQ-nuPwdol9sQhOjfH-").click(
 				function() {
 					if ($(this).attr('id') == 'create-reward'
 							|| $(this).attr('id') == 'itemAdd'
 							|| $(this).attr('id') == 'itemBox'
 							|| $(this).attr('id') == 'addItem'
-							||$(this).attr('class').indexOf('itemAdd')!=-1) {
+							|| $(this).attr('class').indexOf('itemAdd') != -1) {
 						return;
 					}
-					if(closeOn){
+					if (closeOn) {
 						closeOn = false;
 						return;
 					}
@@ -3243,7 +3398,7 @@ px
 
 		$(".nextBtn").click(
 				function() {
-					
+
 					$(".rLqvd1axk9i-3cU72yTkF").prevAll('a').removeClass(
 							'_3Syz9fGXYtzMNqK_55A2BW');
 					$(".rLqvd1axk9i-3cU72yTkF").nextAll('a').removeClass(
@@ -3336,52 +3491,75 @@ px
 			$('.remitShortTitle').text(7 - $(this).val().length + '자 남았습니다');
 		});
 
-		$(".titleBtn").click(function() {
-			if ($("#projectTitle").val().length < 4) {
-				$("#projectTitle").focus();
-				alert('프로젝트 제목은 4글자 이상 입력해야 합니다.');
-				return;
-			}
+		$(".titleBtn")
+				.click(
+						function() {
+							if ($("#projectTitle").val().length < 4) {
+								$("#projectTitle").focus();
+								alert('프로젝트 제목은 4글자 이상 입력해야 합니다.');
+								return;
+							}
 
-			if ($("#projectShortTitle").val().length < 3) {
-				$("#projectShortTitle").focus();
-				alert('프로젝트 짧은 제목은 3글자 이상 입력해야 합니다.');
-				return;
-			}
+							if ($("#projectShortTitle").val().length < 3) {
+								$("#projectShortTitle").focus();
+								alert('프로젝트 짧은 제목은 3글자 이상 입력해야 합니다.');
+								return;
+							}
 
-			$.ajax({
-				url : 'projectUpdate.do',
-				type : 'post',
-				data : {
-					"updateNum":1,
-					"email" : '<c:out value="${user.email }"/>',
-					"projectNum" : <c:out value="${project.projectNum}"/>,
-					"projectTitle" : $("#projectTitle").val(),
-					"projectShortTitle" : $("#projectShortTitle").val(),
-					"projectCode" : <c:out value="${project.projectCode}"/>,
-				},
-				success : function(data) {
-					var index = data.title.indexOf(',');
-					var bigTitle = data.title.substring(0,index);
-					var shortTitle = data.title.substring(index+1,data.title.length);
-					
-					$(".titleDiv").children('h3').text('');
-					$(".titleDiv").children('h3').append(bigTitle+"<span class='_13KHfN73YmQgsYHxXvuh_J IHUALIalgwgMpH2DEQooZ _3sFSjAZS4gQdCAyN3OfyFG _1Qdv504-1XMeYXZyb0xQZT _3D9sfZXrWd8it3eUCuCTc8'>"+shortTitle+"</span>");
-					$(".titleDiv").children('h3').css('display','inline-block');
-					$(".titleDiv").children('a').remove();
-					$(".titleMode").children('a').text('');
-					$(".titleMode").children('a').append("<i class='w6FPSPr8JA6xb8SSjkPtI _1QY7TzdLHKX3-BKPDNNYKF'></i>"+'수정하기');
-					$(".centerTitle").text(bigTitle);
-					$(".addD").hide();
-					$(".defaultD").show();
-					blue(data);
-				},
-				error : function(e) {
-					console.log('ajax에러');
-				}
-			});
+							$
+									.ajax({
+										url : 'projectUpdate.do',
+										type : 'post',
+										data : {
+											"updateNum" : 1,
+											"email" : '<c:out value="${user.email }"/>',
+											"projectNum" : <c:out value="${project.projectNum}"/>,
+											"projectTitle" : $("#projectTitle")
+													.val(),
+											"projectShortTitle" : $(
+													"#projectShortTitle").val(),
+											"projectCode" : <c:out value="${project.projectCode}"/>,
+										},
+										success : function(data) {
+											var index = data.title.indexOf(',');
+											var bigTitle = data.title
+													.substring(0, index);
+											var shortTitle = data.title
+													.substring(index + 1,
+															data.title.length);
 
-		});
+											$(".titleDiv").children('h3').text(
+													'');
+											$(".titleDiv")
+													.children('h3')
+													.append(
+															bigTitle
+																	+ "<span class='_13KHfN73YmQgsYHxXvuh_J IHUALIalgwgMpH2DEQooZ _3sFSjAZS4gQdCAyN3OfyFG _1Qdv504-1XMeYXZyb0xQZT _3D9sfZXrWd8it3eUCuCTc8'>"
+																	+ shortTitle
+																	+ "</span>");
+											$(".titleDiv").children('h3').css(
+													'display', 'inline-block');
+											$(".titleDiv").children('a')
+													.remove();
+											$(".titleMode").children('a').text(
+													'');
+											$(".titleMode").children('a')
+													.append(
+															"<i class='w6FPSPr8JA6xb8SSjkPtI _1QY7TzdLHKX3-BKPDNNYKF'></i>"
+																	+ '수정하기');
+											$(".centerTitle").text("");
+											$(".centerTitle").append(
+													"<span class='_13KHfN73YmQgsYHxXvuh_J _2-N-uV2y5apkjtxqdVnsop _1Qdv504-1XMeYXZyb0xQZT _3fJsfvAPykJzj2xoMnxzWW _3D9sfZXrWd8it3eUCuCTc8'>"+shortTitle+"</span>"+bigTitle);
+											$(".addD").hide();
+											$(".defaultD").show();
+											blue(data);
+										},
+										error : function(e) {
+											console.log('ajax에러');
+										}
+									});
+
+						});
 
 		$("#projectSummary").keyup(
 				function() {
@@ -3396,217 +3574,298 @@ px
 							50 - $(this).val().length + '자 남았습니다/최소 10자');
 				});
 
-		$(".summaryBtn").click(function() {
-			if (10 > $("#projectSummary").val().length) {
-				alert("프로젝트 요약은 최소 10자 이상 입력하셔야 됩니다.");
-				$("#projectSummary").focus();
-				return;
-			}
-			
-			$.ajax({
-				url : 'projectUpdate.do',
-				type : 'post',
-				data : {
-					"updateNum":3,
-					"email" : '<c:out value="${user.email }"/>',
-					"projectCode" : <c:out value="${project.projectCode}"/>,
-					"projectNum" : <c:out value="${project.projectNum}"/>,
-					"summary":$("#projectSummary").val(),
-				},
-				success : function(data) {
-					$(".addD").hide();
-					$(".defaultD").show();
-					$(".summaryDiv").children('h3').text('');
-					$(".summaryDiv").children('h3').append("<span style='white-space: pre-wrap;'>"+data.summary+"</span>");
-					$(".summaryDiv").children('h3').css('display','inline-block');
-					$(".summaryDiv").children('a').remove();
-					$(".summaryMode").children('a').text('');
-					$(".summaryMode").children('a').append("<i class='w6FPSPr8JA6xb8SSjkPtI _1QY7TzdLHKX3-BKPDNNYKF'></i>"+'수정하기');
-					blue(data);
-				},
-				error : function(e) {
-					console.log('ajax에러');
-				}
-			});
-		});
-		
-		
-		
+		$(".summaryBtn")
+				.click(
+						function() {
+							if (10 > $("#projectSummary").val().length) {
+								alert("프로젝트 요약은 최소 10자 이상 입력하셔야 됩니다.");
+								$("#projectSummary").focus();
+								return;
+							}
+
+							$
+									.ajax({
+										url : 'projectUpdate.do',
+										type : 'post',
+										data : {
+											"updateNum" : 3,
+											"email" : '<c:out value="${user.email }"/>',
+											"projectCode" : <c:out value="${project.projectCode}"/>,
+											"projectNum" : <c:out value="${project.projectNum}"/>,
+											"summary" : $("#projectSummary")
+													.val(),
+										},
+										success : function(data) {
+											$(".addD").hide();
+											$(".defaultD").show();
+											$(".summaryDiv").children('h3')
+													.text('');
+											$(".summaryDiv")
+													.children('h3')
+													.append(
+															"<span style='white-space: pre-wrap;'>"
+																	+ data.summary
+																	+ "</span>");
+											$(".summaryDiv").children('h3')
+													.css('display',
+															'inline-block');
+											$(".summaryDiv").children('a')
+													.remove();
+											$(".summaryMode").children('a')
+													.text('');
+											$(".summaryMode").children('a')
+													.append(
+															"<i class='w6FPSPr8JA6xb8SSjkPtI _1QY7TzdLHKX3-BKPDNNYKF'></i>"
+																	+ '수정하기');
+											blue(data);
+										},
+										error : function(e) {
+											console.log('ajax에러');
+										}
+									});
+						});
+
 		$(".projectImage").click(function() {
 			var $image = $("#fileRepImg").children('input').click();
 		});
-		
-		
-		
-		if('${project.repImg}'!=""){
-			$(".imgeAddBtn").css("display","inline-block");
-			$(".projectImage").css("display",'none');
-			var imgsrc= 'resources/pupload/'+'${project.repImg}';
-			$(".projectImage2").children().children('img').attr("src",imgsrc);
-		}else{
-			$(".imgeAddBtn").css("display","none");
-			$(".projectImage2").css("display",'none');
-		}	
-		
-		 $("#fileRepImg").children('input').change(function(){
-			
-			var formData = new FormData();
-			formData.append("file", $("#file")[0].files[0]);
-			formData.append("email",'${project.email}');
-			formData.append("projectNum",'${project.projectNum}');
-			formData.append("updateNum",'2');
-			formData.append("projectCode",'${project.projectCode}');
-			 $.ajax({
-	                url:'projectImageUpdate.do',
-	                processData: false,
-	                contentType: false,
-	                enctype: 'multipart/form-data',
-	                data: formData,
-	                type: 'POST',
-	                success: function(result){
-	                	var imgsrc= 'resources/pupload/'+result.repImg;
-	                	console.log(imgsrc);
-	                	$(".projectImage").css("display",'none');
-	                	$(".projectImage2").children().children('img').attr("src",imgsrc);
-	                	$(".projectImage2").css("display",'inline-block');
-	                    $(".imgeAddBtn").css("display","inline-block");
-	                	alert("업로드 성공!!"); 
-	                	$(".imageMode").children('a').text('');
-						$(".imageMode").children('a').append("<i class='w6FPSPr8JA6xb8SSjkPtI _1QY7TzdLHKX3-BKPDNNYKF'></i>"+'수정하기');
-						$(".imagehint").children('a').text('');
-						$(".imagehint").children('a').append("<i class='_3WyCNpfRrfze5XqBAKgG6j WU1ox0-AeDX_zneKjnNMO _1QY7TzdLHKX3-BKPDNNYKF'></i>"+"이미지 등록 완료");
-						blue(result);
-	                },error:function(){
-	                	console.log("ajax에러");
-	                }
-	            }); 
-		
-		}); 
-		
-		 $(".imgeAddBtn").click(function(){
-			 $("#fileRepImg").children('input').click();
-		 });
-		if('${project.category}'!=""){
+
+		if ('${project.repImg}' != "") {
+			$(".imgeAddBtn").css("display", "inline-block");
+			$(".projectImage").css("display", 'none');
+			var imgsrc = '${project.repImg}';
+			$(".projectImage2").children().children('img').attr("src", imgsrc);
+		} else {
+			$(".imgeAddBtn").css("display", "none");
+			$(".projectImage2").css("display", 'none');
+		}
+
+		$("#fileRepImg")
+				.children('input')
+				.change(
+						function() {
+
+							var formData = new FormData();
+							formData.append("file", $("#file")[0].files[0]);
+							formData.append("email", '${project.email}');
+							formData.append("projectNum",
+									'${project.projectNum}');
+							formData.append("updateNum", '2');
+							formData.append("projectCode",
+									'${project.projectCode}');
+							$
+									.ajax({
+										url : 'projectImageUpdate.do',
+										processData : false,
+										contentType : false,
+										enctype : 'multipart/form-data',
+										data : formData,
+										type : 'POST',
+										success : function(result) {
+											var imgsrc = result.repImg;
+											console.log(imgsrc);
+											$(".projectImage").css("display",
+													'none');
+											$(".projectImage2").children()
+													.children('img').attr(
+															"src", imgsrc);
+											$(".projectImage2").css("display",
+													'inline-block');
+											$(".imgeAddBtn").css("display",
+													"inline-block");
+											alert("업로드 성공!!");
+											$(".imageMode").children('a').text(
+													'');
+											$(".imageMode").children('a')
+													.append(
+															"<i class='w6FPSPr8JA6xb8SSjkPtI _1QY7TzdLHKX3-BKPDNNYKF'></i>"
+																	+ '수정하기');
+											$(".imagehint").children('a').text(
+													'');
+											$(".imagehint")
+													.children('a')
+													.append(
+															"<i class='_3WyCNpfRrfze5XqBAKgG6j WU1ox0-AeDX_zneKjnNMO _1QY7TzdLHKX3-BKPDNNYKF'></i>"
+																	+ "이미지 등록 완료");
+											blue(result);
+										},
+										error : function() {
+											console.log("ajax에러");
+										}
+									});
+
+						});
+
+		$(".imgeAddBtn").click(function() {
+			$("#fileRepImg").children('input').click();
+		});
+		if ('${project.category}' != "") {
 			$(".category").val('${project.category}').prop("selected", true);
-		}		 
+		}
 		$(".category").click(function() {
 			if ($(this).val() != '프로젝트 카테고리를 정해주세요') {
 				$(".categoryBtn").attr("disabled", false);
 			}
 		});
 
-		$(".categoryBtn").click(function() {
-			$.ajax({
-				url : 'projectUpdate.do',
-				type : 'post',
-				data : {
-					"updateNum":4,
-					"email" : '<c:out value="${user.email }"/>',
-					"projectCode" : <c:out value="${project.projectCode}"/>,
-					"projectNum" : <c:out value="${project.projectNum}"/>,
-					"category":$(".category").val(),
-				},
-				success : function(data) {
-					$(".addD").hide();
-					$(".defaultD").show();
-					$(".categoryDiv").children('h3').text('');
-					$(".categoryDiv").children('h3').append("<span style='white-space: pre-wrap;'>"+data.category+"</span>");
-					$(".categoryDiv").children('h3').css('display','inline-block');
-					$(".categoryDiv").children('a').remove();
-					$(".categoryMode").children('a').text('');
-					$(".categoryMode").children('a').append("<i class='w6FPSPr8JA6xb8SSjkPtI _1QY7TzdLHKX3-BKPDNNYKF'></i>"+'수정하기');
-					blue(data);
-				},
-				error : function(e) {
-					console.log('ajax에러');
-				}
-			});
-		});
-		var upNum=0;
-		var upURL="";
+		$(".categoryBtn")
+				.click(
+						function() {
+							$
+									.ajax({
+										url : 'projectUpdate.do',
+										type : 'post',
+										data : {
+											"updateNum" : 4,
+											"email" : '<c:out value="${user.email }"/>',
+											"projectCode" : <c:out value="${project.projectCode}"/>,
+											"projectNum" : <c:out value="${project.projectNum}"/>,
+											"category" : $(".category").val(),
+										},
+										success : function(data) {
+											$(".addD").hide();
+											$(".defaultD").show();
+											$(".categoryDiv").children('h3')
+													.text('');
+											$(".categoryDiv")
+													.children('h3')
+													.append(
+															"<span style='white-space: pre-wrap;'>"
+																	+ data.category
+																	+ "</span>");
+											$(".categoryDiv").children('h3')
+													.css('display',
+															'inline-block');
+											$(".categoryDiv").children('a')
+													.remove();
+											$(".categoryMode").children('a')
+													.text('');
+											$(".categoryMode").children('a')
+													.append(
+															"<i class='w6FPSPr8JA6xb8SSjkPtI _1QY7TzdLHKX3-BKPDNNYKF'></i>"
+																	+ '수정하기');
+											blue(data);
+										},
+										error : function(e) {
+											console.log('ajax에러');
+										}
+									});
+						});
+		var upNum = 0;
+		var upURL = "";
 		$(".profileImage").click(function() {
-			upNum=5;
-			upURL ="projectImageUpdate.do";
+			upNum = 5;
+			upURL = "projectImageUpdate.do";
 			$("#projectImageform").children('input').click();
 		});
 		$(".videoplay").hide();
-		if('${project.profileImg}'!=""){
+		if ('${project.profileImg}' != "") {
 			$(".profileAfter").hide();
-			var imgsrc= 'resources/pupload/'+'${project.profileImg}';
-			$(".profileBefore").children().children('img').attr("src",imgsrc);
-		}else{
+			var imgsrc = '${project.profileImg}';
+			$(".profileBefore").children().children('img').attr("src", imgsrc);
+		} else {
 			$(".profileBefore").hide();
 		}
-		
+
 		$(".updateVideoBtn").hide();
-		$("#projectImageInput").change(function(){
-			var formData = new FormData();
-			formData.append("file", $("#projectImageInput")[0].files[0]);
-			formData.append("email",'${project.email}');
-			formData.append("projectNum",'${project.projectNum}');
-			formData.append("updateNum",upNum);
-			formData.append("projectCode",'${project.projectCode}');
-			 $.ajax({
-	                url:upURL,
-	                processData: false,
-	                contentType: false,
-	                enctype: 'multipart/form-data',
-	                data: formData,
-	                type: 'POST',
-	                success: function(result){
-	                	alert("업로드 성공!!");
-	                	if(upNum==5){
-	                		var imgsrc= 'resources/pupload/'+result.profileImg;
-		                	$(".profileAfter").hide();
-		                	$(".profileBefore").show();
-		                	$(".profileBefore").children().children('img').attr("src",imgsrc);
-		                	$(".profileMode").children('a').text('');
-							$(".profileMode").children('a').append("<i class='w6FPSPr8JA6xb8SSjkPtI _1QY7TzdLHKX3-BKPDNNYKF'></i>"+'수정하기');
-							$(".profileHint").children('a').text('');
-							$(".profileHint").children('a').append("<i class='_3WyCNpfRrfze5XqBAKgG6j WU1ox0-AeDX_zneKjnNMO _1QY7TzdLHKX3-BKPDNNYKF'></i>"+"이미지 등록 완료");
-							blue(result);
-							currentPage="#projectOutline";
-	                	}else{
-	                		$(".projectVideo").hide();
-	                		$(".videoplay").show();
-	                		$(".updateVideoBtn").show();
-	                		var videosrc= 'resources/video/'+result.descriptionVideo;
-	                		//$(".videoplay").children().children().children('source').attr("src",videosrc);
-	                		var video = $("#video");
-	                		video.attr('src',videosrc);
-	                		//video.get(0).play();
-	                		$(".videoMode").children('a').text('');
-							$(".videoMode").children('a').append("<i class='w6FPSPr8JA6xb8SSjkPtI _1QY7TzdLHKX3-BKPDNNYKF'></i>"+'수정하기');
-							$(".videoHint").children('a').text('');
-							$(".videoHint").children('a').append("<i class='_3WyCNpfRrfze5XqBAKgG6j WU1ox0-AeDX_zneKjnNMO _1QY7TzdLHKX3-BKPDNNYKF'></i>"+"동영상 등록 완료");
-	                	}
-	                	$("#projectVideo").attr("id", "projectImageform");
-	                },error:function(){
-	                	console.log("ajax에러");
-	                }
-	            }); 
-		});
-		
+		$("#projectImageInput")
+				.change(
+						function() {
+							var formData = new FormData();
+							formData.append("file",
+									$("#projectImageInput")[0].files[0]);
+							formData.append("email", '${project.email}');
+							formData.append("projectNum",
+									'${project.projectNum}');
+							formData.append("updateNum", upNum);
+							formData.append("projectCode",
+									'${project.projectCode}');
+							$
+									.ajax({
+										url : upURL,
+										processData : false,
+										contentType : false,
+										enctype : 'multipart/form-data',
+										data : formData,
+										type : 'POST',
+										success : function(result) {
+											alert("업로드 성공!!");
+											if (upNum == 5) {
+												var imgsrc = result.profileImg;
+												$(".profileAfter").hide();
+												$(".profileBefore").show();
+												$(".profileBefore").children()
+														.children('img').attr(
+																"src", imgsrc);
+												$(".profileMode").children('a')
+														.text('');
+												$(".profileMode")
+														.children('a')
+														.append(
+																"<i class='w6FPSPr8JA6xb8SSjkPtI _1QY7TzdLHKX3-BKPDNNYKF'></i>"
+																		+ '수정하기');
+												$(".profileHint").children('a')
+														.text('');
+												$(".profileHint")
+														.children('a')
+														.append(
+																"<i class='_3WyCNpfRrfze5XqBAKgG6j WU1ox0-AeDX_zneKjnNMO _1QY7TzdLHKX3-BKPDNNYKF'></i>"
+																		+ "이미지 등록 완료");
+												blue(result);
+												currentPage = "#projectOutline";
+											} else {
+												$(".projectVideo").hide();
+												$(".videoplay").show();
+												$(".updateVideoBtn").show();
+												var videosrc = 'resources/video/'
+														+ result.descriptionVideo;
+												//$(".videoplay").children().children().children('source').attr("src",videosrc);
+												var video = $("#video");
+												video.attr('src', videosrc);
+												//video.get(0).play();
+												$(".videoMode").children('a')
+														.text('');
+												$(".videoMode")
+														.children('a')
+														.append(
+																"<i class='w6FPSPr8JA6xb8SSjkPtI _1QY7TzdLHKX3-BKPDNNYKF'></i>"
+																		+ '수정하기');
+												$(".videoHint").children('a')
+														.text('');
+												$(".videoHint")
+														.children('a')
+														.append(
+																"<i class='_3WyCNpfRrfze5XqBAKgG6j WU1ox0-AeDX_zneKjnNMO _1QY7TzdLHKX3-BKPDNNYKF'></i>"
+																		+ "동영상 등록 완료");
+											}
+											$("#projectVideo").attr("id",
+													"projectImageform");
+										},
+										error : function() {
+											console.log("ajax에러");
+										}
+									});
+						});
+
 		$(".projectVideo").click(function() {
 			$("#projectImageform").attr("id", "projectVideo");
-			upNum=16;
-			upURL ="projectVideo.do";
+			upNum = 16;
+			upURL = "projectVideo.do";
 			$("#projectVideo").children('input').click();
 		});
-		
-		$(".updateVideoBtn").click(function(){
+
+		$(".updateVideoBtn").click(function() {
 			$("#projectImageform").attr("id", "projectVideo");
-			upNum=16;
-			upURL ="projectVideo.do";
+			upNum = 16;
+			upURL = "projectVideo.do";
 			$("#projectVideo").children('input').click();
 		});
-		
+
 		$("#MCName").keyup(function() {
 			$(".MCBtn").attr("disabled", false);
 		});
 
 		$(".MCBtn").click(function() {
-			if(3>$("#MCName").val().length){
+			if (3 > $("#MCName").val().length) {
 				alert("대표 이름은 3글자 이상 입력하셔야 됩니다.");
 				$("#MCName").focus();
 				$("#MCName").val('${project.name }');
@@ -3616,11 +3875,11 @@ px
 				url : 'projectUpdate.do',
 				type : 'post',
 				data : {
-					"updateNum":6,
+					"updateNum" : 6,
 					"email" : '<c:out value="${user.email }"/>',
 					"projectCode" : <c:out value="${project.projectCode}"/>,
 					"projectNum" : <c:out value="${project.projectNum}"/>,
-					"name":$("#MCName").val(),
+					"name" : $("#MCName").val(),
 				},
 				success : function(data) {
 					$(".addD").hide();
@@ -3646,64 +3905,84 @@ px
 			$(".MCRemit").text(300 - $(this).val().length + '자 남았습니다/최소 10자');
 		});
 
-		$(".MCIntroduceBtn").click(function() {
-			if (10 > $("#MCIntroduce").val().length) {
-				alert("진행자소개는 최소 10자 이상 입력하셔야 됩니다.");
-				$("#MCIntroduce").focus();
-				
-				return;
-			}
-			
-			$.ajax({
-				url : 'projectUpdate.do',
-				type : 'post',
-				data : {
-					"updateNum":7,
-					"email" : '<c:out value="${user.email }"/>',
-					"projectCode" : <c:out value="${project.projectCode}"/>,
-					"projectNum" : <c:out value="${project.projectNum}"/>,
-					"introduce":$("#MCIntroduce").val(),
-				},
-				success : function(data) {
-					$(".addD").hide();
-					$(".defaultD").show();
-					$(".MCIntroduceMode").children('a').text('');
-					$(".MCIntroduceMode").children('a').append("<i class='w6FPSPr8JA6xb8SSjkPtI _1QY7TzdLHKX3-BKPDNNYKF'></i>"+'수정하기');
-					$(".MCIntroduceDiv").children('h3').text('');
-					$(".MCIntroduceDiv").children('h3').append("<span style='white-space: pre-wrap;'>"+data.introduce+"</span>");
-					$(".MCIntroduceDiv").children('h3').css('display','inline-block');
-					$(".MCIntroduceDiv").children('a').remove();
-					blue(data);
-				},
-				error : function(e) {
-					console.log('ajax에러');
-				}
-			});
-		});
-		if('${project.price}'!=0){
+		$(".MCIntroduceBtn")
+				.click(
+						function() {
+							if (10 > $("#MCIntroduce").val().length) {
+								alert("진행자소개는 최소 10자 이상 입력하셔야 됩니다.");
+								$("#MCIntroduce").focus();
+
+								return;
+							}
+
+							$
+									.ajax({
+										url : 'projectUpdate.do',
+										type : 'post',
+										data : {
+											"updateNum" : 7,
+											"email" : '<c:out value="${user.email }"/>',
+											"projectCode" : <c:out value="${project.projectCode}"/>,
+											"projectNum" : <c:out value="${project.projectNum}"/>,
+											"introduce" : $("#MCIntroduce")
+													.val(),
+										},
+										success : function(data) {
+											$(".addD").hide();
+											$(".defaultD").show();
+											$(".MCIntroduceMode").children('a')
+													.text('');
+											$(".MCIntroduceMode").children('a')
+													.append(
+															"<i class='w6FPSPr8JA6xb8SSjkPtI _1QY7TzdLHKX3-BKPDNNYKF'></i>"
+																	+ '수정하기');
+											$(".MCIntroduceDiv").children('h3')
+													.text('');
+											$(".MCIntroduceDiv")
+													.children('h3')
+													.append(
+															"<span style='white-space: pre-wrap;'>"
+																	+ data.introduce
+																	+ "</span>");
+											$(".MCIntroduceDiv").children('h3')
+													.css('display',
+															'inline-block');
+											$(".MCIntroduceDiv").children('a')
+													.remove();
+											blue(data);
+										},
+										error : function(e) {
+											console.log('ajax에러');
+										}
+									});
+						});
+		if ('${project.price}' != 0) {
 			$(".goalBtn").attr("disabled", false);
 			var payment = '${project.price}' * 0.04;
 			var platform = '${project.price}' * 0.055;
 			var acount = payment + platform;
 			if (parseInt(acount) > 0) {
-				$(".fees")
-						.each(
-								function(index) {
-									switch (index) {
-									case 0:
-										$(this).text( numberWithCommas($( "#fundingGoalAmountInput").val()- acount));
-										break;
-									case 1:
-										$(this).text(numberWithCommas(payment));
-										break;
-									case 2:
-										$(this).text(numberWithCommas(platform));
-										break;
-									case 3:
-										$(this).text(numberWithCommas(acount));
-										break;
-									}
-								});
+				$(".fees").each(
+						function(index) {
+							switch (index) {
+							case 0:
+								$(this).text(
+										numberWithCommas($(
+												"#fundingGoalAmountInput")
+												.val()
+												- acount));
+								break;
+							case 1:
+								$(this).text(numberWithCommas(payment));
+								break;
+							case 2:
+								$(this).text(numberWithCommas(platform));
+								break;
+							case 3:
+								$(this).text(numberWithCommas(acount));
+								break;
+							}
+						});
 			}
 		}
 		$("#fundingGoalAmountInput")
@@ -3759,48 +4038,65 @@ px
 			return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
 		}
 
-		$(".goalBtn").click(function() {
-			var regexp = /^[0-9]*$/;
-			var goal = $("#fundingGoalAmountInput").val();
-			if (!regexp.test(goal)) {
-				alert("목표 금액은 숫자만 입력 가능합니다.");
-				$("#fundingGoalAmountInput").val('');
-				$("#fundingGoalAmountInput").focus();
-				return;
-			}
-			if (5000 > goal) {
-				alert("목표 금액은 5000원 이상 가능합니다.");
-				$("#fundingGoalAmountInput").focus();
-				return;
-			}
-			
-			$.ajax({
-				url : 'projectUpdate.do',
-				type : 'post',
-				data : {
-					"updateNum":8,
-					"email" : '<c:out value="${user.email }"/>',
-					"projectCode" : <c:out value="${project.projectCode}"/>,
-					"projectNum" : <c:out value="${project.projectNum}"/>,
-					"price":$("#fundingGoalAmountInput").val(),
-				},
-				success : function(data) {
-					 $(".addD").hide();
-					$(".defaultD").show();
-					$(".priceMode").children('a').text('');
-					$(".priceMode").children('a').append("<i class='w6FPSPr8JA6xb8SSjkPtI _1QY7TzdLHKX3-BKPDNNYKF'></i>"+'수정하기');
-					$(".priceDiv").children('h3').text('');
-					$(".priceDiv").children('h3').append("<span style='white-space: pre-wrap;'>"+numberWithCommas(data.price)+"</span>");
-					$(".priceDiv").children('h3').css('display','inline-block');
-					$(".priceDiv").children('a').remove();
-					blue(data);
-				},
-				error : function(e) {
-					console.log('ajax에러');
-				}
-			});
-			
-		});
+		$(".goalBtn")
+				.click(
+						function() {
+							var regexp = /^[0-9]*$/;
+							var goal = $("#fundingGoalAmountInput").val();
+							if (!regexp.test(goal)) {
+								alert("목표 금액은 숫자만 입력 가능합니다.");
+								$("#fundingGoalAmountInput").val('');
+								$("#fundingGoalAmountInput").focus();
+								return;
+							}
+							if (5000 > goal) {
+								alert("목표 금액은 5000원 이상 가능합니다.");
+								$("#fundingGoalAmountInput").focus();
+								return;
+							}
+
+							$
+									.ajax({
+										url : 'projectUpdate.do',
+										type : 'post',
+										data : {
+											"updateNum" : 8,
+											"email" : '<c:out value="${user.email }"/>',
+											"projectCode" : <c:out value="${project.projectCode}"/>,
+											"projectNum" : <c:out value="${project.projectNum}"/>,
+											"price" : $(
+													"#fundingGoalAmountInput")
+													.val(),
+										},
+										success : function(data) {
+											$(".addD").hide();
+											$(".defaultD").show();
+											$(".priceMode").children('a').text(
+													'');
+											$(".priceMode").children('a')
+													.append(
+															"<i class='w6FPSPr8JA6xb8SSjkPtI _1QY7TzdLHKX3-BKPDNNYKF'></i>"
+																	+ '수정하기');
+											$(".priceDiv").children('h3').text(
+													'');
+											$(".priceDiv")
+													.children('h3')
+													.append(
+															"<span style='white-space: pre-wrap;'>"
+																	+ numberWithCommas(data.price)
+																	+ "</span>");
+											$(".priceDiv").children('h3').css(
+													'display', 'inline-block');
+											$(".priceDiv").children('a')
+													.remove();
+											blue(data);
+										},
+										error : function(e) {
+											console.log('ajax에러');
+										}
+									});
+
+						});
 
 		$("#deadlineDay").on('click keyup', function() {
 			var date = new Date();
@@ -3816,48 +4112,65 @@ px
 			$("#deadlineDate").val(year + '-' + month + '-' + day);
 		});
 
-		$(".deadlineBtn").click(function() {
-			if (3 > $("#deadlineDay").val()) {
-				alert("마감일은 최소 삼일 이상 설정해 주세요");
-				$("#deadlineDay").val(3);
-				$("#deadlineDay").focus();
-				return;
-			}
-			var date = new Date();
-			date.setDate(parseInt(date.getDate()) + parseInt($("#deadlineDay").val()));
-			 $.ajax({
-				url : 'projectUpdate.do',
-				type : 'post',
-				data : {
-					"updateNum":9,
-					"email" : '<c:out value="${user.email }"/>',
-					"projectCode" : <c:out value="${project.projectCode}"/>,
-					"projectNum" : <c:out value	="${project.projectNum}"/>,
-					"date" :$("#deadlineDate").val(),
-				},
-				success : function(data) {
-					var date = new Date(data.endDate);
-					
-					var year = date.getFullYear();
-					var month = date.getMonth() + 1;
-					var day = date.getDate();
-					var fulldate = year + '-' + month + '-' + day; 
-					
-					$(".addD").hide();
-					$(".defaultD").show();
-					$(".dtaeMode").children('a').text('');
-					$(".dtaeMode").children('a').append("<i class='w6FPSPr8JA6xb8SSjkPtI _1QY7TzdLHKX3-BKPDNNYKF'></i>"+'수정하기');
-					$(".dateDiv").children('h3').text('');
-					$(".dateDiv").children('h3').append("<span style='white-space: pre-wrap;'>"+fulldate+"</span>");
-					$(".dateDiv").children('h3').css('display','inline-block');
-					$(".dateDiv").children('a').remove();
-					blue(data);
-				},
-				error : function(e) {
-					console.log('ajax에러');
-				}
-			}); 
-		});
+		$(".deadlineBtn")
+				.click(
+						function() {
+							if (3 > $("#deadlineDay").val()) {
+								alert("마감일은 최소 삼일 이상 설정해 주세요");
+								$("#deadlineDay").val(3);
+								$("#deadlineDay").focus();
+								return;
+							}
+							var date = new Date();
+							date.setDate(parseInt(date.getDate())
+									+ parseInt($("#deadlineDay").val()));
+							$
+									.ajax({
+										url : 'projectUpdate.do',
+										type : 'post',
+										data : {
+											"updateNum" : 9,
+											"email" : '<c:out value="${user.email }"/>',
+											"projectCode" : <c:out value="${project.projectCode}"/>,
+											"projectNum" : <c:out value	="${project.projectNum}"/>,
+											"date" : $("#deadlineDate").val(),
+										},
+										success : function(data) {
+											var date = new Date(data.endDate);
+
+											var year = date.getFullYear();
+											var month = date.getMonth() + 1;
+											var day = date.getDate();
+											var fulldate = year + '-' + month
+													+ '-' + day;
+
+											$(".addD").hide();
+											$(".defaultD").show();
+											$(".dtaeMode").children('a').text(
+													'');
+											$(".dtaeMode").children('a')
+													.append(
+															"<i class='w6FPSPr8JA6xb8SSjkPtI _1QY7TzdLHKX3-BKPDNNYKF'></i>"
+																	+ '수정하기');
+											$(".dateDiv").children('h3').text(
+													'');
+											$(".dateDiv")
+													.children('h3')
+													.append(
+															"<span style='white-space: pre-wrap;'>"
+																	+ fulldate
+																	+ "</span>");
+											$(".dateDiv").children('h3').css(
+													'display', 'inline-block');
+											$(".dateDiv").children('a')
+													.remove();
+											blue(data);
+										},
+										error : function(e) {
+											console.log('ajax에러');
+										}
+									});
+						});
 		$(".projectItemModal").hide();
 
 		$(".itemCreateBtn").click(function() {
@@ -3871,7 +4184,7 @@ px
 			$(".projectItemModal").hide();
 
 		});
-		
+
 		$("#modalItemInput").keyup(function() {
 			$(".modalItemBtn").attr('disabled', false);
 			if ($(this).val().length > 50) {
@@ -3880,63 +4193,90 @@ px
 			}
 			$(".modalRemit").text(50 - $(this).val().length + '자 남았습니다');
 		});
-		
-		
-			
-		$(".existItem").hide();
-		$(".modalItemBtn").click(function() {
-			if (1 > $("#modalItemInput").val().length) {
-				alert("아이템 이름은 최소 한글자 이상 입력해야 됩니다.");
-				return;
-			}
-			$.ajax({
-				url : 'projectUpdate.do',
-				type : 'post',
-				data : {
-					"updateNum":10,
-					"email" : '<c:out value="${user.email }"/>',
-					"projectCode" : <c:out value="${project.projectCode}"/>,
-					"projectNum" : <c:out value	="${project.projectNum}"/>,
-					"item" :$("#modalItemInput").val(),
-				},
-				success : function(data) {
-					$("#modalItemInput").val('');
-					$("#addItem").hide();
-					$("#defaultItem").show();
-					$(".noneItem").hide();
-					$(".existItem").show();
-					
-					var temp = new Array();
-					temp = data.giftItem.split(",");
-					$(".appnedItem").children('div').remove();
-					for(var i=0;i<temp.length;i++){
-						$(".appnedItem").append("<div class='_13KHfN73YmQgsYHxXvuh_J saXk0rx00KnB6O_X8xIAv _2uxYQ-nuPwdol9sQhOjfH-'><div class='_13KHfN73YmQgsYHxXvuh_J _3U6RUH-EASpZ_j8ls1HJyP'><div class='_3ECP69YABwRBC-kxTDAokV'><div class='UVz11B8HH3zPgaD3ITNbg'>"+temp[i]+"</div> <div class='_1oHVPuCWp3V0T31vaNkzNX'><div><a class='_3wn6m5g7iiO4BmmcRH091v' onclick='deleteItem(this);' style='color: grey;'>삭제하기</a></div></div></div></div></div>");
-					}
-					
-					var itemAdd = $(".itemAdd").eq(0);
-					$(".itemAdd").remove();
-					 for(var i=0;i<temp.length;i++){
-						itemAdd.children().children().children().children('._29JGBV0ggQH38jcZcbYX3L').text(temp[i]);
-						itemAdd.children().children().children().children().children().children('button').css("background-color","rgb(224, 225, 226)");
-						itemAdd.children().children().children().children("._1isO96lTbXHWwvrnbZpWqR").children('div').text(0);
-						itemAdd.clone().insertAfter($("#itemBox"));
-					} 
-					 itemName.splice(0,itemName.length); 
-				},
-				error : function(e) {
-					console.log('ajax에러');
-				}	
-			});
-			
-			
-		});
 
-		
-		$(".modalItemCancelBtn").click(function(){
+		$(".existItem").hide();
+		$(".modalItemBtn")
+				.click(
+						function() {
+							if (1 > $("#modalItemInput").val().length) {
+								alert("아이템 이름은 최소 한글자 이상 입력해야 됩니다.");
+								return;
+							}
+							$
+									.ajax({
+										url : 'projectUpdate.do',
+										type : 'post',
+										data : {
+											"updateNum" : 10,
+											"email" : '<c:out value="${user.email }"/>',
+											"projectCode" : <c:out value="${project.projectCode}"/>,
+											"projectNum" : <c:out value	="${project.projectNum}"/>,
+											"item" : $("#modalItemInput").val(),
+										},
+										success : function(data) {
+											$("#modalItemInput").val('');
+											$("#addItem").hide();
+											$("#defaultItem").show();
+											$(".noneItem").hide();
+											$(".existItem").show();
+
+											var temp = new Array();
+											temp = data.giftItem.split(",");
+											$(".appnedItem").children('div')
+													.remove();
+											for (var i = 0; i < temp.length; i++) {
+												$(".appnedItem")
+														.append(
+																"<div class='_13KHfN73YmQgsYHxXvuh_J saXk0rx00KnB6O_X8xIAv _2uxYQ-nuPwdol9sQhOjfH-'><div class='_13KHfN73YmQgsYHxXvuh_J _3U6RUH-EASpZ_j8ls1HJyP'><div class='_3ECP69YABwRBC-kxTDAokV'><div class='UVz11B8HH3zPgaD3ITNbg'>"
+																		+ temp[i]
+																		+ "</div> <div class='_1oHVPuCWp3V0T31vaNkzNX'><div><a class='_3wn6m5g7iiO4BmmcRH091v' onclick='deleteItem(this);' style='color: grey;'>삭제하기</a></div></div></div></div></div>");
+											}
+
+											var itemAdd = $(".itemAdd").eq(0);
+											$(".itemAdd").remove();
+											for (var i = 0; i < temp.length; i++) {
+												itemAdd
+														.children()
+														.children()
+														.children()
+														.children(
+																'._29JGBV0ggQH38jcZcbYX3L')
+														.text(temp[i]);
+												itemAdd
+														.children()
+														.children()
+														.children()
+														.children()
+														.children()
+														.children('button')
+														.css(
+																"background-color",
+																"rgb(224, 225, 226)");
+												itemAdd
+														.children()
+														.children()
+														.children()
+														.children(
+																"._1isO96lTbXHWwvrnbZpWqR")
+														.children('div')
+														.text(0);
+												itemAdd.clone().insertAfter(
+														$("#itemBox"));
+											}
+											itemName.splice(0, itemName.length);
+										},
+										error : function(e) {
+											console.log('ajax에러');
+										}
+									});
+
+						});
+
+		$(".modalItemCancelBtn").click(function() {
 			$("#addItem").hide();
 			$("#defaultItem").show();
 		});
-		
+
 		$("#giftDescription").keyup(function() {
 			if ($(this).val().length > 50) {
 				alert("최대 50자만 입력 가능합니다.");
@@ -3946,18 +4286,17 @@ px
 		});
 
 		$(".giftDay").on('click keyup', function() {
-			if($("#deadlineDate").val()==""){
+			if ($("#deadlineDate").val() == "") {
 				alert("프로젝트 마감일을 정해주세요");
 				$(".giftDay").val(0);
 				$("#deadlineDate").focus();
 				return;
 			}
-			
-			
+
 			var date = new Date($("#deadlineDate").val());
 			var giftDay = $(".giftDay").val();
-			if(parseInt(giftDay)<0){
-				giftDay=0;
+			if (parseInt(giftDay) < 0) {
+				giftDay = 0;
 				$(".giftDay").val(0);
 			}
 			date.setDate(parseInt(date.getDate()) + parseInt(giftDay));
@@ -3989,332 +4328,385 @@ px
 							1000 - $(this).val().length + '자 남았습니다/최소 10자');
 				});
 
-		$(".refunTextAreaBtn").click(function() {
-			if (10 > $("#RefundTextArea").val().length) {
-				alert("환불 및 교환 정책 사유는 최소 10자 이상 입력하셔야 됩니다.");
-				$("#RefundTextArea").focus();
-				return;
-			}
-			
-			$.ajax({
-			url : 'projectUpdate.do',
-			type : 'post',
-			data : {
-				"updateNum":11,
-				"email" : '<c:out value="${user.email }"/>',
-				"projectCode" : <c:out value="${project.projectCode}"/>,
-				"projectNum" : <c:out value	="${project.projectNum}"/>,
-				"refund" :$("#RefundTextArea").val(),
-			},
-			success : function(data) {
-				$(".addD").hide();
-				$(".defaultD").show();
-				$(".refundMode").children('a').text('');
-				$(".refundMode").children('a').append("<i class='w6FPSPr8JA6xb8SSjkPtI _1QY7TzdLHKX3-BKPDNNYKF'></i>"+'수정하기');
-				$(".refundDiv").children('h3').text('');
-				$(".refundDiv").children('h3').append("<span style='white-space: pre-wrap;'>"+data.refund+"</span>");
-				$(".refundDiv").children('h3').css('display','inline-block');
-				$(".refundDiv").children('a').remove(); 
-				blue(data);
-			},
-			error : function(e) {
-				console.log('ajax에러');
-			}
-			});
-		});
-		
-		
-		$(".itemSendBtn").click(function(){
+		$(".refunTextAreaBtn")
+				.click(
+						function() {
+							if (10 > $("#RefundTextArea").val().length) {
+								alert("환불 및 교환 정책 사유는 최소 10자 이상 입력하셔야 됩니다.");
+								$("#RefundTextArea").focus();
+								return;
+							}
+
+							$
+									.ajax({
+										url : 'projectUpdate.do',
+										type : 'post',
+										data : {
+											"updateNum" : 11,
+											"email" : '<c:out value="${user.email }"/>',
+											"projectCode" : <c:out value="${project.projectCode}"/>,
+											"projectNum" : <c:out value	="${project.projectNum}"/>,
+											"refund" : $("#RefundTextArea")
+													.val(),
+										},
+										success : function(data) {
+											$(".addD").hide();
+											$(".defaultD").show();
+											$(".refundMode").children('a')
+													.text('');
+											$(".refundMode").children('a')
+													.append(
+															"<i class='w6FPSPr8JA6xb8SSjkPtI _1QY7TzdLHKX3-BKPDNNYKF'></i>"
+																	+ '수정하기');
+											$(".refundDiv").children('h3')
+													.text('');
+											$(".refundDiv")
+													.children('h3')
+													.append(
+															"<span style='white-space: pre-wrap;'>"
+																	+ data.refund
+																	+ "</span>");
+											$(".refundDiv").children('h3').css(
+													'display', 'inline-block');
+											$(".refundDiv").children('a')
+													.remove();
+											blue(data);
+										},
+										error : function(e) {
+											console.log('ajax에러');
+										}
+									});
+						});
+
+		$(".itemSendBtn").click(function() {
 			itemSend();
 		});
-		
+
 		/* $(".emailBtn").click(function(){
 			
 		}); */
-		
-		$(".telInBtn").click(function(){
-			var regExp = /^\d{3}-\d{3,4}-\d{4}$/;
-			if ( !regExp.test($(".telInput").val())) {
-			      alert("잘못된 휴대폰 번호입니다. 숫자, - 를 포함한 숫자만 입력하세요.");
-			      return;
+
+		$(".telInBtn")
+				.click(
+						function() {
+							var regExp = /^\d{3}-\d{3,4}-\d{4}$/;
+							if (!regExp.test($(".telInput").val())) {
+								alert("잘못된 휴대폰 번호입니다. 숫자, - 를 포함한 숫자만 입력하세요.");
+								return;
+							}
+							$
+									.ajax({
+										url : 'projectUpdate.do',
+										type : 'post',
+										data : {
+											"updateNum" : 13,
+											"email" : '<c:out value="${user.email }"/>',
+											"projectCode" : <c:out value="${project.projectCode}"/>,
+											"projectNum" : <c:out value	="${project.projectNum}"/>,
+											"pPhone" : $(".telInput").val(),
+										},
+										success : function(data) {
+											$(".telDiv").children('h3')
+													.text('');
+											$(".telDiv").children('h3').append(
+													data.pPhone);
+											$(".telDiv").children('h3').css(
+													'display', 'inline-block');
+											$(".telDiv").children('a').remove();
+											$(".telMode").children('a')
+													.text('');
+											$(".telMode").children('a').append(
+													"<i class='w6FPSPr8JA6xb8SSjkPtI _1QY7TzdLHKX3-BKPDNNYKF'></i>"
+															+ '수정하기');
+											$(".addD").hide();
+											$(".defaultD").show();
+											console.log(data.pPhone);
+											blue(data);
+										},
+										error : function(e) {
+											console.log('ajax에러');
+										}
+									});
+
+						});
+
+		$(".bankNameInput").keyup(function() {
+			$(".bankBtn").attr("disabled", false);
+		});
+		$('input[name="depositAccountType"]').change(function() {
+			currentPage = '#accountSetup';
+		});
+
+		if ('${project.bankNumber}' != "") {
+			$(".bankNameSelect").val('${project.bankTrading}').prop("selected",
+					true);
+			if ('${project.bankKinds}' == 'P') {
+				$("#deposit-account-type-is-personal").prop("checked", true);
+			} else {
+				$("#deposit-account-type-is-business").prop("checked", true);
 			}
-			$.ajax({
-				url : 'projectUpdate.do',
-				type : 'post',
-				data : {
-					"updateNum":13,
-					"email" : '<c:out value="${user.email }"/>',
-					"projectCode" : <c:out value="${project.projectCode}"/>,
-					"projectNum" : <c:out value	="${project.projectNum}"/>,
-					"pPhone" :$(".telInput").val(),
-				},
-				success : function(data) {
-					$(".telDiv").children('h3').text('');
-					$(".telDiv").children('h3').append(data.pPhone);
-					$(".telDiv").children('h3').css('display','inline-block');
-					$(".telDiv").children('a').remove();
-					$(".telMode").children('a').text('');
-					$(".telMode").children('a').append("<i class='w6FPSPr8JA6xb8SSjkPtI _1QY7TzdLHKX3-BKPDNNYKF'></i>"+'수정하기');
-					$(".addD").hide();
-					$(".defaultD").show();
-					console.log(data.pPhone);
-					blue(data);
-				},
-				error : function(e) {
-					console.log('ajax에러');
-				}
-				});
-			
-			
-		});
-		
-		$(".bankNameInput").keyup(function(){
-			$(".bankBtn").attr("disabled",false);	
-		});
-		$('input[name="depositAccountType"]').change(function(){
-			currentPage='#accountSetup';
-		});
-			
-		 if('${project.bankNumber}'!=""){
-			 $(".bankNameSelect").val('${project.bankTrading}').prop("selected", true);
-			 if('${project.bankKinds}'=='P'){
-				 $("#deposit-account-type-is-personal").prop("checked", true);
-			 }else{
-				 $("#deposit-account-type-is-business").prop("checked", true);
-			 }
-			
-		 }
-		 
-		 $(".bankBtn").click(function(){
-			var bankNameSelect=$(".bankNameSelect").val();
-			var bankNameInput=$(".bankNameInput").val();
-			var bankNumInput=$(".bankNumInput").val();
-			var radio = $('input[name="depositAccountType"]:checked').val();
-			var regExp = /(5[1-5]\d{14})|(4\d{12})(\d{3}?)|3[47]\d{13}|(6011\d{12})/; 
-			 if(""==bankNameInput||""==bankNumInput||"undefined"==radio){
-				alert("계좌 정보는 필수 입력 정보 입니다.");
-				return;
-			} 
-			
-			 if(!regExp.test(bankNumInput)){
-				alert("계좌 번호를 확인해 주세요.");
-				return;
-			} 
-			 
-			  $.ajax({
+
+		}
+
+		$(".bankBtn")
+				.click(
+						function() {
+							var bankNameSelect = $(".bankNameSelect").val();
+							var bankNameInput = $(".bankNameInput").val();
+							var bankNumInput = $(".bankNumInput").val();
+							var radio = $(
+									'input[name="depositAccountType"]:checked')
+									.val();
+							var regExp = /(5[1-5]\d{14})|(4\d{12})(\d{3}?)|3[47]\d{13}|(6011\d{12})/;
+							if ("" == bankNameInput || "" == bankNumInput
+									|| "undefined" == radio) {
+								alert("계좌 정보는 필수 입력 정보 입니다.");
+								return;
+							}
+
+							if (!regExp.test(bankNumInput)) {
+								alert("계좌 번호를 확인해 주세요.");
+								return;
+							}
+
+							$
+									.ajax({
+										url : 'projectUpdate.do',
+										type : 'post',
+										data : {
+											"updateNum" : 14,
+											"email" : '<c:out value="${user.email }"/>',
+											"projectCode" : <c:out value="${project.projectCode}"/>,
+											"projectNum" : <c:out value	="${project.projectNum}"/>,
+											"bankTrading" : bankNameSelect,
+											"bankName" : bankNameInput,
+											"bankNumber" : bankNumInput,
+											"bankKinds" : radio == "personal" ? 'P'
+													: 'B',
+										},
+										success : function(data) {
+											currentPage = '#accountSetup';
+											$(".bankDiv").children('h3').text(
+													'');
+											$(".bankDiv").children('h3')
+													.append(data.bankTrading);
+											$(".bankDiv").children('h3').css(
+													'display', 'inline-block');
+											$(".bankDiv").children('a')
+													.remove();
+											$(".bankMode").children('a').text(
+													'');
+											$(".bankMode").children('a')
+													.append(
+															"<i class='w6FPSPr8JA6xb8SSjkPtI _1QY7TzdLHKX3-BKPDNNYKF'></i>"
+																	+ '수정하기');
+											$(".addD").hide();
+											$(".defaultD").show();
+											console.log(data.bankNumber);
+											blue(data);
+										},
+										error : function(e) {
+											console.log('실패');
+										}
+									});
+						});
+		if ('${fn:length(project.giftArry)}' > 0) {
+			//작업중
+			$(".rewardlist").eq(0).remove();
+			$(".rewardlist").show();
+			console.log($(".itemAdd").eq(0));
+			$(".itemAdd").eq(0).remove();
+			$(".itemAdd").show();
+
+		}
+
+	});
+	var itemListLength = 0;
+	function blue(pro) {
+		if (null != pro.title && null != pro.repImg && null != pro.summary
+				&& null != pro.category && null != pro.profileImg
+				&& null != pro.name && null != pro.introduce) {
+			$(".row1").children('i').remove();
+			$(".row1")
+					.prepend(
+							"<i class='_13KHfN73YmQgsYHxXvuh_J _1oJMWnMCW_Y6GmNc1mhqaW _3sFSjAZS4gQdCAyN3OfyFG -o8oGI_QAOKsVIJOUOUmV _254YPhBOB9qv7-J8bIg7co _1QY7TzdLHKX3-BKPDNNYKF'></i>");
+		}
+		if (0 < pro.price && null != pro.endDate && 0 < itemListLength
+				&& null != pro.refund) {
+			$(".row2").children('i').remove();
+			$(".row2")
+					.prepend(
+							"<i class='_13KHfN73YmQgsYHxXvuh_J _1oJMWnMCW_Y6GmNc1mhqaW _3sFSjAZS4gQdCAyN3OfyFG -o8oGI_QAOKsVIJOUOUmV _254YPhBOB9qv7-J8bIg7co _1QY7TzdLHKX3-BKPDNNYKF'></i>");
+		} else {
+			$(".row2").children('i').remove();
+			$(".row2")
+					.prepend(
+							"<i class='_13KHfN73YmQgsYHxXvuh_J _1oJMWnMCW_Y6GmNc1mhqaW _3RAU_1dXrlkkPhtkKyXSVj _3fJsfvAPykJzj2xoMnxzWW _254YPhBOB9qv7-J8bIg7co _1QY7TzdLHKX3-BKPDNNYKF'></i>");
+		}
+
+		if (null != pro.story) {
+			$(".row3").children('i').remove();
+			$(".row3")
+					.prepend(
+							"<i class='_13KHfN73YmQgsYHxXvuh_J _1oJMWnMCW_Y6GmNc1mhqaW _3sFSjAZS4gQdCAyN3OfyFG -o8oGI_QAOKsVIJOUOUmV _254YPhBOB9qv7-J8bIg7co _1QY7TzdLHKX3-BKPDNNYKF'></i>");
+		}
+		if (null != pro.pPhone && null != pro.bankNumber) {
+			$(".row4").children('i').remove();
+			$(".row4")
+					.prepend(
+							"<i class='_13KHfN73YmQgsYHxXvuh_J _1oJMWnMCW_Y6GmNc1mhqaW _3sFSjAZS4gQdCAyN3OfyFG -o8oGI_QAOKsVIJOUOUmV _254YPhBOB9qv7-J8bIg7co _1QY7TzdLHKX3-BKPDNNYKF'></i>");
+		}
+	}
+
+	var itemName = new Array();
+
+	function select(item) {
+		var str = $(item).parent().siblings('._29JGBV0ggQH38jcZcbYX3L').text();
+		var count = $(item).parent().siblings('._1isO96lTbXHWwvrnbZpWqR')
+				.children('div').text();
+
+		var text = str + "(x" + count + ")";
+
+		if (str == "아이템을 만들어주세요") {
+			alert("아이템을 만들어주세요");
+			return;
+		}
+		var color = $(item).children().css('background-color');
+		if (color == 'rgb(224, 225, 226)') {
+			$(item).children().css('background-color', 'blue');
+		} else {
+			$(item).children().css('background-color', 'rgb(224, 225, 226)');
+		}
+
+		var itemlength = itemName.length;
+		for (var i = 0; i < itemlength; i++) {
+			if (itemName[i] == text) {
+				itemName.splice(i, 1);
+			}
+		}
+		if (itemlength == itemName.length) {
+			itemName[itemName.length] = text;
+		}
+		if (itemName.length == 0) {
+			$(".itemSendBtn").attr("disabled", true);
+		} else {
+			$(".itemSendBtn").attr("disabled", false);
+		}
+		return false;
+	}
+
+	function up(item) {
+		var str = $(item).parent().siblings('._29JGBV0ggQH38jcZcbYX3L').text();
+		if (str == "아이템을 만들어주세요") {
+			alert("아이템을 만들어주세요");
+			return;
+		}
+		var count = $(item).siblings('div').text();
+		var text = str + "(x" + count + ")";
+		if (parseInt(count) != 100) {
+			$(item).siblings('div').text(parseInt(count) + 1);
+		}
+		var itemlength = itemName.length;
+		for (var i = 0; i < itemlength; i++) {
+			if (itemName[i] == text && parseInt(count) != 100) {
+				text = str + "(x" + (parseInt(count) + 1) + ")";
+				itemName[i] = text;
+
+			}
+
+		}
+
+		return false;
+	}
+
+	function down(item) {
+		var str = $(item).parent().siblings('._29JGBV0ggQH38jcZcbYX3L').text();
+
+		if (str == "아이템을 만들어주세요") {
+			alert("아이템을 만들어주세요");
+			return;
+		}
+		var count = $(item).siblings('div').text();
+		var text = str + "(x" + count + ")";
+		if (parseInt(count) != 0) {
+			$(item).siblings('div').text(parseInt(count) - 1);
+		}
+		var itemlength = itemName.length;
+		for (var i = 0; i < itemlength; i++) {
+			if (itemName[i] == text && parseInt(count) != 0) {
+				text = str + "(x" + (parseInt(count) - 1) + ")";
+				itemName[i] = text;
+			}
+
+		}
+
+		return false;
+	}
+
+	function deleteItem(item) {
+		var lastindex = $(item).parent().parent().parent().text().indexOf(" ");
+		var deletestr = $(item).parent().parent().parent().text().substring(0,
+				lastindex);
+		$
+				.ajax({
 					url : 'projectUpdate.do',
 					type : 'post',
 					data : {
-						"updateNum":14,
+						"updateNum" : 12,
 						"email" : '<c:out value="${user.email }"/>',
 						"projectCode" : <c:out value="${project.projectCode}"/>,
 						"projectNum" : <c:out value	="${project.projectNum}"/>,
-						"bankTrading":bankNameSelect,
-						"bankName":bankNameInput,
-						"bankNumber":bankNumInput,
-						"bankKinds":radio=="personal"?'P':'B',
+						"deletestr" : deletestr,
 					},
 					success : function(data) {
-						currentPage='#accountSetup';
-						$(".bankDiv").children('h3').text('');
-						$(".bankDiv").children('h3').append(data.bankTrading);
-						$(".bankDiv").children('h3').css('display','inline-block');
-						$(".bankDiv").children('a').remove();
-						$(".bankMode").children('a').text('');
-						$(".bankMode").children('a').append("<i class='w6FPSPr8JA6xb8SSjkPtI _1QY7TzdLHKX3-BKPDNNYKF'></i>"+'수정하기');
-						$(".addD").hide();
-						$(".defaultD").show();
-						console.log(data.bankNumber);
-						blue(data);
+
+						var temp = new Array();
+						if (null != data.giftItem) {
+							temp = data.giftItem.split(",");
+						} else {
+							temp[0] = "아이템을 만들어주세요";
+						}
+
+						$(".appnedItem").children('div').remove();
+						for (var i = 0; i < temp.length; i++) {
+							if (temp != '아이템을 만들어주세요') {
+								$(".appnedItem")
+										.append(
+												"<div class='_13KHfN73YmQgsYHxXvuh_J saXk0rx00KnB6O_X8xIAv _2uxYQ-nuPwdol9sQhOjfH-'><div class='_13KHfN73YmQgsYHxXvuh_J _3U6RUH-EASpZ_j8ls1HJyP'><div class='_3ECP69YABwRBC-kxTDAokV'><div class='UVz11B8HH3zPgaD3ITNbg'>"
+														+ temp[i]
+														+ "</div> <div class='_1oHVPuCWp3V0T31vaNkzNX'><div><a class='_3wn6m5g7iiO4BmmcRH091v' onclick='deleteItem(this);' style='color: grey;'>삭제하기</a></div></div></div></div></div>");
+							} else {
+								$(".noneItem").show();
+								$(".existItem").hide();
+							}
+						}
+
+						var itemAdd = $(".itemAdd").eq(0);
+						$(".itemAdd").remove();
+						for (var i = 0; i < temp.length; i++) {
+							itemAdd.children().children().children().children(
+									'._29JGBV0ggQH38jcZcbYX3L').text(temp[i]);
+							itemAdd.clone().insertAfter($("#itemBox"));
+						}
 					},
 					error : function(e) {
-						console.log('실패');
+						console.log('ajax에러');
 					}
-					}); 
-		}); 
-		if('${fn:length(project.giftArry)}'>0){
-				//작업중
-				$(".rewardlist").eq(0).remove();
-				$(".rewardlist").show();
-				console.log($(".itemAdd").eq(0));
-				$(".itemAdd").eq(0).remove();
-				$(".itemAdd").show();
-				
-		}
-				
-	});
-				var itemListLength=0;
-				function blue(pro){
-					if(null != pro.title && null != pro.repImg &&null != pro.summary &&
-							null != pro.category &&null != pro.profileImg&&null != pro.name&&null != pro.introduce){
-						$(".row1").children('i').remove();
-						$(".row1").prepend("<i class='_13KHfN73YmQgsYHxXvuh_J _1oJMWnMCW_Y6GmNc1mhqaW _3sFSjAZS4gQdCAyN3OfyFG -o8oGI_QAOKsVIJOUOUmV _254YPhBOB9qv7-J8bIg7co _1QY7TzdLHKX3-BKPDNNYKF'></i>");
-					}
-					if(0<pro.price&&null!=pro.endDate&&0 < itemListLength&&null!=pro.refund){
-						$(".row2").children('i').remove();
-						$(".row2").prepend("<i class='_13KHfN73YmQgsYHxXvuh_J _1oJMWnMCW_Y6GmNc1mhqaW _3sFSjAZS4gQdCAyN3OfyFG -o8oGI_QAOKsVIJOUOUmV _254YPhBOB9qv7-J8bIg7co _1QY7TzdLHKX3-BKPDNNYKF'></i>");
-					}else{
-						$(".row2").children('i').remove();
-						$(".row2").prepend("<i class='_13KHfN73YmQgsYHxXvuh_J _1oJMWnMCW_Y6GmNc1mhqaW _3RAU_1dXrlkkPhtkKyXSVj _3fJsfvAPykJzj2xoMnxzWW _254YPhBOB9qv7-J8bIg7co _1QY7TzdLHKX3-BKPDNNYKF'></i>");
-					}
-					
-					if(null!=pro.story){
-						$(".row3").children('i').remove();
-						$(".row3").prepend("<i class='_13KHfN73YmQgsYHxXvuh_J _1oJMWnMCW_Y6GmNc1mhqaW _3sFSjAZS4gQdCAyN3OfyFG -o8oGI_QAOKsVIJOUOUmV _254YPhBOB9qv7-J8bIg7co _1QY7TzdLHKX3-BKPDNNYKF'></i>");
-					}
-					if(null!=pro.pPhone&&null!=pro.bankNumber){
-						$(".row4").children('i').remove();
-						$(".row4").prepend("<i class='_13KHfN73YmQgsYHxXvuh_J _1oJMWnMCW_Y6GmNc1mhqaW _3sFSjAZS4gQdCAyN3OfyFG -o8oGI_QAOKsVIJOUOUmV _254YPhBOB9qv7-J8bIg7co _1QY7TzdLHKX3-BKPDNNYKF'></i>");
-					}
-				}
-				
-				var itemName = new Array();	
-				
-				function select(item){
-					var str = $(item).parent().siblings('._29JGBV0ggQH38jcZcbYX3L').text();
-					var count = $(item).parent().siblings('._1isO96lTbXHWwvrnbZpWqR').children('div').text();
-					
-					var text = str+"(x"+count+")";
-					
-					
-					if(str=="아이템을 만들어주세요"){
-						alert("아이템을 만들어주세요");
-						return;
-					}
-					var color = $(item).children().css('background-color');
-					if(color=='rgb(224, 225, 226)'){
-						$(item).children().css('background-color','blue');
-					}else{
-						$(item).children().css('background-color','rgb(224, 225, 226)');
-					}
-					
-					
-					
-					var itemlength = itemName.length;
-					for(var i=0;i<itemlength;i++){
-						if(itemName[i]==text){
-							itemName.splice(i, 1);
-						}
-					}
-					if(itemlength==itemName.length){
-						itemName[itemName.length]=text;
-					}
-					if(itemName.length==0){
-						$(".itemSendBtn").attr("disabled",true);
-					}else{
-						$(".itemSendBtn").attr("disabled",false);
-					}
-					return false;
-				}
-	
-	function up(item){
-		var str = $(item).parent().siblings('._29JGBV0ggQH38jcZcbYX3L').text();
-		if(str=="아이템을 만들어주세요"){
-			alert("아이템을 만들어주세요");
-			return;
-		}
-		var count = $(item).siblings('div').text();
-		var text = str+"(x"+count+")";
-		if(parseInt(count)!=100){
-		$(item).siblings('div').text(parseInt(count)+1);
-		}
-		var itemlength = itemName.length;
-		for(var i=0;i<itemlength;i++){
-			if(itemName[i]==text&&parseInt(count)!=100){
-				text=str+"(x"+(parseInt(count)+1)+")";
-				itemName[i]=text;
-				
-			}
-			
-		}
-		
-		return false;
-	}	
-	
-	function down(item){
-		var str = $(item).parent().siblings('._29JGBV0ggQH38jcZcbYX3L').text();
-		
-		if(str=="아이템을 만들어주세요"){
-			alert("아이템을 만들어주세요");
-			return;
-		}
-		var count = $(item).siblings('div').text();
-		var text = str+"(x"+count+")";
-		if(parseInt(count)!=0){
-			$(item).siblings('div').text(parseInt(count)-1);
-		}
-		var itemlength = itemName.length;
-		for(var i=0;i<itemlength;i++){
-			if(itemName[i]==text &&parseInt(count)!=0){
-				text=str+"(x"+(parseInt(count)-1)+")";
-				itemName[i]=text;
-			}
-			
-		}
-		
-		return false;
-	}		
-	
-	
-	
-	
-	function deleteItem(item){
-		var lastindex = $(item).parent().parent().parent().text().indexOf(" ");
-		var deletestr = $(item).parent().parent().parent().text().substring(0,lastindex);
-		$.ajax({
-			url : 'projectUpdate.do',
-			type : 'post',
-			data : {
-				"updateNum":12,
-				"email" : '<c:out value="${user.email }"/>',
-				"projectCode" : <c:out value="${project.projectCode}"/>,
-				"projectNum" : <c:out value	="${project.projectNum}"/>,
-				"deletestr" :deletestr,
-			},
-			success : function(data) {
-				
-				var temp = new Array();
-				if(null!=data.giftItem){
-					temp = data.giftItem.split(",");
-				}else{
-					temp[0] = "아이템을 만들어주세요";
-				}
-				
-				$(".appnedItem").children('div').remove();
-				for(var i=0;i<temp.length;i++){
-					if(temp!='아이템을 만들어주세요'){
-						$(".appnedItem").append("<div class='_13KHfN73YmQgsYHxXvuh_J saXk0rx00KnB6O_X8xIAv _2uxYQ-nuPwdol9sQhOjfH-'><div class='_13KHfN73YmQgsYHxXvuh_J _3U6RUH-EASpZ_j8ls1HJyP'><div class='_3ECP69YABwRBC-kxTDAokV'><div class='UVz11B8HH3zPgaD3ITNbg'>"+temp[i]+"</div> <div class='_1oHVPuCWp3V0T31vaNkzNX'><div><a class='_3wn6m5g7iiO4BmmcRH091v' onclick='deleteItem(this);' style='color: grey;'>삭제하기</a></div></div></div></div></div>");	
-					}else{
-						 $(".noneItem").show();
-						 $(".existItem").hide();
-					}
-				}
-				
-				var itemAdd = $(".itemAdd").eq(0);
-				$(".itemAdd").remove();
-				 for(var i=0;i<temp.length;i++){
-					itemAdd.children().children().children().children('._29JGBV0ggQH38jcZcbYX3L').text(temp[i]);
-					itemAdd.clone().insertAfter($("#itemBox"));
-				} 
-			},
-			error : function(e) {
-				console.log('ajax에러');
-			}
-		});
-	}			
-	function itemSend(){
+				});
+	}
+	function itemSend() {
 		var regexp = /^[0-9]*$/;
 		var price = $("#supportGoal").val();
 		var description = $("#giftDescription").val();
-		var remited ="null"; 
-		var transferCheck =$("#transferCheck").is(":checked");
-		
-		if($("#isRewardQuantityLimited").is(":checked")){
+		var remited = "null";
+		var transferCheck = $("#transferCheck").is(":checked");
+
+		if ($("#isRewardQuantityLimited").is(":checked")) {
 			remited = $("#rewardLimit").val();
-		}else{
-			remited="-1";
+		} else {
+			remited = "-1";
 		}
-		
+
 		if (!regexp.test(price)) {
 			alert("목표 금액은 숫자만 입력 가능합니다.");
 			$("#supportGoal").val('');
@@ -4326,57 +4718,73 @@ px
 			$("#supportGoal").focus();
 			return;
 		}
-		if($(".giftDate").val()=="마감일을 설정해 주세요"){
+		if ($(".giftDate").val() == "마감일을 설정해 주세요") {
 			alert("마감일을 설정해 주세요");
-			$("#new-reward").show();				
+			$("#new-reward").show();
 			$("#create-reward").hide();
 			return;
 		}
 		$.ajax({
-			url: 'insertGift.do',			
+			url : 'insertGift.do',
 			type : 'post',
 			data : {
 				"email" : '<c:out value="${user.email }"/>',
 				"projectCode" : <c:out value="${project.projectCode}"/>,
-				"price": price,
+				"price" : price,
 				"description" : description,
 				"remit" : remited,
-				"transferCheck":transferCheck, 
+				"transferCheck" : transferCheck,
 				"sendDate" : $(".giftDate ").val(),
-				"items" :itemName,
+				"items" : itemName,
 			},
 			success : function(data) {
-				itemName.splice(0,itemName.length); 
-				$(".itemAdd").children().children().children().children().children().children('button').css("background-color","rgb(224, 225, 226)");
-				$(".itemAdd").children().children().children().children("._1isO96lTbXHWwvrnbZpWqR").children('div').text(0);
+				itemName.splice(0, itemName.length);
+				$(".itemAdd").children().children().children().children()
+						.children().children('button').css("background-color",
+								"rgb(224, 225, 226)");
+				$(".itemAdd").children().children().children().children(
+						"._1isO96lTbXHWwvrnbZpWqR").children('div').text(0);
 				$("#giftDescription").val('');
 				$(".giftRemit").val('50자 남았습니다');
 				$("#isRewardQuantityLimited").prop('checked', false);
-				$("#transferCheck").prop('checked', false) ;
+				$("#transferCheck").prop('checked', false);
 				$("#rewardLimit").val(0);
-				$("#rewardLimit").attr("disabled",true);
-				$("#new-reward").show();				
+				$("#rewardLimit").attr("disabled", true);
+				$("#new-reward").show();
 				$("#create-reward").hide();
-				$(".rewardlist").css("display","inline-block");
+				$(".rewardlist").css("display", "inline-block");
 				var rewardlist = $(".rewardlist").eq(0);
 				$(".rewardlist").remove();
-				for(var i=0;i<data.giftArry.length;i++){
+				for (var i = 0; i < data.giftArry.length; i++) {
 					var date = new Date(data.giftArry[i].sendDate);
 					var year = date.getFullYear();
 					var month = date.getMonth() + 1;
 					var day = date.getDate();
-					var fulldate = year + '년' + month + '월' + day+'일'; 
-					
-					rewardlist.children().children(".-UobvSeyUG6cEWYnht50S").children('h4').text(data.giftArry[i].price+" 원 이상 밀어주시는 분께");
-					rewardlist.children().children("._3F_kXgcqjiYVIFqaGYLV_x").children('p').text(data.giftArry[i].description);
-					rewardlist.children().children(".itemLists").children('div').text(data.giftArry[i].item);
-					rewardlist.children().children(".VgMYktFPH-SSPJjPTFMC").children('strong').text(fulldate);
-					rewardlist.children("._3ZgG-OSv0XE3y-h3oPaDsl").children().children('.remitDisplay').text(data.giftArry[i].remited+"개 남음");
-					rewardlist.children().children().children().attr('onclick','deleteItemList('+data.giftArry[i].giftCode+')');
-					if(data.giftArry[i].transferCheck=="false"){
-						rewardlist.children("._3ZgG-OSv0XE3y-h3oPaDsl").children().children('.sendCondition').hide();
-					} else{
-						rewardlist.children("._3ZgG-OSv0XE3y-h3oPaDsl").children().children('.sendCondition').show();
+					var fulldate = year + '년' + month + '월' + day + '일';
+
+					rewardlist.children().children(".-UobvSeyUG6cEWYnht50S")
+							.children('h4').text(
+									data.giftArry[i].price + " 원 이상 밀어주시는 분께");
+					rewardlist.children().children("._3F_kXgcqjiYVIFqaGYLV_x")
+							.children('p').text(data.giftArry[i].description);
+					rewardlist.children().children(".itemLists")
+							.children('div').text(data.giftArry[i].item);
+					rewardlist.children().children(".VgMYktFPH-SSPJjPTFMC")
+							.children('strong').text(fulldate);
+					rewardlist.children("._3ZgG-OSv0XE3y-h3oPaDsl").children()
+							.children('.remitDisplay').text(
+									data.giftArry[i].remited + "개 남음");
+					rewardlist.children().children().children()
+							.attr(
+									'onclick',
+									'deleteItemList('
+											+ data.giftArry[i].giftCode + ')');
+					if (data.giftArry[i].transferCheck == "false") {
+						rewardlist.children("._3ZgG-OSv0XE3y-h3oPaDsl")
+								.children().children('.sendCondition').hide();
+					} else {
+						rewardlist.children("._3ZgG-OSv0XE3y-h3oPaDsl")
+								.children().children('.sendCondition').show();
 					}
 					rewardlist.clone().insertAfter($(".rewardappend"));
 				}
@@ -4386,76 +4794,95 @@ px
 			error : function(e) {
 				console.log('ajax에러');
 			}
-			
+
 		});
 	}
-	
-	 function deleteItemList(giftNum){
-		 $.ajax({
-			url:'deleteGift.do',
+
+	function deleteItemList(giftNum) {
+		$.ajax({
+			url : 'deleteGift.do',
 			type : 'post',
 			data : {
 				"projectCode" : <c:out value="${project.projectCode}"/>,
-				"giftCode":giftNum,
+				"giftCode" : giftNum,
 			},
 			success : function(data) {
-				if(data==""){
-					itemListLength = 0;					
+				if (data == "") {
+					itemListLength = 0;
 					$(".rewardlist").hide();
 					blue(data);
-				}else{
+				} else {
 					var rewardlist = $(".rewardlist").eq(0);
-					
+
 					$(".rewardlist").remove();
-					for(var i=0;i<data.giftArry.length;i++){
+					for (var i = 0; i < data.giftArry.length; i++) {
 						var date = new Date(data.giftArry[i].sendDate);
 						var year = date.getFullYear();
 						var month = date.getMonth() + 1;
 						var day = date.getDate();
-						var fulldate = year + '년' + month + '월' + day+'일'; 
-						
-						rewardlist.children().children(".-UobvSeyUG6cEWYnht50S").children('h4').text(data.giftArry[i].price+" 원 이상 밀어주시는 분께");
-						rewardlist.children().children("._3F_kXgcqjiYVIFqaGYLV_x").children('p').text(data.giftArry[i].description);
-						rewardlist.children().children(".itemLists").children('div').text(data.giftArry[i].item);
-						rewardlist.children().children(".VgMYktFPH-SSPJjPTFMC").children('strong').text(fulldate);
-						rewardlist.children("._3ZgG-OSv0XE3y-h3oPaDsl").children().children('.remitDisplay').text(data.giftArry[i].remited+"개 남음");
-						rewardlist.children().children().children().attr('onclick','deleteItemList('+data.giftArry[i].giftCode+')');
-						if(data.giftArry[i].transferCheck=="false"){
-							rewardlist.children("._3ZgG-OSv0XE3y-h3oPaDsl").children().children('.sendCondition').hide();
-						} else{
-							rewardlist.children("._3ZgG-OSv0XE3y-h3oPaDsl").children().children('.sendCondition').show();
+						var fulldate = year + '년' + month + '월' + day + '일';
+
+						rewardlist.children()
+								.children(".-UobvSeyUG6cEWYnht50S").children(
+										'h4').text(
+										data.giftArry[i].price
+												+ " 원 이상 밀어주시는 분께");
+						rewardlist.children().children(
+								"._3F_kXgcqjiYVIFqaGYLV_x").children('p').text(
+								data.giftArry[i].description);
+						rewardlist.children().children(".itemLists").children(
+								'div').text(data.giftArry[i].item);
+						rewardlist.children().children(".VgMYktFPH-SSPJjPTFMC")
+								.children('strong').text(fulldate);
+						rewardlist.children("._3ZgG-OSv0XE3y-h3oPaDsl")
+								.children().children('.remitDisplay').text(
+										data.giftArry[i].remited + "개 남음");
+						rewardlist.children().children().children().attr(
+								'onclick',
+								'deleteItemList(' + data.giftArry[i].giftCode
+										+ ')');
+						if (data.giftArry[i].transferCheck == "false") {
+							rewardlist.children("._3ZgG-OSv0XE3y-h3oPaDsl")
+									.children().children('.sendCondition')
+									.hide();
+						} else {
+							rewardlist.children("._3ZgG-OSv0XE3y-h3oPaDsl")
+									.children().children('.sendCondition')
+									.show();
 						}
 						rewardlist.clone().insertAfter($(".rewardappend"));
 					}
 				}
-				
+
 			},
 			error : function(e) {
 				console.log('ajax에러');
 			}
-			
+
 		});
- 		return false;
-	} 
-	 
-	 function insertPost(){
-			if(confirm("작성한 글을 게시하겠습니까?")){
-				$("#summerForm").submit();
-			}
+		return false;
 	}
-	function review(){
+
+	function insertPost() {
+		if (confirm("작성한 글을 게시하겠습니까?")) {
+			$("#summerForm").submit();
+		}
+	}
+	function review() {
 		var row1 = $(".row1").children().attr('class');
 		var row2 = $(".row2").children().attr('class');
 		var row3 = $(".row3").children().attr('class');
 		var row4 = $(".row4").children().attr('class');
-		var checkString="_13KHfN73YmQgsYHxXvuh_J _1oJMWnMCW_Y6GmNc1mhqaW _3sFSjAZS4gQdCAyN3OfyFG -o8oGI_QAOKsVIJOUOUmV _254YPhBOB9qv7-J8bIg7co _1QY7TzdLHKX3-BKPDNNYKF";
-		if(row1!=checkString||row2!=checkString||row3!=checkString||row4!=checkString){
+		var checkString = "_13KHfN73YmQgsYHxXvuh_J _1oJMWnMCW_Y6GmNc1mhqaW _3sFSjAZS4gQdCAyN3OfyFG -o8oGI_QAOKsVIJOUOUmV _254YPhBOB9qv7-J8bIg7co _1QY7TzdLHKX3-BKPDNNYKF";
+		if (row1 != checkString || row2 != checkString || row3 != checkString
+				|| row4 != checkString) {
 			alert("선택항목을 제외한 모든 항목을 작성해 주세요");
 			return;
-		} 
-		location.href="review.do?updateNum=17&projectCode="+<c:out value='${project.projectCode}'></c:out>;
+		}
+		location.href = "review.do?updateNum=17&projectCode="
+				+ <c:out value='${project.projectCode}'></c:out>;
 		return false;
-	} 
+	}
 </script>
 </head>
 <body>
@@ -4472,22 +4899,34 @@ px
 								<nav class="_15wNinHQvpbIp0_Wz43mfO">
 									<div class="_13KHfN73YmQgsYHxXvuh_J _1WARcEqqT_Pem8leg2dkMj">
 										<a class="_36JoJH6uhmIKdE1bWDYUlM rLqvd1axk9i-3cU72yTkF"
-											href="/u/doneyanibetaruza"><i
-											class="_36JoJH6uhmIKdE1bWDYUlM _3EDOT6mnWfo2CobuYD5UO7 _1QY7TzdLHKX3-BKPDNNYKF"></i><label>내
+											href="index.do"><i
+											class="_36JoJH6uhmIKdE1bWDYUlM _3EDOT6mnWfo2CobuYD5UO7 _1QY7TzdLHKX3-BKPDNNYKF"></i><label>홈
 												페이지</label></a><span class="tikitakatitle">tikitaka</span>
 									</div>
 								</nav>
 								<!-- react-empty: 747 -->
 								<div
 									class="_13KHfN73YmQgsYHxXvuh_J _3puWjwbvAnZpG2QCp8_2oS _1WARcEqqT_Pem8leg2dkMj _3rzNLoSt7yWgc2zzlY9duD">
-									<h1 class="centerTitle _13KHfN73YmQgsYHxXvuh_J -UobvSeyUG6cEWYnht50S">
+									<h1
+										class="centerTitle _13KHfN73YmQgsYHxXvuh_J -UobvSeyUG6cEWYnht50S">
 										<span
-											class="_13KHfN73YmQgsYHxXvuh_J _2-N-uV2y5apkjtxqdVnsop _1Qdv504-1XMeYXZyb0xQZT _3fJsfvAPykJzj2xoMnxzWW _3D9sfZXrWd8it3eUCuCTc8">준비
-											중</span>
+											class="_13KHfN73YmQgsYHxXvuh_J _2-N-uV2y5apkjtxqdVnsop _1Qdv504-1XMeYXZyb0xQZT _3fJsfvAPykJzj2xoMnxzWW _3D9sfZXrWd8it3eUCuCTc8">
+											<c:if test="${null eq project.title }">
+											준비중
+											</c:if> <c:if test="${null ne project.title }">
+											${fn:substringAfter(project.title, ",") }
+											</c:if>
+										</span>
 										<!-- react-text: 751 -->
 										<!-- /react-text -->
 										<!-- react-text: 752 -->
+										<c:if test="${null eq project.title }">
 										기막힌 제목
+										</c:if>
+										<c:if test="${null ne project.title }">
+										${fn:substringBefore(project.title, ",")}
+										</c:if>
+
 										<!-- /react-text -->
 									</h1>
 								</div>
@@ -4534,10 +4973,11 @@ px
 											class="_13KHfN73YmQgsYHxXvuh_J _3fJsfvAPykJzj2xoMnxzWW _1Qdv504-1XMeYXZyb0xQZT _3SbGdzxKM6M_AeOQWLNqks"
 											href="#"
 											style="z-index: 11; position: relative;"><i
-											class="_12_kkIo9po-wf5m9SVSerq _1QY7TzdLHKX3-BKPDNNYKF"></i><label>미리보기</label></a> --><a href="#" onclick="review();"
+											class="_12_kkIo9po-wf5m9SVSerq _1QY7TzdLHKX3-BKPDNNYKF"></i><label>미리보기</label></a> -->
+										<a href="#" onclick="review();"
 											class="_13KHfN73YmQgsYHxXvuh_J _2rCeEoFeBzvCYn76udqnww _1Qdv504-1XMeYXZyb0xQZT _3SbGdzxKM6M_AeOQWLNqks"
 											style="z-index: 11; position: relative;"><i
-											class="_1QY7TzdLHKX3-BKPDNNYKF _3NmqRmOUOqMEJDy6qtw95t" ></i><label>검토
+											class="_1QY7TzdLHKX3-BKPDNNYKF _3NmqRmOUOqMEJDy6qtw95t"></i><label>검토
 												요청하기</label></a>
 									</div>
 								</div>
@@ -4550,57 +4990,66 @@ px
 										<a class="rLqvd1axk9i-3cU72yTkF _3Syz9fGXYtzMNqK_55A2BW"
 											href="#projectOutline">
 											<h5 class="row1">
-												<c:if test="${null eq project.title or null eq project.repImg or null eq project.summary or null eq project.category or null eq project.profileImg or null eq project.introduce}">
-												 <i
-													class="_13KHfN73YmQgsYHxXvuh_J _1oJMWnMCW_Y6GmNc1mhqaW _3RAU_1dXrlkkPhtkKyXSVj _3fJsfvAPykJzj2xoMnxzWW _254YPhBOB9qv7-J8bIg7co _1QY7TzdLHKX3-BKPDNNYKF"></i>
+												<c:if
+													test="${null eq project.title or null eq project.repImg or null eq project.summary or null eq project.category or null eq project.profileImg or null eq project.introduce}">
+													<i
+														class="_13KHfN73YmQgsYHxXvuh_J _1oJMWnMCW_Y6GmNc1mhqaW _3RAU_1dXrlkkPhtkKyXSVj _3fJsfvAPykJzj2xoMnxzWW _254YPhBOB9qv7-J8bIg7co _1QY7TzdLHKX3-BKPDNNYKF"></i>
 												</c:if>
-												<c:if test="${null ne project.title and null ne project.repImg and null ne project.summary and null ne project.category and null ne project.profileImg and null ne project.introduce}">
-												 <i class='_13KHfN73YmQgsYHxXvuh_J _1oJMWnMCW_Y6GmNc1mhqaW _3sFSjAZS4gQdCAyN3OfyFG -o8oGI_QAOKsVIJOUOUmV _254YPhBOB9qv7-J8bIg7co _1QY7TzdLHKX3-BKPDNNYKF'></i>
+												<c:if
+													test="${null ne project.title and null ne project.repImg and null ne project.summary and null ne project.category and null ne project.profileImg and null ne project.introduce}">
+													<i
+														class='_13KHfN73YmQgsYHxXvuh_J _1oJMWnMCW_Y6GmNc1mhqaW _3sFSjAZS4gQdCAyN3OfyFG -o8oGI_QAOKsVIJOUOUmV _254YPhBOB9qv7-J8bIg7co _1QY7TzdLHKX3-BKPDNNYKF'></i>
 												</c:if>
-													<label><span><span>프로젝트</span>
-														<!-- react-text: 789 --> <!-- /react-text --> <span>개요</span></span></label>
+												<label><span><span>프로젝트</span> <!-- react-text: 789 -->
+														<!-- /react-text --> <span>개요</span></span></label>
 											</h5>
 										</a> <a class="rLqvd1axk9i-3cU72yTkF" href="#fundingReward">
 											<h5 class="row2">
-												<c:if test="${null eq project.price or null eq project.endDate or null eq project.giftItem or null eq project.refund}">
-												<i
-													class="_13KHfN73YmQgsYHxXvuh_J _1oJMWnMCW_Y6GmNc1mhqaW _3RAU_1dXrlkkPhtkKyXSVj _3fJsfvAPykJzj2xoMnxzWW _254YPhBOB9qv7-J8bIg7co _1QY7TzdLHKX3-BKPDNNYKF"></i>
+												<c:if
+													test="${null eq project.price or null eq project.endDate or null eq project.giftItem or null eq project.refund}">
+													<i
+														class="_13KHfN73YmQgsYHxXvuh_J _1oJMWnMCW_Y6GmNc1mhqaW _3RAU_1dXrlkkPhtkKyXSVj _3fJsfvAPykJzj2xoMnxzWW _254YPhBOB9qv7-J8bIg7co _1QY7TzdLHKX3-BKPDNNYKF"></i>
 												</c:if>
-												
-												<c:if test="${null ne project.price and null ne project.endDate and null ne project.giftItem and null ne project.refund}">
-												<i class='_13KHfN73YmQgsYHxXvuh_J _1oJMWnMCW_Y6GmNc1mhqaW _3sFSjAZS4gQdCAyN3OfyFG -o8oGI_QAOKsVIJOUOUmV _254YPhBOB9qv7-J8bIg7co _1QY7TzdLHKX3-BKPDNNYKF'></i>
+
+												<c:if
+													test="${null ne project.price and null ne project.endDate and null ne project.giftItem and null ne project.refund}">
+													<i
+														class='_13KHfN73YmQgsYHxXvuh_J _1oJMWnMCW_Y6GmNc1mhqaW _3sFSjAZS4gQdCAyN3OfyFG -o8oGI_QAOKsVIJOUOUmV _254YPhBOB9qv7-J8bIg7co _1QY7TzdLHKX3-BKPDNNYKF'></i>
 												</c:if>
-												<label><span><span>펀딩
-															및</span> <!-- react-text: 797 --> <!-- /react-text --> <span>선물
-															구성</span></span></label>
+												<label><span><span>펀딩 및</span> <!-- react-text: 797 -->
+														<!-- /react-text --> <span>선물 구성</span></span></label>
 											</h5>
-										</a> 
-										<a class="rLqvd1axk9i-3cU72yTkF" href="#storytelling">
-										<h5 class="row3">
+										</a> <a class="rLqvd1axk9i-3cU72yTkF" href="#storytelling">
+											<h5 class="row3">
 												<c:if test="${null eq project.story }">
-												<i
-													class="_13KHfN73YmQgsYHxXvuh_J _1oJMWnMCW_Y6GmNc1mhqaW _3RAU_1dXrlkkPhtkKyXSVj _3fJsfvAPykJzj2xoMnxzWW _254YPhBOB9qv7-J8bIg7co _1QY7TzdLHKX3-BKPDNNYKF"></i>
+													<i
+														class="_13KHfN73YmQgsYHxXvuh_J _1oJMWnMCW_Y6GmNc1mhqaW _3RAU_1dXrlkkPhtkKyXSVj _3fJsfvAPykJzj2xoMnxzWW _254YPhBOB9qv7-J8bIg7co _1QY7TzdLHKX3-BKPDNNYKF"></i>
 												</c:if>
-												
+
 												<c:if test="${null ne project.story}">
-												<i class='_13KHfN73YmQgsYHxXvuh_J _1oJMWnMCW_Y6GmNc1mhqaW _3sFSjAZS4gQdCAyN3OfyFG -o8oGI_QAOKsVIJOUOUmV _254YPhBOB9qv7-J8bIg7co _1QY7TzdLHKX3-BKPDNNYKF'></i>
+													<i
+														class='_13KHfN73YmQgsYHxXvuh_J _1oJMWnMCW_Y6GmNc1mhqaW _3sFSjAZS4gQdCAyN3OfyFG -o8oGI_QAOKsVIJOUOUmV _254YPhBOB9qv7-J8bIg7co _1QY7TzdLHKX3-BKPDNNYKF'></i>
 												</c:if>
-													<label><span><span>스토리</span><span>텔링</span></span></label>
-											</h5 > </a> 
-											<a class="rLqvd1axk9i-3cU72yTkF" href="#accountSetup">
+												<label><span><span>스토리</span><span>텔링</span></span></label>
+											</h5>
+										</a> <a class="rLqvd1axk9i-3cU72yTkF" href="#accountSetup">
 											<h5 class="row4">
-												<c:if test="${null eq project.pPhone or null eq project.bankNumber }">
-												<i
-													class="_13KHfN73YmQgsYHxXvuh_J _1oJMWnMCW_Y6GmNc1mhqaW _3RAU_1dXrlkkPhtkKyXSVj _3fJsfvAPykJzj2xoMnxzWW _254YPhBOB9qv7-J8bIg7co _1QY7TzdLHKX3-BKPDNNYKF"></i>
+												<c:if
+													test="${null eq project.pPhone or null eq project.bankNumber }">
+													<i
+														class="_13KHfN73YmQgsYHxXvuh_J _1oJMWnMCW_Y6GmNc1mhqaW _3RAU_1dXrlkkPhtkKyXSVj _3fJsfvAPykJzj2xoMnxzWW _254YPhBOB9qv7-J8bIg7co _1QY7TzdLHKX3-BKPDNNYKF"></i>
 												</c:if>
-												
-												<c:if test="${null ne project.pPhone and null ne project.bankNumber }">
-												<i class='_13KHfN73YmQgsYHxXvuh_J _1oJMWnMCW_Y6GmNc1mhqaW _3sFSjAZS4gQdCAyN3OfyFG -o8oGI_QAOKsVIJOUOUmV _254YPhBOB9qv7-J8bIg7co _1QY7TzdLHKX3-BKPDNNYKF'></i>
+
+												<c:if
+													test="${null ne project.pPhone and null ne project.bankNumber }">
+													<i
+														class='_13KHfN73YmQgsYHxXvuh_J _1oJMWnMCW_Y6GmNc1mhqaW _3sFSjAZS4gQdCAyN3OfyFG -o8oGI_QAOKsVIJOUOUmV _254YPhBOB9qv7-J8bIg7co _1QY7TzdLHKX3-BKPDNNYKF'></i>
 												</c:if>
-													
-													<label><span><span>계좌</span>
-														<!-- react-text: 812 --> <!-- /react-text --> <span>설정</span></span></label>
-											</h5> </a>
+
+												<label><span><span>계좌</span> <!-- react-text: 812 -->
+														<!-- /react-text --> <span>설정</span></span></label>
+											</h5>
+										</a>
 
 									</div>
 								</div>

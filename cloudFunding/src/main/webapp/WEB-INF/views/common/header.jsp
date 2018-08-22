@@ -1415,7 +1415,7 @@
 							class="MenuItem__MenuItem-no2u3j-0 cwYjsy">
 							<span class="MenuItem__MenuItemTitle-no2u3j-1 enzRKc">내
 								후원현황</span>
-						</div></a><a href="/u/domoyozudupinedo/projects"><div
+						</div></a><a href="myProject.do"><div
 							class="MenuItem__MenuItem-no2u3j-0 cwYjsy">
 							<span class="MenuItem__MenuItemTitle-no2u3j-1 enzRKc">내가
 								만든 프로젝트</span>
