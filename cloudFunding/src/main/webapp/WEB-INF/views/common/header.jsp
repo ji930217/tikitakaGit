@@ -958,12 +958,12 @@
 								프로젝트</span></a>
 					</div>
 					<div class="MenuItem__MenuItem-no2u3j-0 cwYjsy">
-						<a href="/projects/ending-soon"><span
+						<a href="projectListOrderByDeadline.do"><span
 							class="MenuItem__MenuItemTitle-no2u3j-1 enzRKc">마감 앞둔
 								프로젝트</span></a>
 					</div>
 					<div class="MenuItem__MenuItem-no2u3j-0 cwYjsy">
-						<a href="/projects/new"><span
+						<a href="projectListOrderByEnrollDate.do"><span
 							class="MenuItem__MenuItemTitle-no2u3j-1 enzRKc">새로운
 								프로젝트</span></a>
 					</div>

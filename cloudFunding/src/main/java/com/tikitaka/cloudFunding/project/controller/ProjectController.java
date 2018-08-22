@@ -1,6 +1,7 @@
 package com.tikitaka.cloudFunding.project.controller;
 
 import java.io.File;
+import java.sql.Date;
 import java.util.HashMap;
 import java.util.List;
 
@@ -16,10 +17,9 @@ import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.multipart.MultipartHttpServletRequest;
 import org.springframework.web.servlet.ModelAndView;
 
+import com.tikitaka.cloudFunding.common.MyRenamePolicy;
 import com.tikitaka.cloudFunding.community.model.service.CommunityService;
 import com.tikitaka.cloudFunding.community.model.vo.PostVo;
-import com.tikitaka.cloudFunding.common.MyRenamePolicy;
-
 import com.tikitaka.cloudFunding.member.model.vo.Member;
 import com.tikitaka.cloudFunding.project.model.service.ProjectService;
 import com.tikitaka.cloudFunding.project.model.vo.GiftVo;
@@ -49,13 +49,13 @@ public class ProjectController {
 		mv.setViewName("project/popularList");
 		return mv;
 	}
-	
+
 	@RequestMapping("popularList4.do")
 	public @ResponseBody List<ProjectVo> popularList4(int btnIdx, ModelAndView mv){
 		List<ProjectVo> list = projectService.selectPopularList4(btnIdx);
 		return list;
 	}
-
+	
 	@RequestMapping("projectStart.do")
 	public String projectStart(){
 		return "project/projectstart";
@@ -298,6 +298,28 @@ public class ProjectController {
 		mv.addObject("category", category);
 		mv.addObject("list", list);
 		mv.setViewName("project/projectListByCategory");
+		
+		return mv;
+	}
+	
+	@RequestMapping("projectListOrderByDeadline.do")
+	public ModelAndView projectListOrderByDeadline(ModelAndView mv){
+		List<ProjectVo> list = projectService.projectListOrderByDeadline();
+		
+		mv.addObject("list", list);
+		mv.addObject("text", "마감 앞둔 프로젝트");
+		mv.setViewName("project/projectList");
+		
+		return mv;
+	}
+	
+	@RequestMapping("projectListOrderByEnrollDate.do")
+	public ModelAndView projectListOrderByEnrollDate(ModelAndView mv){
+		List<ProjectVo> list = projectService.projectListOrderByEnrollDate();
+		
+		mv.addObject("list", list);
+		mv.addObject("text", "새로운 프로젝트");
+		mv.setViewName("project/projectList");
 		
 		return mv;
 	}

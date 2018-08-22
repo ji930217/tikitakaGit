@@ -70,6 +70,14 @@ public class ProjectService {
 		return dao.searchProjectByCategory(category);
 	}
 
+	public List<ProjectVo> projectListOrderByDeadline() {
+		return dao.projectListOrderByDeadline();
+	}
+
+	public List<ProjectVo> projectListOrderByEnrollDate() {
+		return dao.projectListOrderByEnrollDate();
+	}
+
 	public List<ProjectVo> selectPopularList4(int btnIdx) {
 		return dao.selectPopularList4(btnIdx);
 	}

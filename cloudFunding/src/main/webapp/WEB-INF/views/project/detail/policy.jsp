@@ -281,6 +281,26 @@
 					</div>
 				</div>
 			</div>
+
+			<div class="PolicyCard__CardWrapper-s15bkvr9-3 dtFXbm">
+				<div class="Card__Card-s1i1esb8-0 bJXRvz">
+					<div	class="CreatorContactCard__CreatorContactCardInner-s1n9u3yh-0 frQalE">
+						<div class="CreatorContactCard__CreatorContactContents-s1n9u3yh-1 cDaykX">
+							<div class="CreatorContactCard__CreatorContactCardLabel-s1n9u3yh-2 ldtjlR">
+								프로젝트에 대해 문의사항이 있으신가요?
+							</div>
+							<div class="CreatorContactCard__CreatorContactButton-s1n9u3yh-3 bHyDWq">
+								<button class="Button__Button-s1ng5xda-0 dxWcyc" onclick="openMessagePopup();">
+									<i class="_3YmAkQhwzI7o-uUWz_8Mp4 _1QY7TzdLHKX3-BKPDNNYKF"></i>
+									창작자에게 문의하기
+								</button>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			
+			
 		</div>
 	</div>
 </body>

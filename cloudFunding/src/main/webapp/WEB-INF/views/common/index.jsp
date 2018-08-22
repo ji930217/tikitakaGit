@@ -1,8 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
-<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>     
-
 <!DOCTYPE html>
 <html>
 <!-- Added by HTTrack -->
@@ -671,8 +668,6 @@ transition: all .2s;
 -webkit-flex-direction: row;
 -ms-flex-direction: row;
 flex-direction: row;
-max-width:1100px;
-overflow:hidden;
 }
 }
 /* sc-component-id: Carousel__Column */
@@ -1095,51 +1090,137 @@ transform: translateX(0);
 transform: translateX(4px);
 }
 }
-
 </style>
-<script>
-
-	
-	/* $('#carouselExampleIndicators').carousel({
-	  interval: 2000,
-	  parse:"hover"
-	}) */
-
-	$(function(){
-		sessionStorage.setItem("btnIdx", 1);		
-		
-		$("#moveProjectBtn").click(function(){
-			var btnIdx = parseInt(sessionStorage.getItem("btnIdx"));		
-			console.log(btnIdx);
-			
-			$.ajax({
-				url : "selectList4.do",
-				type : "post",
-				data : {btnIdx : btnIdx},
-				success:function(data){
-					console.log(data);
-					for(var key in data){
-						console.log(data[key]);
-					}
-					
-				},error:function(e){
-					console.log(e);
-				}
-			
-			});
-			
-		});
-	
-	});
-</script>
-</head>
-<body> 
-<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<!-- <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script> -->
+<script type="text/javascript" src="resources/js/jquery-3.3.1.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js" integrity="sha384-vFJXuSJphROIrBnz7yo7oB41mKfc8JzQZiCq4NCceLEaO4IHwicKwpJf9c9IpFgh" crossorigin="anonymous"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/js/bootstrap.min.js" integrity="sha384-h0AbiXch4ZDo7tp9hKZ4TsHbi047NrKGLO3SEJAg45jXxnGIfYzk4Si90RDIqNm1" crossorigin="anonymous"></script>
 
+<script>
+/* $('#carouselExampleIndicators').carousel({
+	  interval: 2000,
+	  parse:"hover"
+	}) */
+	
+	$(function(){
+		sessionStorage.setItem("btnIdx", 1);
+		nextPopularProject();
+		
+		$("#prevPopularProjectBtn").click(function() {
+			var btnIdx= parseInt(sessionStorage.getItem("btnIdx"));
+			sessionStorage.setItem("btnIdx", btnIdx - 4);
+			console.log(sessionStorage.getItem("btnIdx"));
+			prevPopularProject();
+		});
+		$("#nextPopularProjectBtn").click(function() {
+			var btnIdx= parseInt(sessionStorage.getItem("btnIdx"));
+			sessionStorage.setItem("btnIdx", btnIdx + 4);
+			console.log(sessionStorage.getItem("btnIdx"));
+			nextPopularProject();
+		});
+		
+	});
+	 
+	function prevPopularProject(){
+		var btnIdx= parseInt(sessionStorage.getItem("btnIdx"));
+		$.ajax({
+			url : "popularList4.do",
+			type : "post",
+			data : {	btnIdx : btnIdx	}, 
+			success : function(data) {
+				var $popularProjectListDiv = $("#popularProjectListDiv");
+				var resultStr = "";
+				for (var key in data) {
+					/* console.log(data[key]); */
+					var percent = parseInt(data[key].currentAmount / data[key].price * 100);
+					var now = new Date().getTime();
+					var DateData = data[key].endDate;
+					var remain = parseInt(( DateData - now ) / (1000*60*60*24));
+					if(remain < 0 ) {
+						remain = 0;
+					}	
+					resultStr += "<div class='Carousel__Column hEilqP' data-reactid='92'>";
+				    resultStr += "<a class='ProjectItem__ProjectItemCard hFAREh' href='projectDetail.do?projectCode=" + data[key].projectCode + "' data-reactid='93'>";
+				    resultStr += "<img class='ProjectItem__ProjectCoverimage bGqbmB' src='" + data[key].repImg + "' alt='" + data[key].title + " 이미지' data-reactid='94'/>";
+				    resultStr += "<div class='ProjectItem__ProjectTextWrapper fOsIlY' data-reactid='95'>";
+				    resultStr += "<div class='ProjectItem__FundingTitle kCGzYC' data-reactid='96'>";
+				    resultStr += "<h1 class='ProjectItem__ProjectTitle gEZuLR' data-reactid='97'>" + data[key].title + "</h1>";
+				    resultStr += "<p class='ProjectItem__CreatorName gUQbvW' data-reactid='98'>" + data[key].name + "</p>";
+				    resultStr += "</div>";
+				    resultStr += "<svg class='ProjectItem__PercentageLine cWrfUF' xmlns='http://www.w3.org/2000/svg' data-reactid='99'>";
+				    resultStr += "<rect x='0' y='0' fill='#efefef' height='2' width='100%' data-reactid='100'></rect>";
+				    resultStr += "<rect x='0' y='0' height='2' width='" + percent + "%' fill='#fa6462' data-reactid='101'></rect></svg>";
+				    resultStr += "<div class='ProjectItem__FundingInfo beYdFz' data-reactid='102'>";
+				    resultStr += "<span style='font-size:0.8rem;' data-reactid='103'>";
+				    resultStr += "<i class='_2CeNIUhLMEIh6Reaatfs8t _1DLNFgQRrQNEosKFB0zOK5 _3fJsfvAPykJzj2xoMnxzWW _1QY7TzdLHKX3-BKPDNNYKF' data-reactid='104'></i>";
+				    resultStr += "<span style='font-weight:700;' data-reactid='105'></span>"  + remain + "일 남음</span>";
+				    resultStr += "<div data-reactid='108'>";
+				    resultStr += "<span class='ProjectItem__FundingMoney ddAStM' data-reactid='109'>" + data[key].currentAmount + "원</span>";
+				    resultStr += "<span class='ProjectItem__FundingRate bpoHzD' data-reactid='112'>" + percent + "%</span></div></div></div></a></div>";
+				        
+				}
+				$popularProjectListDiv.html(resultStr);
+				
+				
+			}, error : function(e) {
+				console.log(e);
+			}
+		});
+	}
+	function nextPopularProject(){
+		var btnIdx= parseInt(sessionStorage.getItem("btnIdx"));
+		$.ajax({
+			url : "popularList4.do",
+			type : "post",
+			data : {	btnIdx : btnIdx	}, 
+			success : function(data) {
+				var $popularProjectListDiv = $("#popularProjectListDiv");
+				var resultStr = "";
+				for (var key in data) {
+					/* console.log(data[key]); */
+					var percent = parseInt(data[key].currentAmount / data[key].price * 100);
+					var now = new Date().getTime();
+					var DateData = data[key].endDate;
+					var remain = parseInt(( DateData - now ) / (1000*60*60*24));
+					if(remain < 0 ) {
+						remain = 0;
+					}	
+					resultStr += "<div class='Carousel__Column hEilqP' data-reactid='92'>";
+				    resultStr += "<a class='ProjectItem__ProjectItemCard hFAREh' href='projectDetail.do?projectCode=" + data[key].projectCode + "' data-reactid='93'>";
+				    resultStr += "<img class='ProjectItem__ProjectCoverimage bGqbmB' src='" + data[key].repImg + "' alt='" + data[key].title + " 이미지' data-reactid='94'/>";
+				    resultStr += "<div class='ProjectItem__ProjectTextWrapper fOsIlY' data-reactid='95'>";
+				    resultStr += "<div class='ProjectItem__FundingTitle kCGzYC' data-reactid='96'>";
+				    resultStr += "<h1 class='ProjectItem__ProjectTitle gEZuLR' data-reactid='97'>" + data[key].title + "</h1>";
+				    resultStr += "<p class='ProjectItem__CreatorName gUQbvW' data-reactid='98'>" + data[key].name + "</p>";
+				    resultStr += "</div>";
+				    resultStr += "<svg class='ProjectItem__PercentageLine cWrfUF' xmlns='http://www.w3.org/2000/svg' data-reactid='99'>";
+				    resultStr += "<rect x='0' y='0' fill='#efefef' height='2' width='100%' data-reactid='100'></rect>";
+				    resultStr += "<rect x='0' y='0' height='2' width='" + percent + "%' fill='#fa6462' data-reactid='101'></rect></svg>";
+				    resultStr += "<div class='ProjectItem__FundingInfo beYdFz' data-reactid='102'>";
+				    resultStr += "<span style='font-size:0.8rem;' data-reactid='103'>";
+				    resultStr += "<i class='_2CeNIUhLMEIh6Reaatfs8t _1DLNFgQRrQNEosKFB0zOK5 _3fJsfvAPykJzj2xoMnxzWW _1QY7TzdLHKX3-BKPDNNYKF' data-reactid='104'></i>";
+				    resultStr += "<span style='font-weight:700;' data-reactid='105'></span>"  + remain + "일 남음</span>";
+				    resultStr += "<div data-reactid='108'>";
+				    resultStr += "<span class='ProjectItem__FundingMoney ddAStM' data-reactid='109'>" + data[key].currentAmount + "원</span>";
+				    resultStr += "<span class='ProjectItem__FundingRate bpoHzD' data-reactid='112'>" + percent + "%</span></div></div></div></a></div>";
+				        
+				}
+				$popularProjectListDiv.html(resultStr);
+				
+				
+			}, error : function(e) {
+				console.log(e);
+			}
+		});
+	}
+	
+</script>
+</head>
+<body> 
+
 <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
   <ol class="carousel-indicators">
+  
     <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
     <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
     <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
@@ -1199,151 +1280,22 @@ transform: translateX(4px);
     <span class="sr-only">다음</span>
   </a>
 </div>
-
-
+ 
  <div class="Divider__Divider hEIXJa" data-reactid="184"></div>
 <div class="Container__Container jdgWcI" data-reactid="78">
   <div data-reactid="79">
-    <div class="Carousel__CarouselHeader iSHaZi" data-reactid="80"><span class="Carousel__CarouselTitle jtYVGd" data-reactid="81"><a class="Carousel__Link ervGwJ" href="popularList.do" data-reactid="82">분야별 인기 프로젝트<i class="yv2X_NOjMYirwH0R23J17 WU1ox0-AeDX_zneKjnNMO _1QY7TzdLHKX3-BKPDNNYKF" data-reactid="85"></i></a></span>
+    <div class="Carousel__CarouselHeader iSHaZi" data-reactid="80"><span class="Carousel__CarouselTitle jtYVGd" data-reactid="81"><a class="Carousel__Link ervGwJ" href="collections/editorspick.html" data-reactid="82">분야별 인기 프로젝트<i class="yv2X_NOjMYirwH0R23J17 WU1ox0-AeDX_zneKjnNMO _1QY7TzdLHKX3-BKPDNNYKF" data-reactid="85"></i></a></span>
       <div class="Carousel__CarouselButtons hgvQtm" data-reactid="86">
-        <button class="Button__Button buxDxm" disabled="" data-reactid="87"><i class="_36JoJH6uhmIKdE1bWDYUlM _1XlDYEGI6NQt_YZkSA5u6N _1QY7TzdLHKX3-BKPDNNYKF" data-reactid="88"></i></button>
-        <button class="Button__Button csIfer" data-reactid="89" id="moveProjectBtn"><i class="WU1ox0-AeDX_zneKjnNMO _1XlDYEGI6NQt_YZkSA5u6N _1QY7TzdLHKX3-BKPDNNYKF" data-reactid="90"></i></button>
+        <button class="Button__Button csIfer"" data-reactid="87" id="prevPopularProjectBtn"><i class="_36JoJH6uhmIKdE1bWDYUlM _1XlDYEGI6NQt_YZkSA5u6N _1QY7TzdLHKX3-BKPDNNYKF" data-reactid="88"></i></button>
+        <button class="Button__Button csIfer" data-reactid="89" id="nextPopularProjectBtn"><i class="WU1ox0-AeDX_zneKjnNMO _1XlDYEGI6NQt_YZkSA5u6N _1QY7TzdLHKX3-BKPDNNYKF" data-reactid="90"></i></button>
       </div>
     </div>
     
-    <div class="Carousel__CarouselContents iEZvlH" data-reactid="91">
-	<c:forEach var="project" items="${popularList }" varStatus="status">	
-      <div class="Carousel__Column hEilqP" data-reactid="92"> <a class="ProjectItem__ProjectItemCard hFAREh" href="projectDetail.do?projectCode=1" data-reactid="93"><img class="ProjectItem__ProjectCoverimage bGqbmB" src="resources/images/header/tumblbug-pci.imgix.net/fcdb199a7461439ec4083d3fa5aa05ddda97c7d9/6f13578acde5f434401db2340d6effacc378863e/4ed27b563664b37034ebeba6dac774fbe17fcf25/fb667098-0112-4782-9fc6-be178e9e7244cd3c.png?ixlib=rb-1.1.0&amp;w=620&amp;h=465&amp;auto=format%2Ccompress&amp;lossless=true&amp;fit=crop&amp;s=e1a11854f54300f644912e39523e5ffc" alt="&#x27;보통의 물건&#x27;에 &#x27;보통의 하루&#x27;를 담다 이미지" data-reactid="94"/>
-        <div class="ProjectItem__ProjectTextWrapper fOsIlY" data-reactid="95">
-          <div class="ProjectItem__FundingTitle kCGzYC" data-reactid="96">
-            <h1 class="ProjectItem__ProjectTitle gEZuLR" data-reactid="97">&#x27;보통의 물건&#x27;에 &#x27;보통의 하루&#x27;를 담다</h1>
-            <p class="ProjectItem__CreatorName gUQbvW" data-reactid="98">Take a Look studio</p>
-          </div>
-          <svg class="ProjectItem__PercentageLine cWrfUF" xmlns="http://www.w3.org/2000/svg" data-reactid="99">
-            <rect x="0" y="0" fill="#efefef" height="2" width="100%" data-reactid="100"></rect>
-            <rect x="0" y="0" height="2" width="86%" fill="#fa6462" data-reactid="101"></rect>
-          </svg>
-          <div class="ProjectItem__FundingInfo beYdFz" data-reactid="102"> <span style="font-size:0.8rem;" data-reactid="103"><i class="_2CeNIUhLMEIh6Reaatfs8t _1DLNFgQRrQNEosKFB0zOK5 _3fJsfvAPykJzj2xoMnxzWW _1QY7TzdLHKX3-BKPDNNYKF" data-reactid="104"></i><span style="font-weight:700;" data-reactid="105"></span> 106일 남음</span>
-            <div data-reactid="108"><span class="ProjectItem__FundingMoney ddAStM" data-reactid="109"> 102,609,000원</span><span class="ProjectItem__FundingRate bpoHzD" data-reactid="112">386%</span></div>
-          </div>
-        </div>
-        </a></div>
-   	</c:forEach>
-   </div>
-      <!-- <div class="Carousel__Column hEilqP" data-reactid="115"><a class="ProjectItem__ProjectItemCard hFAREh" href="verne.html" data-reactid="116"><img class="ProjectItem__ProjectCoverimage bGqbmB" src="resources/images/header/tumblbug-pci.imgix.net/8b085638008ca0dae709b236a3d55e79acf01841/66a3797bca40981ff9d634ea14ed51a8bfdc8e19/2a172683141f167af55d12a062ff8dd6a109e8ea/a9c0a661-11ef-42fd-ac70-4d353b64a4c135a4.jpg?ixlib=rb-1.1.0&amp;w=620&amp;h=465&amp;auto=format%2Ccompress&amp;lossless=true&amp;fit=crop&amp;s=b2e1d86c1e5b29d8456b50400dbe62b1" alt="[베른 수제 만년필] 금속과 나무의 클래식한 결합 이미지" data-reactid="117"/>
-        <div class="ProjectItem__ProjectTextWrapper fOsIlY" data-reactid="118">
-          <div class="ProjectItem__FundingTitle kCGzYC" data-reactid="119">
-            <h1 class="ProjectItem__ProjectTitle gEZuLR" data-reactid="120">[베른 수제 만년필] 금속과 나무의 클래식한 결합</h1>
-            <p class="ProjectItem__CreatorName gUQbvW" data-reactid="121">제나일</p>
-          </div>
-          <svg class="ProjectItem__PercentageLine cWrfUF" xmlns="http://www.w3.org/2000/svg" data-reactid="122">
-            <rect x="0" y="0" fill="#efefef" height="2" width="100%" data-reactid="123"></rect>
-            <rect x="0" y="0" height="2" width="100%" fill="#fa6462" data-reactid="124"></rect>
-          </svg>
-          <div class="ProjectItem__FundingInfo beYdFz" data-reactid="125"><span style="font-size:0.8rem;" data-reactid="126"><i class="_2CeNIUhLMEIh6Reaatfs8t _1DLNFgQRrQNEosKFB0zOK5 _3fJsfvAPykJzj2xoMnxzWW _1QY7TzdLHKX3-BKPDNNYKF" data-reactid="127"></i><span style="font-weight:700;" data-reactid="128"></span> 129일 남음</span>
-            <div data-reactid="131"><span class="ProjectItem__FundingMoney ddAStM" data-reactid="132">: 334,100,000원</span><span class="ProjectItem__FundingRate bpoHzD" data-reactid="135">409%</span></div>
-          </div>
-        </div>
-        </a></div>
-         <div class="Carousel__Column hEilqP" data-reactid="115"><a class="ProjectItem__ProjectItemCard hFAREh" href="verne.html" data-reactid="116"><img class="ProjectItem__ProjectCoverimage bGqbmB" src="resources/images/header/tumblbug-pci.imgix.net/8b085638008ca0dae709b236a3d55e79acf01841/66a3797bca40981ff9d634ea14ed51a8bfdc8e19/2a172683141f167af55d12a062ff8dd6a109e8ea/a9c0a661-11ef-42fd-ac70-4d353b64a4c135a4.jpg?ixlib=rb-1.1.0&amp;w=620&amp;h=465&amp;auto=format%2Ccompress&amp;lossless=true&amp;fit=crop&amp;s=b2e1d86c1e5b29d8456b50400dbe62b1" alt="[베른 수제 만년필] 금속과 나무의 클래식한 결합 이미지" data-reactid="117"/>
-        <div class="ProjectItem__ProjectTextWrapper fOsIlY" data-reactid="118">
-          <div class="ProjectItem__FundingTitle kCGzYC" data-reactid="119">
-            <h1 class="ProjectItem__ProjectTitle gEZuLR" data-reactid="120">[베른 수제 만년필] 금속과 나무의 클래식한 결합</h1>
-            <p class="ProjectItem__CreatorName gUQbvW" data-reactid="121">제나일</p>
-          </div>
-          <svg class="ProjectItem__PercentageLine cWrfUF" xmlns="http://www.w3.org/2000/svg" data-reactid="122">
-            <rect x="0" y="0" fill="#efefef" height="2" width="100%" data-reactid="123"></rect>
-            <rect x="0" y="0" height="2" width="100%" fill="#fa6462" data-reactid="124"></rect>
-          </svg>
-          <div class="ProjectItem__FundingInfo beYdFz" data-reactid="125"><span style="font-size:0.8rem;" data-reactid="126"><i class="_2CeNIUhLMEIh6Reaatfs8t _1DLNFgQRrQNEosKFB0zOK5 _3fJsfvAPykJzj2xoMnxzWW _1QY7TzdLHKX3-BKPDNNYKF" data-reactid="127"></i><span style="font-weight:700;" data-reactid="128"></span> 129일 남음</span>
-            <div data-reactid="131"><span class="ProjectItem__FundingMoney ddAStM" data-reactid="132">: 334,100,000원</span><span class="ProjectItem__FundingRate bpoHzD" data-reactid="135">409%</span></div>
-          </div>
-        </div>
-        </a></div>
-         <div class="Carousel__Column hEilqP" data-reactid="115"><a class="ProjectItem__ProjectItemCard hFAREh" href="verne.html" data-reactid="116"><img class="ProjectItem__ProjectCoverimage bGqbmB" src="resources/images/header/tumblbug-pci.imgix.net/8b085638008ca0dae709b236a3d55e79acf01841/66a3797bca40981ff9d634ea14ed51a8bfdc8e19/2a172683141f167af55d12a062ff8dd6a109e8ea/a9c0a661-11ef-42fd-ac70-4d353b64a4c135a4.jpg?ixlib=rb-1.1.0&amp;w=620&amp;h=465&amp;auto=format%2Ccompress&amp;lossless=true&amp;fit=crop&amp;s=b2e1d86c1e5b29d8456b50400dbe62b1" alt="[베른 수제 만년필] 금속과 나무의 클래식한 결합 이미지" data-reactid="117"/>
-        <div class="ProjectItem__ProjectTextWrapper fOsIlY" data-reactid="118">
-          <div class="ProjectItem__FundingTitle kCGzYC" data-reactid="119">
-            <h1 class="ProjectItem__ProjectTitle gEZuLR" data-reactid="120">[베른 수제 만년필] 금속과 나무의 클래식한 결합</h1>
-            <p class="ProjectItem__CreatorName gUQbvW" data-reactid="121">제나일</p>
-          </div>
-          <svg class="ProjectItem__PercentageLine cWrfUF" xmlns="http://www.w3.org/2000/svg" data-reactid="122">
-            <rect x="0" y="0" fill="#efefef" height="2" width="100%" data-reactid="123"></rect>
-            <rect x="0" y="0" height="2" width="100%" fill="#fa6462" data-reactid="124"></rect>
-          </svg>
-          <div class="ProjectItem__FundingInfo beYdFz" data-reactid="125"><span style="font-size:0.8rem;" data-reactid="126"><i class="_2CeNIUhLMEIh6Reaatfs8t _1DLNFgQRrQNEosKFB0zOK5 _3fJsfvAPykJzj2xoMnxzWW _1QY7TzdLHKX3-BKPDNNYKF" data-reactid="127"></i><span style="font-weight:700;" data-reactid="128"></span> 129일 남음</span>
-            <div data-reactid="131"><span class="ProjectItem__FundingMoney ddAStM" data-reactid="132">: 334,100,000원</span><span class="ProjectItem__FundingRate bpoHzD" data-reactid="135">409%</span></div>
-          </div>
-        </div>
-        </a></div>
-         <div class="Carousel__Column hEilqP" data-reactid="115"><a class="ProjectItem__ProjectItemCard hFAREh" href="verne.html" data-reactid="116"><img class="ProjectItem__ProjectCoverimage bGqbmB" src="resources/images/header/tumblbug-pci.imgix.net/8b085638008ca0dae709b236a3d55e79acf01841/66a3797bca40981ff9d634ea14ed51a8bfdc8e19/2a172683141f167af55d12a062ff8dd6a109e8ea/a9c0a661-11ef-42fd-ac70-4d353b64a4c135a4.jpg?ixlib=rb-1.1.0&amp;w=620&amp;h=465&amp;auto=format%2Ccompress&amp;lossless=true&amp;fit=crop&amp;s=b2e1d86c1e5b29d8456b50400dbe62b1" alt="[베른 수제 만년필] 금속과 나무의 클래식한 결합 이미지" data-reactid="117"/>
-        <div class="ProjectItem__ProjectTextWrapper fOsIlY" data-reactid="118">
-          <div class="ProjectItem__FundingTitle kCGzYC" data-reactid="119">
-            <h1 class="ProjectItem__ProjectTitle gEZuLR" data-reactid="120">[베른 수제 만년필] 금속과 나무의 클래식한 결합</h1>
-            <p class="ProjectItem__CreatorName gUQbvW" data-reactid="121">제나일</p>
-          </div>
-          <svg class="ProjectItem__PercentageLine cWrfUF" xmlns="http://www.w3.org/2000/svg" data-reactid="122">
-            <rect x="0" y="0" fill="#efefef" height="2" width="100%" data-reactid="123"></rect>
-            <rect x="0" y="0" height="2" width="100%" fill="#fa6462" data-reactid="124"></rect>
-          </svg>
-          <div class="ProjectItem__FundingInfo beYdFz" data-reactid="125"><span style="font-size:0.8rem;" data-reactid="126"><i class="_2CeNIUhLMEIh6Reaatfs8t _1DLNFgQRrQNEosKFB0zOK5 _3fJsfvAPykJzj2xoMnxzWW _1QY7TzdLHKX3-BKPDNNYKF" data-reactid="127"></i><span style="font-weight:700;" data-reactid="128"></span> 129일 남음</span>
-            <div data-reactid="131"><span class="ProjectItem__FundingMoney ddAStM" data-reactid="132">: 334,100,000원</span><span class="ProjectItem__FundingRate bpoHzD" data-reactid="135">409%</span></div>
-          </div>
-        </div>
-        </a></div>
-         <div class="Carousel__Column hEilqP" data-reactid="115"><a class="ProjectItem__ProjectItemCard hFAREh" href="verne.html" data-reactid="116"><img class="ProjectItem__ProjectCoverimage bGqbmB" src="resources/images/header/tumblbug-pci.imgix.net/8b085638008ca0dae709b236a3d55e79acf01841/66a3797bca40981ff9d634ea14ed51a8bfdc8e19/2a172683141f167af55d12a062ff8dd6a109e8ea/a9c0a661-11ef-42fd-ac70-4d353b64a4c135a4.jpg?ixlib=rb-1.1.0&amp;w=620&amp;h=465&amp;auto=format%2Ccompress&amp;lossless=true&amp;fit=crop&amp;s=b2e1d86c1e5b29d8456b50400dbe62b1" alt="[베른 수제 만년필] 금속과 나무의 클래식한 결합 이미지" data-reactid="117"/>
-        <div class="ProjectItem__ProjectTextWrapper fOsIlY" data-reactid="118">
-          <div class="ProjectItem__FundingTitle kCGzYC" data-reactid="119">
-            <h1 class="ProjectItem__ProjectTitle gEZuLR" data-reactid="120">[베른 수제 만년필] 금속과 나무의 클래식한 결합</h1>
-            <p class="ProjectItem__CreatorName gUQbvW" data-reactid="121">제나일</p>
-          </div>
-          <svg class="ProjectItem__PercentageLine cWrfUF" xmlns="http://www.w3.org/2000/svg" data-reactid="122">
-            <rect x="0" y="0" fill="#efefef" height="2" width="100%" data-reactid="123"></rect>
-            <rect x="0" y="0" height="2" width="100%" fill="#fa6462" data-reactid="124"></rect>
-          </svg>
-          <div class="ProjectItem__FundingInfo beYdFz" data-reactid="125"><span style="font-size:0.8rem;" data-reactid="126"><i class="_2CeNIUhLMEIh6Reaatfs8t _1DLNFgQRrQNEosKFB0zOK5 _3fJsfvAPykJzj2xoMnxzWW _1QY7TzdLHKX3-BKPDNNYKF" data-reactid="127"></i><span style="font-weight:700;" data-reactid="128"></span> 129일 남음</span>
-            <div data-reactid="131"><span class="ProjectItem__FundingMoney ddAStM" data-reactid="132">: 334,100,000원</span><span class="ProjectItem__FundingRate bpoHzD" data-reactid="135">409%</span></div>
-          </div>
-        </div>
-        </a></div>
-      <div class="Carousel__Column hEilqP" data-reactid="138"><a class="ProjectItem__ProjectItemCard hFAREh" href="bralette3.html" data-reactid="139"><img class="ProjectItem__ProjectCoverimage bGqbmB" src="resources/images/header/tumblbug-pci.imgix.net/ca7cbbd23ae9ccc7a897224d535091da0749a1f1/55290cefe9ec980f1e487d4fefc87d848f777b9b/81b54ecd6baa4e99cdc631034f1195d086723ec6/f1a5ecb0-0832-49f0-a9a6-024bb88677a388b1.jpg?ixlib=rb-1.1.0&amp;w=620&amp;h=465&amp;auto=format%2Ccompress&amp;lossless=true&amp;fit=crop&amp;s=4a2a4945f24d8272822cac0070913a7d" alt="더많은 여성에게 더많은 속옷 선택권을! 미드에어X66100 이미지" data-reactid="140"/>
-        <div class="ProjectItem__ProjectTextWrapper fOsIlY" data-reactid="141">
-          <div class="ProjectItem__FundingTitle kCGzYC" data-reactid="142">
-            <h1 class="ProjectItem__ProjectTitle gEZuLR" data-reactid="143">더많은 여성에게 더많은 속옷 선택권을! 미드에어X66100</h1>
-            <p class="ProjectItem__CreatorName gUQbvW" data-reactid="144">MID AIR X 66100</p>
-          </div>
-          <svg class="ProjectItem__PercentageLine cWrfUF" xmlns="http://www.w3.org/2000/svg" data-reactid="145">
-            <rect x="0" y="0" fill="#efefef" height="2" width="100%" data-reactid="146"></rect>
-            <rect x="0" y="0" height="2" width="100%" fill="#fa6462" data-reactid="147"></rect>
-          </svg>
-          <div class="ProjectItem__FundingInfo beYdFz" data-reactid="148"><span style="font-size:0.8rem;" data-reactid="149"><i class="_2CeNIUhLMEIh6Reaatfs8t _1DLNFgQRrQNEosKFB0zOK5 _3fJsfvAPykJzj2xoMnxzWW _1QY7TzdLHKX3-BKPDNNYKF" data-reactid="150"></i><span style="font-weight:700;" data-reactid="151"></span>2일 남음</span>
-            <div data-reactid="154"><span class="ProjectItem__FundingMoney ddAStM" data-reactid="155">13,995,900원</span><span class="ProjectItem__FundingRate bpoHzD" data-reactid="158">279%</span></div>
-          </div>
-        </div>
-        </a></div>
-      <div class="Carousel__Column hEilqP" data-reactid="161"><a class="ProjectItem__ProjectItemCard hFAREh" href="sbohem_pet.html" data-reactid="162"><img class="ProjectItem__ProjectCoverimage bGqbmB" src="resources/images/header/tumblbug-pci.imgix.net/e19d09fa2ddd88baeac7eb80b38c23ffabeebb6e/a38ccb32c41bf3d6ce9c403f5ab612d814bc3ce3/38c55e4640780896b57bc5f4e58ceb2e06b38851/b24b6f02-8836-490a-880d-b1a86a471dea7005.jpg?ixlib=rb-1.1.0&amp;w=620&amp;h=465&amp;auto=format%2Ccompress&amp;lossless=true&amp;fit=crop&amp;s=748ab17bc545482bcb9e2e897e11a9c3" alt="[산책필수템] 반려동물 전문가의 천연 안티버그 스프레이 이미지" data-reactid="163"/>
-        <div class="ProjectItem__ProjectTextWrapper fOsIlY" data-reactid="164">
-          <div class="ProjectItem__FundingTitle kCGzYC" data-reactid="165">
-            <h1 class="ProjectItem__ProjectTitle gEZuLR" data-reactid="166">[산책필수템] 반려동물 전문가의 천연 안티버그 스프레이</h1>
-            <p class="ProjectItem__CreatorName gUQbvW" data-reactid="167">SBOHEM 스보헴</p>
-          </div>
-          <svg class="ProjectItem__PercentageLine cWrfUF" xmlns="http://www.w3.org/2000/svg" data-reactid="168">
-            <rect x="0" y="0" fill="#efefef" height="2" width="100%" data-reactid="169"></rect>
-            <rect x="0" y="0" height="2" width="100%" fill="#fa6462" data-reactid="170"></rect>
-          </svg>
-          <div class="ProjectItem__FundingInfo beYdFz" data-reactid="171"><span style="font-size:0.8rem;" data-reactid="172"><i class="_2CeNIUhLMEIh6Reaatfs8t _1DLNFgQRrQNEosKFB0zOK5 _3fJsfvAPykJzj2xoMnxzWW _1QY7TzdLHKX3-BKPDNNYKF" data-reactid="173"></i><span style="font-weight:700;" data-reactid="174"></span>175일남음</span>
-            <div data-reactid="177"><span class="ProjectItem__FundingMoney ddAStM" data-reactid="178"> 792,685,000원</span><span class="ProjectItem__FundingRate bpoHzD" data-reactid="181">179%</span></div>
-          </div>
-        </div>
-        </a></div> -->
-        
-       <!--  </div>
+    <div id="popularProjectListDiv" class="Carousel__CarouselContents iEZvlH" data-reactid="91">
+      
     </div>
-  </div> -->
-  
-  
-  
+  </div>
   <div class="Divider__Divider hEIXJa" data-reactid="184"></div>
-  
   <div data-reactid="185">
     <div class="CollectionBanners__CollectionBannerTitle bxRvdW" data-reactid="186">진행중인 기획전</div>
     <div class="CollectionBanners__CollectionBannersWrapper cEnTNJ" data-reactid="187">
@@ -1352,10 +1304,8 @@ transform: translateX(4px);
         <span class="CollectionBanners__SROnlyLabel gEQpFE" data-reactid="191">좋음직허여: 제주 청년들의 문화예술 프로젝트 기획전</span></a></div>
 	</div>
    </div>
-   
         <div class="Divider__Divider-s16ihjfx-0 hEIXJa" data-reactid="194"></div>
-        
-         <div class="Carousel__CarouselHeader iSHaZi" data-reactid="80"><span class="Carousel__CarouselTitle jtYVGd" data-reactid="81"><a class="Carousel__Link ervGwJ" href="collections/editorspick.html" data-reactid="82">새로운 프로젝트<i class="yv2X_NOjMYirwH0R23J17 WU1ox0-AeDX_zneKjnNMO _1QY7TzdLHKX3-BKPDNNYKF" data-reactid="85"></i></a></span>
+         <div class="Carousel__CarouselHeader iSHaZi" data-reactid="80"><span class="Carousel__CarouselTitle jtYVGd" data-reactid="81"><a class="Carousel__Link ervGwJ" href="collections/editorspick.html" data-reactid="82">에디터 추천 프로젝트<i class="yv2X_NOjMYirwH0R23J17 WU1ox0-AeDX_zneKjnNMO _1QY7TzdLHKX3-BKPDNNYKF" data-reactid="85"></i></a></span>
       <div class="Carousel__CarouselButtons hgvQtm" data-reactid="86">
         <button class="Button__Button buxDxm" disabled="" data-reactid="87"><i class="_36JoJH6uhmIKdE1bWDYUlM _1XlDYEGI6NQt_YZkSA5u6N _1QY7TzdLHKX3-BKPDNNYKF" data-reactid="88"></i></button>
         <button class="Button__Button csIfer" data-reactid="89"><i class="WU1ox0-AeDX_zneKjnNMO _1XlDYEGI6NQt_YZkSA5u6N _1QY7TzdLHKX3-BKPDNNYKF" data-reactid="90"></i></button>
@@ -1424,7 +1374,7 @@ transform: translateX(4px);
         </a></div>
     </div>
         <div class="Divider__Divider-s16ihjfx-0 hEIXJa" data-reactid="196"></div>
-         <div class="Carousel__CarouselHeader iSHaZi" data-reactid="80"><span class="Carousel__CarouselTitle jtYVGd" data-reactid="81"><a class="Carousel__Link ervGwJ" href="collections/editorspick.html" data-reactid="82">마감 앞둔 프로젝트<i class="yv2X_NOjMYirwH0R23J17 WU1ox0-AeDX_zneKjnNMO _1QY7TzdLHKX3-BKPDNNYKF" data-reactid="85"></i></a></span>
+         <div class="Carousel__CarouselHeader iSHaZi" data-reactid="80"><span class="Carousel__CarouselTitle jtYVGd" data-reactid="81"><a class="Carousel__Link ervGwJ" href="collections/editorspick.html" data-reactid="82">에디터 추천 프로젝트<i class="yv2X_NOjMYirwH0R23J17 WU1ox0-AeDX_zneKjnNMO _1QY7TzdLHKX3-BKPDNNYKF" data-reactid="85"></i></a></span>
       <div class="Carousel__CarouselButtons hgvQtm" data-reactid="86">
         <button class="Button__Button buxDxm" disabled="" data-reactid="87"><i class="_36JoJH6uhmIKdE1bWDYUlM _1XlDYEGI6NQt_YZkSA5u6N _1QY7TzdLHKX3-BKPDNNYKF" data-reactid="88"></i></button>
         <button class="Button__Button csIfer" data-reactid="89"><i class="WU1ox0-AeDX_zneKjnNMO _1XlDYEGI6NQt_YZkSA5u6N _1QY7TzdLHKX3-BKPDNNYKF" data-reactid="90"></i></button>
