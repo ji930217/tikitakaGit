@@ -1104,26 +1104,41 @@ transform: translateX(4px);
 	
 	$(function(){
 		sessionStorage.setItem("btnIdx", 1);
-		nextProject();
+		nextPopularProject();
 		
-		$("#moveProjectBtn").click(function() {
-			nextProject();
+		$("#prevPopularProjectBtn").click(function() {
+			var btnIdx= parseInt(sessionStorage.getItem("btnIdx"));
+			sessionStorage.setItem("btnIdx", btnIdx - 4);
+			console.log(sessionStorage.getItem("btnIdx"));
+			prevPopularProject();
 		});
+		$("#nextPopularProjectBtn").click(function() {
+			var btnIdx= parseInt(sessionStorage.getItem("btnIdx"));
+			sessionStorage.setItem("btnIdx", btnIdx + 4);
+			console.log(sessionStorage.getItem("btnIdx"));
+			nextPopularProject();
+		});
+		
 	});
-	
-	function nextProject(){
-		var btnIdx = parseInt(sessionStorage.getItem("btnIdx"));
+	 
+	function prevPopularProject(){
+		var btnIdx= parseInt(sessionStorage.getItem("btnIdx"));
 		$.ajax({
 			url : "popularList4.do",
 			type : "post",
-			data : {
-				btnIdx : btnIdx
-			}, success : function(data) {
+			data : {	btnIdx : btnIdx	}, 
+			success : function(data) {
 				var $popularProjectListDiv = $("#popularProjectListDiv");
 				var resultStr = "";
 				for (var key in data) {
 					/* console.log(data[key]); */
-					
+					var percent = parseInt(data[key].currentAmount / data[key].price * 100);
+					var now = new Date().getTime();
+					var DateData = data[key].endDate;
+					var remain = parseInt(( DateData - now ) / (1000*60*60*24));
+					if(remain < 0 ) {
+						remain = 0;
+					}	
 					resultStr += "<div class='Carousel__Column hEilqP' data-reactid='92'>";
 				    resultStr += "<a class='ProjectItem__ProjectItemCard hFAREh' href='projectDetail.do?projectCode=" + data[key].projectCode + "' data-reactid='93'>";
 				    resultStr += "<img class='ProjectItem__ProjectCoverimage bGqbmB' src='" + data[key].repImg + "' alt='" + data[key].title + " 이미지' data-reactid='94'/>";
@@ -1134,19 +1149,65 @@ transform: translateX(4px);
 				    resultStr += "</div>";
 				    resultStr += "<svg class='ProjectItem__PercentageLine cWrfUF' xmlns='http://www.w3.org/2000/svg' data-reactid='99'>";
 				    resultStr += "<rect x='0' y='0' fill='#efefef' height='2' width='100%' data-reactid='100'></rect>";
-				    resultStr += "<rect x='0' y='0' height='2' width='86%' fill='#fa6462' data-reactid='101'></rect></svg>";
+				    resultStr += "<rect x='0' y='0' height='2' width='" + percent + "%' fill='#fa6462' data-reactid='101'></rect></svg>";
 				    resultStr += "<div class='ProjectItem__FundingInfo beYdFz' data-reactid='102'>";
 				    resultStr += "<span style='font-size:0.8rem;' data-reactid='103'>";
 				    resultStr += "<i class='_2CeNIUhLMEIh6Reaatfs8t _1DLNFgQRrQNEosKFB0zOK5 _3fJsfvAPykJzj2xoMnxzWW _1QY7TzdLHKX3-BKPDNNYKF' data-reactid='104'></i>";
-				    resultStr += "<span style='font-weight:700;' data-reactid='105'></span> 106일 남음</span>";
+				    resultStr += "<span style='font-weight:700;' data-reactid='105'></span>"  + remain + "일 남음</span>";
 				    resultStr += "<div data-reactid='108'>";
 				    resultStr += "<span class='ProjectItem__FundingMoney ddAStM' data-reactid='109'>" + data[key].currentAmount + "원</span>";
-				    resultStr += "<span class='ProjectItem__FundingRate bpoHzD' data-reactid='112'>386%</span></div></div></div></a></div>";
+				    resultStr += "<span class='ProjectItem__FundingRate bpoHzD' data-reactid='112'>" + percent + "%</span></div></div></div></a></div>";
 				        
 				}
 				$popularProjectListDiv.html(resultStr);
 				
-				sessionStorage.setItem("btnIdx", btnIdx + 4);
+				
+			}, error : function(e) {
+				console.log(e);
+			}
+		});
+	}
+	function nextPopularProject(){
+		var btnIdx= parseInt(sessionStorage.getItem("btnIdx"));
+		$.ajax({
+			url : "popularList4.do",
+			type : "post",
+			data : {	btnIdx : btnIdx	}, 
+			success : function(data) {
+				var $popularProjectListDiv = $("#popularProjectListDiv");
+				var resultStr = "";
+				for (var key in data) {
+					/* console.log(data[key]); */
+					var percent = parseInt(data[key].currentAmount / data[key].price * 100);
+					var now = new Date().getTime();
+					var DateData = data[key].endDate;
+					var remain = parseInt(( DateData - now ) / (1000*60*60*24));
+					if(remain < 0 ) {
+						remain = 0;
+					}	
+					resultStr += "<div class='Carousel__Column hEilqP' data-reactid='92'>";
+				    resultStr += "<a class='ProjectItem__ProjectItemCard hFAREh' href='projectDetail.do?projectCode=" + data[key].projectCode + "' data-reactid='93'>";
+				    resultStr += "<img class='ProjectItem__ProjectCoverimage bGqbmB' src='" + data[key].repImg + "' alt='" + data[key].title + " 이미지' data-reactid='94'/>";
+				    resultStr += "<div class='ProjectItem__ProjectTextWrapper fOsIlY' data-reactid='95'>";
+				    resultStr += "<div class='ProjectItem__FundingTitle kCGzYC' data-reactid='96'>";
+				    resultStr += "<h1 class='ProjectItem__ProjectTitle gEZuLR' data-reactid='97'>" + data[key].title + "</h1>";
+				    resultStr += "<p class='ProjectItem__CreatorName gUQbvW' data-reactid='98'>" + data[key].name + "</p>";
+				    resultStr += "</div>";
+				    resultStr += "<svg class='ProjectItem__PercentageLine cWrfUF' xmlns='http://www.w3.org/2000/svg' data-reactid='99'>";
+				    resultStr += "<rect x='0' y='0' fill='#efefef' height='2' width='100%' data-reactid='100'></rect>";
+				    resultStr += "<rect x='0' y='0' height='2' width='" + percent + "%' fill='#fa6462' data-reactid='101'></rect></svg>";
+				    resultStr += "<div class='ProjectItem__FundingInfo beYdFz' data-reactid='102'>";
+				    resultStr += "<span style='font-size:0.8rem;' data-reactid='103'>";
+				    resultStr += "<i class='_2CeNIUhLMEIh6Reaatfs8t _1DLNFgQRrQNEosKFB0zOK5 _3fJsfvAPykJzj2xoMnxzWW _1QY7TzdLHKX3-BKPDNNYKF' data-reactid='104'></i>";
+				    resultStr += "<span style='font-weight:700;' data-reactid='105'></span>"  + remain + "일 남음</span>";
+				    resultStr += "<div data-reactid='108'>";
+				    resultStr += "<span class='ProjectItem__FundingMoney ddAStM' data-reactid='109'>" + data[key].currentAmount + "원</span>";
+				    resultStr += "<span class='ProjectItem__FundingRate bpoHzD' data-reactid='112'>" + percent + "%</span></div></div></div></a></div>";
+				        
+				}
+				$popularProjectListDiv.html(resultStr);
+				
+				
 			}, error : function(e) {
 				console.log(e);
 			}
@@ -1159,6 +1220,7 @@ transform: translateX(4px);
 
 <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
   <ol class="carousel-indicators">
+  
     <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
     <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
     <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
@@ -1219,20 +1281,19 @@ transform: translateX(4px);
   </a>
 </div>
  
-
  <div class="Divider__Divider hEIXJa" data-reactid="184"></div>
 <div class="Container__Container jdgWcI" data-reactid="78">
   <div data-reactid="79">
     <div class="Carousel__CarouselHeader iSHaZi" data-reactid="80"><span class="Carousel__CarouselTitle jtYVGd" data-reactid="81"><a class="Carousel__Link ervGwJ" href="collections/editorspick.html" data-reactid="82">에디터 추천 프로젝트<i class="yv2X_NOjMYirwH0R23J17 WU1ox0-AeDX_zneKjnNMO _1QY7TzdLHKX3-BKPDNNYKF" data-reactid="85"></i></a></span>
       <div class="Carousel__CarouselButtons hgvQtm" data-reactid="86">
-        <button class="Button__Button buxDxm" disabled="" data-reactid="87"><i class="_36JoJH6uhmIKdE1bWDYUlM _1XlDYEGI6NQt_YZkSA5u6N _1QY7TzdLHKX3-BKPDNNYKF" data-reactid="88"></i></button>
-        <button class="Button__Button csIfer" data-reactid="89" id="moveProjectBtn"><i class="WU1ox0-AeDX_zneKjnNMO _1XlDYEGI6NQt_YZkSA5u6N _1QY7TzdLHKX3-BKPDNNYKF" data-reactid="90"></i></button>
+        <button class="Button__Button csIfer"" data-reactid="87" id="prevPopularProjectBtn"><i class="_36JoJH6uhmIKdE1bWDYUlM _1XlDYEGI6NQt_YZkSA5u6N _1QY7TzdLHKX3-BKPDNNYKF" data-reactid="88"></i></button>
+        <button class="Button__Button csIfer" data-reactid="89" id="nextPopularProjectBtn"><i class="WU1ox0-AeDX_zneKjnNMO _1XlDYEGI6NQt_YZkSA5u6N _1QY7TzdLHKX3-BKPDNNYKF" data-reactid="90"></i></button>
       </div>
     </div>
     
     <div id="popularProjectListDiv" class="Carousel__CarouselContents iEZvlH" data-reactid="91">
       
-      <div class="Carousel__Column hEilqP" data-reactid="92"> 
+      <!-- <div class="Carousel__Column hEilqP" data-reactid="92"> 
       <a class="ProjectItem__ProjectItemCard hFAREh" href="projectDetail.do?projectCode=1" data-reactid="93">
       	<img class="ProjectItem__ProjectCoverimage bGqbmB" src="resources/images/header/tumblbug-pci.imgix.net/fcdb199a7461439ec4083d3fa5aa05ddda97c7d9/6f13578acde5f434401db2340d6effacc378863e/4ed27b563664b37034ebeba6dac774fbe17fcf25/fb667098-0112-4782-9fc6-be178e9e7244cd3c.png?ixlib=rb-1.1.0&amp;w=620&amp;h=465&amp;auto=format%2Ccompress&amp;lossless=true&amp;fit=crop&amp;s=e1a11854f54300f644912e39523e5ffc" alt="&#x27;보통의 물건&#x27;에 &#x27;보통의 하루&#x27;를 담다 이미지" data-reactid="94"/>
         <div class="ProjectItem__ProjectTextWrapper fOsIlY" data-reactid="95">
@@ -1254,7 +1315,7 @@ transform: translateX(4px);
            	</div>
           </div>
         </div>
-        </a></div>
+        </a></div> -->
         
       <!-- <div class="Carousel__Column hEilqP" data-reactid="115"><a class="ProjectItem__ProjectItemCard hFAREh" href="verne.html" data-reactid="116"><img class="ProjectItem__ProjectCoverimage bGqbmB" src="resources/images/header/tumblbug-pci.imgix.net/8b085638008ca0dae709b236a3d55e79acf01841/66a3797bca40981ff9d634ea14ed51a8bfdc8e19/2a172683141f167af55d12a062ff8dd6a109e8ea/a9c0a661-11ef-42fd-ac70-4d353b64a4c135a4.jpg?ixlib=rb-1.1.0&amp;w=620&amp;h=465&amp;auto=format%2Ccompress&amp;lossless=true&amp;fit=crop&amp;s=b2e1d86c1e5b29d8456b50400dbe62b1" alt="[베른 수제 만년필] 금속과 나무의 클래식한 결합 이미지" data-reactid="117"/>
         <div class="ProjectItem__ProjectTextWrapper fOsIlY" data-reactid="118">
@@ -1316,8 +1377,8 @@ transform: translateX(4px);
         <div class="Divider__Divider-s16ihjfx-0 hEIXJa" data-reactid="192"></div>
          <div class="Carousel__CarouselHeader iSHaZi" data-reactid="80"><span class="Carousel__CarouselTitle jtYVGd" data-reactid="81"><a class="Carousel__Link ervGwJ" href="collections/editorspick.html" data-reactid="82">에디터 추천 프로젝트<i class="yv2X_NOjMYirwH0R23J17 WU1ox0-AeDX_zneKjnNMO _1QY7TzdLHKX3-BKPDNNYKF" data-reactid="85"></i></a></span>
       <div class="Carousel__CarouselButtons hgvQtm" data-reactid="86">
-        <button class="Button__Button buxDxm" disabled="" data-reactid="87"><i class="_36JoJH6uhmIKdE1bWDYUlM _1XlDYEGI6NQt_YZkSA5u6N _1QY7TzdLHKX3-BKPDNNYKF" data-reactid="88"></i></button>
-        <button class="Button__Button csIfer" data-reactid="89" id="moveProjectBtn"><i class="WU1ox0-AeDX_zneKjnNMO _1XlDYEGI6NQt_YZkSA5u6N _1QY7TzdLHKX3-BKPDNNYKF" data-reactid="90"></i></button>
+        <button class="Button__Button buxDxm" data-reactid="87" id="prevPopularProjectBtn"><i class="_36JoJH6uhmIKdE1bWDYUlM _1XlDYEGI6NQt_YZkSA5u6N _1QY7TzdLHKX3-BKPDNNYKF" data-reactid="88"></i></button>
+        <button class="Button__Button csIfer" data-reactid="89" id="nextPopularProjectBtn"><i class="WU1ox0-AeDX_zneKjnNMO _1XlDYEGI6NQt_YZkSA5u6N _1QY7TzdLHKX3-BKPDNNYKF" data-reactid="90"></i></button>
       </div>
     </div>
     
