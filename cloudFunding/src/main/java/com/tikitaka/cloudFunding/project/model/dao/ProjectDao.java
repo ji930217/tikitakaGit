@@ -78,8 +78,8 @@ public class ProjectDao {
 		return sqlSession.selectList("projectMapper.projectListOrderByEnrollDate");
 	}
 
-	public List<ProjectVo> selectPopularList4(int btnIdx) {
-		return sqlSession.selectList("projectMapper.selectPopularList4", btnIdx);
+	public List<ProjectVo> selectindex_popularList(int btnIdx) {
+		return sqlSession.selectList("projectMapper.selectindex_popularList", btnIdx);
 	}
 
 	public List<ProjectVo> selectMyProjectList(Member member) {

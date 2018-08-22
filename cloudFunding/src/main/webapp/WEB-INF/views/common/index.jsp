@@ -1105,115 +1105,160 @@ transform: translateX(4px);
 	$(function(){
 		sessionStorage.setItem("btnIdx", 1);
 		nextPopularProject();
-		
-		$("#prevPopularProjectBtn").click(function() {
-			var btnIdx= parseInt(sessionStorage.getItem("btnIdx"));
-			sessionStorage.setItem("btnIdx", btnIdx - 4);
-			console.log(sessionStorage.getItem("btnIdx"));
-			prevPopularProject();
-		});
-		$("#nextPopularProjectBtn").click(function() {
-			var btnIdx= parseInt(sessionStorage.getItem("btnIdx"));
+		if (sessionStorage.getItem("btnIdx") == 1) {
+			$("#prevPopularProjectBtn1").prop("disabled", true);
+		}
+		$("#nextPopularProjectBtn1").click(function() {
+			var btnIdx = parseInt(sessionStorage.getItem("btnIdx"));
 			sessionStorage.setItem("btnIdx", btnIdx + 4);
 			console.log(sessionStorage.getItem("btnIdx"));
 			nextPopularProject();
 		});
-		
+
+		$("#prevPopularProjectBtn1").click(function() {
+			var btnIdx = parseInt(sessionStorage.getItem("btnIdx"));
+			sessionStorage.setItem("btnIdx", btnIdx - 4);
+			console.log(sessionStorage.getItem("btnIdx"));
+			prevPopularProject();
+
+		});
+
 	});
-	 
-	function prevPopularProject(){
-		var btnIdx= parseInt(sessionStorage.getItem("btnIdx"));
+
+	function prevPopularProject() {
+		var btnIdx = parseInt(sessionStorage.getItem("btnIdx"));
+		if (sessionStorage.getItem("btnIdx") == 1) {
+			$("#prevPopularProjectBtn1").prop("disabled", true);
+			$("#nextPopularProjectBtn1").prop("disabled", false);
+		}
+		else{
+			$("#prevPopularProjectBtn1").prop("disabled", false);
 		$.ajax({
-			url : "popularList4.do",
-			type : "post",
-			data : {	btnIdx : btnIdx	}, 
-			success : function(data) {
-				var $popularProjectListDiv = $("#popularProjectListDiv");
-				var resultStr = "";
-				for (var key in data) {
-					/* console.log(data[key]); */
-					var percent = parseInt(data[key].currentAmount / data[key].price * 100);
-					var now = new Date().getTime();
-					var DateData = data[key].endDate;
-					var remain = parseInt(( DateData - now ) / (1000*60*60*24));
-					if(remain < 0 ) {
-						remain = 0;
-					}	
-					resultStr += "<div class='Carousel__Column hEilqP' data-reactid='92'>";
-				    resultStr += "<a class='ProjectItem__ProjectItemCard hFAREh' href='projectDetail.do?projectCode=" + data[key].projectCode + "' data-reactid='93'>";
-				    resultStr += "<img class='ProjectItem__ProjectCoverimage bGqbmB' src='" + data[key].repImg + "' alt='" + data[key].title + " 이미지' data-reactid='94'/>";
-				    resultStr += "<div class='ProjectItem__ProjectTextWrapper fOsIlY' data-reactid='95'>";
-				    resultStr += "<div class='ProjectItem__FundingTitle kCGzYC' data-reactid='96'>";
-				    resultStr += "<h1 class='ProjectItem__ProjectTitle gEZuLR' data-reactid='97'>" + data[key].title + "</h1>";
-				    resultStr += "<p class='ProjectItem__CreatorName gUQbvW' data-reactid='98'>" + data[key].name + "</p>";
-				    resultStr += "</div>";
-				    resultStr += "<svg class='ProjectItem__PercentageLine cWrfUF' xmlns='http://www.w3.org/2000/svg' data-reactid='99'>";
-				    resultStr += "<rect x='0' y='0' fill='#efefef' height='2' width='100%' data-reactid='100'></rect>";
-				    resultStr += "<rect x='0' y='0' height='2' width='" + percent + "%' fill='#fa6462' data-reactid='101'></rect></svg>";
-				    resultStr += "<div class='ProjectItem__FundingInfo beYdFz' data-reactid='102'>";
-				    resultStr += "<span style='font-size:0.8rem;' data-reactid='103'>";
-				    resultStr += "<i class='_2CeNIUhLMEIh6Reaatfs8t _1DLNFgQRrQNEosKFB0zOK5 _3fJsfvAPykJzj2xoMnxzWW _1QY7TzdLHKX3-BKPDNNYKF' data-reactid='104'></i>";
-				    resultStr += "<span style='font-weight:700;' data-reactid='105'></span>"  + remain + "일 남음</span>";
-				    resultStr += "<div data-reactid='108'>";
-				    resultStr += "<span class='ProjectItem__FundingMoney ddAStM' data-reactid='109'>" + data[key].currentAmount + "원</span>";
-				    resultStr += "<span class='ProjectItem__FundingRate bpoHzD' data-reactid='112'>" + percent + "%</span></div></div></div></a></div>";
-				        
-				}
-				$popularProjectListDiv.html(resultStr);
-				
-				
-			}, error : function(e) {
-				console.log(e);
-			}
-		});
+					url : "index_popularList.do",
+					type : "post",
+					data : {
+						btnIdx : btnIdx
+					},
+					success : function(data) {
+						var $popularProjectListDiv = $("#popularProjectListDiv");
+						var resultStr = "";
+						for ( var key in data) {
+							/* console.log(data[key]); */
+							var percent = parseInt(data[key].currentAmount
+									/ data[key].price * 100);
+							var now = new Date().getTime();
+							var DateData = data[key].endDate;
+							var remain = parseInt((DateData - now)
+									/ (1000 * 60 * 60 * 24));
+							if (remain < 0) {
+								remain = 0;
+							}
+							resultStr += "<div class='Carousel__Column hEilqP' data-reactid='92'>";
+							resultStr += "<a class='ProjectItem__ProjectItemCard hFAREh' href='projectDetail.do?projectCode="
+									+ data[key].projectCode
+									+ "' data-reactid='93'>";
+							resultStr += "<img class='ProjectItem__ProjectCoverimage bGqbmB' src='" + data[key].repImg + "' alt='" + data[key].title + " 이미지' data-reactid='94'/>";
+							resultStr += "<div class='ProjectItem__ProjectTextWrapper fOsIlY' data-reactid='95'>";
+							resultStr += "<div class='ProjectItem__FundingTitle kCGzYC' data-reactid='96'>";
+							resultStr += "<h1 class='ProjectItem__ProjectTitle gEZuLR' data-reactid='97'>"
+									+ data[key].title + "</h1>";
+							resultStr += "<p class='ProjectItem__CreatorName gUQbvW' data-reactid='98'>"
+									+ data[key].name + "</p>";
+							resultStr += "</div>";
+							resultStr += "<svg class='ProjectItem__PercentageLine cWrfUF' xmlns='http://www.w3.org/2000/svg' data-reactid='99'>";
+							resultStr += "<rect x='0' y='0' fill='#efefef' height='2' width='100%' data-reactid='100'></rect>";
+							resultStr += "<rect x='0' y='0' height='2' width='"
+									+ percent
+									+ "%' fill='#fa6462' data-reactid='101'></rect></svg>";
+							resultStr += "<div class='ProjectItem__FundingInfo beYdFz' data-reactid='102'>";
+							resultStr += "<span style='font-size:0.8rem;' data-reactid='103'>";
+							resultStr += "<i class='_2CeNIUhLMEIh6Reaatfs8t _1DLNFgQRrQNEosKFB0zOK5 _3fJsfvAPykJzj2xoMnxzWW _1QY7TzdLHKX3-BKPDNNYKF' data-reactid='104'></i>";
+							resultStr += "<span style='font-weight:700;' data-reactid='105'></span>"
+									+ remain + "일 남음</span>";
+							resultStr += "<div data-reactid='108'>";
+							resultStr += "<span class='ProjectItem__FundingMoney ddAStM' data-reactid='109'>"
+									+ data[key].currentAmount + "원</span>";
+							resultStr += "<span class='ProjectItem__FundingRate bpoHzD' data-reactid='112'>"
+									+ percent
+									+ "%</span></div></div></div></a></div>";
+
+						}
+						$popularProjectListDiv.html(resultStr);
+
+					},
+					error : function(e) {
+						console.log(e);
+					}
+				});
+		}
 	}
-	function nextPopularProject(){
-		var btnIdx= parseInt(sessionStorage.getItem("btnIdx"));
+	function nextPopularProject() {
+		var btnIdx = parseInt(sessionStorage.getItem("btnIdx"));
+		if (sessionStorage.getItem("btnIdx") == 17) {
+			$("#nextPopularProjectBtn1").prop("disabled", true);
+			$("#prevPopularProjectBtn1").prop("disabled", false);
+		}
+		else{
+			$("#nextPopularProjectBtn1").prop("disabled", false);
 		$.ajax({
-			url : "popularList4.do",
-			type : "post",
-			data : {	btnIdx : btnIdx	}, 
-			success : function(data) {
-				var $popularProjectListDiv = $("#popularProjectListDiv");
-				var resultStr = "";
-				for (var key in data) {
-					/* console.log(data[key]); */
-					var percent = parseInt(data[key].currentAmount / data[key].price * 100);
-					var now = new Date().getTime();
-					var DateData = data[key].endDate;
-					var remain = parseInt(( DateData - now ) / (1000*60*60*24));
-					if(remain < 0 ) {
-						remain = 0;
-					}	
-					resultStr += "<div class='Carousel__Column hEilqP' data-reactid='92'>";
-				    resultStr += "<a class='ProjectItem__ProjectItemCard hFAREh' href='projectDetail.do?projectCode=" + data[key].projectCode + "' data-reactid='93'>";
-				    resultStr += "<img class='ProjectItem__ProjectCoverimage bGqbmB' src='" + data[key].repImg + "' alt='" + data[key].title + " 이미지' data-reactid='94'/>";
-				    resultStr += "<div class='ProjectItem__ProjectTextWrapper fOsIlY' data-reactid='95'>";
-				    resultStr += "<div class='ProjectItem__FundingTitle kCGzYC' data-reactid='96'>";
-				    resultStr += "<h1 class='ProjectItem__ProjectTitle gEZuLR' data-reactid='97'>" + data[key].title + "</h1>";
-				    resultStr += "<p class='ProjectItem__CreatorName gUQbvW' data-reactid='98'>" + data[key].name + "</p>";
-				    resultStr += "</div>";
-				    resultStr += "<svg class='ProjectItem__PercentageLine cWrfUF' xmlns='http://www.w3.org/2000/svg' data-reactid='99'>";
-				    resultStr += "<rect x='0' y='0' fill='#efefef' height='2' width='100%' data-reactid='100'></rect>";
-				    resultStr += "<rect x='0' y='0' height='2' width='" + percent + "%' fill='#fa6462' data-reactid='101'></rect></svg>";
-				    resultStr += "<div class='ProjectItem__FundingInfo beYdFz' data-reactid='102'>";
-				    resultStr += "<span style='font-size:0.8rem;' data-reactid='103'>";
-				    resultStr += "<i class='_2CeNIUhLMEIh6Reaatfs8t _1DLNFgQRrQNEosKFB0zOK5 _3fJsfvAPykJzj2xoMnxzWW _1QY7TzdLHKX3-BKPDNNYKF' data-reactid='104'></i>";
-				    resultStr += "<span style='font-weight:700;' data-reactid='105'></span>"  + remain + "일 남음</span>";
-				    resultStr += "<div data-reactid='108'>";
-				    resultStr += "<span class='ProjectItem__FundingMoney ddAStM' data-reactid='109'>" + data[key].currentAmount + "원</span>";
-				    resultStr += "<span class='ProjectItem__FundingRate bpoHzD' data-reactid='112'>" + percent + "%</span></div></div></div></a></div>";
-				        
-				}
-				$popularProjectListDiv.html(resultStr);
-				
-				
-			}, error : function(e) {
-				console.log(e);
-			}
-		});
+					url : "index_popularList.do",
+					type : "post",
+					data : {
+						btnIdx : btnIdx
+					},
+					success : function(data) {
+						var $popularProjectListDiv = $("#popularProjectListDiv");
+						var resultStr = "";
+						for ( var key in data) {
+							/* console.log(data[key]); */
+							var percent = parseInt(data[key].currentAmount
+									/ data[key].price * 100);
+							var now = new Date().getTime();
+							var DateData = data[key].endDate;
+							var remain = parseInt((DateData - now)
+									/ (1000 * 60 * 60 * 24));
+							if (remain < 0) {
+								remain = 0;
+							}
+							resultStr += "<div class='Carousel__Column hEilqP' data-reactid='92'>";
+							resultStr += "<a class='ProjectItem__ProjectItemCard hFAREh' href='projectDetail.do?projectCode="
+									+ data[key].projectCode
+									+ "' data-reactid='93'>";
+							resultStr += "<img class='ProjectItem__ProjectCoverimage bGqbmB' src='" + data[key].repImg + "' alt='" + data[key].title + " 이미지' data-reactid='94'/>";
+							resultStr += "<div class='ProjectItem__ProjectTextWrapper fOsIlY' data-reactid='95'>";
+							resultStr += "<div class='ProjectItem__FundingTitle kCGzYC' data-reactid='96'>";
+							resultStr += "<h1 class='ProjectItem__ProjectTitle gEZuLR' data-reactid='97'>"
+									+ data[key].title + "</h1>";
+							resultStr += "<p class='ProjectItem__CreatorName gUQbvW' data-reactid='98'>"
+									+ data[key].name + "</p>";
+							resultStr += "</div>";
+							resultStr += "<svg class='ProjectItem__PercentageLine cWrfUF' xmlns='http://www.w3.org/2000/svg' data-reactid='99'>";
+							resultStr += "<rect x='0' y='0' fill='#efefef' height='2' width='100%' data-reactid='100'></rect>";
+							resultStr += "<rect x='0' y='0' height='2' width='"
+									+ percent
+									+ "%' fill='#fa6462' data-reactid='101'></rect></svg>";
+							resultStr += "<div class='ProjectItem__FundingInfo beYdFz' data-reactid='102'>";
+							resultStr += "<span style='font-size:0.8rem;' data-reactid='103'>";
+							resultStr += "<i class='_2CeNIUhLMEIh6Reaatfs8t _1DLNFgQRrQNEosKFB0zOK5 _3fJsfvAPykJzj2xoMnxzWW _1QY7TzdLHKX3-BKPDNNYKF' data-reactid='104'></i>";
+							resultStr += "<span style='font-weight:700;' data-reactid='105'></span>"
+									+ remain + "일 남음</span>";
+							resultStr += "<div data-reactid='108'>";
+							resultStr += "<span class='ProjectItem__FundingMoney ddAStM' data-reactid='109'>"
+									+ data[key].currentAmount + "원</span>";
+							resultStr += "<span class='ProjectItem__FundingRate bpoHzD' data-reactid='112'>"
+									+ percent
+									+ "%</span></div></div></div></a></div>";
+
+						}
+						$popularProjectListDiv.html(resultStr);
+
+					},
+					error : function(e) {
+						console.log(e);
+					}
+				});
+		}
 	}
-	
 </script>
 </head>
 <body> 
@@ -1286,8 +1331,8 @@ transform: translateX(4px);
   <div data-reactid="79">
     <div class="Carousel__CarouselHeader iSHaZi" data-reactid="80"><span class="Carousel__CarouselTitle jtYVGd" data-reactid="81"><a class="Carousel__Link ervGwJ" href="collections/editorspick.html" data-reactid="82">분야별 인기 프로젝트<i class="yv2X_NOjMYirwH0R23J17 WU1ox0-AeDX_zneKjnNMO _1QY7TzdLHKX3-BKPDNNYKF" data-reactid="85"></i></a></span>
       <div class="Carousel__CarouselButtons hgvQtm" data-reactid="86">
-        <button class="Button__Button csIfer"" data-reactid="87" id="prevPopularProjectBtn"><i class="_36JoJH6uhmIKdE1bWDYUlM _1XlDYEGI6NQt_YZkSA5u6N _1QY7TzdLHKX3-BKPDNNYKF" data-reactid="88"></i></button>
-        <button class="Button__Button csIfer" data-reactid="89" id="nextPopularProjectBtn"><i class="WU1ox0-AeDX_zneKjnNMO _1XlDYEGI6NQt_YZkSA5u6N _1QY7TzdLHKX3-BKPDNNYKF" data-reactid="90"></i></button>
+        <button class="Button__Button csIfer"" data-reactid="87" id="prevPopularProjectBtn1"><i class="_36JoJH6uhmIKdE1bWDYUlM _1XlDYEGI6NQt_YZkSA5u6N _1QY7TzdLHKX3-BKPDNNYKF" data-reactid="88"></i></button>
+        <button class="Button__Button csIfer" data-reactid="89" id="nextPopularProjectBtn1"><i class="WU1ox0-AeDX_zneKjnNMO _1XlDYEGI6NQt_YZkSA5u6N _1QY7TzdLHKX3-BKPDNNYKF" data-reactid="90"></i></button>
       </div>
     </div>
     

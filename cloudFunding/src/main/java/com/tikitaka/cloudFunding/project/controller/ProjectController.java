@@ -50,9 +50,9 @@ public class ProjectController {
 		return mv;
 	}
 
-	@RequestMapping("popularList4.do")
-	public @ResponseBody List<ProjectVo> popularList4(int btnIdx, ModelAndView mv){
-		List<ProjectVo> list = projectService.selectPopularList4(btnIdx);
+	@RequestMapping("index_popularList.do")
+	public @ResponseBody List<ProjectVo> index_popularList(int btnIdx, ModelAndView mv){
+		List<ProjectVo> list = projectService.selectindex_popularList(btnIdx);
 		return list;
 	}
 	
