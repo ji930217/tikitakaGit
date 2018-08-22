@@ -78,8 +78,8 @@ public class ProjectService {
 		return dao.projectListOrderByEnrollDate();
 	}
 
-	public List<ProjectVo> selectPopularList4(int btnIdx) {
-		return dao.selectPopularList4(btnIdx);
+	public List<ProjectVo> selectindex_popularList(int btnIdx) {
+		return dao.selectindex_popularList(btnIdx);
 	}
 
 

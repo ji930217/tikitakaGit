@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="PaymentMapper">
+
+	<resultMap type="Gift" id="giftMap">
+		<id property="giftCode" column="G_CODE"/>
+		<result property="email" column="EMAIL_1"/>
+		<result property="projectCode" column="P_PROJECT_CODE_0"/>
+		<result property="price" column="G_PRICE"/>
+		<result property="description" column="G_DESCRIPTION"/>
+		<result property="item" column="G_ITEM"/>
+		<result property="sendDate" column="G_SEND_DATE"/>
+		<result property="remited" column="G_REMITED"/>
+		<result property="transferCheck" column="G_TRANSFER_CHECK"/>
+		<result property="selectedCount" column="G_SELECTED_COUNT"/>
+	</resultMap>
+
+	<resultMap type="SUPPORT" id="supportMap">
+		<id property="email" column="EMAIL" />
+		<result property="projectCode" column="P_PROJECT_CODE"/>
+		<result property="amount" column="SUPPORTING_AMOUNT"/>
+		<result property="gcode" column=" G_CODE"/>
+		<result property="date" column="SUPPORTED_DATE"/>
+		<result property="address" column="ADDRESS"/>
+	</resultMap>
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</mapper>
