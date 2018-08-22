@@ -17,6 +17,8 @@ import org.springframework.web.servlet.ModelAndView;
 import com.tikitaka.cloudFunding.admin.model.dao.AdminDao;
 import com.tikitaka.cloudFunding.admin.model.service.AdminService;
 import com.tikitaka.cloudFunding.admin.model.vo.AdminVo;
+import com.tikitaka.cloudFunding.project.model.service.ProjectService;
+import com.tikitaka.cloudFunding.project.model.vo.ProjectVo;
 
 /**
  * Handles requests for the application home page.
@@ -31,6 +33,9 @@ public class HomeController {
 	 */
 	@Autowired
 	AdminService adminservice;
+	@Autowired
+	ProjectService projectService;
+	
 	
 	@RequestMapping(value = "index.do", method = RequestMethod.GET)
 	public ModelAndView home(Locale locale, ModelAndView mv) {
@@ -45,9 +50,10 @@ public class HomeController {
 		
 		
 		
-		
+				List<ProjectVo> popularList=projectService.selectPopularList();
 				List<AdminVo> bannerList = adminservice.bannerList();//배너 리스트 인덱스 전달
-			
+				
+				mv.addObject("popularList", popularList);
 				mv.addObject("indexBannerList", bannerList);
 				mv.setViewName("home");
 				return mv;
