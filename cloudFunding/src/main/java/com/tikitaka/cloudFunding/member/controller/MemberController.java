@@ -4,6 +4,7 @@ package com.tikitaka.cloudFunding.member.controller;
 import java.io.File;
 import java.io.IOException;
 import java.sql.Date;
+import java.util.List;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
@@ -20,6 +21,8 @@ import org.springframework.web.servlet.ModelAndView;
 import com.tikitaka.cloudFunding.member.model.service.MemberService;
 import com.tikitaka.cloudFunding.member.model.vo.Member;
 import com.tikitaka.cloudFunding.member.model.vo.PaymentInfo;
+import com.tikitaka.cloudFunding.project.model.service.ProjectService;
+import com.tikitaka.cloudFunding.project.model.vo.ProjectVo;
 
 
 @Controller
@@ -27,6 +30,9 @@ public class MemberController {
 	
 	@Autowired
 	MemberService memberService;
+	
+	@Autowired
+	ProjectService projectService;
 
 	
 	@RequestMapping("loginPage.do")
@@ -392,6 +398,15 @@ public class MemberController {
 		return "redirect:index.do";
 	}
 	
+	
+	@RequestMapping("sponsor.do")
+	public ModelAndView sponsor(ModelAndView mv) {
+		
+		List<ProjectVo> list = projectService.selectprojectList();
+		mv.addObject("list", list);
+		mv.setViewName("member/sponsor");
+		return mv;
+	}
 	
 	
 	

@@ -5,7 +5,7 @@
 <html lang="ko-KR">
 <head>
 <meta charset="utf-8">
-<title data-react-helmet="true">텀블벅 :: tumblbug</title>
+<title data-react-helmet="true">TikiTaka</title>
 <meta name="viewport"
 	content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=no">
 <link rel="dns-prefetch" href="https://tumblbug-assets.imgix.net">
