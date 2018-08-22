@@ -70,5 +70,17 @@ public class ProjectDao {
 		return sqlSession.selectList("projectMapper.searchProjectByCategory", category);
 	}
 
+	public List<ProjectVo> projectListOrderByDeadline() {
+		return sqlSession.selectList("projectMapper.projectListOrderByDeadline");
+	}
+
+	public List<ProjectVo> projectListOrderByEnrollDate() {
+		return sqlSession.selectList("projectMapper.projectListOrderByEnrollDate");
+	}
+
+	public List<ProjectVo> selectPopularList4(int btnIdx) {
+		return sqlSession.selectList("projectMapper.selectPopularList4", btnIdx);
+	}
+
 
 }

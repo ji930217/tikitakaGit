@@ -236,6 +236,51 @@
 		display:none;
 	}
 	
+	/* 밀어주기 마감 버튼 */
+	.fjkRCm {
+	    width: 80%;
+	    padding: 0.5rem 0.25rem 0.5rem 0.5rem;
+	    -webkit-order: 1;
+	    -ms-flex-order: 1;
+	    order: 1;
+	}
+	.loDhhg {
+	    padding: 1.2em 2em;
+	    font-size: 1.1em;
+	    width: 100%;
+	    opacity: .3;
+	    pointer-events: none;
+	}
+	.loDhhg {
+	    background-color: #fa6462;
+	    color: #fff;
+	}
+	.loDhhg {
+	    cursor: pointer;
+	    display: inline-block;
+	    min-height: 1em;
+	    outline: none;
+	    border: none;
+	    vertical-align: baseline;
+	    box-shadow: 0px 0px 0px 1px transparent inset, 0px 0em 0px 0px rgba(0, 0, 0, 0.1) inset;
+	    -webkit-user-select: none;
+	    -moz-user-select: none;
+	    -ms-user-select: none;
+	    user-select: none;
+	    -webkit-transition: opacity 0.1s ease,  background-color 0.1s ease,  color 0.1s ease,  box-shadow 0.1s ease, background 0.1s ease;
+	    transition: opacity 0.1s ease,  background-color 0.1s ease,  color 0.1s ease,  box-shadow 0.1s ease, background 0.1s ease;
+	    -webkit-tap-highlight-color: transparent;
+	    margin: 0 .25em 0 0;
+	    border-radius: 0.28571429rem;
+	    text-transform: none;
+	    text-shadow: none;
+	    font-weight: bold;
+	    line-height: 1em;
+	    font-style: normal;
+	    text-align: center;
+	    text-decoration: none;
+	}
+	
 	
 </style>
 <script>
@@ -503,7 +548,7 @@
 			<div	class="ProjectIntroduction__ProjectIntroductionWrapper-c7b94s-1 isebXd" data-reactid="38">
 				<div class="ProjectIntroduction__ProjectOutline-c7b94s-2 gKkJpB" data-reactid="39">
 					<div	class="ProjectIntroduction__ProjectOutlineInner-c7b94s-3 yNdyg"	data-reactid="40">
-						<a href="/category/product-design" data-reactid="41">
+						<a class="searchProjectByCategory" data-reactid="41">
 							<span class="ProjectIntroduction__ProjectCategory-c7b94s-4 boFKej" data-reactid="42">
 								<c:out value="${project.category }"/>
 							</span>
@@ -525,7 +570,7 @@
 							
 							<!-- 동영상 재생버튼 클릭 이후 보여지는 영역 -->
 							<div	class="ProjectIntroduction__ProjectCoverVideo-c7b94s-10 qtLrt">
-								<div id="projectDescriptionVideo" class="_13KHfN73YmQgsYHxXvuh_J " style="height: 100%;">
+								<div id="projectDescriptionVideo" class="_13KHfN73YmQgsYHxXvuh_J" style="height: 100%;">
 									<video id="projectVideo" controls style="width: 100%; height: 100%;">
 										<p class="vjs-no-js">
 									      To view this video please enable JavaScript, and consider upgrading to a web browser that
@@ -576,6 +621,9 @@
 								<jsp:useBean id="now" class="java.util.Date" />
 								<c:set var="DateData" value="${project.endDate }"/>
 								<fmt:parseNumber var="remain" value="${( DateData.time-now.time ) / (1000*60*60*24) }" integerOnly="true" />
+								<c:if test="${remain lt 0 }">
+									<c:set var="remain" value="0"/>
+								</c:if>
 								<c:out value="${remain }"/>
 								<span class="ProjectIntroduction__Small-c7b94s-18 ihuRTA" data-reactid="68">일</span>
 							</div>
@@ -590,7 +638,12 @@
 					</div>
 					<div	class="FundingInformation__FundingInformation-s1sct7xv-0 lfgWGK" 	data-reactid="74">
 						<div class="FundingInformation__FundingInformationInner-s1sct7xv-1 iJcLQj" data-reactid="75">
-							<div data-reactid="76">펀딩 진행중</div>
+							<c:if test="${remain gt 0 }">
+								<div data-reactid="76">펀딩 진행중</div>
+							</c:if>
+							<c:if test="${remain lt 1 }">
+								<div data-reactid="76">펀딩 마감</div>
+							</c:if>
 								<span data-reactid="77">
 								목표 금액인	<fmt:formatNumber value="${project.price }" pattern="#,###"/>원이 모여야만 결제됩니다.
 								<br data-reactid="81" />
@@ -600,9 +653,16 @@
 					</div>
 					<div	class="ProjectIntroduction__ProjectButtons-c7b94s-19 kwAiqA"	data-reactid="85">
 						<div class="ProjectIntroduction__ProjectButtonsInner-c7b94s-20 bBsoai" data-reactid="86">
-							<div	class="ProjectIntroduction__PrimaryButton-c7b94s-21 fjkRCm" data-reactid="87">
-								<button class="Button__Button-s1ng5xda-0 dvkZSH"  data-reactid="88">프로젝트 밀어주기</button>
-							</div>
+							<c:if test="${remain lt 1 }">
+								<div class="ProjectIntroduction__PrimaryButton-c7b94s-21 fjkRCm">
+									<button class="Button__Button-s1ng5xda-0 loDhhg" disabled>밀어주기가 마감되었습니다</button>
+								</div>
+							</c:if>
+							<c:if test="${remain gt 0 }">
+								<div	class="ProjectIntroduction__PrimaryButton-c7b94s-21 fjkRCm" data-reactid="87">
+									<button class="Button__Button-s1ng5xda-0 dvkZSH"  data-reactid="88">프로젝트 밀어주기</button>
+								</div>
+							</c:if>
 							<div	class="ProjectIntroduction__SecondaryButton-c7b94s-22 cYmhAj"	data-reactid="89">
 								<button class="Button__Button-s1ng5xda-0 hZQjKf" data-reactid="90" onclick="openSharePopup();">
 									<i class="rx2sgfroJA4ZdOppiL_2e _1QY7TzdLHKX3-BKPDNNYKF" data-reactid="91"></i>
