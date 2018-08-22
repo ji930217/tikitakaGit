@@ -37,14 +37,13 @@ public class MessageController {
 	}
 	
 	@RequestMapping("messagePage.do")
-	public ModelAndView messagePage(int projectCode, HttpSession session, ModelAndView mv){
+	public ModelAndView messagePage(HttpSession session, ModelAndView mv){
 		// 로그인한 유저 정보를 통해 해당 멤버의 메시지리스트 불러와야해
-		//Member user = (Member) session.getAttribute("user");
+		Member user = (Member) session.getAttribute("user");
 		
 		// 가장 마지막으로 온 메시지 내용도 필요
 		
-		List<ProjectVo> list = projectService.selectSentMessageProjectList("admin@naver.com");
-		
+		List<MessageVo> list = msgService.selectMessageList(user.getEmail());
 		
 		mv.addObject("list", list);
 		mv.setViewName("message/messagePage");

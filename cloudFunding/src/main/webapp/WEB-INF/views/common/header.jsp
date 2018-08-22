@@ -1452,10 +1452,13 @@
 						<span class="MyPage__UserFullname-s1rrrcge-1 bPHUVK"><c:out value="${user.name }"/></span>
 					</div>
 					<div class="Divider__Divider-s16ihjfx-0 XTtld"></div>
-					<a href="/messages"><div
-							class="MenuItem__MenuItem-no2u3j-0 cwYjsy">
+					<a href="messagePage.do">
+						<div	class="MenuItem__MenuItem-no2u3j-0 cwYjsy">
 							<span class="MenuItem__MenuItemTitle-no2u3j-1 enzRKc">메시지</span>
-						</div></a><a href="/pledges"><div
+						</div>
+					</a>
+					<a href="/pledges">
+						<div
 							class="MenuItem__MenuItem-no2u3j-0 cwYjsy">
 							<span class="MenuItem__MenuItemTitle-no2u3j-1 enzRKc">내
 								후원현황</span>

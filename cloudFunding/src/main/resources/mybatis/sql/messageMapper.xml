@@ -13,25 +13,38 @@
 		<result property="content" column="M_CONTENT"/>
 		<result property="sendDate" column="M_SEND_DATE"/>
 		<result property="readFlag" column="M_READ_FLAG"/>
+		<!-- 화면에 보여질 프로젝트 정보 -->
+		<result property="title" column="P_TITLE"/>
+		<result property="repImg" column="P_REP_IMG"/>
+		<result property="creatorEamil" column="CREATOR_EMAIL"/>
+		<result property="writerName" column="WRITER_NAME"/>
+		<result property="receiverName" column="RECEIVER_NAME"/>
 		<!-- <collection property="replyList" column="REPLY_CODE" ofType="Reply" resultMap="replyMap"/> -->
 	</resultMap>
 	
-	<!-- <select id = "selectSentMessageProjectList" resultMap="projectMap2" parameterType="string">
-		SELECT EMAIL, P_PROJECT_CODE, P_TITLE, P_REP_IMG, P_PROFILE_IMG, P_NAME
-		FROM PROJECT 
-		WHERE P_PROJECT_CODE IN (SELECT P_PROJECT_CODE 
-														FROM MESSAGE 
-														WHERE M_WRITER = #{email})
+	<select id = "selectMessageList" resultMap="messageMap" parameterType="string">
+		SELECT P.P_PROJECT_CODE, P_TITLE, P_REP_IMG, M_CODE, M_WRITER, M_RECEIVER, M_CONTENT, TO_CHAR(M_SEND_DATE,'YYYY-MM-DD HH24:MI') AS M_SEND_DATE, M_READ_FLAG,
+			      (SELECT NAME FROM MEMBER WHERE EMAIL = M_WRITER) AS WRITER_NAME--,
+			--      (SELECT NAME FROM MEMBER WHERE EMAIL = M_RECEIVER) AS RECEIVER_NAME
+		FROM PROJECT P JOIN MESSAGE ON(P.P_PROJECT_CODE = MESSAGE.P_PROJECT_CODE)
+		WHERE P.P_PROJECT_CODE IN (SELECT P_PROJECT_CODE 
+															FROM MESSAGE 
+															WHERE M_WRITER = #{email})
+		-- 프로젝트 별 가장 최신 메시지 정보만
+		AND M_SEND_DATE IN (SELECT MAX(M.M_SEND_DATE) 
+												FROM MESSAGE M 
+												WHERE (M.M_WRITER = #{email} OR M.M_RECEIVER = #{email}) 
+												AND M.P_PROJECT_CODE = P.P_PROJECT_CODE) 
 	</select>
- -->
-	<select id="selectMessageList" parameterType="string" resultMap="messageMap">
+
+	<!-- <select id="selectMessageList" parameterType="string" resultMap="messageMap">
 	    SELECT P_PROJECT_CODE, M_CODE, 
 				M_WRITER, (SELECT NAME FROM MEMBER WHERE EMAIL = M_WRITER) AS WRITER_NAME,
 				M_RECEIVER, (SELECT NAME FROM MEMBER WHERE EMAIL = M_RECEIVER) AS RECEIVER_NAME,
 				M_KINDS, M_CONTENT, M_SEND_DATE, M_READ_FLAG 
 		FROM MESSAGE
 		WHERE M_WRITER = #{email}
-	</select>
+	</select> -->
 
 	<insert id="insertMessage" parameterType="Message">
 	    INSERT INTO MESSAGE 

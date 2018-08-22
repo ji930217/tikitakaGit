@@ -16,12 +16,12 @@ public class MessageService {
 	@Autowired
 	MessageDao msgDao;
 
-	public List<MessageVo> selectMessageList(String email) {
-		return msgDao.selectMessageList(email);
-	}
-
 	public int insertMessage(MessageVo msg) {
 		return msgDao.insertMessage(msg);
+	}
+
+	public List<MessageVo> selectMessageList(String email) {
+		return msgDao.selectMessageList(email);
 	}
 
 	/*public List<PostVo> selectPostList(int projectCode) {

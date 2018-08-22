@@ -1,7 +1,5 @@
 package com.tikitaka.cloudFunding.message.model.vo;
 
-import java.sql.Date;
-
 import org.springframework.stereotype.Component;
 
 @Component
@@ -12,8 +10,14 @@ public class MessageVo {
 	private String receiverEmail;
 	private String messageKinds;
 	private String content;
-	private Date sendDate;
+	private String sendDate;
 	private char readFlag; 
+	
+	private String title;
+	private String repImg;
+	private String creatorEmail;
+	private String writerName;
+	private String receiverName;
 	
 	public MessageVo() {
 		super();
@@ -67,11 +71,11 @@ public class MessageVo {
 		this.content = content;
 	}
 
-	public Date getSendDate() {
+	public String getSendDate() {
 		return sendDate;
 	}
 
-	public void setSendDate(Date sendDate) {
+	public void setSendDate(String sendDate) {
 		this.sendDate = sendDate;
 	}
 
@@ -83,11 +87,53 @@ public class MessageVo {
 		this.readFlag = readFlag;
 	}
 
+	public String getTitle() {
+		return title;
+	}
+
+	public void setTitle(String title) {
+		this.title = title;
+	}
+
+	public String getRepImg() {
+		return repImg;
+	}
+
+	public void setRepImg(String repImg) {
+		this.repImg = repImg;
+	}
+
+	public String getCreatorEmail() {
+		return creatorEmail;
+	}
+
+	public void setCreatorEmail(String creatorEmail) {
+		this.creatorEmail = creatorEmail;
+	}
+
+	public String getWriterName() {
+		return writerName;
+	}
+	
+	public void setWriterName(String writerName) {
+		this.writerName = writerName;
+	}
+	
+	public String getReceiverName() {
+		return receiverName;
+	}
+
+	public void setReceiverName(String receiverName) {
+		this.receiverName = receiverName;
+	}
+
 	@Override
 	public String toString() {
 		return "MessageVo [projectCode=" + projectCode + ", messageCode=" + messageCode + ", writerEmail=" + writerEmail
-				+ ", reciverEmail=" + receiverEmail + ", messageKinds=" + messageKinds + ", content=" + content
-				+ ", sendDate=" + sendDate + ", readFlag=" + readFlag + ", toString()=" + super.toString() + "]";
+				+ ", receiverEmail=" + receiverEmail + ", messageKinds=" + messageKinds + ", content=" + content
+				+ ", sendDate=" + sendDate + ", readFlag=" + readFlag + ", title=" + title + ", repImg=" + repImg
+				+ ", creatorEmail=" + creatorEmail + ", writerName=" + writerName + ", receiverName=" + receiverName + ", toString()="
+				+ super.toString() + "]";
 	}
 	
 	

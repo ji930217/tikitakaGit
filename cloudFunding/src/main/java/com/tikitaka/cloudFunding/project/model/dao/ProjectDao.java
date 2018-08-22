@@ -82,9 +82,4 @@ public class ProjectDao {
 		return sqlSession.selectList("projectMapper.selectPopularList4", btnIdx);
 	}
 
-	public List<ProjectVo> selectSentMessageProjectList(String email) {
-		return sqlSession.selectList("projectMapper.selectSentMessageProjectList", email);
-	}
-
-
 }
