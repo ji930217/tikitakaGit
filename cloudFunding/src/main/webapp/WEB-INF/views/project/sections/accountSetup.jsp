@@ -96,15 +96,27 @@
 							
 							<div class="_2dKJQZGqcB1T0xe0DzKY0H _152MAijd_UogerBKCVqZR_ _1lLHKI5v9AoCyeggtffvGZ">
 								<div class="telDiv">
+								<c:if test="${null eq project.pPhone }">
 								<a><i class="_3WyCNpfRrfze5XqBAKgG6j WU1ox0-AeDX_zneKjnNMO _1QY7TzdLHKX3-BKPDNNYKF"></i>
 								<!-- react-text: 8338 -->연락을 위한 휴대폰 번호를 입력해주세요<!-- /react-text --></a>
 								<h3 style="display:none;"></h3>
+								</c:if>
+								<c:if test="${null ne project.pPhone }">
+								<h3><c:out value="${project.pPhone }"></c:out> </h3>
+								</c:if>
 								</div>
 							</div>
 							<div
 								class="telMode _2joJTlnkt26WGpxyvkNuCH _152MAijd_UogerBKCVqZR_ WU1ox0-AeDX_zneKjnNMO _3G8CRXtomRhisiZsw7Spx- _1lLHKI5v9AoCyeggtffvGZ">
-								<a><i class="w6FPSPr8JA6xb8SSjkPtI _1QY7TzdLHKX3-BKPDNNYKF"></i>
-								<!-- react-text: 8342 --> 입력하기<!-- /react-text --></a>
+								<a>
+								<c:if test="${null eq project.pPhone }">
+								<i class="w6FPSPr8JA6xb8SSjkPtI _1QY7TzdLHKX3-BKPDNNYKF"></i>
+								<!-- react-text: 8342 --> 입력하기<!-- /react-text -->
+								</c:if>
+								<c:if test="${null eq project.pPhone }">
+								<i class='w6FPSPr8JA6xb8SSjkPtI _1QY7TzdLHKX3-BKPDNNYKF'></i>수정하기
+								</c:if>
+								</a>
 							</div>
 						</div>
 					</div>
@@ -120,7 +132,7 @@
 										<!-- /react-text -->
 										<div
 											class="_13KHfN73YmQgsYHxXvuh_J _3_IGkn3uaje0g2ZA6Tx9wd O-evLfgVQbD3QZA_PvfT_ _152MAijd_UogerBKCVqZR_ _3nB1fZxEqXMiqXF-c7b1XQ ">
-											<input class="telInput" type="tel" value="" placeholder="010-1234-5678">
+											<input class="telInput" type="tel" value='<c:out value="${project.pPhone }"></c:out>' placeholder="010-1234-5678">
 										</div>
 										<div class="_13KHfN73YmQgsYHxXvuh_J _3ZTEzsKL-qDLECUGq4QcLv">
 											<div
@@ -170,10 +182,15 @@
 								class="_2dKJQZGqcB1T0xe0DzKY0H _152MAijd_UogerBKCVqZR_ _1lLHKI5v9AoCyeggtffvGZ">
 								<div>
 									<div class="bankDiv">
+									<c:if test="${null eq project.bankNumber }">
 									<a><i
 										class="_3WyCNpfRrfze5XqBAKgG6j WU1ox0-AeDX_zneKjnNMO _1QY7TzdLHKX3-BKPDNNYKF"></i>
 									<!-- react-text: 8355 --> 후원금을 수령할 은행 계좌를 등록해주세요<!-- /react-text --></a>
 									<h3 style="display:none;"></h3>
+									</c:if>
+									<c:if test="${null ne project.bankNumber }">
+									<h3 style=><c:out value="${project.bankTrading }"></c:out> </h3>
+									</c:if>
 									</div>
 								</div>
 							</div>
@@ -247,7 +264,7 @@
 													<div>
 														<div
 															class="_13KHfN73YmQgsYHxXvuh_J _3_IGkn3uaje0g2ZA6Tx9wd _3nB1fZxEqXMiqXF-c7b1XQ  ">
-															<input class="bankNameInput" type="text" value="" placeholder="">
+															<input class="bankNameInput" type="text" value='<c:out value="${project.bankName }"></c:out>' placeholder="">
 															<!-- react-text: 9301 -->
 															<!-- /react-text -->
 														</div>
@@ -272,7 +289,7 @@
 													<div>
 														<div
 															class="_13KHfN73YmQgsYHxXvuh_J _3_IGkn3uaje0g2ZA6Tx9wd _3nB1fZxEqXMiqXF-c7b1XQ  _1QY7TzdLHKX3-BKPDNNYKF">
-															<input class="bankNumInput" type="text" value="" placeholder=""><i
+															<input class="bankNumInput" type="text" value='<c:out value="${project.bankNumber }"></c:out>' placeholder=""><i
 																class="_5njYujG6OOxwCaFtExFoA _1QY7TzdLHKX3-BKPDNNYKF"></i>
 														</div>
 													</div>
