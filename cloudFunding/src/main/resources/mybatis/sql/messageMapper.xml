@@ -42,6 +42,10 @@
 												WHERE (M.M_WRITER = #{email} OR M.M_RECEIVER = #{email}) 
 												AND M.P_PROJECT_CODE = P.P_PROJECT_CODE) 
 	</select>
+	
+	<select id="selectNewMessageCount" parameterType="string" resultType="int">
+	    SELECT COUNT(*) FROM MESSAGE WHERE M_RECEIVER = #{email} AND M_READ_FLAG = 'F'
+	</select>
 
 	<!-- <select id="selectMessageList" parameterType="string" resultMap="messageMap">
 	    SELECT P_PROJECT_CODE, M_CODE, 

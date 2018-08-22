@@ -23,6 +23,10 @@ public class MessageDao {
 		return sqlSession.insert("messageMapper.insertMessage", msg);
 	}
 
+	public int selectNewMessageCount(String email) {
+		return sqlSession.selectOne("messageMapper.selectNewMessageCount", email);
+	}
+
 /*	public List<PostVo> selectPostList(int projectCode) {
 		return sqlSession.selectList("communityMapper.selectPostList", projectCode);
 	}
