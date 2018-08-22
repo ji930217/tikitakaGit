@@ -21,6 +21,7 @@
   	<typeAlias type="com.tikitaka.cloudFunding.community.model.vo.ReplyVo" alias="Reply"/>
   	<typeAlias type="com.tikitaka.cloudFunding.project.model.vo.GiftVo" alias="Gift"/>
   	<typeAlias type="com.tikitaka.cloudFunding.member.model.vo.PaymentInfo" alias="PaymentInfo"/>
+  	<typeAlias type="com.tikitaka.cloudFunding.message.model.vo.MessageVo" alias="Message"/>
   </typeAliases>
   
 
@@ -30,6 +31,7 @@
     <mapper resource="mybatis/sql/admin-mapper.xml"/>
     <mapper resource="mybatis/sql/projectMapper.xml"/>
     <mapper resource="mybatis/sql/communityMapper.xml"/>
+    <mapper resource="mybatis/sql/messageMapper.xml"/>
   </mappers>
   
   
