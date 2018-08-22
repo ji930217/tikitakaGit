@@ -205,6 +205,11 @@ public class AdminDao {
 		return sqlSession.update("AdminMapper.noCheck",code);
 	}
 
+	public List<Member> memberDetail(String email) {
+		
+		return sqlSession.selectList("AdminMapper.memberDetail",email);
+	}
+
 	
 
 	

@@ -1802,4 +1802,19 @@ System.out.println(bannerList);
 					
 					return "redirect:adminMenuList.do";
 				}
+				
+				@RequestMapping("memberDetail.do")
+				public ModelAndView memberDetail(ModelAndView mv, HttpServletRequest request) {
+					
+					String email = request.getParameter("email");
+					List<Member> mDetail = adminservice.memberDetail(email);
+					
+					
+					mv.addObject("mDetail", mDetail);
+					
+					
+					mv.setViewName("admin/memberDetail");
+					
+					return mv; 
+				}
 }

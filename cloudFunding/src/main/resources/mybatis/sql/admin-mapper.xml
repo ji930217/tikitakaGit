@@ -11,6 +11,13 @@
 <result property="profile_img" column="PROFILE_IMG"/>
 <result property="enroll_date" column="ENROLL_DATE"/>
 <result property="stopDate" column="STOP_DATE"/>
+<result property="location" column="LOCATION"/>
+<result property="shortDescription" column="SHORTDESCRIPTION"/>
+<result property="homepage" column="HOMEPAGE"/>
+<result property="phone1" column="PHONE1"/>
+<result property="phone2" column="PHONE2"/>
+<result property="phone3" column="PHONE3"/>
+<result property="stopDate" column="STOP_DATE"/>
 </resultMap>
 
 <select id = "selectMemberList" resultMap="memberMap">
@@ -36,7 +43,7 @@
 
 <select id="selectMemberList2" resultMap="memberMap">
  	SELECT * 
-	FROM(SELECT CEIL(ROWNUM/10) AS NUM1, EMAIL, NAME, PASSWORD, PROFILE_IMG, ENROLL_DATE,STOP_DATE
+	FROM(SELECT CEIL(ROWNUM/10) AS NUM1, EMAIL, NAME, PASSWORD, PROFILE_IMG, ENROLL_DATE,STOP_DATE,LOCATION
 	FROM(SELECT * FROM MEMBER ORDER BY ENROLL_DATE DESC))
 	WHERE NUM1 = #{no}
 </select> 
@@ -44,6 +51,12 @@
 <update id="stopDate" >
 UPDATE MEMBER SET STOP_DATE = SYSDATE+3 WHERE EMAIL = #{email}
 </update>
+
+<select id="memberDetail" resultMap="memberMap">
+	SELECT *
+	FROM MEMBER
+	WHERE EMAIL = #{email}
+</select>
 			
 			
 <resultMap type="Project" id="projectMap">

@@ -2,6 +2,10 @@
     pageEncoding="UTF-8"%>
     <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
     <script src="resources/js/jquery-3.3.1.min.js"></script>
+    <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
+	<jsp:useBean id="toDay" class="java.util.Date" />
+	
+	<fmt:formatDate value="${toDay}" pattern="yyyy-MM-dd"  var = "toDay"/>
     
     <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
@@ -108,8 +112,9 @@ function stopCheck(stopDate){
 	alert("해당회원의 정지종료일은"+date+"까지입니다")
 }
 
-function memberDetail(){
-	//맴버상세보기
+function memberDetail(email){
+	var email = email;
+	location.href = "memberDetail.do?email="+email;
 }
 
 
@@ -132,7 +137,8 @@ function memberDetail(){
       <th scope="col" id = "th1">이름</th>
       <th scope="col" id = "th2">이메일</th>
       <th scope="col" id = "th3">가입일</th>
-      <th scope="col" id = "th4">관리자기능</th>
+      <th scope="col" id = "th4">지역</th>
+      <th scope="col" id = "th5">관리자기능</th>
     </tr>
   </thead>
   <tbody>
@@ -142,16 +148,29 @@ function memberDetail(){
       <td id = "td2"><c:out value = "${m.email }"/></td>
       <td id = "td3"><c:out value = "${m.enroll_date }"/></td>
       <td id = "td4">
-      <c:if test = "${!empty m.stopDate }">
-      	
-      	<button type="button" class="btn btn-secondary btn-xs" onclick = "memberDetail();">상세정보</button>
-      	<button type="button" class="btn btn-secondary btn-xs" onclick = "stopCheck('${m.stopDate}');">정지확인</button>
-      	
+      <c:if test="${m.location != null }">
+      	<c:out value = "${m.location }"/>
       </c:if>
-      <c:if test = "${empty m.stopDate }">
-      		<button type="button" class="btn btn-secondary btn-xs" onclick = "memberDetail();">상세정보</button>
+      <c:if test="${m.location == null }">
+      	<c:out value = "미정"/>
+      </c:if>
+      </td>
+      <td id = "td5">
+      
+      <c:choose>
+      	<c:when test="${toDay > m.stopDate }">
+      		<button type="button" class="btn btn-secondary btn-xs" onclick = "memberDetail('${m.email}');">상세정보</button>
       		<button type="button" class="btn btn-secondary btn-xs" onclick = "stop('${m.email}');">정지</button>
-      </c:if>
+      	</c:when>
+      	<c:when test="${!empty m.stopDate}">
+      		<button type="button" class="btn btn-secondary btn-xs" onclick = "memberDetail('${m.email}');">상세정보</button>
+      		<button type="button" class="btn btn-secondary btn-xs" onclick = "stopCheck('${m.stopDate}');">정지확인</button>
+      	</c:when>
+      	<c:when test="${empty m.stopDate }">
+      		<button type="button" class="btn btn-secondary btn-xs" onclick = "memberDetail('${m.email}');">상세정보</button>
+      		<button type="button" class="btn btn-secondary btn-xs" onclick = "stop('${m.email}');">정지</button>
+      	</c:when>
+      </c:choose>
       </td>
     </tr>
    </c:forEach>
