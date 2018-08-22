@@ -79,7 +79,7 @@
 								<!-- react-text: 8905 -->
 								<!-- /react-text -->
 								<p>프로젝트를 소개하는 영상을 만들면 내용을 더 효과적으로 알릴 수 있습니다. 2~3분 이내의 짧은 영상이
-									가장 반응이 좋답니다. 배경음악을 쓰신다면 저작권 문제에 유념해주세요.</p>
+									가장 반응이 좋답니다. 배경음악을 쓰신다면 저작권 문제에 유념해주세요. 동영상이 나오지 않거나 전 동영상이 재생 된다면 새로 고침이나 마이페이지에서 확인해 보세요.</p>
 								<div
 									class="_13KHfN73YmQgsYHxXvuh_J _12TAeoYDPLF0sfa3UIt6uZ _3ZTEzsKL-qDLECUGq4QcLv"
 									style="cursor: pointer;">
@@ -122,7 +122,7 @@
 								<div class="_13KHfN73YmQgsYHxXvuh_J _3ZTEzsKL-qDLECUGq4QcLv">
 								<div class="videoplay" style="width: 650px; height: 480px;">
 									<div class="_13KHfN73YmQgsYHxXvuh_J " style="height: 100%;">
-										<video id="video" controls style="width: 100%; height: 100%;"></video>
+										<video id="video" controls style="width: 100%; height: 100%;" src="<c:out value="${project.descriptionVideo }"></c:out>"></video>
 									</div>
 								</div>
 								

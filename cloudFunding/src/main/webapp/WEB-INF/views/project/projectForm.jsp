@@ -4457,17 +4457,12 @@ px
 							var radio = $(
 									'input[name="depositAccountType"]:checked')
 									.val();
-							var regExp = /(5[1-5]\d{14})|(4\d{12})(\d{3}?)|3[47]\d{13}|(6011\d{12})/;
 							if ("" == bankNameInput || "" == bankNumInput
 									|| "undefined" == radio) {
 								alert("계좌 정보는 필수 입력 정보 입니다.");
 								return;
 							}
 
-							if (!regExp.test(bankNumInput)) {
-								alert("계좌 번호를 확인해 주세요.");
-								return;
-							}
 
 							$
 									.ajax({
@@ -4510,38 +4505,53 @@ px
 										}
 									});
 						});
+		
+		if('${project.giftItem}'!=null){
+			if('${project.giftItem}'.indexOf(",") == -1) {
+				$(".itemAdd").children().children().children().children('._29JGBV0ggQH38jcZcbYX3L').text('${project.giftItem}');
+			}else{
+				$(".itemAdd").eq(0).remove();
+				$(".itemAdd").show();
+			}
+		}
+		
+		if('${project.descriptionVideo}'!=null){
+			$(".projectVideo").hide();
+			$(".videoplay").show();
+			$(".updateVideoBtn").show();
+		}
+		
 		if ('${fn:length(project.giftArry)}' > 0) {
 			//작업중
+			var list;
+			var list = new Array(); 
+			<c:forEach items="${project.giftArry}" var="item">
+			list.push("${item.giftCode}");
+			</c:forEach>
 			$(".rewardlist").eq(0).remove();
 			$(".rewardlist").show();
-			console.log($(".itemAdd").eq(0));
-			$(".itemAdd").eq(0).remove();
-			$(".itemAdd").show();
-
+			$(".rewardlist").each(function(index,item){
+				$(item).children().children().children().attr('onclick',"deleteItemList("+list[index] +")");
+			});
+			
 		}
 
 	});
-	var itemListLength = 0;
+	var itemListLength ='${fn:length(project.giftArry)}';
 	function blue(pro) {
 		if (null != pro.title && null != pro.repImg && null != pro.summary
 				&& null != pro.category && null != pro.profileImg
 				&& null != pro.name && null != pro.introduce) {
 			$(".row1").children('i').remove();
-			$(".row1")
-					.prepend(
-							"<i class='_13KHfN73YmQgsYHxXvuh_J _1oJMWnMCW_Y6GmNc1mhqaW _3sFSjAZS4gQdCAyN3OfyFG -o8oGI_QAOKsVIJOUOUmV _254YPhBOB9qv7-J8bIg7co _1QY7TzdLHKX3-BKPDNNYKF'></i>");
+			$(".row1").prepend("<i class='_13KHfN73YmQgsYHxXvuh_J _1oJMWnMCW_Y6GmNc1mhqaW _3sFSjAZS4gQdCAyN3OfyFG -o8oGI_QAOKsVIJOUOUmV _254YPhBOB9qv7-J8bIg7co _1QY7TzdLHKX3-BKPDNNYKF'></i>");
 		}
 		if (0 < pro.price && null != pro.endDate && 0 < itemListLength
 				&& null != pro.refund) {
 			$(".row2").children('i').remove();
-			$(".row2")
-					.prepend(
-							"<i class='_13KHfN73YmQgsYHxXvuh_J _1oJMWnMCW_Y6GmNc1mhqaW _3sFSjAZS4gQdCAyN3OfyFG -o8oGI_QAOKsVIJOUOUmV _254YPhBOB9qv7-J8bIg7co _1QY7TzdLHKX3-BKPDNNYKF'></i>");
+			$(".row2").prepend("<i class='_13KHfN73YmQgsYHxXvuh_J _1oJMWnMCW_Y6GmNc1mhqaW _3sFSjAZS4gQdCAyN3OfyFG -o8oGI_QAOKsVIJOUOUmV _254YPhBOB9qv7-J8bIg7co _1QY7TzdLHKX3-BKPDNNYKF'></i>");
 		} else {
 			$(".row2").children('i').remove();
-			$(".row2")
-					.prepend(
-							"<i class='_13KHfN73YmQgsYHxXvuh_J _1oJMWnMCW_Y6GmNc1mhqaW _3RAU_1dXrlkkPhtkKyXSVj _3fJsfvAPykJzj2xoMnxzWW _254YPhBOB9qv7-J8bIg7co _1QY7TzdLHKX3-BKPDNNYKF'></i>");
+			$(".row2").prepend("<i class='_13KHfN73YmQgsYHxXvuh_J _1oJMWnMCW_Y6GmNc1mhqaW _3RAU_1dXrlkkPhtkKyXSVj _3fJsfvAPykJzj2xoMnxzWW _254YPhBOB9qv7-J8bIg7co _1QY7TzdLHKX3-BKPDNNYKF'></i>");
 		}
 
 		if (null != pro.story) {
@@ -4789,6 +4799,7 @@ px
 					rewardlist.clone().insertAfter($(".rewardappend"));
 				}
 				itemListLength = data.giftArry.length;
+				console.log(itemListLength);
 				blue(data);
 			},
 			error : function(e) {
@@ -4807,13 +4818,12 @@ px
 				"giftCode" : giftNum,
 			},
 			success : function(data) {
-				if (data == "") {
-					itemListLength = 0;
+				if (data.giftArry.length ==0) {
+					itemListLength=0;
 					$(".rewardlist").hide();
 					blue(data);
 				} else {
 					var rewardlist = $(".rewardlist").eq(0);
-
 					$(".rewardlist").remove();
 					for (var i = 0; i < data.giftArry.length; i++) {
 						var date = new Date(data.giftArry[i].sendDate);
@@ -5006,13 +5016,13 @@ px
 										</a> <a class="rLqvd1axk9i-3cU72yTkF" href="#fundingReward">
 											<h5 class="row2">
 												<c:if
-													test="${null eq project.price or null eq project.endDate or null eq project.giftItem or null eq project.refund}">
+													test="${null eq project.price or null eq project.endDate or 0 eq fn:length(project.giftArry) or null eq project.refund}">
 													<i
 														class="_13KHfN73YmQgsYHxXvuh_J _1oJMWnMCW_Y6GmNc1mhqaW _3RAU_1dXrlkkPhtkKyXSVj _3fJsfvAPykJzj2xoMnxzWW _254YPhBOB9qv7-J8bIg7co _1QY7TzdLHKX3-BKPDNNYKF"></i>
 												</c:if>
 
 												<c:if
-													test="${null ne project.price and null ne project.endDate and null ne project.giftItem and null ne project.refund}">
+													test="${null ne project.price and null ne project.endDate and 0 ne fn:length(project.giftArry) and null ne project.refund}">
 													<i
 														class='_13KHfN73YmQgsYHxXvuh_J _1oJMWnMCW_Y6GmNc1mhqaW _3sFSjAZS4gQdCAyN3OfyFG -o8oGI_QAOKsVIJOUOUmV _254YPhBOB9qv7-J8bIg7co _1QY7TzdLHKX3-BKPDNNYKF'></i>
 												</c:if>
