@@ -770,6 +770,14 @@
 		    height: 12px;
 		}
 	}
+	.iMZfBk {
+	    font-size: 0.9rem;
+	    color: #fa6462;
+	    font-weight: bolder;
+	    margin-left: 0.5rem;
+	}
+	
+	
 
 </style>
 <script>
@@ -918,10 +926,13 @@
 								<img class="ProfileImg__ProfileImg-s1o99mme-0 ePsyRU" 
 								src="${user.profile_img }" width="42" height="42" />
 								
+								
 								<!-- 새로운 메시지를 받을 경우 나타나는 영역 -->
-								<div class="SiteHeader__SiteHeaderAlert-s1s56ls8-11 xfBEx">
-									<div class="SiteHeader__RedPoint-s1s56ls8-12 gXPwyp"></div>
-								</div>
+								<c:if test="${newMessageCount gt 0 }">
+									<div class="SiteHeader__SiteHeaderAlert-s1s56ls8-11 xfBEx">
+										<div class="SiteHeader__RedPoint-s1s56ls8-12 gXPwyp"></div>
+									</div>
+								</c:if>
 						</span>
 						</a>
 						
@@ -1462,11 +1473,19 @@
 						<!-- </span> -->
 						<span class="MyPage__UserFullname-s1rrrcge-1 bPHUVK"><c:out value="${user.name }"/></span>
 					</div>
+					
 					<div class="Divider__Divider-s16ihjfx-0 XTtld"></div>
 					<a href="messagePage.do">
 						<div	class="MenuItem__MenuItem-no2u3j-0 cwYjsy">
 							<span class="MenuItem__MenuItemTitle-no2u3j-1 enzRKc">메시지</span>
-						</div></a><a href="readyPage.do"><div
+							<!-- 새로운 메시지 있을 때만 출력 -->
+							<c:if test="${newMessageCount gt 0 }">
+								<span class="MyPage__MenuItemAlert-s1rrrcge-2 iMZfBk">새 메시지</span>
+							</c:if>
+						</div>
+					</a>
+					
+					<a href="readyPage.do"><div
 							class="MenuItem__MenuItem-no2u3j-0 cwYjsy">
 							<span class="MenuItem__MenuItemTitle-no2u3j-1 enzRKc">내
 								후원현황</span>

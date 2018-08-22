@@ -24,6 +24,10 @@ public class MessageService {
 		return msgDao.selectMessageList(email);
 	}
 
+	public int selectNewMessageCount(String email) {
+		return msgDao.selectNewMessageCount(email);
+	}
+
 	/*public List<PostVo> selectPostList(int projectCode) {
 		return cDao.selectPostList(projectCode);
 	}
