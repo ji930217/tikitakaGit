@@ -99,6 +99,16 @@
 			
 		}
 		
+		if(member.profile_img == null){
+			$("#pimg1").css("display","block");
+			$("#pimg2").css("display","none");
+		}else{
+			$("#pimg1").css("display","none");
+			$("#pimg2").css("display","block");
+			$("#pimg2").css("width","80px");
+			$("#pimg2").css("height","80px");
+		}
+		
 		
 	});
 
@@ -194,7 +204,10 @@
       <div class="b-media__item">
         <div class="b-avatar" style="width: 60px">
   <div class="b-avatar__frame" style="width:60px; height:60px">
-    <img alt="Avatar_4.png?ixlib=rb-1.1.0&amp;w=200&amp;h=250&amp;auto=format%2ccompress&amp;fit=facearea&amp;facepad=2" class="b-avatar__pic" src="https://tumblbug-upi.imgix.net/defaults/avatar_4.png?ixlib=rb-1.1.0&amp;w=200&amp;h=250&amp;auto=format%2Ccompress&amp;fit=facearea&amp;facepad=2.0&amp;ch=Save-Data&amp;mask=ellipse&amp;s=47b7f1fde4079f1f411c9d0c1c73fc83">
+  
+  <img id="pimg1" alt="Avatar_4.png?ixlib=rb-1.1.0&amp;w=200&amp;h=250&amp;auto=format%2ccompress&amp;fit=facearea&amp;facepad=2" class="b-avatar__pic" src="https://tumblbug-upi.imgix.net/defaults/avatar_4.png?ixlib=rb-1.1.0&amp;w=200&amp;h=250&amp;auto=format%2Ccompress&amp;fit=facearea&amp;facepad=2.0&amp;ch=Save-Data&amp;mask=ellipse&amp;s=47b7f1fde4079f1f411c9d0c1c73fc83">
+  <img id="pimg2" src="${user.profile_img }" />   
+   
 </div>   
 </div>
       </div>
