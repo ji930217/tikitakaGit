@@ -86,5 +86,4 @@ public class ProjectDao {
 		return sqlSession.selectList("projectMapper.selectMyProjectList", member);
 	}
 
-
 }
