@@ -18,6 +18,7 @@ public class MessageVo {
 	private String creatorEmail;
 	private String writerName;
 	private String receiverName;
+	private int newMessageCount;
 	
 	public MessageVo() {
 		super();
@@ -126,14 +127,22 @@ public class MessageVo {
 	public void setReceiverName(String receiverName) {
 		this.receiverName = receiverName;
 	}
+	
+	public int getNewMessageCount() {
+		return newMessageCount;
+	}
+
+	public void setNewMessageCount(int newMessageCount) {
+		this.newMessageCount = newMessageCount;
+	}
 
 	@Override
 	public String toString() {
 		return "MessageVo [projectCode=" + projectCode + ", messageCode=" + messageCode + ", writerEmail=" + writerEmail
 				+ ", receiverEmail=" + receiverEmail + ", messageKinds=" + messageKinds + ", content=" + content
 				+ ", sendDate=" + sendDate + ", readFlag=" + readFlag + ", title=" + title + ", repImg=" + repImg
-				+ ", creatorEmail=" + creatorEmail + ", writerName=" + writerName + ", receiverName=" + receiverName + ", toString()="
-				+ super.toString() + "]";
+				+ ", creatorEmail=" + creatorEmail + ", writerName=" + writerName + ", receiverName=" + receiverName
+				+ ", newMessageCount=" + newMessageCount + ", toString()=" + super.toString() + "]";
 	}
 	
 	

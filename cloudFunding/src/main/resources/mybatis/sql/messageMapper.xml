@@ -19,12 +19,18 @@
 		<result property="creatorEamil" column="CREATOR_EMAIL"/>
 		<result property="writerName" column="WRITER_NAME"/>
 		<result property="receiverName" column="RECEIVER_NAME"/>
+		<result property="newMessageCount" column="NEW_MESSAGE_COUNT"/>
 		<!-- <collection property="replyList" column="REPLY_CODE" ofType="Reply" resultMap="replyMap"/> -->
 	</resultMap>
 	
 	<select id = "selectMessageList" resultMap="messageMap" parameterType="string">
-		SELECT P.P_PROJECT_CODE, P_TITLE, P_REP_IMG, M_CODE, M_WRITER, M_RECEIVER, M_CONTENT, TO_CHAR(M_SEND_DATE,'YYYY-MM-DD HH24:MI') AS M_SEND_DATE, M_READ_FLAG,
-			      (SELECT NAME FROM MEMBER WHERE EMAIL = M_WRITER) AS WRITER_NAME--,
+		SELECT P.P_PROJECT_CODE, P_TITLE, P_REP_IMG, M_CODE, M_WRITER, M_RECEIVER, M_CONTENT, TO_CHAR(M_SEND_DATE,'YYYY-MM-DD HH24:MI') AS M_SEND_DATE, 
+						-- 로그인 한 유저가 보낸 것이 아닌 새로운 메시지만 카운트
+						(SELECT COUNT(*) FROM MESSAGE 
+						WHERE M_READ_FLAG = 'F' 
+							AND P_PROJECT_CODE = P.P_PROJECT_CODE 
+							AND M_WRITER != #{email}) AS NEW_MESSAGE_COUNT,
+			      	(SELECT NAME FROM MEMBER WHERE EMAIL = M_WRITER) AS WRITER_NAME--,
 			--      (SELECT NAME FROM MEMBER WHERE EMAIL = M_RECEIVER) AS RECEIVER_NAME
 		FROM PROJECT P JOIN MESSAGE ON(P.P_PROJECT_CODE = MESSAGE.P_PROJECT_CODE)
 		WHERE P.P_PROJECT_CODE IN (SELECT P_PROJECT_CODE 
