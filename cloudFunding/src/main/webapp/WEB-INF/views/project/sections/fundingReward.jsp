@@ -318,7 +318,7 @@
 				<div class="rewardlist _13KHfN73YmQgsYHxXvuh_J _18bwsw29jDyAzIPXzQkoS- _18TDror949wcy2NyVIqpHo false" style="display: none">
 						<div class="_3ZgG-OSv0XE3y-h3oPaDsl">
 							<span class="WU1ox0-AeDX_zneKjnNMO oAeG34mYkuDyUTybhBMrQ">
-								<a class="ContextualAction__LinkButton-lcypnk-0 ddtTLO">
+								<a class="ContextualAction__LinkButton-lcypnk-0 ddtTLO ">
 								<i class="_1pt-5UHn7rWHPExbDO4EbO _1QY7TzdLHKX3-BKPDNNYKF"></i>
 								<span class="ContextualAction__Label-lcypnk-1 gETbSh">삭제하기</span></a>
 							</span>
@@ -367,7 +367,7 @@
 					<div class="rewardlist _13KHfN73YmQgsYHxXvuh_J _18bwsw29jDyAzIPXzQkoS- _18TDror949wcy2NyVIqpHo false" style="display: none">
 						<div class="_3ZgG-OSv0XE3y-h3oPaDsl">
 							<span class="WU1ox0-AeDX_zneKjnNMO oAeG34mYkuDyUTybhBMrQ">
-								<a class="ContextualAction__LinkButton-lcypnk-0 ddtTLO">
+								<a class="ContextualAction__LinkButton-lcypnk-0">
 								<i class="_1pt-5UHn7rWHPExbDO4EbO _1QY7TzdLHKX3-BKPDNNYKF"></i>
 								<span class="ContextualAction__Label-lcypnk-1 gETbSh">삭제하기</span></a>
 							</span>
