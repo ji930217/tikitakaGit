@@ -348,8 +348,11 @@
 			<div class="_3ZgG-OSv0XE3y-h3oPaDsl">
 				<div class="_13KHfN73YmQgsYHxXvuh_J _3U6RUH-EASpZ_j8ls1HJyP">
 					<div class="_13KHfN73YmQgsYHxXvuh_J _3_IGkn3uaje0g2ZA6Tx9wd">
-					<form id="messageForm" action="messagePage.do" method="post">
-						<input type="hidden" name="projectCode" value="${project.projectCode }"/>
+					
+					<form id="messageForm" action="sendMessage.do" method="post">
+						<input type="hidden" name="projectCode" value="<c:out value='${project.projectCode }'/>"/>
+						<input type="hidden" name="writerEmail" value="<c:out value='${user.email }'/>"/>
+						<input type="hidden" name="receiverEmail" value="<c:out value='${project.email }'/>"/>
 						<span><label style="color: grey; font-weight: 700;">받는 사람</label>
 							<label id="msgTo" class="_13KHfN73YmQgsYHxXvuh_J _1Qdv504-1XMeYXZyb0xQZT _1oJMWnMCW_Y6GmNc1mhqaW _3D9sfZXrWd8it3eUCuCTc8">
 								<c:out value="${project.name }"/> 님
@@ -358,21 +361,22 @@
 						<span><label style="color: grey; font-weight: 700;">문의 내용</label>
 							<div class="_13KHfN73YmQgsYHxXvuh_J _1za37OzUQqJfl3TEKlkYHi _3vQWHh2J_erdzly2Ip3e87">
 								<div>
-									<select id="messageType"
-										class="_13KHfN73YmQgsYHxXvuh_J _3_IGkn3uaje0g2ZA6Tx9wd _3vQWHh2J_erdzly2Ip3e87">
+									<select id="messageType" name="messageKinds" class="_13KHfN73YmQgsYHxXvuh_J _3_IGkn3uaje0g2ZA6Tx9wd _3vQWHh2J_erdzly2Ip3e87">
 										<option disabled="" value="문의 유형" selected>문의 유형</option>
 										<option value="선물/후원">선물/후원</option>
 										<option value="프로젝트">프로젝트</option>
 										<option value="수령자 정보">수령자 정보</option>
 										<option value="교환/환불">교환/환불</option>
 										<option value="배송">배송</option>
-										<option value="기타">기타</option></select>
+										<option value="기타">기타</option>
+									</select>
 								</div>
-							</div></span>
+							</div>
+						</span>
 						<div class="_13KHfN73YmQgsYHxXvuh_J _4S0ikJ5kL9iaC8TQbNr2J"></div>
 						<div class="_3_IGkn3uaje0g2ZA6Tx9wd">
 							<div class="_3_IGkn3uaje0g2ZA6Tx9wd">
-								<textarea id="messageContent" placeholder="프로젝트 진행자에게 문의하고 싶은 내용을 적어주세요" disabled
+								<textarea id="messageContent" name="content" placeholder="프로젝트 진행자에게 문의하고 싶은 내용을 적어주세요" disabled
 									rows="8" style="width: 100%;"></textarea>
 							</div>
 						</div>

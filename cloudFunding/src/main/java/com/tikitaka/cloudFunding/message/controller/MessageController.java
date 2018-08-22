@@ -27,24 +27,43 @@ public class MessageController {
 	@Autowired
 	ProjectService projectService;
 	
+	
+	
+	@RequestMapping("sendMessage.do")
+	public String sendMessage(int projectCode, MessageVo msg){
+		int result = msgService.insertMessage(msg);
+		
+		return "redirect:projectDetail.do?projectCode=" + projectCode;
+	}
+	
 	@RequestMapping("messagePage.do")
 	public ModelAndView messagePage(int projectCode, HttpSession session, ModelAndView mv){
 		// 로그인한 유저 정보를 통해 해당 멤버의 메시지리스트 불러와야해
-		Member user = (Member) session.getAttribute("user");
+		//Member user = (Member) session.getAttribute("user");
 		
-		List<MessageVo> list = msgService.selectMessageList(user.getEmail());
-		ProjectVo project = projectService.selectProjectDetail(projectCode);
+		// 가장 마지막으로 온 메시지 내용도 필요
+		
+		List<ProjectVo> list = projectService.selectSentMessageProjectList("admin@naver.com");
+		
+		
 		mv.addObject("list", list);
-		mv.addObject("project", project);
 		mv.setViewName("message/messagePage");
 		
 		return mv;
 	}
 	
 	@RequestMapping("messageDetail.do")
-	public String messageDetail(){
+	public ModelAndView messageDetail(int projectCode, HttpSession session, ModelAndView mv){
 		// 로그인한 유저 정보를 통해 해당 멤버의 메시지리스트 불러와야해
-		return "message/messageDetail";
+		//Member user = (Member) session.getAttribute("user");
+		
+		List<MessageVo> list = msgService.selectMessageList("admin@naver.com");
+		ProjectVo project = projectService.selectProjectDetail(projectCode);
+		mv.addObject("list", list);
+		mv.addObject("project", project);
+		mv.setViewName("message/messageDetail");
+		
+		return mv;
 	}
 	
 /*	@RequestMapping("projectCommunity.do")

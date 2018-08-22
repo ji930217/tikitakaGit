@@ -82,6 +82,10 @@ public class ProjectService {
 		return dao.selectPopularList4(btnIdx);
 	}
 
+	public List<ProjectVo> selectSentMessageProjectList(String email) {
+		return dao.selectSentMessageProjectList(email);
+	}
+
 
 
 }

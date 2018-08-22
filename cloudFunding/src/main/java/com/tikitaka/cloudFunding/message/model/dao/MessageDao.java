@@ -19,6 +19,10 @@ public class MessageDao {
 		return sqlSession.selectList("messageMapper.selectMessageList", email);
 	}
 
+	public int insertMessage(MessageVo msg) {
+		return sqlSession.insert("messageMapper.insertMessage", msg);
+	}
+
 /*	public List<PostVo> selectPostList(int projectCode) {
 		return sqlSession.selectList("communityMapper.selectPostList", projectCode);
 	}

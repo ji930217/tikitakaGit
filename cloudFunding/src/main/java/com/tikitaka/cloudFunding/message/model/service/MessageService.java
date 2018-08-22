@@ -20,6 +20,10 @@ public class MessageService {
 		return msgDao.selectMessageList(email);
 	}
 
+	public int insertMessage(MessageVo msg) {
+		return msgDao.insertMessage(msg);
+	}
+
 	/*public List<PostVo> selectPostList(int projectCode) {
 		return cDao.selectPostList(projectCode);
 	}

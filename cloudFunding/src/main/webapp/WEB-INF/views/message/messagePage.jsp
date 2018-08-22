@@ -473,7 +473,18 @@
 											<div>
 												<label><span>문의/후원한 프로젝트</span></label>
 											</div>
-											<div></div>
+											
+											<!-- 새로운 메시지 알림 -->
+											<div>
+												<span>
+													<svg xmlns="http://www.w3.org/2000/svg"
+														viewBox="0 0 1024 1024"
+														style="fill: rgb(250, 100, 98); height: 14px; margin-top: 2px;">
+														<path
+															d="M510,39L510,39C251,39,41,249,41,508v0c0,259,210,469,469,469h0c259,0,469-210,469-469v0C979,249,769,39,510,39 z M755.5,679.3c0,31.6-18.2,58.9-44.6,72.1c-31.3,17.5-71.7,12.3-97.5-14.8l-178.8-204c-3.2-3.6-9.1-1.4-9.1,3.4v144.1 c0,44.5-36,80.5-80.5,80.5h0c-44.5,0-80.5-36-80.5-80.5V345.3c0-29.2,15.6-54.8,38.9-68.9c32.1-22.5,75.8-19.6,103.7,9.7 l179.3,206.5c2.8,3.3,8.2,1.3,8.2-3.1v-145c0-44.5,36-80.5,80.5-80.5h0c44.5,0,80.5,36,80.5,80.5V679.3z"></path></svg>
+												</span>
+											</div>
+											
 										</div>
 									</h5>
 								</div>
@@ -528,8 +539,8 @@
 
 							<!-- 메시지 있어요 -->
 							<c:if test="${!empty list }">
-							<c:forEach var="msg" items="${list }" varStatus="status">
-								<div><a href="messageDetail.do">
+							<c:forEach var="project" items="${list }" varStatus="status">
+								<div><a href="messageDetail.do?projectCode=<c:out value='${project.projectCode }'/>">
 									<div>
 										<div	class="_13KHfN73YmQgsYHxXvuh_J _18bwsw29jDyAzIPXzQkoS- _18TDror949wcy2NyVIqpHo _1x1pMFvLPogKJ5cv1C3iz4">
 											<div class="_3ur7Q0Ll02gIeBh05cHYUh">
@@ -541,10 +552,10 @@
 													</div>
 													<div class="_2rhtRWD8W9jAiG5KK0tShU">
 														<div class="YMfDfu-vUhehjeBwbEEPe">
-															<b><c:out value='${project.title }'/>"</b>
+															<b><c:out value='${project.title }'/></b>
 														</div>
 														<div class="WBJBCYr1DAtTIZsxLCJu9">
-															<b><c:out value='${project.name }'/>"</b>
+															<b><c:out value='${project.name }'/></b>
 														</div>
 														<div	class="_10h99EJ9Kd6zSwnvFug3Nh _2paOVgSZRiW0glORbO6nu7">
 															<span>이거 다 주시는 건가요</span>

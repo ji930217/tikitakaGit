@@ -16,6 +16,14 @@
 		<!-- <collection property="replyList" column="REPLY_CODE" ofType="Reply" resultMap="replyMap"/> -->
 	</resultMap>
 	
+	<!-- <select id = "selectSentMessageProjectList" resultMap="projectMap2" parameterType="string">
+		SELECT EMAIL, P_PROJECT_CODE, P_TITLE, P_REP_IMG, P_PROFILE_IMG, P_NAME
+		FROM PROJECT 
+		WHERE P_PROJECT_CODE IN (SELECT P_PROJECT_CODE 
+														FROM MESSAGE 
+														WHERE M_WRITER = #{email})
+	</select>
+ -->
 	<select id="selectMessageList" parameterType="string" resultMap="messageMap">
 	    SELECT P_PROJECT_CODE, M_CODE, 
 				M_WRITER, (SELECT NAME FROM MEMBER WHERE EMAIL = M_WRITER) AS WRITER_NAME,
@@ -24,6 +32,11 @@
 		FROM MESSAGE
 		WHERE M_WRITER = #{email}
 	</select>
+
+	<insert id="insertMessage" parameterType="Message">
+	    INSERT INTO MESSAGE 
+	    VALUES(#{projectCode}, SEQ_MSG.NEXTVAL, #{writerEmail}, #{receiverEmail}, #{messageKinds}, #{content}, SYSDATE, DEFAULT)
+	</insert>
 
 	<!-- <select id="selectPostList" parameterType="int" resultMap="postMap">
 	    SELECT P.POST_CODE, P_PROJECT_CODE, P.EMAIL, P.CONTENT, P.WRITTEN_DATE, P.DELFLAG, NAME, PROFILE_IMG,
