@@ -27,6 +27,19 @@ public class MessageDao {
 		return sqlSession.selectOne("messageMapper.selectNewMessageCount", email);
 	}
 
+	public List<MessageVo> selectMessageDetail(MessageVo msg) {
+		return sqlSession.selectList("messageMapper.selectMessageDetail", msg);
+	}
+
+	public int updateReadFlag(MessageVo msg) {
+		return sqlSession.update("messageMapper.updateReadFlag", msg);
+	}
+
+	public MessageVo selectMessage(MessageVo msg) {
+		return sqlSession.selectOne("messageMapper.selectMessage", msg);
+	}
+
+
 /*	public List<PostVo> selectPostList(int projectCode) {
 		return sqlSession.selectList("communityMapper.selectPostList", projectCode);
 	}

@@ -71,7 +71,11 @@
 /* sc-component-id: sc-bxivhb */
 .sc-bxivhb {}
 </style>
-
+<script>
+	function messageDetail(){
+		$("#messageInfoForm").submit();
+	}
+</script>
 <body>
 	<header>
 		<c:import url="../common/header.jsp"/>
@@ -175,7 +179,12 @@
 							<!-- 메시지 있어요 -->
 							<c:if test="${!empty list }">
 							<c:forEach var="msg" items="${list }" varStatus="status">
-								<div><a href="messageDetail.do?projectCode=<c:out value='${msg.projectCode }'/>">
+								<form id="messageInfoForm" action="messageDetail.do" method="post">
+									<input type="hidden" name="projectCode" value="<c:out value='${msg.projectCode }'/>"/>
+									<input type="hidden" name="receiverEmail" value="<c:out value='${msg.creatorEmail }'/>"/>
+									<input type="hidden" name="writerEmail" value="<c:out value='${user.email }'/>"/>
+								</form>
+								<div><a href="javascript:messageDetail();">
 									<div>
 										<div	class="_13KHfN73YmQgsYHxXvuh_J _18bwsw29jDyAzIPXzQkoS- _18TDror949wcy2NyVIqpHo _1x1pMFvLPogKJ5cv1C3iz4">
 											<div class="_3ur7Q0Ll02gIeBh05cHYUh">

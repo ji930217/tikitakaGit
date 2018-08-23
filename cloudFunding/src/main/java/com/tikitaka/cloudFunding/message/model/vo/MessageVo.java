@@ -18,7 +18,10 @@ public class MessageVo {
 	private String creatorEmail;
 	private String writerName;
 	private String receiverName;
+	private String creatorName;
 	private int newMessageCount;
+	private String writerProfileImg;
+	private String receiverProfileImg;
 	
 	public MessageVo() {
 		super();
@@ -128,12 +131,36 @@ public class MessageVo {
 		this.receiverName = receiverName;
 	}
 	
+	public String getCreatorName() {
+		return creatorName;
+	}
+
+	public void setCreatorName(String creatorName) {
+		this.creatorName = creatorName;
+	}
+
 	public int getNewMessageCount() {
 		return newMessageCount;
 	}
 
 	public void setNewMessageCount(int newMessageCount) {
 		this.newMessageCount = newMessageCount;
+	}
+	
+	public String getWriterProfileImg() {
+		return writerProfileImg;
+	}
+
+	public void setWriterProfileImg(String writerProfileImg) {
+		this.writerProfileImg = writerProfileImg;
+	}
+
+	public String getReceiverProfileImg() {
+		return receiverProfileImg;
+	}
+
+	public void setReceiverProfileImg(String receiverProfileImg) {
+		this.receiverProfileImg = receiverProfileImg;
 	}
 
 	@Override
@@ -142,7 +169,9 @@ public class MessageVo {
 				+ ", receiverEmail=" + receiverEmail + ", messageKinds=" + messageKinds + ", content=" + content
 				+ ", sendDate=" + sendDate + ", readFlag=" + readFlag + ", title=" + title + ", repImg=" + repImg
 				+ ", creatorEmail=" + creatorEmail + ", writerName=" + writerName + ", receiverName=" + receiverName
-				+ ", newMessageCount=" + newMessageCount + ", toString()=" + super.toString() + "]";
+				+ ", creatorName=" + creatorName + ", newMessageCount=" + newMessageCount + ", writerProfileImg="
+				+ writerProfileImg + ", receiverProfileImg=" + receiverProfileImg + ", toString()=" + super.toString()
+				+ "]";
 	}
 	
 	
