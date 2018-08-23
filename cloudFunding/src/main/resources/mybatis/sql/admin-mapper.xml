@@ -145,7 +145,7 @@ SELECT COUNT(*) FROM PROJECT WHERE (P_CATEGORY LIKE '%'||#{keyword}||'%' OR P_TI
 		P_NAME, P_INTRODUCE, P_PRICE, P_END_DATE, P_GIFT_ITEM, P_REFUND, P_DESCRIPTION_VIDEO,
  		P_STORY, P_EMAIL, P_PHONE, P_BANK_TRADING, P_BANK_NAME, P_BANK_NUMBER, P_BANK_KINDS, 
  		P_OK, P_SEND_CONFIRM, P_CURRENTAMOUNT
-    FROM (SELECT * FROM PROJECT WHERE P_OK = '2' AND P_SEND_CONFIRM = 'F' AND P_END_DATE - SYSDATE <4 AND P_END_DATE - SYSDATE >-5  ORDER BY P_END_DATE DESC))
+    FROM (SELECT * FROM PROJECT WHERE P_OK = '2' AND P_SEND_CONFIRM = 'F' AND P_END_DATE - SYSDATE <4 AND P_END_DATE - SYSDATE >-5  ORDER BY P_END_DATE))
     WHERE NUM1 = #{fpNo}
 	
 	]]>
@@ -158,7 +158,7 @@ SELECT COUNT(*) FROM PROJECT WHERE (P_CATEGORY LIKE '%'||#{keyword}||'%' OR P_TI
 	P_NAME, P_INTRODUCE, P_PRICE, P_END_DATE, P_GIFT_ITEM, P_REFUND, P_DESCRIPTION_VIDEO,
  	P_STORY, P_EMAIL, P_PHONE, P_BANK_TRADING, P_BANK_NAME, P_BANK_NUMBER, P_BANK_KINDS, 
  	P_OK, P_SEND_CONFIRM, P_CURRENTAMOUNT
-	FROM(SELECT * FROM PROJECT WHERE (P_PROJECT_CODE LIKE '%'||#{keyword}||'%' OR P_NAME LIKE '%'||#{keyword}||'%' OR P_TITLE LIKE '%'||#{keyword}||'%') AND P_OK = '2' AND P_SEND_CONFIRM = 'F' AND P_END_DATE - SYSDATE <4 ORDER BY P_END_DATE DESC))
+	FROM(SELECT * FROM PROJECT WHERE (P_PROJECT_CODE LIKE '%'||#{keyword}||'%' OR P_NAME LIKE '%'||#{keyword}||'%' OR P_TITLE LIKE '%'||#{keyword}||'%') AND P_OK = '2' AND P_SEND_CONFIRM = 'F' AND P_END_DATE - SYSDATE <4 ORDER BY P_END_DATE))
 	WHERE NUM1 = #{fpNo}
 	]]>
 </select>
@@ -274,6 +274,12 @@ FROM PROJECT
 WHERE P_CATEGORY = '디자인'
 </select>
 
+<select id="category4" resultType="int">
+SELECT COUNT(P_CATEGORY)
+FROM PROJECT
+WHERE P_CATEGORY = '푸드'
+</select>
+
 <select id="memberMonth" resultType="int">  
 SELECT COUNT(*)
 FROM MEMBER
@@ -285,6 +291,26 @@ SELECT COUNT(*)
 FROM PROJECT
 WHERE TO_CHAR(P_ENROLL_DATE,'YY') = '18' AND TO_CHAR(P_ENROLL_DATE,'MM') = '08'
 </select>
+
+
+
+<resultMap type="Support" id="supportMap">
+<id property="email" column="EMAIL" />
+<result property = "" column = "P_PROJECT_CODE"/>
+<result property = "" column = "SUPPORTING_AMOUNT"/>
+<result property = "" column = "P_GIFT_ITEM"/>
+<result property = "" column = "SUPPORTED_DATE"/>
+<result property = "" column = "ADDRESS"/>
+</resultMap>
+
+
+<insert id="insertSupport">
+INSERT INTO SUPPORT VALUES(#{email},#{pCode},#{amount},#{item},SYSDATE,#{addr})
+</insert>
+
+<update id="updateProjectAmount">
+UPDATE PROJECT SET P_CURRENTAMOUNT = P_CURRENTAMOUNT+#{amount} WHERE P_PROJECT_CODE = #{pCode}
+</update>
 
 
 

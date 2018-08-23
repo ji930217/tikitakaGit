@@ -19,7 +19,7 @@
 	  
 	  
     var data = google.visualization.arrayToDataTable([
-      ['month', '회원', '프로젝트'],
+      [' ', '회원', '프로젝트'],
       ['03월', 1, 1],
       ['04월', 3, 2],
       ['05월', 6, 4],
@@ -30,7 +30,7 @@
 
     var options = {
       chart: {
-         title: '최근 6개월간 TIKITAKA 회원&프로젝트',
+         title: '최근 6개월간 TIKITAKA 월별 회원&프로젝트',
         subtitle: '18/03/01~18/08/31', 
       }
     };
@@ -107,12 +107,14 @@
 	  var category1 = ${category1};
 	  var category2 = ${category2};
 	  var category3 = ${category3};
+	  var category4 = ${category4};
 	  
     var data = google.visualization.arrayToDataTable([
       ['카테고리', '갯수'],
       ['게임',    category1 ],
       ['공연',      category2],
       ['디자인',    category3],
+      ['푸드',    category4]
       
     ]);
 
