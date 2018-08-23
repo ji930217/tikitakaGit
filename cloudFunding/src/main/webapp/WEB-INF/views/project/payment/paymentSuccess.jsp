@@ -1003,12 +1003,7 @@ transform
 </style>
 </head>
 <body>
-	<c:if test="${empty sessionScope.user }">
-		<script>
-		alert("로그인 후에 이용해주세요!!");
-		history.back();
-		</script>
-	</c:if>
+	
 	
 	<!-- 지불정보 입력 여부 검사  -->
 
