@@ -76,6 +76,7 @@
 <result property="enrollDate" column="P_ENROLL_DATE"/>
 <collection property="giftArry" column="EMAIL" ofType="Gift" resultMap="giftMap"></collection>
 </resultMap>
+
 <resultMap type="Project" id="projectMap2">
 <id property="email" column="EMAIL" />
 <result property="projectCode" column="P_PROJECT_CODE"/>

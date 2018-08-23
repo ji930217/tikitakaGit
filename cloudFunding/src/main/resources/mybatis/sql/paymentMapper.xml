@@ -5,6 +5,38 @@
 
 <mapper namespace="PaymentMapper">
 
+<resultMap type="Project" id="projectMap">
+<id property="email" column="EMAIL" />
+<result property="projectCode" column="P_PROJECT_CODE"/>
+<result property="projectNum" column="P_PROJECT_NUMBER"/>
+<result property="title" column="P_TITLE"/>
+<result property="repImg" column="P_REP_IMG"/>
+<result property="summary" column="P_SUMMARY"/>
+<result property="category" column="P_CATEGORY"/>
+<result property="profileImg" column="P_PROFILE_IMG"/>
+<result property="name" column="P_NAME"/>
+<result property="introduce" column="P_INTRODUCE"/>
+<result property="price" column="P_PRICE"/>
+<result property="endDate" column="P_END_DATE"/>
+<result property="giftItem" column="P_GIFT_ITEM"/>
+<result property="refund" column="P_REFUND"/>
+<result property="descriptionVideo" column="P_DESCRIPTION_VIDEO"/>
+<result property="story" column="P_STORY"/>
+<result property="pEmail" column="P_EMAIL"/>
+<result property="pPhone" column="P_PHONE"/>
+<result property="bankTrading" column="P_BANK_TRADING"/>
+<result property="bankName" column="P_BANK_NAME"/>
+<result property="bankNumber" column="P_BANK_NUMBER"/>
+<result property="bankKinds" column="P_BANK_KINDS"/>
+<result property="pConfirm" column="P_OK"/>
+<result property="sendConfirm" column="P_SEND_CONFIRM"/>
+<result property="supportCount" column="P_SPONSOR_COUNT"/>
+<result property="currentAmount" column="P_CURRENTAMOUNT"/>
+<result property="supportCount" column="P_SPONSOR_COUNT"/>
+<result property="enrollDate" column="P_ENROLL_DATE"/>
+<collection property="giftArry" column="EMAIL" ofType="Gift" resultMap="giftMap"></collection>
+</resultMap>
+
 	<resultMap type="Gift" id="giftMap">
 		<id property="giftCode" column="G_CODE"/>
 		<result property="email" column="EMAIL_1"/>
@@ -26,7 +58,50 @@
 		<result property="date" column="SUPPORTED_DATE"/>
 		<result property="address" column="ADDRESS"/>
 	</resultMap>
-  
+  	
+<select id="selectGiftList" resultMap="projectMap" parameterType="int">
+SELECT P.EMAIL EMAIL,
+P.P_PROJECT_CODE P_PROJECT_CODE,
+P.P_PROJECT_NUMBER P_PROJECT_NUMBER,
+P.P_TITLE P_TITLE,
+P.P_REP_IMG P_REP_IMG,
+P.P_SUMMARY P_SUMMARY,
+P.P_CATEGORY P_CATEGORY,
+P.P_PROFILE_IMG P_PROFILE_IMG,
+P.P_NAME P_NAME,
+P.P_INTRODUCE P_INTRODUCE,
+P.P_PRICE P_PRICE,
+P.P_END_DATE P_END_DATE,
+P.P_GIFT_ITEM P_GIFT_ITEM,
+P.P_REFUND P_REFUND,
+P.P_DESCRIPTION_VIDEO P_DESCRIPTION_VIDEO,
+P.P_STORY P_STORY,
+P.P_EMAIL P_EMAIL,
+P.P_PHONE P_PHONE,
+P.P_BANK_TRADING P_BANK_TRADING,
+P.P_BANK_NAME P_BANK_NAME,
+P.P_BANK_NUMBER P_BANK_NUMBER,
+P.P_BANK_KINDS P_BANK_KINDS,
+P.P_OK P_OK,
+P.P_SEND_CONFIRM P_SEND_CONFIRM,
+P.P_CURRENTAMOUNT P_CURRENTAMOUNT,
+P.P_SPONSOR_COUNT P_SPONSOR_COUNT,
+P.P_ENROLL_DATE P_ENROLL_DATE,
+G.P_PROJECT_CODE P_PROJECT_CODE_0,
+G.EMAIL EMAIL_1,
+G.G_CODE,
+G.G_PRICE G_PRICE,
+G.G_DESCRIPTION G_DESCRIPTION,
+G.G_ITEM G_ITEM,
+G.G_SEND_DATE G_SEND_DATE,
+G.G_REMITED G_REMITED,
+G.G_TRANSFER_CHECK G_TRANSFER_CHECK,
+G.G_SELECTED_COUNT 
+FROM PROJECT P
+LEFT JOIN GIFT G ON(P.P_PROJECT_CODE=G.P_PROJECT_CODE)
+WHERE P.P_PROJECT_CODE=#{projectCode}
+</select>
+ 
 
 
 

@@ -3924,7 +3924,7 @@ px
 												class="_13KHfN73YmQgsYHxXvuh_J _28LKn930rfRFkZT8rldrUE IHUALIalgwgMpH2DEQooZ _1Wxx18kEfVPxJvla-FdZGF _3Syz9fGXYtzMNqK_55A2BW gVW7lZgUR9vVu2Lczdjm3"
 												>
 												<div class="_2L0-7hWDrYoa3rVDPaZC_T"
-													style="width: <c:out value="${percent }"/>%; min-width: 0%; background: rgb(250, 100, 98); transition-duration: 200ms; height: 2px;">
+													style="width: <c:out value="${percent }"/>%; max-width: 100% min-width: 0%; background: rgb(250, 100, 98); transition-duration: 200ms; height: 2px;">
 													<div class="_1Wxx18kEfVPxJvla-FdZGF"></div>
 												</div>
 											</div>
