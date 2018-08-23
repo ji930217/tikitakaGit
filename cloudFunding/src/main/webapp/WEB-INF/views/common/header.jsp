@@ -785,7 +785,7 @@
 	$(function(){
 		// 프로젝트 둘러보기 카테고리 버튼 하위메뉴 펼치기/접기
 		$(".cwYjsy").click(function(){
-			$(this).parent().siblings(0).children().toggle();
+			$(this).parent().siblings(0).children(":not(.fdKmEL)").toggle();
 			if($(this).children("span").eq(1).children("div").attr("class") == "DiscoverMenuDropdown__TriangleUpIcon-s116h97f-0 bVfzeY"){
 				$(this).children("span").eq(1).children("div").removeClass();
 				$(this).children("span").eq(1).children("div").addClass("DiscoverMenuDropdown__TriangleDownIcon-s116h97f-1");
@@ -1015,23 +1015,23 @@
 				<div class="Container__Container-s1sxg7g4-0 iTXcwb">
 					<div class="Divider__Divider-s16ihjfx-0 cdILTf"></div>
 					<div class="MenuItem__MenuItem-no2u3j-0 cwYjsy">
-						<a href="projectList.do"><span
-							class="MenuItem__MenuItemTitle-no2u3j-1 enzRKc">모든 프로젝트</span></a>
+						<button onclick="javascript:location.href='projectList.do'" style="border:0; outline:0;background:white"><span
+							class="MenuItem__MenuItemTitle-no2u3j-1 enzRKc">모든 프로젝트</span></button>
 					</div>
 					<div class="MenuItem__MenuItem-no2u3j-0 cwYjsy">
-						<a href="popularList.do"><span
+						<button onclick="javascript:location.href='popularList.do'" style="border:0; outline:0;background:white"><span
 							class="MenuItem__MenuItemTitle-no2u3j-1 enzRKc">분야별 인기
-								프로젝트</span></a>
+								프로젝트</span></button>
 					</div>
 					<div class="MenuItem__MenuItem-no2u3j-0 cwYjsy">
-						<a href="projectListOrderByDeadline.do"><span
+						<button onclick="javascript:location.href='projectListOrderByDeadline.do'" style="border:0; outline:0;background:white"><span
 							class="MenuItem__MenuItemTitle-no2u3j-1 enzRKc">마감 앞둔
-								프로젝트</span></a>
+								프로젝트</span></button>
 					</div>
 					<div class="MenuItem__MenuItem-no2u3j-0 cwYjsy">
-						<a href="projectListOrderByEnrollDate.do"><span
+						<button onclick="location.href='projectListOrderByEnrollDate.do"' style="border:0; outline:0;background:white"><span
 							class="MenuItem__MenuItemTitle-no2u3j-1 enzRKc">새로운
-								프로젝트</span></a>
+								프로젝트</span></button>
 					</div>
 					<div class="Divider__Divider-s16ihjfx-0 hEIXJa"></div>
 					<div style="display:none;">
