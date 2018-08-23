@@ -1475,38 +1475,52 @@
 					</div>
 					
 					<div class="Divider__Divider-s16ihjfx-0 XTtld"></div>
-					<a href="messagePage.do">
 						<div	class="MenuItem__MenuItem-no2u3j-0 cwYjsy">
-							<span class="MenuItem__MenuItemTitle-no2u3j-1 enzRKc">메시지</span>
-							<!-- 새로운 메시지 있을 때만 출력 -->
-							<c:if test="${newMessageCount gt 0 }">
-								<span class="MyPage__MenuItemAlert-s1rrrcge-2 iMZfBk">새 메시지</span>
-							</c:if>
+							<button onclick="javascript:location.href='messagePage.do'" style="border:0; outline:0;background:white">
+									<span class="MenuItem__MenuItemTitle-no2u3j-1 enzRKc">메시지</span>
+									<!-- 새로운 메시지 있을 때만 출력 -->
+									<c:if test="${newMessageCount gt 0 }">
+										<span class="MyPage__MenuItemAlert-s1rrrcge-2 iMZfBk">새 메시지</span>
+									</c:if>
+							</button>
 						</div>
-					</a>
 					
-					<a href="readyPage.do"><div
+					<div
 							class="MenuItem__MenuItem-no2u3j-0 cwYjsy">
+						<button onclick="javascript:location.href='readyPage.do'" style="border:0; outline:0;background:white">
 							<span class="MenuItem__MenuItemTitle-no2u3j-1 enzRKc">내
 								후원현황</span>
-						</div></a><a href="myProject.do"><div
-							class="MenuItem__MenuItem-no2u3j-0 cwYjsy">
+						</button>
+					</div>
+						
+					<div class="MenuItem__MenuItem-no2u3j-0 cwYjsy">
+						<button onclick="javascript:location.href='myProject.do'" style="border:0; outline:0;background:white">
 							<span class="MenuItem__MenuItemTitle-no2u3j-1 enzRKc">내가
 								만든 프로젝트</span>
-						</div></a>
+						</button>
+					</div>
+						
 					<div class="Divider__Divider-s16ihjfx-0 XTtld"></div>
-					<a href="setProfile.do"><div
-							class="MenuItem__MenuItem-no2u3j-0 cwYjsy">
-							<span class="MenuItem__MenuItemTitle-no2u3j-1 enzRKc">프로필
-								설정</span>
-						</div></a><a href="setPayment.do"><div
-							class="MenuItem__MenuItem-no2u3j-0 cwYjsy">
+					
+					<div	class="MenuItem__MenuItem-no2u3j-0 cwYjsy">
+						<button onclick="javascript:location.href='setProfile.do'" style="border:0; outline:0;background:white">
+								<span class="MenuItem__MenuItemTitle-no2u3j-1 enzRKc">프로필
+									설정</span>
+						</button>
+					</div>
+						
+					<div	class="MenuItem__MenuItem-no2u3j-0 cwYjsy">
+						<button onclick="javascript:location.href='setPayment.do'" style="border:0; outline:0;background:white">
 							<span class="MenuItem__MenuItemTitle-no2u3j-1 enzRKc">지불
 								정보 설정</span>
-						</div></a><a href="/logout"><div
-							class="MenuItem__MenuItem-no2u3j-0 cwYjsy">
+						</button>
+					</div>
+						
+					<div	class="MenuItem__MenuItem-no2u3j-0 cwYjsy">
+						<button onclick="javascript:location.href='/logout'" style="border:0; outline:0;background:white">
 							<span class="MenuItem__MenuItemTitle-no2u3j-1 enzRKc">로그아웃</span>
-						</div></a>
+						</button>
+					</div>
 				</div>
 			</div>
 		</div>
