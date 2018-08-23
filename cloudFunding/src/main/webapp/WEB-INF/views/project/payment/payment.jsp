@@ -1,7 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
-
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %> 
 <!DOCTYPE html>
 
 <html>
@@ -76,9 +76,9 @@
 <meta name="twitter:card" content="summary_large_image">
 </head>
 
+
 <body>
-	<div data-react-class="PledgeForm"
-		data-react-props="{&quot;creatorName&quot;:&quot;한겨레출판&quot;,&quot;projectUuid&quot;:&quot;bcc978a0-6496-4b1f-b123-e512898e266e&quot;,&quot;projectCategoryName&quot;:&quot;논픽션&quot;,&quot;projectPermalink&quot;:&quot;jun2oppa&quot;,&quot;projectTitle&quot;:&quot;발달장애인 준이의 성장 만화「준이 오빠」&quot;,&quot;projectEndDate&quot;:&quot;2018-08-31T23:59:59+09:00&quot;,&quot;rewards&quot;:[{&quot;id&quot;:111171693,&quot;addressNeeded&quot;:true,&quot;description&quot;:&quot;배송비 포함&quot;,&quot;money&quot;:15000,&quot;limit&quot;:null,&quot;backersCount&quot;:8,&quot;delivered&quot;:false,&quot;expectedDeliveryDate&quot;:&quot;2018-09-06T00:00:00+09:00&quot;,&quot;deliveredAt&quot;:null,&quot;isForAdultOnly&quot;:false,&quot;uuid&quot;:&quot;6668f33d-7894-476a-84f0-d8e7caff2e00&quot;,&quot;items&quot;:[{&quot;id&quot;:&quot;fe839a1d-f5b2-47ec-9505-9c2ff6079e96&quot;,&quot;title&quot;:&quot;&lt;준이 오빠&gt; 작가 친필 사인본 출간 전 미리 받아보기&quot;,&quot;quantity&quot;:1}]},{&quot;id&quot;:111171696,&quot;addressNeeded&quot;:true,&quot;description&quot;:&quot;배송비 포함&quot;,&quot;money&quot;:20000,&quot;limit&quot;:null,&quot;backersCount&quot;:3,&quot;delivered&quot;:false,&quot;expectedDeliveryDate&quot;:&quot;2018-09-06T00:00:00+09:00&quot;,&quot;deliveredAt&quot;:null,&quot;isForAdultOnly&quot;:false,&quot;uuid&quot;:&quot;ab4d52da-519f-42d3-b043-5589b31dec93&quot;,&quot;items&quot;:[{&quot;id&quot;:&quot;fe839a1d-f5b2-47ec-9505-9c2ff6079e96&quot;,&quot;title&quot;:&quot;&lt;준이 오빠&gt; 작가 친필 사인본 출간 전 미리 받아보기&quot;,&quot;quantity&quot;:1},{&quot;id&quot;:&quot;c9341e2c-b047-4b1c-ad75-249dd6ac7973&quot;,&quot;title&quot;:&quot;준이 오빠X동구밭 리미티드 에디션 &#x27;바질 가꿈비누&#x27;&quot;,&quot;quantity&quot;:1}]},{&quot;id&quot;:111171697,&quot;addressNeeded&quot;:true,&quot;description&quot;:&quot;배송비 포함, 100개 한정 구성&quot;,&quot;money&quot;:35000,&quot;limit&quot;:100,&quot;backersCount&quot;:4,&quot;delivered&quot;:false,&quot;expectedDeliveryDate&quot;:&quot;2018-09-06T00:00:00+09:00&quot;,&quot;deliveredAt&quot;:null,&quot;isForAdultOnly&quot;:false,&quot;uuid&quot;:&quot;7f14fbbd-3258-4eb4-8889-d69b3992911a&quot;,&quot;items&quot;:[{&quot;id&quot;:&quot;fe839a1d-f5b2-47ec-9505-9c2ff6079e96&quot;,&quot;title&quot;:&quot;&lt;준이 오빠&gt; 작가 친필 사인본 출간 전 미리 받아보기&quot;,&quot;quantity&quot;:1},{&quot;id&quot;:&quot;c9341e2c-b047-4b1c-ad75-249dd6ac7973&quot;,&quot;title&quot;:&quot;준이 오빠X동구밭 리미티드 에디션 &#x27;바질 가꿈비누&#x27;&quot;,&quot;quantity&quot;:1},{&quot;id&quot;:&quot;22f16710-9762-4e46-aca2-ecfcc73c8461&quot;,&quot;title&quot;:&quot;First Love (2013년 앨범)&quot;,&quot;quantity&quot;:1}]},{&quot;id&quot;:111171699,&quot;addressNeeded&quot;:true,&quot;description&quot;:&quot;배송비 포함, 초대권은 11월 이후 문자로 전송합니다.&quot;,&quot;money&quot;:40000,&quot;limit&quot;:null,&quot;backersCount&quot;:0,&quot;delivered&quot;:false,&quot;expectedDeliveryDate&quot;:&quot;2018-09-06T00:00:00+09:00&quot;,&quot;deliveredAt&quot;:null,&quot;isForAdultOnly&quot;:false,&quot;uuid&quot;:&quot;71b36475-7630-490a-b291-3d58e9be3fd4&quot;,&quot;items&quot;:[{&quot;id&quot;:&quot;fe839a1d-f5b2-47ec-9505-9c2ff6079e96&quot;,&quot;title&quot;:&quot;&lt;준이 오빠&gt; 작가 친필 사인본 출간 전 미리 받아보기&quot;,&quot;quantity&quot;:1},{&quot;id&quot;:&quot;c9341e2c-b047-4b1c-ad75-249dd6ac7973&quot;,&quot;title&quot;:&quot;준이 오빠X동구밭 리미티드 에디션 &#x27;바질 가꿈비누&#x27;&quot;,&quot;quantity&quot;:1},{&quot;id&quot;:&quot;24a5f1a0-42af-437b-945e-fc8c57a2f239&quot;,&quot;title&quot;:&quot;최준의 정기 공연 콘서트 초대권 (18년 12월 2일 2시/국립국악원 우면당)&quot;,&quot;quantity&quot;:1}]},{&quot;id&quot;:111171700,&quot;addressNeeded&quot;:true,&quot;description&quot;:&quot;배송비 포함, 초대권은 문자 발송, 신앨범은 콘서트에서 수령하실 수 있습니다.&quot;,&quot;money&quot;:55000,&quot;limit&quot;:200,&quot;backersCount&quot;:2,&quot;delivered&quot;:false,&quot;expectedDeliveryDate&quot;:&quot;2018-09-06T00:00:00+09:00&quot;,&quot;deliveredAt&quot;:null,&quot;isForAdultOnly&quot;:false,&quot;uuid&quot;:&quot;9ee4679b-7dc9-40ce-95df-917fb555746f&quot;,&quot;items&quot;:[{&quot;id&quot;:&quot;fe839a1d-f5b2-47ec-9505-9c2ff6079e96&quot;,&quot;title&quot;:&quot;&lt;준이 오빠&gt; 작가 친필 사인본 출간 전 미리 받아보기&quot;,&quot;quantity&quot;:1},{&quot;id&quot;:&quot;c9341e2c-b047-4b1c-ad75-249dd6ac7973&quot;,&quot;title&quot;:&quot;준이 오빠X동구밭 리미티드 에디션 &#x27;바질 가꿈비누&#x27;&quot;,&quot;quantity&quot;:1},{&quot;id&quot;:&quot;24a5f1a0-42af-437b-945e-fc8c57a2f239&quot;,&quot;title&quot;:&quot;최준의 정기 공연 콘서트 초대권 (18년 12월 2일 2시/국립국악원 우면당)&quot;,&quot;quantity&quot;:1},{&quot;id&quot;:&quot;05d0b91e-f0ce-4701-9943-430d0221dde7&quot;,&quot;title&quot;:&quot;18년 11월 발매예정인 최준의 신앨범 (콘서트에서 수령)&quot;,&quot;quantity&quot;:1}]}],&quot;initialPledgeAmount&quot;:null,&quot;initialLastPaymentMethodNumbers&quot;:null,&quot;initialBankName&quot;:null,&quot;initialPaymentType&quot;:null,&quot;initialIsLoggedIn&quot;:false,&quot;initialIsAdult&quot;:false,&quot;initialPhoneNumber&quot;:null,&quot;initialPreviousAddresses&quot;:[],&quot;initialSelectedRewardId&quot;:null}">
+	<div data-react-class="PledgeForm">
 		<div class="pledge-container" data-reactid=".16yr6xmb3eo"
 			data-react-checksum="-608661309">
 			<header class="b-header b-header_pledge"
@@ -88,8 +88,8 @@
 					<div class="b-header__content-item"
 						data-reactid=".16yr6xmb3eo.0.1.0">
 						<h1 class="b-header__headline" data-reactid=".16yr6xmb3eo.0.1.0.0">
-							<span data-reactid=".16yr6xmb3eo.0.1.0.0.0">발달장애인 준이의 성장
-								만화「준이 오빠」</span><span data-reactid=".16yr6xmb3eo.0.1.0.0.1"> </span><span
+							<span data-reactid=".16yr6xmb3eo.0.1.0.0.0"><c:out value="${project.title}"/>
+								</span><span data-reactid=".16yr6xmb3eo.0.1.0.0.1"> </span><span
 								class="for-screenreader" data-reactid=".16yr6xmb3eo.0.1.0.0.2">프로젝트
 								밀어주기</span>
 						</h1>
@@ -98,12 +98,17 @@
 					</div>
 				</div>
 			</header>
+			
+			
+			
 			<div class="b-section__aside b-form b-form_rewards"
 				data-reactid=".16yr6xmb3eo.1">
 				<div data-reactid=".16yr6xmb3eo.1.0"></div>
 				<h2 class="for-screenreader" data-reactid=".16yr6xmb3eo.1.1">단계별
 					후원자 특전</h2>
+			
 				<div class="i-panel" data-reactid=".16yr6xmb3eo.1.2:$0">
+					<!-- 1000원 선택지 -->
 					<input type="radio" name="pledge[reward_id]" id="0" value="0"
 						class="hidden-selector" data-reactid=".16yr6xmb3eo.1.2:$0.0" /><label
 						for="0" class="b-panel b-panel_reward"
@@ -116,11 +121,16 @@
 									class="for-screenreader"
 									data-reactid=".16yr6xmb3eo.1.2:$0.1.0.0.3">드리는 특전</span>
 							</h3>
-							<span class="b-panel__title" data-reactid=".16yr6xmb3eo.1.2:$0.1.0.1">
-								<input id="0" type="tel" name="pledge[money]" min="1000" max="10000000" value="1,000" class="b-form__input" />
-								<span data-reactid=".16yr6xmb3eo.1.2:$0.1.0.1.1">원</span>
-								<a class="b-panel__next-button" href="payment_after.do"></a>
-								<span class="b-panel__subtitle" data-reactid=".16yr6xmb3eo.1.2:$0.1.0.1.3">더 많이 입력하실 수 있습니다</span> 
+							<span class="b-panel__title"
+								data-reactid=".16yr6xmb3eo.1.2:$0.1.0.1"> 
+								<input id="1000" type="tel" name="pledge[money]" min="1000" max="10000000"
+								value="1,000" class="b-form__input" /> <span
+								data-reactid=".16yr6xmb3eo.1.2:$0.1.0.1.1">원</span>
+								 <button
+								class="b-panel__next-button" onclick="payment(1000,0)"></button> <span
+								class="b-panel__subtitle"
+								data-reactid=".16yr6xmb3eo.1.2:$0.1.0.1.3">더 많이 입력하실 수
+									있습니다</span>
 							</span>
 						</div>
 						<div class="b-panel__body" data-reactid=".16yr6xmb3eo.1.2:$0.1.1">
@@ -129,57 +139,126 @@
 						</div>
 						<div class="b-panel__footer"
 							data-reactid=".16yr6xmb3eo.1.2:$0.1.2"></div></label>
-				</div>
-				<div class="i-panel" data-reactid=".16yr6xmb3eo.1.2:$1">
-					<input type="radio" name="pledge[reward_id]" id="111171693"
-						value="111171693" class="hidden-selector"
-						data-reactid=".16yr6xmb3eo.1.2:$1.0" /><label for="111171693"
-						class="b-panel b-panel_reward"
-						data-reactid=".16yr6xmb3eo.1.2:$1.1"><div
-							class="b-panel__head" data-reactid=".16yr6xmb3eo.1.2:$1.1.0">
-							<h3 class="b-panel__title"
-								data-reactid=".16yr6xmb3eo.1.2:$1.1.0.0">
-								<span data-reactid=".16yr6xmb3eo.1.2:$1.1.0.0.0">15,000</span><span
-									data-reactid=".16yr6xmb3eo.1.2:$1.1.0.0.1">원 이상 밀어주시는 분께</span><span
-									class="for-screenreader"
-									data-reactid=".16yr6xmb3eo.1.2:$1.1.0.0.3">드리는 특전</span>
-							</h3>
-							<span class="b-panel__title"
-								data-reactid=".16yr6xmb3eo.1.2:$1.1.0.1">
-								<input
-								id="111171693" type="tel" name="pledge[money]" min="15000"
-								max="10000000" value="15,000" class="b-form__input"
-								data-reactid=".16yr6xmb3eo.1.2:$1.1.0.1.0" /><span
-								data-reactid=".16yr6xmb3eo.1.2:$1.1.0.1.1">원</span><a
-								class="b-panel__next-button" href="payment_after.do"></a><span
-								class="b-panel__subtitle"
-								data-reactid=".16yr6xmb3eo.1.2:$1.1.0.1.3">더 많이 입력하실 수
-									있습니다</span></span>
-						</div>
-						<div class="b-panel__body" data-reactid=".16yr6xmb3eo.1.2:$1.1.1">
-							<span data-reactid=".16yr6xmb3eo.1.2:$1.1.1.0">배송비 포함</span>
-							<ul data-reactid=".16yr6xmb3eo.1.2:$1.1.1.1">
-								<li data-reactid=".16yr6xmb3eo.1.2:$1.1.1.1.$0"><span
-									data-reactid=".16yr6xmb3eo.1.2:$1.1.1.1.$0.0">&lt;준이
-										오빠&gt; 작가 친필 사인본 출간 전 미리 받아보기</span><span
-									data-reactid=".16yr6xmb3eo.1.2:$1.1.1.1.$0.1"> (×</span><span
-									data-reactid=".16yr6xmb3eo.1.2:$1.1.1.1.$0.2">1</span><span
-									data-reactid=".16yr6xmb3eo.1.2:$1.1.1.1.$0.3">)</span></li>
-							</ul>
-						</div>
-						<div class="b-panel__footer"
-							data-reactid=".16yr6xmb3eo.1.2:$1.1.2">
-							<span class="color-primary"
-								data-reactid=".16yr6xmb3eo.1.2:$1.1.2.0">8</span><span
-								data-reactid=".16yr6xmb3eo.1.2:$1.1.2.1">명이 선택하였습니다</span><br
-								data-reactid=".16yr6xmb3eo.1.2:$1.1.2.3" />
-							<span data-reactid=".16yr6xmb3eo.1.2:$1.1.2.4">예상 전달일:
-								2018년 9월 6일</span>
-						</div></label>
+							
 				</div>
 				
+				<c:forEach var="gift" items="${project.giftArry }" varStatus="status">
+					
+					<c:set value="${gift.price }" var="price"/>
+					<fmt:formatNumber value="${gift.remited}" type="number" var="remited"/> 
+					
+					<c:if test="${remited ne gift.selectedCount}">
+					
+					<div class="i-panel" data-reactid=".16yr6xmb3eo.1.2:$1">
+					<!-- 보통 선택지 -->
+						<input type="radio" name="pledge[reward_id]" id="${gift.giftCode }" value="${gift.price }" class="hidden-selector"
+							data-reactid=".16yr6xmb3eo.1.2:$1.0" />
+							<label for="${gift.giftCode }" class="b-panel b-panel_reward" data-reactid=".16yr6xmb3eo.1.2:$1.1">
+							
+							
+							
+							<div class="b-panel__head" data-reactid=".16yr6xmb3eo.1.2:$1.1.0">
+								<h3 class="b-panel__title"
+									data-reactid=".16yr6xmb3eo.1.2:$1.1.0.0">
+									<span data-reactid=".16yr6xmb3eo.1.2:$1.1.0.0.0">${price }</span><span
+										data-reactid=".16yr6xmb3eo.1.2:$1.1.0.0.1">원 이상 밀어주시는 분께</span><span
+										class="for-screenreader"
+										data-reactid=".16yr6xmb3eo.1.2:$1.1.0.0.3">드리는 특전</span>
+								</h3>
+								<span class="b-panel__title" data-reactid=".16yr6xmb3eo.1.2:$1.1.0.1"> 
+									<input id="${price }" type="tel" name="money" min="${price }" max="10000000" value="${price }" class="b-form__input" data-reactid=".16yr6xmb3eo.1.2:$1.1.0.1.0" />
+									<span data-reactid=".16yr6xmb3eo.1.2:$1.1.0.1.1">원</span>
+									<button class="b-panel__next-button" onclick="payment(${gift.price },${gift.giftCode } )"></button>
+									<span class="b-panel__subtitle" data-reactid=".16yr6xmb3eo.1.2:$1.1.0.1.3">더 많이 입력하실 수 있습니다</span>
+								</span>
+							</div>
+							
+							<div class="b-panel__body" data-reactid=".16yr6xmb3eo.1.2:$1.1.1">
+								<span data-reactid=".16yr6xmb3eo.1.2:$1.1.1.0"><c:out value="${gift.description }"/></span>
+								<ul data-reactid=".16yr6xmb3eo.1.2:$1.1.1.1">
+								<c:set var="items" value="${gift.item.split(', ') }"/>
+									<c:forEach var="item" items="${items }">
+										<li data-reactid=".16yr6xmb3eo.1.2:$1.1.1.1.$0">
+										<span data-reactid=".16yr6xmb3eo.1.2:$1.1.1.1.$0.0">${item }</span>
+									</c:forEach>
+								</ul>
+							</div>
+							<div class="b-panel__footer"
+								data-reactid=".16yr6xmb3eo.1.2:$1.1.2">
+								<span class="color-primary"
+									data-reactid=".16yr6xmb3eo.1.2:$1.1.2.0">${gift.selectedCount }</span><span
+									data-reactid=".16yr6xmb3eo.1.2:$1.1.2.1">명이 선택하였습니다</span><br
+									data-reactid=".16yr6xmb3eo.1.2:$1.1.2.3" /> <span
+									data-reactid=".16yr6xmb3eo.1.2:$1.1.2.4">예상 전달일: <fmt:formatDate type="date" dateStyle="full" value="${gift.sendDate }"/></span>
+							</div></label>
+							</div>
+						</c:if>
+					
+					
+						<c:if test="${remited eq gift.selectedCount }">
+						<div class="i-panel" data-reactid=".16yr6xmb3eo.1.2:$1">
+						<!-- 선착 마감  -->
+							<div class="b-panel b-panel_reward b-panel_reward_soldout"
+								data-reactid=".1pnkoc6tjwg.1.2:$1.0">
+								<div class="b-panel__head" data-reactid=".1pnkoc6tjwg.1.2:$1.0.0">
+									<h3 class="b-panel__title"
+										data-reactid=".1pnkoc6tjwg.1.2:$1.0.0.0">
+										<span data-reactid=".1pnkoc6tjwg.1.2:$1.0.0.0.0">${price }</span><span
+											data-reactid=".1pnkoc6tjwg.1.2:$1.0.0.0.1">원 이상 밀어주시는
+											분께</span><span class="for-screenreader"
+											data-reactid=".1pnkoc6tjwg.1.2:$1.0.0.0.2">드리는 특전</span>
+									</h3>
+								</div>
+								<div class="b-panel__body" data-reactid=".1pnkoc6tjwg.1.2:$1.0.1">
+									<span data-reactid=".1pnkoc6tjwg.1.2:$1.0.1.0"><c:out value="${gift.description }"/></span>
+									<ul data-reactid=".1pnkoc6tjwg.1.2:$1.0.1.1">
+									<c:set var="items" value="${gift.item.split(', ') }"/>
+										<c:forEach var="item" items="${items }">
+											<li data-reactid=".1pnkoc6tjwg.1.2:$1.0.1.1.$0"><span
+											data-reactid=".1pnkoc6tjwg.1.2:$1.0.1.1.$0.0">${item }</span>
+											</li>
+										</c:forEach>
+									</ul>
+								</div>
+								<div class="b-panel__footer"
+									data-reactid=".1pnkoc6tjwg.1.2:$1.0.2">
+									<span data-reactid=".1pnkoc6tjwg.1.2:$1.0.2.0">${gift.selectedCount }</span><span
+										data-reactid=".1pnkoc6tjwg.1.2:$1.0.2.1">명이 선택하였습니다</span><strong
+										class="color-text" data-reactid=".1pnkoc6tjwg.1.2:$1.0.2.2">선착순
+										마감됨!</strong><br data-reactid=".1pnkoc6tjwg.1.2:$1.0.2.3">
+									<span data-reactid=".1pnkoc6tjwg.1.2:$1.0.2.4">예상 전달일:<fmt:formatDate type="date" dateStyle="full" value="${gift.sendDate }"/></span>
+								</div>
+							</div>
+							</div>
+							</c:if>
+							
+					</c:forEach>
+					
+					
+					
+					
 			</div>
 		</div>
 	</div>
+	<script>
+function payment(id,gcode){
+	var price = id;
+	console.log(id);
+	console.log(gcode);
+	var inputVal = document.getElementById(price).value; 
+	console.log(inputVal);
+	
+	sessionStorage.setItem("price",price);
+	sessionStorage.setItem("gcode",gcode);
+	sessionStorage.setItem("inputVal",inputVal);
+	
+	console.log(sessionStorage.getItem("price"));
+	console.log(sessionStorage.getItem("gcode"));
+	console.log(sessionStorage.getItem("inputVal"));
+}
+
+
+
+</script>
 </body>
 </html>
