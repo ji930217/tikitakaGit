@@ -4447,7 +4447,10 @@ px
 			}
 
 		}
-
+		$(".bankNumInput").keyup(function(){
+			$(".accountText").text('최소 11자 /'+(16-$(".bankNumInput").val().length)+'자 남았습니다');
+			
+		});
 		$(".bankBtn")
 				.click(
 						function() {
@@ -4470,7 +4473,10 @@ px
 								$(".bankNumInput").focus();
 								return;
 							}
-
+							if($(".bankNumInput").val().length<11){
+								alert("계좌 번호는 11자 이상 입력 해야 합니다.");
+								return;
+							}
 							$
 									.ajax({
 										url : 'projectUpdate.do',
@@ -4504,7 +4510,6 @@ px
 																	+ '수정하기');
 											$(".addD").hide();
 											$(".defaultD").show();
-											console.log(data.bankNumber);
 											blue(data);
 										},
 										error : function(e) {

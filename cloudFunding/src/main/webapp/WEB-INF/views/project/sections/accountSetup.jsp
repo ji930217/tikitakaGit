@@ -1,6 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/functions" prefix="fn"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -289,7 +290,7 @@
 													<div>
 														<div
 															class="_13KHfN73YmQgsYHxXvuh_J _3_IGkn3uaje0g2ZA6Tx9wd _3nB1fZxEqXMiqXF-c7b1XQ  _1QY7TzdLHKX3-BKPDNNYKF">
-															<input class="bankNumInput" type="text" value='<c:out value="${project.bankNumber }"></c:out>' placeholder=""><i
+															<input class="bankNumInput" type="text" value='<c:out value="${project.bankNumber }"></c:out>' placeholder="" maxlength="16"><i
 																class="_5njYujG6OOxwCaFtExFoA _1QY7TzdLHKX3-BKPDNNYKF"></i>
 														</div>
 													</div>
@@ -300,9 +301,9 @@
 																입력해주세요</span>
 														</div>
 														<div
-															class="_13KHfN73YmQgsYHxXvuh_J WU1ox0-AeDX_zneKjnNMO _3G8CRXtomRhisiZsw7Spx- _2-N-uV2y5apkjtxqdVnsop _1xou6XDdjhr5t3_tfAMqmg jvBXmsw6c8TD5NU0Gn0P6
+															class="accountText _13KHfN73YmQgsYHxXvuh_J WU1ox0-AeDX_zneKjnNMO _3G8CRXtomRhisiZsw7Spx- _2-N-uV2y5apkjtxqdVnsop _1xou6XDdjhr5t3_tfAMqmg jvBXmsw6c8TD5NU0Gn0P6
           ">최소
-															11자 / 16자 남았습니다</div>
+															11자 / ${16-fn:length(project.bankNumber) } 자 남았습니다</div>
 													</div>
 												</div>
 											</div>
