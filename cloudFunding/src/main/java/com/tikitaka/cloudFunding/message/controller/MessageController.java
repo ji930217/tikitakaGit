@@ -33,7 +33,14 @@ public class MessageController {
 	public String sendMessage(int projectCode, MessageVo msg){
 		int result = msgService.insertMessage(msg);
 		
-		return "redirect:projectDetail.do?projectCode=" + projectCode;
+		return "redirect:messagePage.do";
+	}
+	
+	@RequestMapping("sendMessage2.do")
+	public @ResponseBody MessageVo sendMessage2(MessageVo msg){
+		int result = msgService.insertMessage(msg);
+		MessageVo message = msgService.selectMessage(msg);
+		return message;
 	}
 	
 	@RequestMapping("messagePage.do")
@@ -42,7 +49,6 @@ public class MessageController {
 		Member user = (Member) session.getAttribute("user");
 		
 		// 가장 마지막으로 온 메시지 내용도 필요
-		
 		List<MessageVo> list = msgService.selectMessageList(user.getEmail());
 		
 		mv.addObject("list", list);
@@ -52,14 +58,17 @@ public class MessageController {
 	}
 	
 	@RequestMapping("messageDetail.do")
-	public ModelAndView messageDetail(int projectCode, HttpSession session, ModelAndView mv){
-		// 로그인한 유저 정보를 통해 해당 멤버의 메시지리스트 불러와야해
-		//Member user = (Member) session.getAttribute("user");
+	public ModelAndView messageDetail(MessageVo msg, HttpSession session, ModelAndView mv){
+		Member user = (Member) session.getAttribute("user");
+		// 현재 메시지	방의 읽지 않음을 모두 읽음으로 변경하고 세션에 저장해야해.
+		int result = msgService.updateReadFlag(msg);
+		session.setAttribute("newMessageCount", msgService.selectNewMessageCount(user.getEmail()));
 		
-		List<MessageVo> list = msgService.selectMessageList("admin@naver.com");
-		ProjectVo project = projectService.selectProjectDetail(projectCode);
+		// 로그인한 유저 정보를 통해 해당 멤버의 메시지리스트 불러와야해
+		msg.setWriterEmail(user.getEmail());
+		List<MessageVo> list = msgService.selectMessageDetail(msg);
+		
 		mv.addObject("list", list);
-		mv.addObject("project", project);
 		mv.setViewName("message/messageDetail");
 		
 		return mv;

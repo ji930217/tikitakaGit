@@ -28,6 +28,18 @@ public class MessageService {
 		return msgDao.selectNewMessageCount(email);
 	}
 
+	public List<MessageVo> selectMessageDetail(MessageVo msg) {
+		return msgDao.selectMessageDetail(msg);
+	}
+
+	public int updateReadFlag(MessageVo msg) {
+		return msgDao.updateReadFlag(msg);
+	}
+
+	public MessageVo selectMessage(MessageVo msg) {
+		return msgDao.selectMessage(msg);
+	}
+
 	/*public List<PostVo> selectPostList(int projectCode) {
 		return cDao.selectPostList(projectCode);
 	}

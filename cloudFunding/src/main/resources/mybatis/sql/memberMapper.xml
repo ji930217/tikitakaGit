@@ -23,7 +23,7 @@
   	<select id="selectMemberEmail" parameterType="Member" resultType="Member">
   		SELECT EMAIL, NAME, PASSWORD, PROFILE_IMG, ENROLL_DATE, LOCATION,
   				SHORTDESCRIPTION, HOMEPAGE, PHONE1, PHONE2, PHONE3,
-  				STOP_DATE, STOP_DATE + 3 AS EXPDATE
+  				STOP_DATE, STOP_DATE + 3 AS EXPDATE	
 		FROM MEMBER
 		WHERE EMAIL =  #{email}
   	</select>

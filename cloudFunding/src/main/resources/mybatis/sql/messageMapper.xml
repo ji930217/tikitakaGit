@@ -16,7 +16,10 @@
 		<!-- 화면에 보여질 프로젝트 정보 -->
 		<result property="title" column="P_TITLE"/>
 		<result property="repImg" column="P_REP_IMG"/>
-		<result property="creatorEamil" column="CREATOR_EMAIL"/>
+		<result property="writerProfileImg" column="WRITER_PROFILE_IMG"/>
+		<result property="receiverProfileImg" column="RECEIVER_PROFILE_IMG"/>
+		<result property="creatorEmail" column="CREATOR_EMAIL"/>
+		<result property="creatorName" column="CREATOR_NAME"/>
 		<result property="writerName" column="WRITER_NAME"/>
 		<result property="receiverName" column="RECEIVER_NAME"/>
 		<result property="newMessageCount" column="NEW_MESSAGE_COUNT"/>
@@ -24,42 +27,75 @@
 	</resultMap>
 	
 	<select id = "selectMessageList" resultMap="messageMap" parameterType="string">
-		SELECT P.P_PROJECT_CODE, P_TITLE, P_REP_IMG, M_CODE, M_WRITER, M_RECEIVER, M_CONTENT, TO_CHAR(M_SEND_DATE,'YYYY-MM-DD HH24:MI') AS M_SEND_DATE, 
+		SELECT P.P_PROJECT_CODE, P_TITLE, P_REP_IMG, P.EMAIL AS CREATOR_EMAIL, M_CODE, M_WRITER, M_RECEIVER, M_CONTENT, TO_CHAR(M_SEND_DATE,'YYYY-MM-DD HH24:MI') AS M_SEND_DATE, 
 						-- 로그인 한 유저가 보낸 것이 아닌 새로운 메시지만 카운트
 						(SELECT COUNT(*) FROM MESSAGE 
 						WHERE M_READ_FLAG = 'F' 
 							AND P_PROJECT_CODE = P.P_PROJECT_CODE 
-							AND M_WRITER != #{email}) AS NEW_MESSAGE_COUNT,
+							AND M_RECEIVER = #{email}) AS NEW_MESSAGE_COUNT,
 			      	(SELECT NAME FROM MEMBER WHERE EMAIL = M_WRITER) AS WRITER_NAME--,
 			--      (SELECT NAME FROM MEMBER WHERE EMAIL = M_RECEIVER) AS RECEIVER_NAME
 		FROM PROJECT P JOIN MESSAGE ON(P.P_PROJECT_CODE = MESSAGE.P_PROJECT_CODE)
 		WHERE P.P_PROJECT_CODE IN (SELECT P_PROJECT_CODE 
 															FROM MESSAGE 
-															WHERE M_WRITER = #{email})
+															WHERE M_WRITER = #{email} OR M_RECEIVER = #{email})
 		-- 프로젝트 별 가장 최신 메시지 정보만
 		AND M_SEND_DATE IN (SELECT MAX(M.M_SEND_DATE) 
 												FROM MESSAGE M 
 												WHERE (M.M_WRITER = #{email} OR M.M_RECEIVER = #{email}) 
 												AND M.P_PROJECT_CODE = P.P_PROJECT_CODE) 
+		ORDER BY M_SEND_DATE DESC
 	</select>
 	
 	<select id="selectNewMessageCount" parameterType="string" resultType="int">
 	    SELECT COUNT(*) FROM MESSAGE WHERE M_RECEIVER = #{email} AND M_READ_FLAG = 'F'
 	</select>
 
-	<!-- <select id="selectMessageList" parameterType="string" resultMap="messageMap">
-	    SELECT P_PROJECT_CODE, M_CODE, 
-				M_WRITER, (SELECT NAME FROM MEMBER WHERE EMAIL = M_WRITER) AS WRITER_NAME,
-				M_RECEIVER, (SELECT NAME FROM MEMBER WHERE EMAIL = M_RECEIVER) AS RECEIVER_NAME,
-				M_KINDS, M_CONTENT, M_SEND_DATE, M_READ_FLAG 
-		FROM MESSAGE
-		WHERE M_WRITER = #{email}
-	</select> -->
+	<select id="selectMessageDetail" parameterType="Message" resultMap="messageMap">
+	    SELECT P_PROJECT_CODE, P_TITLE, P_REP_IMG,
+	   				  M_WRITER AS WRITER_EMAIL, M_RECEIVER AS RECEIVER_EMAIL,
+					  (SELECT EMAIL FROM MEMBER WHERE EMAIL = PROJECT.EMAIL) AS CREATOR_EMAIL,
+					  (SELECT NAME FROM MEMBER WHERE EMAIL = M_WRITER) AS WRITER_NAME,
+					  (SELECT NAME FROM MEMBER WHERE EMAIL = M_RECEIVER) AS RECEIVER_NAME,   
+					  (SELECT NAME FROM MEMBER WHERE PROJECT.EMAIL = EMAIL) AS CREATOR_NAME,
+					  EMAIL AS CREATOR_EMAIL,
+					  (SELECT PROFILE_IMG FROM MEMBER WHERE MESSAGE.M_WRITER = EMAIL) AS WRITER_PROFILE_IMG,
+					  (SELECT PROFILE_IMG FROM MEMBER WHERE MESSAGE.M_RECEIVER = EMAIL) AS RECEIVER_PROFILE_IMG,
+					  M_KINDS,
+					  M_CONTENT,
+					  TO_CHAR(M_SEND_DATE,'YYYY-MM-DD HH24:MI') AS M_SEND_DATE, M_READ_FLAG
+		FROM MESSAGE JOIN PROJECT USING(P_PROJECT_CODE)
+		WHERE (M_WRITER = #{writerEmail} OR M_RECEIVER = #{writerEmail}) 
+		  AND P_PROJECT_CODE = #{projectCode}
+		ORDER BY M_SEND_DATE
+	</select>
 
+	<select id="selectMessage" parameterType="Message" resultMap="messageMap">
+	    SELECT * 
+		FROM (SELECT M_CODE, P_PROJECT_CODE, M_WRITER, M_RECEIVER, M_CONTENT, M_READ_FLAG, 
+		                 M_SEND_DATE, ROWNUM AS R_NUM, WRITER_PROFILE_IMG, WRITER_NAME
+		      FROM(SELECT M_CODE, P_PROJECT_CODE, M_WRITER, M_RECEIVER, M_CONTENT, M_READ_FLAG, 
+		                  TO_CHAR(M_SEND_DATE,'YYYY-MM-DD HH24:MI') AS M_SEND_DATE,
+		                  (SELECT PROFILE_IMG FROM MEMBER WHERE M_WRITER = EMAIL) AS WRITER_PROFILE_IMG,
+		                  (SELECT NAME FROM MEMBER WHERE EMAIL = M_WRITER) AS WRITER_NAME
+		            FROM MESSAGE
+		            WHERE M_WRITER = #{writerEmail}
+		            AND P_PROJECT_CODE = #{projectCode}
+		            ORDER BY M_SEND_DATE DESC)
+		      )
+		WHERE R_NUM = 1
+	</select>
+	
 	<insert id="insertMessage" parameterType="Message">
 	    INSERT INTO MESSAGE 
 	    VALUES(#{projectCode}, SEQ_MSG.NEXTVAL, #{writerEmail}, #{receiverEmail}, #{messageKinds}, #{content}, SYSDATE, DEFAULT)
 	</insert>
+	
+	<update id="updateReadFlag" parameterType="Message">
+	    UPDATE MESSAGE SET M_READ_FLAG = 'T'
+		WHERE M_RECEIVER = #{writerEmail} 
+		AND P_PROJECT_CODE = #{projectCode}
+	</update>
 
 	<!-- <select id="selectPostList" parameterType="int" resultMap="postMap">
 	    SELECT P.POST_CODE, P_PROJECT_CODE, P.EMAIL, P.CONTENT, P.WRITTEN_DATE, P.DELFLAG, NAME, PROFILE_IMG,
