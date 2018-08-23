@@ -142,7 +142,7 @@
 						
 						
 						
-						//$("#selected_address").value = data.zonecode + fullAddr ;
+						document.getElementById('selected_address').value = data.zonecode+", " + fullAddr ;
 
 						// 커서를 상세주소 필드로 이동한다.
 						document.getElementById('remaining_address').focus();
