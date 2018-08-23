@@ -392,21 +392,31 @@ public class ProjectController {
 	}
 	
 	@RequestMapping("myProject.do")
-	public ModelAndView myProject(HttpSession session,ModelAndView mv){
+	public ModelAndView myProject(HttpSession session,ModelAndView mv,String msg){
 		Member member = (Member)session.getAttribute("user");
 		List<ProjectVo> list = projectService.selectMyProjectList(member);
+		if(null != msg){
+			mv.addObject("msg",msg);
+		}
 		mv.addObject("list", list);
 		mv.setViewName("project/projects");
 		return mv;
 	}
 	
 	@RequestMapping("updateProjectForm.do")
-	public ModelAndView updateProject(int projectCode , ModelAndView mv){
+	public String updateProject(int projectCode , Model model){
 		ProjectVo projectVo = new ProjectVo();
 		projectVo.setProjectCode(projectCode);
 		projectVo = projectService.selectProjectGift(projectCode);
-		mv.addObject("project",projectVo);
-		mv.setViewName("project/projectForm");
-		return mv;
+		
+		if(projectVo.getpConfirm().equals("2")){
+			return "redirect:projectDetail.do?projectCode="+projectVo.getProjectCode();
+		}
+		
+		if(projectVo.getpConfirm().equals("1")){
+			return "redirect:myProject.do?msg=승인대기 중인 프로젝트 입니다.";
+		}
+		model.addAttribute("project",projectVo);
+		return"project/projectForm";
 	}
 }
