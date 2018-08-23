@@ -1,5 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+ <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/functions" prefix="fn"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -106,7 +108,9 @@
 						style="color: rgb(117, 117, 117); font-weight: 700; margin: 1.5rem 0px 0.5rem; font-size: 0.9rem;">아이템
 						목록</div>
 					<div class="appnedItem _13KHfN73YmQgsYHxXvuh_J _18bwsw29jDyAzIPXzQkoS- CoIrJwj-n2Pdokdf8d4qE">
-						
+					<c:forTokens items="${project.giftItem }" delims="," var="item">
+					<div class="_13KHfN73YmQgsYHxXvuh_J saXk0rx00KnB6O_X8xIAv _2uxYQ-nuPwdol9sQhOjfH-"><div class="_13KHfN73YmQgsYHxXvuh_J _3U6RUH-EASpZ_j8ls1HJyP"><div class="_3ECP69YABwRBC-kxTDAokV"><div class="UVz11B8HH3zPgaD3ITNbg"><c:out value="${item}"></c:out> </div> <div class="_1oHVPuCWp3V0T31vaNkzNX"><div><a class="_3wn6m5g7iiO4BmmcRH091v" onclick="deleteItem(this);" style="color: grey;">삭제하기</a></div></div></div></div></div>
+					</c:forTokens>
 					</div>
 				</div> 
 				

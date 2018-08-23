@@ -4454,6 +4454,8 @@ px
 							var bankNameSelect = $(".bankNameSelect").val();
 							var bankNameInput = $(".bankNameInput").val();
 							var bankNumInput = $(".bankNumInput").val();
+							var regexp = /^[0-9]*$/;
+							
 							var radio = $(
 									'input[name="depositAccountType"]:checked')
 									.val();
@@ -4462,7 +4464,12 @@ px
 								alert("계좌 정보는 필수 입력 정보 입니다.");
 								return;
 							}
-
+							if(!regexp.test(bankNumInput)){
+								alert("계좌 번호는 숫자만 입력 가능합니다.");
+								$(".bankNumInput").val('');
+								$(".bankNumInput").focus();
+								return;
+							}
 
 							$
 									.ajax({
@@ -4506,21 +4513,23 @@ px
 									});
 						});
 		
-		if('${project.giftItem}'!=null){
+		if('${project.giftItem}'!=""){
 			if('${project.giftItem}'.indexOf(",") == -1) {
+				$(".itemAdd").eq(0).remove();
 				$(".itemAdd").children().children().children().children('._29JGBV0ggQH38jcZcbYX3L').text('${project.giftItem}');
 			}else{
 				$(".itemAdd").eq(0).remove();
 				$(".itemAdd").show();
 			}
+			$(".noneItem").hide();
+			$(".existItem").show();	 
 		}
-		
-		if('${project.descriptionVideo}'!=null){
+		if('${project.descriptionVideo}'!=""){
 			$(".projectVideo").hide();
 			$(".videoplay").show();
 			$(".updateVideoBtn").show();
 		}
-		
+		$(".itemSendBtn").attr('diabled',true);
 		if ('${fn:length(project.giftArry)}' > 0) {
 			//작업중
 			var list;
@@ -4531,7 +4540,7 @@ px
 			$(".rewardlist").eq(0).remove();
 			$(".rewardlist").show();
 			$(".rewardlist").each(function(index,item){
-				$(item).children().children().children().attr('onclick',"deleteItemList("+list[index] +")");
+				$(item).children().children().children('.ContextualAction__LinkButton-lcypnk-0').attr('onclick',"deleteItemList("+list[index] +")");
 			});
 			
 		}
@@ -4771,7 +4780,13 @@ px
 					var month = date.getMonth() + 1;
 					var day = date.getDate();
 					var fulldate = year + '년' + month + '월' + day + '일';
-
+					var text;
+					if(data.giftArry[i].remited==-1){
+						text ='무제한';
+					}else{
+						text=data.giftArry[i].remited+"개 남음";
+					}
+					
 					rewardlist.children().children(".-UobvSeyUG6cEWYnht50S")
 							.children('h4').text(
 									data.giftArry[i].price + " 원 이상 밀어주시는 분께");
@@ -4782,9 +4797,9 @@ px
 					rewardlist.children().children(".VgMYktFPH-SSPJjPTFMC")
 							.children('strong').text(fulldate);
 					rewardlist.children("._3ZgG-OSv0XE3y-h3oPaDsl").children()
-							.children('.remitDisplay').text(
-									data.giftArry[i].remited + "개 남음");
-					rewardlist.children().children().children()
+							.children('.remitDisplay').text(text
+									);
+					rewardlist.children().children().children('.ContextualAction__LinkButton-lcypnk-0')
 							.attr(
 									'onclick',
 									'deleteItemList('
@@ -4799,7 +4814,6 @@ px
 					rewardlist.clone().insertAfter($(".rewardappend"));
 				}
 				itemListLength = data.giftArry.length;
-				console.log(itemListLength);
 				blue(data);
 			},
 			error : function(e) {
@@ -4847,7 +4861,8 @@ px
 						rewardlist.children("._3ZgG-OSv0XE3y-h3oPaDsl")
 								.children().children('.remitDisplay').text(
 										data.giftArry[i].remited + "개 남음");
-						rewardlist.children().children().children().attr(
+						console.log(rewardlist.children().children().children());
+						rewardlist.children().children().children('.ContextualAction__LinkButton-lcypnk-0').attr(
 								'onclick',
 								'deleteItemList(' + data.giftArry[i].giftCode
 										+ ')');

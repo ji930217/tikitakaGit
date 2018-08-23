@@ -400,8 +400,8 @@
 							<!-- react-text: 630 -->선택한 사람이 없음 <!-- /react-text -->
 								<span
 								class="remitDisplay _13KHfN73YmQgsYHxXvuh_J IHUALIalgwgMpH2DEQooZ _3fJsfvAPykJzj2xoMnxzWW _1Qdv504-1XMeYXZyb0xQZT _3D9sfZXrWd8it3eUCuCTc8">
-								<c:if test="${-1==list.remited }">0</c:if>
-								<c:if test="${-1!=list.remited }"><c:out value="${list.remited }"></c:out> </c:if>
+								<c:if test="${-1==list.remited }">무제한</c:if>
+								<c:if test="${-1!=list.remited }"><c:out value="${list.remited }"></c:out>개 남음 </c:if>
 								</span>
 								<c:if test="${list.transferCheck }">
 							<div class="sendCondition WU1ox0-AeDX_zneKjnNMO oAeG34mYkuDyUTybhBMrQ">
