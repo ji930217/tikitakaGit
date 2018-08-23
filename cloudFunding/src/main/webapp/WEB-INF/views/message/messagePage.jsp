@@ -87,8 +87,7 @@
 						<div class="_13KHfN73YmQgsYHxXvuh_J _1WARcEqqT_Pem8leg2dkMj">
 							<div class="_3EB8nYT2n9TEUQFLCp2Ak1">
 								<div class="_1r08yGd0p3ttl_EmL4IyyU">
-									<i
-										class="_3YmAkQhwzI7o-uUWz_8Mp4 _3IZTJ_lSKq4pCcBiKlOj-W _3fJsfvAPykJzj2xoMnxzWW _1QY7TzdLHKX3-BKPDNNYKF"
+									<i	class="_3YmAkQhwzI7o-uUWz_8Mp4 _3IZTJ_lSKq4pCcBiKlOj-W _3fJsfvAPykJzj2xoMnxzWW _1QY7TzdLHKX3-BKPDNNYKF"
 										style="font-size: 2.5rem;"></i>
 								</div>
 								<div class="_-0I7eg-9I-HQ7aue1h5ww">메시지</div>
