@@ -146,7 +146,7 @@
 					
 					<c:set value="${gift.price }" var="price"/>
 					<fmt:formatNumber value="${gift.remited}" type="number" var="remited"/> 
-					
+					<fmt:formatNumber value="${price }" pattern="#,###" var="FNprice"/>
 					<c:if test="${remited ne gift.selectedCount}">
 					
 					<div class="i-panel" data-reactid=".16yr6xmb3eo.1.2:$1">
@@ -160,13 +160,13 @@
 							<div class="b-panel__head" data-reactid=".16yr6xmb3eo.1.2:$1.1.0">
 								<h3 class="b-panel__title"
 									data-reactid=".16yr6xmb3eo.1.2:$1.1.0.0">
-									<span data-reactid=".16yr6xmb3eo.1.2:$1.1.0.0.0">${price }</span><span
+									<span data-reactid=".16yr6xmb3eo.1.2:$1.1.0.0.0">${ FNprice}</span><span
 										data-reactid=".16yr6xmb3eo.1.2:$1.1.0.0.1">원 이상 밀어주시는 분께</span><span
 										class="for-screenreader"
 										data-reactid=".16yr6xmb3eo.1.2:$1.1.0.0.3">드리는 특전</span>
 								</h3>
 								<span class="b-panel__title" data-reactid=".16yr6xmb3eo.1.2:$1.1.0.1"> 
-									<input id="${price }" type="tel" name="money" min="${price }" max="10000000" value="${price }" class="b-form__input" data-reactid=".16yr6xmb3eo.1.2:$1.1.0.1.0" />
+									<input id="${price }" type="tel" name="money" min="${price }" max="10000000" value="${ price}" class="b-form__input" data-reactid=".16yr6xmb3eo.1.2:$1.1.0.1.0" />
 									<span data-reactid=".16yr6xmb3eo.1.2:$1.1.0.1.1">원</span>
 									<button class="b-panel__next-button" onclick="payment(${gift.price },${gift.giftCode } )"></button>
 									<span class="b-panel__subtitle" data-reactid=".16yr6xmb3eo.1.2:$1.1.0.1.3">더 많이 입력하실 수 있습니다</span>
@@ -242,19 +242,17 @@
 	</div>
 	<script>
 function payment(id,gcode){
-	var price = id;
-	console.log(id);
-	console.log(gcode);
-	var inputVal = document.getElementById(price).value; 
-	console.log(inputVal);
+		var price = id;
+		var inputVal = document.getElementById(price).value;
+		
+		/*  sessionStorage.setItem("inputVal",inputVal);  */
+		if(id == 1000){
+			location.href="paymentPage.do";
+		}
+		else{
+			location.href="payment_address.do?gCode="+gcode+"&inputVal="+inputVal;
+		}
 	
-	sessionStorage.setItem("price",price);
-	sessionStorage.setItem("gcode",gcode);
-	sessionStorage.setItem("inputVal",inputVal);
-	
-	console.log(sessionStorage.getItem("price"));
-	console.log(sessionStorage.getItem("gcode"));
-	console.log(sessionStorage.getItem("inputVal"));
 }
 
 

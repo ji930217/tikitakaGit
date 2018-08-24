@@ -7,15 +7,17 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
 import com.tikitaka.cloudFunding.project.model.vo.GiftVo;
+import com.tikitaka.cloudFunding.project.model.vo.ProjectVo;
 
 @Repository
 public class SupportDao {
 	
 	@Autowired
 	private SqlSessionTemplate sqlSession;
-	
-	public List<GiftVo> selectGiftList(int projectCode) {
-		return sqlSession.selectList("paymentMapper.selectGiftList",projectCode);
+ 
+	public ProjectVo selectOneGiftList(int giftCode) {
+		return sqlSession.selectOne("projectMapper.selectOneGiftList",giftCode);
 	}
+
 
 }
