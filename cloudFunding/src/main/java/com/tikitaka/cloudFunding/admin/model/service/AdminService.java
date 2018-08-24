@@ -192,6 +192,11 @@ public class AdminService {
 		return admindao.updateProjectAmount(pCode,amount);
 	}
 
+	public int updateSupporter(String pCode) {
+		
+		return admindao.updateSupporter(pCode);
+	}
+
 
 	
 

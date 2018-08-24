@@ -1631,7 +1631,7 @@ function prevDeadLineProject() {
     <li data-target="#carouselExampleIndicators" data-slide-to="4"></li>
   </ol>
   <div class="carousel-inner">
-
+${indexBannerList}
    	 <div class="carousel-item active">
        <a href = "projectDetail.do?projectCode="+${indexBannerList[0].bannerCode}>
       <img class="d-block w-100" src="resources/images/carousel/${indexBannerList[0].bannerImage}" alt="첫번째 슬라이드">

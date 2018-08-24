@@ -15,7 +15,7 @@
   function drawChart() {
 	  
 	  var mMonth08 = ${memberMonth};
-	  /* var pMonth8 = ${projectMonth}; */
+	   var pMonth8 = ${projectMonth}; 
 	  
 	  
     var data = google.visualization.arrayToDataTable([
@@ -25,7 +25,7 @@
       ['05월', 6, 4],
       ['06월', 10, 6],
       ['07월', 12, 8],
-      ['08월', mMonth08, 10]
+      ['08월', mMonth08, pMonth8]
     ]);
 
     var options = {
@@ -46,7 +46,7 @@
   google.charts.setOnLoadCallback(drawChart);
   
   var mMonth08 = ${memberMonth};
-  /* var pMonth8 = ${projectMonth}; */
+   var pMonth8 = ${projectMonth}; 
 
   function drawChart() {
     var data = google.visualization.arrayToDataTable([
@@ -56,7 +56,7 @@
         ['05월', 10, 7],
         ['06월', 20, 13],
         ['07월', 32, 21],
-        ['08월', mMonth08+32, 31]
+        ['08월', mMonth08+32, pMonth8+21]
     ]);
 
     var options = {

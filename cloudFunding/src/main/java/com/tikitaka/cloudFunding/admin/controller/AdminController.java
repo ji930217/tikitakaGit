@@ -52,7 +52,7 @@ public class AdminController {
 		int category4 = adminservice.category4();//카테고리 푸드조회
 		
 		int memberMonth = adminservice.memberMonth();
-		/*int projectMonth = adminservice.projectMonth();*/
+		int projectMonth = adminservice.projectMonth();
 		
 		
 		
@@ -63,7 +63,7 @@ public class AdminController {
 		mv.addObject("category3", category3);
 		mv.addObject("category4", category4);
 		mv.addObject("memberMonth", memberMonth);
-		/*mv.addObject("projectMonth", projectMonth);*/
+		mv.addObject("projectMonth", projectMonth);
 		
 		
 		
@@ -332,7 +332,7 @@ public class AdminController {
 				int category2 = adminservice.category2();//카테고리 공연조회
 				int category3 = adminservice.category3();//카테고리 디자인조회
 				int memberMonth = adminservice.memberMonth();
-				/*int projectMonth = adminservice.projectMonth();*/
+				int projectMonth = adminservice.projectMonth();
 				
 				
 				
@@ -342,7 +342,7 @@ public class AdminController {
 				mv.addObject("category2", category2);
 				mv.addObject("category3", category3);
 				mv.addObject("memberMonth", memberMonth);
-				/*mv.addObject("projectMonth", projectMonth);*/
+				mv.addObject("projectMonth", projectMonth);
 		
 	
 	
@@ -610,7 +610,7 @@ public class AdminController {
 				int category2 = adminservice.category2();//카테고리 공연조회
 				int category3 = adminservice.category3();//카테고리 디자인조회
 				int memberMonth = adminservice.memberMonth();
-				/*int projectMonth = adminservice.projectMonth();*/
+				int projectMonth = adminservice.projectMonth();
 				
 				
 				
@@ -620,7 +620,7 @@ public class AdminController {
 				mv.addObject("category2", category2);
 				mv.addObject("category3", category3);
 				mv.addObject("memberMonth", memberMonth);
-				/*mv.addObject("projectMonth", projectMonth);*/
+				mv.addObject("projectMonth", projectMonth);
 		
 		
 		String keyword = request.getParameter("keyword");
@@ -882,7 +882,7 @@ public class AdminController {
 			int category2 = adminservice.category2();//카테고리 공연조회
 			int category3 = adminservice.category3();//카테고리 디자인조회
 			int memberMonth = adminservice.memberMonth();
-			/*int projectMonth = adminservice.projectMonth();*/
+			int projectMonth = adminservice.projectMonth();
 			
 			
 			
@@ -892,7 +892,7 @@ public class AdminController {
 			mv.addObject("category2", category2);
 			mv.addObject("category3", category3);
 			mv.addObject("memberMonth", memberMonth);
-			/*mv.addObject("projectMonth", projectMonth);*/
+			mv.addObject("projectMonth", projectMonth);
 			
 			
 			String keyword = request.getParameter("keyword");
@@ -1156,7 +1156,7 @@ public class AdminController {
 			int category2 = adminservice.category2();//카테고리 공연조회
 			int category3 = adminservice.category3();//카테고리 디자인조회
 			int memberMonth = adminservice.memberMonth();
-			/*int projectMonth = adminservice.projectMonth();*/
+			int projectMonth = adminservice.projectMonth();
 			
 			
 			
@@ -1166,7 +1166,7 @@ public class AdminController {
 			mv.addObject("category2", category2);
 			mv.addObject("category3", category3);
 			mv.addObject("memberMonth", memberMonth);
-			/*mv.addObject("projectMonth", projectMonth);*/
+			mv.addObject("projectMonth", projectMonth);
 			
 			
 			String keyword = request.getParameter("keyword");
@@ -1434,7 +1434,7 @@ public class AdminController {
 				int category2 = adminservice.category2();//카테고리 공연조회
 				int category3 = adminservice.category3();//카테고리 디자인조회
 				int memberMonth = adminservice.memberMonth();
-				/*int projectMonth = adminservice.projectMonth();*/
+				int projectMonth = adminservice.projectMonth();
 				
 				
 				
@@ -1444,7 +1444,7 @@ public class AdminController {
 				mv.addObject("category2", category2);
 				mv.addObject("category3", category3);
 				mv.addObject("memberMonth", memberMonth);
-				/*mv.addObject("projectMonth", projectMonth);*/
+				mv.addObject("projectMonth", projectMonth);
 				
 			
 				String keyword = request.getParameter("keyword");
@@ -1834,6 +1834,7 @@ System.out.println(bannerList);
 					
 					int insertSupport = adminservice.insertSupport(email,pCode,amount,item,addr);//Support테이블에 정보 추가
 					int updateProjectAmount = adminservice.updateProjectAmount(pCode,amount);//Project테이블에 금액 업데이트
+					int updateSupporter = adminservice.updateSupporter(pCode);//후원자 +1
 				
 					
 					if(gRemited > 0) {
