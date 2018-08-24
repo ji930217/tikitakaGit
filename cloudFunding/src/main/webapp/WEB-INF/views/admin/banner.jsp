@@ -145,6 +145,7 @@ function validate3(){
    	function fileCheck(){
    		
    		var name = document.getElementById("fileInput").value;
+   		console.log(name);
    		
    		if(name == ""){
    			alert("Upload를 먼저해주세요");
