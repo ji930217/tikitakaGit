@@ -459,27 +459,27 @@
 								class="_13KHfN73YmQgsYHxXvuh_J _1V4AsGFqT8un0KZo8QWVRL kKeFxbI9p0TnKvSk7DzSR _1gTQggGV_yO4HJ6p7pil3E _1UmvYpZQFDG3yh_HWxQaF9 _12TAeoYDPLF0sfa3UIt6uZ _3ZTEzsKL-qDLECUGq4QcLv">
 								<div
 									class="_1ImF9kUktZoPfysBSwFigF _152MAijd_UogerBKCVqZR_ _1lLHKI5v9AoCyeggtffvGZ">
-									<a href="https://careers.tumblbug.com"
+									<a href="readyPage.do"
 										class="_2Bmm3DAsbg4wlC8_xGt_SK" target="_blank"
 										rel="noopener noreferrer">채용</a><br>
-									<a href="https://creator.tumblbug.com/"
+									<a href="readyPage.do"
 										class="_2Bmm3DAsbg4wlC8_xGt_SK" target="_blank"
 										rel="noopener noreferrer">창작자 가이드</a><br>
-									<a href="https://year.tumblbug.com/2017/"
+									<a href="readyPage.do"
 										class="_2Bmm3DAsbg4wlC8_xGt_SK" target="_blank"
 										rel="noopener noreferrer">2017년 결산</a>
 								</div>
 								<div
 									class="_2joJTlnkt26WGpxyvkNuCH _152MAijd_UogerBKCVqZR_ _1lLHKI5v9AoCyeggtffvGZ">
-									<a class="_2Bmm3DAsbg4wlC8_xGt_SK" href="/terms-of-use">이용약관</a>
+									<a class="_2Bmm3DAsbg4wlC8_xGt_SK" href="readyPage.do">이용약관</a>
 									<!-- react-text: 1584 -->
 									&nbsp;
 									<!-- /react-text -->
 									<label
 										class="_13KHfN73YmQgsYHxXvuh_J _1DLNFgQRrQNEosKFB0zOK5 _3D9sfZXrWd8it3eUCuCTc8">개정</label><br>
-									<a class="_2Bmm3DAsbg4wlC8_xGt_SK" href="/privacy">개인정보
+									<a class="_2Bmm3DAsbg4wlC8_xGt_SK" href="readyPage.do">개인정보
 										보호정책</a><br>
-									<a href="https://help.tumblbug.com"
+									<a href="readyPage.do"
 										class="_2Bmm3DAsbg4wlC8_xGt_SK" target="_blank">헬프 센터</a>
 								</div>
 								<div
@@ -487,42 +487,42 @@
 									<div>
 										<a href="https://www.facebook.com/tumblbug"
 											class="_2Bmm3DAsbg4wlC8_xGt_SK" target="_blank"
-											rel="noopener noreferrer"><i
+											rel="noopener noreferrer"><!-- <i
 											class="_1uz2PaH_Pc163IQLnwFtm8 _1oJMWnMCW_Y6GmNc1mhqaW _1QY7TzdLHKX3-BKPDNNYKF"></i><span
 											class="SiteFooter__SROnlyLabel-s6xs3vz-0 fVDvhD">facebook
-												바로가기</span></a>
+												바로가기 --></span></a>
 										<!-- react-text: 1595 -->
 										&nbsp;&nbsp;
 										<!-- /react-text -->
 										<a href="https://twitter.com/tumblbug"
 											class="_2Bmm3DAsbg4wlC8_xGt_SK" target="_blank"
-											rel="noopener noreferrer"><i
+											rel="noopener noreferrer"><!-- <i
 											class="_2FxT97uoLyJpLIfoko0aQD _1oJMWnMCW_Y6GmNc1mhqaW _1QY7TzdLHKX3-BKPDNNYKF"></i><span
 											class="SiteFooter__SROnlyLabel-s6xs3vz-0 fVDvhD">twitter
-												바로가기</span></a>
+												바로가기 --></span></a>
 										<!-- react-text: 1599 -->
 										&nbsp;&nbsp;
 										<!-- /react-text -->
 										<a href="https://www.instagram.com/tumblbug/"
 											class="_2Bmm3DAsbg4wlC8_xGt_SK" target="_blank"
-											rel="noopener noreferrer"><i
+											rel="noopener noreferrer"><!-- <i
 											class="jVeP2LZnw-ySfySkeJWoo _1oJMWnMCW_Y6GmNc1mhqaW _1QY7TzdLHKX3-BKPDNNYKF"></i><span
 											class="SiteFooter__SROnlyLabel-s6xs3vz-0 fVDvhD">instagram
-												바로가기</span></a>
+												바로가기 --></span></a>
 										<!-- react-text: 1603 -->
 										&nbsp;&nbsp;
 										<!-- /react-text -->
 										<a href="http://post.naver.com/my.nhn?memberNo=23995853"
 											class="_2Bmm3DAsbg4wlC8_xGt_SK" target="_blank"
-											rel="noopener noreferrer"><svg
+											rel="noopener noreferrer"><!-- <svg
 												class="_1y66s74R2HeAes5cUhyCyJ"
 												xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 18.31">
 												<title>naverIcon</title><path
 													d="M20,19.15H13.33A0.34,0.34,0,0,1,13,19L7,10.22,6.84,10v9.15H0V0.85H6.68A0.32, 0.32,0,0,1,7,1l6,8.75a0.82,0.82,0,0,0,.19.22V0.86H20v18.3Z"
-													transform="translate(0 -0.84)"></path></svg></a>
+													transform="translate(0 -0.84)"></path></svg> --></a>
 									</div>
 									<div style="text-align: right;">
-										<a href="https://help.tumblbug.com/hc/ko/requests/new"
+										<a href="readyPage.do"
 											target="_blank" rel="noopener noreferrer"
 											class="_13KHfN73YmQgsYHxXvuh_J _1V4AsGFqT8un0KZo8QWVRL _3SbGdzxKM6M_AeOQWLNqks"
 											style="width: 120px; margin: 1rem 0px 0px; display: inline-block;"><i
@@ -532,18 +532,16 @@
 								</div>
 								<div
 									class="_2yIPuXkUmexMNa4oYh94d2 _2EKbr4mCy_TvmSkhnSfA_a _152MAijd_UogerBKCVqZR_ _1lLHKI5v9AoCyeggtffvGZ">
-									<span>텀블벅은 플랫폼 제공자로서 프로젝트의 당사자가 아니며, 직접적인 통신판매를 진행하지
+									<span>티키타카는 플랫폼 제공자로서 프로젝트의 당사자가 아니며, 직접적인 통신판매를 진행하지
 										않습니다. 프로젝트의 완수 및 선물제공의 책임은 해당 프로젝트의 창작자에게 있으며, 프로젝트와 관련하여 후원자와
 										발생하는 법적 분쟁에 대한 책임은 해당 창작자가 부담합니다.</span>
 								</div>
 								<div
 									class="_2AKJF7ih68n2TcW3TIF8-t _2EKbr4mCy_TvmSkhnSfA_a _152MAijd_UogerBKCVqZR_ _1lLHKI5v9AoCyeggtffvGZ">
-									<span>텀블벅(주) | 대표 염재승 105-87-52823 | 서울시 중구 삼일대로 343,
-										13층 | 통신판매업 2017-서울중구-1156 | 대표전화 02-6080-0760</span><span
+									<span>티키타카(주) | 대표 유지상 105-87-52823 | 서울특별시 강남구 테헤란로14길 6| 통신판매업 2017-서울중구-1156 | 대표전화 02-6080-0760</span><span
 										class="_1NwnhTlynaDwYqlZ_SKgmG"><span role="img"
 										aria-labelledby="copyright emoji">ⓒ</span>
-									<!-- react-text: 1618 --> <!-- /react-text -->
-										<!-- react-text: 1619 -->2018 Tumblbug Inc.<!-- /react-text --></span>
+										<!-- react-text: 1619 -->2018 TIKITAKA Inc.<!-- /react-text --></span>
 								</div>
 							</div>
 						</div>
