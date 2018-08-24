@@ -49,6 +49,8 @@ public class AdminController {
 		int category1 = adminservice.category();//카테고리 게임조회
 		int category2 = adminservice.category2();//카테고리 공연조회
 		int category3 = adminservice.category3();//카테고리 디자인조회
+		int category4 = adminservice.category4();//카테고리 푸드조회
+		
 		int memberMonth = adminservice.memberMonth();
 		/*int projectMonth = adminservice.projectMonth();*/
 		
@@ -59,6 +61,7 @@ public class AdminController {
 		mv.addObject("category1", category1);
 		mv.addObject("category2", category2);
 		mv.addObject("category3", category3);
+		mv.addObject("category4", category4);
 		mv.addObject("memberMonth", memberMonth);
 		/*mv.addObject("projectMonth", projectMonth);*/
 		
@@ -1816,5 +1819,27 @@ System.out.println(bannerList);
 					mv.setViewName("admin/memberDetail");
 					
 					return mv; 
+				}
+				
+				@RequestMapping("payInfoSave.do")
+				public String payInfoSave( HttpServletRequest request) {
+					
+					String email = request.getParameter("email");
+					String pCode = request.getParameter("pCode");
+					String amount = request.getParameter("amount");
+					String item = request.getParameter("item");					
+					String addr = request.getParameter("addr");
+					int gRemited = Integer.parseInt(request.getParameter("gRemited"));
+					
+					
+					int insertSupport = adminservice.insertSupport(email,pCode,amount,item,addr);//Support테이블에 정보 추가
+					int updateProjectAmount = adminservice.updateProjectAmount(pCode,amount);//Project테이블에 금액 업데이트
+				
+					
+					if(gRemited > 0) {
+						//제한 숫자 1씩 감소
+					}
+					
+					return "redirect:index.do";
 				}
 }

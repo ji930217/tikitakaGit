@@ -142,6 +142,10 @@ public class AdminService {
 		
 		return admindao.category3();
 	}
+	public int category4() {
+		
+		return admindao.category4();
+	}
 
 	public int memberMonth() {
 		
@@ -177,6 +181,17 @@ public class AdminService {
 		
 		return admindao.memberDetail(email);
 	}
+
+	public int insertSupport(String email, String pCode, String amount, String item, String addr) {
+		
+		return admindao.insertSupport(email,pCode,amount,item,addr);
+	}
+
+	public int updateProjectAmount(String pCode, String amount) {
+		
+		return admindao.updateProjectAmount(pCode,amount);
+	}
+
 
 	
 
