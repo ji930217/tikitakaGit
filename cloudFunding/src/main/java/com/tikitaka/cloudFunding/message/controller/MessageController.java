@@ -40,6 +40,7 @@ public class MessageController {
 	public @ResponseBody MessageVo sendMessage2(MessageVo msg){
 		int result = msgService.insertMessage(msg);
 		MessageVo message = msgService.selectMessage(msg);
+		System.out.println(message);
 		return message;
 	}
 	
