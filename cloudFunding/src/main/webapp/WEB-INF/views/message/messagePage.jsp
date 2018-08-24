@@ -6,6 +6,7 @@
 <html lang="ko-KR"><head>
       <meta charset="utf-8">
       <title>티키타카 :: TIKITAKA</title>
+      <script type="text/javascript" src="resources/js/jquery-3.3.1.min.js"></script>
       <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=no">
       <link rel="dns-prefetch" href="https://tumblbug-assets.imgix.net">
       <link rel="dns-prefetch" href="https://tumblbug-pci2.imgix.net">
@@ -71,9 +72,90 @@
 /* sc-component-id: sc-bxivhb */
 .sc-bxivhb {}
 </style>
+<style>
+	#newMsgDiv{
+		display:none;
+	}
+</style>
 <script>
+	$(function(){
+		var prevNewMsgCnt = "<c:out value='${newMessageCount}'/>";
+		
+		timer = setInterval( function () {
+			$.ajax ({
+				url : "messagePage2.do", 
+				cache : false,
+				success : function (list) {
+					var newMsgCntSum = 0;
+					for(var key in list) {
+						newMsgCntSum += parseInt(list[key].newMessageCount);
+					}
+					
+					if(0 < newMsgCntSum && parseInt(prevNewMsgCnt) != newMsgCntSum) {
+						/* console.log("새로운 메시지가 있어요."); */
+						updateNewMessageCount(newMsgCntSum);
+						prevNewMsgCnt = parseInt(prevNewMsgCnt) + 1;
+						
+						var $messageListDiv = $("#messageListDiv");
+						var resultStr = "";
+						var userEmail = "<c:out value='${user.email}'/>s";
+						for(var key in list){
+							resultStr += "<form id='messageInfoForm' action='messageDetail.do' method='post'>";
+							resultStr += "<input type='hidden' name='projectCode' value='" + list[key].projectCode + "'/>";
+							resultStr += "<input type='hidden' name='receiverEmail' value='" + list[key].creatorEmail + "'/>";
+							resultStr += "<input type='hidden' name='writerEmail' value='" + userEmail + "'/></form>";
+							resultStr += "<div><a href='javascript:messageDetail();'>";
+							resultStr += "<div><div class='_13KHfN73YmQgsYHxXvuh_J _18bwsw29jDyAzIPXzQkoS- _18TDror949wcy2NyVIqpHo _1x1pMFvLPogKJ5cv1C3iz4'>";
+							resultStr += "<div class='_3ur7Q0Ll02gIeBh05cHYUh'><div class='_2Gh51cXm8pkKxT5ETFNCH9'><div class='_3ep5zWJoGAgVOk5mffZF0r'>";
+							resultStr += "<img alt='프로젝트 이미지' class='_13KHfN73YmQgsYHxXvuh_J _2H5AJMZT-xLtuIvR5jP8rd IHUALIalgwgMpH2DEQooZ _2aquK6B3D0GYX7zQT4_IR7' src='" + list[key].repImg + "'></div>";
+							resultStr += "<div class='_2rhtRWD8W9jAiG5KK0tShU'>";
+							resultStr += "<div class='YMfDfu-vUhehjeBwbEEPe'><b>" + list[key].title + "</b></div>";
+							resultStr += "<div class='WBJBCYr1DAtTIZsxLCJu9'><b>" + list[key].writerName + "</b></div>";
+							resultStr += "<div class='_10h99EJ9Kd6zSwnvFug3Nh _2paOVgSZRiW0glORbO6nu7'><span>" + list[key].content + "</span></div>";
+							resultStr += "</div>";
+							resultStr += "<div class='hXXWUhhdxvn5n73uPEhpJ'>";
+							resultStr += "<div class='_2neeJlPPwgtHrvFUTjDZPy'>" + list[key].sendDate + "</div>";
+							// 읽지 않은 메시지 수
+							if(0 < list[key].newMessageCount) {
+								resultStr += "<div><label class='_13KHfN73YmQgsYHxXvuh_J _1DLNFgQRrQNEosKFB0zOK5 _2rCeEoFeBzvCYn76udqnww _3C1GIkccqqGyujnub2YVhV _2BIT5x1MzYkxpZlDSFDBBf _3D9sfZXrWd8it3eUCuCTc8'>" + list[key].newMessageCount + "</label></div>";
+							}
+							resultStr += "</div>";
+							resultStr += "</div></div></div></div></a></div>";
+							
+						}
+						 $messageListDiv.html(resultStr);
+					} else {
+						/* console.log("새로운 메시지가 없어요."); */
+					}
+				}
+			});
+		}, 3000); // 3초에 한번씩 받아온다.	
+	});
+	
+	function updateNewMessageCount(newMsgCntSum){
+		$.ajax({
+			url : "updateNewMessageCount.do",
+			type : "post",
+			data :{newMsgCntSum : newMsgCntSum},
+			success : function(data){
+				/* console.log("새로운 메시지 수 업데이트 성공"); */
+			}, error : function(e){
+				console.log("새로운 메시지 수 업데이트 실패 : ", e);
+			}
+		 });
+	}
+	
 	function messageDetail(){
 		$("#messageInfoForm").submit();
+	}
+	
+	function openAllMsgDiv(){
+		$("#newMsgDiv").css("display" ,"none");
+		$("#allMsgDiv").css("display" ,"block");
+	}
+	function openNewMsgDiv(){
+		$("#allMsgDiv").css("display" ,"none");
+		$("#newMsgDiv").css("display" ,"block");
 	}
 </script>
 <body>
@@ -116,7 +198,7 @@
 												<c:set var="newMsgCntSum" value="${newMsgCntSum + msg.newMessageCount }"/>
 											</c:forEach>
 											<c:if test="${newMsgCntSum gt 0}">
-												<div>
+												<div id="newMsg">
 													<span>
 														<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1024 1024" style="fill: rgb(250, 100, 98); height: 14px; margin-top: 2px; margin-left: 5px;">
 															<path d="M510,39L510,39C251,39,41,249,41,508v0c0,259,210,469,469,469h0c259,0,469-210,469-469v0C979,249,769,39,510,39 z M755.5,679.3c0,31.6-18.2,58.9-44.6,72.1c-31.3,17.5-71.7,12.3-97.5-14.8l-178.8-204c-3.2-3.6-9.1-1.4-9.1,3.4v144.1 c0,44.5-36,80.5-80.5,80.5h0c-44.5,0-80.5-36-80.5-80.5V345.3c0-29.2,15.6-54.8,38.9-68.9c32.1-22.5,75.8-19.6,103.7,9.7 l179.3,206.5c2.8,3.3,8.2,1.3,8.2-3.1v-145c0-44.5,36-80.5,80.5-80.5h0c44.5,0,80.5,36,80.5,80.5V679.3z"></path>
@@ -141,7 +223,8 @@
 							</div>
 						</div>
 					</div>
-					<div
+					
+					<div id="allMsgDiv"
 						style="background-color: rgb(255, 255, 255); min-height: 80vh; padding-bottom: 2em;">
 						<div class="_1g2WIF4QIdPId7aJKwFnBc">
 							<br>
@@ -149,9 +232,8 @@
 								class="_13KHfN73YmQgsYHxXvuh_J _1v_4eDAvRTzbzG-r-p5V8Y _2Xkf-oIN3dW3T7P_qmRJv3 _2l8og-0FVzBM90wD-yYPWW">
 								<a
 									class="_3Syz9fGXYtzMNqK_55A2BW _3sFSjAZS4gQdCAyN3OfyFG rLqvd1axk9i-3cU72yTkF _11BMRPxXeHgQdEkjFHggzQ">
-									모든	메시지</a><a class=" rLqvd1axk9i-3cU72yTkF _11BMRPxXeHgQdEkjFHggzQ">
-									보낸	메시지</a><a class=" rLqvd1axk9i-3cU72yTkF _11BMRPxXeHgQdEkjFHggzQ">
-									안	읽은 메시지</a>
+									모든	메시지</a>
+									<a class=" rLqvd1axk9i-3cU72yTkF _11BMRPxXeHgQdEkjFHggzQ" onclick="openNewMsgDiv();">안 읽은 메시지</a>
 							</div>
 							<br>
 							
@@ -177,60 +259,92 @@
 							</c:if>
 
 							<!-- 메시지 있어요 -->
-							<c:if test="${!empty list }">
-							<c:forEach var="msg" items="${list }" varStatus="status">
-								<form id="messageInfoForm" action="messageDetail.do" method="post">
-									<input type="hidden" name="projectCode" value="<c:out value='${msg.projectCode }'/>"/>
-									<input type="hidden" name="receiverEmail" value="<c:out value='${msg.creatorEmail }'/>"/>
-									<input type="hidden" name="writerEmail" value="<c:out value='${user.email }'/>"/>
-								</form>
-								<div><a href="javascript:messageDetail();">
-									<div>
-										<div	class="_13KHfN73YmQgsYHxXvuh_J _18bwsw29jDyAzIPXzQkoS- _18TDror949wcy2NyVIqpHo _1x1pMFvLPogKJ5cv1C3iz4">
-											<div class="_3ur7Q0Ll02gIeBh05cHYUh">
-												<div class="_2Gh51cXm8pkKxT5ETFNCH9">
-													<div class="_3ep5zWJoGAgVOk5mffZF0r">
-														<img alt="프로젝트 이미지"
-															class="_13KHfN73YmQgsYHxXvuh_J _2H5AJMZT-xLtuIvR5jP8rd IHUALIalgwgMpH2DEQooZ _2aquK6B3D0GYX7zQT4_IR7"
-															src="<c:out value='${msg.repImg }'/>">
-													</div>
-													<div class="_2rhtRWD8W9jAiG5KK0tShU">
-														<div class="YMfDfu-vUhehjeBwbEEPe">
-															<b><c:out value='${msg.title }'/></b>
+							<div id="messageListDiv">
+								<c:if test="${!empty list }">
+								<c:forEach var="msg" items="${list }" varStatus="status">
+									<form id="messageInfoForm" action="messageDetail.do" method="post">
+										<input type="hidden" name="projectCode" value="<c:out value='${msg.projectCode }'/>"/>
+										<input type="hidden" name="receiverEmail" value="<c:out value='${msg.creatorEmail }'/>"/>
+										<input type="hidden" name="writerEmail" value="<c:out value='${user.email }'/>"/>
+									</form>
+									<div><a href="javascript:messageDetail();">
+										<div>
+											<div	class="_13KHfN73YmQgsYHxXvuh_J _18bwsw29jDyAzIPXzQkoS- _18TDror949wcy2NyVIqpHo _1x1pMFvLPogKJ5cv1C3iz4">
+												<div class="_3ur7Q0Ll02gIeBh05cHYUh">
+													<div class="_2Gh51cXm8pkKxT5ETFNCH9">
+														<div class="_3ep5zWJoGAgVOk5mffZF0r">
+															<img alt="프로젝트 이미지"
+																class="_13KHfN73YmQgsYHxXvuh_J _2H5AJMZT-xLtuIvR5jP8rd IHUALIalgwgMpH2DEQooZ _2aquK6B3D0GYX7zQT4_IR7"
+																src="<c:out value='${msg.repImg }'/>">
 														</div>
-														<div class="WBJBCYr1DAtTIZsxLCJu9">
-															<b><c:out value='${msg.writerName }'/></b>
-														</div>
-														<div	class="_10h99EJ9Kd6zSwnvFug3Nh _2paOVgSZRiW0glORbO6nu7">
-															<span><c:out value='${msg.content }'/></span>
-														</div>
-													</div>
-													<div class="hXXWUhhdxvn5n73uPEhpJ">
-														<div class="_2neeJlPPwgtHrvFUTjDZPy">
-															<c:out value="${msg.sendDate }"/>
-															<%-- <fmt:formatDate type="both" value="${msg.sendDate }"/> --%>
-														</div>
-														<!-- 읽지 않은 메시지 수 출력 -->
-														<c:if test="${msg.newMessageCount gt 0 }">
-															<div>
-																<label class="_13KHfN73YmQgsYHxXvuh_J _1DLNFgQRrQNEosKFB0zOK5 _2rCeEoFeBzvCYn76udqnww _3C1GIkccqqGyujnub2YVhV _2BIT5x1MzYkxpZlDSFDBBf _3D9sfZXrWd8it3eUCuCTc8">
-																	<c:out value="${msg.newMessageCount }"/>
-																</label>
+														<div class="_2rhtRWD8W9jAiG5KK0tShU">
+															<div class="YMfDfu-vUhehjeBwbEEPe">
+																<b><c:out value='${msg.title }'/></b>
 															</div>
-														</c:if>
+															<div class="WBJBCYr1DAtTIZsxLCJu9">
+																<b><c:out value='${msg.writerName }'/></b>
+															</div>
+															<div	class="_10h99EJ9Kd6zSwnvFug3Nh _2paOVgSZRiW0glORbO6nu7">
+																<span><c:out value='${msg.content }'/></span>
+															</div>
+														</div>
+														<div class="hXXWUhhdxvn5n73uPEhpJ">
+															<div class="_2neeJlPPwgtHrvFUTjDZPy">
+																<c:out value="${msg.sendDate }"/>
+																<%-- <fmt:formatDate type="both" value="${msg.sendDate }"/> --%>
+															</div>
+															<!-- 읽지 않은 메시지 수 출력 -->
+															<c:if test="${msg.newMessageCount gt 0 }">
+																<div>
+																	<label class="_13KHfN73YmQgsYHxXvuh_J _1DLNFgQRrQNEosKFB0zOK5 _2rCeEoFeBzvCYn76udqnww _3C1GIkccqqGyujnub2YVhV _2BIT5x1MzYkxpZlDSFDBBf _3D9sfZXrWd8it3eUCuCTc8">
+																		<c:out value="${msg.newMessageCount }"/>
+																	</label>
+																</div>
+															</c:if>
+														</div>
 													</div>
 												</div>
 											</div>
 										</div>
-									</div>
-								</a>
-							</div>
-						</c:forEach>
-					</c:if>
-							
+									</a>
+								</div>
+							</c:forEach>
+						</c:if>
+					</div>		
 					
 						</div>
 					</div>
+
+					<!-- 안 읽은 메시지 -->
+					<div  id="newMsgDiv"   style="background-color: rgb(255, 255, 255); min-height: 80vh; padding-bottom: 2em;">
+					<div class="_1g2WIF4QIdPId7aJKwFnBc" >
+						<br>
+						<div
+							class="_13KHfN73YmQgsYHxXvuh_J _1v_4eDAvRTzbzG-r-p5V8Y _2Xkf-oIN3dW3T7P_qmRJv3 _2l8og-0FVzBM90wD-yYPWW">
+							<a class=" rLqvd1axk9i-3cU72yTkF _11BMRPxXeHgQdEkjFHggzQ" onclick="openAllMsgDiv();">모든
+								메시지</a>
+								<a
+								class="_3Syz9fGXYtzMNqK_55A2BW _3sFSjAZS4gQdCAyN3OfyFG rLqvd1axk9i-3cU72yTkF _11BMRPxXeHgQdEkjFHggzQ">안
+								읽은 메시지</a>
+						</div>
+						<br>
+						<div
+							style="vertical-align: middle; padding-top: 5em; padding-bottom: 5em;">
+							<div
+								class="_13KHfN73YmQgsYHxXvuh_J _1Qdv504-1XMeYXZyb0xQZT _2mDWoxwh1QMJyLM49w7kMZ _3G8CRXtomRhisiZsw7Spx- _1WARcEqqT_Pem8leg2dkMj">
+								<div>
+									<i
+										class="_3Hs9Qa2HoKTK0Bt1LDlMh_ _3RAU_1dXrlkkPhtkKyXSVj _3fJsfvAPykJzj2xoMnxzWW _3YmAkQhwzI7o-uUWz_8Mp4 _1QY7TzdLHKX3-BKPDNNYKF"></i>
+									<h3 class="_13KHfN73YmQgsYHxXvuh_J -UobvSeyUG6cEWYnht50S"
+										style="color: rgb(167, 167, 167); margin-bottom: 0.5rem;">새로운
+										메시지가 없습니다</h3>
+									<div></div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+
 				</div>
 				<div>
 					<div class="_2B-C4wvxoc0cdy7sNleiCg">

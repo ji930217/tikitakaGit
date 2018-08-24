@@ -310,10 +310,23 @@
 						<b><c:out value="${supportedCount }"/></b>
 					</div>
 					<div class="CreatorCard__CreatorContactButton-yeytpy-6 khYIRi">
-						<button class="Button__Button-s1ng5xda-0 dxWcyc" onclick="openMessagePopup();">
-							<i class="_3YmAkQhwzI7o-uUWz_8Mp4 _1QY7TzdLHKX3-BKPDNNYKF"></i>
-							창작자에게 문의하기
-						</button>
+						<c:if test="${empty user }">
+							<button class="Button__Button-s1ng5xda-0 dxWcyc" onclick="javascript:location.href='loginPage.do'">
+								로그인 하러 가기
+							</button>
+						</c:if>
+						<c:if test="${!empty user && project.email eq user.email }">
+							<button class="Button__Button-s1ng5xda-0 dxWcyc" onclick="javascript:location.href='messagePage.do'">
+								<i class="_3YmAkQhwzI7o-uUWz_8Mp4 _1QY7TzdLHKX3-BKPDNNYKF"></i>
+								후원자 문의 사항 확인
+							</button>
+						</c:if>
+						<c:if test="${!empty user && project.email ne user.email }">
+							<button class="Button__Button-s1ng5xda-0 dxWcyc" onclick="openMessagePopup();">
+								<i class="_3YmAkQhwzI7o-uUWz_8Mp4 _1QY7TzdLHKX3-BKPDNNYKF"></i>
+								창작자에게 문의하기
+							</button>
+						</c:if>
 					</div>
 				</div>
 			</div>

@@ -77,6 +77,7 @@
 </style>    
 <script>
 	$(function(){
+
 		$("#msgContent").on('input selectionchange propertychange', function() {
 			if($("#msgContent").val().length > 0) {
 				$("#sendMessageBtn").attr("disabled", false);
@@ -251,10 +252,6 @@
 							<div class="_13KHfN73YmQgsYHxXvuh_J _4S0ikJ5kL9iaC8TQbNr2J"></div>
 							<div class="_13KHfN73YmQgsYHxXvuh_J _30LNYFhw6qsigZSbwlGCDz">
 								<div class="_13KHfN73YmQgsYHxXvuh_J _1ggkGstXrq0PLg7EvKtqBj _3U6RUH-EASpZ_j8ls1HJyP">
-									<%-- <input type="hidden" name="projectCode" value="<c:out value='${list[0].projectCode }'/>"/>
-									<input type="hidden" name="receiverEmail" value="<c:out value='${list[0].creatorEmail }'/>"/>
-									<input type="hidden" name="writerEmail" value="<c:out value='${user.email }'/>"/>
-									<input type="hidden" name="messageKinds" value="<c:out value='${list[0].messageKinds }'/>"/> --%>
 								 
 									<div	class="_13KHfN73YmQgsYHxXvuh_J _3nB1fZxEqXMiqXF-c7b1XQ _18bwsw29jDyAzIPXzQkoS-  _3_IGkn3uaje0g2ZA6Tx9wd">
 										<textarea id="msgContent" name="content" placeholder="하고 싶은 말을 여기에 적어주세요" rows="4"></textarea>
