@@ -66,6 +66,17 @@ public class MessageController {
 		return list;
 	}
 	
+	@RequestMapping("checkMessageCount.do")
+	public @ResponseBody boolean checkMessageCount(HttpSession session){
+		boolean result = false;
+		Member user = (Member) session.getAttribute("user");
+		int newMessageCount = msgService.selectNewMessageCount(user.getEmail());
+		if(0 < newMessageCount){
+			result = true;
+		}
+		return result;
+	}
+	
 	@RequestMapping("updateNewMessageCount.do")
 	public String updateNewMessageCount(int newMsgCntSum, HttpSession session){
 		session.setAttribute("newMessageCount", newMsgCntSum);

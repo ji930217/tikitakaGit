@@ -129,7 +129,7 @@
 					}
 				}
 			});
-		}, 3000); // 3초에 한번씩 받아온다.	
+		}, 5000); // 3초에 한번씩 받아온다.	
 	});
 	
 	function updateNewMessageCount(newMsgCntSum){

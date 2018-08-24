@@ -1099,6 +1099,27 @@ data-react-helmet="true"><meta name="twitter:title" content="텀블벅 tumblbug"
 			location.href="searchProjectByCategory.do?category=" + category;
 		});
 		
+		var user = "<c:out value='${user}'/>";
+		timer = setInterval( function () {
+			if(null != user){
+				$.ajax ({
+					url : "checkMessageCount.do", 
+					cache : false,
+					success : function (flag) {
+						if(flag) {
+							/* console.log("새로운 메시지가 있어요."); */
+							$("#msgNotify").css("display", "block");
+							$("#msgNotifyText").css("display", "block");
+						} else {
+							/* console.log("새로운 메시지가 없어요."); */
+							$("#msgNotify").css("display", "none");
+							$("#msgNotifyText").css("display", "none");
+						}
+					}
+				});
+			}
+		}, 5000); // 5초에 한번씩 받아온다.	
+		
 	});
 	
 	function closeSearchTab(){
@@ -1212,11 +1233,9 @@ data-react-helmet="true"><meta name="twitter:title" content="텀블벅 tumblbug"
 								
 								
 								<!-- 새로운 메시지를 받을 경우 나타나는 영역 -->
-								<c:if test="${newMessageCount gt 0 }">
-									<div class="SiteHeader__SiteHeaderAlert-s1s56ls8-11 xfBEx">
+									<div id="msgNotify" class="SiteHeader__SiteHeaderAlert-s1s56ls8-11 xfBEx" style="display:none;">
 										<div class="SiteHeader__RedPoint-s1s56ls8-12 gXPwyp"></div>
 									</div>
-								</c:if>
 						</span>
 						</a>
 						
@@ -1763,9 +1782,7 @@ data-react-helmet="true"><meta name="twitter:title" content="텀블벅 tumblbug"
 							<button onclick="javascript:location.href='messagePage.do'" style="border:0; outline:0;background:white">
 									<span class="MenuItem__MenuItemTitle-no2u3j-1 enzRKc">메시지</span>
 									<!-- 새로운 메시지 있을 때만 출력 -->
-									<c:if test="${newMessageCount gt 0 }">
-										<span class="MyPage__MenuItemAlert-s1rrrcge-2 iMZfBk">새 메시지</span>
-									</c:if>
+									<span id="msgNotifyText" class="MyPage__MenuItemAlert-s1rrrcge-2 iMZfBk" style="display:none;">새 메시지</span>
 							</button>
 						</div>
 					
