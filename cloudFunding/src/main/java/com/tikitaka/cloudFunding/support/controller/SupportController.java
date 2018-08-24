@@ -20,7 +20,7 @@ public class SupportController {
 	@Autowired
 	SupportService supportService;
 	
-	@RequestMapping("payment.do")
+	@RequestMapping("selectpayment.do")
 	public ModelAndView payment(ModelAndView mv,int projectCode){
 		ProjectVo project = projectService.selectProjectGift(projectCode);
 		mv.addObject("project", project);
@@ -28,8 +28,31 @@ public class SupportController {
 		return mv;
 	}
 	@RequestMapping("payment_address.do")
-	public String projectStart(){
-		return "project/payment/payment_address";
+	public ModelAndView payment_address(ModelAndView mv,int gCode, String inputVal){
+		ProjectVo projectG = supportService.selectOneProjectGift(gCode);
+		System.out.println(projectG);
+		System.out.println(inputVal);
+		mv.addObject("projectG", projectG);
+		mv.addObject("inputVal", inputVal);		
+		mv.setViewName ("project/payment/payment_address");
+		return mv;
+	}
+	
+	@RequestMapping("paymentPage.do")
+	public ModelAndView paymentPage(ModelAndView mv,int projectCode,String address,int inputVal,String projectTitle,String item,int price){
+		mv.addObject("price", price);
+		mv.addObject("projectCode",projectCode);
+		mv.addObject("address",address);
+		mv.addObject("inputVal",inputVal);
+		mv.addObject("projectTitle",projectTitle);
+		mv.addObject("item",item);
+		mv.setViewName("project/payment/paymentPage");
+		 return mv;
+	}
+	
+	@RequestMapping("paymentSuccess.do")
+	public String paymentSuccess(){
+		return "project/payment/paymentSuccess";
 	}
 }
 

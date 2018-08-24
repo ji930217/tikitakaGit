@@ -227,6 +227,7 @@
 		$(".loadingIndicator").css("display", "none");  
 		$(".dLYLGx").css("margin", "unset");  
 		/* $("#storyDiv").css("display", "flex");   */
+		$(".ceunQL").css("display", "block");
 	});
 	
 	var page = sessionStorage.getItem("page");

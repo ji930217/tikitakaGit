@@ -1,6 +1,10 @@
+
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %> 
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+
+<!DOCTYPE html>
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
@@ -13,8 +17,8 @@
 
 
 
-
 <body >
+
 	<div data-react-class="PledgeForm"
 		data-react-props="{&quot;creatorName&quot;:&quot;Parana&quot;,&quot;projectUuid&quot;:&quot;1d5bc695-a766-40e8-aca2-ceee4021b1b2&quot;,&quot;projectCategoryName&quot;:&quot;일러스트레이션&quot;,&quot;projectPermalink&quot;:&quot;mermaidtravelessay&quot;,&quot;projectTitle&quot;:&quot;인어도감 연재작 '인어기행문' 제 3권&quot;,&quot;projectEndDate&quot;:&quot;2018-08-29T23:59:59+09:00&quot;,&quot;rewards&quot;:[{&quot;id&quot;:111170729,&quot;addressNeeded&quot;:true,&quot;description&quot;:&quot;배송비 포함&quot;,&quot;money&quot;:5000,&quot;limit&quot;:null,&quot;backersCount&quot;:2,&quot;delivered&quot;:false,&quot;expectedDeliveryDate&quot;:&quot;2018-09-12T00:00:00+09:00&quot;,&quot;deliveredAt&quot;:null,&quot;isForAdultOnly&quot;:false,&quot;uuid&quot;:&quot;5dbd5c29-8a23-4aa7-b2fd-deed578059f1&quot;,&quot;items&quot;:[{&quot;id&quot;:&quot;27006401-4a84-4ca0-9d2b-a427f265887c&quot;,&quot;title&quot;:&quot;인어기행3 엽서 세트&quot;,&quot;quantity&quot;:1}]},{&quot;id&quot;:111170730,&quot;addressNeeded&quot;:true,&quot;description&quot;:&quot;배송비 포함&quot;,&quot;money&quot;:15000,&quot;limit&quot;:null,&quot;backersCount&quot;:42,&quot;delivered&quot;:false,&quot;expectedDeliveryDate&quot;:&quot;2018-09-12T00:00:00+09:00&quot;,&quot;deliveredAt&quot;:null,&quot;isForAdultOnly&quot;:false,&quot;uuid&quot;:&quot;8dc32496-a1c9-44c1-8377-5cd391a13fa0&quot;,&quot;items&quot;:[{&quot;id&quot;:&quot;7f2d80c0-3d20-429f-8a9b-6cc626c29952&quot;,&quot;title&quot;:&quot;인어기행문 3&quot;,&quot;quantity&quot;:1},{&quot;id&quot;:&quot;27006401-4a84-4ca0-9d2b-a427f265887c&quot;,&quot;title&quot;:&quot;인어기행3 엽서 세트&quot;,&quot;quantity&quot;:1}]},{&quot;id&quot;:111170731,&quot;addressNeeded&quot;:true,&quot;description&quot;:&quot;배송비 포함&quot;,&quot;money&quot;:35000,&quot;limit&quot;:null,&quot;backersCount&quot;:595,&quot;delivered&quot;:false,&quot;expectedDeliveryDate&quot;:&quot;2018-09-12T00:00:00+09:00&quot;,&quot;deliveredAt&quot;:null,&quot;isForAdultOnly&quot;:false,&quot;uuid&quot;:&quot;82982b7e-f53b-431c-8ad1-b266ed32a67d&quot;,&quot;items&quot;:[{&quot;id&quot;:&quot;1e6cef2d-ff3f-44aa-995d-d36f2fab94ef&quot;,&quot;title&quot;:&quot;인어기행문1-3 세트&quot;,&quot;quantity&quot;:1},{&quot;id&quot;:&quot;78bd540c-42e5-40bd-9df4-11b3b24a8a91&quot;,&quot;title&quot;:&quot;인어기행1-3 엽서 세트&quot;,&quot;quantity&quot;:1}]},{&quot;id&quot;:111170733,&quot;addressNeeded&quot;:true,&quot;description&quot;:&quot;얼리버드, 배송비 포함&quot;,&quot;money&quot;:57000,&quot;limit&quot;:5,&quot;backersCount&quot;:5,&quot;delivered&quot;:false,&quot;expectedDeliveryDate&quot;:&quot;2018-09-12T00:00:00+09:00&quot;,&quot;deliveredAt&quot;:null,&quot;isForAdultOnly&quot;:false,&quot;uuid&quot;:&quot;063f5162-b1dc-4e51-9e47-9f7fecbf8349&quot;,&quot;items&quot;:[{&quot;id&quot;:&quot;9353b92d-9d1f-4dbc-a80d-0087678f3077&quot;,&quot;title&quot;:&quot;인어기행문 上&quot;,&quot;quantity&quot;:1},{&quot;id&quot;:&quot;78bd540c-42e5-40bd-9df4-11b3b24a8a91&quot;,&quot;title&quot;:&quot;인어기행1-3 엽서 세트&quot;,&quot;quantity&quot;:1},{&quot;id&quot;:&quot;e4968664-119f-45ed-9c02-1117a6db206f&quot;,&quot;title&quot;:&quot;인어기행3 미니 카드&quot;,&quot;quantity&quot;:1}]},{&quot;id&quot;:111170732,&quot;addressNeeded&quot;:true,&quot;description&quot;:&quot;배송비 포함&quot;,&quot;money&quot;:60000,&quot;limit&quot;:10,&quot;backersCount&quot;:9,&quot;delivered&quot;:false,&quot;expectedDeliveryDate&quot;:&quot;2018-09-12T00:00:00+09:00&quot;,&quot;deliveredAt&quot;:null,&quot;isForAdultOnly&quot;:false,&quot;uuid&quot;:&quot;ac18ffd1-553e-43b7-ae7d-cf7daa83b032&quot;,&quot;items&quot;:[{&quot;id&quot;:&quot;9353b92d-9d1f-4dbc-a80d-0087678f3077&quot;,&quot;title&quot;:&quot;인어기행문 上&quot;,&quot;quantity&quot;:1},{&quot;id&quot;:&quot;78bd540c-42e5-40bd-9df4-11b3b24a8a91&quot;,&quot;title&quot;:&quot;인어기행1-3 엽서 세트&quot;,&quot;quantity&quot;:1},{&quot;id&quot;:&quot;e4968664-119f-45ed-9c02-1117a6db206f&quot;,&quot;title&quot;:&quot;인어기행3 미니 카드&quot;,&quot;quantity&quot;:1}]},{&quot;id&quot;:111174916,&quot;addressNeeded&quot;:true,&quot;description&quot;:&quot;배송비 포함, 추가 선착&quot;,&quot;money&quot;:60000,&quot;limit&quot;:35,&quot;backersCount&quot;:35,&quot;delivered&quot;:false,&quot;expectedDeliveryDate&quot;:&quot;2018-09-28T00:00:00+09:00&quot;,&quot;deliveredAt&quot;:null,&quot;isForAdultOnly&quot;:false,&quot;uuid&quot;:&quot;51dff74b-26ec-4db9-a939-c8f5cfa9131d&quot;,&quot;items&quot;:[{&quot;id&quot;:&quot;9353b92d-9d1f-4dbc-a80d-0087678f3077&quot;,&quot;title&quot;:&quot;인어기행문 上&quot;,&quot;quantity&quot;:1},{&quot;id&quot;:&quot;78bd540c-42e5-40bd-9df4-11b3b24a8a91&quot;,&quot;title&quot;:&quot;인어기행1-3 엽서 세트&quot;,&quot;quantity&quot;:1},{&quot;id&quot;:&quot;e4968664-119f-45ed-9c02-1117a6db206f&quot;,&quot;title&quot;:&quot;인어기행3 미니 카드&quot;,&quot;quantity&quot;:1}]}],&quot;initialPledgeAmount&quot;:null,&quot;initialLastPaymentMethodNumbers&quot;:&quot;7450&quot;,&quot;initialBankName&quot;:&quot;신한은행&quot;,&quot;initialPaymentType&quot;:1,&quot;initialIsLoggedIn&quot;:true,&quot;initialIsAdult&quot;:false,&quot;initialPhoneNumber&quot;:&quot;01022564303&quot;,&quot;initialPreviousAddresses&quot;:[{&quot;id&quot;:488307,&quot;streetAddress&quot;:&quot;서울특별시 용산구 대사관로24가길 28 () 2층(꼭대기층)&quot;,&quot;areaCodeAddress&quot;:&quot;서울특별시 용산구 한남동 647-47 2층(꼭대기층)&quot;,&quot;zipcode&quot;:&quot;04402&quot;,&quot;oldZipcode&quot;:&quot;140887&quot;,&quot;recipientName&quot;:&quot;김가영&quot;}],&quot;initialSelectedRewardId&quot;:null}">
 		<div class="pledge-container" data-reactid=".29cqz21lmv4"
@@ -25,12 +29,14 @@
 			<div class="b-header__content" data-reactid=".29cqz21lmv4.0.1">
 				<div class="b-header__content-item"
 					data-reactid=".29cqz21lmv4.0.1.0">
+
 					<h1 class="b-header__headline" data-reactid=".29cqz21lmv4.0.1.0.0">
-						<span data-reactid=".29cqz21lmv4.0.1.0.0.0">인어도감 연재작
-							'인어기행문' 제 3권</span><span data-reactid=".29cqz21lmv4.0.1.0.0.1"> </span><span
+						<span data-reactid=".29cqz21lmv4.0.1.0.0.0"> ${projectG.title}</span>
+						<span data-reactid=".29cqz21lmv4.0.1.0.0.1"> </span><span
 							class="for-screenreader" data-reactid=".29cqz21lmv4.0.1.0.0.2">프로젝트
 							밀어주기</span>
 					</h1>
+					
 					<ul class="b-list b-list_pledge-history"
 						data-reactid=".29cqz21lmv4.0.1.0.1">
 						<li class="b-list__item" data-reactid=".29cqz21lmv4.0.1.0.1.0"><span
@@ -38,8 +44,8 @@
 							class="b-list__link" data-reactid=".29cqz21lmv4.0.1.0.1.0.1"><small
 								data-reactid=".29cqz21lmv4.0.1.0.1.0.1.0">선택한 선물</small><br
 								data-reactid=".29cqz21lmv4.0.1.0.1.0.1.1"> <span
-								data-reactid=".29cqz21lmv4.0.1.0.1.0.1.2">15,000원 선물 /
-									15,000원 후원</span></a></li>
+								data-reactid=".29cqz21lmv4.0.1.0.1.0.1.2"><fmt:formatNumber value="${projectG.giftArry[0].price}" pattern="#,###,###"/>원 선물 /
+									<fmt:formatNumber value="${inputVal}" pattern="#,###,###"/>원 후원</span></a></li>
 					</ul>
 				</div>
 			</div>
@@ -54,7 +60,7 @@
 						data-reactid=".29cqz21lmv4.1.1.0.0">
 						<h3 class="b-menu__title" data-reactid=".29cqz21lmv4.1.1.0.0.0">배송
 							받을 주소를 선택해주세요</h3>
-						<form class="b-form b-form_theme_modern b-form_animate_enterance"
+						<div class="b-form b-form_theme_modern b-form_animate_enterance"
 							data-reactid=".56fq3y1urk.1.1.0">
 							<div class="b-form__row" data-reactid=".56fq3y1urk.1.1.0.0">
 								<div class="b-form__input-group"
@@ -95,10 +101,10 @@
 							data-reactid=".29cqz21lmv4.1.1.0.2.0">
 							<input class="b-button b-button_fill b-button_primary"
 								value="밀어주기" type="submit"
-								data-reactid=".29cqz21lmv4.1.1.0.2.0.0">
+								data-reactid=".29cqz21lmv4.1.1.0.2.0.0" onclick = "paymentPage();">
 						</div>
 					</div>
-				</form>
+				</div>
 			</div>
 			</section>
 		</div>
@@ -149,6 +155,21 @@
 					}
 				}).open();
 	}
+</script>
+<script>
+function paymentPage(){
+	var name= document.getElementById('recipient_name').value;
+	var firstAddresss= document.getElementById('selected_address').value;
+	var detailAddress= document.getElementById('remaining_address').value;
+	var fullAdd= name + "," +firstAddresss+ "," + detailAddress;
+	
+	var item = '${projectG.giftArry[0].item}';
+	var title = '${projectG.title}';
+	
+	location.href="paymentPage.do?projectCode="+${projectG.projectCode}+"&address="+fullAdd+"&inputVal="+${inputVal}+"&projectTitle="+title+"&item="+item+"&price="
+					+${projectG.giftArry[0].price};
+}
+
 </script>
 	<!-- <div id="fb-root" class=" fb_reset">
 		<div

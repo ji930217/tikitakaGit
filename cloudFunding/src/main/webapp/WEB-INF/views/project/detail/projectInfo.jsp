@@ -280,6 +280,48 @@
 	    text-align: center;
 	    text-decoration: none;
 	}
+	.hJStHI {
+	    padding: 1.2em 2em;
+	    font-size: 1em;
+	    width: 100%;
+	    padding: .8em 1.2em;
+	    font-size: .95em;
+	    opacity: .3;
+	    pointer-events: none;
+	}
+	.hJStHI {
+	    background-color: #fa6462;
+	    color: #fff;
+	}
+	.hJStHI {
+	    color: rgba(0, 0, 0, .6);
+	    background-color: #e7e7e7;
+	}
+	.hJStHI {
+	    cursor: pointer;
+	    display: inline-block;
+	    min-height: 1em;
+	    outline: none;
+	    border: none;
+	    vertical-align: baseline;
+	    box-shadow: 0px 0px 0px 1px transparent inset, 0px 0em 0px 0px rgba(0, 0, 0, 0.1) inset;
+	    -webkit-user-select: none;
+	    -moz-user-select: none;
+	    -ms-user-select: none;
+	    user-select: none;
+	    -webkit-transition: opacity 0.1s ease,  background-color 0.1s ease,  color 0.1s ease,  box-shadow 0.1s ease, background 0.1s ease;
+	    transition: opacity 0.1s ease,  background-color 0.1s ease,  color 0.1s ease,  box-shadow 0.1s ease, background 0.1s ease;
+	    -webkit-tap-highlight-color: transparent;
+	    margin: 0 .25em 0 0;
+	    border-radius: 0.28571429rem;
+	    text-transform: none;
+	    text-shadow: none;
+	    font-weight: bold;
+	    line-height: 1em;
+	    font-style: normal;
+	    text-align: center;
+	    text-decoration: none;
+	}
 	
 	
 </style>
@@ -489,12 +531,23 @@
 					</a>
 					<a id="policyFixedBtn" class="ContentsNavigation__NavItem-s6dhfrc-0 gEWplf">환불 및 교환</a>
 				</div>
-				<div class="ContentsNavigation__NavRight-s6dhfrc-4 eAgLGx">
-					<button class="Button__Button-s1ng5xda-0 jKslKa">프로젝트 밀어주기</button>
-				</div>
+				<jsp:useBean id="now" class="java.util.Date" />
+				<c:set var="DateData" value="${project.endDate }"/>
+				<fmt:parseNumber var="remain" value="${( DateData.time-now.time ) / (1000*60*60*24) }" integerOnly="true" />
+				<c:if test="${remain lt 1 }">
+					<div class="ContentsNavigation__NavRight-s6dhfrc-4 eAgLGx">
+						<button class="Button__Button-s1ng5xda-0 hJStHI" disabled>밀어주기가 마감되었습니다</button>
+					</div>
+				</c:if>
+				<c:if test="${remain gt 0 }">
+					<div class="ContentsNavigation__NavRight-s6dhfrc-4 eAgLGx">
+						<button class="Button__Button-s1ng5xda-0 jKslKa">프로젝트 밀어주기</button>
+					</div>
+				</c:if>
 			</div>
 		</nav>
 	</div>
+	
 	<div class="ContentsNavigation__FixedBar-s6dhfrc-5 cHpUtP show-on-scroll">
 		<button class="Button__Button-s1ng5xda-0 bIabCF">프로젝트 밀어주기</button>
 	</div>
@@ -618,9 +671,6 @@
 								남은시간
 							</div>
 							<div	class="ProjectIntroduction__StatusValue-c7b94s-16 bvKOwU"  data-reactid="66">
-								<jsp:useBean id="now" class="java.util.Date" />
-								<c:set var="DateData" value="${project.endDate }"/>
-								<fmt:parseNumber var="remain" value="${( DateData.time-now.time ) / (1000*60*60*24) }" integerOnly="true" />
 								<c:if test="${remain lt 0 }">
 									<c:set var="remain" value="0"/>
 								</c:if>

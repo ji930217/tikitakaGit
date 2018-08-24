@@ -1,6 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %> 
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
@@ -1008,7 +1009,6 @@ transform
 	<!-- 지불정보 입력 여부 검사  -->
 
 	
-	<c:if test="${!empty sessionScope.user}">
 	<div class="pledge-container" data-reactid=".1g9fv33241s"
 		data-react-checksum="1979810033">
 		<header class="b-header b-header_pledge" data-reactid=".1g9fv33241s.0">
@@ -1067,16 +1067,11 @@ transform
 					data-reactid=".1g9fv33241s.1.0.0.3">
 				<h1 class="for-screenreader" data-reactid=".1g9fv33241s.1.0.0.3.0">친구에게
 					알리기</h1>
-					<a class="b-menu__item b-menu__item_kakao">카카오톡에 알리기</a>
-				<a class="b-menu__item b-menu__item_facebook">페이스북에 알리기</a> <a
-					class="b-menu__item b-menu__item_twitter">트위터에 알리기</a> <a
-					class="b-menu__item b-menu__item_pledges" href="">내 후원현황
-					보기</a> <a class="b-menu__item b-menu__item_home"
-					href="index.do">메인으로 가기</a></section>
+					<a class="b-menu__item b-menu__item_home"
+					href="index.do" style="background-color:#fa6462 ; color: white">메인으로 가기</a></section>
 			</div>
 		</div>
 		</section>
 	</div>
-	</c:if>
 </body>
 </html>
