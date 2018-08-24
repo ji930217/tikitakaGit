@@ -30,7 +30,12 @@
   
    <update id="updateMemberProfile" parameterType="Member">
    		UPDATE  MEMBER SET
-		  NAME = #{name}, PASSWORD = #{password}, PROFILE_IMG = #{profile_img},
+		  NAME = #{name}, PASSWORD = #{password}, 
+		  
+		  <if test = "profile_img != null">
+		  	PROFILE_IMG = #{profile_img},
+		  </if>
+		  
 		  LOCATION = #{location},
 		  SHORTDESCRIPTION = #{shortDescription},
 		  HOMEPAGE = #{homepage},

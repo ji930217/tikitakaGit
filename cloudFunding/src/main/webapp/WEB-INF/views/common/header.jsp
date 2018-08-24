@@ -1429,7 +1429,7 @@
 							class="MenuItem__MenuItem-no2u3j-0 cwYjsy">
 							<span class="MenuItem__MenuItemTitle-no2u3j-1 enzRKc">지불
 								정보 설정</span>
-						</div></a><a href="/logout"><div
+						</div></a><a href="logout.do"><div
 							class="MenuItem__MenuItem-no2u3j-0 cwYjsy">
 							<span class="MenuItem__MenuItemTitle-no2u3j-1 enzRKc">로그아웃</span>
 						</div></a>
