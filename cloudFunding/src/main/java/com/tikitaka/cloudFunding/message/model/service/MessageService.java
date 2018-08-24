@@ -40,37 +40,10 @@ public class MessageService {
 		return msgDao.selectMessage(msg);
 	}
 
-	/*public List<PostVo> selectPostList(int projectCode) {
-		return cDao.selectPostList(projectCode);
+	public List<MessageVo> selectNewMessageList(String email) {
+		return msgDao.selectNewMessageList(email);
 	}
 
-	public int selectPostCount(int projectCode) {
-		return cDao.selectPostCount(projectCode);
-	}
-
-	public PostVo selectPost(int postCode) {
-		return cDao.selectPost(postCode);
-	}
-
-	public int insertPost(PostVo post) {
-		return cDao.insertPost(post);
-	}
-
-	public int updatePost(PostVo post) {
-		return cDao.updatePost(post);
-	}
-
-	public int deletePost(int postCode) {
-		return cDao.deletePost(postCode);
-	}
-
-	public int insertReply(ReplyVo reply) {
-		return cDao.insertReply(reply);
-	}
-
-	public int deleteReply(int replyCode) {
-		return cDao.deleteReply(replyCode);
-	}*/
 
 	
 	

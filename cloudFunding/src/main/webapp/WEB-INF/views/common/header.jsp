@@ -47,27 +47,6 @@ content="tumblbug"><meta data-react-helmet="true" name="twitter:creator" content
       <script type="text/javascript" async="" src="https://www.google-analytics.com/analytics.js"></script><script type="text/javascript" async="" 
 
 src="https://cdn.astronomer.io/analytics.js/v1/jMrtLL6v6xXmMGP7h/analytics.min.js"></script><script type="application/javascript">
-        window.MOBX_STATE = {"app":{"ssrLocation":"/pledges"},"currentUser":{"isLoading":false,"isLoaded":true,"id":750880,"uuid":"3595a029-240c-4ed3-ba5e-
-
-ca84dab39b41","fullname":"새로","userPermalink":"domoyozudupinedo","avatarUrl":"https://tumblbug-upi.imgix.net/defaults/avatar_0.png?ixlib=rb-1.1.0&w=200&h=250&auto=format%2Ccompress&fit=facearea&facepad=2.0&ch=Save-
-
-Data&mask=ellipse&s=87ba671c98b3debfae8ac85d36d0e7b4","email":"jungin2ya@naver.com","isCreator":true,"isAdmin":false},"pledgeStore":{"apiEndpoint":"/api/v1/pledges.json?
-
-fields=id,createdAt,amount,isSurveyRequested,isSurveyResponded,paymentStatus&project=title,coverImageUrl,creatorName,fundingStatus&reward=description,items&&coverImageUrl[h]=240&coverImageUrl[w]=320&coverImageUrl[fit]
-
-=crop","isLoading":false,"isLoaded":false,"pledges":[],"pledgesCount":{},"currentPage":1,"filterType":"all","isPledgeDataLoading":false,"isMetaDataLoaded":false,"isPledgeDetailsDataLoading":true},"surveyStore":
-
-{"apiEndpoint":"/api/v1/pledges.json?
-
-fields=id,createdAt,amount,isSurveyRequested,isSurveyResponded,paymentStatus&project=title,coverImageUrl,creatorName,fundingStatus&reward=description,items&filter=surveyResponseNeeded&coverImageUrl[h]=240&coverImageUrl[w]
-
-=320&coverImageUrl[fit]=crop","isLoading":false,"isLoaded":false,"surveyResponseNeededPledges":[],"isSurveyResponseNeededPledgesLoading":false,"isSurveysLoading":true},"taxpayerInformationStore":{"isLoaded":false},"collectionStore":
-
-{"collections":{},"featuredCollections":null},"projectStore":{},"messageThreadStore":{"_unreadThreads":{"asCreator":[],"asUser":[]},"projectFilters":[],"_messageThreads":
-
-{},"isLoadingMessageThreads":false,"selectedThreadId":null,"selectedThread":null},"messageArchiveThreadStore":{"_messageArchiveThreads":{},"_paging":{"offset":0,"limit":10,"next":""}},"rewardStore":{},"itemStore":{},"heroStore":
-
-{"isLoaded":false},"postStore":{"_cachedProjectId":null,"_posts":{},"_postsPagination":null,"_comments":{},"_cachedPostId":null,"_commentPagination":null},"depositAccountStore":{}};
       </script>
       <style type="text/css" data-styled-components="cXdlcp bYqief fzoeFq jPcWZN iVCTYT jdgWcI bteafZ kZLTLQ hcvfVq iGOIal kizyZz cfMrMC hHUgvf bpfGNO JUlEd buZCDD fQwQfp gqXDKx labhhf eQgQLo dLYLGx hGGMaO btBxPj cgjPcA 
 
@@ -1100,26 +1079,25 @@ data-react-helmet="true"><meta name="twitter:title" content="텀블벅 tumblbug"
 		});
 		
 		var user = "<c:out value='${user}'/>";
-		timer = setInterval( function () {
-			if(null != user){
-				$.ajax ({
-					url : "checkMessageCount.do", 
-					cache : false,
-					success : function (flag) {
-						if(flag) {
-							/* console.log("새로운 메시지가 있어요."); */
-							$("#msgNotify").css("display", "block");
-							$("#msgNotifyText").css("display", "block");
-						} else {
-							/* console.log("새로운 메시지가 없어요."); */
-							$("#msgNotify").css("display", "none");
-							$("#msgNotifyText").css("display", "none");
+		if(null != user && user != ""){
+			timer = setInterval( function () {
+					$.ajax ({
+						url : "checkMessageCount.do", 
+						cache : false,
+						success : function (flag) {
+							if(flag) {
+								/* console.log("새로운 메시지가 있어요."); */
+								$("#msgNotify").css("display", "block");
+								$("#msgNotifyText").css("visibility", "visible");
+							} else {
+								/* console.log("새로운 메시지가 없어요."); */
+								$("#msgNotify").css("display", "none");
+								$("#msgNotifyText").css("visibility", "hidden");
+							}
 						}
-					}
-				});
-			}
-		}, 5000); // 5초에 한번씩 받아온다.	
-		
+					});
+			}, 5000); // 5초에 한번씩 받아온다.	
+		}
 	});
 	
 	function closeSearchTab(){
@@ -1233,9 +1211,11 @@ data-react-helmet="true"><meta name="twitter:title" content="텀블벅 tumblbug"
 								
 								
 								<!-- 새로운 메시지를 받을 경우 나타나는 영역 -->
-									<div id="msgNotify" class="SiteHeader__SiteHeaderAlert-s1s56ls8-11 xfBEx" style="display:none;">
+								<c:if test="${newMessageCount gt 0 }">
+									<div id="msgNotify" class="SiteHeader__SiteHeaderAlert-s1s56ls8-11 xfBEx">
 										<div class="SiteHeader__RedPoint-s1s56ls8-12 gXPwyp"></div>
 									</div>
+								</c:if>
 						</span>
 						</a>
 						
@@ -1782,7 +1762,9 @@ data-react-helmet="true"><meta name="twitter:title" content="텀블벅 tumblbug"
 							<button onclick="javascript:location.href='messagePage.do'" style="border:0; outline:0;background:white">
 									<span class="MenuItem__MenuItemTitle-no2u3j-1 enzRKc">메시지</span>
 									<!-- 새로운 메시지 있을 때만 출력 -->
-									<span id="msgNotifyText" class="MyPage__MenuItemAlert-s1rrrcge-2 iMZfBk" style="display:none;">새 메시지</span>
+									<c:if test="${newMessageCount gt 0 }">
+										<span id="msgNotifyText" class="MyPage__MenuItemAlert-s1rrrcge-2 iMZfBk">새 메시지</span>
+									</c:if>
 							</button>
 						</div>
 					

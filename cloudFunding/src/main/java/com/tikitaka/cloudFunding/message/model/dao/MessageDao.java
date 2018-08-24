@@ -39,38 +39,10 @@ public class MessageDao {
 		return sqlSession.selectOne("messageMapper.selectMessage", msg);
 	}
 
-
-/*	public List<PostVo> selectPostList(int projectCode) {
-		return sqlSession.selectList("communityMapper.selectPostList", projectCode);
+	public List<MessageVo> selectNewMessageList(String email) {
+		return sqlSession.selectList("messageMapper.selectNewMessageList", email);
 	}
 
-	public int selectPostCount(int projectCode) {
-		return sqlSession.selectOne("communityMapper.selectPostCount", projectCode);
-	}
-
-	public PostVo selectPost(int postCode) {
-		return sqlSession.selectOne("communityMapper.selectPost", postCode);
-	}
-
-	public int insertPost(PostVo post) {
-		return sqlSession.insert("communityMapper.insertPost", post);
-	}
-
-	public int updatePost(PostVo post) {
-		return sqlSession.update("communityMapper.updatePost", post);
-	}
-
-	public int deletePost(int postCode) {
-		return sqlSession.delete("communityMapper.deletePost", postCode);
-	}
-
-	public int insertReply(ReplyVo reply) {
-		return sqlSession.insert("communityMapper.insertReply", reply);
-	}
-
-	public int deleteReply(int replyCode) {
-		return sqlSession.delete("communityMapper.deleteReply", replyCode);
-	}*/
 
 	
 }
