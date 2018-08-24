@@ -3669,7 +3669,6 @@ px
 										type : 'POST',
 										success : function(result) {
 											var imgsrc = result.repImg;
-											console.log(imgsrc);
 											$(".projectImage").css("display",
 													'none');
 											$(".projectImage2").children()
