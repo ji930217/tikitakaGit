@@ -2,7 +2,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
     <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
     
-   <script src="https://cdn.iamport.kr/js/iamport.payment-1.1.7.js"></script>
+   <!-- <script src="https://cdn.iamport.kr/js/iamport.payment-1.1.7.js"></script> -->
 
 <html lang="ko">
 <head>
@@ -44,7 +44,7 @@
   <link href="https://fonts.googleapis.com/css?family=Anton|Jua" rel="stylesheet">
 <script>
 
-function kakaopay(){
+/* function kakaopay(){
 	   
 	var IMP = window.IMP; // 생략가능
 	IMP.init('imp72680828');
@@ -57,16 +57,16 @@ function kakaopay(){
 	    amount : 10,//후원금액
 	    /* buyer_email : 'iamport@siot.do', */
 	    /* buyer_name : '구매자이름',
-	    buyer_tel : '010-1234-5678', */
+	    buyer_tel : '010-1234-5678', 
 	    buyer_addr : '서울특별시 강남구 삼성동',
 	    /* buyer_postcode : '123-456', */
-	    /* m_redirect_url : 'https://www.yourdomain.com/payments/complete' */
+	    /* m_redirect_url : 'https://www.yourdomain.com/payments/complete' 
 	    
 	    
 	}, function(rsp) {
 	    if ( rsp.success ) {
 	    	//이메일 ,프로젝트코드,후원금액,선물,주소
-	    	/* location.href = "payInfoSave.do?email="+rsp.buyer_email+"&amount="+rsp.paid_amount+"&addr="+rsp.buyer_addr; */
+	    	/* location.href = "payInfoSave.do?email="+rsp.buyer_email+"&amount="+rsp.paid_amount+"&addr="+rsp.buyer_addr; 
 	    	 location.href = "payInfoSave.do?email="+rsp.buyer_email;
 	        var msg = '후원이 완료되었습니다.';
 	        msg += '후원 프로젝트 : ' + rsp.name;
@@ -79,7 +79,7 @@ function kakaopay(){
 	    alert(msg);
 	});
 	
-	}
+	} */
 
 /* $(function(){
 	$("li a").click(function(){
@@ -161,12 +161,13 @@ $(function(){
     </div>
     
     <div id="menu4" class="tab-pane fade">
-	<c:import url="banner.jsp"></c:import>    </div>
+	<c:import url="banner.jsp"></c:import> 
+	   </div>
     
   </div>
-  <div class="payment" onclick="kakaopay();">결제하기</div>
-</div>
+</div> 
 	<c:import url="../common/footer.jsp"></c:import>
+  <!-- <div class="payment" onclick="kakaopay();">결제하기</div> -->
 
 </body>
 </html>

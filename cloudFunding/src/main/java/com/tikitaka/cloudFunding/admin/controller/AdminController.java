@@ -1829,18 +1829,16 @@ System.out.println(bannerList);
 					String amount = request.getParameter("amount");
 					String item = request.getParameter("item");					
 					String addr = request.getParameter("addr");
+					int gRemited = Integer.parseInt(request.getParameter("gRemited"));
 					
-					System.out.println(email);
 					
-					if(email == null) {
-						System.out.println("null");
-					}else {
-						System.out.println("null nono");
-					}
-					
-					/*int insertSupport = adminservice.insertSupport(email,pCode,amount,item,addr);//Support테이블에 정보 추가
+					int insertSupport = adminservice.insertSupport(email,pCode,amount,item,addr);//Support테이블에 정보 추가
 					int updateProjectAmount = adminservice.updateProjectAmount(pCode,amount);//Project테이블에 금액 업데이트
-*/					
+				
+					
+					if(gRemited > 0) {
+						//제한 숫자 1씩 감소
+					}
 					
 					return "redirect:index.do";
 				}

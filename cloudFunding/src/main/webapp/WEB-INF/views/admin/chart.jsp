@@ -152,7 +152,7 @@
   
   <div id="piechart" style="width: 40%; height: 200px;"></div>
   </div>
-  <!-- <p>회원&프로젝트 합계</p> -->
+  
 
   
   <div id = "div2">
