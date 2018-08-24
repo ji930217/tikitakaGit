@@ -54,7 +54,6 @@ public class HomeController {
 				int newMessageCount = 0;
 				if(null != session.getAttribute("user")){
 					Member user = (Member) session.getAttribute("user");
-					System.out.println(user.getEmail());
 					// 새로운 메시지 카운트 조회해서 보내주기.
 					newMessageCount = msgService.selectNewMessageCount(user.getEmail());
 				}

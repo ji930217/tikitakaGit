@@ -40,7 +40,6 @@ public class MessageController {
 	public @ResponseBody MessageVo sendMessage2(MessageVo msg){
 		int result = msgService.insertMessage(msg);
 		MessageVo message = msgService.selectMessage(msg);
-		System.out.println(message);
 		return message;
 	}
 	
@@ -51,11 +50,27 @@ public class MessageController {
 		
 		// 가장 마지막으로 온 메시지 내용도 필요
 		List<MessageVo> list = msgService.selectMessageList(user.getEmail());
-		
 		mv.addObject("list", list);
 		mv.setViewName("message/messagePage");
 		
 		return mv;
+	}
+	@RequestMapping("messagePage2.do")
+	public @ResponseBody List<MessageVo> messagePage2(HttpSession session){
+		// 로그인한 유저 정보를 통해 해당 멤버의 메시지리스트 불러와야해
+		Member user = (Member) session.getAttribute("user");
+		
+		// 가장 마지막으로 온 메시지 내용도 필요
+		List<MessageVo> list = msgService.selectMessageList(user.getEmail());
+		
+		return list;
+	}
+	
+	@RequestMapping("updateNewMessageCount.do")
+	public String updateNewMessageCount(int newMsgCntSum, HttpSession session){
+		session.setAttribute("newMessageCount", newMsgCntSum);
+		
+		return "redirect:messagePage.do";
 	}
 	
 	@RequestMapping("messageDetail.do")
@@ -75,57 +90,10 @@ public class MessageController {
 		return mv;
 	}
 	
-/*	@RequestMapping("projectCommunity.do")
-	public @ResponseBody List<PostVo> projectCommunity(int projectCode, ModelAndView mv){
-		// 해당 프로젝트의 게시글/댓글 조회해서 넘겨주기
-		List<PostVo> postList = cService.selectPostList(projectCode);
-		return postList;
+	@RequestMapping("refreshMessageDetail.do")
+	public @ResponseBody String refreshMessageDetail(){
+		
+		return "refreshMessageDetail";
 	}
 	
-	@RequestMapping("insertPost.do")
-	public String insertPost(int projectCode, String email, String content){
-		PostVo post = new PostVo(projectCode, email, content);
-		int result = cService.insertPost(post);
-		
-		return "redirect:projectDetail.do?projectCode=" + projectCode;
-	}
-	
-	@RequestMapping("updatePost.do")
-	public String updatePost(int projectCode, int postCode, String content){
-		PostVo post = new PostVo();
-		post.setPostCode(postCode);
-		post.setContent(content);
-		int result = cService.updatePost(post);
-		
-		return "redirect:projectDetail.do?projectCode=" + projectCode;
-	}
-	
-	@RequestMapping("deletePost.do")
-	public String deletePost(int projectCode, int postCode){
-		int result = cService.deletePost(postCode);
-		
-		return "redirect:projectDetail.do?projectCode=" + projectCode;
-	}
-	
-	@RequestMapping("selectPost.do")
-	@ResponseBody
-	public PostVo selectPost(int postCode){
-		// @ResponseBody 어노테이션 달아주니까 success data 전달 된다ㅠㅠㅠㅠ
-		PostVo post = cService.selectPost(postCode);
-		return post;
-	}
-	
-	@RequestMapping("insertReply.do")
-	public String insertReply(int projectCode, int postCode, String email, String content, Model model){
-		ReplyVo reply = new ReplyVo(postCode, email, content);
-		int result = cService.insertReply(reply);
-		
-		return "redirect:projectDetail.do?projectCode=" + projectCode;
-	}
-	@RequestMapping("deleteReply.do")
-	public String deleteReply(int projectCode, int replyCode){
-		int result = cService.deleteReply(replyCode);
-		
-		return "redirect:projectDetail.do?projectCode=" + projectCode;
-	}
-*/}
+}
