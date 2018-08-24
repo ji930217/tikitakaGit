@@ -4441,7 +4441,6 @@ px
 															+ '수정하기');
 											$(".addD").hide();
 											$(".defaultD").show();
-											console.log(data.pPhone);
 											blue(data);
 										},
 										error : function(e) {
@@ -4887,7 +4886,6 @@ px
 						rewardlist.children("._3ZgG-OSv0XE3y-h3oPaDsl")
 								.children().children('.remitDisplay').text(
 										data.giftArry[i].remited + "개 남음");
-						console.log(rewardlist.children().children().children());
 						rewardlist.children().children().children('.ContextualAction__LinkButton-lcypnk-0').attr(
 								'onclick',
 								'deleteItemList(' + data.giftArry[i].giftCode
