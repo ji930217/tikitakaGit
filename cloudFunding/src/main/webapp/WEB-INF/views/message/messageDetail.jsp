@@ -203,37 +203,78 @@
 							
 							<c:if test="${!empty list }">
 								<c:forEach var="msg" items="${list }">
-									<div>
-										<div class="_30LNYFhw6qsigZSbwlGCDz">
-											<div class="kq_2sXRgq_sfeYNfZHKOs">
-												<div class="_34WN1umVFRc6wIDpVrIjIr"
-													style="background-image: url(<c:out value='${msg.writerProfileImg }'/>);"></div>
-											</div>
-											<div class="_3ZgG-OSv0XE3y-h3oPaDsl KFiVOeTOhXeUxwbhd30-9">
-												<span class="_1lzmMuArEV-MDJ-ASw7e8M">
-													<c:out value="${msg.writerName }"/> &nbsp;
-												</span>
-												<div class="_22TCURqKJxPd9Pk2fUP3C2">
-													<span class=""><c:out value="${msg.sendDate }"/></span>
+									<c:if test='${msg.writerEmail ne user.email }'>
+										<div>
+											<div class="_30LNYFhw6qsigZSbwlGCDz">
+												<div class="kq_2sXRgq_sfeYNfZHKOs">
+													<div class="_34WN1umVFRc6wIDpVrIjIr"
+														style="background-image: url(<c:out value='${msg.writerProfileImg }'/>);"></div>
 												</div>
-												<div class="_2J-JDs-O0yO3-wBkPp1CzJ">
-													<p style="white-space: pre-line;"><c:out value="${msg.content }"/></p>
+												<div class="_3ZgG-OSv0XE3y-h3oPaDsl KFiVOeTOhXeUxwbhd30-9">
+													<span class="_1lzmMuArEV-MDJ-ASw7e8M">
+														<c:out value="${msg.writerName }"/> &nbsp;
+													</span>
+													<div class="_22TCURqKJxPd9Pk2fUP3C2">
+														<span class=""><c:out value="${msg.sendDate }"/></span>
+													</div>
+													<div class="_2J-JDs-O0yO3-wBkPp1CzJ">
+														<p style="white-space: pre-line;"><c:out value="${msg.content }"/></p>
+													</div>
+													<c:if test="${msg.receiverEmail ne user.email }">
+														<c:if test="${msg.readFlag == 'T'.charAt(0) }">
+															<span class="_1K0ZBo09IxoqIXG0pce9Pa">
+																<i	class="-o8oGI_QAOKsVIJOUOUmV _254YPhBOB9qv7-J8bIg7co _3sFSjAZS4gQdCAyN3OfyFG _1QY7TzdLHKX3-BKPDNNYKF"></i>
+																읽음
+															</span>
+														</c:if>
+														<c:if test="${msg.readFlag == 'F'.charAt(0) }">
+															<span class="_1K0ZBo09IxoqIXG0pce9Pa">
+																<i	class="_254YPhBOB9qv7-J8bIg7co _2rpTvKkYYdMbVEklWlLfhl _1QY7TzdLHKX3-BKPDNNYKF"></i>
+																읽지않음
+															</span>
+														</c:if>
+													</c:if>
 												</div>
-												<c:if test="${msg.readFlag == 'T'.charAt(0) }">
-													<span class="_1K0ZBo09IxoqIXG0pce9Pa">
-														<i	class="-o8oGI_QAOKsVIJOUOUmV _254YPhBOB9qv7-J8bIg7co _3sFSjAZS4gQdCAyN3OfyFG _1QY7TzdLHKX3-BKPDNNYKF"></i>
-														읽음
-													</span>
-												</c:if>
-												<c:if test="${msg.readFlag == 'F'.charAt(0) }">
-													<span class="_1K0ZBo09IxoqIXG0pce9Pa">
-														<i	class="_254YPhBOB9qv7-J8bIg7co _2rpTvKkYYdMbVEklWlLfhl _1QY7TzdLHKX3-BKPDNNYKF"></i>
-														읽지않음
-													</span>
-												</c:if>
 											</div>
 										</div>
-									</div>
+									</c:if>
+									
+									<c:if test='${msg.writerEmail eq user.email }'>
+										<div style="text-align:right; margin-right: 10px;">
+											<div class="_30LNYFhw6qsigZSbwlGCDz">
+												<div class="kq_2sXRgq_sfeYNfZHKOs" style="float:right;">
+													<div class="_34WN1umVFRc6wIDpVrIjIr"
+														style="background-image: url(<c:out value='${msg.writerProfileImg }'/>);"></div>
+												</div>
+												<div class="_3ZgG-OSv0XE3y-h3oPaDsl KFiVOeTOhXeUxwbhd30-9" style="margin-right: 3.5em;">
+													<div class="_22TCURqKJxPd9Pk2fUP3C2" style="margin-left:0px; margin-right:.5em;">
+														<span class=""><c:out value="${msg.sendDate }"/></span>
+													</div>
+													<span class="_1lzmMuArEV-MDJ-ASw7e8M" style="margin-right:-7px;">
+														<c:out value="${msg.writerName }"/> &nbsp;
+													</span>
+													<div class="_2J-JDs-O0yO3-wBkPp1CzJ" >
+														<p style="white-space: pre-line;"><c:out value="${msg.content }"/></p>
+													</div>
+													<c:if test="${msg.receiverEmail ne user.email }">
+														<c:if test="${msg.readFlag == 'T'.charAt(0) }">
+															<span class="_1K0ZBo09IxoqIXG0pce9Pa">
+																<i	class="-o8oGI_QAOKsVIJOUOUmV _254YPhBOB9qv7-J8bIg7co _3sFSjAZS4gQdCAyN3OfyFG _1QY7TzdLHKX3-BKPDNNYKF"></i>
+																읽음
+															</span>
+														</c:if>
+														<c:if test="${msg.readFlag == 'F'.charAt(0) }">
+															<span class="_1K0ZBo09IxoqIXG0pce9Pa" >
+																<i	class="_254YPhBOB9qv7-J8bIg7co _2rpTvKkYYdMbVEklWlLfhl _1QY7TzdLHKX3-BKPDNNYKF"></i>
+																읽지않음
+															</span>
+														</c:if>
+													</c:if>
+												</div>
+											</div>
+										</div>
+									</c:if>
+									
 									<!-- 구분선 -->
 									<div>
 										<div>
