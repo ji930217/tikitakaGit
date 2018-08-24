@@ -83,7 +83,7 @@
 		timer = setInterval( function () {
 			// 모든 메시지 리스트 화면 업데이트
 			$.ajax ({
-				url : "messagePage2.do", 
+				url : "selectMessageList.do", 
 				cache : false,
 				success : function (list) {
 					var newMsgCntSum = 0;
@@ -125,7 +125,7 @@
 						 
 						 // 새로운 메시지 리스트 화면 업데이트
 						 $.ajax ({
-								url : "messagePage3.do", 
+								url : "selectNewMessageList.do", 
 								cache : false,
 								success : function (list) {
 									var newMsgCntSum = 0;
@@ -135,7 +135,7 @@
 									
 									if(0 < newMsgCntSum && parseInt(prevNewMsgCnt) != newMsgCntSum) {
 										updateNewMessageCount(newMsgCntSum);
-										prevNewMsgCnt = parseInt(prevNewMsgCnt) + 1;
+										prevNewMsgCnt = newMsgCntSum;
 										
 										var $newMessageListDiv = $("#newMessageListDiv");
 										var resultStr = "";
@@ -178,7 +178,7 @@
 				}
 			});
 			
-		}, 5000); // 5초에 한번씩 받아온다.	
+		}, 3000); // 5초에 한번씩 받아온다.	
 		
 		
 	});

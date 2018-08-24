@@ -28,7 +28,7 @@ public class MessageController {
 	ProjectService projectService;
 	
 	
-	
+	// 프로젝트 디테일에서 메시지 보내기
 	@RequestMapping("sendMessage.do")
 	public String sendMessage(int projectCode, MessageVo msg){
 		int result = msgService.insertMessage(msg);
@@ -36,11 +36,17 @@ public class MessageController {
 		return "redirect:messagePage.do";
 	}
 	
+	// 채팅방에서 메시지 보내기
 	@RequestMapping("sendMessage2.do")
-	public @ResponseBody MessageVo sendMessage2(MessageVo msg){
-		int result = msgService.insertMessage(msg);
-		MessageVo message = msgService.selectMessage(msg);
-		return message;
+//	public @ResponseBody MessageVo sendMessage2(MessageVo msg){
+	public @ResponseBody List<MessageVo> sendMessage2(MessageVo msg){
+		msgService.updateReadFlag(msg);
+		msgService.insertMessage(msg);
+//			MessageVo message = msgService.selectMessage(msg);
+		List<MessageVo> list = msgService.selectMessageDetail(msg);
+
+//		return message;
+		return list;
 	}
 	
 	@RequestMapping("messagePage.do")
@@ -57,20 +63,19 @@ public class MessageController {
 		
 		return mv;
 	}
-	@RequestMapping("messagePage2.do")
-	public @ResponseBody List<MessageVo> messagePage2(HttpSession session){
+	@RequestMapping("selectMessageList.do")
+	public @ResponseBody List<MessageVo> selectMessageList(HttpSession session){
 		Member user = (Member) session.getAttribute("user");
 		List<MessageVo> list = msgService.selectMessageList(user.getEmail());
 		return list;
 	}
 	
-	@RequestMapping("messagePage3.do")
-	public @ResponseBody List<MessageVo> messagePage3(HttpSession session){
+	@RequestMapping("selectNewMessageList.do")
+	public @ResponseBody List<MessageVo> selectNewMessageList(HttpSession session){
 		Member user = (Member) session.getAttribute("user");
 		List<MessageVo> list = msgService.selectNewMessageList(user.getEmail());
 		return list;
 	}
-	
 	
 	@RequestMapping("checkMessageCount.do")
 	public @ResponseBody boolean checkMessageCount(HttpSession session){
@@ -107,10 +112,16 @@ public class MessageController {
 		return mv;
 	}
 	
-	@RequestMapping("refreshMessageDetail.do")
-	public @ResponseBody String refreshMessageDetail(){
+	@RequestMapping("messageDetailAjax.do")
+	public @ResponseBody List<MessageVo> messageDetailAjax(MessageVo msg, HttpSession session){
+		Member user = (Member) session.getAttribute("user");
+		int result = msgService.updateReadFlag(msg);
 		
-		return "refreshMessageDetail";
+		// 로그인한 유저 정보를 통해 해당 멤버의 메시지리스트 불러와야해
+		msg.setWriterEmail(user.getEmail());
+		List<MessageVo> list = msgService.selectMessageDetail(msg);
+		
+		return list;
 	}
 	
 }
