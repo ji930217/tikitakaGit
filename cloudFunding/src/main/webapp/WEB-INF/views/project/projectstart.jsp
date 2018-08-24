@@ -1434,9 +1434,9 @@ translateX
 											새로운 길입니다. 이미 콘텐츠와 팬층을 확보한 작가라면 신선한 기획을 통해 팬들을 만나는 새로운 창구를
 											열어보는 건 어떨까요?</p>
 										<a class="PersonaCard__CollectionLink-s15ltilf-5 dpuEfz"
-											target="_blank" rel="noopener noreffer"
-											href="creative.do" color="#FFE6E6"
-											data-reactid="104">
+											 rel="noopener noreffer"
+											href="#" color="#FFE6E6"
+										 onclick="ready();">
 											<!-- react-text: 105 -->창작자<!-- /react-text -->
 											<!-- react-text: 106 --> 성공사례 보기<!-- /react-text -->
 										</a>
@@ -1455,9 +1455,9 @@ translateX
 											강조되는 새로운 참여형 소비 창구로 각광받는 티키타카에서 모인 후원자들의 신뢰는 일반 이커머스에서보다 훨씬 깊고
 											오래 가는 팬 베이스가 되어줄 것입니다.</p>
 										<a class="PersonaCard__CollectionLink-s15ltilf-5 gzcpNu"
-											target="_blank" rel="noopener noreffer"
-											href="collections/brands.html" color="#E6EDFF"
-											data-reactid="112">
+											rel="noopener noreffer"
+											href="#" color="#E6EDFF"
+											 onclick="ready();">
 											<!-- react-text: 113 -->브랜드<!-- /react-text -->
 											<!-- react-text: 114 --> 성공사례 보기<!-- /react-text -->
 										</a>
@@ -1475,9 +1475,9 @@ translateX
 											소셜미디어에서 떠오르는 이슈들을 구체적인 행동으로 전환시키는 데에 티키타카 프로젝트가 제격입니다. 새롭고 젊은
 											정치참여·사회운동 방식으로 주목받는 티키타카 펀딩으로 더 많은 지지자를 얻고, 사회적 목소리를 증폭시켜보세요.</p>
 										<a class="PersonaCard__CollectionLink-s15ltilf-5 ePxcpz"
-											target="_blank" rel="noopener noreffer"
-											href="collections/campaigns.html" color="#DFF8FC"
-											data-reactid="120">
+											 rel="noopener noreffer"
+											href="#" color="#DFF8FC"
+											data-reactid="120" onclick="ready();">
 											<!-- react-text: 121 -->캠페인<!-- /react-text -->
 											<!-- react-text: 122 --> 성공사례 보기<!-- /react-text -->
 										</a>
@@ -1516,7 +1516,7 @@ translateX
 												검토하고 피드백을 드립니다. <!-- /react-text -->
 												<a
 												href="https://help.tumblbug.com/hc/ko/categories/115001047328"
-												target="_blank" rel="noreferrer noopener" data-reactid="136">헬프센터
+												 rel="noreferrer noopener" data-reactid="136">헬프센터
 													내 창작자 센터</a>
 											<!-- react-text: 137 -->에는 각 단계별 성공을 위한 꼼꼼한 도움말이 준비되어 있습니다.<!-- /react-text -->
 											</span>
@@ -1553,8 +1553,8 @@ translateX
 									궁금한 점이 있으면 언제든지
 									<!-- /react-text -->
 									<a class="ProjectStartFooter__A-s1w3slr4-5 iCNmGI"
-										href="https://help.tumblbug.com/hc/ko/requests/new"
-										target="_blank" rel="noopener noreffer" data-reactid="150">문의를
+										href="#" onclick="ready();"
+										 rel="noopener noreffer" data-reactid="150">문의를
 										남겨주세요.</a>
 								</p>
 								<button class="sc-gqjmRU bJiFzl" data-reactid="151">지금
@@ -1566,7 +1566,7 @@ translateX
 									<!-- /react-text -->
 									<br data-reactid="154" />
 									<a class="ProjectStartFooter__A-s1w3slr4-5 iCNmGI"
-										href="mailto:partnership@tumblbug.com" target="_blank"
+										href="#"  onclick="ready();"
 										rel="noopener noreffer" data-reactid="155">partnership@tumblbug.com</a>
 									<!-- react-text: 156 -->
 									으로 부탁드립니다.
@@ -1585,40 +1585,40 @@ translateX
 								<div
 									class="_1ImF9kUktZoPfysBSwFigF _152MAijd_UogerBKCVqZR_ _1lLHKI5v9AoCyeggtffvGZ"
 									data-reactid="160">
-									<a href="https://careers.tumblbug.com/"
-										class="_3TJ2LNmiyFnXVggSgiKX5Q" target="_blank"
+									<a href="#"
+										class="_3TJ2LNmiyFnXVggSgiKX5Q" onclick="ready();"
 										rel="noopener noreferrer" data-reactid="161">채용</a><br
 										data-reactid="162" />
-									<a href="https://creator.tumblbug.com/"
-										class="_3TJ2LNmiyFnXVggSgiKX5Q" target="_blank"
+									<a href="#"
+										class="_3TJ2LNmiyFnXVggSgiKX5Q" onclick="ready();"
 										rel="noopener noreferrer" data-reactid="163">창작자 가이드</a><br
 										data-reactid="164" />
-									<a href="https://year.tumblbug.com/2017/"
-										class="_3TJ2LNmiyFnXVggSgiKX5Q" target="_blank"
+									<a href="#"
+										class="_3TJ2LNmiyFnXVggSgiKX5Q" onclick="ready();"
 										rel="noopener noreferrer" data-reactid="165">2017년 결산</a>
 								</div>
 								<div
 									class="_2joJTlnkt26WGpxyvkNuCH _152MAijd_UogerBKCVqZR_ _1lLHKI5v9AoCyeggtffvGZ"
 									data-reactid="166">
-									<a class="_3TJ2LNmiyFnXVggSgiKX5Q" href="terms-of-use.html"
+									<a class="_3TJ2LNmiyFnXVggSgiKX5Q" href="#" onclick="ready();"
 										data-reactid="167">이용약관</a>
 									<!-- react-text: 168 -->
 									<!-- /react-text -->
 									<label
 										class="_13KHfN73YmQgsYHxXvuh_J _1DLNFgQRrQNEosKFB0zOK5 _3D9sfZXrWd8it3eUCuCTc8"
 										data-reactid="169">개정</label><br data-reactid="170" />
-									<a class="_3TJ2LNmiyFnXVggSgiKX5Q" href="privacy.html"
+									<a class="_3TJ2LNmiyFnXVggSgiKX5Q" href="#" onclick="ready();"
 										data-reactid="171">개인정보 보호정책</a><br data-reactid="172" />
-									<a href="https://help.tumblbug.com/"
-										class="_3TJ2LNmiyFnXVggSgiKX5Q" target="_blank"
+									<a href="#" 
+										class="_3TJ2LNmiyFnXVggSgiKX5Q" onclick="ready();"
 										data-reactid="173">헬프 센터</a>
 								</div>
 								<div
 									class="_3bWlQdzIFpvwX2B8mnOzgn _152MAijd_UogerBKCVqZR_ _1lLHKI5v9AoCyeggtffvGZ _2h2Lxt21YmZS8bCMfCUMnE"
 									data-reactid="174">
 									<div data-reactid="175">
-										<a href="https://www.facebook.com/tumblbug"
-											class="_3TJ2LNmiyFnXVggSgiKX5Q" target="_blank"
+										<a href="#"
+											class="_3TJ2LNmiyFnXVggSgiKX5Q" onclick="ready();"
 											rel="noopener noreferrer" data-reactid="176"><i
 											class="_1uz2PaH_Pc163IQLnwFtm8 _1oJMWnMCW_Y6GmNc1mhqaW _1QY7TzdLHKX3-BKPDNNYKF"
 											data-reactid="177"></i><span
@@ -1626,8 +1626,8 @@ translateX
 											data-reactid="178">facebook 바로가기</span></a>
 										<!-- react-text: 179 -->
 										<!-- /react-text -->
-										<a href="https://twitter.com/tumblbug"
-											class="_3TJ2LNmiyFnXVggSgiKX5Q" target="_blank"
+										<a href="#"
+											class="_3TJ2LNmiyFnXVggSgiKX5Q" onclick="ready();"
 											rel="noopener noreferrer" data-reactid="180"><i
 											class="_2FxT97uoLyJpLIfoko0aQD _1oJMWnMCW_Y6GmNc1mhqaW _1QY7TzdLHKX3-BKPDNNYKF"
 											data-reactid="181"></i><span
@@ -1635,8 +1635,8 @@ translateX
 											data-reactid="182">twitter 바로가기</span></a>
 										<!-- react-text: 183 -->
 										<!-- /react-text -->
-										<a href="https://www.instagram.com/tumblbug/"
-											class="_3TJ2LNmiyFnXVggSgiKX5Q" target="_blank"
+										<a href="#"
+											class="_3TJ2LNmiyFnXVggSgiKX5Q" onclick="ready();"
 											rel="noopener noreferrer" data-reactid="184"><i
 											class="jVeP2LZnw-ySfySkeJWoo _1oJMWnMCW_Y6GmNc1mhqaW _1QY7TzdLHKX3-BKPDNNYKF"
 											data-reactid="185"></i><span
@@ -1644,8 +1644,8 @@ translateX
 											data-reactid="186">instagram 바로가기</span></a>
 										<!-- react-text: 187 -->
 										<!-- /react-text -->
-										<a href="http://post.naver.com/my.nhn?memberNo=23995853"
-											class="_3TJ2LNmiyFnXVggSgiKX5Q" target="_blank"
+										<a href="#"
+											class="_3TJ2LNmiyFnXVggSgiKX5Q" onclick="ready();"
 											rel="noopener noreferrer" data-reactid="188"><svg
 												class="_3wp2zfPfFJudKjknXrAhPI"
 												xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 18.31"
@@ -1655,8 +1655,8 @@ translateX
 													transform="translate(0 -0.84)" data-reactid="191"></path></svg></a>
 									</div>
 									<div style="text-align: right;" data-reactid="192">
-										<a href="https://help.tumblbug.com/hc/ko/requests/new"
-											target="_blank" rel="noopener noreferrer"
+										<a href="#"
+											onclick="ready();" rel="noopener noreferrer"
 											style="width: 115px; margin: 1rem 0 0 0; display: inline-block;"
 											class="_13KHfN73YmQgsYHxXvuh_J _1Qdv504-1XMeYXZyb0xQZT _3SbGdzxKM6M_AeOQWLNqks"
 											data-reactid="193"><i
@@ -1690,6 +1690,10 @@ translateX
 		}
 		
 	});
+	function ready(){
+		alert("준비중 입니다.");
+		return false;
+	}
 </script>
 </body>
 </html>
