@@ -155,6 +155,7 @@
 			var projectCode = "<c:out value='${list[0].projectCode }'/>";
 			var writerEmail = "<c:out value='${user.email }'/>";
 			var receiverEmail = $("#receiverEmail").val();
+			var prevReadFlagFCount = $("#readFlagFCount").val();
 			
 			$.ajax ({
 				url : "messageDetailAjax.do", 
@@ -163,10 +164,17 @@
 				cache : false,
 				success : function (list) {
 					var newMsgListSize = parseInt(list.length);
+					var newReadFlagFCount = 0;
+					for(var key in list) {
+						if(list[key].readFlag == 'F'.charAt(0)) {
+							newReadFlagFCount = parseInt(newReadFlagFCount) + 1;
+						}
+					}
 					
-					if(0 < newMsgListSize && parseInt(msgListSize) != newMsgListSize) {
+					if(newReadFlagFCount != parseInt(prevReadFlagFCount) || (0 < newMsgListSize && parseInt(msgListSize) != newMsgListSize)) {
 					 	$("#msgListSize").val(newMsgListSize);
-						
+					 	$("#readFlagFCount").val(newReadFlagFCount);
+					 	
 						var userEmail = "<c:out value='${user.email}'/>";
 						var $msgDetailListDiv = $("#msgDetailListDiv");
 						var resultStr = "";
@@ -258,8 +266,21 @@
 													<c:set var="receiverProfileImg" value="${list[0].receiverProfileImg }"/>
 													<c:set var="receiverName" value="${list[0].receiverName }"/>
 												</c:if>
+												
 												<input type="hidden" id="receiverEmail" value="${receiverEmail }"/>
 												<input type="hidden" id="msgListSize" value="<c:out value='${fn:length(list) }'/>"/>
+												<c:set var="readFlagFCount" value="0"/>
+												<c:forEach var="msg" items="${list }">
+													<c:if test="${msg.readFlag == 'F'.charAt(0) }">
+														<c:set var="readFlagFCount" value="${readFlagFCount + 1 }"/>
+														<script>
+															var readFlagFCount = "<c:out value='${readFlagFCount}'/>";
+															console.log(readFlagFCount);
+														</script>
+													</c:if>
+												</c:forEach>
+												<input type="hidden" id="readFlagFCount" value="${readFlagFCount }"/>
+												
 												<div class="_3GsVAVoGzjheDw0rH9Rnvs"
 													style="background-image: url('<c:out value='${receiverProfileImg }'/>');"></div>
 											</div>
