@@ -302,8 +302,8 @@
 				<div class="_13KHfN73YmQgsYHxXvuh_J _1WARcEqqT_Pem8leg2dkMj">
 					<div class="PayoutGuide__PayoutWrapper-s18hto5y-0 bJJdfp">
 						<p class="PayoutGuide__Description-s18hto5y-3 gnrhzv">펀딩에 성공할
-							경우, 마감일 다음날부터 7일간 결제가 진행되어 2018년 8월 17일에 모든 후원자의 결제가 종료됩니다. 결제
-							종료일로부터 추가로 은행 영업일 기준 7일(공휴일 및 주말 제외) 후 모금액이 창작자님의 계좌로 입금됩니다.</p>
+							경우, 결제 종료일로부터 추가로 은행 영업일 기준 7일(공휴일 및 주말 제외) 후 모금액이 창작자님의 계좌로 입금됩니다.</p>
+							
 					</div>
 				</div>
 			</div>

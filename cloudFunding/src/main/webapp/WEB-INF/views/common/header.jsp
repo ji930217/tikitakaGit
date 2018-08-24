@@ -732,60 +732,13 @@
 	    margin-right: 1rem;
 	}
 	
-	/* 메시지 알림 스타일 */
-	.xfBEx {
-	    width: 10px;
-	    height: 10px;
-	    border-radius: 50%;
-	    background-color: white;
-	    position: absolute;
-	    right: 0;
-	    bottom: 0;
-	}
-	@media (min-width: 1080px){
-		.xfBEx {
-		    width: 16px;
-		    height: 16px;
-		}
-	}
-	.gXPwyp {
-	    -webkit-animation: bYqief 1s infinite;
-	    animation: bYqief 1s infinite;
-	}
-	.gXPwyp {
-	    position: absolute;
-	    width: 8px;
-	    height: 8px;
-	    border-radius: 50%;
-	    margin: auto;
-	    left: 0;
-	    right: 0;
-	    top: 0;
-	    bottom: 0;
-	    background-color: #fa6462;
-	}
-	@media (min-width: 1080px){
-		.gXPwyp {
-		    width: 12px;
-		    height: 12px;
-		}
-	}
-	.iMZfBk {
-	    font-size: 0.9rem;
-	    color: #fa6462;
-	    font-weight: bolder;
-	    margin-left: 0.5rem;
-	}
-	
-	
-
 </style>
 <script>
 
 	$(function(){
 		// 프로젝트 둘러보기 카테고리 버튼 하위메뉴 펼치기/접기
 		$(".cwYjsy").click(function(){
-			$(this).parent().siblings(0).children(":not(.fdKmEL)").toggle();
+			$(this).parent().siblings(0).children().toggle();
 			if($(this).children("span").eq(1).children("div").attr("class") == "DiscoverMenuDropdown__TriangleUpIcon-s116h97f-0 bVfzeY"){
 				$(this).children("span").eq(1).children("div").removeClass();
 				$(this).children("span").eq(1).children("div").addClass("DiscoverMenuDropdown__TriangleDownIcon-s116h97f-1");
@@ -903,20 +856,9 @@
 							</div></a>
 					</div>
 					
-					<c:if test = "${user.email == 'admin@admin.com' }">
-						<a id="loginIdAcc" class="sc-htoDjs fQwQfp" data-reactid="30">
-							<span class="SiteHeader__ItemLabel-s1s56ls8-8 iGOIal" data-reactid="31">
-								<c:out value="관리자페이지 "/>
-							</span>
-							<span class="SiteHeader__ProfileImageWrapper-s1s56ls8-10 gqXDKx" data-reactid="32">
-								<img class="ProfileImg__ProfileImg-s1o99mme-0 ePsyRU" 
-								src="${user.profile_img }" width="42" height="42" />
-							</span>
-					</c:if>
 					
 					
-					
-					<c:if test="${(!empty user) && (null eq user.stopDate) && (user.email != 'admin@admin.com') }">						
+					<c:if test="${(!empty user) && (null eq user.stopDate) }">						
 		
 						<a id="loginIdAcc" class="sc-htoDjs fQwQfp" data-reactid="30">
 							<span class="SiteHeader__ItemLabel-s1s56ls8-8 iGOIal" data-reactid="31">
@@ -925,15 +867,7 @@
 							<span class="SiteHeader__ProfileImageWrapper-s1s56ls8-10 gqXDKx" data-reactid="32">
 								<img class="ProfileImg__ProfileImg-s1o99mme-0 ePsyRU" 
 								src="${user.profile_img }" width="42" height="42" />
-								
-								
-								<!-- 새로운 메시지를 받을 경우 나타나는 영역 -->
-								<c:if test="${newMessageCount gt 0 }">
-									<div class="SiteHeader__SiteHeaderAlert-s1s56ls8-11 xfBEx">
-										<div class="SiteHeader__RedPoint-s1s56ls8-12 gXPwyp"></div>
-									</div>
-								</c:if>
-						</span>
+							</span>
 						</a>
 						
 					
@@ -1015,23 +949,23 @@
 				<div class="Container__Container-s1sxg7g4-0 iTXcwb">
 					<div class="Divider__Divider-s16ihjfx-0 cdILTf"></div>
 					<div class="MenuItem__MenuItem-no2u3j-0 cwYjsy">
-						<button onclick="javascript:location.href='projectList.do'" style="border:0; outline:0;background:white"><span
-							class="MenuItem__MenuItemTitle-no2u3j-1 enzRKc">모든 프로젝트</span></button>
+						<a href="projectList.do"><span
+							class="MenuItem__MenuItemTitle-no2u3j-1 enzRKc">모든 프로젝트</span></a>
 					</div>
 					<div class="MenuItem__MenuItem-no2u3j-0 cwYjsy">
-						<button onclick="javascript:location.href='popularList.do'" style="border:0; outline:0;background:white"><span
+						<a href="popularList.do"><span
 							class="MenuItem__MenuItemTitle-no2u3j-1 enzRKc">분야별 인기
-								프로젝트</span></button>
+								프로젝트</span></a>
 					</div>
 					<div class="MenuItem__MenuItem-no2u3j-0 cwYjsy">
-						<button onclick="javascript:location.href='projectListOrderByDeadline.do'" style="border:0; outline:0;background:white"><span
+						<a href="projectListOrderByDeadline.do"><span
 							class="MenuItem__MenuItemTitle-no2u3j-1 enzRKc">마감 앞둔
-								프로젝트</span></button>
+								프로젝트</span></a>
 					</div>
 					<div class="MenuItem__MenuItem-no2u3j-0 cwYjsy">
-						<button onclick="location.href='projectListOrderByEnrollDate.do"' style="border:0; outline:0;background:white"><span
+						<a href="projectListOrderByEnrollDate.do"><span
 							class="MenuItem__MenuItemTitle-no2u3j-1 enzRKc">새로운
-								프로젝트</span></button>
+								프로젝트</span></a>
 					</div>
 					<div class="Divider__Divider-s16ihjfx-0 hEIXJa"></div>
 					<div style="display:none;">
@@ -1251,7 +1185,7 @@
 						<div>
 							<div class="MenuItem__MenuItem-no2u3j-0 cwYjsy2">
 								<span class="MenuItem__MenuItemTitle-no2u3j-1 enzRKc2">영화
-									∙ 비디오</span>
+									? 비디오</span>
 								<!-- <span>
 									<div	class="DiscoverMenuDropdown__TriangleDownIcon-s116h97f-1 OZgBR"></div>
 								</span> -->
@@ -1261,7 +1195,7 @@
 							<div class="DropdownItem__DropdownItem-s12jl0ab-0 lhFUmi">
 								<a href="/category/film-and-video">
 									react-text: 2531모든 /react-text
-									react-text: 2532영화 ∙ 비디오/react-text
+									react-text: 2532영화 ? 비디오/react-text
 									react-text: 2533 프로젝트/react-text
 								</a>
 							</div>
@@ -1473,54 +1407,32 @@
 						<!-- </span> -->
 						<span class="MyPage__UserFullname-s1rrrcge-1 bPHUVK"><c:out value="${user.name }"/></span>
 					</div>
-					
 					<div class="Divider__Divider-s16ihjfx-0 XTtld"></div>
-						<div	class="MenuItem__MenuItem-no2u3j-0 cwYjsy">
-							<button onclick="javascript:location.href='messagePage.do'" style="border:0; outline:0;background:white">
-									<span class="MenuItem__MenuItemTitle-no2u3j-1 enzRKc">메시지</span>
-									<!-- 새로운 메시지 있을 때만 출력 -->
-									<c:if test="${newMessageCount gt 0 }">
-										<span class="MyPage__MenuItemAlert-s1rrrcge-2 iMZfBk">새 메시지</span>
-									</c:if>
-							</button>
-						</div>
-					
-					<div
+					<a href="/messages"><div
 							class="MenuItem__MenuItem-no2u3j-0 cwYjsy">
-						<button onclick="javascript:location.href='readyPage.do'" style="border:0; outline:0;background:white">
+							<span class="MenuItem__MenuItemTitle-no2u3j-1 enzRKc">메시지</span>
+						</div></a><a href="readyPage.do"><div
+							class="MenuItem__MenuItem-no2u3j-0 cwYjsy">
 							<span class="MenuItem__MenuItemTitle-no2u3j-1 enzRKc">내
 								후원현황</span>
-						</button>
-					</div>
-						
-					<div class="MenuItem__MenuItem-no2u3j-0 cwYjsy">
-						<button onclick="javascript:location.href='myProject.do'" style="border:0; outline:0;background:white">
+						</div></a><a href="myProject.do"><div
+							class="MenuItem__MenuItem-no2u3j-0 cwYjsy">
 							<span class="MenuItem__MenuItemTitle-no2u3j-1 enzRKc">내가
 								만든 프로젝트</span>
-						</button>
-					</div>
-						
+						</div></a>
 					<div class="Divider__Divider-s16ihjfx-0 XTtld"></div>
-					
-					<div	class="MenuItem__MenuItem-no2u3j-0 cwYjsy">
-						<button onclick="javascript:location.href='setProfile.do'" style="border:0; outline:0;background:white">
-								<span class="MenuItem__MenuItemTitle-no2u3j-1 enzRKc">프로필
-									설정</span>
-						</button>
-					</div>
-						
-					<div	class="MenuItem__MenuItem-no2u3j-0 cwYjsy">
-						<button onclick="javascript:location.href='setPayment.do'" style="border:0; outline:0;background:white">
+					<a href="setProfile.do"><div
+							class="MenuItem__MenuItem-no2u3j-0 cwYjsy">
+							<span class="MenuItem__MenuItemTitle-no2u3j-1 enzRKc">프로필
+								설정</span>
+						</div></a><a href="setPayment.do"><div
+							class="MenuItem__MenuItem-no2u3j-0 cwYjsy">
 							<span class="MenuItem__MenuItemTitle-no2u3j-1 enzRKc">지불
 								정보 설정</span>
-						</button>
-					</div>
-						
-					<div	class="MenuItem__MenuItem-no2u3j-0 cwYjsy">
-						<button onclick="javascript:location.href='/logout'" style="border:0; outline:0;background:white">
-							<span class="MenuItem__MenuItemTitle-no2u3j-1 enzRKc">로그아웃</span>
-						</button>
-					</div>
+						</div></a><a href="logout.do"><div
+							class="MenuItem__MenuItem-no2u3j-0 cwYjsy">
+							<span class="MenuItem__MenuItemTitle-no2u3j-1 enzRKc">로그아웃</span></a>
+
 				</div>
 			</div>
 		</div>

@@ -3643,8 +3643,15 @@ px
 				.children('input')
 				.change(
 						function() {
-
-							var formData = new FormData();
+							var fileName =$("#file").val();
+							var ext = fileName.slice(fileName.lastIndexOf(".") + 1).toLowerCase();
+						    
+							if (!(ext == "gif" || ext == "jpg" || ext == "png")) {
+						        alert("이미지파일 (.jpg, .png, .gif ) 만 업로드 가능합니다.");
+						        return false;
+						    }
+							
+							 var formData = new FormData();
 							formData.append("file", $("#file")[0].files[0]);
 							formData.append("email", '${project.email}');
 							formData.append("projectNum",
@@ -3662,7 +3669,6 @@ px
 										type : 'POST',
 										success : function(result) {
 											var imgsrc = result.repImg;
-											console.log(imgsrc);
 											$(".projectImage").css("display",
 													'none');
 											$(".projectImage2").children()
@@ -3691,7 +3697,7 @@ px
 										error : function() {
 											console.log("ajax에러");
 										}
-									});
+									}); 
 
 						});
 
@@ -3770,6 +3776,21 @@ px
 		$("#projectImageInput")
 				.change(
 						function() {
+							
+							var fileName =$("#projectImageInput").val();
+							var ext = fileName.slice(fileName.lastIndexOf(".") + 1).toLowerCase();
+							
+							if (upNum == 5) {
+							if (!(ext == "gif" || ext == "jpg" || ext == "png")) {
+						        alert("이미지파일 (.jpg, .png, .gif ) 만 업로드 가능합니다.");
+						        return false;
+						    }
+							}else{
+								if (!(ext == "mp4" || ext == "wmv" || ext == "avi"||ext == "mov")) {
+							        alert("동영상파일 (.mp4, .wmv, .avi, .mov ) 만 업로드 가능합니다.");
+							        return false;
+							    }
+							}
 							var formData = new FormData();
 							formData.append("file",
 									$("#projectImageInput")[0].files[0]);

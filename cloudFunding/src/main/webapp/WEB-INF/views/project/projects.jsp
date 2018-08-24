@@ -186,7 +186,12 @@
         	<c:set var="DateData" value="${lists.endDate }"/>
         	
 			<fmt:parseNumber var="remain" value="${( DateData.time-now.time ) / (1000*60*60*24) }" integerOnly="true" />
+        		<c:if test="${remain < 0 }">
+        			마감
+        		</c:if>
+        		<c:if test="${remain >0}">
         		<c:out value="${remain}"></c:out> 일
+        		</c:if>
         	</c:if>
         	<c:if test="${lists.pConfirm eq 0 or lists.pConfirm eq 1}">
           		0일

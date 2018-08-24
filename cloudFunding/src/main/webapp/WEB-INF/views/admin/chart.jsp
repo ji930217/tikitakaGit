@@ -15,22 +15,22 @@
   function drawChart() {
 	  
 	  var mMonth08 = ${memberMonth};
-	  /* var pMonth8 = ${projectMonth}; */
+	  var pMonth8 = ${projectMonth}; 
 	  
 	  
     var data = google.visualization.arrayToDataTable([
-      ['month', '회원', '프로젝트'],
+      [' ', '회원', '프로젝트'],
       ['03월', 1, 1],
       ['04월', 3, 2],
       ['05월', 6, 4],
       ['06월', 10, 6],
       ['07월', 12, 8],
-      ['08월', mMonth08, 10]
+      ['08월', mMonth08, pMonth8]
     ]);
 
     var options = {
       chart: {
-         title: '최근 6개월간 TIKITAKA 회원&프로젝트',
+         title: '최근 6개월간 TIKITAKA 월별 회원&프로젝트',
         subtitle: '18/03/01~18/08/31', 
       }
     };
@@ -46,7 +46,7 @@
   google.charts.setOnLoadCallback(drawChart);
   
   var mMonth08 = ${memberMonth};
-  /* var pMonth8 = ${projectMonth}; */
+   var pMonth8 = ${projectMonth}; 
 
   function drawChart() {
     var data = google.visualization.arrayToDataTable([
@@ -56,7 +56,7 @@
         ['05월', 10, 7],
         ['06월', 20, 13],
         ['07월', 32, 21],
-        ['08월', mMonth08+32, 31]
+        ['08월', mMonth08+32, pMonth8+21]
     ]);
 
     var options = {
@@ -107,12 +107,14 @@
 	  var category1 = ${category1};
 	  var category2 = ${category2};
 	  var category3 = ${category3};
+	  var category4 = ${category4};
 	  
     var data = google.visualization.arrayToDataTable([
       ['카테고리', '갯수'],
       ['게임',    category1 ],
       ['공연',      category2],
       ['디자인',    category3],
+      ['푸드',    category4]
       
     ]);
 
@@ -150,7 +152,7 @@
   
   <div id="piechart" style="width: 40%; height: 200px;"></div>
   </div>
-  <!-- <p>회원&프로젝트 합계</p> -->
+  
 
   
   <div id = "div2">

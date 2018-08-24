@@ -174,6 +174,11 @@ public class AdminDao {
 		
 		return sqlSession.selectOne("AdminMapper.category3");
 	}
+	
+	public int category4() {
+		
+		return sqlSession.selectOne("AdminMapper.category4");
+	}
 
 	public int memberMonth() {
 		
@@ -209,6 +214,31 @@ public class AdminDao {
 		
 		return sqlSession.selectList("AdminMapper.memberDetail",email);
 	}
+
+	public int insertSupport(String email, String pCode, String amount, String item, String addr) {
+		
+		HashMap params = new HashMap();
+		
+		params.put("email", email);
+		params.put("pCode", pCode);
+		params.put("amount", amount);
+		params.put("item", item);
+		params.put("addr", addr);
+		
+		return sqlSession.insert("AdminMapper.insertSupport", params);
+	}
+
+	public int updateProjectAmount(String pCode, String amount) {
+		
+HashMap params = new HashMap();
+		
+		params.put("pCode", pCode);
+		params.put("amount", amount);
+		
+		return sqlSession.update("AdminMapper.updateProjectAmount", params);
+	}
+
+	
 
 	
 
