@@ -50,20 +50,37 @@ public class MessageController {
 		
 		// 가장 마지막으로 온 메시지 내용도 필요
 		List<MessageVo> list = msgService.selectMessageList(user.getEmail());
+		List<MessageVo> newList = msgService.selectNewMessageList(user.getEmail());
 		mv.addObject("list", list);
+		mv.addObject("newList", newList);
 		mv.setViewName("message/messagePage");
 		
 		return mv;
 	}
 	@RequestMapping("messagePage2.do")
 	public @ResponseBody List<MessageVo> messagePage2(HttpSession session){
-		// 로그인한 유저 정보를 통해 해당 멤버의 메시지리스트 불러와야해
 		Member user = (Member) session.getAttribute("user");
-		
-		// 가장 마지막으로 온 메시지 내용도 필요
 		List<MessageVo> list = msgService.selectMessageList(user.getEmail());
-		
 		return list;
+	}
+	
+	@RequestMapping("messagePage3.do")
+	public @ResponseBody List<MessageVo> messagePage3(HttpSession session){
+		Member user = (Member) session.getAttribute("user");
+		List<MessageVo> list = msgService.selectNewMessageList(user.getEmail());
+		return list;
+	}
+	
+	
+	@RequestMapping("checkMessageCount.do")
+	public @ResponseBody boolean checkMessageCount(HttpSession session){
+		boolean result = false;
+		Member user = (Member) session.getAttribute("user");
+		int newMessageCount = msgService.selectNewMessageCount(user.getEmail());
+		if(0 < newMessageCount){
+			result = true;
+		}
+		return result;
 	}
 	
 	@RequestMapping("updateNewMessageCount.do")
@@ -76,7 +93,7 @@ public class MessageController {
 	@RequestMapping("messageDetail.do")
 	public ModelAndView messageDetail(MessageVo msg, HttpSession session, ModelAndView mv){
 		Member user = (Member) session.getAttribute("user");
-		// 현재 메시지	방의 읽지 않음을 모두 읽음으로 변경하고 세션에 저장해야해.
+		// 현재 메시지	방에서 내가 받은 메시지의 읽지 않음을 모두 읽음으로 변경하고 세션에 저장해야해.
 		int result = msgService.updateReadFlag(msg);
 		session.setAttribute("newMessageCount", msgService.selectNewMessageCount(user.getEmail()));
 		

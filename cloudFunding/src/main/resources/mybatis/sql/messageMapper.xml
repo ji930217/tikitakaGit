@@ -47,6 +47,30 @@
 		ORDER BY M_SEND_DATE DESC
 	</select>
 	
+	<select id = "selectNewMessageList" resultMap="messageMap" parameterType="string">
+		SELECT P_PROJECT_CODE, P_TITLE, P_REP_IMG, CREATOR_EMAIL, M_CODE, M_WRITER, M_RECEIVER, M_CONTENT, M_SEND_DATE, NEW_MESSAGE_COUNT, WRITER_NAME
+		FROM(SELECT P.P_PROJECT_CODE, P_TITLE, P_REP_IMG, P.EMAIL AS CREATOR_EMAIL, M_CODE, M_WRITER, M_RECEIVER, M_CONTENT, TO_CHAR(M_SEND_DATE,'YYYY-MM-DD HH24:MI') AS M_SEND_DATE, 
+									-- 로그인 한 유저가 보낸 것이 아닌 새로운 메시지만 카운트
+									(SELECT COUNT(*) FROM MESSAGE 
+									WHERE M_READ_FLAG = 'F' 
+										AND P_PROJECT_CODE = P.P_PROJECT_CODE 
+										AND M_RECEIVER = #{email}) AS NEW_MESSAGE_COUNT,
+						      	(SELECT NAME FROM MEMBER WHERE EMAIL = M_WRITER) AS WRITER_NAME--,
+						--      (SELECT NAME FROM MEMBER WHERE EMAIL = M_RECEIVER) AS RECEIVER_NAME
+					FROM PROJECT P JOIN MESSAGE ON(P.P_PROJECT_CODE = MESSAGE.P_PROJECT_CODE)
+					WHERE P.P_PROJECT_CODE IN (SELECT P_PROJECT_CODE 
+																		FROM MESSAGE 
+																		WHERE M_WRITER = #{email} OR M_RECEIVER = #{email})
+					-- 프로젝트 별 가장 최신 메시지 정보만
+					AND M_SEND_DATE IN (SELECT MAX(M.M_SEND_DATE) 
+															FROM MESSAGE M 
+															WHERE (M.M_WRITER = #{email} OR M.M_RECEIVER = #{email}) 
+															AND M.P_PROJECT_CODE = P.P_PROJECT_CODE) 
+		)
+    	WHERE NEW_MESSAGE_COUNT > 0
+		ORDER BY M_SEND_DATE DESC
+	</select>
+	
 	<select id="selectNewMessageCount" parameterType="string" resultType="int">
 	    SELECT COUNT(*) FROM MESSAGE WHERE M_RECEIVER = #{email} AND M_READ_FLAG = 'F'
 	</select>
