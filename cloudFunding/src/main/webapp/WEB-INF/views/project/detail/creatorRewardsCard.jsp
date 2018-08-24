@@ -277,7 +277,16 @@
 
 <script>
 	function openMessagePopup(){
-		$("#messageDiv, #messageDiv select").css("visibility", "visible");
+		var userEmail = "<c:out value='${user.email}'/>";
+		var creatorEmail = "<c:out value='${project.email}'/>";
+		
+		if(null != userEmail){
+			alert("로그인이 필요한 서비스 입니다.");
+			location.href="loginPage.do";
+		} else {
+			$("#messageDiv, #messageDiv select").css("visibility", "visible");
+		}
+		
 	};
 </script>
 </head>
@@ -310,18 +319,13 @@
 						<b><c:out value="${supportedCount }"/></b>
 					</div>
 					<div class="CreatorCard__CreatorContactButton-yeytpy-6 khYIRi">
-						<c:if test="${empty user }">
-							<button class="Button__Button-s1ng5xda-0 dxWcyc" onclick="javascript:location.href='loginPage.do'">
-								로그인 하러 가기
-							</button>
-						</c:if>
 						<c:if test="${!empty user && project.email eq user.email }">
 							<button class="Button__Button-s1ng5xda-0 dxWcyc" onclick="javascript:location.href='messagePage.do'">
 								<i class="_3YmAkQhwzI7o-uUWz_8Mp4 _1QY7TzdLHKX3-BKPDNNYKF"></i>
 								후원자 문의 사항 확인
 							</button>
 						</c:if>
-						<c:if test="${!empty user && project.email ne user.email }">
+						<c:if test="${project.email ne user.email }">
 							<button class="Button__Button-s1ng5xda-0 dxWcyc" onclick="openMessagePopup();">
 								<i class="_3YmAkQhwzI7o-uUWz_8Mp4 _1QY7TzdLHKX3-BKPDNNYKF"></i>
 								창작자에게 문의하기

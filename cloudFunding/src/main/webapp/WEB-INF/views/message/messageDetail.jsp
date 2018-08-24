@@ -77,7 +77,9 @@
 </style>    
 <script>
 	$(function(){
-
+		// 채팅내용 영역 스크롤 맨 아래로
+		$("#msgDetailListDiv").scrollTop($("#msgDetailListDiv")[0].scrollHeight);
+		
 		$("#msgContent").on('input selectionchange propertychange', function() {
 			if($("#msgContent").val().length > 0) {
 				$("#sendMessageBtn").attr("disabled", false);
@@ -92,47 +94,125 @@
 			var receiverEmail = $("#receiverEmail").val();
 			var messageKinds = "<c:out value='${list[0].messageKinds }'/>";
 			var content = $("#msgContent").val();
-			console.log(content);
 			
 			$.ajax({
 				url : "sendMessage2.do",
 				type : "post",
 				data : {projectCode : projectCode, writerEmail : writerEmail, receiverEmail : receiverEmail, messageKinds : messageKinds, content : content},
-				success : function(msg){
+				success : function(list){
 					/* console.log(msg); */
 					$("#sendMessageBtn").attr("disabled", true);
+					
+					var userEmail = "<c:out value='${user.email}'/>";
 					var $msgDetailListDiv = $("#msgDetailListDiv");
-					
-					var resultStr = $msgDetailListDiv.html();
-					resultStr += "<div><div class='_30LNYFhw6qsigZSbwlGCDz'>";
-					resultStr += "<div class='kq_2sXRgq_sfeYNfZHKOs'>";
-					resultStr += "<div class='_34WN1umVFRc6wIDpVrIjIr' style='background-image: url(" + msg.writerProfileImg + ");'></div></div>";
-					resultStr += "<div class='_3ZgG-OSv0XE3y-h3oPaDsl KFiVOeTOhXeUxwbhd30-9'>";
-					resultStr += "<span class='_1lzmMuArEV-MDJ-ASw7e8M'>" + msg.writerName + " &nbsp;</span>";
-					resultStr += "<div class='_22TCURqKJxPd9Pk2fUP3C2'><span class=''>" + msg.sendDate + "</span></div>";
-					resultStr += "<div class='_2J-JDs-O0yO3-wBkPp1CzJ'><p style='white-space: pre-line;'>" + msg.content + "</p></div>";
-					if(msg.readFlag == 'T'.charAt(0)) {
-						resultStr += "<span class='_1K0ZBo09IxoqIXG0pce9Pa'>";
-						resultStr += "<i class='-o8oGI_QAOKsVIJOUOUmV _254YPhBOB9qv7-J8bIg7co _3sFSjAZS4gQdCAyN3OfyFG _1QY7TzdLHKX3-BKPDNNYKF'></i>읽음</span>";
-					} else {
-						resultStr += "<span class='_1K0ZBo09IxoqIXG0pce9Pa'>";
-						resultStr += "<i class='_254YPhBOB9qv7-J8bIg7co _2rpTvKkYYdMbVEklWlLfhl _1QY7TzdLHKX3-BKPDNNYKF'></i>읽지않음</span>";
+					var resultStr = "";
+					for(var key in list){
+						if(userEmail == list[key].writerEmail) {
+							resultStr += "<div style='text-align:right; margin-right: 10px;'><div class='_30LNYFhw6qsigZSbwlGCDz'>";
+							resultStr += "<div class='kq_2sXRgq_sfeYNfZHKOs' style='float:right;'>";
+							resultStr += "<div class='_34WN1umVFRc6wIDpVrIjIr' style='background-image: url(" + list[key].writerProfileImg + ");'></div></div>";
+							resultStr += "<div class='_3ZgG-OSv0XE3y-h3oPaDsl KFiVOeTOhXeUxwbhd30-9' style='margin-right: 3.5em;'>";
+							resultStr += "<div class='_22TCURqKJxPd9Pk2fUP3C2' style='margin-left:0px; margin-right:.5em;'><span class=''>" + list[key].sendDate + "</span></div>";
+							resultStr += "<span class='_1lzmMuArEV-MDJ-ASw7e8M'  style='margin-right:-7px;'>" + list[key].writerName + " &nbsp;</span>";
+							resultStr += "<div class='_2J-JDs-O0yO3-wBkPp1CzJ'><p style='white-space: pre-line;'>" + list[key].content + "</p></div>";
+							if(list[key].readFlag == 'T'.charAt(0)) {
+								resultStr += "<span class='_1K0ZBo09IxoqIXG0pce9Pa'>";
+								resultStr += "<i class='-o8oGI_QAOKsVIJOUOUmV _254YPhBOB9qv7-J8bIg7co _3sFSjAZS4gQdCAyN3OfyFG _1QY7TzdLHKX3-BKPDNNYKF'></i>읽음</span>";
+							} else {
+								resultStr += "<span class='_1K0ZBo09IxoqIXG0pce9Pa'>";
+								resultStr += "<i class='_254YPhBOB9qv7-J8bIg7co _2rpTvKkYYdMbVEklWlLfhl _1QY7TzdLHKX3-BKPDNNYKF'></i>읽지않음</span>";
+							}
+							resultStr += "</div></div></div>";
+						} else {
+							resultStr += "<div><div class='_30LNYFhw6qsigZSbwlGCDz'>";
+							resultStr += "<div class='kq_2sXRgq_sfeYNfZHKOs'>";
+							resultStr += "<div class='_34WN1umVFRc6wIDpVrIjIr' style='background-image: url(" + list[key].writerProfileImg + ");'></div></div>";
+							resultStr += "<div class='_3ZgG-OSv0XE3y-h3oPaDsl KFiVOeTOhXeUxwbhd30-9'>";
+							resultStr += "<span class='_1lzmMuArEV-MDJ-ASw7e8M'>" + list[key].writerName + " &nbsp;</span>";
+							resultStr += "<div class='_22TCURqKJxPd9Pk2fUP3C2'><span class=''>" + list[key].sendDate + "</span></div>";
+							resultStr += "<div class='_2J-JDs-O0yO3-wBkPp1CzJ'><p style='white-space: pre-line;'>" + list[key].content + "</p></div>";
+							resultStr += "</div></div></div>";
+						}
+						<!-- 구분선 -->
+						resultStr += "<div><div>";
+						resultStr += "<div class='_13KHfN73YmQgsYHxXvuh_J _1abzWO2yE0ZJ7OiXOf85f5 _4S0ikJ5kL9iaC8TQbNr2J'></div>";
+						resultStr += "<div class='_13KHfN73YmQgsYHxXvuh_J _4S0ikJ5kL9iaC8TQbNr2J'></div>";
+						resultStr += "</div></div>";
 					}
-					resultStr += "</div></div></div>";
-					<!-- 구분선 -->
-					resultStr += "<div><div>";
-					resultStr += "<div class='_13KHfN73YmQgsYHxXvuh_J _1abzWO2yE0ZJ7OiXOf85f5 _4S0ikJ5kL9iaC8TQbNr2J'></div>";
-					resultStr += "<div class='_13KHfN73YmQgsYHxXvuh_J _4S0ikJ5kL9iaC8TQbNr2J'></div>";
-					resultStr += "</div></div>";
 					
-					$msgDetailListDiv.html(resultStr);
+					$msgDetailListDiv.html(resultStr); 
 					$("#msgContent").val("");
+					$("#msgDetailListDiv").scrollTop($("#msgDetailListDiv")[0].scrollHeight);
 				}, error : function(e){
 					console.log("ajax sendMessageError : ", e);
 				}
 				
 			}); 
 		});
+		
+		timer = setInterval( function () {
+			var msgListSize = $("#msgListSize").val();
+			var projectCode = "<c:out value='${list[0].projectCode }'/>";
+			var writerEmail = "<c:out value='${user.email }'/>";
+			var receiverEmail = $("#receiverEmail").val();
+			
+			$.ajax ({
+				url : "messageDetailAjax.do", 
+				type : "post",
+				data : {projectCode : projectCode, writerEmail : writerEmail, receiverEmail : receiverEmail},
+				cache : false,
+				success : function (list) {
+					var newMsgListSize = parseInt(list.length);
+					
+					if(0 < newMsgListSize && parseInt(msgListSize) != newMsgListSize) {
+					 	$("#msgListSize").val(newMsgListSize);
+						
+						var userEmail = "<c:out value='${user.email}'/>";
+						var $msgDetailListDiv = $("#msgDetailListDiv");
+						var resultStr = "";
+						for(var key in list){
+							if(userEmail == list[key].writerEmail) {
+								resultStr += "<div style='text-align:right; margin-right: 10px;'><div class='_30LNYFhw6qsigZSbwlGCDz'>";
+								resultStr += "<div class='kq_2sXRgq_sfeYNfZHKOs' style='float:right;'>";
+								resultStr += "<div class='_34WN1umVFRc6wIDpVrIjIr' style='background-image: url(" + list[key].writerProfileImg + ");'></div></div>";
+								resultStr += "<div class='_3ZgG-OSv0XE3y-h3oPaDsl KFiVOeTOhXeUxwbhd30-9' style='margin-right: 3.5em;'>";
+								resultStr += "<div class='_22TCURqKJxPd9Pk2fUP3C2' style='margin-left:0px; margin-right:.5em;'><span class=''>" + list[key].sendDate + "</span></div>";
+								resultStr += "<span class='_1lzmMuArEV-MDJ-ASw7e8M'  style='margin-right:-7px;'>" + list[key].writerName + " &nbsp;</span>";
+								resultStr += "<div class='_2J-JDs-O0yO3-wBkPp1CzJ'><p style='white-space: pre-line;'>" + list[key].content + "</p></div>";
+								if(list[key].readFlag == 'T'.charAt(0)) {
+									resultStr += "<span class='_1K0ZBo09IxoqIXG0pce9Pa'>";
+									resultStr += "<i class='-o8oGI_QAOKsVIJOUOUmV _254YPhBOB9qv7-J8bIg7co _3sFSjAZS4gQdCAyN3OfyFG _1QY7TzdLHKX3-BKPDNNYKF'></i>읽음</span>";
+								} else {
+									resultStr += "<span class='_1K0ZBo09IxoqIXG0pce9Pa'>";
+									resultStr += "<i class='_254YPhBOB9qv7-J8bIg7co _2rpTvKkYYdMbVEklWlLfhl _1QY7TzdLHKX3-BKPDNNYKF'></i>읽지않음</span>";
+								}
+								resultStr += "</div></div></div>";
+							} else {
+								resultStr += "<div><div class='_30LNYFhw6qsigZSbwlGCDz'>";
+								resultStr += "<div class='kq_2sXRgq_sfeYNfZHKOs'>";
+								resultStr += "<div class='_34WN1umVFRc6wIDpVrIjIr' style='background-image: url(" + list[key].writerProfileImg + ");'></div></div>";
+								resultStr += "<div class='_3ZgG-OSv0XE3y-h3oPaDsl KFiVOeTOhXeUxwbhd30-9'>";
+								resultStr += "<span class='_1lzmMuArEV-MDJ-ASw7e8M'>" + list[key].writerName + " &nbsp;</span>";
+								resultStr += "<div class='_22TCURqKJxPd9Pk2fUP3C2'><span class=''>" + list[key].sendDate + "</span></div>";
+								resultStr += "<div class='_2J-JDs-O0yO3-wBkPp1CzJ'><p style='white-space: pre-line;'>" + list[key].content + "</p></div>";
+								resultStr += "</div></div></div>";
+							}
+							<!-- 구분선 -->
+							resultStr += "<div><div>";
+							resultStr += "<div class='_13KHfN73YmQgsYHxXvuh_J _1abzWO2yE0ZJ7OiXOf85f5 _4S0ikJ5kL9iaC8TQbNr2J'></div>";
+							resultStr += "<div class='_13KHfN73YmQgsYHxXvuh_J _4S0ikJ5kL9iaC8TQbNr2J'></div>";
+							resultStr += "</div></div>";
+						}
+						
+						$msgDetailListDiv.html(resultStr); 
+						$("#msgDetailListDiv").scrollTop($("#msgDetailListDiv")[0].scrollHeight);
+					}
+				}, error : function(e){
+					console.log("ajax sendMessageError : ", e);
+				}
+			});
+		}, 3000);
+	
 	});
 </script>    
     
@@ -179,6 +259,7 @@
 													<c:set var="receiverName" value="${list[0].receiverName }"/>
 												</c:if>
 												<input type="hidden" id="receiverEmail" value="${receiverEmail }"/>
+												<input type="hidden" id="msgListSize" value="<c:out value='${fn:length(list) }'/>"/>
 												<div class="_3GsVAVoGzjheDw0rH9Rnvs"
 													style="background-image: url('<c:out value='${receiverProfileImg }'/>');"></div>
 											</div>
@@ -203,37 +284,78 @@
 							
 							<c:if test="${!empty list }">
 								<c:forEach var="msg" items="${list }">
-									<div>
-										<div class="_30LNYFhw6qsigZSbwlGCDz">
-											<div class="kq_2sXRgq_sfeYNfZHKOs">
-												<div class="_34WN1umVFRc6wIDpVrIjIr"
-													style="background-image: url(<c:out value='${msg.writerProfileImg }'/>);"></div>
-											</div>
-											<div class="_3ZgG-OSv0XE3y-h3oPaDsl KFiVOeTOhXeUxwbhd30-9">
-												<span class="_1lzmMuArEV-MDJ-ASw7e8M">
-													<c:out value="${msg.writerName }"/> &nbsp;
-												</span>
-												<div class="_22TCURqKJxPd9Pk2fUP3C2">
-													<span class=""><c:out value="${msg.sendDate }"/></span>
+									<c:if test='${msg.writerEmail ne user.email }'>
+										<div>
+											<div class="_30LNYFhw6qsigZSbwlGCDz">
+												<div class="kq_2sXRgq_sfeYNfZHKOs">
+													<div class="_34WN1umVFRc6wIDpVrIjIr"
+														style="background-image: url(<c:out value='${msg.writerProfileImg }'/>);"></div>
 												</div>
-												<div class="_2J-JDs-O0yO3-wBkPp1CzJ">
-													<p style="white-space: pre-line;"><c:out value="${msg.content }"/></p>
+												<div class="_3ZgG-OSv0XE3y-h3oPaDsl KFiVOeTOhXeUxwbhd30-9">
+													<span class="_1lzmMuArEV-MDJ-ASw7e8M">
+														<c:out value="${msg.writerName }"/> &nbsp;
+													</span>
+													<div class="_22TCURqKJxPd9Pk2fUP3C2">
+														<span class=""><c:out value="${msg.sendDate }"/></span>
+													</div>
+													<div class="_2J-JDs-O0yO3-wBkPp1CzJ">
+														<p style="white-space: pre-line;"><c:out value="${msg.content }"/></p>
+													</div>
+													<c:if test="${msg.receiverEmail ne user.email }">
+														<c:if test="${msg.readFlag == 'T'.charAt(0) }">
+															<span class="_1K0ZBo09IxoqIXG0pce9Pa">
+																<i	class="-o8oGI_QAOKsVIJOUOUmV _254YPhBOB9qv7-J8bIg7co _3sFSjAZS4gQdCAyN3OfyFG _1QY7TzdLHKX3-BKPDNNYKF"></i>
+																읽음
+															</span>
+														</c:if>
+														<c:if test="${msg.readFlag == 'F'.charAt(0) }">
+															<span class="_1K0ZBo09IxoqIXG0pce9Pa">
+																<i	class="_254YPhBOB9qv7-J8bIg7co _2rpTvKkYYdMbVEklWlLfhl _1QY7TzdLHKX3-BKPDNNYKF"></i>
+																읽지않음
+															</span>
+														</c:if>
+													</c:if>
 												</div>
-												<c:if test="${msg.readFlag == 'T'.charAt(0) }">
-													<span class="_1K0ZBo09IxoqIXG0pce9Pa">
-														<i	class="-o8oGI_QAOKsVIJOUOUmV _254YPhBOB9qv7-J8bIg7co _3sFSjAZS4gQdCAyN3OfyFG _1QY7TzdLHKX3-BKPDNNYKF"></i>
-														읽음
-													</span>
-												</c:if>
-												<c:if test="${msg.readFlag == 'F'.charAt(0) }">
-													<span class="_1K0ZBo09IxoqIXG0pce9Pa">
-														<i	class="_254YPhBOB9qv7-J8bIg7co _2rpTvKkYYdMbVEklWlLfhl _1QY7TzdLHKX3-BKPDNNYKF"></i>
-														읽지않음
-													</span>
-												</c:if>
 											</div>
 										</div>
-									</div>
+									</c:if>
+									
+									<c:if test='${msg.writerEmail eq user.email }'>
+										<div style="text-align:right; margin-right: 10px;">
+											<div class="_30LNYFhw6qsigZSbwlGCDz">
+												<div class="kq_2sXRgq_sfeYNfZHKOs" style="float:right;">
+													<div class="_34WN1umVFRc6wIDpVrIjIr"
+														style="background-image: url(<c:out value='${msg.writerProfileImg }'/>);"></div>
+												</div>
+												<div class="_3ZgG-OSv0XE3y-h3oPaDsl KFiVOeTOhXeUxwbhd30-9" style="margin-right: 3.5em;">
+													<div class="_22TCURqKJxPd9Pk2fUP3C2" style="margin-left:0px; margin-right:.5em;">
+														<span class=""><c:out value="${msg.sendDate }"/></span>
+													</div>
+													<span class="_1lzmMuArEV-MDJ-ASw7e8M" style="margin-right:-7px;">
+														<c:out value="${msg.writerName }"/> &nbsp;
+													</span>
+													<div class="_2J-JDs-O0yO3-wBkPp1CzJ" >
+														<p style="white-space: pre-line;"><c:out value="${msg.content }"/></p>
+													</div>
+													<c:if test="${msg.receiverEmail ne user.email }">
+														<c:if test="${msg.readFlag == 'T'.charAt(0) }">
+															<span class="_1K0ZBo09IxoqIXG0pce9Pa">
+																<i	class="-o8oGI_QAOKsVIJOUOUmV _254YPhBOB9qv7-J8bIg7co _3sFSjAZS4gQdCAyN3OfyFG _1QY7TzdLHKX3-BKPDNNYKF"></i>
+																읽음
+															</span>
+														</c:if>
+														<c:if test="${msg.readFlag == 'F'.charAt(0) }">
+															<span class="_1K0ZBo09IxoqIXG0pce9Pa" >
+																<i	class="_254YPhBOB9qv7-J8bIg7co _2rpTvKkYYdMbVEklWlLfhl _1QY7TzdLHKX3-BKPDNNYKF"></i>
+																읽지않음
+															</span>
+														</c:if>
+													</c:if>
+												</div>
+											</div>
+										</div>
+									</c:if>
+									
 									<!-- 구분선 -->
 									<div>
 										<div>
