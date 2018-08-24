@@ -176,7 +176,7 @@
 							<div class="b-panel__body" data-reactid=".16yr6xmb3eo.1.2:$1.1.1">
 								<span data-reactid=".16yr6xmb3eo.1.2:$1.1.1.0"><c:out value="${gift.description }"/></span>
 								<ul data-reactid=".16yr6xmb3eo.1.2:$1.1.1.1">
-								<c:set var="items" value="${gift.item.split(', ') }"/>
+								<c:set var="items" value="${gift.item.split(',') }"/>
 									<c:forEach var="item" items="${items }">
 										<li data-reactid=".16yr6xmb3eo.1.2:$1.1.1.1.$0">
 										<span data-reactid=".16yr6xmb3eo.1.2:$1.1.1.1.$0.0">${item }</span>

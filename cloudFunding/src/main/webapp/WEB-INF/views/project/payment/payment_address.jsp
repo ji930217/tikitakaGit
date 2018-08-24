@@ -14,12 +14,7 @@
 	href="https://d1pqmsyqo4bi9.cloudfront.net/assets/app-f9bc96afb1b4362edcbbac34fa577164.css"
 	media="screen" rel="stylesheet" type="text/css">
 </head>
-<script>
-	var input = sessionStorage.getItem("inputVal");
-	
-	console.log(input);
 
-</script>
 
 
 <body >
@@ -171,7 +166,8 @@ function paymentPage(){
 	var item = '${projectG.giftArry[0].item}';
 	var title = '${projectG.title}';
 	
-	location.href="paymentPage.do?projectCode="+${projectG.projectCode}+"&address="+fullAdd+"&inputVal="+${inputVal}+"&projectTitle="+title+"&item="+item;
+	location.href="paymentPage.do?projectCode="+${projectG.projectCode}+"&address="+fullAdd+"&inputVal="+${inputVal}+"&projectTitle="+title+"&item="+item+"&price="
+					+${projectG.giftArry[0].price};
 }
 
 </script>

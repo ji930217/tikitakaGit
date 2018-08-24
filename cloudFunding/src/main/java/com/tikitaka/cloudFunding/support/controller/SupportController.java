@@ -39,7 +39,8 @@ public class SupportController {
 	}
 	
 	@RequestMapping("paymentPage.do")
-	public ModelAndView paymentPage(ModelAndView mv,int projectCode,String address,int inputVal,String projectTitle,String item){
+	public ModelAndView paymentPage(ModelAndView mv,int projectCode,String address,int inputVal,String projectTitle,String item,int price){
+		mv.addObject("price", price);
 		mv.addObject("projectCode",projectCode);
 		mv.addObject("address",address);
 		mv.addObject("inputVal",inputVal);

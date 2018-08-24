@@ -294,14 +294,14 @@ WHERE TO_CHAR(P_ENROLL_DATE,'YY') = '18' AND TO_CHAR(P_ENROLL_DATE,'MM') = '08'
 
 
 
-<!-- <resultMap type="Support" id="supportMap">
+ <resultMap type="Support" id="supportMap">
 <id property="email" column="EMAIL" />
 <result property = "projectCode" column = "P_PROJECT_CODE"/>
 <result property = "amount" column = "SUPPORTING_AMOUNT"/>
 <result property = "gcode" column = "P_GIFT_ITEM"/>
 <result property = "date" column = "SUPPORTED_DATE"/>
 <result property = "address" column = "ADDRESS"/>
-</resultMap> -->
+</resultMap> 
 
 <insert id="insertSupport">
 INSERT INTO SUPPORT VALUES(#{email},#{pCode},#{amount},#{item},SYSDATE,#{addr})
