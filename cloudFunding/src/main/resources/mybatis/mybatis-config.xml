@@ -22,6 +22,7 @@
   	<typeAlias type="com.tikitaka.cloudFunding.project.model.vo.GiftVo" alias="Gift"/>
   	<typeAlias type="com.tikitaka.cloudFunding.member.model.vo.PaymentInfo" alias="PaymentInfo"/>
   	<typeAlias type="com.tikitaka.cloudFunding.message.model.vo.MessageVo" alias="Message"/>
+  	<typeAlias type="com.tikitaka.cloudFunding.support.model.vo.SupportVo" alias="Support"/>
   </typeAliases>
   
 
