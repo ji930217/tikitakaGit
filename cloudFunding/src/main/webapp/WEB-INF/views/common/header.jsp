@@ -1319,7 +1319,7 @@ data-react-helmet="true"><meta name="twitter:title" content="텀블벅 tumblbug"
 								프로젝트</span></button>
 					</div>
 					<div class="MenuItem__MenuItem-no2u3j-0 cwYjsy">
-						<button onclick="location.href='projectListOrderByEnrollDate.do"' style="border:0; outline:0;background:white"><span
+						<button onclick="location.href='projectListOrderByEnrollDate.do'" style="border:0; outline:0;background:white"><span
 							class="MenuItem__MenuItemTitle-no2u3j-1 enzRKc">새로운
 								프로젝트</span></button>
 					</div>
