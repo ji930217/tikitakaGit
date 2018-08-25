@@ -79,7 +79,7 @@
   function drawChart() {
 
 	  var allPrice = ${allPrice-price };
-	  var price = ${price };
+	  var price = ${price }; 
 	  
 	  
     var data = google.visualization.arrayToDataTable([
