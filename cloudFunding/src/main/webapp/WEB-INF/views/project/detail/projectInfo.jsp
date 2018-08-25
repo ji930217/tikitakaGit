@@ -508,6 +508,11 @@
 		video.attr('src', src);
 		video.get(0).play();
 	}
+	
+	function payForProject(){
+		var projectCode = "<c:out value='${project.projectCode}'/>";
+		location.href="selectpayment.do?projectCode=" + projectCode;
+	}
 </script>
 
 </head>
@@ -541,7 +546,7 @@
 				</c:if>
 				<c:if test="${remain gt 0 }">
 					<div class="ContentsNavigation__NavRight-s6dhfrc-4 eAgLGx">
-						<button class="Button__Button-s1ng5xda-0 jKslKa">프로젝트 밀어주기</button>
+						<button class="Button__Button-s1ng5xda-0 jKslKa" onclick="payForProject();">프로젝트 밀어주기</button>
 					</div>
 				</c:if>
 			</div>
@@ -710,7 +715,7 @@
 							</c:if>
 							<c:if test="${remain gt 0 }">
 								<div	class="ProjectIntroduction__PrimaryButton-c7b94s-21 fjkRCm" data-reactid="87">
-									<button class="Button__Button-s1ng5xda-0 dvkZSH"  data-reactid="88">프로젝트 밀어주기</button>
+									<button class="Button__Button-s1ng5xda-0 dvkZSH"  data-reactid="88" onclick="payForProject();">프로젝트 밀어주기</button>
 								</div>
 							</c:if>
 							<div	class="ProjectIntroduction__SecondaryButton-c7b94s-22 cYmhAj"	data-reactid="89">

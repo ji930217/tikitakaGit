@@ -278,9 +278,7 @@
 <script>
 	function openMessagePopup(){
 		var userEmail = "<c:out value='${user.email}'/>";
-		var creatorEmail = "<c:out value='${project.email}'/>";
-		
-		if(null != userEmail){
+		if(null == userEmail || userEmail == ""){
 			alert("로그인이 필요한 서비스 입니다.");
 			location.href="loginPage.do";
 		} else {
