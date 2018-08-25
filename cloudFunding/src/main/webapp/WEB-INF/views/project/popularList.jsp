@@ -39,9 +39,7 @@
 	content="summary_large_image">
 <link rel="stylesheet" type="text/css"
 	href="https://d2om2e6rfn032x.cloudfront.net/wpa/app.f0ed3932e778a7f95ef1c52983d12741.css">
-<link
-	href="https://tumblbug-assets.imgix.net/appicon/favicon/favicon-32x32.png"
-	rel="icon" type="image/x-icon">
+<link href=resources/images/header/tktkFavicon.png rel="icon" type="image/x-icon">
 
 <link rel="apple-touch-icon" sizes="120x120"
 	href="https://tumblbug-assets.imgix.net/appicon/home-icon/apple-icon-120x120.png">

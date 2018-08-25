@@ -10,6 +10,7 @@
       <script type="text/javascript" src="resources/js/jquery-3.3.1.min.js"></script>
       
       <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=no">
+      <link href=resources/images/header/tktkFavicon.png rel="icon" type="image/x-icon">
       <link rel="dns-prefetch" href="https://tumblbug-assets.imgix.net">
       <link rel="dns-prefetch" href="https://tumblbug-pci2.imgix.net">
       <link rel="dns-prefetch" href="https://tumblbug-psi.imgix.net">
@@ -283,7 +284,7 @@
 														<c:set var="readFlagFCount" value="${readFlagFCount + 1 }"/>
 														<script>
 															var readFlagFCount = "<c:out value='${readFlagFCount}'/>";
-															console.log(readFlagFCount);
+															/* console.log(readFlagFCount); */
 														</script>
 													</c:if>
 												</c:forEach>

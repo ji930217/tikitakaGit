@@ -20,7 +20,7 @@
       <link rel="dns-prefetch" href="https://stats.g.doubleclick.net">
       <meta data-react-helmet="true" property="fb:app_id" content="200842993269405"><meta data-react-helmet="true" property="og:site_name" content="tumblbug"><meta data-react-helmet="true" property="og:type" content="website"><meta data-react-helmet="true" property="og:image:width" content="620"><meta data-react-helmet="true" property="og:image:height" content="465"><meta data-react-helmet="true" name="twitter:site" content="tumblbug"><meta data-react-helmet="true" name="twitter:creator" content="tumblbug"><meta data-react-helmet="true" name="twitter:card" content="summary_large_image">
       <link rel="stylesheet" type="text/css" href="https://d2om2e6rfn032x.cloudfront.net/wpa/app.5c08c8fc6bd4222f6e389a6619bbe6c2.css">
-      <link href="https://tumblbug-assets.imgix.net/appicon/favicon/favicon-32x32.png" rel="icon" type="image/x-icon">
+      <link href=resources/images/header/tktkFavicon.png rel="icon" type="image/x-icon">
 
       <script type="text/javascript" async="" src="https://www.google-analytics.com/analytics.js"></script><script type="text/javascript" async="" src="https://cdn.astronomer.io/analytics.js/v1/jMrtLL6v6xXmMGP7h/analytics.min.js"></script><script type="application/javascript">
       </script>

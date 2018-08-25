@@ -9,6 +9,7 @@
 <!DOCTYPE html>
 <html lang="ko">
 <head>
+	<link href=resources/images/header/tktkFavicon.png rel="icon" type="image/x-icon">
     <meta charset="utf-8">
     
     

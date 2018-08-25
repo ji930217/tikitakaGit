@@ -7,6 +7,7 @@
 <!DOCTYPE html>
 <html>
 <head>
+
 <meta charset="UTF-8">
 <meta property="og:image" content="${project.repImg }">
 <meta property="og:title" content="${project.title }">
@@ -21,7 +22,7 @@
 <script src="https://vjs.zencdn.net/7.1.0/video.js"></script>
 <!-- If you'd like to support IE8 (for Video.js versions prior to v7) -->
 <!-- <script src="https://vjs.zencdn.net/ie8/ie8-version/videojs-ie8.min.js"></script> -->
-
+<link href=resources/images/header/tktkFavicon.png rel="icon" type="image/x-icon">
 <style>
 	
 	/* 공유하기 	버튼 팝업 스타일 */

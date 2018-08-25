@@ -4,7 +4,7 @@
     <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
     
     
-  
+  	<link href=resources/images/header/tktkFavicon.png rel="icon" type="image/x-icon">
    <style>
 	
 	thead{

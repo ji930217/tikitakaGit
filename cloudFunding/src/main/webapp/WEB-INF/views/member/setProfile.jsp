@@ -9,6 +9,7 @@
 
 
 <head>
+	<link href=resources/images/header/tktkFavicon.png rel="icon" type="image/x-icon">
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>프로필 설정 </title>

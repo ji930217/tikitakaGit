@@ -38,7 +38,6 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M" crossorigin="anonymous">
 <link rel="stylesheet" type="text/css" href="resources/images/header/d2om2e6rfn032x.cloudfront.net/wpa/app.f0ed3932e778a7f95ef1c52983d12741.css">
-<link href=resources/images/header/tumblbug-assets.imgix.net/appicon/favicon/favicon-32x32.png rel="icon" type="image/x-icon">
 <link rel="apple-touch-icon" sizes="120x120" href="resources/images/header/tumblbug-assets.imgix.net/appicon/home-icon/apple-icon-120x120.png">
 <link rel="apple-touch-icon" sizes="152x152" href="resources/images/header/tumblbug-assets.imgix.net/appicon/home-icon/apple-icon-152x152.png">
 <link rel="apple-touch-icon" sizes="180x180" href="resources/images/header/tumblbug-assets.imgix.net/appicon/home-icon/apple-icon-180x180.png">
