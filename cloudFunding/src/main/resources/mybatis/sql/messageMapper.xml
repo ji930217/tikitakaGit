@@ -27,7 +27,7 @@
 	</resultMap>
 	
 	<select id = "selectMessageList" resultMap="messageMap" parameterType="string">
-		SELECT P.P_PROJECT_CODE, P_TITLE, P_REP_IMG, P.EMAIL AS CREATOR_EMAIL, M_CODE, M_WRITER, M_RECEIVER, M_CONTENT, TO_CHAR(M_SEND_DATE,'YYYY-MM-DD HH24:MI') AS M_SEND_DATE, 
+		SELECT P.P_PROJECT_CODE, P_TITLE, P_REP_IMG, P.EMAIL AS CREATOR_EMAIL, M_CODE, M_WRITER, M_RECEIVER, M_CONTENT, TO_CHAR(M_SEND_DATE,'YYYY-MM-DD HH24:MI:SS') AS M_SEND_DATE, 
 						-- 로그인 한 유저가 보낸 것이 아닌 새로운 메시지만 카운트
 						(SELECT COUNT(*) FROM MESSAGE 
 						WHERE M_READ_FLAG = 'F' 
@@ -49,7 +49,7 @@
 	
 	<select id = "selectNewMessageList" resultMap="messageMap" parameterType="string">
 		SELECT P_PROJECT_CODE, P_TITLE, P_REP_IMG, CREATOR_EMAIL, M_CODE, M_WRITER, M_RECEIVER, M_CONTENT, M_SEND_DATE, NEW_MESSAGE_COUNT, WRITER_NAME
-		FROM(SELECT P.P_PROJECT_CODE, P_TITLE, P_REP_IMG, P.EMAIL AS CREATOR_EMAIL, M_CODE, M_WRITER, M_RECEIVER, M_CONTENT, TO_CHAR(M_SEND_DATE,'YYYY-MM-DD HH24:MI') AS M_SEND_DATE, 
+		FROM(SELECT P.P_PROJECT_CODE, P_TITLE, P_REP_IMG, P.EMAIL AS CREATOR_EMAIL, M_CODE, M_WRITER, M_RECEIVER, M_CONTENT, TO_CHAR(M_SEND_DATE,'YYYY-MM-DD HH24:MI:SS') AS M_SEND_DATE, 
 									-- 로그인 한 유저가 보낸 것이 아닌 새로운 메시지만 카운트
 									(SELECT COUNT(*) FROM MESSAGE 
 									WHERE M_READ_FLAG = 'F' 
@@ -87,7 +87,7 @@
 					  (SELECT PROFILE_IMG FROM MEMBER WHERE MESSAGE.M_RECEIVER = EMAIL) AS RECEIVER_PROFILE_IMG,
 					  M_KINDS,
 					  M_CONTENT,
-					  TO_CHAR(M_SEND_DATE,'YYYY-MM-DD HH24:MI') AS M_SEND_DATE, M_READ_FLAG
+					  TO_CHAR(M_SEND_DATE,'YYYY-MM-DD HH24:MI:SS') AS M_SEND_DATE, M_READ_FLAG
 		FROM MESSAGE JOIN PROJECT USING(P_PROJECT_CODE)
 		WHERE (M_WRITER = #{writerEmail} OR M_RECEIVER = #{writerEmail}) 
 		  AND P_PROJECT_CODE = #{projectCode}
@@ -106,7 +106,7 @@
 		            WHERE M_WRITER = #{writerEmail}
 		            AND P_PROJECT_CODE = #{projectCode}
 		            ORDER BY M_SEND_DATE DESC)
-		      )
+	      )
 		WHERE R_NUM = 1
 	</select>
 	
@@ -121,61 +121,4 @@
 		AND P_PROJECT_CODE = #{projectCode}
 	</update>
 
-	<!-- <select id="selectPostList" parameterType="int" resultMap="postMap">
-	    SELECT P.POST_CODE, P_PROJECT_CODE, P.EMAIL, P.CONTENT, P.WRITTEN_DATE, P.DELFLAG, NAME, PROFILE_IMG,
-        				(SELECT COUNT(*) FROM REPLY WHERE P.POST_CODE = POST_CODE  AND DELFLAG != 'T') AS REPLY_COUNT
-		FROM POST P
-		FULL JOIN REPLY R ON(P.POST_CODE = R.POST_CODE)
-    	LEFT JOIN MEMBER M ON(P.EMAIL = M.EMAIL)
-	    WHERE P_PROJECT_CODE = #{projectCode}
-	    AND P.DELFLAG != 'T'
-	    ORDER BY P.POST_CODE DESC
-	</select>
-	<select id="selectPost" parameterType="int" resultMap="postMap">
-		SELECT P.POST_CODE, P_PROJECT_CODE, P.EMAIL, P.CONTENT, P.WRITTEN_DATE, P.DELFLAG, NAME, PROFILE_IMG,
-        				R.REPLY_CODE, R.EMAIL AS R_EMAIL, R.CONTENT AS R_CONTENT, TO_CHAR(R.WRITTEN_DATE,'YYYY-MM-DD HH24:MI') AS R_WRITTEN_DATE, R.DELFLAG AS R_DELFLAG, 
-       					(SELECT NAME FROM MEMBER WHERE MEMBER.EMAIL = R.EMAIL) AS R_NAME,
-                		(SELECT PROFILE_IMG FROM MEMBER WHERE MEMBER.EMAIL = R.EMAIL) AS R_PROFILE_IMG,
-                 		(SELECT COUNT(*) FROM REPLY WHERE P.POST_CODE = POST_CODE AND DELFLAG != 'T') AS REPLY_COUNT
-		FROM POST P
-    	LEFT JOIN MEMBER M ON(P.EMAIL = M.EMAIL)
-      	LEFT JOIN (SELECT * FROM REPLY WHERE DELFLAG != 'T') R ON(P.POST_CODE = R.POST_CODE)
-      	WHERE P.DELFLAG != 'T' 
-		AND P.POST_CODE = #{postCode}
-	</select>
-	<select id="selectPostCount" parameterType="int" resultType="int">
-		SELECT COUNT(*) AS COUNT
-		FROM POST
-		WHERE P_PROJECT_CODE = #{projectCode}	   
-		AND DELFLAG != 'T' 
-	</select>
-	
-	<insert id="insertPost" parameterType="Post">
-		INSERT INTO POST VALUES(SEQ_POST.NEXTVAL, #{projectCode}, #{email}, #{content}, SYSDATE, DEFAULT)	    
-	</insert>
-
-	<update id="updatePost" parameterType="Post">
-	    UPDATE POST SET CONTENT = #{content}
-	    WHERE POST_CODE = #{postCode}
-	</update>
-	
-	<delete id="deletePost" parameterType="int">
-	    DELETE FROM POST
-	    WHERE POST_CODE = #{postCode}
-	</delete>
-	<delete id="deletePost" parameterType="int">
-	    UPDATE POST
-	    SET DELFLAG = 'T'
-	    WHERE POST_CODE = #{postCode}
-	</delete>
-	
-	<insert id="insertReply" parameterType="Reply">
-		INSERT INTO REPLY VALUES(SEQ_REPLY.NEXTVAL, #{postCode}, #{content}, #{email}, SYSDATE, DEFAULT)    
-	</insert>
-	
-	<delete id="deleteReply" parameterType="int">
-	    UPDATE REPLY
-	    SET DELFLAG = 'T'
-	    WHERE REPLY_CODE = #{replyCode}
-	</delete> -->
 </mapper>

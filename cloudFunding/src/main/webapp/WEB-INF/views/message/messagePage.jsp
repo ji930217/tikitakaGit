@@ -80,106 +80,113 @@
 	$(function(){
 		var prevNewMsgCnt = "<c:out value='${newMessageCount}'/>";
 		
-		timer = setInterval( function () {
-			// 모든 메시지 리스트 화면 업데이트
-			$.ajax ({
-				url : "selectMessageList.do", 
-				cache : false,
-				success : function (list) {
-					var newMsgCntSum = 0;
-					for(var key in list) {
-						newMsgCntSum += parseInt(list[key].newMessageCount);
-					}
-					
-					if(0 < newMsgCntSum && parseInt(prevNewMsgCnt) != newMsgCntSum) {
-						/* console.log("새로운 메시지가 있어요."); */
-						var $messageListDiv = $("#messageListDiv");
-						var resultStr = "";
-						var userEmail = "<c:out value='${user.email}'/>";
-						var idx = 0;
-						for(var key in list){
-							resultStr += "<form id='messageInfoForm" + parseInt(idx) + "' action='messageDetail.do' method='post'>";
-							resultStr += "<input type='hidden' name='projectCode' value='" + list[key].projectCode + "'/>";
-							resultStr += "<input type='hidden' name='receiverEmail' value='" + list[key].creatorEmail + "'/>";
-							resultStr += "<input type='hidden' name='writerEmail' value='" + userEmail + "'/></form>";
-							resultStr += "<div><a href='javascript:messageDetail(" + parseInt(idx) +");'>";
-							resultStr += "<div><div class='_13KHfN73YmQgsYHxXvuh_J _18bwsw29jDyAzIPXzQkoS- _18TDror949wcy2NyVIqpHo _1x1pMFvLPogKJ5cv1C3iz4'>";
-							resultStr += "<div class='_3ur7Q0Ll02gIeBh05cHYUh'><div class='_2Gh51cXm8pkKxT5ETFNCH9'><div class='_3ep5zWJoGAgVOk5mffZF0r'>";
-							resultStr += "<img alt='프로젝트 이미지' class='_13KHfN73YmQgsYHxXvuh_J _2H5AJMZT-xLtuIvR5jP8rd IHUALIalgwgMpH2DEQooZ _2aquK6B3D0GYX7zQT4_IR7' src='" + list[key].repImg + "'></div>";
-							resultStr += "<div class='_2rhtRWD8W9jAiG5KK0tShU'>";
-							resultStr += "<div class='YMfDfu-vUhehjeBwbEEPe'><b>" + list[key].title + "</b></div>";
-							resultStr += "<div class='WBJBCYr1DAtTIZsxLCJu9'><b>" + list[key].writerName + "</b></div>";
-							resultStr += "<div class='_10h99EJ9Kd6zSwnvFug3Nh _2paOVgSZRiW0glORbO6nu7'><span>" + list[key].content + "</span></div>";
-							resultStr += "</div>";
-							resultStr += "<div class='hXXWUhhdxvn5n73uPEhpJ'>";
-							resultStr += "<div class='_2neeJlPPwgtHrvFUTjDZPy'>" + list[key].sendDate + "</div>";
-							// 읽지 않은 메시지 수
-							if(0 < list[key].newMessageCount) {
-								resultStr += "<div><label class='_13KHfN73YmQgsYHxXvuh_J _1DLNFgQRrQNEosKFB0zOK5 _2rCeEoFeBzvCYn76udqnww _3C1GIkccqqGyujnub2YVhV _2BIT5x1MzYkxpZlDSFDBBf _3D9sfZXrWd8it3eUCuCTc8'>" + list[key].newMessageCount + "</label></div>";
-							}
-							resultStr += "</div>";
-							resultStr += "</div></div></div></div></a></div>";
-							idx = parseInt(idx) + 1;
+		var user = "<c:out value='${user}'/>";
+		var jiTimer = setInterval( function () {
+			if(null != user && user != ""){
+				// 모든 메시지 리스트 화면 업데이트
+				$.ajax ({
+					url : "selectMessageList.do", 
+					cache : false,
+					success : function (list) {
+						var newMsgCntSum = 0;
+						for(var key in list) {
+							newMsgCntSum += parseInt(list[key].newMessageCount);
 						}
-						 $messageListDiv.html(resultStr);
-						 
-						 // 새로운 메시지 리스트 화면 업데이트
-						 $.ajax ({
-								url : "selectNewMessageList.do", 
-								cache : false,
-								success : function (list) {
-									var newMsgCntSum = 0;
-									for(var key in list) {
-										newMsgCntSum += parseInt(list[key].newMessageCount);
-									}
-									
-									if(0 < newMsgCntSum && parseInt(prevNewMsgCnt) != newMsgCntSum) {
-										updateNewMessageCount(newMsgCntSum);
-										prevNewMsgCnt = newMsgCntSum;
-										
-										var $newMessageListDiv = $("#newMessageListDiv");
-										var resultStr = "";
-										var userEmail = "<c:out value='${user.email}'/>";
-										var idx = 9999;
-										for(var key in list){
-											resultStr += "<form id='messageInfoForm" + parseInt(idx) + "' action='messageDetail.do' method='post'>";
-											resultStr += "<input type='hidden' name='projectCode' value='" + list[key].projectCode + "'/>";
-											resultStr += "<input type='hidden' name='receiverEmail' value='" + list[key].creatorEmail + "'/>";
-											resultStr += "<input type='hidden' name='writerEmail' value='" + userEmail + "'/></form>";
-											resultStr += "<div><a href='javascript:messageDetail();'>";
-											resultStr += "<div><div class='_13KHfN73YmQgsYHxXvuh_J _18bwsw29jDyAzIPXzQkoS- _18TDror949wcy2NyVIqpHo _1x1pMFvLPogKJ5cv1C3iz4'>";
-											resultStr += "<div class='_3ur7Q0Ll02gIeBh05cHYUh'><div class='_2Gh51cXm8pkKxT5ETFNCH9'><div class='_3ep5zWJoGAgVOk5mffZF0r'>";
-											resultStr += "<img alt='프로젝트 이미지' class='_13KHfN73YmQgsYHxXvuh_J _2H5AJMZT-xLtuIvR5jP8rd IHUALIalgwgMpH2DEQooZ _2aquK6B3D0GYX7zQT4_IR7' src='" + list[key].repImg + "'></div>";
-											resultStr += "<div class='_2rhtRWD8W9jAiG5KK0tShU'>";
-											resultStr += "<div class='YMfDfu-vUhehjeBwbEEPe'><b>" + list[key].title + "</b></div>";
-											resultStr += "<div class='WBJBCYr1DAtTIZsxLCJu9'><b>" + list[key].writerName + "</b></div>";
-											resultStr += "<div class='_10h99EJ9Kd6zSwnvFug3Nh _2paOVgSZRiW0glORbO6nu7'><span>" + list[key].content + "</span></div>";
-											resultStr += "</div>";
-											resultStr += "<div class='hXXWUhhdxvn5n73uPEhpJ'>";
-											resultStr += "<div class='_2neeJlPPwgtHrvFUTjDZPy'>" + list[key].sendDate + "</div>";
-											// 읽지 않은 메시지 수
-											if(0 < list[key].newMessageCount) {
-												resultStr += "<div><label class='_13KHfN73YmQgsYHxXvuh_J _1DLNFgQRrQNEosKFB0zOK5 _2rCeEoFeBzvCYn76udqnww _3C1GIkccqqGyujnub2YVhV _2BIT5x1MzYkxpZlDSFDBBf _3D9sfZXrWd8it3eUCuCTc8'>" + list[key].newMessageCount + "</label></div>";
-											}
-											resultStr += "</div>";
-											resultStr += "</div></div></div></div></a></div>";
-											idx = parseInt(idx) - 1;
-										}
-										 $newMessageListDiv.html(resultStr);
-									} 
-								}, error : function(e){
-									console.log("에러");
+						
+						if(0 < newMsgCntSum && parseInt(prevNewMsgCnt) != newMsgCntSum) {
+							/* console.log("새로운 메시지가 있어요."); */
+							var $messageListDiv = $("#messageListDiv");
+							var resultStr = "";
+							var userEmail = "<c:out value='${user.email}'/>";
+							var idx = 0;
+							for(var key in list){
+								resultStr += "<form id='messageInfoForm" + parseInt(idx) + "' action='messageDetail.do' method='post'>";
+								resultStr += "<input type='hidden' name='projectCode' value='" + list[key].projectCode + "'/>";
+								resultStr += "<input type='hidden' name='receiverEmail' value='" + list[key].creatorEmail + "'/>";
+								resultStr += "<input type='hidden' name='writerEmail' value='" + userEmail + "'/></form>";
+								resultStr += "<div><a href='javascript:messageDetail(" + parseInt(idx) +");'>";
+								resultStr += "<div><div class='_13KHfN73YmQgsYHxXvuh_J _18bwsw29jDyAzIPXzQkoS- _18TDror949wcy2NyVIqpHo _1x1pMFvLPogKJ5cv1C3iz4'>";
+								resultStr += "<div class='_3ur7Q0Ll02gIeBh05cHYUh'><div class='_2Gh51cXm8pkKxT5ETFNCH9'><div class='_3ep5zWJoGAgVOk5mffZF0r'>";
+								resultStr += "<img alt='프로젝트 이미지' class='_13KHfN73YmQgsYHxXvuh_J _2H5AJMZT-xLtuIvR5jP8rd IHUALIalgwgMpH2DEQooZ _2aquK6B3D0GYX7zQT4_IR7' src='" + list[key].repImg + "'></div>";
+								resultStr += "<div class='_2rhtRWD8W9jAiG5KK0tShU'>";
+								resultStr += "<div class='YMfDfu-vUhehjeBwbEEPe'><b>" + list[key].title + "</b></div>";
+								resultStr += "<div class='WBJBCYr1DAtTIZsxLCJu9'><b>" + list[key].writerName + "</b></div>";
+								resultStr += "<div class='_10h99EJ9Kd6zSwnvFug3Nh _2paOVgSZRiW0glORbO6nu7'><span>" + list[key].content + "</span></div>";
+								resultStr += "</div>";
+								resultStr += "<div class='hXXWUhhdxvn5n73uPEhpJ'>";
+								resultStr += "<div class='_2neeJlPPwgtHrvFUTjDZPy'>" + list[key].sendDate + "</div>";
+								// 읽지 않은 메시지 수
+								if(0 < list[key].newMessageCount) {
+									resultStr += "<div><label class='_13KHfN73YmQgsYHxXvuh_J _1DLNFgQRrQNEosKFB0zOK5 _2rCeEoFeBzvCYn76udqnww _3C1GIkccqqGyujnub2YVhV _2BIT5x1MzYkxpZlDSFDBBf _3D9sfZXrWd8it3eUCuCTc8'>" + list[key].newMessageCount + "</label></div>";
 								}
-							});
-						 
-					} else {
-						/* console.log("새로운 메시지가 없어요."); */
+								resultStr += "</div>";
+								resultStr += "</div></div></div></div></a></div>";
+								idx = parseInt(idx) + 1;
+							}
+							 $messageListDiv.html(resultStr);
+							 
+							 // 새로운 메시지 리스트 화면 업데이트
+							 $.ajax ({
+									url : "selectNewMessageList.do", 
+									cache : false,
+									success : function (list) {
+										var newMsgCntSum = 0;
+										for(var key in list) {
+											newMsgCntSum += parseInt(list[key].newMessageCount);
+										}
+										
+										if(0 < newMsgCntSum && parseInt(prevNewMsgCnt) != newMsgCntSum) {
+											updateNewMessageCount(newMsgCntSum);
+											prevNewMsgCnt = newMsgCntSum;
+											
+											var $newMessageListDiv = $("#newMessageListDiv");
+											var resultStr = "";
+											var userEmail = "<c:out value='${user.email}'/>";
+											var idx = 9999;
+											for(var key in list){
+												resultStr += "<form id='messageInfoForm" + parseInt(idx) + "' action='messageDetail.do' method='post'>";
+												resultStr += "<input type='hidden' name='projectCode' value='" + list[key].projectCode + "'/>";
+												resultStr += "<input type='hidden' name='receiverEmail' value='" + list[key].creatorEmail + "'/>";
+												resultStr += "<input type='hidden' name='writerEmail' value='" + userEmail + "'/></form>";
+												resultStr += "<div><a href='javascript:messageDetail();'>";
+												resultStr += "<div><div class='_13KHfN73YmQgsYHxXvuh_J _18bwsw29jDyAzIPXzQkoS- _18TDror949wcy2NyVIqpHo _1x1pMFvLPogKJ5cv1C3iz4'>";
+												resultStr += "<div class='_3ur7Q0Ll02gIeBh05cHYUh'><div class='_2Gh51cXm8pkKxT5ETFNCH9'><div class='_3ep5zWJoGAgVOk5mffZF0r'>";
+												resultStr += "<img alt='프로젝트 이미지' class='_13KHfN73YmQgsYHxXvuh_J _2H5AJMZT-xLtuIvR5jP8rd IHUALIalgwgMpH2DEQooZ _2aquK6B3D0GYX7zQT4_IR7' src='" + list[key].repImg + "'></div>";
+												resultStr += "<div class='_2rhtRWD8W9jAiG5KK0tShU'>";
+												resultStr += "<div class='YMfDfu-vUhehjeBwbEEPe'><b>" + list[key].title + "</b></div>";
+												resultStr += "<div class='WBJBCYr1DAtTIZsxLCJu9'><b>" + list[key].writerName + "</b></div>";
+												resultStr += "<div class='_10h99EJ9Kd6zSwnvFug3Nh _2paOVgSZRiW0glORbO6nu7'><span>" + list[key].content + "</span></div>";
+												resultStr += "</div>";
+												resultStr += "<div class='hXXWUhhdxvn5n73uPEhpJ'>";
+												resultStr += "<div class='_2neeJlPPwgtHrvFUTjDZPy'>" + list[key].sendDate + "</div>";
+												// 읽지 않은 메시지 수
+												if(0 < list[key].newMessageCount) {
+													resultStr += "<div><label class='_13KHfN73YmQgsYHxXvuh_J _1DLNFgQRrQNEosKFB0zOK5 _2rCeEoFeBzvCYn76udqnww _3C1GIkccqqGyujnub2YVhV _2BIT5x1MzYkxpZlDSFDBBf _3D9sfZXrWd8it3eUCuCTc8'>" + list[key].newMessageCount + "</label></div>";
+												}
+												resultStr += "</div>";
+												resultStr += "</div></div></div></div></a></div>";
+												idx = parseInt(idx) - 1;
+											}
+											 $newMessageListDiv.html(resultStr);
+										} 
+									}, error : function(e){
+										clearInterval(jiTimer);
+										location.href="loginPage.do";
+									}
+								});
+						} else {
+							/* console.log("새로운 메시지가 없어요."); */
+						}
+					}, error : function(e){
+						clearInterval(jiTimer);
+						location.href="loginPage.do";
 					}
-				}
-			});
-			
+				});
+			} else {
+				clearInterval(jiTimer);
+				location.href="loginPage.do";
+			}	
 		}, 3000); // 5초에 한번씩 받아온다.	
-		
 		
 	});
 	
@@ -459,27 +466,27 @@
 								class="_13KHfN73YmQgsYHxXvuh_J _1V4AsGFqT8un0KZo8QWVRL kKeFxbI9p0TnKvSk7DzSR _1gTQggGV_yO4HJ6p7pil3E _1UmvYpZQFDG3yh_HWxQaF9 _12TAeoYDPLF0sfa3UIt6uZ _3ZTEzsKL-qDLECUGq4QcLv">
 								<div
 									class="_1ImF9kUktZoPfysBSwFigF _152MAijd_UogerBKCVqZR_ _1lLHKI5v9AoCyeggtffvGZ">
-									<a href="https://careers.tumblbug.com"
+									<a href="readyPage.do"
 										class="_2Bmm3DAsbg4wlC8_xGt_SK" target="_blank"
 										rel="noopener noreferrer">채용</a><br>
-									<a href="https://creator.tumblbug.com/"
+									<a href="readyPage.do"
 										class="_2Bmm3DAsbg4wlC8_xGt_SK" target="_blank"
 										rel="noopener noreferrer">창작자 가이드</a><br>
-									<a href="https://year.tumblbug.com/2017/"
+									<a href="readyPage.do"
 										class="_2Bmm3DAsbg4wlC8_xGt_SK" target="_blank"
 										rel="noopener noreferrer">2017년 결산</a>
 								</div>
 								<div
 									class="_2joJTlnkt26WGpxyvkNuCH _152MAijd_UogerBKCVqZR_ _1lLHKI5v9AoCyeggtffvGZ">
-									<a class="_2Bmm3DAsbg4wlC8_xGt_SK" href="/terms-of-use">이용약관</a>
+									<a class="_2Bmm3DAsbg4wlC8_xGt_SK" href="readyPage.do">이용약관</a>
 									<!-- react-text: 1584 -->
 									&nbsp;
 									<!-- /react-text -->
 									<label
 										class="_13KHfN73YmQgsYHxXvuh_J _1DLNFgQRrQNEosKFB0zOK5 _3D9sfZXrWd8it3eUCuCTc8">개정</label><br>
-									<a class="_2Bmm3DAsbg4wlC8_xGt_SK" href="/privacy">개인정보
+									<a class="_2Bmm3DAsbg4wlC8_xGt_SK" href="readyPage.do">개인정보
 										보호정책</a><br>
-									<a href="https://help.tumblbug.com"
+									<a href="readyPage.do"
 										class="_2Bmm3DAsbg4wlC8_xGt_SK" target="_blank">헬프 센터</a>
 								</div>
 								<div
@@ -487,42 +494,42 @@
 									<div>
 										<a href="https://www.facebook.com/tumblbug"
 											class="_2Bmm3DAsbg4wlC8_xGt_SK" target="_blank"
-											rel="noopener noreferrer"><i
+											rel="noopener noreferrer"><!-- <i
 											class="_1uz2PaH_Pc163IQLnwFtm8 _1oJMWnMCW_Y6GmNc1mhqaW _1QY7TzdLHKX3-BKPDNNYKF"></i><span
 											class="SiteFooter__SROnlyLabel-s6xs3vz-0 fVDvhD">facebook
-												바로가기</span></a>
+												바로가기 --></span></a>
 										<!-- react-text: 1595 -->
 										&nbsp;&nbsp;
 										<!-- /react-text -->
 										<a href="https://twitter.com/tumblbug"
 											class="_2Bmm3DAsbg4wlC8_xGt_SK" target="_blank"
-											rel="noopener noreferrer"><i
+											rel="noopener noreferrer"><!-- <i
 											class="_2FxT97uoLyJpLIfoko0aQD _1oJMWnMCW_Y6GmNc1mhqaW _1QY7TzdLHKX3-BKPDNNYKF"></i><span
 											class="SiteFooter__SROnlyLabel-s6xs3vz-0 fVDvhD">twitter
-												바로가기</span></a>
+												바로가기 --></span></a>
 										<!-- react-text: 1599 -->
 										&nbsp;&nbsp;
 										<!-- /react-text -->
 										<a href="https://www.instagram.com/tumblbug/"
 											class="_2Bmm3DAsbg4wlC8_xGt_SK" target="_blank"
-											rel="noopener noreferrer"><i
+											rel="noopener noreferrer"><!-- <i
 											class="jVeP2LZnw-ySfySkeJWoo _1oJMWnMCW_Y6GmNc1mhqaW _1QY7TzdLHKX3-BKPDNNYKF"></i><span
 											class="SiteFooter__SROnlyLabel-s6xs3vz-0 fVDvhD">instagram
-												바로가기</span></a>
+												바로가기 --></span></a>
 										<!-- react-text: 1603 -->
 										&nbsp;&nbsp;
 										<!-- /react-text -->
 										<a href="http://post.naver.com/my.nhn?memberNo=23995853"
 											class="_2Bmm3DAsbg4wlC8_xGt_SK" target="_blank"
-											rel="noopener noreferrer"><svg
+											rel="noopener noreferrer"><!-- <svg
 												class="_1y66s74R2HeAes5cUhyCyJ"
 												xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 18.31">
 												<title>naverIcon</title><path
 													d="M20,19.15H13.33A0.34,0.34,0,0,1,13,19L7,10.22,6.84,10v9.15H0V0.85H6.68A0.32, 0.32,0,0,1,7,1l6,8.75a0.82,0.82,0,0,0,.19.22V0.86H20v18.3Z"
-													transform="translate(0 -0.84)"></path></svg></a>
+													transform="translate(0 -0.84)"></path></svg> --></a>
 									</div>
 									<div style="text-align: right;">
-										<a href="https://help.tumblbug.com/hc/ko/requests/new"
+										<a href="readyPage.do"
 											target="_blank" rel="noopener noreferrer"
 											class="_13KHfN73YmQgsYHxXvuh_J _1V4AsGFqT8un0KZo8QWVRL _3SbGdzxKM6M_AeOQWLNqks"
 											style="width: 120px; margin: 1rem 0px 0px; display: inline-block;"><i
@@ -532,18 +539,16 @@
 								</div>
 								<div
 									class="_2yIPuXkUmexMNa4oYh94d2 _2EKbr4mCy_TvmSkhnSfA_a _152MAijd_UogerBKCVqZR_ _1lLHKI5v9AoCyeggtffvGZ">
-									<span>텀블벅은 플랫폼 제공자로서 프로젝트의 당사자가 아니며, 직접적인 통신판매를 진행하지
+									<span>티키타카는 플랫폼 제공자로서 프로젝트의 당사자가 아니며, 직접적인 통신판매를 진행하지
 										않습니다. 프로젝트의 완수 및 선물제공의 책임은 해당 프로젝트의 창작자에게 있으며, 프로젝트와 관련하여 후원자와
 										발생하는 법적 분쟁에 대한 책임은 해당 창작자가 부담합니다.</span>
 								</div>
 								<div
 									class="_2AKJF7ih68n2TcW3TIF8-t _2EKbr4mCy_TvmSkhnSfA_a _152MAijd_UogerBKCVqZR_ _1lLHKI5v9AoCyeggtffvGZ">
-									<span>텀블벅(주) | 대표 염재승 105-87-52823 | 서울시 중구 삼일대로 343,
-										13층 | 통신판매업 2017-서울중구-1156 | 대표전화 02-6080-0760</span><span
+									<span>티키타카(주) | 대표 유지상 105-87-52823 | 서울특별시 강남구 테헤란로14길 6| 통신판매업 2017-서울중구-1156 | 대표전화 02-6080-0760</span><span
 										class="_1NwnhTlynaDwYqlZ_SKgmG"><span role="img"
 										aria-labelledby="copyright emoji">ⓒ</span>
-									<!-- react-text: 1618 --> <!-- /react-text -->
-										<!-- react-text: 1619 -->2018 Tumblbug Inc.<!-- /react-text --></span>
+										<!-- react-text: 1619 -->2018 TIKITAKA Inc.<!-- /react-text --></span>
 								</div>
 							</div>
 						</div>

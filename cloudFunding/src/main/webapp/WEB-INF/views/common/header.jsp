@@ -1085,23 +1085,28 @@ data-react-helmet="true"><meta name="twitter:title" content="텀블벅 tumblbug"
 			$("#msgNotifyText").css("visibility", "visible");
 		}
 		
-		if(null != user && user != ""){
-			timer = setInterval( function () {
-					$.ajax ({
-						url : "checkMessageCount.do", 
-						cache : false,
-						success : function (flag) {
-							if(flag) {
-								$("#msgNotify").css("display", "block");
-								$("#msgNotifyText").css("visibility", "visible");
-							} else {
-								$("#msgNotify").css("display", "none");
-								$("#msgNotifyText").css("visibility", "hidden");
-							}
+		var jiTimer = setInterval( function () {
+			if(null != user && user != ""){
+				$.ajax ({
+					url : "checkMessageCount.do", 
+					cache : false,
+					success : function (flag) {
+						if(flag) {
+							$("#msgNotify").css("display", "block");
+							$("#msgNotifyText").css("visibility", "visible");
+						} else {
+							$("#msgNotify").css("display", "none");
+							$("#msgNotifyText").css("visibility", "hidden");
 						}
-					});
-			}, 3000); 
-		}
+					}, error : function(e) {
+						clearInterval(jiTimer);
+						/* console.log("header 메시지 수 체크 ajax 에러 : ", e); */
+					}
+				});
+			} else {
+				clearInterval(jiTimer);
+			}
+		}, 3000); 
 	});
 	
 	function closeSearchTab(){

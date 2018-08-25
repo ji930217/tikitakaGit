@@ -144,83 +144,91 @@
 					$("#msgContent").val("");
 					$("#msgDetailListDiv").scrollTop($("#msgDetailListDiv")[0].scrollHeight);
 				}, error : function(e){
-					console.log("ajax sendMessageError : ", e);
+					/* console.log("ajax sendMessageError : ", e); */
+					location.href="loginPage.do";
 				}
 				
 			}); 
 		});
 		
-		timer = setInterval( function () {
-			var msgListSize = $("#msgListSize").val();
-			var projectCode = "<c:out value='${list[0].projectCode }'/>";
-			var writerEmail = "<c:out value='${user.email }'/>";
-			var receiverEmail = $("#receiverEmail").val();
-			var prevReadFlagFCount = $("#readFlagFCount").val();
-			
-			$.ajax ({
-				url : "messageDetailAjax.do", 
-				type : "post",
-				data : {projectCode : projectCode, writerEmail : writerEmail, receiverEmail : receiverEmail},
-				cache : false,
-				success : function (list) {
-					var newMsgListSize = parseInt(list.length);
-					var newReadFlagFCount = 0;
-					for(var key in list) {
-						if(list[key].readFlag == 'F'.charAt(0)) {
-							newReadFlagFCount = parseInt(newReadFlagFCount) + 1;
-						}
-					}
-					
-					if(newReadFlagFCount != parseInt(prevReadFlagFCount) || (0 < newMsgListSize && parseInt(msgListSize) != newMsgListSize)) {
-					 	$("#msgListSize").val(newMsgListSize);
-					 	$("#readFlagFCount").val(newReadFlagFCount);
-					 	
-						var userEmail = "<c:out value='${user.email}'/>";
-						var $msgDetailListDiv = $("#msgDetailListDiv");
-						var resultStr = "";
-						for(var key in list){
-							if(userEmail == list[key].writerEmail) {
-								resultStr += "<div style='text-align:right; margin-right: 10px;'><div class='_30LNYFhw6qsigZSbwlGCDz'>";
-								resultStr += "<div class='kq_2sXRgq_sfeYNfZHKOs' style='float:right;'>";
-								resultStr += "<div class='_34WN1umVFRc6wIDpVrIjIr' style='background-image: url(" + list[key].writerProfileImg + ");'></div></div>";
-								resultStr += "<div class='_3ZgG-OSv0XE3y-h3oPaDsl KFiVOeTOhXeUxwbhd30-9' style='margin-right: 3.5em;'>";
-								resultStr += "<div class='_22TCURqKJxPd9Pk2fUP3C2' style='margin-left:0px; margin-right:.5em;'><span class=''>" + list[key].sendDate + "</span></div>";
-								resultStr += "<span class='_1lzmMuArEV-MDJ-ASw7e8M'  style='margin-right:-7px;'>" + list[key].writerName + " &nbsp;</span>";
-								resultStr += "<div class='_2J-JDs-O0yO3-wBkPp1CzJ'><p style='white-space: pre-line;'>" + list[key].content + "</p></div>";
-								if(list[key].readFlag == 'T'.charAt(0)) {
-									resultStr += "<span class='_1K0ZBo09IxoqIXG0pce9Pa'>";
-									resultStr += "<i class='-o8oGI_QAOKsVIJOUOUmV _254YPhBOB9qv7-J8bIg7co _3sFSjAZS4gQdCAyN3OfyFG _1QY7TzdLHKX3-BKPDNNYKF'></i>읽음</span>";
-								} else {
-									resultStr += "<span class='_1K0ZBo09IxoqIXG0pce9Pa'>";
-									resultStr += "<i class='_254YPhBOB9qv7-J8bIg7co _2rpTvKkYYdMbVEklWlLfhl _1QY7TzdLHKX3-BKPDNNYKF'></i>읽지않음</span>";
-								}
-								resultStr += "</div></div></div>";
-							} else {
-								resultStr += "<div><div class='_30LNYFhw6qsigZSbwlGCDz'>";
-								resultStr += "<div class='kq_2sXRgq_sfeYNfZHKOs'>";
-								resultStr += "<div class='_34WN1umVFRc6wIDpVrIjIr' style='background-image: url(" + list[key].writerProfileImg + ");'></div></div>";
-								resultStr += "<div class='_3ZgG-OSv0XE3y-h3oPaDsl KFiVOeTOhXeUxwbhd30-9'>";
-								resultStr += "<span class='_1lzmMuArEV-MDJ-ASw7e8M'>" + list[key].writerName + " &nbsp;</span>";
-								resultStr += "<div class='_22TCURqKJxPd9Pk2fUP3C2'><span class=''>" + list[key].sendDate + "</span></div>";
-								resultStr += "<div class='_2J-JDs-O0yO3-wBkPp1CzJ'><p style='white-space: pre-line;'>" + list[key].content + "</p></div>";
-								resultStr += "</div></div></div>";
+		var user = "<c:out value='${user}'/>";
+		var jiTimer = setInterval( function () {
+			if(null != user && user != ""){
+				var msgListSize = $("#msgListSize").val();
+				var projectCode = "<c:out value='${list[0].projectCode }'/>";
+				var writerEmail = "<c:out value='${user.email }'/>";
+				var receiverEmail = $("#receiverEmail").val();
+				var prevReadFlagFCount = $("#readFlagFCount").val();
+				
+				$.ajax ({
+					url : "messageDetailAjax.do", 
+					type : "post",
+					data : {projectCode : projectCode, writerEmail : writerEmail, receiverEmail : receiverEmail},
+					cache : false,
+					success : function (list) {
+						var newMsgListSize = parseInt(list.length);
+						var newReadFlagFCount = 0;
+						for(var key in list) {
+							if(list[key].readFlag == 'F'.charAt(0)) {
+								newReadFlagFCount = parseInt(newReadFlagFCount) + 1;
 							}
-							<!-- 구분선 -->
-							resultStr += "<div><div>";
-							resultStr += "<div class='_13KHfN73YmQgsYHxXvuh_J _1abzWO2yE0ZJ7OiXOf85f5 _4S0ikJ5kL9iaC8TQbNr2J'></div>";
-							resultStr += "<div class='_13KHfN73YmQgsYHxXvuh_J _4S0ikJ5kL9iaC8TQbNr2J'></div>";
-							resultStr += "</div></div>";
 						}
 						
-						$msgDetailListDiv.html(resultStr); 
-						$("#msgDetailListDiv").scrollTop($("#msgDetailListDiv")[0].scrollHeight);
+						if(newReadFlagFCount != parseInt(prevReadFlagFCount) || (0 < newMsgListSize && parseInt(msgListSize) != newMsgListSize)) {
+						 	$("#msgListSize").val(newMsgListSize);
+						 	$("#readFlagFCount").val(newReadFlagFCount);
+						 	
+							var userEmail = "<c:out value='${user.email}'/>";
+							var $msgDetailListDiv = $("#msgDetailListDiv");
+							var resultStr = "";
+							for(var key in list){
+								if(userEmail == list[key].writerEmail) {
+									resultStr += "<div style='text-align:right; margin-right: 10px;'><div class='_30LNYFhw6qsigZSbwlGCDz'>";
+									resultStr += "<div class='kq_2sXRgq_sfeYNfZHKOs' style='float:right;'>";
+									resultStr += "<div class='_34WN1umVFRc6wIDpVrIjIr' style='background-image: url(" + list[key].writerProfileImg + ");'></div></div>";
+									resultStr += "<div class='_3ZgG-OSv0XE3y-h3oPaDsl KFiVOeTOhXeUxwbhd30-9' style='margin-right: 3.5em;'>";
+									resultStr += "<div class='_22TCURqKJxPd9Pk2fUP3C2' style='margin-left:0px; margin-right:.5em;'><span class=''>" + list[key].sendDate + "</span></div>";
+									resultStr += "<span class='_1lzmMuArEV-MDJ-ASw7e8M'  style='margin-right:-7px;'>" + list[key].writerName + " &nbsp;</span>";
+									resultStr += "<div class='_2J-JDs-O0yO3-wBkPp1CzJ'><p style='white-space: pre-line;'>" + list[key].content + "</p></div>";
+									if(list[key].readFlag == 'T'.charAt(0)) {
+										resultStr += "<span class='_1K0ZBo09IxoqIXG0pce9Pa'>";
+										resultStr += "<i class='-o8oGI_QAOKsVIJOUOUmV _254YPhBOB9qv7-J8bIg7co _3sFSjAZS4gQdCAyN3OfyFG _1QY7TzdLHKX3-BKPDNNYKF'></i>읽음</span>";
+									} else {
+										resultStr += "<span class='_1K0ZBo09IxoqIXG0pce9Pa'>";
+										resultStr += "<i class='_254YPhBOB9qv7-J8bIg7co _2rpTvKkYYdMbVEklWlLfhl _1QY7TzdLHKX3-BKPDNNYKF'></i>읽지않음</span>";
+									}
+									resultStr += "</div></div></div>";
+								} else {
+									resultStr += "<div><div class='_30LNYFhw6qsigZSbwlGCDz'>";
+									resultStr += "<div class='kq_2sXRgq_sfeYNfZHKOs'>";
+									resultStr += "<div class='_34WN1umVFRc6wIDpVrIjIr' style='background-image: url(" + list[key].writerProfileImg + ");'></div></div>";
+									resultStr += "<div class='_3ZgG-OSv0XE3y-h3oPaDsl KFiVOeTOhXeUxwbhd30-9'>";
+									resultStr += "<span class='_1lzmMuArEV-MDJ-ASw7e8M'>" + list[key].writerName + " &nbsp;</span>";
+									resultStr += "<div class='_22TCURqKJxPd9Pk2fUP3C2'><span class=''>" + list[key].sendDate + "</span></div>";
+									resultStr += "<div class='_2J-JDs-O0yO3-wBkPp1CzJ'><p style='white-space: pre-line;'>" + list[key].content + "</p></div>";
+									resultStr += "</div></div></div>";
+								}
+								<!-- 구분선 -->
+								resultStr += "<div><div>";
+								resultStr += "<div class='_13KHfN73YmQgsYHxXvuh_J _1abzWO2yE0ZJ7OiXOf85f5 _4S0ikJ5kL9iaC8TQbNr2J'></div>";
+								resultStr += "<div class='_13KHfN73YmQgsYHxXvuh_J _4S0ikJ5kL9iaC8TQbNr2J'></div>";
+								resultStr += "</div></div>";
+							}
+							
+							$msgDetailListDiv.html(resultStr); 
+							$("#msgDetailListDiv").scrollTop($("#msgDetailListDiv")[0].scrollHeight);
+						}
+					}, error : function(e){
+						clearInterval(jiTimer);
+						/* console.log("ajax sendMessageError : ", e); */
+						location.href="loginPage.do";
 					}
-				}, error : function(e){
-					console.log("ajax sendMessageError : ", e);
-				}
-			});
+				});
+			} else {
+				clearInterval(jiTimer);
+				location.href="loginPage.do";
+			}
 		}, 3000);
-	
 	});
 </script>    
     
