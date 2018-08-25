@@ -29,8 +29,7 @@ content="website"><meta data-react-helmet="true" property="og:image:width" conte
 
 content="tumblbug"><meta data-react-helmet="true" name="twitter:creator" content="tumblbug"><meta data-react-helmet="true" name="twitter:card" content="summary_large_image">
       <link rel="stylesheet" type="text/css" href="https://d2om2e6rfn032x.cloudfront.net/wpa/app.f0ed3932e778a7f95ef1c52983d12741.css">
-      <link href=resources/images/tktkFavicon.png rel="icon" type="image/x-icon">
-      
+      <link href=resources/images/header/tktkFavicon.png rel="icon" type="image/x-icon">
   <link rel="apple-touch-icon" sizes="120x120" href="https://tumblbug-assets.imgix.net/appicon/home-icon/apple-icon-120x120.png">
   <link rel="apple-touch-icon" sizes="152x152" href="https://tumblbug-assets.imgix.net/appicon/home-icon/apple-icon-152x152.png">
   <link rel="apple-touch-icon" sizes="180x180" href="https://tumblbug-assets.imgix.net/appicon/home-icon/apple-icon-180x180.png">
@@ -1319,7 +1318,7 @@ data-react-helmet="true"><meta name="twitter:title" content="텀블벅 tumblbug"
 								프로젝트</span></button>
 					</div>
 					<div class="MenuItem__MenuItem-no2u3j-0 cwYjsy">
-						<button onclick="location.href='projectListOrderByEnrollDate.do"' style="border:0; outline:0;background:white"><span
+						<button onclick="location.href='projectListOrderByEnrollDate.do'" style="border:0; outline:0;background:white"><span
 							class="MenuItem__MenuItemTitle-no2u3j-1 enzRKc">새로운
 								프로젝트</span></button>
 					</div>

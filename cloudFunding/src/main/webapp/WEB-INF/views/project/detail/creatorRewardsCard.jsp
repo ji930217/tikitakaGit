@@ -8,7 +8,6 @@
 <head>
 <meta charset="UTF-8">
 <title>창작자 소개, 선물 목록</title>
-
 <style type="text/css" data-styled-components="bPaPOl cXdlcp bYqief fzoeFq jPcWZN iVCTYT jdgWcI bteafZ kZLTLQ hcvfVq iGOIal kizyZz cfMrMC hHUgvf bpfGNO JUlEd buZCDD imIxKd gqXDKx fqdqdO hsuyOO isebXd gKkJpB yNdyg boFKej cyqGTD guVzeB jZXZDW gDTPbS iTDPPg dIHovk qtLrt gujNFh eIDmsW leXkjY htCDgL bvKOwU ihuRTA kIYDgq lfgWGK iJcLQj kwAiqA bBsoai fjkRCm dvkZSH cYmhAj hZQjKf lblHJx eeeApW eSsILz gEWplf bReGoj cNWmvR jPEdlL kJUlye giKgfw bJXRvz hIkOXr fQMvgC dLvdGo umGxa gjgpkL gDEKBn bvwsV gByEjI ceunQL deZznN cBbkfc fuCNpE eYscdN daPkde fVfxlF dHxdxH ilHpOi iBGoJt khYIRi dxWcyc hBOBRE dCYRcO cUvTIp cabNvZ iChtTV" data-styled-components-is-local="true">>
 	/* sc-component-id: sc-keyframes-cXdlcp */
 @-webkit-keyframes cXdlcp {0% {-webkit-transform: translateY(0%);-ms-transform: translateY(0%);transform: translateY(0%);opacity: 1;}50% {-webkit-transform: translateY(100%);-ms-transform: translateY(100%);transform: translateY(100%);opacity: .3;}100% {-webkit-transform: translateY(0%);-ms-transform: translateY(0%);transform: translateY(0%);opacity: 1;}}@keyframes cXdlcp {0% {-webkit-transform: translateY(0%);-ms-transform: translateY(0%);transform: translateY(0%);opacity: 1;}50% {-webkit-transform: translateY(100%);-ms-transform: translateY(100%);transform: translateY(100%);opacity: .3;}100% {-webkit-transform: translateY(0%);-ms-transform: translateY(0%);transform: translateY(0%);opacity: 1;}}
@@ -278,9 +277,7 @@
 <script>
 	function openMessagePopup(){
 		var userEmail = "<c:out value='${user.email}'/>";
-		var creatorEmail = "<c:out value='${project.email}'/>";
-		
-		if(null != userEmail){
+		if(null == userEmail || userEmail == ""){
 			alert("로그인이 필요한 서비스 입니다.");
 			location.href="loginPage.do";
 		} else {
