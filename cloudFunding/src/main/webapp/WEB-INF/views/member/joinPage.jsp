@@ -6,6 +6,7 @@
 <!DOCTYPE html>
 <html>
 <head>
+<link href=resources/images/header/tktkFavicon.png rel="icon" type="image/x-icon">
 <meta charset="UTF-8">
 <title>회원가입</title>
 

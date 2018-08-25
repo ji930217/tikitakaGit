@@ -7,6 +7,7 @@
 <style>
 </style>
 <title>Insert title here</title>
+<link href=resources/images/header/tktkFavicon.png rel="icon" type="image/x-icon">
 </head>
 <body>
 <div class="_2nkoQovCMNDdKtTjNi5W_x" data-reactid="208">

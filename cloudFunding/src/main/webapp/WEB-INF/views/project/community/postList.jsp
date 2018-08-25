@@ -9,6 +9,7 @@
 <title>Insert title here</title>
 <!-- ajax Date format -->
 <script src="http://cdnjs.cloudflare.com/ajax/libs/moment.js/2.6.0/moment.min.js"></script>
+<link href=resources/images/header/tktkFavicon.png rel="icon" type="image/x-icon">
 <style>
 	a{ cursor:pointer;	}
 	

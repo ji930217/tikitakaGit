@@ -6,6 +6,7 @@
 
 <html lang="ko">
 <head>
+<link href=resources/images/header/tktkFavicon.png rel="icon" type="image/x-icon">
 <style>
 	#mainTitle{
 		text-align: center;

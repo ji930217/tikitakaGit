@@ -10,6 +10,7 @@
       <script type="text/javascript" src="resources/js/jquery-3.3.1.min.js"></script>
       
       <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=no">
+      <link href=resources/images/header/tktkFavicon.png rel="icon" type="image/x-icon">
       <link rel="dns-prefetch" href="https://tumblbug-assets.imgix.net">
       <link rel="dns-prefetch" href="https://tumblbug-pci2.imgix.net">
       <link rel="dns-prefetch" href="https://tumblbug-psi.imgix.net">
@@ -133,7 +134,7 @@
 							resultStr += "<div class='_2J-JDs-O0yO3-wBkPp1CzJ'><p style='white-space: pre-line;'>" + list[key].content + "</p></div>";
 							resultStr += "</div></div></div>";
 						}
-						<!-- 구분선 -->
+						/* 구분선 */
 						resultStr += "<div><div>";
 						resultStr += "<div class='_13KHfN73YmQgsYHxXvuh_J _1abzWO2yE0ZJ7OiXOf85f5 _4S0ikJ5kL9iaC8TQbNr2J'></div>";
 						resultStr += "<div class='_13KHfN73YmQgsYHxXvuh_J _4S0ikJ5kL9iaC8TQbNr2J'></div>";
@@ -283,7 +284,7 @@
 														<c:set var="readFlagFCount" value="${readFlagFCount + 1 }"/>
 														<script>
 															var readFlagFCount = "<c:out value='${readFlagFCount}'/>";
-															console.log(readFlagFCount);
+															/* console.log(readFlagFCount); */
 														</script>
 													</c:if>
 												</c:forEach>
