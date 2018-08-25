@@ -80,106 +80,113 @@
 	$(function(){
 		var prevNewMsgCnt = "<c:out value='${newMessageCount}'/>";
 		
-		timer = setInterval( function () {
-			// 모든 메시지 리스트 화면 업데이트
-			$.ajax ({
-				url : "selectMessageList.do", 
-				cache : false,
-				success : function (list) {
-					var newMsgCntSum = 0;
-					for(var key in list) {
-						newMsgCntSum += parseInt(list[key].newMessageCount);
-					}
-					
-					if(0 < newMsgCntSum && parseInt(prevNewMsgCnt) != newMsgCntSum) {
-						/* console.log("새로운 메시지가 있어요."); */
-						var $messageListDiv = $("#messageListDiv");
-						var resultStr = "";
-						var userEmail = "<c:out value='${user.email}'/>";
-						var idx = 0;
-						for(var key in list){
-							resultStr += "<form id='messageInfoForm" + parseInt(idx) + "' action='messageDetail.do' method='post'>";
-							resultStr += "<input type='hidden' name='projectCode' value='" + list[key].projectCode + "'/>";
-							resultStr += "<input type='hidden' name='receiverEmail' value='" + list[key].creatorEmail + "'/>";
-							resultStr += "<input type='hidden' name='writerEmail' value='" + userEmail + "'/></form>";
-							resultStr += "<div><a href='javascript:messageDetail(" + parseInt(idx) +");'>";
-							resultStr += "<div><div class='_13KHfN73YmQgsYHxXvuh_J _18bwsw29jDyAzIPXzQkoS- _18TDror949wcy2NyVIqpHo _1x1pMFvLPogKJ5cv1C3iz4'>";
-							resultStr += "<div class='_3ur7Q0Ll02gIeBh05cHYUh'><div class='_2Gh51cXm8pkKxT5ETFNCH9'><div class='_3ep5zWJoGAgVOk5mffZF0r'>";
-							resultStr += "<img alt='프로젝트 이미지' class='_13KHfN73YmQgsYHxXvuh_J _2H5AJMZT-xLtuIvR5jP8rd IHUALIalgwgMpH2DEQooZ _2aquK6B3D0GYX7zQT4_IR7' src='" + list[key].repImg + "'></div>";
-							resultStr += "<div class='_2rhtRWD8W9jAiG5KK0tShU'>";
-							resultStr += "<div class='YMfDfu-vUhehjeBwbEEPe'><b>" + list[key].title + "</b></div>";
-							resultStr += "<div class='WBJBCYr1DAtTIZsxLCJu9'><b>" + list[key].writerName + "</b></div>";
-							resultStr += "<div class='_10h99EJ9Kd6zSwnvFug3Nh _2paOVgSZRiW0glORbO6nu7'><span>" + list[key].content + "</span></div>";
-							resultStr += "</div>";
-							resultStr += "<div class='hXXWUhhdxvn5n73uPEhpJ'>";
-							resultStr += "<div class='_2neeJlPPwgtHrvFUTjDZPy'>" + list[key].sendDate + "</div>";
-							// 읽지 않은 메시지 수
-							if(0 < list[key].newMessageCount) {
-								resultStr += "<div><label class='_13KHfN73YmQgsYHxXvuh_J _1DLNFgQRrQNEosKFB0zOK5 _2rCeEoFeBzvCYn76udqnww _3C1GIkccqqGyujnub2YVhV _2BIT5x1MzYkxpZlDSFDBBf _3D9sfZXrWd8it3eUCuCTc8'>" + list[key].newMessageCount + "</label></div>";
-							}
-							resultStr += "</div>";
-							resultStr += "</div></div></div></div></a></div>";
-							idx = parseInt(idx) + 1;
+		var user = "<c:out value='${user}'/>";
+		var jiTimer = setInterval( function () {
+			if(null != user && user != ""){
+				// 모든 메시지 리스트 화면 업데이트
+				$.ajax ({
+					url : "selectMessageList.do", 
+					cache : false,
+					success : function (list) {
+						var newMsgCntSum = 0;
+						for(var key in list) {
+							newMsgCntSum += parseInt(list[key].newMessageCount);
 						}
-						 $messageListDiv.html(resultStr);
-						 
-						 // 새로운 메시지 리스트 화면 업데이트
-						 $.ajax ({
-								url : "selectNewMessageList.do", 
-								cache : false,
-								success : function (list) {
-									var newMsgCntSum = 0;
-									for(var key in list) {
-										newMsgCntSum += parseInt(list[key].newMessageCount);
-									}
-									
-									if(0 < newMsgCntSum && parseInt(prevNewMsgCnt) != newMsgCntSum) {
-										updateNewMessageCount(newMsgCntSum);
-										prevNewMsgCnt = newMsgCntSum;
-										
-										var $newMessageListDiv = $("#newMessageListDiv");
-										var resultStr = "";
-										var userEmail = "<c:out value='${user.email}'/>";
-										var idx = 9999;
-										for(var key in list){
-											resultStr += "<form id='messageInfoForm" + parseInt(idx) + "' action='messageDetail.do' method='post'>";
-											resultStr += "<input type='hidden' name='projectCode' value='" + list[key].projectCode + "'/>";
-											resultStr += "<input type='hidden' name='receiverEmail' value='" + list[key].creatorEmail + "'/>";
-											resultStr += "<input type='hidden' name='writerEmail' value='" + userEmail + "'/></form>";
-											resultStr += "<div><a href='javascript:messageDetail();'>";
-											resultStr += "<div><div class='_13KHfN73YmQgsYHxXvuh_J _18bwsw29jDyAzIPXzQkoS- _18TDror949wcy2NyVIqpHo _1x1pMFvLPogKJ5cv1C3iz4'>";
-											resultStr += "<div class='_3ur7Q0Ll02gIeBh05cHYUh'><div class='_2Gh51cXm8pkKxT5ETFNCH9'><div class='_3ep5zWJoGAgVOk5mffZF0r'>";
-											resultStr += "<img alt='프로젝트 이미지' class='_13KHfN73YmQgsYHxXvuh_J _2H5AJMZT-xLtuIvR5jP8rd IHUALIalgwgMpH2DEQooZ _2aquK6B3D0GYX7zQT4_IR7' src='" + list[key].repImg + "'></div>";
-											resultStr += "<div class='_2rhtRWD8W9jAiG5KK0tShU'>";
-											resultStr += "<div class='YMfDfu-vUhehjeBwbEEPe'><b>" + list[key].title + "</b></div>";
-											resultStr += "<div class='WBJBCYr1DAtTIZsxLCJu9'><b>" + list[key].writerName + "</b></div>";
-											resultStr += "<div class='_10h99EJ9Kd6zSwnvFug3Nh _2paOVgSZRiW0glORbO6nu7'><span>" + list[key].content + "</span></div>";
-											resultStr += "</div>";
-											resultStr += "<div class='hXXWUhhdxvn5n73uPEhpJ'>";
-											resultStr += "<div class='_2neeJlPPwgtHrvFUTjDZPy'>" + list[key].sendDate + "</div>";
-											// 읽지 않은 메시지 수
-											if(0 < list[key].newMessageCount) {
-												resultStr += "<div><label class='_13KHfN73YmQgsYHxXvuh_J _1DLNFgQRrQNEosKFB0zOK5 _2rCeEoFeBzvCYn76udqnww _3C1GIkccqqGyujnub2YVhV _2BIT5x1MzYkxpZlDSFDBBf _3D9sfZXrWd8it3eUCuCTc8'>" + list[key].newMessageCount + "</label></div>";
-											}
-											resultStr += "</div>";
-											resultStr += "</div></div></div></div></a></div>";
-											idx = parseInt(idx) - 1;
-										}
-										 $newMessageListDiv.html(resultStr);
-									} 
-								}, error : function(e){
-									console.log("에러");
+						
+						if(0 < newMsgCntSum && parseInt(prevNewMsgCnt) != newMsgCntSum) {
+							/* console.log("새로운 메시지가 있어요."); */
+							var $messageListDiv = $("#messageListDiv");
+							var resultStr = "";
+							var userEmail = "<c:out value='${user.email}'/>";
+							var idx = 0;
+							for(var key in list){
+								resultStr += "<form id='messageInfoForm" + parseInt(idx) + "' action='messageDetail.do' method='post'>";
+								resultStr += "<input type='hidden' name='projectCode' value='" + list[key].projectCode + "'/>";
+								resultStr += "<input type='hidden' name='receiverEmail' value='" + list[key].creatorEmail + "'/>";
+								resultStr += "<input type='hidden' name='writerEmail' value='" + userEmail + "'/></form>";
+								resultStr += "<div><a href='javascript:messageDetail(" + parseInt(idx) +");'>";
+								resultStr += "<div><div class='_13KHfN73YmQgsYHxXvuh_J _18bwsw29jDyAzIPXzQkoS- _18TDror949wcy2NyVIqpHo _1x1pMFvLPogKJ5cv1C3iz4'>";
+								resultStr += "<div class='_3ur7Q0Ll02gIeBh05cHYUh'><div class='_2Gh51cXm8pkKxT5ETFNCH9'><div class='_3ep5zWJoGAgVOk5mffZF0r'>";
+								resultStr += "<img alt='프로젝트 이미지' class='_13KHfN73YmQgsYHxXvuh_J _2H5AJMZT-xLtuIvR5jP8rd IHUALIalgwgMpH2DEQooZ _2aquK6B3D0GYX7zQT4_IR7' src='" + list[key].repImg + "'></div>";
+								resultStr += "<div class='_2rhtRWD8W9jAiG5KK0tShU'>";
+								resultStr += "<div class='YMfDfu-vUhehjeBwbEEPe'><b>" + list[key].title + "</b></div>";
+								resultStr += "<div class='WBJBCYr1DAtTIZsxLCJu9'><b>" + list[key].writerName + "</b></div>";
+								resultStr += "<div class='_10h99EJ9Kd6zSwnvFug3Nh _2paOVgSZRiW0glORbO6nu7'><span>" + list[key].content + "</span></div>";
+								resultStr += "</div>";
+								resultStr += "<div class='hXXWUhhdxvn5n73uPEhpJ'>";
+								resultStr += "<div class='_2neeJlPPwgtHrvFUTjDZPy'>" + list[key].sendDate + "</div>";
+								// 읽지 않은 메시지 수
+								if(0 < list[key].newMessageCount) {
+									resultStr += "<div><label class='_13KHfN73YmQgsYHxXvuh_J _1DLNFgQRrQNEosKFB0zOK5 _2rCeEoFeBzvCYn76udqnww _3C1GIkccqqGyujnub2YVhV _2BIT5x1MzYkxpZlDSFDBBf _3D9sfZXrWd8it3eUCuCTc8'>" + list[key].newMessageCount + "</label></div>";
 								}
-							});
-						 
-					} else {
-						/* console.log("새로운 메시지가 없어요."); */
+								resultStr += "</div>";
+								resultStr += "</div></div></div></div></a></div>";
+								idx = parseInt(idx) + 1;
+							}
+							 $messageListDiv.html(resultStr);
+							 
+							 // 새로운 메시지 리스트 화면 업데이트
+							 $.ajax ({
+									url : "selectNewMessageList.do", 
+									cache : false,
+									success : function (list) {
+										var newMsgCntSum = 0;
+										for(var key in list) {
+											newMsgCntSum += parseInt(list[key].newMessageCount);
+										}
+										
+										if(0 < newMsgCntSum && parseInt(prevNewMsgCnt) != newMsgCntSum) {
+											updateNewMessageCount(newMsgCntSum);
+											prevNewMsgCnt = newMsgCntSum;
+											
+											var $newMessageListDiv = $("#newMessageListDiv");
+											var resultStr = "";
+											var userEmail = "<c:out value='${user.email}'/>";
+											var idx = 9999;
+											for(var key in list){
+												resultStr += "<form id='messageInfoForm" + parseInt(idx) + "' action='messageDetail.do' method='post'>";
+												resultStr += "<input type='hidden' name='projectCode' value='" + list[key].projectCode + "'/>";
+												resultStr += "<input type='hidden' name='receiverEmail' value='" + list[key].creatorEmail + "'/>";
+												resultStr += "<input type='hidden' name='writerEmail' value='" + userEmail + "'/></form>";
+												resultStr += "<div><a href='javascript:messageDetail();'>";
+												resultStr += "<div><div class='_13KHfN73YmQgsYHxXvuh_J _18bwsw29jDyAzIPXzQkoS- _18TDror949wcy2NyVIqpHo _1x1pMFvLPogKJ5cv1C3iz4'>";
+												resultStr += "<div class='_3ur7Q0Ll02gIeBh05cHYUh'><div class='_2Gh51cXm8pkKxT5ETFNCH9'><div class='_3ep5zWJoGAgVOk5mffZF0r'>";
+												resultStr += "<img alt='프로젝트 이미지' class='_13KHfN73YmQgsYHxXvuh_J _2H5AJMZT-xLtuIvR5jP8rd IHUALIalgwgMpH2DEQooZ _2aquK6B3D0GYX7zQT4_IR7' src='" + list[key].repImg + "'></div>";
+												resultStr += "<div class='_2rhtRWD8W9jAiG5KK0tShU'>";
+												resultStr += "<div class='YMfDfu-vUhehjeBwbEEPe'><b>" + list[key].title + "</b></div>";
+												resultStr += "<div class='WBJBCYr1DAtTIZsxLCJu9'><b>" + list[key].writerName + "</b></div>";
+												resultStr += "<div class='_10h99EJ9Kd6zSwnvFug3Nh _2paOVgSZRiW0glORbO6nu7'><span>" + list[key].content + "</span></div>";
+												resultStr += "</div>";
+												resultStr += "<div class='hXXWUhhdxvn5n73uPEhpJ'>";
+												resultStr += "<div class='_2neeJlPPwgtHrvFUTjDZPy'>" + list[key].sendDate + "</div>";
+												// 읽지 않은 메시지 수
+												if(0 < list[key].newMessageCount) {
+													resultStr += "<div><label class='_13KHfN73YmQgsYHxXvuh_J _1DLNFgQRrQNEosKFB0zOK5 _2rCeEoFeBzvCYn76udqnww _3C1GIkccqqGyujnub2YVhV _2BIT5x1MzYkxpZlDSFDBBf _3D9sfZXrWd8it3eUCuCTc8'>" + list[key].newMessageCount + "</label></div>";
+												}
+												resultStr += "</div>";
+												resultStr += "</div></div></div></div></a></div>";
+												idx = parseInt(idx) - 1;
+											}
+											 $newMessageListDiv.html(resultStr);
+										} 
+									}, error : function(e){
+										clearInterval(jiTimer);
+										location.href="loginPage.do";
+									}
+								});
+						} else {
+							/* console.log("새로운 메시지가 없어요."); */
+						}
+					}, error : function(e){
+						clearInterval(jiTimer);
+						location.href="loginPage.do";
 					}
-				}
-			});
-			
+				});
+			} else {
+				clearInterval(jiTimer);
+				location.href="loginPage.do";
+			}	
 		}, 3000); // 5초에 한번씩 받아온다.	
-		
 		
 	});
 	
