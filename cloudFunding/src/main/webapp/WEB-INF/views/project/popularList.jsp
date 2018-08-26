@@ -3907,7 +3907,7 @@ px
 										<div
 											class="_13KHfN73YmQgsYHxXvuh_J _2nZxogWCtwxgZvigECqiKs yx45-aQ3xTwP4lNZQ2qQs _18TDror949wcy2NyVIqpHo UxeYqEszWK5hhpRXaGHBr">
 											<div class="-Qv21-og1HcmTC9fTAwhk">
-												<img src="https://tumblbug-pci2.imgix.net/8b085638008ca0dae709b236a3d55e79acf01841/9e4763ece87639b114ec09ec708c690d1d3767eb/fc0b20273bd383739a2217ce3be8c131e7c5429e/4eae4f67-3e25-42f2-8b34-63571aaf6407.jpg?w=620&amp;h=465&amp;auto=format%2Ccompress&amp;lossless=true&amp;fit=crop&amp;q=60"
+												<img src="<c:out value='${project.repImg }'/>"
 													alt="${project.title }"
 													class="_145Uy81NIiw-12IK7rJ920">
 											</div>
