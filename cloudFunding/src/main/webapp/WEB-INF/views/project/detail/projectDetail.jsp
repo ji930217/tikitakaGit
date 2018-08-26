@@ -239,12 +239,33 @@
 	});
 	 */
 	$(function(){
-		if(page == null) {
+		if(page == "community"){
+			$("#policyDiv").css("display", "none");
+			$("#storyDiv").css("display", "none");
+			$("#communityDiv").css("display", "block");
+			
+			$("#policyFixedBtn, #policyBtn, #storyFixedBtn, #storyBtn").removeClass("btnUnderline");
+			$("#communityFixedBtn, #communityBtn").addClass("btnUnderline");
+			
+			if(null == sessionStorage.getItem("postCode")){
+				$("#postListDiv").css("display", "block");  
+				$("#writeBtnDiv").css("display", "block");  
+			}
+			setMoreBtnDisplayBlock();
+			sessionStorage.removeItem("page");
+		} else {
 			$("#storyDiv").css("display", "block");
 			$(".storyContent img").css("width", "100%");
 			$("#storyFixedBtn").addClass("btnUnderline");
-			$("#storyBtn").addClass("btnUnderline");
-		} else if(page == "community"){
+			$("#storyBtn").addClass("btnUnderline"); 
+			sessionStorage.removeItem("page");
+		}
+	/* 	if(page == null) { */
+			/* $("#storyDiv").css("display", "block");
+			$(".storyContent img").css("width", "100%");
+			$("#storyFixedBtn").addClass("btnUnderline");
+			$("#storyBtn").addClass("btnUnderline"); */
+		/* } else  if(page == "community"){
 			$("#policyDiv").css("display", "none");
 			$("#storyDiv").css("display", "none");
 			$("#communityDiv").css("display", "block");
@@ -264,7 +285,8 @@
 			
 			$("#storyFixedBtn, #storyBtn, #communityFixedBtn, #communityBtn").removeClass("btnUnderline");
 			$("#policyFixedBtn, #policyBtn").addClass("btnUnderline");
-		}
+		}  */
+		
 	});
 	
 </script>

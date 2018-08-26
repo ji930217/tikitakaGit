@@ -2,6 +2,7 @@ package com.tikitaka.cloudFunding.community.controller;
 
 import java.util.List;
 
+import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -24,9 +25,10 @@ public class CommunityController {
 	ProjectService projectService;
 	
 	@RequestMapping("projectCommunity.do")
-	public @ResponseBody List<PostVo> projectCommunity(int projectCode, ModelAndView mv){
+	public @ResponseBody List<PostVo> projectCommunity(int projectCode, ModelAndView mv, HttpSession session){
 		// 해당 프로젝트의 게시글/댓글 조회해서 넘겨주기
 		List<PostVo> postList = cService.selectPostList(projectCode);
+		session.setAttribute("page", "community");
 		return postList;
 	}
 	

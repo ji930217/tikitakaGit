@@ -349,21 +349,21 @@
 					var creatorEmail = "<c:out value='${project.email}'/>";
 					var postWriterEmail = data.email;
 					if(creatorEmail == postWriterEmail){
-						$("#sharePostBtnDiv").css("display", "flex");
+					/* 	$("#sharePostBtnDiv").css("display", "flex"); */
 						$("#creatorLabel").html("창작자");
 						$("#postCategory").html("창작자 업데이트");
 						$("#postCategory").addClass("kFkoaw");
 					}else {
-						$("#sharePostBtnDiv").css("display", "none");
+						/* $("#sharePostBtnDiv").css("display", "none"); */
 						$("#postCategory").html("");
 						$("#postCategory").removeClass("kFkoaw");
 					}
 					var postWriterEmail = data.email;
-					if(creatorEmail == postWriterEmail){
+					/* if(creatorEmail == postWriterEmail){
 						$("#sharePostBtnDiv").css("display", "flex");
 					}else {
 						$("#sharePostBtnDiv").css("display", "none");
-					}
+					} */
 					
 					var projectCode = "<c:out value='${project.projectCode}'/>";		
 					
@@ -461,7 +461,7 @@
 			<c:if test="${(!empty user && (supportFlag == true)) || (!empty user && (user.email == project.email)) }">
 				<a onclick="openPostForm();">
 			</c:if>									
-			<c:if test="${!empty user && (supportFlag == false)}">
+			<c:if test="${!empty user && (supportFlag == false) && (user.email != project.email)}">
 				<a>
 			</c:if>									
 			<div class="Card__Card-s1i1esb8-0 bJXRvz">
@@ -478,11 +478,11 @@
 								<img class="ProfileImg__ProfileImg-s1o99mme-0 dLvdGo" src="<c:out value='${user.profile_img }'/>"/>
 								창작자에게 응원의 한마디!
 							</c:if>
-							<c:if test="${!empty user && (supportFlag == false)}">
+							<c:if test="${!empty user && (supportFlag == false) && (user.email != project.email)}">
 								<img class="ProfileImg__ProfileImg-s1o99mme-0 dLvdGo" src="<c:out value='${user.profile_img }'/>"/>
 								후원자만 글을 쓸 수 있어요
 							</c:if>
-							<c:if test="${!empty user && (user.email == project.email)}">
+							<c:if test="${!empty user && (supportFlag == false) && (user.email == project.email)}">
 								<img class="ProfileImg__ProfileImg-s1o99mme-0 dLvdGo" src="<c:out value='${user.profile_img }'/>"/>
 								후원자에게 한마디!
 							</c:if>
@@ -630,7 +630,7 @@
 
 				<!-- 게시글 공유 버튼(창작자의 게시글일 경우만 출력)-->
 				<div id="sharePostBtnDiv" class="Post__ShareWrapper-s1xz59uk-17 jEZrVP">
-					<div style="display: flex;">
+					<%-- <div style="display: flex;">
 						<div	class="SocialMediaShareButton SocialMediaShareButton--facebook" onclick="shareFacebook();">
 							<div class="SocialMediaButtons__ShareButton-dpsnza-0 hhJJZS">
 								<div style="width: 32px; height: 32px;">
@@ -665,7 +665,7 @@
 							</div>
 						</div>
 						
-					</div>
+					</div> --%>
 				</div>
 
 				<div	class="Post__CommunityPostCommentsAmount-s1xz59uk-25 jPVurM">

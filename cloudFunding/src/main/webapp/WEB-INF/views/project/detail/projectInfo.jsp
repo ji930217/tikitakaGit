@@ -367,6 +367,8 @@
 					$("#postFormDiv").css("display", "none");
 					$("#creatorPostDiv").css("display", "none");
 					$("#communityDiv").css("display", "block");
+					$("#writeBtnDiv").css("display", "block");
+					$("#postListDiv").css("display", "block");
 					
 					$("#policyFixedBtn, #policyBtn, #storyFixedBtn, #storyBtn").removeClass("btnUnderline");
 					$("#communityFixedBtn, #communityBtn").addClass("btnUnderline");
@@ -473,7 +475,7 @@
 		}	
 	}
 	
-	function shareFacebook() {
+	/* function shareFacebook() {
 		var content = "<c:out value='${project.title}'/>";
 		var link = "http://localhost:8081/cloudFunding/projectDetail.do?projectCode=<c:out value='${project.projectCode}'/>";
 		var popOption = "width=370, height=360, resizable=no, scrollbars=no, status=no;";
@@ -483,7 +485,7 @@
 		if (wp) {
 			wp.focus();
 		}
-	}
+	} */
 
 	
 	/* 스크롤 이벤트 */
@@ -576,13 +578,13 @@
 					</div>
 					<div class="Modal__ModalBody-s1q54ra0-7 fJUlRA">
 						<div>
-							<div
+							<!-- <div
 								class="SocialMediaShareButton SocialMediaShareButton--facebook">
 								<button class="ShareModal__ShareButton-xl7vb0-0 cXqVXt" onclick="shareFacebook();">
 									<i class="_1uz2PaH_Pc163IQLnwFtm8 _1QY7TzdLHKX3-BKPDNNYKF"></i>
 									페이스북 공유하기
 								</button>
-							</div>
+							</div> -->
 							<div
 								class="SocialMediaShareButton SocialMediaShareButton--twitter">
 								<button id="kakao-link-btn" class="ShareModal__ShareButton-xl7vb0-0 kQbXwX" onclick="shareTwitter();">

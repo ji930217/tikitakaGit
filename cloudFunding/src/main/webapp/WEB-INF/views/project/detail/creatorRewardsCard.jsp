@@ -360,7 +360,7 @@
 												<c:if test="${gift.remited gt 0 && gift.remited lt 101}">
 													<!-- 한정상품인 경우 -->
 													<span class="RewardCard__LimitedRewardLabel-ibjars-5 jJjTiD">
-														<c:out value="${gift.remited }"/>개 남음
+														<c:out value="${gift.remited - gift.selectedCount }"/>개 남음
 													</span>
 												</c:if>
 												<c:if test="${gift.remited eq 0}">

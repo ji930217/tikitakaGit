@@ -598,7 +598,7 @@
 					console.log("ajax insertReply 에러 : ", e);
 				}
 			});
-	      }
+	      } 
 	});
 
 	function openPostForm(){
