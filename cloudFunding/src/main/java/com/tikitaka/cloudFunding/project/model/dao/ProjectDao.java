@@ -94,6 +94,10 @@ public class ProjectDao {
 	public List<ProjectVo> selectindex_DeadlineList(int btnIdx2) {
 		return sqlSession.selectList("projectMapper.selectindex_DeadlineList", btnIdx2);
 	}
+
+	public List<ProjectVo> searchProjectByHashtag(String tag) {
+		return sqlSession.selectList("projectMapper.searchProjectByHashtag", tag);
+	}
 }
 
 

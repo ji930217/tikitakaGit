@@ -1076,6 +1076,10 @@ data-react-helmet="true"><meta name="twitter:title" content="텀블벅 tumblbug"
 			var category = $(this).text();
 			location.href="searchProjectByCategory.do?category=" + category;
 		});
+		$(".searchProjectByHashtag").click(function(){
+			var tag = $(this).children("span").text().replace("#", "");
+			location.href="searchProjectByHashtag.do?tag=" + tag;
+		});
 		
 		var user = "<c:out value='${user}'/>";
 		var newMessageCount = "<c:out value='${newMessageCount}'/>";
@@ -1148,7 +1152,7 @@ data-react-helmet="true"><meta name="twitter:title" content="텀블벅 tumblbug"
 		memberAdmin.stopDate = "${user.stopDate}";
 		memberAdmin.expDate = "${user.expDate}";
 		
-		console.log(memberAdmin.email);
+		/* console.log(memberAdmin.email); */
 		$("#loginIdAcc").click(function(){
 			if(memberAdmin.email == 'admin@admin.com'){
 				location.href="adminMenuList.do";
@@ -1343,30 +1347,30 @@ data-react-helmet="true"><meta name="twitter:title" content="텀블벅 tumblbug"
 						<div class="Divider__Divider-s16ihjfx-0 hEIXJa"></div>
 					</div>
 					<div>
-						<div class="Discover__DiscoverMenuTitle-s1vowecn-0 cWTOml">태그</div>
+						<div class="Discover__DiscoverMenuTitle-s1vowecn-0 cWTOml">TIKITAKA</div>
 						<div class="Discover__TagCollection-s1vowecn-2 fnDmjB">
 							<div class="MenuItem__MenuItem-no2u3j-0 cwYjsy">
-								<a href="/collections/summerdrink"><span
-									class="sc-bZQynM kCwSCH">#한여름의음료</span></a>
+								<a class="searchProjectByHashtag"><span
+									class="sc-bZQynM dtwFgh">#TIKITAKA</span></a>
 							</div>
 							<div class="MenuItem__MenuItem-no2u3j-0 cwYjsy">
-								<a href="/collections/tumblbugsummer"><span
-									class="sc-bZQynM bsAzyf">#피서는텀블벅에서</span></a>
+								<a class="searchProjectByHashtag"><span
+									class="sc-bZQynM gQpQVg">#유지상</span></a>
 							</div>
 							<div class="MenuItem__MenuItem-no2u3j-0 cwYjsy">
-								<a href="/collections/startup"><span
-									class="sc-bZQynM kUVMFn">#스타트업</span></a>
+								<a class="searchProjectByHashtag"><span
+									class="sc-bZQynM kCwSCH">#전윤석</span></a>
 							</div>
 							<div class="MenuItem__MenuItem-no2u3j-0 cwYjsy">
-								<a href="/collections/cultural"><span
-									class="sc-bZQynM iYdQWI">#문화생활</span></a>
+								<a class="searchProjectByHashtag"><span
+									class="sc-bZQynM bsAzyf">#나신의</span></a>
 							</div>
 							<div class="MenuItem__MenuItem-no2u3j-0 cwYjsy">
-								<a href="/collections/comeback"><span
-									class="sc-bZQynM gQpQVg">#돌아온창작자</span></a>
+								<a class="searchProjectByHashtag"><span
+									class="sc-bZQynM iYdQWI">#김가영</span></a>
 							</div>
 							<div class="MenuItem__MenuItem-no2u3j-0 cwYjsy">
-								<a href="/collections/815"><span class="sc-bZQynM dtwFgh">#광복절</span></a>
+								<a class="searchProjectByHashtag"><span class="sc-bZQynM kUVMFn">#김정인</span></a>
 							</div>
 						</div>
 						<div class="Divider__Divider-s16ihjfx-0 hEIXJa"></div>

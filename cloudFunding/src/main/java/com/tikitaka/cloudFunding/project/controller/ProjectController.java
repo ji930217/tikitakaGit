@@ -314,6 +314,17 @@ public class ProjectController {
 		return mv;
 	}
 	
+	@RequestMapping("searchProjectByHashtag.do")
+	public ModelAndView searchProjectByHashtag(String tag, ModelAndView mv){
+		List<ProjectVo> list = projectService.searchProjectByHashtag(tag);
+		
+		mv.addObject("keyword", tag);
+		mv.addObject("list", list);
+		mv.setViewName("project/projectListByKeyword");
+		
+		return mv;
+	}
+	
 	@RequestMapping("projectListOrderByDeadline.do")
 	public ModelAndView projectListOrderByDeadline(ModelAndView mv){
 		List<ProjectVo> list = projectService.projectListOrderByDeadline();

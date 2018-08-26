@@ -94,5 +94,9 @@ public class ProjectService {
 		return dao.selectindex_DeadlineList(btnIdx2);
 	}
 
+	public List<ProjectVo> searchProjectByHashtag(String tag) {
+		return dao.searchProjectByHashtag(tag);
+	}
+
 
 }
