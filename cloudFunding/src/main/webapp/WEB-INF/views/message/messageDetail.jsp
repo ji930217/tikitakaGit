@@ -229,7 +229,7 @@
 				clearInterval(jiTimer);
 				location.href="loginPage.do";
 			}
-		}, 3000);
+		}, 2000);
 	});
 </script>    
     

@@ -77,6 +77,8 @@
 	}
 </style>
 <script>
+	var newMsgNotMine = 0;
+	var newMsgMine = 0;
 	function checkNewMsgCount(){
 		var str = "";
 		str += "<span><svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1024 1024' style='fill: rgb(250, 100, 98); height: 14px; margin-top: 2px; margin-left: 5px;'>";
@@ -87,9 +89,15 @@
 			success : function(result){
 				if(0 < result[0]){
 					$("#newMsgNotMine").html(str);
+					newMsgNotMine = result[0];
+				} else {
+					$("#newMsgNotMine").html("");
 				}
 				if(0 < result[1]) {
 					$("#newMsgMine").html(str);
+					newMsgMine = result[1];
+				} else {
+					$("#newMsgMine").html("");
 				}
 			}, error : function(e) {
 				location.href="loginPage.do";
@@ -111,9 +119,11 @@
 				var page = sessionStorage.getItem("page");
 				var allMsgUrl = "selectMessageList.do";
 				var newMsgUrl = "selectNewMessageList.do";
+				var prevNewMsgCnt = newMsgNotMine;
 				if("mine" == page) {
 					allMsgUrl = "selectMyProjectMessageList.do";
 					newMsgUrl = "selectMyProjectNewMessageList.do";
+					prevNewMsgCnt = newMsgMine;
 				}
 				$.ajax ({
 					url : allMsgUrl, 
@@ -126,11 +136,7 @@
 						
 						if(0 < newMsgCntSum && parseInt(prevNewMsgCnt) != newMsgCntSum) {
 							/* console.log("새로운 메시지가 있어요."); */
-							if("mine" == page) {
-								$("#newMsgMine").css("display", "block");
-							} else {
-								$("#newMsgNotMine").css("display", "block");
-							}
+							//prevNewMsgCnt = newMsgCntSum;
 							
 							var $messageListDiv = $("#messageListDiv");	
 							$messageListDiv.html("");
@@ -233,7 +239,7 @@
 				clearInterval(jiTimer);
 				location.href="loginPage.do";
 			}	
-		}, 3000); // 5초에 한번씩 받아온다.	
+		}, 2000); // 5초에 한번씩 받아온다.	
 		
 	});
 	
@@ -291,7 +297,6 @@
 			url = "selectMyProjectNewMessageList.do";
 			div = "#newMessageListDiv";
 		}		
-		
 		updateMessageList(url, div);
 		
 		$("#mineBtn").removeClass(" rLqvd1axk9i-3cU72yTkF");
