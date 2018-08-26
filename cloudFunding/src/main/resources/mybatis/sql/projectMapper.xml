@@ -192,6 +192,14 @@ WHERE P_PROJECT_CODE = #{projectCode}
 	ORDER BY P_ENROLL_DATE DESC
 </select>
 
+<select id="checkSupportFlag" parameterType="Support" resultType="int">
+    SELECT COUNT(*) 
+    FROM SUPPORT
+	WHERE P_PROJECT_CODE = #{projectCode}
+	AND EMAIL = #{email}
+</select>
+
+
 <select id="selectindex_enrollDateList" resultMap="projectMap2" parameterType="int">
 SELECT *
 from(select EMAIL, P_PROJECT_CODE,P_PROJECT_NUMBER, P_TITLE, P_REP_IMG, P_SUMMARY, P_CATEGORY, P_PROFILE_IMG, 
