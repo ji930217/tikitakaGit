@@ -62,6 +62,7 @@ public class MessageController {
 		}
 		return mv;
 	}
+	
 	@RequestMapping("selectMessageList.do")
 	public @ResponseBody List<MessageVo> selectMessageList(HttpSession session){
 		Member user = (Member) session.getAttribute("user");
@@ -78,6 +79,26 @@ public class MessageController {
 		List<MessageVo> list = new ArrayList<MessageVo>();
 		if(null != user) {
 			list = msgService.selectNewMessageList(user.getEmail());
+		}
+		return list;
+	}
+	
+	@RequestMapping("selectMyProjectMessageList.do")
+	public @ResponseBody List<MessageVo> selectMyProjectMessageList(HttpSession session){
+		Member user = (Member) session.getAttribute("user");
+		List<MessageVo> list = new ArrayList<MessageVo>();
+		if(null != user) {
+			list = msgService.selectMyProjectMessageList(user.getEmail());
+		}
+		return list;
+	}
+	
+	@RequestMapping("selectMyProjectNewMessageList.do")
+	public @ResponseBody List<MessageVo> selectMyProjectNewMessageList(HttpSession session){
+		Member user = (Member) session.getAttribute("user");
+		List<MessageVo> list = new ArrayList<MessageVo>();
+		if(null != user) {
+			list = msgService.selectMyProjectNewMessageList(user.getEmail());
 		}
 		return list;
 	}
@@ -110,7 +131,6 @@ public class MessageController {
 			int result = msgService.updateReadFlag(msg);
 			session.setAttribute("newMessageCount", msgService.selectNewMessageCount(user.getEmail()));
 			
-			// 로그인한 유저 정보를 통해 해당 멤버의 메시지리스트 불러와야해
 			msg.setWriterEmail(user.getEmail());
 			List<MessageVo> list = msgService.selectMessageDetail(msg);
 			
@@ -127,10 +147,11 @@ public class MessageController {
 		Member user = (Member) session.getAttribute("user");
 		int result = msgService.updateReadFlag(msg);
 		
-		// 로그인한 유저 정보를 통해 해당 멤버의 메시지리스트 불러와야해
-		msg.setWriterEmail(user.getEmail());
-		List<MessageVo> list = msgService.selectMessageDetail(msg);
-		
+		List<MessageVo> list = new ArrayList<MessageVo>();
+		if(null != user) {
+			msg.setWriterEmail(user.getEmail());
+			list = msgService.selectMessageDetail(msg);
+		}
 		return list;
 	}
 	

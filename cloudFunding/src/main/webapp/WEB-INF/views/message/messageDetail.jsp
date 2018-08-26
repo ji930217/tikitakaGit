@@ -209,7 +209,7 @@
 									resultStr += "<div class='_2J-JDs-O0yO3-wBkPp1CzJ'><p style='white-space: pre-line;'>" + list[key].content + "</p></div>";
 									resultStr += "</div></div></div>";
 								}
-								<!-- 구분선 -->
+								
 								resultStr += "<div><div>";
 								resultStr += "<div class='_13KHfN73YmQgsYHxXvuh_J _1abzWO2yE0ZJ7OiXOf85f5 _4S0ikJ5kL9iaC8TQbNr2J'></div>";
 								resultStr += "<div class='_13KHfN73YmQgsYHxXvuh_J _4S0ikJ5kL9iaC8TQbNr2J'></div>";

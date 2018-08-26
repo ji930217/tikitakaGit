@@ -26,8 +26,8 @@
 		<!-- <collection property="replyList" column="REPLY_CODE" ofType="Reply" resultMap="replyMap"/> -->
 	</resultMap>
 	
-	<select id = "selectMessageList" resultMap="messageMap" parameterType="string">
-		SELECT P.P_PROJECT_CODE, P_TITLE, P_REP_IMG, P.EMAIL AS CREATOR_EMAIL, M_CODE, M_WRITER, M_RECEIVER, M_CONTENT, TO_CHAR(M_SEND_DATE,'YYYY-MM-DD HH24:MI:SS') AS M_SEND_DATE, 
+	<sql id="messageListHeader">
+	    SELECT P.P_PROJECT_CODE, P_TITLE, P_REP_IMG, P.EMAIL AS CREATOR_EMAIL, M_CODE, M_WRITER AS WRITER_EMAIL, M_RECEIVER AS RECEIVER_EMAIL, M_CONTENT, TO_CHAR(M_SEND_DATE,'YYYY-MM-DD HH24:MI:SS') AS M_SEND_DATE, 
 						-- 로그인 한 유저가 보낸 것이 아닌 새로운 메시지만 카운트
 						(SELECT COUNT(*) FROM MESSAGE 
 						WHERE M_READ_FLAG = 'F' 
@@ -44,30 +44,37 @@
 												FROM MESSAGE M 
 												WHERE (M.M_WRITER = #{email} OR M.M_RECEIVER = #{email}) 
 												AND M.P_PROJECT_CODE = P.P_PROJECT_CODE) 
+	</sql>
+	
+	<select id = "selectMessageList" resultMap="messageMap" parameterType="string">
+		<include refid="messageListHeader"/>
+		AND P.EMAIL != #{email}
 		ORDER BY M_SEND_DATE DESC
 	</select>
 	
 	<select id = "selectNewMessageList" resultMap="messageMap" parameterType="string">
-		SELECT P_PROJECT_CODE, P_TITLE, P_REP_IMG, CREATOR_EMAIL, M_CODE, M_WRITER, M_RECEIVER, M_CONTENT, M_SEND_DATE, NEW_MESSAGE_COUNT, WRITER_NAME
-		FROM(SELECT P.P_PROJECT_CODE, P_TITLE, P_REP_IMG, P.EMAIL AS CREATOR_EMAIL, M_CODE, M_WRITER, M_RECEIVER, M_CONTENT, TO_CHAR(M_SEND_DATE,'YYYY-MM-DD HH24:MI:SS') AS M_SEND_DATE, 
-									-- 로그인 한 유저가 보낸 것이 아닌 새로운 메시지만 카운트
-									(SELECT COUNT(*) FROM MESSAGE 
-									WHERE M_READ_FLAG = 'F' 
-										AND P_PROJECT_CODE = P.P_PROJECT_CODE 
-										AND M_RECEIVER = #{email}) AS NEW_MESSAGE_COUNT,
-						      	(SELECT NAME FROM MEMBER WHERE EMAIL = M_WRITER) AS WRITER_NAME--,
-						--      (SELECT NAME FROM MEMBER WHERE EMAIL = M_RECEIVER) AS RECEIVER_NAME
-					FROM PROJECT P JOIN MESSAGE ON(P.P_PROJECT_CODE = MESSAGE.P_PROJECT_CODE)
-					WHERE P.P_PROJECT_CODE IN (SELECT P_PROJECT_CODE 
-																		FROM MESSAGE 
-																		WHERE M_WRITER = #{email} OR M_RECEIVER = #{email})
-					-- 프로젝트 별 가장 최신 메시지 정보만
-					AND M_SEND_DATE IN (SELECT MAX(M.M_SEND_DATE) 
-															FROM MESSAGE M 
-															WHERE (M.M_WRITER = #{email} OR M.M_RECEIVER = #{email}) 
-															AND M.P_PROJECT_CODE = P.P_PROJECT_CODE) 
+		SELECT P_PROJECT_CODE, P_TITLE, P_REP_IMG, CREATOR_EMAIL, M_CODE, WRITER_EMAIL, RECEIVER_EMAIL, M_CONTENT, M_SEND_DATE, NEW_MESSAGE_COUNT, WRITER_NAME
+		FROM(
+		<include refid="messageListHeader"/>
 		)
     	WHERE NEW_MESSAGE_COUNT > 0
+    	AND CREATOR_EMAIL != #{email}
+		ORDER BY M_SEND_DATE DESC
+	</select>
+	
+	<select id = "selectMyProjectMessageList" resultMap="messageMap" parameterType="string">
+		<include refid="messageListHeader"/>
+		AND P.EMAIL = #{email}
+		ORDER BY M_SEND_DATE DESC
+	</select>
+	
+	<select id = "selectMyProjectNewMessageList" resultMap="messageMap" parameterType="string">
+		SELECT P_PROJECT_CODE, P_TITLE, P_REP_IMG, CREATOR_EMAIL, M_CODE, WRITER_EMAIL, RECEIVER_EMAIL, M_CONTENT, M_SEND_DATE, NEW_MESSAGE_COUNT, WRITER_NAME
+		FROM(
+		<include refid="messageListHeader"/>
+		)
+    	WHERE NEW_MESSAGE_COUNT > 0
+    	AND CREATOR_EMAIL = #{email}
 		ORDER BY M_SEND_DATE DESC
 	</select>
 	
@@ -94,7 +101,7 @@
 		ORDER BY M_SEND_DATE
 	</select>
 
-	<select id="selectMessage" parameterType="Message" resultMap="messageMap">
+	<!-- <select id="selectMessage" parameterType="Message" resultMap="messageMap">
 	    SELECT * 
 		FROM (SELECT M_CODE, P_PROJECT_CODE, M_WRITER, M_RECEIVER, M_CONTENT, M_READ_FLAG, 
 		                 M_SEND_DATE, ROWNUM AS R_NUM, WRITER_PROFILE_IMG, WRITER_NAME
@@ -108,7 +115,7 @@
 		            ORDER BY M_SEND_DATE DESC)
 	      )
 		WHERE R_NUM = 1
-	</select>
+	</select> -->
 	
 	<insert id="insertMessage" parameterType="Message">
 	    INSERT INTO MESSAGE 

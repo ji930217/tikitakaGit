@@ -36,12 +36,20 @@ public class MessageService {
 		return msgDao.updateReadFlag(msg);
 	}
 
-	public MessageVo selectMessage(MessageVo msg) {
+	/*public MessageVo selectMessage(MessageVo msg) {
 		return msgDao.selectMessage(msg);
-	}
+	}*/
 
 	public List<MessageVo> selectNewMessageList(String email) {
 		return msgDao.selectNewMessageList(email);
+	}
+
+	public List<MessageVo> selectMyProjectMessageList(String email) {
+		return msgDao.selectMyProjectMessageList(email);
+	}
+
+	public List<MessageVo> selectMyProjectNewMessageList(String email) {
+		return msgDao.selectMyProjectNewMessageList(email);
 	}
 
 

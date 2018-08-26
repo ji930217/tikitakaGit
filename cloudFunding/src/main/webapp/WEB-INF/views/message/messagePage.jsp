@@ -78,14 +78,22 @@
 </style>
 <script>
 	$(function(){
+		sessionStorage.removeItem("page");
 		var prevNewMsgCnt = "<c:out value='${newMessageCount}'/>";
 		
 		var user = "<c:out value='${user}'/>";
 		var jiTimer = setInterval( function () {
 			if(null != user && user != ""){
 				// 모든 메시지 리스트 화면 업데이트
+				var page = sessionStorage.getItem("page");
+				var allMsgUrl = "selectMessageList.do";
+				var newMsgUrl = "selectNewMessageList.do";
+				if("mine" == page) {
+					allMsgUrl = "selectMyProjectMessageList.do";
+					newMsgUrl = "selectMyProjectNewMessageList.do";
+				}
 				$.ajax ({
-					url : "selectMessageList.do", 
+					url : allMsgUrl, 
 					cache : false,
 					success : function (list) {
 						var newMsgCntSum = 0;
@@ -95,14 +103,20 @@
 						
 						if(0 < newMsgCntSum && parseInt(prevNewMsgCnt) != newMsgCntSum) {
 							/* console.log("새로운 메시지가 있어요."); */
-							var $messageListDiv = $("#messageListDiv");
+							var $messageListDiv = $("#messageListDiv");	
+							$messageListDiv.html("");
 							var resultStr = "";
 							var userEmail = "<c:out value='${user.email}'/>";
 							var idx = 0;
 							for(var key in list){
+								console.log(list[key]);
 								resultStr += "<form id='messageInfoForm" + parseInt(idx) + "' action='messageDetail.do' method='post'>";
 								resultStr += "<input type='hidden' name='projectCode' value='" + list[key].projectCode + "'/>";
-								resultStr += "<input type='hidden' name='receiverEmail' value='" + list[key].creatorEmail + "'/>";
+								if(userEmail == list[key].receiverEmail) {
+									resultStr += "<input type='hidden' name='receiverEmail' value='" + list[key].writerEmail + "'/>";
+								} else {
+									resultStr += "<input type='hidden' name='receiverEmail' value='" + list[key].receiverEmail + "'/>";
+								}
 								resultStr += "<input type='hidden' name='writerEmail' value='" + userEmail + "'/></form>";
 								resultStr += "<div><a href='javascript:messageDetail(" + parseInt(idx) +");'>";
 								resultStr += "<div><div class='_13KHfN73YmQgsYHxXvuh_J _18bwsw29jDyAzIPXzQkoS- _18TDror949wcy2NyVIqpHo _1x1pMFvLPogKJ5cv1C3iz4'>";
@@ -127,7 +141,7 @@
 							 
 							 // 새로운 메시지 리스트 화면 업데이트
 							 $.ajax ({
-									url : "selectNewMessageList.do", 
+									url : newMsgUrl, 
 									cache : false,
 									success : function (list) {
 										var newMsgCntSum = 0;
@@ -140,15 +154,20 @@
 											prevNewMsgCnt = newMsgCntSum;
 											
 											var $newMessageListDiv = $("#newMessageListDiv");
+											$newMessageListDiv.html("");
 											var resultStr = "";
 											var userEmail = "<c:out value='${user.email}'/>";
 											var idx = 9999;
 											for(var key in list){
 												resultStr += "<form id='messageInfoForm" + parseInt(idx) + "' action='messageDetail.do' method='post'>";
 												resultStr += "<input type='hidden' name='projectCode' value='" + list[key].projectCode + "'/>";
-												resultStr += "<input type='hidden' name='receiverEmail' value='" + list[key].creatorEmail + "'/>";
+												if(userEmail == list[key].receiverEmail) {
+													resultStr += "<input type='hidden' name='receiverEmail' value='" + list[key].writerEmail + "'/>";
+												} else {
+													resultStr += "<input type='hidden' name='receiverEmail' value='" + list[key].receiverEmail + "'/>";
+												}
 												resultStr += "<input type='hidden' name='writerEmail' value='" + userEmail + "'/></form>";
-												resultStr += "<div><a href='javascript:messageDetail();'>";
+												resultStr += "<div><a href='javascript:messageDetail(" + parseInt(idx) +");'>";
 												resultStr += "<div><div class='_13KHfN73YmQgsYHxXvuh_J _18bwsw29jDyAzIPXzQkoS- _18TDror949wcy2NyVIqpHo _1x1pMFvLPogKJ5cv1C3iz4'>";
 												resultStr += "<div class='_3ur7Q0Ll02gIeBh05cHYUh'><div class='_2Gh51cXm8pkKxT5ETFNCH9'><div class='_3ep5zWJoGAgVOk5mffZF0r'>";
 												resultStr += "<img alt='프로젝트 이미지' class='_13KHfN73YmQgsYHxXvuh_J _2H5AJMZT-xLtuIvR5jP8rd IHUALIalgwgMpH2DEQooZ _2aquK6B3D0GYX7zQT4_IR7' src='" + list[key].repImg + "'></div>";
@@ -208,12 +227,129 @@
 	}
 	
 	function openAllMsgDiv(){
+		sessionStorage.removeItem("flag");
+		
 		$("#newMsgDiv").css("display" ,"none");
 		$("#allMsgDiv").css("display" ,"block");
+		
+		var url = "selectMessageList.do";
+		if(sessionStorage.getItem("page") == "mine"){
+			url = "selectMyProjectMessageList.do";
+		}
+		
+		updateMessageList(url, "#messageListDiv");	
 	}
 	function openNewMsgDiv(){
+		sessionStorage.setItem("flag", "new");
+		
 		$("#allMsgDiv").css("display" ,"none");
 		$("#newMsgDiv").css("display" ,"block");
+		
+		var url = "selectNewMessageList.do";
+		if(sessionStorage.getItem("page") == "mine"){
+			url = "selectMyProjectNewMessageList.do";
+		}
+		console.log(sessionStorage.getItem("page"));
+
+		updateMessageList(url, "#newMessageListDiv");	
+	}
+	
+	function mine(){
+		//세션에 저장해서 새로고침해도 현재 탭 보여지게 하고 싶어.
+		sessionStorage.setItem("page", "mine");
+		var url = "selectMyProjectMessageList.do";
+		var div = "#messageListDiv";
+		if(sessionStorage.getItem("flag") == "new") {
+			openNewMsgDiv();
+			url = "selectMyProjectNewMessageList.do";
+			div = "#newMessageListDiv";
+		}		
+		
+		updateMessageList(url, div);
+		
+		$("#mineBtn").removeClass(" rLqvd1axk9i-3cU72yTkF");
+		$("#mineBtn").addClass("_3Syz9fGXYtzMNqK_55A2BW rLqvd1axk9i-3cU72yTkF jn8SgqiSJZMp3wboJHAsM");
+		$("#mineBtn").css("cursor", "pointer");
+		$("#notMineBtn").removeClass("_3Syz9fGXYtzMNqK_55A2BW rLqvd1axk9i-3cU72yTkF jn8SgqiSJZMp3wboJHAsM");
+		$("#notMineBtn").addClass(" rLqvd1axk9i-3cU72yTkF");
+		$("#notMineBtn").css("cursor", "initial");
+	}
+	
+	function notMine(){
+		sessionStorage.removeItem("page");
+		var url = "selectMessageList.do";
+		var div = "#messageListDiv";
+		if(sessionStorage.getItem("flag") == "new") {
+			openNewMsgDiv();
+			url = "selectNewMessageList.do";
+			div = "#newMessageListDiv";
+		}			
+
+		updateMessageList(url, div);
+		
+		$("#notMineBtn").removeClass(" rLqvd1axk9i-3cU72yTkF");
+		$("#notMineBtn").addClass("_3Syz9fGXYtzMNqK_55A2BW rLqvd1axk9i-3cU72yTkF jn8SgqiSJZMp3wboJHAsM");
+		$("#notMineBtn").css("cursor", "pointer");
+		$("#mineBtn").removeClass("_3Syz9fGXYtzMNqK_55A2BW rLqvd1axk9i-3cU72yTkF jn8SgqiSJZMp3wboJHAsM");
+		$("#mineBtn").addClass(" rLqvd1axk9i-3cU72yTkF");
+		$("#mineBtn").css("cursor", "initial");
+	}
+	
+	function updateMessageList(url, div){
+		$.ajax ({
+			url : url, 
+			cache : false,
+			success : function (list) {
+				var $div = $(div);	
+				$div.html("");
+				var resultStr = "";
+				var userEmail = "<c:out value='${user.email}'/>";
+				var idx = 0;
+				if(0 < list.length) {
+					for(var key in list){
+						resultStr += "<form id='messageInfoForm" + parseInt(idx) + "' action='messageDetail.do' method='post'>";
+						resultStr += "<input type='hidden' name='projectCode' value='" + list[key].projectCode + "'/>";
+						if(userEmail == list[key].receiverEmail) {
+							resultStr += "<input type='hidden' name='receiverEmail' value='" + list[key].writerEmail + "'/>";
+						} else {
+							resultStr += "<input type='hidden' name='receiverEmail' value='" + list[key].receiverEmail + "'/>";
+						}
+						resultStr += "<input type='hidden' name='writerEmail' value='" + userEmail + "'/></form>";
+						resultStr += "<div><a href='javascript:messageDetail(" + parseInt(idx) +");'>";
+						resultStr += "<div><div class='_13KHfN73YmQgsYHxXvuh_J _18bwsw29jDyAzIPXzQkoS- _18TDror949wcy2NyVIqpHo _1x1pMFvLPogKJ5cv1C3iz4'>";
+						resultStr += "<div class='_3ur7Q0Ll02gIeBh05cHYUh'><div class='_2Gh51cXm8pkKxT5ETFNCH9'><div class='_3ep5zWJoGAgVOk5mffZF0r'>";
+						resultStr += "<img alt='프로젝트 이미지' class='_13KHfN73YmQgsYHxXvuh_J _2H5AJMZT-xLtuIvR5jP8rd IHUALIalgwgMpH2DEQooZ _2aquK6B3D0GYX7zQT4_IR7' src='" + list[key].repImg + "'></div>";
+						resultStr += "<div class='_2rhtRWD8W9jAiG5KK0tShU'>";
+						resultStr += "<div class='YMfDfu-vUhehjeBwbEEPe'><b>" + list[key].title + "</b></div>";
+						resultStr += "<div class='WBJBCYr1DAtTIZsxLCJu9'><b>" + list[key].writerName + "</b></div>";
+						resultStr += "<div class='_10h99EJ9Kd6zSwnvFug3Nh _2paOVgSZRiW0glORbO6nu7'><span>" + list[key].content + "</span></div>";
+						resultStr += "</div>";
+						resultStr += "<div class='hXXWUhhdxvn5n73uPEhpJ'>";
+						resultStr += "<div class='_2neeJlPPwgtHrvFUTjDZPy'>" + list[key].sendDate + "</div>";
+						// 읽지 않은 메시지 수
+						if(0 < list[key].newMessageCount) {
+							resultStr += "<div><label class='_13KHfN73YmQgsYHxXvuh_J _1DLNFgQRrQNEosKFB0zOK5 _2rCeEoFeBzvCYn76udqnww _3C1GIkccqqGyujnub2YVhV _2BIT5x1MzYkxpZlDSFDBBf _3D9sfZXrWd8it3eUCuCTc8'>" + list[key].newMessageCount + "</label></div>";
+						}
+						resultStr += "</div>";
+						resultStr += "</div></div></div></div></a></div>";
+						idx = parseInt(idx) + 1;
+					}
+				} else {
+					resultStr += "<div style='vertical-align: middle; padding-top: 5em; padding-bottom: 5em;'>";
+					resultStr += "<div class='_13KHfN73YmQgsYHxXvuh_J _1Qdv504-1XMeYXZyb0xQZT _2mDWoxwh1QMJyLM49w7kMZ _3G8CRXtomRhisiZsw7Spx- _1WARcEqqT_Pem8leg2dkMj'>";
+					resultStr += "<div><i class='_3Hs9Qa2HoKTK0Bt1LDlMh_ _3RAU_1dXrlkkPhtkKyXSVj _3fJsfvAPykJzj2xoMnxzWW _3YmAkQhwzI7o-uUWz_8Mp4 _1QY7TzdLHKX3-BKPDNNYKF'></i>";
+					resultStr += "<h3 class='_13KHfN73YmQgsYHxXvuh_J -UobvSeyUG6cEWYnht50S' style='color: rgb(167, 167, 167); margin-bottom: 0.5rem;'>";
+					resultStr += "새로운	메시지가 없습니다</h3>";
+					resultStr += "<div><p style='color: rgb(167, 167, 167);'>프로젝트 페이지에서 '문의하기' 버튼을 눌러<br>메시지를 보낼 수 있습니다.</p></div>";
+					resultStr += "</div></div></div>";
+				}
+				 $div.html(resultStr);
+				 
+			}, error : function(e){
+				clearInterval(jiTimer);
+				location.href="loginPage.do";
+			}
+		});
 	}
 </script>
 <body>
@@ -240,12 +376,11 @@
 						<div
 							class="_13KHfN73YmQgsYHxXvuh_J _15-S1jpc4Zn2zzXSuhdBKG itkyM1b4RUr4V3cRkm7IR _3qrj1CcqiU767c8teG6imW _2Xkf-oIN3dW3T7P_qmRJv3">
 							<div class="_13KHfN73YmQgsYHxXvuh_J _1WARcEqqT_Pem8leg2dkMj">
-								<div
+								<div id="notMineBtn"
 									class="_3Syz9fGXYtzMNqK_55A2BW rLqvd1axk9i-3cU72yTkF jn8SgqiSJZMp3wboJHAsM"
 									style="cursor: initial;">
 									<h5>
-										<div
-											style="display: flex; align-items: center; justify-content: center;">
+										<div	style="display: flex; align-items: center; justify-content: center;" onclick="notMine();">
 											<div>
 												<label><span>문의/후원한 프로젝트</span></label>
 											</div>
@@ -267,10 +402,10 @@
 										</div>
 									</h5>
 								</div>
-								<div class=" rLqvd1axk9i-3cU72yTkF" style="cursor: pointer;">
+							
+								<div  id="mineBtn" class=" rLqvd1axk9i-3cU72yTkF" style="cursor: pointer;" onclick="mine();">
 									<h5>
-										<div
-											style="display: flex; align-items: center; justify-content: center;">
+										<div	style="display: flex; align-items: center; justify-content: center;">
 											<div>
 												<label><span>만든 프로젝트</span></label>
 											</div>
@@ -286,10 +421,10 @@
 						<div class="_1g2WIF4QIdPId7aJKwFnBc">
 							<br>
 							<div	class="_13KHfN73YmQgsYHxXvuh_J _1v_4eDAvRTzbzG-r-p5V8Y _2Xkf-oIN3dW3T7P_qmRJv3 _2l8og-0FVzBM90wD-yYPWW">
-								<a class="_3Syz9fGXYtzMNqK_55A2BW _3sFSjAZS4gQdCAyN3OfyFG rLqvd1axk9i-3cU72yTkF _11BMRPxXeHgQdEkjFHggzQ">
+								<a class="_3Syz9fGXYtzMNqK_55A2BW _3sFSjAZS4gQdCAyN3OfyFG rLqvd1axk9i-3cU72yTkF _11BMRPxXeHgQdEkjFHggzQ allMsgBtn">
 									모든	메시지
 								</a>
-								<a class=" rLqvd1axk9i-3cU72yTkF _11BMRPxXeHgQdEkjFHggzQ" onclick="openNewMsgDiv();">
+								<a class=" rLqvd1axk9i-3cU72yTkF _11BMRPxXeHgQdEkjFHggzQ newMsgBtn" onclick="openNewMsgDiv();">
 									안 읽은 메시지
 								</a>
 							</div>
@@ -322,7 +457,12 @@
 								<c:forEach var="msg" items="${list }" varStatus="status">
 									<form id="messageInfoForm${status.index}" action="messageDetail.do" method="post">
 										<input type="hidden" name="projectCode" value="<c:out value='${msg.projectCode }'/>"/>
-										<input type="hidden" name="receiverEmail" value="<c:out value='${msg.creatorEmail }'/>"/>
+										<c:if test="${user.email eq msg.receiverEmail }">
+											<input type="hidden" name="receiverEmail" value="<c:out value='${msg.writerEmail }'/>"/>
+										</c:if>
+										<c:if test="${user.email ne msg.receiverEmail }">
+											<input type="hidden" name="receiverEmail"  value="<c:out value='${msg.receiverEmail }'/>"/>
+										</c:if>
 										<input type="hidden" name="writerEmail" value="<c:out value='${user.email }'/>"/>
 									</form>
 									<div><a href="javascript:messageDetail(${status.index });">
@@ -378,12 +518,13 @@
 					<div class="_1g2WIF4QIdPId7aJKwFnBc" >
 						<br>
 						<div	class="_13KHfN73YmQgsYHxXvuh_J _1v_4eDAvRTzbzG-r-p5V8Y _2Xkf-oIN3dW3T7P_qmRJv3 _2l8og-0FVzBM90wD-yYPWW">
-							<a class=" rLqvd1axk9i-3cU72yTkF _11BMRPxXeHgQdEkjFHggzQ" onclick="openAllMsgDiv();">
+							<a class=" rLqvd1axk9i-3cU72yTkF _11BMRPxXeHgQdEkjFHggzQ allMsgBtn" onclick="openAllMsgDiv();">
 								모든	메시지
 							</a>
-							<a class="_3Syz9fGXYtzMNqK_55A2BW _3sFSjAZS4gQdCAyN3OfyFG rLqvd1axk9i-3cU72yTkF _11BMRPxXeHgQdEkjFHggzQ">
+							<a class="_3Syz9fGXYtzMNqK_55A2BW _3sFSjAZS4gQdCAyN3OfyFG rLqvd1axk9i-3cU72yTkF _11BMRPxXeHgQdEkjFHggzQ newMsgBtn">
 								안	읽은 메시지
 							</a>
+							
 						</div>
 						<br>
 						
@@ -406,7 +547,12 @@
 							<c:forEach var="msg" items="${newList }" varStatus="status">
 									<form id="messageInfoForm${idx }" action="messageDetail.do" method="post">
 										<input type="hidden" name="projectCode" value="<c:out value='${msg.projectCode }'/>"/>
-										<input type="hidden" name="receiverEmail" value="<c:out value='${msg.creatorEmail }'/>"/>
+										<c:if test="${user.email eq msg.receiverEmail }">
+											<input type="hidden" name="receiverEmail" value="<c:out value='${msg.writerEmail }'/>"/>
+										</c:if>
+										<c:if test="${user.email ne msg.receiverEmail }">
+											<input type="hidden" name="receiverEmail"  value="<c:out value='${msg.receiverEmail }'/>"/>
+										</c:if>
 										<input type="hidden" name="writerEmail" value="<c:out value='${user.email }'/>"/>
 									</form>
 									<div><a href="javascript:messageDetail(${idx });">
