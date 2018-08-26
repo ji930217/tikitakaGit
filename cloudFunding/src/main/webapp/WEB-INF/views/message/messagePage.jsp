@@ -109,7 +109,6 @@
 							var userEmail = "<c:out value='${user.email}'/>";
 							var idx = 0;
 							for(var key in list){
-								console.log(list[key]);
 								resultStr += "<form id='messageInfoForm" + parseInt(idx) + "' action='messageDetail.do' method='post'>";
 								resultStr += "<input type='hidden' name='projectCode' value='" + list[key].projectCode + "'/>";
 								if(userEmail == list[key].receiverEmail) {
@@ -249,7 +248,6 @@
 		if(sessionStorage.getItem("page") == "mine"){
 			url = "selectMyProjectNewMessageList.do";
 		}
-		console.log(sessionStorage.getItem("page"));
 
 		updateMessageList(url, "#newMessageListDiv");	
 	}

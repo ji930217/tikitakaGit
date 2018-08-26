@@ -1459,6 +1459,29 @@ data-react-helmet="true"><meta name="twitter:title" content="텀블벅 tumblbug"
 					</div>
 					<div>
 						<div>
+							<div class="MenuItem__MenuItem-no2u3j-0 cwYjsy">
+								<span class="MenuItem__MenuItemTitle-no2u3j-1 enzRKc">푸드</span>
+								<span>
+									<div	class="DiscoverMenuDropdown__TriangleDownIcon-s116h97f-1 OZgBR"></div>
+								</span>
+							</div>
+						</div>
+						<div>
+							<div class="DropdownItem__DropdownItem-s12jl0ab-0 lhFUmi">
+								<a href="searchProjectByCategory.do?category=푸드">
+									모든 푸드 프로젝트
+								</a>
+							</div>
+							<div class="DropdownItem__DropdownItem-s12jl0ab-0 lhFUmi">
+								<a class="searchProjectByCategory">베이킹</a>
+							</div>
+							<div class="DropdownItem__DropdownItem-s12jl0ab-0 lhFUmi">
+								<a class="searchProjectByCategory">요리책</a>
+							</div>
+						</div>
+					</div>
+					<div>
+						<div>
 							<div class="MenuItem__MenuItem-no2u3j-0 cwYjsy2">
 								<span class="MenuItem__MenuItemTitle-no2u3j-1 enzRKc2">만화</span>
 								<span style="margin-left:5px;">
@@ -1571,31 +1594,7 @@ data-react-helmet="true"><meta name="twitter:title" content="텀블벅 tumblbug"
 							</div>
 						</div> -->
 					</div>
-					<div>
-						<div>
-							<div class="MenuItem__MenuItem-no2u3j-0 cwYjsy2">
-								<span class="MenuItem__MenuItemTitle-no2u3j-1 enzRKc2">푸드</span>
-								<!-- <span>
-									<div	class="DiscoverMenuDropdown__TriangleDownIcon-s116h97f-1 OZgBR"></div>
-								</span> -->
-							</div>
-						</div>
-						<!-- <div>
-							<div class="DropdownItem__DropdownItem-s12jl0ab-0 lhFUmi">
-								<a href="/category/food">
-									react-text: 2549모든 /react-text
-									react-text: 2550푸드/react-text
-									react-text: 2551 프로젝트/react-text
-								</a>
-							</div>
-							<div class="DropdownItem__DropdownItem-s12jl0ab-0 lhFUmi">
-								<a href="/category/baking">베이킹</a>
-							</div>
-							<div class="DropdownItem__DropdownItem-s12jl0ab-0 lhFUmi">
-								<a href="/category/cookbook">요리책</a>
-							</div>
-						</div> -->
-					</div>
+					
 					<div class="MenuItem__MenuItem-no2u3j-0 cwYjsy2">
 						<!-- <a href="/category/music"> --><span
 							class="MenuItem__MenuItemTitle-no2u3j-1 enzRKc2">음악</span></a>
