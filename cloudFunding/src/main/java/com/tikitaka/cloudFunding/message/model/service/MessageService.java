@@ -5,9 +5,6 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.tikitaka.cloudFunding.community.model.dao.CommunityDao;
-import com.tikitaka.cloudFunding.community.model.vo.PostVo;
-import com.tikitaka.cloudFunding.community.model.vo.ReplyVo;
 import com.tikitaka.cloudFunding.message.model.dao.MessageDao;
 import com.tikitaka.cloudFunding.message.model.vo.MessageVo;
 

@@ -50,12 +50,25 @@ public class MessageController {
 		// 로그인한 유저 정보를 통해 해당 멤버의 메시지리스트 불러와야해
 		Member user = (Member) session.getAttribute("user");
 		List<MessageVo> list = new ArrayList<MessageVo>();
+		int newMsgCntMine = 0;
+		int newMsgCntNotMine = 0;
 		if(null != user) {
 		// 가장 마지막으로 온 메시지 내용도 필요
 			list = msgService.selectMessageList(user.getEmail());
 			List<MessageVo> newList = msgService.selectNewMessageList(user.getEmail());
+			List<MessageVo> newListMine = msgService.selectMyProjectNewMessageList(user.getEmail());
+			
+			for(MessageVo msg : newList) {
+				newMsgCntNotMine += msg.getNewMessageCount();
+			}
+			for(MessageVo msg : newListMine) {
+				newMsgCntMine += msg.getNewMessageCount();
+			}
 			mv.addObject("list", list);
 			mv.addObject("newList", newList);
+			mv.addObject("newMsgCntNotMine", newMsgCntNotMine);
+			mv.addObject("newMsgCntMine", newMsgCntMine);
+			
 			mv.setViewName("message/messagePage");
 		} else {
 			mv.setViewName("redirect:loginPage.do");
@@ -114,6 +127,28 @@ public class MessageController {
 			}
 		}
 		return result;
+	}
+	
+	@RequestMapping("checkNewMsgCount.do")
+	public @ResponseBody List<Integer> checkNewMsgCount(HttpSession session){
+		Member user = (Member) session.getAttribute("user");
+		int newMsgCntMine = 0;
+		int newMsgCntNotMine = 0;
+		List<Integer> countList = new ArrayList<Integer>();
+		if(null != user) {
+			List<MessageVo> newList = msgService.selectNewMessageList(user.getEmail());
+			List<MessageVo> newListMine = msgService.selectMyProjectNewMessageList(user.getEmail());
+			
+			for(MessageVo msg : newList) {
+				newMsgCntNotMine += msg.getNewMessageCount();
+			}
+			for(MessageVo msg : newListMine) {
+				newMsgCntMine += msg.getNewMessageCount();
+			}
+			countList.add(newMsgCntNotMine);
+			countList.add(newMsgCntMine);
+		}
+		return countList;
 	}
 	
 	@RequestMapping("updateNewMessageCount.do")

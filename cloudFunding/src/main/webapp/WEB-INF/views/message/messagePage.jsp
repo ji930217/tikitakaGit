@@ -77,6 +77,27 @@
 	}
 </style>
 <script>
+	function checkNewMsgCount(){
+		var str = "";
+		str += "<span><svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1024 1024' style='fill: rgb(250, 100, 98); height: 14px; margin-top: 2px; margin-left: 5px;'>";
+		str += "<path d='M510,39L510,39C251,39,41,249,41,508v0c0,259,210,469,469,469h0c259,0,469-210,469-469v0C979,249,769,39,510,39 z M755.5,679.3c0,31.6-18.2,58.9-44.6,72.1c-31.3,17.5-71.7,12.3-97.5-14.8l-178.8-204c-3.2-3.6-9.1-1.4-9.1,3.4v144.1 c0,44.5-36,80.5-80.5,80.5h0c-44.5,0-80.5-36-80.5-80.5V345.3c0-29.2,15.6-54.8,38.9-68.9c32.1-22.5,75.8-19.6,103.7,9.7 l179.3,206.5c2.8,3.3,8.2,1.3,8.2-3.1v-145c0-44.5,36-80.5,80.5-80.5h0c44.5,0,80.5,36,80.5,80.5V679.3z'></path>";
+		str += "</svg></span>";
+		$.ajax({
+			url : "checkNewMsgCount.do",
+			success : function(result){
+				if(0 < result[0]){
+					$("#newMsgNotMine").html(str);
+				}
+				if(0 < result[1]) {
+					$("#newMsgMine").html(str);
+				}
+			}, error : function(e) {
+				location.href="loginPage.do";
+			}
+		});
+		
+	}
+
 	$(function(){
 		sessionStorage.removeItem("page");
 		var prevNewMsgCnt = "<c:out value='${newMessageCount}'/>";
@@ -84,6 +105,8 @@
 		var user = "<c:out value='${user}'/>";
 		var jiTimer = setInterval( function () {
 			if(null != user && user != ""){
+				checkNewMsgCount();
+				
 				// 모든 메시지 리스트 화면 업데이트
 				var page = sessionStorage.getItem("page");
 				var allMsgUrl = "selectMessageList.do";
@@ -103,6 +126,12 @@
 						
 						if(0 < newMsgCntSum && parseInt(prevNewMsgCnt) != newMsgCntSum) {
 							/* console.log("새로운 메시지가 있어요."); */
+							if("mine" == page) {
+								$("#newMsgMine").css("display", "block");
+							} else {
+								$("#newMsgNotMine").css("display", "block");
+							}
+							
 							var $messageListDiv = $("#messageListDiv");	
 							$messageListDiv.html("");
 							var resultStr = "";
@@ -384,19 +413,19 @@
 											</div>
 											
 											<!-- 새로운 메시지 알림 -->
-											<c:set var="newMsgCntSum" value="0"/>
+											<%-- <c:set var="newMsgCntSum" value="0"/>
 											<c:forEach var="msg" items="${list }">
 												<c:set var="newMsgCntSum" value="${newMsgCntSum + msg.newMessageCount }"/>
-											</c:forEach>
-											<c:if test="${newMsgCntSum gt 0}">
-												<div id="newMsg">
+											</c:forEach> --%>
+											<div id="newMsgNotMine">
+												<c:if test="${newMsgCntNotMine gt 0}">
 													<span>
 														<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1024 1024" style="fill: rgb(250, 100, 98); height: 14px; margin-top: 2px; margin-left: 5px;">
 															<path d="M510,39L510,39C251,39,41,249,41,508v0c0,259,210,469,469,469h0c259,0,469-210,469-469v0C979,249,769,39,510,39 z M755.5,679.3c0,31.6-18.2,58.9-44.6,72.1c-31.3,17.5-71.7,12.3-97.5-14.8l-178.8-204c-3.2-3.6-9.1-1.4-9.1,3.4v144.1 c0,44.5-36,80.5-80.5,80.5h0c-44.5,0-80.5-36-80.5-80.5V345.3c0-29.2,15.6-54.8,38.9-68.9c32.1-22.5,75.8-19.6,103.7,9.7 l179.3,206.5c2.8,3.3,8.2,1.3,8.2-3.1v-145c0-44.5,36-80.5,80.5-80.5h0c44.5,0,80.5,36,80.5,80.5V679.3z"></path>
 														</svg>
 													</span>
-												</div>
-											</c:if>
+												</c:if>
+											</div>
 										</div>
 									</h5>
 								</div>
@@ -407,7 +436,16 @@
 											<div>
 												<label><span>만든 프로젝트</span></label>
 											</div>
-											<div></div>
+											<!-- 새로운 메시지 알림 -->
+											<div id="newMsgMine">
+												<c:if test="${newMsgCntMine gt 0}">
+													<span>
+														<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1024 1024" style="fill: rgb(250, 100, 98); height: 14px; margin-top: 2px; margin-left: 5px;">
+															<path d="M510,39L510,39C251,39,41,249,41,508v0c0,259,210,469,469,469h0c259,0,469-210,469-469v0C979,249,769,39,510,39 z M755.5,679.3c0,31.6-18.2,58.9-44.6,72.1c-31.3,17.5-71.7,12.3-97.5-14.8l-178.8-204c-3.2-3.6-9.1-1.4-9.1,3.4v144.1 c0,44.5-36,80.5-80.5,80.5h0c-44.5,0-80.5-36-80.5-80.5V345.3c0-29.2,15.6-54.8,38.9-68.9c32.1-22.5,75.8-19.6,103.7,9.7 l179.3,206.5c2.8,3.3,8.2,1.3,8.2-3.1v-145c0-44.5,36-80.5,80.5-80.5h0c44.5,0,80.5,36,80.5,80.5V679.3z"></path>
+														</svg>
+													</span>
+												</c:if>
+											</div>
 										</div>
 									</h5>
 								</div>

@@ -6,8 +6,6 @@ import org.mybatis.spring.SqlSessionTemplate;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
-import com.tikitaka.cloudFunding.community.model.vo.PostVo;
-import com.tikitaka.cloudFunding.community.model.vo.ReplyVo;
 import com.tikitaka.cloudFunding.message.model.vo.MessageVo;
 
 @Repository
