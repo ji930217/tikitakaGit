@@ -239,7 +239,7 @@
 	});
 	 */
 	$(function(){
-		if(page == "community"){
+	/* 	if(page == "community"){
 			$("#policyDiv").css("display", "none");
 			$("#storyDiv").css("display", "none");
 			$("#communityDiv").css("display", "block");
@@ -259,12 +259,12 @@
 			$("#storyFixedBtn").addClass("btnUnderline");
 			$("#storyBtn").addClass("btnUnderline"); 
 			sessionStorage.removeItem("page");
-		}
+		} */
 	/* 	if(page == null) { */
-			/* $("#storyDiv").css("display", "block");
+			$("#storyDiv").css("display", "block");
 			$(".storyContent img").css("width", "100%");
 			$("#storyFixedBtn").addClass("btnUnderline");
-			$("#storyBtn").addClass("btnUnderline"); */
+			$("#storyBtn").addClass("btnUnderline");
 		/* } else  if(page == "community"){
 			$("#policyDiv").css("display", "none");
 			$("#storyDiv").css("display", "none");

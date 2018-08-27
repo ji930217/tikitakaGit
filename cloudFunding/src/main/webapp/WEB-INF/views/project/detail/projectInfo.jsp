@@ -323,8 +323,54 @@
 	    text-align: center;
 	    text-decoration: none;
 	}
-	
-	
+	.cHpUtP {
+	    background-color: #fff;
+	    z-index: 900;
+	    position: fixed;
+	    left: 0;
+	    right: 0;
+	    bottom: 0;
+	}
+	.jcljed {
+	    padding: 1.2em 2em;
+	    font-size: 1.1em;
+	    width: 100%;
+	    opacity: .3;
+	    pointer-events: none;
+	}
+	.jcljed {
+	    background-color: #fa6462;
+	    color: #fff;
+	}
+	.jcljed {
+	    color: rgba(0, 0, 0, .6);
+	    background-color: #e7e7e7;
+	}
+	.jcljed {
+	    cursor: pointer;
+	    display: inline-block;
+	    min-height: 1em;
+	    outline: none;
+	    border: none;
+	    vertical-align: baseline;
+	    box-shadow: 0px 0px 0px 1px transparent inset, 0px 0em 0px 0px rgba(0, 0, 0, 0.1) inset;
+	    -webkit-user-select: none;
+	    -moz-user-select: none;
+	    -ms-user-select: none;
+	    user-select: none;
+	    -webkit-transition: opacity 0.1s ease,  background-color 0.1s ease,  color 0.1s ease,  box-shadow 0.1s ease, background 0.1s ease;
+	    transition: opacity 0.1s ease,  background-color 0.1s ease,  color 0.1s ease,  box-shadow 0.1s ease, background 0.1s ease;
+	    -webkit-tap-highlight-color: transparent;
+	    margin: 0 .25em 0 0;
+	    border-radius: 0;
+	    text-transform: none;
+	    text-shadow: none;
+	    font-weight: bold;
+	    line-height: 1em;
+	    font-style: normal;
+	    text-align: center;
+	    text-decoration: none;
+	}
 </style>
 <script>
 	$(function(){
@@ -547,19 +593,30 @@
 						<button class="Button__Button-s1ng5xda-0 hJStHI" disabled>밀어주기가 마감되었습니다</button>
 					</div>
 				</c:if>
-				<c:if test="${remain gt 0 }">
+				<c:if test="${remain gt 0 && supportFlag == false}">
 					<div class="ContentsNavigation__NavRight-s6dhfrc-4 eAgLGx">
 						<button class="Button__Button-s1ng5xda-0 jKslKa" onclick="payForProject();">프로젝트 밀어주기</button>
+					</div>
+				</c:if>
+				<c:if test="${remain gt 0 && supportFlag == true}">
+					<div class="ContentsNavigation__NavRight-s6dhfrc-4 eAgLGx">
+						<button class="Button__Button-s1ng5xda-0 hJStHI">이미 후원한 프로젝트입니다</button>
 					</div>
 				</c:if>
 			</div>
 		</nav>
 	</div>
 	
-	<div class="ContentsNavigation__FixedBar-s6dhfrc-5 cHpUtP show-on-scroll">
-		<button class="Button__Button-s1ng5xda-0 bIabCF">프로젝트 밀어주기</button>
-	</div>
-	
+	<c:if test="${remain gt 0 && supportFlag == false}">
+		<div class="ContentsNavigation__FixedBar-s6dhfrc-5 cHpUtP show-on-scroll">
+			<button class="Button__Button-s1ng5xda-0 bIabCF">프로젝트 밀어주기</button>
+		</div>
+	</c:if>
+	<c:if test="${remain gt 0 && supportFlag == true}">
+		<div class="ContentsNavigation__FixedBar-s6dhfrc-5 cHpUtP">
+			<button class="Button__Button-s1ng5xda-0 jcljed" disabled>이미 후원한 프로젝트입니다</button>
+		</div>
+	</c:if>
 	<div class="ProjectIntroduction__ProjectIntroductionBackground-c7b94s-0 hsuyOO" data-reactid="36">
 		
 		<!-- 공유하기 버튼 -->
@@ -716,9 +773,14 @@
 									<button class="Button__Button-s1ng5xda-0 loDhhg" disabled>밀어주기가 마감되었습니다</button>
 								</div>
 							</c:if>
-							<c:if test="${remain gt 0 }">
+							<c:if test="${remain gt 0 && supportFlag == false}">
 								<div	class="ProjectIntroduction__PrimaryButton-c7b94s-21 fjkRCm" data-reactid="87">
 									<button class="Button__Button-s1ng5xda-0 dvkZSH"  data-reactid="88" onclick="payForProject();">프로젝트 밀어주기</button>
+								</div>
+							</c:if>
+							<c:if test="${remain gt 0 && supportFlag == true}">
+								<div	class="ProjectIntroduction__PrimaryButton-c7b94s-21 fjkRCm" data-reactid="87">
+									<button class="Button__Button-s1ng5xda-0 loDhhg"  data-reactid="88">이미 후원한 프로젝트입니다</button>
 								</div>
 							</c:if>
 							<div	class="ProjectIntroduction__SecondaryButton-c7b94s-22 cYmhAj"	data-reactid="89">
