@@ -109,7 +109,7 @@ function kakaopay(){
 	var amount = '${inputVal}';
 	var gCode = '${gCode}';
 	
-
+	var email = '${user.email}';
 
 
 	var IMP = window.IMP; // 생략가능
@@ -121,7 +121,7 @@ function kakaopay(){
 	       merchant_uid : 'merchant_' + new Date().getTime(),
 	       name : title,//프로젝트이름
 	       amount : amount ,//후원금액
-	       buyer_email : 'shfkscad10@gmail.com', 
+	       buyer_email :  email, 
 	        buyer_name : name,
 	      // buyer_tel : '010-1234-5678', 
 	       buyer_addr : addr,
