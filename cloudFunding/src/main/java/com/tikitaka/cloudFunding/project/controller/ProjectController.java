@@ -19,6 +19,7 @@ import org.springframework.web.servlet.ModelAndView;
 import com.tikitaka.cloudFunding.common.MyRenamePolicy;
 import com.tikitaka.cloudFunding.community.model.service.CommunityService;
 import com.tikitaka.cloudFunding.community.model.vo.PostVo;
+import com.tikitaka.cloudFunding.member.model.service.MemberService;
 import com.tikitaka.cloudFunding.member.model.vo.Member;
 import com.tikitaka.cloudFunding.project.model.service.ProjectService;
 import com.tikitaka.cloudFunding.project.model.vo.GiftVo;
@@ -32,6 +33,8 @@ public class ProjectController {
 	ProjectService projectService;
 	@Autowired
 	CommunityService cService;
+	@Autowired
+	MemberService memberService;
 
 	@RequestMapping("projectList.do")
 	public ModelAndView projectList(ModelAndView mv){
@@ -436,6 +439,22 @@ public class ProjectController {
 		}
 		mv.addObject("list", list);
 		mv.setViewName("project/projects");
+		return mv;
+	}
+	
+	@RequestMapping("creatorProject.do")
+	public ModelAndView creatorProject(HttpSession session,ModelAndView mv,String creatorEmail){
+		Member member = new Member();
+		member.setEmail(creatorEmail);
+		
+		Member creator = memberService.selectMemeber(member);
+		List<ProjectVo> list = projectService.selectMyProjectList(member);
+		if(null != creator) {
+			mv.addObject("creator", creator);
+		}
+		
+		mv.addObject("list", list);
+		mv.setViewName("project/creatorProjectList");
 		return mv;
 	}
 	

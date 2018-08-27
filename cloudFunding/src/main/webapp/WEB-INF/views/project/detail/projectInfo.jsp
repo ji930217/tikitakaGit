@@ -562,6 +562,10 @@
 		var projectCode = "<c:out value='${project.projectCode}'/>";
 		location.href="selectpayment.do?projectCode=" + projectCode;
 	}
+	
+	function openCreatorProject(){
+		$("#creatorForm").submit();
+	}
 </script>
 
 </head>
@@ -677,8 +681,13 @@
 						<div class="ProjectIntroduction__Creators-c7b94s-6 guVzeB" data-reactid="44">
 							<img class="ProfileImg__ProfileImg-s1o99mme-0 hXkusX" src="<c:out value='${project.profileImg }'/>"/>
 							<a class="ProjectIntroduction__CreatorName-c7b94s-7 gDTPbS"
-								href="myPage.do"
-								target="_blank" rel="noopener noreferrer" data-reactid="46"><c:out value="${project.name }"/></a>
+								onclick="openCreatorProject();"
+								target="_blank" rel="noopener noreferrer" data-reactid="46">
+								<form id="creatorForm" name="creatorForm" action="creatorProject.do" method="post">
+									<input type="hidden" name="creatorEmail" value="<c:out value='${project.email }'/>"/>
+								</form>
+								<c:out value="${project.name }"/>
+							</a>
 						</div>
 					</div>
 				</div>
