@@ -34,7 +34,8 @@
 	}
 	
 	#logoutBtn{
-	margin-top:30px;
+	/* margin-top:30px; */
+	margin-right:210px;
 	float:right;
 	}
 	
@@ -100,6 +101,7 @@ $(function(){
 	<c:import url="../common/header.jsp"></c:import>
 
   <h1 id = "mainTitle">TIKITAKA 관리자페이지</h1>
+  <button type="button" id = "logoutBtn" class="btn btn-secondary btn-xs btn-warning" onclick="javascript:location.href='logout.do'">로그아웃</button>
 <div class="container" id = "tebMenu">
   
 
@@ -135,7 +137,7 @@ $(function(){
 	<c:import url="banner.jsp"></c:import> 
 	   </div>
     
-  <button type="button" id = "logoutBtn" class="btn btn-secondary btn-xs btn-warning" onclick="javascript:location.href='logout.do'">로그아웃</button>
+  
   </div>
 </div> 
 	<c:import url="../common/footer.jsp"></c:import>
