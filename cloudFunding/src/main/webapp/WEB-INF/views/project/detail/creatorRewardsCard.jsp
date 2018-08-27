@@ -285,6 +285,13 @@
 		}
 		
 	};
+	
+	$(function(){
+		$(".dxWcyc").click(function(){
+			payForProject();
+		});
+	});
+	
 </script>
 </head>
 <body>
@@ -365,7 +372,7 @@
 												</c:if>
 												<c:if test="${gift.remited eq 0}">
 													<!-- 한정 수량이 0 -->
-													<span class="RewardCard__SoldoutLabel-ibjars-6 ktzKui">선착순	마감</span>
+													<span class="RewardCard__Soldou5tLabel-ibjars-6 ktzKui">선착순 마감</span>
 												</c:if>
 											</c:if>
 																						
