@@ -17,10 +17,7 @@
 	<c:import url="common/index.jsp"/>
 	<c:import url="common/footer.jsp"/>
 	
-	<a href="projectStart.do">프로젝트 만들기</a><br>
-	<a href="adminMenuList.do">임시관리자 페이지</a><br>
-	<a href="payment.do">지불 페이지</a><br>
-	<a href="projectList.do">프로젝트 리스크</a>
+	
 
 	
 </body>

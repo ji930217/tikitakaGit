@@ -221,8 +221,8 @@ public class AdminDao {
 		
 		params.put("email", email);
 		params.put("pCode", pCode);
-		params.put("gCode", gCode);
 		params.put("amount", amount);
+		params.put("gCode", gCode);
 		params.put("addr", addr);
 		
 		return sqlSession.insert("AdminMapper.insertSupport", params);

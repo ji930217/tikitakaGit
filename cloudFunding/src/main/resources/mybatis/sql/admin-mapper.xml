@@ -304,7 +304,7 @@ WHERE TO_CHAR(P_ENROLL_DATE,'YY') = '18' AND TO_CHAR(P_ENROLL_DATE,'MM') = '08'
 </resultMap> 
 
 <insert id="insertSupport">
-INSERT INTO SUPPORT VALUES(#{email},#{pCode},#{gCode},#{amount},SYSDATE,#{addr})
+INSERT INTO SUPPORT VALUES(#{email},#{pCode},#{amount},#{gCode},SYSDATE,#{addr})
 </insert>
 
 <update id="updateProjectAmount">
