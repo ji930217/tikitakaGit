@@ -60,7 +60,7 @@ thead {
 	overflow: hidden;
 }
 
-#fileInput {
+.fileInputStyle {
 	position: absolute;
 	font-size: 50px;
 	opacity: 0;
@@ -70,6 +70,10 @@ thead {
 
 #bannerInputBar{
 border-radius: 5px;
+}
+
+.btnDiv{
+	display:inline-block;
 }
 </style>
 
@@ -142,17 +146,19 @@ function validate3(){
    	};
    	
 
-   	function fileCheck(){
-   		
-   		var name = document.getElementById("fileInput").value;
+   	function fileCheck(idx){
+   		var input = "#fileInput" + idx;
+   		console.log($(input).val());
+   		/* var name = document.getElementById("fileInput").value; */
    		console.log(name);
    		
    		if(name == ""){
-   			alert("Upload를 먼저해주세요");
-   			return false;  			
-   		}
+   			alert(name);
+   			/* alert("Upload를 먼저해주세요"); */
+   		} 
    		
-   		var pathpoint = name.lastIndexOf('.');
+   	}
+   		/* var pathpoint = name.lastIndexOf('.');
    		var filepoint = name.substring(pathpoint+1,name.lenght);
    		var filetype = filepoint.toLowerCase();
    		
@@ -166,12 +172,36 @@ function validate3(){
    			
    		}
    	}
-   	
+   
    	function projectDetail(code){
    		location.href = "projectDetail.do?projectCode="+code;
-   	}
+   	} */
    	
-
+	function submitBannerForm(idx){
+		var input = "#fileInput" + idx;
+		var fileName = $(input).val();
+   		/* var name = document.getElementById("fileInput").value; */
+   		/* console.log(name); */
+   		
+   		if(fileName == ""){
+   			/* alert(name); */
+   			alert("Upload를 먼저해주세요");
+   			
+   		
+   		} else {
+   			
+   				var pathpoint = fileName.lastIndexOf('.');
+   		   		var filepoint = fileName.substring(pathpoint+1,name.lenght);
+   		   		var filetype = filepoint.toLowerCase();
+   			if(filetype == 'jpg' || filetype == 'gif' || filetype == 'png' || filetype == 'jpeg' || filetype == 'bmp'){
+   				alert("업로드 가능합니다");
+			var submitForm = "#bannerForm" + idx;
+			$(submitForm).submit();
+   			}else{
+   				alert("지정된 확장자만 등록가능합니다(jpg, gif, png, jpeg, bmp)");
+   			}
+   		}
+	}
 
  </script>
 
@@ -200,7 +230,7 @@ function validate3(){
 			</tr>
 		</thead>
 		<tbody>
-			<c:forEach var="b" items="${bannerList}">
+			<c:forEach var="b" items="${bannerList}" varStatus="status">
 
 
 				<tr>
@@ -250,19 +280,22 @@ function validate3(){
 							</c:when>
 							<c:otherwise>
 
+							<div class="btnDiv">
 								<c:if test="${b.bannerImage == null }">
-									<form method="post" action="bannerPlus.do"
-										enctype="multipart/form-data" onsubmit = 'return fileCheck();'>
+									<form name="bannerForm" id="bannerForm${status.index }" method="post" action="bannerPlus.do"
+										enctype="multipart/form-data">
 										<input type="hidden" name="pjCode" id="pjCode" value="${b.projectCode }" />
 										<div class="file btn btn-lg btn-primary btn btn-secondary btn-xs" id="fileDiv">Upload 
-										<input type="file" name="file" id="fileInput" accept="image/gif, image/jpeg, image/png" />
+										<input type="file" name="file" id="fileInput${status.index }" class="fileInputStyle" accept="image/gif, image/jpeg, image/png" />
 										</div>
-												
 
-										<button type="submit" class="btn btn-secondary btn-xs">등록</button>
-										<button type="button" class="btn btn-secondary btn-xs" id="btn2"  onclick = "projectDetail('${b.projectCode }');">상세정보</button>
 									</form>
-
+							</div>
+							<div class="btnDiv">
+							
+										<button type="submit" class="btn btn-secondary btn-xs" onclick="submitBannerForm(${status.index});">등록</button>
+										<button type="button" class="btn btn-secondary btn-xs" id="btn2"  onclick = "projectDetail('${b.projectCode }');">상세정보</button>
+							</div>
 								</c:if>
 								<c:if test="${b.bannerImage != null }">
 								<button type="button" class="btn btn-secondary btn-xs"
