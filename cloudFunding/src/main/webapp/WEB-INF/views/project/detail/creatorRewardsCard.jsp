@@ -307,7 +307,7 @@
 						<span class="ProfileImg__ProfileImg-s1o99mme-0 owWgL">
 							<img class="ProfileImg__ProfileImg-s1o99mme-0 owWgL" src="<c:out value='${project.profileImg }'/>"/>
 						</span><a
-							href="/u/film13536/projects"><span
+							onclick="openCreatorProject();"><span
 							class="CreatorCard__CreatorName-yeytpy-3 fVfxlF"><c:out value="${project.name }"/></span></a>
 					</div>
 					<div class="CreatorCard__CreatorBiography-yeytpy-4 dHxdxH"><c:out value="${project.introduce }"/></div>
