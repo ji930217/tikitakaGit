@@ -1253,11 +1253,20 @@ data-react-helmet="true"><meta name="twitter:title" content="텀블벅 tumblbug"
 					
 					<c:if test="${false eq isExpired }">
 						<a class="sc-htoDjs fQwQfp" data-reactid="30">
-							<span class="SiteHeader__ItemLabel-s1s56ls8-8 iGOIal" data-reactid="31">
+							<!-- <span class="SiteHeader__ItemLabel-s1s56ls8-8 iGOIal" data-reactid="31">
 								정지된 계정입니다.
-							</span>
+							</span> -->
+							
 							
 						</a>
+						
+						<script type="text/javascript">
+						
+						$(function(){
+							alert('정지된 계정입니다. 자동으로 로그아웃이 실행됩니다.');
+							location.href="logout.do";
+						});
+						</script>
 					</c:if>
 					
 					
