@@ -435,7 +435,7 @@
 					content : {
 						title : "<c:out value='${project.title}'/>",
 						description : "<c:out value='${project.summary}'/>",
-						imageUrl : "http://wjddls141093.dothome.co.kr/<c:out value='${project.repImg}'/>",
+						imageUrl : "http://wjddls141093.dothome.co.kr/TKTK.png",
 						link : {
 							mobileWebUrl : "http://localhost:8081/cloudFunding/projectDetail.do?projectCode=<c:out value='${project.projectCode}'/>",
 							webUrl : "http://localhost:8081/cloudFunding/projectDetail.do?projectCode=<c:out value='${project.projectCode}'/>"
@@ -449,17 +449,17 @@
 					buttons : [ {
 						title : '웹으로 보기',
 						link : {
-							/* mobileWebUrl : "http://localhost:8081/cloudFunding/projectDetail.do?projectCode=<c:out value='${project.projectCode}'/>", */
+							mobileWebUrl : "http://localhost:8081/cloudFunding/projectDetail.do?projectCode=<c:out value='${project.projectCode}'/>", 
 							webUrl : "http://localhost:8081/cloudFunding/projectDetail.do?projectCode=<c:out value='${project.projectCode}'/>"
 						}
-					} /* ,
+					}  ,
 				          {
 				            title: '앱으로 보기',
 				            link: {
-				              mobileWebUrl: 'https://developers.kakao.com',
-				              webUrl: 'https://developers.kakao.com'
+				              mobileWebUrl: 'http://localhost:8081/cloudFunding/projectDetail.do?projectCode=<c:out value='${project.projectCode}'/>',
+				              webUrl: 'http://localhost:8081/cloudFunding/projectDetail.do?projectCode=<c:out value='${project.projectCode}'/>'
 				            }
-				          } */
+				          } 
 					]
 				}); 
 		//]]>
