@@ -1825,16 +1825,23 @@ System.out.println(bannerList);
 				public String payInfoSave( HttpServletRequest request) {
 					
 					String email = request.getParameter("email");
-					String pCode = request.getParameter("pCode");
-					String amount = request.getParameter("amount");
+					int pCode = Integer.parseInt(request.getParameter("pCode"));
+					int amount = Integer.parseInt(request.getParameter("amount"));
 					String item = request.getParameter("item");					
 					String addr = request.getParameter("addr");
+					int gCode = Integer.parseInt(request.getParameter("gCode"));
 					/*int gRemited = Integer.parseInt(request.getParameter("gRemited"));*/
 					
+					System.out.println(email);
+					System.out.println(pCode);
+					System.out.println(amount);
+					System.out.println(item);
+					System.out.println(addr);
+					System.out.println(gCode);
 					
-					int insertSupport = adminservice.insertSupport(email,pCode,amount,item,addr);//Support테이블에 정보 추가
+					int insertSupport = adminservice.insertSupport(email,pCode,gCode,amount,addr);//Support테이블에 정보 추가
 					int updateProjectAmount = adminservice.updateProjectAmount(pCode,amount);//Project테이블에 금액 업데이트
-					int updateSupporter = adminservice.updateSupporter(pCode);//후원자 +1
+					
 				
 					
 					/*if(gRemited > 0) {

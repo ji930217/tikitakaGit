@@ -241,7 +241,7 @@
 		</div>
 	</div>
 	<script>
-function payment(id,gcode){
+function payment(id,gCode){
 		var price = id;
 		var inputVal = document.getElementById(price).value;
 		
@@ -250,7 +250,7 @@ function payment(id,gcode){
 			location.href="paymentPage.do";
 		}
 		else{
-			location.href="payment_address.do?gCode="+gcode+"&inputVal="+inputVal;
+			location.href="payment_address.do?gCode="+gCode+"&inputVal="+inputVal;
 		}
 	
 }
