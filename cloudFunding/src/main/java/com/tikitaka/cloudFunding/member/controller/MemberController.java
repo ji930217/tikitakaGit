@@ -163,6 +163,7 @@ public class MemberController {
 				}
 			}
 			
+			System.out.println(isExpired);
 			session.setAttribute("isExpired", isExpired);
 			
 			
