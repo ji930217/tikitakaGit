@@ -367,6 +367,7 @@
 						idx = parseInt(idx) + 1;
 					}
 				} else {
+					$("#msgDiv").css("display", "none");
 					resultStr += "<div style='vertical-align: middle; padding-top: 5em; padding-bottom: 5em;'>";
 					resultStr += "<div class='_13KHfN73YmQgsYHxXvuh_J _1Qdv504-1XMeYXZyb0xQZT _2mDWoxwh1QMJyLM49w7kMZ _3G8CRXtomRhisiZsw7Spx- _1WARcEqqT_Pem8leg2dkMj'>";
 					resultStr += "<div><i class='_3Hs9Qa2HoKTK0Bt1LDlMh_ _3RAU_1dXrlkkPhtkKyXSVj _3fJsfvAPykJzj2xoMnxzWW _3YmAkQhwzI7o-uUWz_8Mp4 _1QY7TzdLHKX3-BKPDNNYKF'></i>";
@@ -473,7 +474,7 @@
 							
 							<!-- 메시지 없어요 -->
 							<c:if test="${empty list }">
-								<div style="vertical-align: middle; padding-top: 5em; padding-bottom: 5em;">
+								<div id="msgDiv" style="vertical-align: middle; padding-top: 5em; padding-bottom: 5em;">
 									<div	class="_13KHfN73YmQgsYHxXvuh_J _1Qdv504-1XMeYXZyb0xQZT _2mDWoxwh1QMJyLM49w7kMZ _3G8CRXtomRhisiZsw7Spx- _1WARcEqqT_Pem8leg2dkMj">
 										<div>
 											<i	class="_3Hs9Qa2HoKTK0Bt1LDlMh_ _3RAU_1dXrlkkPhtkKyXSVj _3fJsfvAPykJzj2xoMnxzWW _3YmAkQhwzI7o-uUWz_8Mp4 _1QY7TzdLHKX3-BKPDNNYKF"></i>
