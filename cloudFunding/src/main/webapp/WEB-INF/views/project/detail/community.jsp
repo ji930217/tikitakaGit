@@ -2,6 +2,7 @@
     pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/functions" prefix="fn" %> 
+
 <!DOCTYPE html>
   <html lang="ko-KR">
     
@@ -499,20 +500,20 @@
 	 
 	$(function(){
 		// 댓글 달고나면 해당 게시글 상세화면 영역 보이게
-		if(null != sessionStorage.getItem("postCode")){
+	/* 	if(null != sessionStorage.getItem("postCode")){
 			postCode = sessionStorage.getItem("postCode");
-		}
+		} */
 		
 		/* console.log("test", tabIndex);  */
-	      if(postCode != null){
+	  /*     if(postCode != null){
 			$(".tojyI").css("display", "block");
 			$("#postFormDiv").css("display", "none");
 			$("#updatePostFormDiv").css("display", "none");
 			$("#postListDiv").css("display", "none");
 			$("#creatorPostDiv").css("display", "none");
-			$("#writeBtnDiv").css("display", "none");	   
+			$("#writeBtnDiv").css("display", "none");	    */
 			setWindowScrollTop();
-			
+			if(false){
 			$.ajax({
 				url : "selectPost.do",
 				type : "post",
@@ -598,7 +599,8 @@
 					console.log("ajax insertReply 에러 : ", e);
 				}
 			});
-	      } 
+			}
+	    /*   }  */
 	});
 
 	function openPostForm(){
@@ -686,7 +688,7 @@
 			var height = $storyContentDiv.css("height").replace("px", "");
 			/* var maxHeight = $(".fmSZUJ").css("max-height").replace("px", "");
 			console.log(maxHeight); */
-			
+			console.log("??");
 			if(500 <= height) {
 				$(this).children(".hwdRmE").css("display", "block");
 				$(this).siblings(".bPLTTN").css("display", "block");

@@ -11,7 +11,7 @@ public class PostVo {
 	private int projectCode;
 	private String email;
 	private String content;
-	private Date writtenDate;
+	private String writtenDate;
 	private char delflag;
 	private int replyCount;
 	private ArrayList<ReplyVo> replyList;
@@ -63,11 +63,11 @@ public class PostVo {
 		this.content = content;
 	}
 
-	public Date getWrittenDate() {
+	public String getWrittenDate() {
 		return writtenDate;
 	}
 
-	public void setWrittenDate(Date writtenDate) {
+	public void setWrittenDate(String writtenDate) {
 		this.writtenDate = writtenDate;
 	}
 

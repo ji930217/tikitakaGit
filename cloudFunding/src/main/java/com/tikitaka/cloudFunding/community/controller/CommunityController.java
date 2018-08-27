@@ -1,5 +1,6 @@
 package com.tikitaka.cloudFunding.community.controller;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import javax.servlet.http.HttpSession;
@@ -28,7 +29,7 @@ public class CommunityController {
 	public @ResponseBody List<PostVo> projectCommunity(int projectCode, ModelAndView mv, HttpSession session){
 		// 해당 프로젝트의 게시글/댓글 조회해서 넘겨주기
 		List<PostVo> postList = cService.selectPostList(projectCode);
-		session.setAttribute("page", "community");
+		/*session.setAttribute("page", "community");*/
 		return postList;
 	}
 	
@@ -36,8 +37,7 @@ public class CommunityController {
 	public String insertPost(int projectCode, String email, String content){
 		PostVo post = new PostVo(projectCode, email, content);
 		int result = cService.insertPost(post);
-		
-		return "redirect:projectDetail.do?projectCode=" + projectCode;
+		return "redirect:projectCommunity.do?projectCode=" + projectCode;
 	}
 	
 	@RequestMapping("updatePost.do")
