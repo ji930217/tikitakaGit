@@ -9,6 +9,7 @@
 <!DOCTYPE html>
 <html lang="ko">
 <head>
+	<link href=resources/images/header/tktkFavicon.png rel="icon" type="image/x-icon">
     <meta charset="utf-8">
     
     
@@ -223,7 +224,7 @@
 <body>
 
 
-	<c:import url="../common/header.jsp"/>
+ 	<c:import url="../common/header.jsp"/>  
 
 	<form id="googleForm" action="googleLogin.do" method="post">
 	   	<input type="hidden" id="googleEmail" name="googleEmail">
