@@ -54,7 +54,7 @@ public class CommunityController {
 	public String deletePost(int projectCode, int postCode){
 		int result = cService.deletePost(postCode);
 		
-		return "redirect:projectDetail.do?projectCode=" + projectCode;
+		return "redirect:projectCommunity.do?projectCode=" + projectCode;
 	}
 	
 	@RequestMapping("selectPost.do")
