@@ -124,7 +124,7 @@
 							<span class="b-panel__title"
 								data-reactid=".16yr6xmb3eo.1.2:$0.1.0.1"> 
 								<input id="1000" type="tel" name="pledge[money]" min="1000" max="10000000"
-								value="1,000" class="b-form__input" /> <span
+								value="1000" class="b-form__input" /> <span
 								data-reactid=".16yr6xmb3eo.1.2:$0.1.0.1.1">원</span>
 								 <button
 								class="b-panel__next-button" onclick="payment(1000,0)"></button> <span
@@ -244,11 +244,14 @@
 function payment(id,gCode){
 		var price = id;
 		var inputVal = document.getElementById(price).value;
-		
+		var title = '${project.title}';
 		/*  sessionStorage.setItem("inputVal",inputVal);  */
-		if(id == 1000){
-			location.href="paymentPage.do";
+		if(gCode == 0){
+			location.href="paymentPage.do?projectCode="+${project.projectCode}+"&address="+null+"&inputVal="+inputVal+"&projectTitle="+title+"&item="+null+"&price="+ 1000 + "&gCode="+gCode;
+
+			
 		}
+		
 		else{
 			location.href="payment_address.do?gCode="+gCode+"&inputVal="+inputVal;
 		}
