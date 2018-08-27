@@ -317,136 +317,132 @@
 	var postCode;
 	$(function(){
 		$(".storyContent img").css("width", "100%");
-		
-		// 게시글 상세보기
-		$(".cywbQo, .bPLTTN").click(function(){
-			setWindowScrollTop();
-			
-			postCode = $(this).children("h3").text();
-			sessionStorage.setItem("postCode", postCode);
-			
-			/* $(".tojyI").css("display", "block"); */
-			$("#postFormDiv").css("display", "none");
-			$("#postListDiv").css("display", "none");
-			$("#creatorPostDiv").css("display", "none");
-			$("#writeBtnDiv").css("display", "none");
-			
-			$.ajax({
-				url : "selectPost.do",
-				type : "post",
-/* 				data : {index : $("#userIndexes").val()}, */
-				data : {postCode : postCode},
-				success : function(data){
-					$(".hKVypK > .storyContent").html(data.content);
-					$(".storyContent img").css("width", "100%");
-					$(".hINlJw").html(data.name);
-					$("#postWriterProfileImgSpan").html("<img class='ProfileImg__ProfileImg-s1o99mme-0 frVGN' src='" + data.profileImg + "'/>");
-					$("#replyWriterProfileImgDiv").html("<img class='ProfileImg__ProfileImg-s1o99mme-0 frVGN' src='${user.profile_img}'/>");
-					$("#postWrittenDate").html(moment(data.writtenDate).format("YYYY-MM-DD"));
-					$("#replyForm input[name=postCode]").val(data.postCode);
-					
-					var loginUserEmail = "<c:out value='${user.email}'/>";
-					var creatorEmail = "<c:out value='${project.email}'/>";
-					var postWriterEmail = data.email;
-					if(creatorEmail == postWriterEmail){
-					/* 	$("#sharePostBtnDiv").css("display", "flex"); */
-						$("#creatorLabel").html("창작자");
-						$("#postCategory").html("창작자 업데이트");
-						$("#postCategory").addClass("kFkoaw");
-					}else {
-						/* $("#sharePostBtnDiv").css("display", "none"); */
-						$("#postCategory").html("");
-						$("#postCategory").removeClass("kFkoaw");
-					}
-					var postWriterEmail = data.email;
-					/* if(creatorEmail == postWriterEmail){
-						$("#sharePostBtnDiv").css("display", "flex");
-					}else {
-						$("#sharePostBtnDiv").css("display", "none");
-					} */
-					
-					var projectCode = "<c:out value='${project.projectCode}'/>";		
-					
-					var replyCount = data.replyCount == null ? 0 : data.replyCount;
-					$(".Post__CommunityPostCommentsAmount-s1xz59uk-25").html("<strong>" + replyCount + "</strong>개의 댓글이 있습니다");
-					var $replyDiv = $("#replyDiv");
-					var resultStr = "";
-					// 댓글이 없는 경우 구분하기
-					/* console.log(data.replyList[0].content); */
-					if(0 < replyCount) {
-						for(var key in data.replyList) {
-							var reply = data.replyList[key];
-							resultStr += "<div class='Comment__Comment-wppgnq-0 hlvHZI'>";
-							resultStr += "<div class='Comment__CommentProfileImageWrapper-wppgnq-2 dbsGhw'>";
-							if(null != reply.profileImg) {
-								resultStr += "<img class='ProfileImg__ProfileImg-s1o99mme-0 wtQUk' src='" + reply.profileImg + "'/></div>";
-							} else {
-								resultStr += "<span class='ProfileImg__ProfileImg-s1o99mme-0 wtQUk'></span></div>";
-							}
-							resultStr += "<div class='Comment__CommentInner-wppgnq-1 TozEg'>";
-							resultStr += "<div class='Comment__CommentMeta-wppgnq-3 Ovbfn'>";
-							resultStr += "<div class='Comment__CommentAuthorFullnameWrapper-wppgnq-4 ingGrN'>";
-							resultStr += "<div class='Comment__CommentAuthorFullname-wppgnq-6 hGUkNg'>" + reply.name + "</div>";
-							if(creatorEmail == reply.email) {						
-								resultStr += "<span class='Comment__CommentCreatorLabel-wppgnq-7 heUSFE'>창작자</span>";
-							}
-							resultStr += "</div>";
-							/* moment(reply.writtenDate).format("YYYY.MM.DD hh:mm") */
-							resultStr += "<div class='Comment__CommentedAt-wppgnq-5 bryKXn'>" + reply.writtenDate + "</div></div>";
-							resultStr += "<div class='Comment__CommentContents-wppgnq-8 dNCkru'>" + reply.content + "</div>";
-							
-							/* 댓글 삭제 버튼 */
-							resultStr += "<div class='PostEditForm__DeleteButton-frv1rh-6 kWwLhn'>";
-							if(loginUserEmail == reply.email) {
-								resultStr += "<button id='deleteReplyBtn' class='Button__Button-s1ng5xda-0 fkKFAu' onclick='deleteReply(" + reply.replyCode + ", " + data.postCode + ");'>";
-								resultStr += "<i class='_1pt-5UHn7rWHPExbDO4EbO _2rCeEoFeBzvCYn76udqnww _1QY7TzdLHKX3-BKPDNNYKF'></i></button></div></div>";
-							} else {
-								resultStr += "<button class='Button__Button-s1ng5xda-0 fkKFAu'>";
-								resultStr += "</button></div></div>";
-							}
-							
-							resultStr += "</div>";
-						}
-					} else {
-						resultStr += "<div class='Post__NoCommentsPlaceHolder-s1xz59uk-26 cHZzdT'>";
-						resultStr += "<i class='_30LNYFhw6qsigZSbwlGCDz _1R0ZK0Z1zZIqLZ8NkjnsD6 t92eur5rwOw7wGfKPt3l8 _1QY7TzdLHKX3-BKPDNNYKF'></i>";
-						resultStr += "댓글이 없습니다</div>";
-					}
-					$replyDiv.html(resultStr);
-				}, beforeSend:function(){
-			        $(".loadingIndicator").css("display", "inline-block");  
-			        $(".dLYLGx").css("margin", "2rem 0"); 
-			        $(".tojyI").css("display", "none");
-			    }, complete:function(){
-			        $(".loadingIndicator").css("display", "none");  
-					$(".dLYLGx").css("margin", "unset"); 
-					$(".tojyI").css("display", "block");
-			    }, error : function(e){
-					console.log("ajax selectPost 에러");
-				}
-			});
-		});
-		
-		$("#replyInput").on('input selectionchange propertychange', function() {
-			if($("#replyInput").val().length > 0) {
-				$("#insertReplyBtn").attr("disabled", false);
-				$("#insertReplyBtn").removeClass("cdAaGX");
-				$("#insertReplyBtn").addClass("dUWaDF");
-			} else {
-				$("#insertReplyBtn").attr("disabled", true);
-				$("#insertReplyBtn").removeClass();
-				$("#insertReplyBtn").removeClass("dUWaDF");
-				$("#insertReplyBtn").addClass("cdAaGX");
-			}
-		});
-		
-		setMoreBtnDisplayBlock();
-		
 	});
 	
 	function insertReply(){
 		$("#replyForm").submit();
 	}
+	
+	// 게시글 상세보기
+	function postDetail(postCode){
+		setWindowScrollTop();
+		
+		/* $(".tojyI").css("display", "block"); */
+		$("#postFormDiv").css("display", "none");
+		$("#postListDiv").css("display", "none");
+		$("#creatorPostDiv").css("display", "none");
+		$("#writeBtnDiv").css("display", "none");
+		
+		$.ajax({
+			url : "selectPost.do",
+			type : "post",
+			data : {postCode : postCode},
+			success : function(data){
+				$(".hKVypK > .storyContent").html(data.content);
+				$(".storyContent img").css("width", "100%");
+				$(".hINlJw").html(data.name);
+				$("#postWriterProfileImgSpan").html("<img class='ProfileImg__ProfileImg-s1o99mme-0 frVGN' src='" + data.profileImg + "'/>");
+				$("#replyWriterProfileImgDiv").html("<img class='ProfileImg__ProfileImg-s1o99mme-0 frVGN' src='${user.profile_img}'/>");
+				$("#postWrittenDate").html(moment(data.writtenDate).format("YYYY-MM-DD"));
+				$("#replyForm input[name=postCode]").val(data.postCode);
+				
+				var loginUserEmail = "<c:out value='${user.email}'/>";
+				var creatorEmail = "<c:out value='${project.email}'/>";
+				var postWriterEmail = data.email;
+				if(creatorEmail == postWriterEmail){
+				/* 	$("#sharePostBtnDiv").css("display", "flex"); */
+					$("#creatorLabel").html("창작자");
+					$("#postCategory").html("창작자 업데이트");
+					$("#postCategory").addClass("kFkoaw");
+				}else {
+					/* $("#sharePostBtnDiv").css("display", "none"); */
+					$("#postCategory").html("");
+					$("#postCategory").removeClass("kFkoaw");
+				}
+				var postWriterEmail = data.email;
+				/* if(creatorEmail == postWriterEmail){
+					$("#sharePostBtnDiv").css("display", "flex");
+				}else {
+					$("#sharePostBtnDiv").css("display", "none");
+				} */
+				
+				var projectCode = "<c:out value='${project.projectCode}'/>";		
+				
+				var replyCount = data.replyCount == null ? 0 : data.replyCount;
+				$(".Post__CommunityPostCommentsAmount-s1xz59uk-25").html("<strong>" + replyCount + "</strong>개의 댓글이 있습니다");
+				var $replyDiv = $("#replyDiv");
+				var resultStr = "";
+				// 댓글이 없는 경우 구분하기
+				/* console.log(data.replyList[0].content); */
+				if(0 < replyCount) {
+					for(var key in data.replyList) {
+						var reply = data.replyList[key];
+						resultStr += "<div class='Comment__Comment-wppgnq-0 hlvHZI'>";
+						resultStr += "<div class='Comment__CommentProfileImageWrapper-wppgnq-2 dbsGhw'>";
+						if(null != reply.profileImg) {
+							resultStr += "<img class='ProfileImg__ProfileImg-s1o99mme-0 wtQUk' src='" + reply.profileImg + "'/></div>";
+						} else {
+							resultStr += "<span class='ProfileImg__ProfileImg-s1o99mme-0 wtQUk'></span></div>";
+						}
+						resultStr += "<div class='Comment__CommentInner-wppgnq-1 TozEg'>";
+						resultStr += "<div class='Comment__CommentMeta-wppgnq-3 Ovbfn'>";
+						resultStr += "<div class='Comment__CommentAuthorFullnameWrapper-wppgnq-4 ingGrN'>";
+						resultStr += "<div class='Comment__CommentAuthorFullname-wppgnq-6 hGUkNg'>" + reply.name + "</div>";
+						if(creatorEmail == reply.email) {						
+							resultStr += "<span class='Comment__CommentCreatorLabel-wppgnq-7 heUSFE'>창작자</span>";
+						}
+						resultStr += "</div>";
+						/* moment(reply.writtenDate).format("YYYY.MM.DD hh:mm") */
+						resultStr += "<div class='Comment__CommentedAt-wppgnq-5 bryKXn'>" + reply.writtenDate + "</div></div>";
+						resultStr += "<div class='Comment__CommentContents-wppgnq-8 dNCkru'>" + reply.content + "</div>";
+						
+						/* 댓글 삭제 버튼 */
+						resultStr += "<div class='PostEditForm__DeleteButton-frv1rh-6 kWwLhn'>";
+						if(loginUserEmail == reply.email) {
+							resultStr += "<button id='deleteReplyBtn' class='Button__Button-s1ng5xda-0 fkKFAu' onclick='deleteReply(" + reply.replyCode + ", " + data.postCode + ");'>";
+							resultStr += "<i class='_1pt-5UHn7rWHPExbDO4EbO _2rCeEoFeBzvCYn76udqnww _1QY7TzdLHKX3-BKPDNNYKF'></i></button></div></div>";
+						} else {
+							resultStr += "<button class='Button__Button-s1ng5xda-0 fkKFAu'>";
+							resultStr += "</button></div></div>";
+						}
+						
+						resultStr += "</div>";
+					}
+				} else {
+					resultStr += "<div class='Post__NoCommentsPlaceHolder-s1xz59uk-26 cHZzdT'>";
+					resultStr += "<i class='_30LNYFhw6qsigZSbwlGCDz _1R0ZK0Z1zZIqLZ8NkjnsD6 t92eur5rwOw7wGfKPt3l8 _1QY7TzdLHKX3-BKPDNNYKF'></i>";
+					resultStr += "댓글이 없습니다</div>";
+				}
+				$replyDiv.html(resultStr);
+			}, beforeSend:function(){
+		        $(".loadingIndicator").css("display", "inline-block");  
+		        $(".dLYLGx").css("margin", "2rem 0"); 
+		        $(".tojyI").css("display", "none");
+		    }, complete:function(){
+		        $(".loadingIndicator").css("display", "none");  
+				$(".dLYLGx").css("margin", "unset"); 
+				$(".tojyI").css("display", "block");
+		    }, error : function(e){
+				console.log("ajax selectPost 에러");
+			}
+		});
+		
+		setMoreBtnDisplayBlock();
+	}
+	
+	$("#replyInput").on('input selectionchange propertychange', function() {
+		if($("#replyInput").val().length > 0) {
+			$("#insertReplyBtn").attr("disabled", false);
+			$("#insertReplyBtn").removeClass("cdAaGX");
+			$("#insertReplyBtn").addClass("dUWaDF");
+		} else {
+			$("#insertReplyBtn").attr("disabled", true);
+			$("#insertReplyBtn").removeClass();
+			$("#insertReplyBtn").removeClass("dUWaDF");
+			$("#insertReplyBtn").addClass("cdAaGX");
+		}
+	});
+	
 	
 </script>
 </head>
@@ -557,7 +553,7 @@
 										</div>
 									</div>
 								</div>
-								<div	class="CommunityPostSummaryCard__ContentsWrapper-s1yavd3r-11 cywbQo"	style="cursor: pointer;">
+								<div	class="CommunityPostSummaryCard__ContentsWrapper-s1yavd3r-11 cywbQo"	style="cursor: pointer;"onclick="postDetail(<c:out value="${post.postCode }"/>);">
 									<h3 style="display:none;"><c:out value="${post.postCode }"/></h3>
 									<div>
 										<div	class="CommunityPostSummaryCard__Contents-s1yavd3r-13 fmSZUJ">
@@ -571,12 +567,15 @@
 									
 								</div>
 								
-								<div	class="CommunityPostSummaryCard__ReadMoreButton-s1yavd3r-14 bPLTTN" style="display:none;">
+								<div	class="CommunityPostSummaryCard__ReadMoreButton-s1yavd3r-14 bPLTTN" style="display:none;"onclick="postDetail(<c:out value="${post.postCode }"/>);">
 									<h3 style="display:none;"><c:out value="${post.postCode }"/></h3>
-									<button id="moreBtn" class="Button__Button-s1ng5xda-0 dxWcyc"  style="cursor: pointer;">더 보기</button>
+									<button class="Button__Button-s1ng5xda-0 dxWcyc more"  style="cursor: pointer;" onclick="postDetail(<c:out value="${post.postCode }"/>);">
+										<h3 style="display:none;"><c:out value="${post.postCode }"/></h3>
+										더 보기
+									</button>
 								</div>
 									
-							<div	class="CommunityPostSummarCard__Actions-s1yavd3r-15 jgodLB"style="cursor: pointer;">
+							<div	class="CommunityPostSummarCard__Actions-s1yavd3r-15 jgodLB"style="cursor: pointer;"  onclick="postDetail(<c:out value="${post.postCode }"/>);">
 									<i class="_30LNYFhw6qsigZSbwlGCDz _1QY7TzdLHKX3-BKPDNNYKF"></i>
 									<%-- <c:out value="${fn:length(post.replyList) }"/> --%>
 									<c:out value="${post.replyCount }"/>
@@ -756,7 +755,7 @@
 											</div>
 										</div>
 									</div>
-									<div	class="CommunityPostSummaryCard__ContentsWrapper-s1yavd3r-11 cywbQo"	style="cursor: pointer;">
+									<div	class="CommunityPostSummaryCard__ContentsWrapper-s1yavd3r-11 cywbQo"	style="cursor: pointer;"  onclick="postDetail(<c:out value="${post.postCode }"/>);">
 										<h3 style="display:none;"><c:out value="${post.postCode }"/></h3>
 										<div>
 											<div	class="CommunityPostSummaryCard__Contents-s1yavd3r-13 fmSZUJ">
@@ -770,12 +769,12 @@
 								
 								</div>
 								
-								<div	class="CommunityPostSummaryCard__ReadMoreButton-s1yavd3r-14 bPLTTN" style="display:none;">
+								<div	class="CommunityPostSummaryCard__ReadMoreButton-s1yavd3r-14 bPLTTN" style="display:none;" onclick="postDetail(<c:out value="${post.postCode }"/>);">
 									<h3 style="display:none;"><c:out value="${post.postCode }"/></h3>
-									<button id="moreBtn" class="Button__Button-s1ng5xda-0 dxWcyc"  style="cursor: pointer;">더 보기</button>
+									<button id="moreBtn" class="Button__Button-s1ng5xda-0 dxWcyc"  style="cursor: pointer;" onclick="postDetail(<c:out value="${post.postCode }"/>);">더 보기</button>
 								</div>
 								
-									<div	class="CommunityPostSummarCard__Actions-s1yavd3r-15 jgodLB"style="cursor: pointer;">
+									<div	class="CommunityPostSummarCard__Actions-s1yavd3r-15 jgodLB"style="cursor: pointer;" onclick="postDetail(<c:out value="${post.postCode }"/>);">
 										<i class="_30LNYFhw6qsigZSbwlGCDz _1QY7TzdLHKX3-BKPDNNYKF"></i>
 										<%-- <c:out value="${fn:length(post.replyList) }"/> --%>
 										<c:out value="${post.replyCount }"/>

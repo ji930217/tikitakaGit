@@ -41,13 +41,13 @@ public class CommunityController {
 	}
 	
 	@RequestMapping("updatePost.do")
-	public String updatePost(int projectCode, int postCode, String content){
+	public String updatePost(int postCode, String content){
 		PostVo post = new PostVo();
 		post.setPostCode(postCode);
 		post.setContent(content);
 		int result = cService.updatePost(post);
 		
-		return "redirect:projectDetail.do?projectCode=" + projectCode;
+		return "redirect:selectPost.do?postCode=" + postCode;
 	}
 	
 	@RequestMapping("deletePost.do")
@@ -58,8 +58,7 @@ public class CommunityController {
 	}
 	
 	@RequestMapping("selectPost.do")
-	@ResponseBody
-	public PostVo selectPost(int postCode){
+	public @ResponseBody PostVo selectPost(int postCode){
 		// @ResponseBody 어노테이션 달아주니까 success data 전달 된다ㅠㅠㅠㅠ
 		PostVo post = cService.selectPost(postCode);
 		return post;

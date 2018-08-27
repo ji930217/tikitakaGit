@@ -144,7 +144,7 @@
 	function insertPost(){
 		if(confirm("작성한 글을 게시하겠습니까?")){
 			var projectCode = "<c:out value='${project.projectCode }' />";
-			console.log(projectCode);
+			/* console.log(projectCode); */
 			var email = "<c:out value='${user.email}'/>";
 			var content = $("#postFormDiv .note-editable").html();
 			/* $("#postForm").submit(); */
@@ -196,7 +196,7 @@
 								resultStr += "<i class='_2ANNRn9vyCs0q8XuFwhk4r _1oJMWnMCW_Y6GmNc1mhqaW _1QY7TzdLHKX3-BKPDNNYKF'></i></button></div>";
 							}
 							resultStr += "</div></div></div>";
-							resultStr += "<div class='CommunityPostSummaryCard__ContentsWrapper-s1yavd3r-11 cywbQo'  style='cursor: pointer;'>";
+							resultStr += "<div class='CommunityPostSummaryCard__ContentsWrapper-s1yavd3r-11 cywbQo'  style='cursor: pointer;' onclick='postDetail(" + data[key].postCode +  ");'>";
 							resultStr += "<h3 style='display:none;'>" + data[key].postCode +  "</h3>";
 							resultStr += "<div><div class='CommunityPostSummaryCard__Contents-s1yavd3r-13 fmSZUJ'>";
 							resultStr += "<div class='storyContent'>";
@@ -205,11 +205,11 @@
 							resultStr += "</div></div></div>";
 							resultStr += "<div class='CommunityPostSummaryCard__ContentsWrapperGradient-s1yavd3r-12 hwdRmE' style='display:none;'></div>";
 							resultStr += "</div>";
-							resultStr += "<div class='CommunityPostSummaryCard__ReadMoreButton-s1yavd3r-14 bPLTTN' style='display:none;'>";
+							resultStr += "<div class='CommunityPostSummaryCard__ReadMoreButton-s1yavd3r-14 bPLTTN' style='display:none;' onclick='postDetail(" + data[key].postCode +  ");'>";
 							resultStr += "<h3 style='display:none;'>" + data[key].postCode +  "</h3>";
-							resultStr += "<button id='moreBtn' class='Button__Button-s1ng5xda-0 dxWcyc' style='cursor: pointer;'>더 보기</button></div>";
-							resultStr += "<div class='CommunityPostSummarCard__Actions-s1yavd3r-15 jgodLB' style='cursor: pointer;'>";
-							resultStr += "<i class='_30LNYFhw6qsigZSbwlGCDz _1QY7TzdLHKX3-BKPDNNYKF'></i>";
+							resultStr += "<button id='moreBtn' class='Button__Button-s1ng5xda-0 dxWcyc' style='cursor: pointer;' onclick='postDetail(" + data[key].postCode +  ");'>더 보기</button></div>";
+							resultStr += "<div class='CommunityPostSummarCard__Actions-s1yavd3r-15 jgodLB' style='cursor: pointer;' onclick='postDetail(" + data[key].postCode +  ");'>";
+							resultStr += "<i class='_30LNYFhw6qsigZSbwlGCDz _1QY7TzdLHKX3-BKPDNNYKF' ></i>";
 							resultStr += data[key].replyCount;
 							resultStr += "</div></div></div>";
 							
