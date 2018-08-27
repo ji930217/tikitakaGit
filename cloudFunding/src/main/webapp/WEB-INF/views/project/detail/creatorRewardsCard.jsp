@@ -8,7 +8,6 @@
 <head>
 <meta charset="UTF-8">
 <title>창작자 소개, 선물 목록</title>
-
 <style type="text/css" data-styled-components="bPaPOl cXdlcp bYqief fzoeFq jPcWZN iVCTYT jdgWcI bteafZ kZLTLQ hcvfVq iGOIal kizyZz cfMrMC hHUgvf bpfGNO JUlEd buZCDD imIxKd gqXDKx fqdqdO hsuyOO isebXd gKkJpB yNdyg boFKej cyqGTD guVzeB jZXZDW gDTPbS iTDPPg dIHovk qtLrt gujNFh eIDmsW leXkjY htCDgL bvKOwU ihuRTA kIYDgq lfgWGK iJcLQj kwAiqA bBsoai fjkRCm dvkZSH cYmhAj hZQjKf lblHJx eeeApW eSsILz gEWplf bReGoj cNWmvR jPEdlL kJUlye giKgfw bJXRvz hIkOXr fQMvgC dLvdGo umGxa gjgpkL gDEKBn bvwsV gByEjI ceunQL deZznN cBbkfc fuCNpE eYscdN daPkde fVfxlF dHxdxH ilHpOi iBGoJt khYIRi dxWcyc hBOBRE dCYRcO cUvTIp cabNvZ iChtTV" data-styled-components-is-local="true">>
 	/* sc-component-id: sc-keyframes-cXdlcp */
 @-webkit-keyframes cXdlcp {0% {-webkit-transform: translateY(0%);-ms-transform: translateY(0%);transform: translateY(0%);opacity: 1;}50% {-webkit-transform: translateY(100%);-ms-transform: translateY(100%);transform: translateY(100%);opacity: .3;}100% {-webkit-transform: translateY(0%);-ms-transform: translateY(0%);transform: translateY(0%);opacity: 1;}}@keyframes cXdlcp {0% {-webkit-transform: translateY(0%);-ms-transform: translateY(0%);transform: translateY(0%);opacity: 1;}50% {-webkit-transform: translateY(100%);-ms-transform: translateY(100%);transform: translateY(100%);opacity: .3;}100% {-webkit-transform: translateY(0%);-ms-transform: translateY(0%);transform: translateY(0%);opacity: 1;}}
@@ -277,7 +276,14 @@
 
 <script>
 	function openMessagePopup(){
-		$("#messageDiv, #messageDiv select").css("visibility", "visible");
+		var userEmail = "<c:out value='${user.email}'/>";
+		if(null == userEmail || userEmail == ""){
+			alert("로그인이 필요한 서비스 입니다.");
+			location.href="loginPage.do";
+		} else {
+			$("#messageDiv, #messageDiv select").css("visibility", "visible");
+		}
+		
 	};
 </script>
 </head>
@@ -310,18 +316,13 @@
 						<b><c:out value="${supportedCount }"/></b>
 					</div>
 					<div class="CreatorCard__CreatorContactButton-yeytpy-6 khYIRi">
-						<c:if test="${empty user }">
-							<button class="Button__Button-s1ng5xda-0 dxWcyc" onclick="javascript:location.href='loginPage.do'">
-								로그인 하러 가기
-							</button>
-						</c:if>
 						<c:if test="${!empty user && project.email eq user.email }">
 							<button class="Button__Button-s1ng5xda-0 dxWcyc" onclick="javascript:location.href='messagePage.do'">
 								<i class="_3YmAkQhwzI7o-uUWz_8Mp4 _1QY7TzdLHKX3-BKPDNNYKF"></i>
 								후원자 문의 사항 확인
 							</button>
 						</c:if>
-						<c:if test="${!empty user && project.email ne user.email }">
+						<c:if test="${project.email ne user.email }">
 							<button class="Button__Button-s1ng5xda-0 dxWcyc" onclick="openMessagePopup();">
 								<i class="_3YmAkQhwzI7o-uUWz_8Mp4 _1QY7TzdLHKX3-BKPDNNYKF"></i>
 								창작자에게 문의하기
@@ -359,7 +360,7 @@
 												<c:if test="${gift.remited gt 0 && gift.remited lt 101}">
 													<!-- 한정상품인 경우 -->
 													<span class="RewardCard__LimitedRewardLabel-ibjars-5 jJjTiD">
-														<c:out value="${gift.remited }"/>개 남음
+														<c:out value="${gift.remited - gift.selectedCount }"/>개 남음
 													</span>
 												</c:if>
 												<c:if test="${gift.remited eq 0}">

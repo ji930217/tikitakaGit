@@ -10,6 +10,7 @@ import org.springframework.stereotype.Repository;
 import com.tikitaka.cloudFunding.member.model.vo.Member;
 import com.tikitaka.cloudFunding.project.model.vo.GiftVo;
 import com.tikitaka.cloudFunding.project.model.vo.ProjectVo;
+import com.tikitaka.cloudFunding.support.model.vo.SupportVo;
 
 
 @Repository
@@ -93,6 +94,14 @@ public class ProjectDao {
 
 	public List<ProjectVo> selectindex_DeadlineList(int btnIdx2) {
 		return sqlSession.selectList("projectMapper.selectindex_DeadlineList", btnIdx2);
+	}
+
+	public List<ProjectVo> searchProjectByHashtag(String tag) {
+		return sqlSession.selectList("projectMapper.searchProjectByHashtag", tag);
+	}
+
+	public int checkSupportFlag(SupportVo support) {
+		return sqlSession.selectOne("projectMapper.checkSupportFlag", support);
 	}
 }
 

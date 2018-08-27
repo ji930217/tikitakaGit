@@ -38,7 +38,6 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M" crossorigin="anonymous">
 <link rel="stylesheet" type="text/css" href="resources/images/header/d2om2e6rfn032x.cloudfront.net/wpa/app.f0ed3932e778a7f95ef1c52983d12741.css">
-<link href=resources/images/header/tumblbug-assets.imgix.net/appicon/favicon/favicon-32x32.png rel="icon" type="image/x-icon">
 <link rel="apple-touch-icon" sizes="120x120" href="resources/images/header/tumblbug-assets.imgix.net/appicon/home-icon/apple-icon-120x120.png">
 <link rel="apple-touch-icon" sizes="152x152" href="resources/images/header/tumblbug-assets.imgix.net/appicon/home-icon/apple-icon-152x152.png">
 <link rel="apple-touch-icon" sizes="180x180" href="resources/images/header/tumblbug-assets.imgix.net/appicon/home-icon/apple-icon-180x180.png">
@@ -1633,27 +1632,27 @@ function prevDeadLineProject() {
   <div class="carousel-inner">
 
    	 <div class="carousel-item active">
-       <a href = "projectDetail.do?projectCode="+${indexBannerList[0].bannerCode}>
+       <a href = "projectDetail.do?projectCode=${indexBannerList[0].bannerCode}">
       <img class="d-block w-100" src="resources/images/carousel/${indexBannerList[0].bannerImage}" alt="첫번째 슬라이드">
        </a>
     </div>  
     <div class="carousel-item">
-        <a href = "projectDetail.do?projectCode="+${indexBannerList[1].bannerCode}>
+        <a href = "projectDetail.do?projectCode=${indexBannerList[1].bannerCode}">
       <img class="d-block w-100" src="resources/images/carousel/${indexBannerList[1].bannerImage}" alt="두번째 슬라이드">
         </a>
     </div>
     <div class="carousel-item">
-       <a href = "projectDetail.do?projectCode="+${indexBannerList[2].bannerCode}>
+       <a href = "projectDetail.do?projectCode=${indexBannerList[2].bannerCode}">
       <img class="d-block w-100" src="resources/images/carousel/${indexBannerList[2].bannerImage}" alt="세번째 슬라이드">
        </a>
     </div>
     <div class="carousel-item">
-       <a href = "projectDetail.do?projectCode="+${indexBannerList[3].bannerCode}>
+       <a href = "projectDetail.do?projectCode=${indexBannerList[3].bannerCode}">
       <img class="d-block w-100" src="resources/images/carousel/${indexBannerList[3].bannerImage}" alt="네번째 슬라이드">
        </a>
     </div>
     <div class="carousel-item">
-       <a href = "projectDetail.do?projectCode="+${indexBannerList[4].bannerCode}>
+       <a href = "projectDetail.do?projectCode=${indexBannerList[4].bannerCode}">
       <img class="d-block w-100" src="resources/images/carousel/${indexBannerList[4].bannerImage}" alt="다섯번째 슬라이드">
        </a>
     </div> 

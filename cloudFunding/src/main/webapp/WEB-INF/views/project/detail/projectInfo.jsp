@@ -7,6 +7,7 @@
 <!DOCTYPE html>
 <html>
 <head>
+
 <meta charset="UTF-8">
 <meta property="og:image" content="${project.repImg }">
 <meta property="og:title" content="${project.title }">
@@ -21,7 +22,7 @@
 <script src="https://vjs.zencdn.net/7.1.0/video.js"></script>
 <!-- If you'd like to support IE8 (for Video.js versions prior to v7) -->
 <!-- <script src="https://vjs.zencdn.net/ie8/ie8-version/videojs-ie8.min.js"></script> -->
-
+<link href=resources/images/header/tktkFavicon.png rel="icon" type="image/x-icon">
 <style>
 	
 	/* 공유하기 	버튼 팝업 스타일 */
@@ -366,6 +367,8 @@
 					$("#postFormDiv").css("display", "none");
 					$("#creatorPostDiv").css("display", "none");
 					$("#communityDiv").css("display", "block");
+					$("#writeBtnDiv").css("display", "block");
+					$("#postListDiv").css("display", "block");
 					
 					$("#policyFixedBtn, #policyBtn, #storyFixedBtn, #storyBtn").removeClass("btnUnderline");
 					$("#communityFixedBtn, #communityBtn").addClass("btnUnderline");
@@ -472,7 +475,7 @@
 		}	
 	}
 	
-	function shareFacebook() {
+	/* function shareFacebook() {
 		var content = "<c:out value='${project.title}'/>";
 		var link = "http://localhost:8081/cloudFunding/projectDetail.do?projectCode=<c:out value='${project.projectCode}'/>";
 		var popOption = "width=370, height=360, resizable=no, scrollbars=no, status=no;";
@@ -482,7 +485,7 @@
 		if (wp) {
 			wp.focus();
 		}
-	}
+	} */
 
 	
 	/* 스크롤 이벤트 */
@@ -507,6 +510,11 @@
 		var src = "<c:out value='${project.descriptionVideo}'/>";
 		video.attr('src', src);
 		video.get(0).play();
+	}
+	
+	function payForProject(){
+		var projectCode = "<c:out value='${project.projectCode}'/>";
+		location.href="selectpayment.do?projectCode=" + projectCode;
 	}
 </script>
 
@@ -541,7 +549,7 @@
 				</c:if>
 				<c:if test="${remain gt 0 }">
 					<div class="ContentsNavigation__NavRight-s6dhfrc-4 eAgLGx">
-						<button class="Button__Button-s1ng5xda-0 jKslKa">프로젝트 밀어주기</button>
+						<button class="Button__Button-s1ng5xda-0 jKslKa" onclick="payForProject();">프로젝트 밀어주기</button>
 					</div>
 				</c:if>
 			</div>
@@ -570,13 +578,13 @@
 					</div>
 					<div class="Modal__ModalBody-s1q54ra0-7 fJUlRA">
 						<div>
-							<div
+							<!-- <div
 								class="SocialMediaShareButton SocialMediaShareButton--facebook">
 								<button class="ShareModal__ShareButton-xl7vb0-0 cXqVXt" onclick="shareFacebook();">
 									<i class="_1uz2PaH_Pc163IQLnwFtm8 _1QY7TzdLHKX3-BKPDNNYKF"></i>
 									페이스북 공유하기
 								</button>
-							</div>
+							</div> -->
 							<div
 								class="SocialMediaShareButton SocialMediaShareButton--twitter">
 								<button id="kakao-link-btn" class="ShareModal__ShareButton-xl7vb0-0 kQbXwX" onclick="shareTwitter();">
@@ -710,7 +718,7 @@
 							</c:if>
 							<c:if test="${remain gt 0 }">
 								<div	class="ProjectIntroduction__PrimaryButton-c7b94s-21 fjkRCm" data-reactid="87">
-									<button class="Button__Button-s1ng5xda-0 dvkZSH"  data-reactid="88">프로젝트 밀어주기</button>
+									<button class="Button__Button-s1ng5xda-0 dvkZSH"  data-reactid="88" onclick="payForProject();">프로젝트 밀어주기</button>
 								</div>
 							</c:if>
 							<div	class="ProjectIntroduction__SecondaryButton-c7b94s-22 cYmhAj"	data-reactid="89">

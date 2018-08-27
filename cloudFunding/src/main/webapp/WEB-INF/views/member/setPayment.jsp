@@ -3,6 +3,7 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
+	<link href=resources/images/header/tktkFavicon.png rel="icon" type="image/x-icon">
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>지불정보 설정 :: YSJ님의 페이지 :: 텀블벅</title>

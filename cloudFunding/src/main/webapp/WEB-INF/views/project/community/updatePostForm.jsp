@@ -6,6 +6,7 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
+<link href=resources/images/header/tktkFavicon.png rel="icon" type="image/x-icon">
 <!-- community.jsp에서 postForm과 updatePostForm 둘 다 임포트 하고 있어서인지 라이브러리 중복 선언돼서 작동x. 
 	둘 중 한 페이지의 선언 지워주기. -->
 <!-- include libraries(jQuery, bootstrap) -->

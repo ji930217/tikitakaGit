@@ -29,8 +29,7 @@ content="website"><meta data-react-helmet="true" property="og:image:width" conte
 
 content="tumblbug"><meta data-react-helmet="true" name="twitter:creator" content="tumblbug"><meta data-react-helmet="true" name="twitter:card" content="summary_large_image">
       <link rel="stylesheet" type="text/css" href="https://d2om2e6rfn032x.cloudfront.net/wpa/app.f0ed3932e778a7f95ef1c52983d12741.css">
-      <link href=resources/images/tktkFavicon.png rel="icon" type="image/x-icon">
-      
+      <link href=resources/images/header/tktkFavicon.png rel="icon" type="image/x-icon">
   <link rel="apple-touch-icon" sizes="120x120" href="https://tumblbug-assets.imgix.net/appicon/home-icon/apple-icon-120x120.png">
   <link rel="apple-touch-icon" sizes="152x152" href="https://tumblbug-assets.imgix.net/appicon/home-icon/apple-icon-152x152.png">
   <link rel="apple-touch-icon" sizes="180x180" href="https://tumblbug-assets.imgix.net/appicon/home-icon/apple-icon-180x180.png">
@@ -47,27 +46,6 @@ content="tumblbug"><meta data-react-helmet="true" name="twitter:creator" content
       <script type="text/javascript" async="" src="https://www.google-analytics.com/analytics.js"></script><script type="text/javascript" async="" 
 
 src="https://cdn.astronomer.io/analytics.js/v1/jMrtLL6v6xXmMGP7h/analytics.min.js"></script><script type="application/javascript">
-        window.MOBX_STATE = {"app":{"ssrLocation":"/pledges"},"currentUser":{"isLoading":false,"isLoaded":true,"id":750880,"uuid":"3595a029-240c-4ed3-ba5e-
-
-ca84dab39b41","fullname":"새로","userPermalink":"domoyozudupinedo","avatarUrl":"https://tumblbug-upi.imgix.net/defaults/avatar_0.png?ixlib=rb-1.1.0&w=200&h=250&auto=format%2Ccompress&fit=facearea&facepad=2.0&ch=Save-
-
-Data&mask=ellipse&s=87ba671c98b3debfae8ac85d36d0e7b4","email":"jungin2ya@naver.com","isCreator":true,"isAdmin":false},"pledgeStore":{"apiEndpoint":"/api/v1/pledges.json?
-
-fields=id,createdAt,amount,isSurveyRequested,isSurveyResponded,paymentStatus&project=title,coverImageUrl,creatorName,fundingStatus&reward=description,items&&coverImageUrl[h]=240&coverImageUrl[w]=320&coverImageUrl[fit]
-
-=crop","isLoading":false,"isLoaded":false,"pledges":[],"pledgesCount":{},"currentPage":1,"filterType":"all","isPledgeDataLoading":false,"isMetaDataLoaded":false,"isPledgeDetailsDataLoading":true},"surveyStore":
-
-{"apiEndpoint":"/api/v1/pledges.json?
-
-fields=id,createdAt,amount,isSurveyRequested,isSurveyResponded,paymentStatus&project=title,coverImageUrl,creatorName,fundingStatus&reward=description,items&filter=surveyResponseNeeded&coverImageUrl[h]=240&coverImageUrl[w]
-
-=320&coverImageUrl[fit]=crop","isLoading":false,"isLoaded":false,"surveyResponseNeededPledges":[],"isSurveyResponseNeededPledgesLoading":false,"isSurveysLoading":true},"taxpayerInformationStore":{"isLoaded":false},"collectionStore":
-
-{"collections":{},"featuredCollections":null},"projectStore":{},"messageThreadStore":{"_unreadThreads":{"asCreator":[],"asUser":[]},"projectFilters":[],"_messageThreads":
-
-{},"isLoadingMessageThreads":false,"selectedThreadId":null,"selectedThread":null},"messageArchiveThreadStore":{"_messageArchiveThreads":{},"_paging":{"offset":0,"limit":10,"next":""}},"rewardStore":{},"itemStore":{},"heroStore":
-
-{"isLoaded":false},"postStore":{"_cachedProjectId":null,"_posts":{},"_postsPagination":null,"_comments":{},"_cachedPostId":null,"_commentPagination":null},"depositAccountStore":{}};
       </script>
       <style type="text/css" data-styled-components="cXdlcp bYqief fzoeFq jPcWZN iVCTYT jdgWcI bteafZ kZLTLQ hcvfVq iGOIal kizyZz cfMrMC hHUgvf bpfGNO JUlEd buZCDD fQwQfp gqXDKx labhhf eQgQLo dLYLGx hGGMaO btBxPj cgjPcA 
 
@@ -1098,7 +1076,40 @@ data-react-helmet="true"><meta name="twitter:title" content="텀블벅 tumblbug"
 			var category = $(this).text();
 			location.href="searchProjectByCategory.do?category=" + category;
 		});
+		$(".searchProjectByHashtag").click(function(){
+			var tag = $(this).children("span").text().replace("#", "");
+			location.href="searchProjectByHashtag.do?tag=" + tag;
+		});
 		
+		var user = "<c:out value='${user}'/>";
+		var newMessageCount = "<c:out value='${newMessageCount}'/>";
+		if(0 < parseInt(newMessageCount)){
+			$("#msgNotify").css("display", "block");
+			$("#msgNotifyText").css("visibility", "visible");
+		}
+		
+		var jiTimer = setInterval( function () {
+			if(null != user && user != ""){
+				$.ajax ({
+					url : "checkMessageCount.do", 
+					cache : false,
+					success : function (flag) {
+						if(flag) {
+							$("#msgNotify").css("display", "block");
+							$("#msgNotifyText").css("visibility", "visible");
+						} else {
+							$("#msgNotify").css("display", "none");
+							$("#msgNotifyText").css("visibility", "hidden");
+						}
+					}, error : function(e) {
+						clearInterval(jiTimer);
+						/* console.log("header 메시지 수 체크 ajax 에러 : ", e); */
+					}
+				});
+			} else {
+				clearInterval(jiTimer);
+			}
+		}, 3000); 
 	});
 	
 	function closeSearchTab(){
@@ -1141,7 +1152,7 @@ data-react-helmet="true"><meta name="twitter:title" content="텀블벅 tumblbug"
 		memberAdmin.stopDate = "${user.stopDate}";
 		memberAdmin.expDate = "${user.expDate}";
 		
-		console.log(memberAdmin.email);
+		/* console.log(memberAdmin.email); */
 		$("#loginIdAcc").click(function(){
 			if(memberAdmin.email == 'admin@admin.com'){
 				location.href="adminMenuList.do";
@@ -1212,11 +1223,9 @@ data-react-helmet="true"><meta name="twitter:title" content="텀블벅 tumblbug"
 								
 								
 								<!-- 새로운 메시지를 받을 경우 나타나는 영역 -->
-								<c:if test="${newMessageCount gt 0 }">
-									<div class="SiteHeader__SiteHeaderAlert-s1s56ls8-11 xfBEx">
-										<div class="SiteHeader__RedPoint-s1s56ls8-12 gXPwyp"></div>
-									</div>
-								</c:if>
+								<div id="msgNotify" class="SiteHeader__SiteHeaderAlert-s1s56ls8-11 xfBEx" style="display:none;">
+									<div class="SiteHeader__RedPoint-s1s56ls8-12 gXPwyp"></div>
+								</div>
 						</span>
 						</a>
 						
@@ -1313,7 +1322,7 @@ data-react-helmet="true"><meta name="twitter:title" content="텀블벅 tumblbug"
 								프로젝트</span></button>
 					</div>
 					<div class="MenuItem__MenuItem-no2u3j-0 cwYjsy">
-						<button onclick="location.href='projectListOrderByEnrollDate.do"' style="border:0; outline:0;background:white"><span
+						<button onclick="location.href='projectListOrderByEnrollDate.do'" style="border:0; outline:0;background:white"><span
 							class="MenuItem__MenuItemTitle-no2u3j-1 enzRKc">새로운
 								프로젝트</span></button>
 					</div>
@@ -1338,30 +1347,30 @@ data-react-helmet="true"><meta name="twitter:title" content="텀블벅 tumblbug"
 						<div class="Divider__Divider-s16ihjfx-0 hEIXJa"></div>
 					</div>
 					<div>
-						<div class="Discover__DiscoverMenuTitle-s1vowecn-0 cWTOml">태그</div>
+						<div class="Discover__DiscoverMenuTitle-s1vowecn-0 cWTOml">TIKITAKA</div>
 						<div class="Discover__TagCollection-s1vowecn-2 fnDmjB">
 							<div class="MenuItem__MenuItem-no2u3j-0 cwYjsy">
-								<a href="/collections/summerdrink"><span
-									class="sc-bZQynM kCwSCH">#한여름의음료</span></a>
+								<a class="searchProjectByHashtag"><span
+									class="sc-bZQynM dtwFgh">#TIKITAKA</span></a>
 							</div>
 							<div class="MenuItem__MenuItem-no2u3j-0 cwYjsy">
-								<a href="/collections/tumblbugsummer"><span
-									class="sc-bZQynM bsAzyf">#피서는텀블벅에서</span></a>
+								<a class="searchProjectByHashtag"><span
+									class="sc-bZQynM gQpQVg">#유지상</span></a>
 							</div>
 							<div class="MenuItem__MenuItem-no2u3j-0 cwYjsy">
-								<a href="/collections/startup"><span
-									class="sc-bZQynM kUVMFn">#스타트업</span></a>
+								<a class="searchProjectByHashtag"><span
+									class="sc-bZQynM kCwSCH">#전윤석</span></a>
 							</div>
 							<div class="MenuItem__MenuItem-no2u3j-0 cwYjsy">
-								<a href="/collections/cultural"><span
-									class="sc-bZQynM iYdQWI">#문화생활</span></a>
+								<a class="searchProjectByHashtag"><span
+									class="sc-bZQynM bsAzyf">#나신의</span></a>
 							</div>
 							<div class="MenuItem__MenuItem-no2u3j-0 cwYjsy">
-								<a href="/collections/comeback"><span
-									class="sc-bZQynM gQpQVg">#돌아온창작자</span></a>
+								<a class="searchProjectByHashtag"><span
+									class="sc-bZQynM iYdQWI">#김가영</span></a>
 							</div>
 							<div class="MenuItem__MenuItem-no2u3j-0 cwYjsy">
-								<a href="/collections/815"><span class="sc-bZQynM dtwFgh">#광복절</span></a>
+								<a class="searchProjectByHashtag"><span class="sc-bZQynM kUVMFn">#김정인</span></a>
 							</div>
 						</div>
 						<div class="Divider__Divider-s16ihjfx-0 hEIXJa"></div>
@@ -1449,6 +1458,29 @@ data-react-helmet="true"><meta name="twitter:title" content="텀블벅 tumblbug"
 							</div>
 							<div class="DropdownItem__DropdownItem-s12jl0ab-0 lhFUmi">
 								<a class="searchProjectByCategory">캐릭터 디자인</a>
+							</div>
+						</div>
+					</div>
+					<div>
+						<div>
+							<div class="MenuItem__MenuItem-no2u3j-0 cwYjsy">
+								<span class="MenuItem__MenuItemTitle-no2u3j-1 enzRKc">푸드</span>
+								<span>
+									<div	class="DiscoverMenuDropdown__TriangleDownIcon-s116h97f-1 OZgBR"></div>
+								</span>
+							</div>
+						</div>
+						<div>
+							<div class="DropdownItem__DropdownItem-s12jl0ab-0 lhFUmi">
+								<a href="searchProjectByCategory.do?category=푸드">
+									모든 푸드 프로젝트
+								</a>
+							</div>
+							<div class="DropdownItem__DropdownItem-s12jl0ab-0 lhFUmi">
+								<a class="searchProjectByCategory">베이킹</a>
+							</div>
+							<div class="DropdownItem__DropdownItem-s12jl0ab-0 lhFUmi">
+								<a class="searchProjectByCategory">요리책</a>
 							</div>
 						</div>
 					</div>
@@ -1566,31 +1598,7 @@ data-react-helmet="true"><meta name="twitter:title" content="텀블벅 tumblbug"
 							</div>
 						</div> -->
 					</div>
-					<div>
-						<div>
-							<div class="MenuItem__MenuItem-no2u3j-0 cwYjsy2">
-								<span class="MenuItem__MenuItemTitle-no2u3j-1 enzRKc2">푸드</span>
-								<!-- <span>
-									<div	class="DiscoverMenuDropdown__TriangleDownIcon-s116h97f-1 OZgBR"></div>
-								</span> -->
-							</div>
-						</div>
-						<!-- <div>
-							<div class="DropdownItem__DropdownItem-s12jl0ab-0 lhFUmi">
-								<a href="/category/food">
-									react-text: 2549모든 /react-text
-									react-text: 2550푸드/react-text
-									react-text: 2551 프로젝트/react-text
-								</a>
-							</div>
-							<div class="DropdownItem__DropdownItem-s12jl0ab-0 lhFUmi">
-								<a href="/category/baking">베이킹</a>
-							</div>
-							<div class="DropdownItem__DropdownItem-s12jl0ab-0 lhFUmi">
-								<a href="/category/cookbook">요리책</a>
-							</div>
-						</div> -->
-					</div>
+					
 					<div class="MenuItem__MenuItem-no2u3j-0 cwYjsy2">
 						<!-- <a href="/category/music"> --><span
 							class="MenuItem__MenuItemTitle-no2u3j-1 enzRKc2">음악</span></a>
@@ -1763,9 +1771,7 @@ data-react-helmet="true"><meta name="twitter:title" content="텀블벅 tumblbug"
 							<button onclick="javascript:location.href='messagePage.do'" style="border:0; outline:0;background:white">
 									<span class="MenuItem__MenuItemTitle-no2u3j-1 enzRKc">메시지</span>
 									<!-- 새로운 메시지 있을 때만 출력 -->
-									<c:if test="${newMessageCount gt 0 }">
-										<span class="MyPage__MenuItemAlert-s1rrrcge-2 iMZfBk">새 메시지</span>
-									</c:if>
+									<span id="msgNotifyText" class="MyPage__MenuItemAlert-s1rrrcge-2 iMZfBk" style="visibility:hidden;">새 메시지</span>
 							</button>
 						</div>
 					

@@ -238,6 +238,11 @@ HashMap params = new HashMap();
 		return sqlSession.update("AdminMapper.updateProjectAmount", params);
 	}
 
+	public int updateSupporter(String pCode) {
+		
+		return sqlSession.update("AdminMapper.updateSupporter",pCode);
+	}
+
 	
 
 	

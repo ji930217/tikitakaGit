@@ -9,6 +9,7 @@
 <title>Insert title here</title>
 <!-- ajax Date format -->
 <script src="http://cdnjs.cloudflare.com/ajax/libs/moment.js/2.6.0/moment.min.js"></script>
+<link href=resources/images/header/tktkFavicon.png rel="icon" type="image/x-icon">
 <style>
 	a{ cursor:pointer;	}
 	
@@ -348,21 +349,21 @@
 					var creatorEmail = "<c:out value='${project.email}'/>";
 					var postWriterEmail = data.email;
 					if(creatorEmail == postWriterEmail){
-						$("#sharePostBtnDiv").css("display", "flex");
+					/* 	$("#sharePostBtnDiv").css("display", "flex"); */
 						$("#creatorLabel").html("창작자");
 						$("#postCategory").html("창작자 업데이트");
 						$("#postCategory").addClass("kFkoaw");
 					}else {
-						$("#sharePostBtnDiv").css("display", "none");
+						/* $("#sharePostBtnDiv").css("display", "none"); */
 						$("#postCategory").html("");
 						$("#postCategory").removeClass("kFkoaw");
 					}
 					var postWriterEmail = data.email;
-					if(creatorEmail == postWriterEmail){
+					/* if(creatorEmail == postWriterEmail){
 						$("#sharePostBtnDiv").css("display", "flex");
 					}else {
 						$("#sharePostBtnDiv").css("display", "none");
-					}
+					} */
 					
 					var projectCode = "<c:out value='${project.projectCode}'/>";		
 					
@@ -457,8 +458,11 @@
 			<c:if test="${empty user }">
 				<a href="loginPage.do">
 			</c:if>									
-			<c:if test="${!empty user }">
+			<c:if test="${(!empty user && (supportFlag == true)) || (!empty user && (user.email == project.email)) }">
 				<a onclick="openPostForm();">
+			</c:if>									
+			<c:if test="${!empty user && (supportFlag == false) && (user.email != project.email)}">
+				<a>
 			</c:if>									
 			<div class="Card__Card-s1i1esb8-0 bJXRvz">
 					<div
@@ -469,17 +473,19 @@
 								</span>
 								로그인 해주세요
 							</c:if>
-							<!-- 커뮤니티 페이지로 이동 시 해당 프로젝트의 후원자/창작자인지 체크해야 해 -->
-							<c:if test="${!empty user }"><!-- && 후ㅇ원 한 사람}"> -->
+							<!-- 해당 프로젝트의 후원자/창작자인지 체크해야 해 -->
+							<c:if test="${!empty user && (supportFlag == true)}"><!-- && 후ㅇ원 한 사람}"> -->
 								<img class="ProfileImg__ProfileImg-s1o99mme-0 dLvdGo" src="<c:out value='${user.profile_img }'/>"/>
 								창작자에게 응원의 한마디!
 							</c:if>
-							<%-- <c:if test="${!empty user && 후원 안 한 사람}">
+							<c:if test="${!empty user && (supportFlag == false) && (user.email != project.email)}">
+								<img class="ProfileImg__ProfileImg-s1o99mme-0 dLvdGo" src="<c:out value='${user.profile_img }'/>"/>
 								후원자만 글을 쓸 수 있어요
 							</c:if>
-							<c:if test="${!empty user && 창작자 본인}">
+							<c:if test="${!empty user && (supportFlag == false) && (user.email == project.email)}">
+								<img class="ProfileImg__ProfileImg-s1o99mme-0 dLvdGo" src="<c:out value='${user.profile_img }'/>"/>
 								후원자에게 한마디!
-							</c:if> --%>
+							</c:if>
 						</div>
 						<i	class="yv2X_NOjMYirwH0R23J17 _1oJMWnMCW_Y6GmNc1mhqaW WU1ox0-AeDX_zneKjnNMO _1QY7TzdLHKX3-BKPDNNYKF"></i>
 					</div>
@@ -624,7 +630,7 @@
 
 				<!-- 게시글 공유 버튼(창작자의 게시글일 경우만 출력)-->
 				<div id="sharePostBtnDiv" class="Post__ShareWrapper-s1xz59uk-17 jEZrVP">
-					<div style="display: flex;">
+					<%-- <div style="display: flex;">
 						<div	class="SocialMediaShareButton SocialMediaShareButton--facebook" onclick="shareFacebook();">
 							<div class="SocialMediaButtons__ShareButton-dpsnza-0 hhJJZS">
 								<div style="width: 32px; height: 32px;">
@@ -659,7 +665,7 @@
 							</div>
 						</div>
 						
-					</div>
+					</div> --%>
 				</div>
 
 				<div	class="Post__CommunityPostCommentsAmount-s1xz59uk-25 jPVurM">
@@ -670,7 +676,7 @@
 				<!-- 댓글 영역 ajax 이용 -->
 				<div id="replyDiv">	</div>
 
-				<c:if test="${!empty user }">
+				<c:if test="${(!empty user && (supportFlag == true)) || (!empty user && (user.email == project.email)) }">
 				<!-- 댓글 작성 폼 -->
 				<div class="Post__NewCommentWidgetWrapper-s1xz59uk-19 fONoPD">
 					<div id="replyWriterProfileImgDiv" class="Post__NewCommentWidgetProfileImage-s1xz59uk-20 bfkJdB">

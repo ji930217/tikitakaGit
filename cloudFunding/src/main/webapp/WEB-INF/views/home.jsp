@@ -5,6 +5,7 @@
 <html>
 	<head>
 		<title>티키타카 :: TIKITAKA</title>
+		<link href=resources/images/header/tktkFavicon.png rel="icon" type="image/x-icon">
 	</head>
 <body>
 

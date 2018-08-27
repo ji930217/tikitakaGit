@@ -172,6 +172,12 @@ WHERE P_PROJECT_CODE = #{projectCode}
     WHERE P_CATEGORY LIKE '%' || #{category} || '%'
 </select>
 
+<select id="searchProjectByHashtag" parameterType="string" resultMap="projectMap2">
+    SELECT * FROM PROJECT 
+    WHERE P_STORY LIKE '%' || #{tag} || '%'
+    OR P_NAME LIKE '%' || #{tag} || '%'
+</select>
+
 <select id="projectListOrderByDeadline" resultMap="projectMap2">
     SELECT * 
     FROM PROJECT
@@ -185,6 +191,14 @@ WHERE P_PROJECT_CODE = #{projectCode}
     WHERE P_OK= 2
 	ORDER BY P_ENROLL_DATE DESC
 </select>
+
+<select id="checkSupportFlag" parameterType="Support" resultType="int">
+    SELECT COUNT(*) 
+    FROM SUPPORT
+	WHERE P_PROJECT_CODE = #{projectCode}
+	AND EMAIL = #{email}
+</select>
+
 
 <select id="selectindex_enrollDateList" resultMap="projectMap2" parameterType="int">
 SELECT *

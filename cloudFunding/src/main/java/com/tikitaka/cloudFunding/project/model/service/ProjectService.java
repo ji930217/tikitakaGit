@@ -10,6 +10,7 @@ import com.tikitaka.cloudFunding.member.model.vo.Member;
 import com.tikitaka.cloudFunding.project.model.dao.ProjectDao;
 import com.tikitaka.cloudFunding.project.model.vo.GiftVo;
 import com.tikitaka.cloudFunding.project.model.vo.ProjectVo;
+import com.tikitaka.cloudFunding.support.model.vo.SupportVo;
 
 @Service
 public class ProjectService {
@@ -93,6 +94,15 @@ public class ProjectService {
 	public List<ProjectVo> selectindex_DeadlineList(int btnIdx2) {
 		return dao.selectindex_DeadlineList(btnIdx2);
 	}
+
+	public List<ProjectVo> searchProjectByHashtag(String tag) {
+		return dao.searchProjectByHashtag(tag);
+	}
+
+	public int checkSupportFlag(SupportVo support) {
+		return dao.checkSupportFlag(support);
+	}
+
 
 
 }

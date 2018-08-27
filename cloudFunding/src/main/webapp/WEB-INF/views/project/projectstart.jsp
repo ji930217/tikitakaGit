@@ -46,9 +46,7 @@
 	content="크라우드 펀딩으로 프로젝트를 위한 자금도 모으고, 든든한 후원자 네트워크도 확보할 수 있습니다." />
 <link rel="stylesheet" type="text/css"
 	href="resources/images/project/wpa/app.f0ed3932e778a7f95ef1c52983d12741.css">
-<link
-	href=../tumblbug-assets.imgix.net/appicon/favicon/favicon-32x32.png
-	rel="icon" type="image/x-icon">
+<link href=resources/images/header/tktkFavicon.png rel="icon" type="image/x-icon">
 
 <link rel="apple-touch-icon" sizes="120x120"
 	href="../tumblbug-assets.imgix.net/appicon/home-icon/apple-icon-120x120.png">

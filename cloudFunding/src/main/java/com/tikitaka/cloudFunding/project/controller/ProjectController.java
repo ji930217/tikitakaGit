@@ -23,6 +23,7 @@ import com.tikitaka.cloudFunding.member.model.vo.Member;
 import com.tikitaka.cloudFunding.project.model.service.ProjectService;
 import com.tikitaka.cloudFunding.project.model.vo.GiftVo;
 import com.tikitaka.cloudFunding.project.model.vo.ProjectVo;
+import com.tikitaka.cloudFunding.support.model.vo.SupportVo;
 
 @Controller
 public class ProjectController {
@@ -271,15 +272,27 @@ public class ProjectController {
 	}
 	
 	@RequestMapping("projectDetail.do")
-	public ModelAndView selectProjectDetail(int projectCode, ModelAndView mv){
+	public ModelAndView selectProjectDetail(int projectCode, ModelAndView mv, HttpSession session){
 		ProjectVo project = projectService.selectProjectGift(projectCode);
 		List<PostVo> postList = cService.selectPostList(projectCode);
 		int count = cService.selectPostCount(projectCode);
 		int supportedCount = projectService.selectSupportedCount(project.getEmail());
-		
+		// 해당 프로젝트에 후원한 유저인지 체크
+		Member user = (Member) session.getAttribute("user");
+		boolean supportFlag = false;
+		if(null != user) {
+			SupportVo support = new SupportVo();
+			support.setEmail(user.getEmail());
+			support.setProjectCode(projectCode);
+			int supportCount = projectService.checkSupportFlag(support);
+			if(0 < supportCount) {
+				supportFlag = true;
+			}
+		}
 		mv.addObject("count", count);
 		mv.addObject("project", project);
 		mv.addObject("postList", postList);
+		mv.addObject("supportFlag", supportFlag);
 		mv.addObject("supportedCount", supportedCount);
 		
 		mv.setViewName("project/detail/projectDetail");
@@ -310,6 +323,17 @@ public class ProjectController {
 		mv.addObject("category", category);
 		mv.addObject("list", list);
 		mv.setViewName("project/projectListByCategory");
+		
+		return mv;
+	}
+	
+	@RequestMapping("searchProjectByHashtag.do")
+	public ModelAndView searchProjectByHashtag(String tag, ModelAndView mv){
+		List<ProjectVo> list = projectService.searchProjectByHashtag(tag);
+		
+		mv.addObject("keyword", tag);
+		mv.addObject("list", list);
+		mv.setViewName("project/projectListByKeyword");
 		
 		return mv;
 	}

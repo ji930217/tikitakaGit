@@ -15,7 +15,8 @@
   function drawChart() {
 	  
 	  var mMonth08 = ${memberMonth};
-	  var pMonth8 = ${projectMonth}; 
+	   var pMonth8 = ${projectMonth}; 
+	  
 	  
 	  
     var data = google.visualization.arrayToDataTable([
@@ -78,7 +79,7 @@
   function drawChart() {
 
 	  var allPrice = ${allPrice-price };
-	  var price = ${price };
+	  var price = ${price }; 
 	  
 	  
     var data = google.visualization.arrayToDataTable([

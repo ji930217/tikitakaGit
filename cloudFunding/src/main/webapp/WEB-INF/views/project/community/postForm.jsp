@@ -143,6 +143,24 @@
 	function insertPost(){
 		if(confirm("작성한 글을 게시하겠습니까?")){
 			$("#postForm").submit();
+			/* var projectCode = "<c:out value='${project.projectCode}'/>";
+			var email = "<c:out value='${user.email}'/>";
+			var content = $("#updatePostFormDiv .note-editable").html();
+			$.ajax({
+				url : "insertPost.do",
+				type : "post",
+				data : {projectCode : projectCode, email : email, content : content},
+				success : function(data){
+					$("#postFormDiv").css("display", "none");
+					$("#postListDiv").css("display", "block");
+					
+					
+					
+				}, error : function(e) {
+					
+				}
+			}); */
+			
 		}
 	}
 	

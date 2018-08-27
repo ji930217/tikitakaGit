@@ -18,7 +18,7 @@
       <link rel="dns-prefetch" href="https://stats.g.doubleclick.net">
       <meta data-react-helmet="true" property="fb:app_id" content="200842993269405"/><meta data-react-helmet="true" property="og:site_name" content="tumblbug"/><meta data-react-helmet="true" property="og:type" content="website"/><meta data-react-helmet="true" property="og:image" content="https://tumblbug-pci.imgix.net/4b161a793b1b7d9646d00b52f112de112a6e75e0/7ad81f8e5d8c79ed9534d70ee460540cab01def4/81e49cf2918a523dd68764560a0b4490d66c5e54/0edaa339-09ea-4b9d-a01f-7d32ea5f1092.jpg?ixlib=rb-1.1.0&amp;w=620&amp;h=465&amp;auto=format%2Ccompress&amp;lossless=true&amp;fit=crop&amp;s=2396f5a89d18993a2c59ad99362d4a9b"/><meta data-react-helmet="true" property="og:image:width" content="620"/><meta data-react-helmet="true" property="og:image:height" content="465"/><meta data-react-helmet="true" property="og:url" content="https://www.tumblbug.com/millicube"/><meta data-react-helmet="true" property="og:title" content="고양이 다이어트에 딱, 스파이더 캣토이"/><meta data-react-helmet="true" property="og:description" content="여기저기 붙일 수 있고, 교환이 가능해 더 재미있고 질리지 않는 고양이 장난감입니다."/><meta data-react-helmet="true" name="twitter:site" content="tumblbug"/><meta data-react-helmet="true" name="twitter:creator" content="tumblbug"/><meta data-react-helmet="true" name="twitter:card" content="summary_large_image"/><meta data-react-helmet="true" name="twitter:image" content="https://tumblbug-pci.imgix.net/4b161a793b1b7d9646d00b52f112de112a6e75e0/7ad81f8e5d8c79ed9534d70ee460540cab01def4/81e49cf2918a523dd68764560a0b4490d66c5e54/0edaa339-09ea-4b9d-a01f-7d32ea5f1092.jpg?ixlib=rb-1.1.0&amp;w=620&amp;h=465&amp;auto=format%2Ccompress&amp;lossless=true&amp;fit=crop&amp;s=2396f5a89d18993a2c59ad99362d4a9b"/><meta data-react-helmet="true" name="twitter:url" content="https://www.tumblbug.com/millicube"/><meta data-react-helmet="true" name="twitter:title" content="고양이 다이어트에 딱, 스파이더 캣토이"/><meta data-react-helmet="true" name="twitter:description" content="여기저기 붙일 수 있고, 교환이 가능해 더 재미있고 질리지 않는 고양이 장난감입니다."/>
       <link rel="stylesheet" type="text/css" href="https://d2om2e6rfn032x.cloudfront.net/wpa/app.f0ed3932e778a7f95ef1c52983d12741.css">
-      <link href=resources/images/tktkFavicon.png rel="icon" type="image/x-icon">
+     <link href=resources/images/header/tktkFavicon.png rel="icon" type="image/x-icon">
       
   <link rel="apple-touch-icon" sizes="120x120" href="https://tumblbug-assets.imgix.net/appicon/home-icon/apple-icon-120x120.png">
   <link rel="apple-touch-icon" sizes="152x152" href="https://tumblbug-assets.imgix.net/appicon/home-icon/apple-icon-152x152.png">
@@ -227,6 +227,7 @@
 		$(".loadingIndicator").css("display", "none");  
 		$(".dLYLGx").css("margin", "unset");  
 		/* $("#storyDiv").css("display", "flex");   */
+		$(".ceunQL").css("display", "block");
 	});
 	
 	var page = sessionStorage.getItem("page");
@@ -238,12 +239,33 @@
 	});
 	 */
 	$(function(){
-		if(page == null) {
+		if(page == "community"){
+			$("#policyDiv").css("display", "none");
+			$("#storyDiv").css("display", "none");
+			$("#communityDiv").css("display", "block");
+			
+			$("#policyFixedBtn, #policyBtn, #storyFixedBtn, #storyBtn").removeClass("btnUnderline");
+			$("#communityFixedBtn, #communityBtn").addClass("btnUnderline");
+			
+			if(null == sessionStorage.getItem("postCode")){
+				$("#postListDiv").css("display", "block");  
+				$("#writeBtnDiv").css("display", "block");  
+			}
+			setMoreBtnDisplayBlock();
+			sessionStorage.removeItem("page");
+		} else {
 			$("#storyDiv").css("display", "block");
 			$(".storyContent img").css("width", "100%");
 			$("#storyFixedBtn").addClass("btnUnderline");
-			$("#storyBtn").addClass("btnUnderline");
-		} else if(page == "community"){
+			$("#storyBtn").addClass("btnUnderline"); 
+			sessionStorage.removeItem("page");
+		}
+	/* 	if(page == null) { */
+			/* $("#storyDiv").css("display", "block");
+			$(".storyContent img").css("width", "100%");
+			$("#storyFixedBtn").addClass("btnUnderline");
+			$("#storyBtn").addClass("btnUnderline"); */
+		/* } else  if(page == "community"){
 			$("#policyDiv").css("display", "none");
 			$("#storyDiv").css("display", "none");
 			$("#communityDiv").css("display", "block");
@@ -263,7 +285,8 @@
 			
 			$("#storyFixedBtn, #storyBtn, #communityFixedBtn, #communityBtn").removeClass("btnUnderline");
 			$("#policyFixedBtn, #policyBtn").addClass("btnUnderline");
-		}
+		}  */
+		
 	});
 	
 </script>
