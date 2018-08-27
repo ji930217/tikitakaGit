@@ -16,7 +16,7 @@
 <link rel="dns-prefetch" href="//s3-ap-northeast-1.amazonaws.com">
 <link rel="dns-prefetch" href="//www.youtube.com">
 <link rel="dns-prefetch" href="//www.google-analytics.com">
-
+<script type="text/javascript" src="resources/js/jquery-3.3.1.min.js"></script>
 <meta charset="utf-8">
 
 <meta http-equiv="x-ua-compatible" content="ie=edge">
@@ -241,21 +241,31 @@
 		</div>
 	</div>
 	<script>
+	
 function payment(id,gCode){
 		var price = id;
 		var inputVal = document.getElementById(price).value;
 		var title = '${project.title}';
-		/*  sessionStorage.setItem("inputVal",inputVal);  */
-		if(gCode == 0){
-			location.href="paymentPage.do?projectCode="+${project.projectCode}+"&address="+null+"&inputVal="+inputVal+"&projectTitle="+title+"&item="+null+"&price="+ 1000 + "&gCode="+gCode;
-
+		 if(id>inputVal){
+			 alert("후원 금액은 최소액 이상 입력하셔야 되요 ^^ ");
+			 return;
+		 }
+		 if('${user}'==''||'${user}'==null){
+			alert('로그인후 사용가능 합니다.');
+			location.href = "loginPage.do";
+		}else{
 			
-		}
-		
-		else{
-			location.href="payment_address.do?gCode="+gCode+"&inputVal="+inputVal;
-		}
-	
+			
+			
+			/*  sessionStorage.setItem("inputVal",inputVal);  */
+			if(gCode == 0){
+				location.href="paymentPage.do?projectCode="+${project.projectCode}+"&address="+null+"&inputVal="+inputVal+"&projectTitle="+title+"&item="+null+"&price="+ 1000 + "&gCode="+gCode;
+			}
+			
+			else{
+				location.href="payment_address.do?gCode="+gCode+"&inputVal="+inputVal;
+			}
+		}	
 }
 
 
