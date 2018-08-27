@@ -182,12 +182,12 @@ public class AdminService {
 		return admindao.memberDetail(email);
 	}
 
-	public int insertSupport(String email, String pCode, String amount, String item, String addr) {
+	public int insertSupport(String email, int pCode, int gCode, int amount, String addr) {
 		
-		return admindao.insertSupport(email,pCode,amount,item,addr);
+		return admindao.insertSupport(email,pCode,gCode,amount,addr);
 	}
 
-	public int updateProjectAmount(String pCode, String amount) {
+	public int updateProjectAmount(int pCode, int amount) {
 		
 		return admindao.updateProjectAmount(pCode,amount);
 	}

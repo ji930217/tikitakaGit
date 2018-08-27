@@ -16,7 +16,7 @@
 <link rel="dns-prefetch" href="//s3-ap-northeast-1.amazonaws.com">
 <link rel="dns-prefetch" href="//www.youtube.com">
 <link rel="dns-prefetch" href="//www.google-analytics.com">
-
+<script type="text/javascript" src="resources/js/jquery-3.3.1.min.js"></script>
 <meta charset="utf-8">
 
 <meta http-equiv="x-ua-compatible" content="ie=edge">
@@ -124,7 +124,7 @@
 							<span class="b-panel__title"
 								data-reactid=".16yr6xmb3eo.1.2:$0.1.0.1"> 
 								<input id="1000" type="tel" name="pledge[money]" min="1000" max="10000000"
-								value="1,000" class="b-form__input" /> <span
+								value="1000" class="b-form__input" /> <span
 								data-reactid=".16yr6xmb3eo.1.2:$0.1.0.1.1">원</span>
 								 <button
 								class="b-panel__next-button" onclick="payment(1000,0)"></button> <span
@@ -241,18 +241,31 @@
 		</div>
 	</div>
 	<script>
-function payment(id,gcode){
+	
+function payment(id,gCode){
 		var price = id;
 		var inputVal = document.getElementById(price).value;
-		
-		/*  sessionStorage.setItem("inputVal",inputVal);  */
-		if(id == 1000){
-			location.href="paymentPage.do";
-		}
-		else{
-			location.href="payment_address.do?gCode="+gcode+"&inputVal="+inputVal;
-		}
-	
+		var title = '${project.title}';
+		 if(id>inputVal){
+			 alert("후원 금액은 최소액 이상 입력하셔야 되요 ^^ ");
+			 return;
+		 }
+		 if('${user}'==''||'${user}'==null){
+			alert('로그인후 사용가능 합니다.');
+			location.href = "loginPage.do";
+		}else{
+			
+			
+			
+			/*  sessionStorage.setItem("inputVal",inputVal);  */
+			if(gCode == 0){
+				location.href="paymentPage.do?projectCode="+${project.projectCode}+"&address="+null+"&inputVal="+inputVal+"&projectTitle="+title+"&item="+null+"&price="+ 1000 + "&gCode="+gCode;
+			}
+			
+			else{
+				location.href="payment_address.do?gCode="+gCode+"&inputVal="+inputVal;
+			}
+		}	
 }
 
 

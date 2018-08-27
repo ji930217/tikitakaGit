@@ -1691,7 +1691,7 @@ function prevDeadLineProject() {
  <div class="Divider__Divider hEIXJa" data-reactid="184"></div>
 <div class="Container__Container jdgWcI" data-reactid="78">
   <div data-reactid="79">
-    <div class="Carousel__CarouselHeader iSHaZi" data-reactid="80"><span class="Carousel__CarouselTitle jtYVGd" data-reactid="81"><a class="Carousel__Link ervGwJ" href="collections/editorspick.html" data-reactid="82">분야별 인기 프로젝트<i class="yv2X_NOjMYirwH0R23J17 WU1ox0-AeDX_zneKjnNMO _1QY7TzdLHKX3-BKPDNNYKF" data-reactid="85"></i></a></span>
+    <div class="Carousel__CarouselHeader iSHaZi" data-reactid="80"><span class="Carousel__CarouselTitle jtYVGd" data-reactid="81"><a class="Carousel__Link ervGwJ" href="readyPage.do" >분야별 인기 프로젝트<i class="yv2X_NOjMYirwH0R23J17 WU1ox0-AeDX_zneKjnNMO _1QY7TzdLHKX3-BKPDNNYKF" data-reactid="85"></i></a></span>
       <div class="Carousel__CarouselButtons hgvQtm" data-reactid="86">
         <button class="Button__Button csIfer"" data-reactid="87" id="prevPopularProjectBtn"><i class="_36JoJH6uhmIKdE1bWDYUlM _1XlDYEGI6NQt_YZkSA5u6N _1QY7TzdLHKX3-BKPDNNYKF" data-reactid="88"></i></button>
         <button class="Button__Button csIfer" data-reactid="89" id="nextPopularProjectBtn"><i class="WU1ox0-AeDX_zneKjnNMO _1XlDYEGI6NQt_YZkSA5u6N _1QY7TzdLHKX3-BKPDNNYKF" data-reactid="90"></i></button>
@@ -1717,7 +1717,7 @@ function prevDeadLineProject() {
    <div class="Divider__Divider-s16ihjfx-0 hEIXJa" data-reactid="194"></div>    
     
     <div data-reactid="79">
-    <div class="Carousel__CarouselHeader iSHaZi" data-reactid="80"><span class="Carousel__CarouselTitle jtYVGd" data-reactid="81"><a class="Carousel__Link ervGwJ" href="collections/editorspick.html" data-reactid="82">최신 프로젝트<i class="yv2X_NOjMYirwH0R23J17 WU1ox0-AeDX_zneKjnNMO _1QY7TzdLHKX3-BKPDNNYKF" data-reactid="85"></i></a></span>
+    <div class="Carousel__CarouselHeader iSHaZi" data-reactid="80"><span class="Carousel__CarouselTitle jtYVGd" data-reactid="81"><a class="Carousel__Link ervGwJ" href="readyPage.do" >최신 프로젝트<i class="yv2X_NOjMYirwH0R23J17 WU1ox0-AeDX_zneKjnNMO _1QY7TzdLHKX3-BKPDNNYKF" data-reactid="85"></i></a></span>
       <div class="Carousel__CarouselButtons hgvQtm" data-reactid="86">
         <button class="Button__Button csIfer"" data-reactid="87" id="prevEnrollDateProjectBtn"><i class="_36JoJH6uhmIKdE1bWDYUlM _1XlDYEGI6NQt_YZkSA5u6N _1QY7TzdLHKX3-BKPDNNYKF" data-reactid="88"></i></button>
         <button class="Button__Button csIfer" data-reactid="89" id="nextEnrollDateProjectBtn"><i class="WU1ox0-AeDX_zneKjnNMO _1XlDYEGI6NQt_YZkSA5u6N _1QY7TzdLHKX3-BKPDNNYKF" data-reactid="90"></i></button>
@@ -1730,7 +1730,7 @@ function prevDeadLineProject() {
   </div>
         <div class="Divider__Divider-s16ihjfx-0 hEIXJa" data-reactid="196"></div>
    <div data-reactid="79">
-    <div class="Carousel__CarouselHeader iSHaZi" data-reactid="80"><span class="Carousel__CarouselTitle jtYVGd" data-reactid="81"><a class="Carousel__Link ervGwJ" href="collections/editorspick.html" data-reactid="82">최신 프로젝트<i class="yv2X_NOjMYirwH0R23J17 WU1ox0-AeDX_zneKjnNMO _1QY7TzdLHKX3-BKPDNNYKF" data-reactid="85"></i></a></span>
+    <div class="Carousel__CarouselHeader iSHaZi" data-reactid="80"><span class="Carousel__CarouselTitle jtYVGd" data-reactid="81"><a class="Carousel__Link ervGwJ" href="readyPage.do" >마감 임박 프로젝트<i class="yv2X_NOjMYirwH0R23J17 WU1ox0-AeDX_zneKjnNMO _1QY7TzdLHKX3-BKPDNNYKF" data-reactid="85"></i></a></span>
       <div class="Carousel__CarouselButtons hgvQtm" data-reactid="86">
         <button class="Button__Button csIfer"" data-reactid="87" id="prevDeadLineProjectBtn"><i class="_36JoJH6uhmIKdE1bWDYUlM _1XlDYEGI6NQt_YZkSA5u6N _1QY7TzdLHKX3-BKPDNNYKF" data-reactid="88"></i></button>
         <button class="Button__Button csIfer" data-reactid="89" id="nextDeadLineProjectBtn"><i class="WU1ox0-AeDX_zneKjnNMO _1XlDYEGI6NQt_YZkSA5u6N _1QY7TzdLHKX3-BKPDNNYKF" data-reactid="90"></i></button>

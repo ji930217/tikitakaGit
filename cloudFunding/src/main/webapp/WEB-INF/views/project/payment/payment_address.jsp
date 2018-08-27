@@ -167,7 +167,7 @@ function paymentPage(){
 	var title = '${projectG.title}';
 	
 	location.href="paymentPage.do?projectCode="+${projectG.projectCode}+"&address="+fullAdd+"&inputVal="+${inputVal}+"&projectTitle="+title+"&item="+item+"&price="
-					+${projectG.giftArry[0].price};
+					+${projectG.giftArry[0].price}+"&gCode="+${gCode};
 }
 
 </script>

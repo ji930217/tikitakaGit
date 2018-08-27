@@ -304,7 +304,7 @@ WHERE TO_CHAR(P_ENROLL_DATE,'YY') = '18' AND TO_CHAR(P_ENROLL_DATE,'MM') = '08'
 </resultMap> 
 
 <insert id="insertSupport">
-INSERT INTO SUPPORT VALUES(#{email},#{pCode},#{amount},#{item},SYSDATE,#{addr})
+INSERT INTO SUPPORT VALUES(#{email},#{pCode},#{amount},#{gCode},SYSDATE,#{addr})
 </insert>
 
 <update id="updateProjectAmount">
@@ -312,7 +312,7 @@ UPDATE PROJECT SET P_CURRENTAMOUNT = P_CURRENTAMOUNT+#{amount} WHERE P_PROJECT_C
 </update>
 
 <update id="updateSupporter">
-UPDATE PROJECT SET P_SPONSOR_COUNT = P_SPONSOR_COUNT+1 WHERE P_PROJECT_CODE = #{pCode}
+UPDATE GIFT SET G_SELECTED_COUNT = G_SELECTED_COUNT+1 WHERE P_PROJECT_CODE = #{pCode}
 </update>
 
 

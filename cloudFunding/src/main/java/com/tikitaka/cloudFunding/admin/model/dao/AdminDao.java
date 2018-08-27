@@ -215,25 +215,25 @@ public class AdminDao {
 		return sqlSession.selectList("AdminMapper.memberDetail",email);
 	}
 
-	public int insertSupport(String email, String pCode, String amount, String item, String addr) {
+	public int insertSupport(String email, int pCode, int gCode, int amount, String addr) {
 		
 		HashMap params = new HashMap();
 		
 		params.put("email", email);
 		params.put("pCode", pCode);
 		params.put("amount", amount);
-		params.put("item", item);
+		params.put("gCode", gCode);
 		params.put("addr", addr);
 		
 		return sqlSession.insert("AdminMapper.insertSupport", params);
 	}
 
-	public int updateProjectAmount(String pCode, String amount) {
+	public int updateProjectAmount(int pCode, int amount) {
 		
 HashMap params = new HashMap();
 		
-		params.put("pCode", pCode);
 		params.put("amount", amount);
+		params.put("pCode", pCode);
 		
 		return sqlSession.update("AdminMapper.updateProjectAmount", params);
 	}

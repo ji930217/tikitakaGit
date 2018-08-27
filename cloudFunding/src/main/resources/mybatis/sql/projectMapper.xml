@@ -113,6 +113,7 @@ P_NAME, P_INTRODUCE, P_PRICE, P_END_DATE, P_GIFT_ITEM, P_REFUND, P_DESCRIPTION_V
 P_STORY, P_EMAIL, P_PHONE, P_BANK_TRADING, P_BANK_NAME, P_BANK_NUMBER, P_BANK_KINDS, 
 P_OK, P_SEND_CONFIRM, P_CURRENTAMOUNT,P_SPONSOR_COUNT,P_ENROLL_DATE
 FROM PROJECT
+WHERE P_OK =2
 ORDER BY P_SPONSOR_COUNT DESC
 </select>
 
@@ -130,6 +131,7 @@ FROM PROJECT
 ) 
 WHERE RowIdx Between 1 and 5 AND P_OK=2
 </select>
+
 
 <select id="selectindex_popularList" parameterType="int" resultMap="projectMap2">
 SELECT * 
@@ -163,19 +165,22 @@ WHERE P_PROJECT_CODE = #{projectCode}
 
 <select id="searchProjectByKeyword" parameterType="string" resultMap="projectMap2">
     SELECT * FROM PROJECT 
-    WHERE P_TITLE LIKE '%' || #{keyword} || '%'
-    OR P_CATEGORY LIKE '%' || #{keyword} || '%'
+    WHERE (P_TITLE LIKE '%' || #{keyword} || '%'
+    OR P_CATEGORY LIKE '%' || #{keyword} || '%')
+    AND P_OK =2
 </select>
 
 <select id="searchProjectByCategory" parameterType="string" resultMap="projectMap2">
     SELECT * FROM PROJECT 
-    WHERE P_CATEGORY LIKE '%' || #{category} || '%'
+    WHERE (P_CATEGORY LIKE '%' || #{category} || '%')
+    AND P_OK =2
 </select>
 
 <select id="searchProjectByHashtag" parameterType="string" resultMap="projectMap2">
     SELECT * FROM PROJECT 
-    WHERE P_STORY LIKE '%' || #{tag} || '%'
-    OR P_NAME LIKE '%' || #{tag} || '%'
+    WHERE (P_STORY LIKE '%' || #{tag} || '%'
+    OR P_NAME LIKE '%' || #{tag} || '%')
+    AND P_OK=2
 </select>
 
 <select id="projectListOrderByDeadline" resultMap="projectMap2">

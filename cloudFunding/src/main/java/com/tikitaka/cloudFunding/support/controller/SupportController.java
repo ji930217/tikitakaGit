@@ -34,18 +34,20 @@ public class SupportController {
 		System.out.println(inputVal);
 		mv.addObject("projectG", projectG);
 		mv.addObject("inputVal", inputVal);		
+		mv.addObject("gCode", gCode);		
 		mv.setViewName ("project/payment/payment_address");
 		return mv;
 	}
 	
 	@RequestMapping("paymentPage.do")
-	public ModelAndView paymentPage(ModelAndView mv,int projectCode,String address,int inputVal,String projectTitle,String item,int price){
+	public ModelAndView paymentPage(ModelAndView mv,int projectCode,String address,int inputVal,String projectTitle,String item,int price,int gCode){
 		mv.addObject("price", price);
 		mv.addObject("projectCode",projectCode);
 		mv.addObject("address",address);
 		mv.addObject("inputVal",inputVal);
 		mv.addObject("projectTitle",projectTitle);
 		mv.addObject("item",item);
+		mv.addObject("gCode",gCode);
 		mv.setViewName("project/payment/paymentPage");
 		 return mv;
 	}

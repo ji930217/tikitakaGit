@@ -285,6 +285,13 @@
 		}
 		
 	};
+	
+	$(function(){
+		$(".dxWcyc2").click(function(){
+			payForProject();
+		});
+	});
+	
 </script>
 </head>
 <body>
@@ -357,15 +364,15 @@
 											 
 											<!-- 한정수량이 -1인 경우(무한제공). 프로젝트 밀어주기 버튼도 변경되어야 함 -->
 											<c:if test="${gift.remited ne -1}">
-												<c:if test="${gift.remited gt 0 && gift.remited lt 101}">
+												<c:if test="${(gift.remited - gift.selectedCount) gt 0}">
 													<!-- 한정상품인 경우 -->
 													<span class="RewardCard__LimitedRewardLabel-ibjars-5 jJjTiD">
 														<c:out value="${gift.remited - gift.selectedCount }"/>개 남음
 													</span>
 												</c:if>
-												<c:if test="${gift.remited eq 0}">
+												<c:if test="${(gift.remited - gift.selectedCount) eq 0}">
 													<!-- 한정 수량이 0 -->
-													<span class="RewardCard__SoldoutLabel-ibjars-6 ktzKui">선착순	마감</span>
+													<span class="RewardCard__Soldou5tLabel-ibjars-6 ktzKui">선착순 마감</span>
 												</c:if>
 											</c:if>
 																						
@@ -396,11 +403,11 @@
 										</span>
 									</div>
 									<div class="Divider__Divider-s16ihjfx-0 ilHpOi"></div>
-									<c:if test="${gift.remited eq 0}">
-										<button class="Button__Button-s1ng5xda-0 fNWWcT" disabled="">선물 선택하고 밀어주기</button>
+									<c:if test="${(gift.remited - gift.selectedCount) eq 0}">
+										<button class="Button__Button-s1ng5xda-0 fNWWcT" disabled>선물 선택하고 밀어주기</button>
 									</c:if>
-									<c:if test="${gift.remited ne 0}">
-										<button class="Button__Button-s1ng5xda-0 dxWcyc">선물 선택하고 밀어주기</button>
+									<c:if test="${(gift.remited - gift.selectedCount) gt 0}">
+										<button class="Button__Button-s1ng5xda-0 dxWcyc dxWcyc2">선물 선택하고 밀어주기</button>
 									</c:if>
 								</div>
 							</div>

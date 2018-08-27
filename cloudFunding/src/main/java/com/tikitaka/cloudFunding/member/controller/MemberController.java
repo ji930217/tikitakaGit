@@ -163,6 +163,7 @@ public class MemberController {
 				}
 			}
 			
+			System.out.println(isExpired);
 			session.setAttribute("isExpired", isExpired);
 			
 			
@@ -187,6 +188,21 @@ public class MemberController {
 		
 		if(user != null && member.getPassword().equals(user.getPassword())) {
 			session.setAttribute("user", user);
+			
+			boolean isExpired = true;
+			
+			if(user.getExpDate() != null) {
+				long now = System.currentTimeMillis();
+				long exp = user.getExpDate().getTime();
+				
+				if(now < exp) {
+					isExpired = false;
+				}
+			}
+			
+			System.out.println(isExpired);
+			session.setAttribute("isExpired", isExpired);
+			
 		}else {
 			
 		}

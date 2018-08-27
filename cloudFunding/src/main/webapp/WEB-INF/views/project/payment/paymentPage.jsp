@@ -107,8 +107,9 @@ function kakaopay(){
 	var title = '${projectTitle}';
 	var item = '${item}';
 	var amount = '${inputVal}';
+	var gCode = '${gCode}';
 	
-
+	var email = '${user.email}';
 
 
 	var IMP = window.IMP; // 생략가능
@@ -120,7 +121,7 @@ function kakaopay(){
 	       merchant_uid : 'merchant_' + new Date().getTime(),
 	       name : title,//프로젝트이름
 	       amount : amount ,//후원금액
-	       buyer_email : 'iamport@siot.do', 
+	       buyer_email :  email, 
 	        buyer_name : name,
 	      // buyer_tel : '010-1234-5678', 
 	       buyer_addr : addr,
@@ -131,7 +132,7 @@ function kakaopay(){
 	   }, function(rsp) {
 	       if ( rsp.success ) {
 	          //이메일 ,프로젝트코드,후원금액,선물,주소
-	           location.href = "payInfoSave.do?email="+rsp.buyer_email+"&amount="+rsp.paid_amount+"&addr="+rsp.buyer_addr+"&item="+item+"&pCode="+pCode; 
+	           location.href = "payInfoSave.do?email="+rsp.buyer_email+"&amount="+rsp.paid_amount+"&addr="+rsp.buyer_addr+"&item="+item+"&pCode="+pCode+"&gCode="+gCode; 
 	           
 	           var msg = '후원이 완료되었습니다.';
 	           msg += '후원 프로젝트 : ' + rsp.name;
