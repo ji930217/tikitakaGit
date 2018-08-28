@@ -582,11 +582,11 @@
 					</a>
 					<a id="communityFixedBtn" class="ContentsNavigation__NavItem-s6dhfrc-0 gEWplf">
 						커뮤니티 
-						<c:if test="${count gt 0 }">
 							<span class="ContentsNavigation__CommunityPostAmount-s6dhfrc-6 bReGoj">
+							<c:if test="${count gt 0 }">
 									<c:out value="${count }"/>
+							</c:if>
 							</span>
-						</c:if>
 					</a>
 					<a id="policyFixedBtn" class="ContentsNavigation__NavItem-s6dhfrc-0 gEWplf">환불 및 교환</a>
 				</div>
@@ -814,11 +814,11 @@
 					<a id="storyBtn" class="ContentsNavigation__NavItem-s6dhfrc-0 gEWplf"	 data-reactid="97">스토리</a>
 						<a id="communityBtn" class="ContentsNavigation__NavItem-s6dhfrc-0 gEWplf" data-reactid="98">
 						커뮤니티 
-						<c:if test="${count gt 0 }">
-							<span class="ContentsNavigation__CommunityPostAmount-s6dhfrc-6 bReGoj">
+						<span class="ContentsNavigation__CommunityPostAmount-s6dhfrc-6 bReGoj">
+							<c:if test="${count gt 0 }">
 									<c:out value="${count }"/>
-							</span>
-						</c:if>
+							</c:if>
+						</span>
 					</a><a id="policyBtn" class="ContentsNavigation__NavItem-s6dhfrc-0 gEWplf" data-reactid="101">환불 및 교환</a>
 				</div>
 			</div>
