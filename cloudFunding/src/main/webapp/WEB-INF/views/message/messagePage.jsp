@@ -338,6 +338,7 @@
 				var userEmail = "<c:out value='${user.email}'/>";
 				var idx = 0;
 				if(0 < list.length) {
+					$("#msgDiv").css("display", "none");
 					for(var key in list){
 						resultStr += "<form id='messageInfoForm" + parseInt(idx) + "' action='messageDetail.do' method='post'>";
 						resultStr += "<input type='hidden' name='projectCode' value='" + list[key].projectCode + "'/>";
