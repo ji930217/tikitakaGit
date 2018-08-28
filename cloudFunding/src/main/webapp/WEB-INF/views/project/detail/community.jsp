@@ -521,6 +521,7 @@
 		setWindowScrollTop();
 		$("#updatePostFormDiv > .storyContent").html("");
 		$("#updatePostFormDiv").css("display", "block");
+		$("#creatorPostDiv").css("display", "none");
 		$("#postListDiv").css("display", "none");
 		$("#writeBtnDiv").css("display", "none");
 		
@@ -529,7 +530,7 @@
 			url : "selectPost.do",
 			type : "post",
 /* 		data : {index : $("#userIndexes").val()}, */
-			data : {postCode : postCode},
+			data : {postCode : parseInt(postCode)},
 			success : function(data){
 				$("#updatePostFormDiv .note-editable").html(data.content);
 				$("input[name=postCode]").val(data.postCode);

@@ -226,17 +226,83 @@
 					success : function(data){
 						var $postListDiv = $("#postListDiv");
 						var resultStr = "";
+						var creatorPostDivStr = "";
+						var creatorPostCnt = 0;
+						var creatorEmail = "<c:out value='${project.email}'/>";
+						var userEmail = "<c:out value='${user.email}'/>";
+						for(var key in data) {
+							if(data[key].email == creatorEmail) {
+								creatorPostCnt = parseInt(creatorPostCnt) + 1;
+							}
+						}
+						if(0 < creatorPostCnt) {
+							creatorPostDivStr += "<div class='Community__Posts-s14atsnj-0 umGxa'>";
+							creatorPostDivStr += "<div class='PostFilter__FilterWrapper-vri3wd-0 gjgpkL'>";
+							creatorPostDivStr += "<div class='PostFilter__FilterButton-vri3wd-1 bvwsV' onclick='closeCreatorPost();'>모든 게시글</div>&nbsp;";
+							creatorPostDivStr += "<div class='PostFilter__FilterButton-vri3wd-1 gDEKBn' onclick='openCreatorPost();'>창작자 업데이트</div></div>";
+							
+							for(var key in data){
+								if(data[key].email == creatorEmail) {
+									creatorPostDivStr += "<div class='CommunityPostSummaryCard__PostSummaryCardWrapper-s1yavd3r-0 eUjMK'>";
+									creatorPostDivStr += "<div class='Card__Card-s1i1esb8-0 bJXRvz'>";
+									creatorPostDivStr += "<div class='CommunityPostSummaryCard__MetaWrapper-s1yavd3r-1 iLAsKd'>";
+									creatorPostDivStr += "<div class='CommunityPostSummaryCard__PostCategory-s1yavd3r-2 bsXUSY'>창작자 업데이트</div>";
+									creatorPostDivStr += "<div class='CommunityPostSummaryCard__Meta-s1yavd3r-3 jmsIUt'>";
+									creatorPostDivStr += "<div class='CommunityPostSummaryCard__MetaInner-s1yavd3r-4 buEHkh'>";
+									creatorPostDivStr += "<img class='ProfileImg__ProfileImg-s1o99mme-0 dCYRcO' src='" + data[key].profileImg +  "'/>";
+									creatorPostDivStr += "<div class='CommunityPostSummaryCard__UserProfile-s1yavd3r-5 bUjrcg'>";
+									creatorPostDivStr += "<div class='CommunityPostSummaryCard__AuthorWrapper-s1yavd3r-6 fvqxSw'>";
+									creatorPostDivStr += "<div class='CommunityPostSummaryCard__AuthorFullname-s1yavd3r-7 jghVVw'>";
+									creatorPostDivStr += data[key].name + "</div>";
+									creatorPostDivStr += "<span class='CommunityPostSummaryCard__CreatorLabel-s1yavd3r-8 fSBRQX'>창작자</span>";
+									creatorPostDivStr += "</div>";
+									
+									creatorPostDivStr += "<span>" + data[key].writtenDate + "</span></div>";
+									if(userEmail == creatorEmail) {
+										creatorPostDivStr += "<div class='CommunityPostSummaryCard__PostEditModalButton-s1yavd3r-10 jzKhMi'>";
+										creatorPostDivStr += "<button class='Button__Button-s1ng5xda-0 csIfer' onclick='openUpdatePostForm(" + data[key].postCode +  ");'>";
+										creatorPostDivStr += "<i class='_2ANNRn9vyCs0q8XuFwhk4r _1oJMWnMCW_Y6GmNc1mhqaW _1QY7TzdLHKX3-BKPDNNYKF'></i></button></div>";
+									}
+									
+									creatorPostDivStr += "</div></div></div>";
+									creatorPostDivStr += "<div class='CommunityPostSummaryCard__ContentsWrapper-s1yavd3r-11 cywbQo'  style='cursor: pointer;' onclick='postDetail(" + data[key].postCode +  ");'>";
+									creatorPostDivStr += "<h3 style='display:none;'>" + data[key].postCode +  "</h3>";
+									creatorPostDivStr += "<div><div class='CommunityPostSummaryCard__Contents-s1yavd3r-13 fmSZUJ'>";
+									creatorPostDivStr += "<div class='storyContent'>";
+									/* <c:out value='${post.content}' escapeXml="false"/> */
+									creatorPostDivStr += data[key].content;
+									creatorPostDivStr += "</div></div></div>";
+									creatorPostDivStr += "<div class='CommunityPostSummaryCard__ContentsWrapperGradient-s1yavd3r-12 hwdRmE' style='display:none;'></div>";
+									creatorPostDivStr += "</div>";
+									creatorPostDivStr += "<div class='CommunityPostSummaryCard__ReadMoreButton-s1yavd3r-14 bPLTTN' style='display:none;' onclick='postDetail(" + data[key].postCode +  ");'>";
+									creatorPostDivStr += "<h3 style='display:none;'>" + data[key].postCode +  "</h3>";
+									creatorPostDivStr += "<button id='moreBtn' class='Button__Button-s1ng5xda-0 dxWcyc' style='cursor: pointer;' onclick='postDetail(" + data[key].postCode +  ");'>더 보기</button></div>";
+									creatorPostDivStr += "<div class='CommunityPostSummarCard__Actions-s1yavd3r-15 jgodLB' style='cursor: pointer;' onclick='postDetail(" + data[key].postCode +  ");'>";
+									creatorPostDivStr += "<i class='_30LNYFhw6qsigZSbwlGCDz _1QY7TzdLHKX3-BKPDNNYKF' ></i>";
+									creatorPostDivStr += data[key].replyCount;
+									creatorPostDivStr += "</div></div></div>";
+								}
+								creatorPostDivStr += "</div>";
+							}
+							
+						}else {
+							creatorPostDivStr += "<div class='Community__CommunityEmptyState-s14atsnj-1 gByEjI'>";
+							creatorPostDivStr += "<i class='_3Hs9Qa2HoKTK0Bt1LDlMh_ _2vMLfelE9LcYWXFJoCF6e7 _1QY7TzdLHKX3-BKPDNNYKF'></i><br>";
+							creatorPostDivStr += "게시글이 없습니다</div>";
+						}
 						
 						resultStr += "<div class='Community__Posts-s14atsnj-0 umGxa'>";
 						resultStr += "<div class='PostFilter__FilterWrapper-vri3wd-0 gjgpkL'>";
 						resultStr += "<div class='PostFilter__FilterButton-vri3wd-1 gDEKBn' onclick='closeCreatorPost();'>모든 게시글</div>&nbsp;";
 						resultStr += "<div class='PostFilter__FilterButton-vri3wd-1 bvwsV' onclick='openCreatorPost();'>창작자 업데이트</div></div>";
-						var count = "<c:out value='${count}'/>";
-						if(1 > count) {
+						var count = data.length;
+						if(0 >= count) {
+							$(".bReGoj").html("");
 							resultStr += "<div class='Community__CommunityEmptyState-s14atsnj-1 gByEjI'>";
 							resultStr += "<i class='_3Hs9Qa2HoKTK0Bt1LDlMh_ _2vMLfelE9LcYWXFJoCF6e7 _1QY7TzdLHKX3-BKPDNNYKF'></i><br>";
 							resultStr += "게시글이 없습니다</div>";
 						} else {
+							$(".bReGoj").html(count);
 							var creatorEmail = "<c:out value='${project.email}'/>";
 							var userEmail = "<c:out value='${user.email}'/>";
 							var idx = 0;
@@ -286,13 +352,13 @@
 								
 								idx = parseInt(idx) + 1;
 							}
-							resultStr += "</div>";
-							
-							$postListDiv.html(resultStr);
 						}
+						resultStr += "</div>";
+						
+						$postListDiv.html(resultStr);
+						$("#creatorPostDiv").html(creatorPostDivStr);
 						$(".storyContent img").css("width", "100%");
 						
-						setMoreBtnDisplayBlock();
 					}, beforeSend:function(){
 				        $(".loadingIndicator").css("display", "inline-block");  
 				        $(".dLYLGx").css("margin", "2rem 0"); 
@@ -301,6 +367,8 @@
 						$(".dLYLGx").css("margin", "unset"); 
 						$("#postListDiv").css("display", "block");
 						$("#writeBtnDiv").css("display", "block");		
+						
+						setMoreBtnDisplayBlock();
 				    }, error : function(e) {
 						console.log("ajax deletePost 에러");
 					}
@@ -415,7 +483,7 @@
 							resultStr += "<div class='PostFilter__FilterButton-vri3wd-1 gDEKBn' onclick='closeCreatorPost();'>모든 게시글</div>&nbsp;";
 							resultStr += "<div class='PostFilter__FilterButton-vri3wd-1 bvwsV' onclick='openCreatorPost();'>창작자 업데이트</div></div>";
 							var count = "<c:out value='${count}'/>";
-							if(1 > count) {
+							if(0 >= count) {
 								resultStr += "<div class='Community__CommunityEmptyState-s14atsnj-1 gByEjI'>";
 								resultStr += "<i class='_3Hs9Qa2HoKTK0Bt1LDlMh_ _2vMLfelE9LcYWXFJoCF6e7 _1QY7TzdLHKX3-BKPDNNYKF'></i><br>";
 								resultStr += "게시글이 없습니다</div>";
