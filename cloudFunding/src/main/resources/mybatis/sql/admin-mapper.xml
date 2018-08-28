@@ -86,6 +86,7 @@ UPDATE MEMBER SET STOP_DATE = SYSDATE+3 WHERE EMAIL = #{email}
 <result property="sendConfirm" column="P_SEND_CONFIRM"/>
 <result property="currentAmount" column="P_CURRENTAMOUNT"/>
 <result property="enrollDate" column="P_ENROLL_DATE"/>
+<result property="supportCount" column="P_SPONSOR_COUNT"/>
 </resultMap>
 
 
@@ -308,7 +309,7 @@ INSERT INTO SUPPORT VALUES(#{email},#{pCode},#{amount},#{gCode},SYSDATE,#{addr})
 </insert>
 
 <update id="updateProjectAmount">
-UPDATE PROJECT SET P_CURRENTAMOUNT = P_CURRENTAMOUNT+#{amount} WHERE P_PROJECT_CODE = #{pCode}
+UPDATE PROJECT SET P_CURRENTAMOUNT = P_CURRENTAMOUNT+#{amount},P_SPONSOR_COUNT = P_SPONSOR_COUNT+1  WHERE P_PROJECT_CODE = #{pCode}
 </update>
 
 <update id="updateSupporter">

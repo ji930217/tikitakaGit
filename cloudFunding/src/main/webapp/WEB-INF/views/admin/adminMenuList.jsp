@@ -101,7 +101,7 @@ $(function(){
 	<c:import url="../common/header.jsp"></c:import>
 
   <h1 id = "mainTitle">TIKITAKA 관리자페이지</h1>
-  <button type="button" id = "logoutBtn" class="btn btn-secondary btn-xs btn-warning" onclick="javascript:location.href='logout.do'">로그아웃</button>
+  <!-- <button type="button" id = "logoutBtn" class="btn btn-secondary btn-xs btn-warning" onclick="javascript:location.href='logout.do'">로그아웃</button> -->
 <div class="container" id = "tebMenu">
   
 
@@ -111,6 +111,7 @@ $(function(){
     <li><a data-toggle="tab" href="#menu2" onclick="setTabIndex(2);">프로젝트 종료확인</a></li>
     <li><a data-toggle="tab" href="#menu3" onclick="setTabIndex(3);">프로젝트 승인여부</a></li>
     <li><a data-toggle="tab" href="#menu4" onclick="setTabIndex(4);">배너관리</a></li>
+    <li><a data-toggle="tab" href="#menu5" onclick="javascript:location.href='logout.do'">로그아웃</a></li>
   </ul>
   
   
