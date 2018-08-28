@@ -226,7 +226,9 @@
 					$("#postListDiv").css("display", "block");
 					
 					setMoreBtnDisplayBlock();
-				}, error : function(e) {
+				}, complete:function(){
+					$("#postFormDiv .note-editable").html("");
+			    }, error : function(e) {
 					
 				}
 			}); 
