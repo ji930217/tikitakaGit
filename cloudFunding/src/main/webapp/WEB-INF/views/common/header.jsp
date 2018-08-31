@@ -1575,8 +1575,7 @@ data-react-helmet="true"><meta name="twitter:title" content="텀블벅 tumblbug"
 					<div>
 						<div>
 							<div class="MenuItem__MenuItem-no2u3j-0 cwYjsy2">
-								<span class="MenuItem__MenuItemTitle-no2u3j-1 enzRKc2">영화
-									? 비디오</span>
+									<span class="MenuItem__MenuItemTitle-no2u3j-1 enzRKc2">영화 ∙ 비디오</span>
 								<!-- <span>
 									<div	class="DiscoverMenuDropdown__TriangleDownIcon-s116h97f-1 OZgBR"></div>
 								</span> -->

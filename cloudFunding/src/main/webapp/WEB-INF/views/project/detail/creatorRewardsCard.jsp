@@ -406,7 +406,7 @@
 									<c:if test="${(gift.remited - gift.selectedCount) eq 0}">
 										<button class="Button__Button-s1ng5xda-0 fNWWcT" disabled>선물 선택하고 밀어주기</button>
 									</c:if>
-									<c:if test="${(gift.remited - gift.selectedCount) gt 0}">
+									<c:if test="${(gift.remited - gift.selectedCount) gt 0 || gift.remited eq -1}">
 										<button class="Button__Button-s1ng5xda-0 dxWcyc dxWcyc2">선물 선택하고 밀어주기</button>
 									</c:if>
 								</div>
